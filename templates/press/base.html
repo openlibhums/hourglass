@@ -1,0 +1,15 @@
+{% extends "core/base.html" %}
+
+{% block head %}
+    {% if request.press.favicon %}
+        <link rel="icon" href="{{ press.favicon.url }}" type="image/x-icon">
+    {% endif %}
+{% endblock head %}
+
+{% block navbar %}
+    {% include "press/nav.html" %}
+{% endblock navbar %}
+
+{% block footer %}
+    <!-- include press/footer.html -->
+{% endblock footer %}

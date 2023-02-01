@@ -1,0 +1,10 @@
+{% extends "press/base.html" %}
+
+{% block title %}
+    <title>{{ page.display_name }} - {{ request.press.name }}</title>
+{% endblock title %}
+
+{% block body %}
+    <h1>{{ page.display_name|safe }}</h1>
+    {{ page.content|safe }}
+{% endblock body %}
