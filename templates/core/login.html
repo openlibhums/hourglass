@@ -1,0 +1,74 @@
+{% extends "core/base.html" %}
+{% load i18n %}
+{% load orcid %}
+
+{% block title %}{% trans "Login" %} - {{ request.press.name }}{% endblock title %}
+
+{% block body %}
+    <div class="row">
+        <div class="col s12 m6">
+            <div class="card light-green lighten-4">
+                <div class="card-content">
+                    <span class="material-icons md-48">sync</span>
+                    <h2 class="card-title">ORCID</h2>
+                    <p>ORCID<sup>®</sup> ipsum lorem ipsum lorem ipsum lorem ipsum lorem
+                       ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem</p>
+                </div>
+                <div class="card-action">
+                    <a
+                        class="btn-large waves-effect waves-light light-green"
+                        href="{{ settings.ORCID_URL }}?client_id={{ settings.ORCID_CLIENT_ID }}&response_type=code&scope=/authenticate&redirect_uri={% orcid_redirect_uri %}"
+                    >
+                        <span class="flow-text">{% trans "Log in with ORCiD" %}</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="col s12 m6">
+            <div class="card blue lighten-4">
+                <form method="POST">
+                    <div class="card-content">
+                        <span class="material-icons md-48">login</span>
+                        <h2 class="card-title">{{ request.press.name }}</h2>
+                        {% include "common/elements/static-error-messages.html" with form=form %}
+                        {% csrf_token %}
+                        <div class="input-field">
+                            {{ form.user_name }}
+                            <label for="email">
+                                {% trans form.user_name.label %}
+                            </label>
+                        </div>
+                        <div class="input-field">
+                            {{ form.user_pass }}
+                            <label for="password">
+                                {% trans form.user_pass.label %}
+                            </label>
+                        </div>
+                        <div class="input-field">
+                            {{ form.captcha }}
+                        </div>
+                    </div>
+                    <div class="card-action">
+                        <button
+                            class="btn-large waves-effect waves-light light-blue"
+                        >
+                            <span class="flow-text">{% trans "Log in" %}</span>
+                        </button>
+                    </div>
+                </form>
+                <div class="card-action">
+                    <p class="center-align">
+                        <a href="{% url 'core_register' %}">
+                            {% trans "Register an Account" %}
+                        </a>
+                    </p>
+                    <p class="center-align">
+                        <a href="{% url 'core_get_reset_token' %}">
+                            {% trans "Reset Your Password" %}
+                        </a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
