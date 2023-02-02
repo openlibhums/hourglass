@@ -1,73 +1,7 @@
 {% load svg from press_url %}
+{% load hooks %}
 
 
-<!-- Mobile viewports: Dropdown content lists-->
-{% for top_item in navigation_items %}
-    {% if top_item.has_sub_nav %}
-        <ul 
-            id="dropdown-mobile-{{ top_item.link_name|slugify }}"
-            class="dropdown-content"
-        >
-            {% for sub_item in top_item.sub_nav_items %}
-                {% if top_item.link_name == sub_item.top_level_nav.link_name %}
-                    <li class="flow-text">
-                        <a href="/{{ sub_item.link }}">
-                            <span class="flow-text">{{ sub_item.link_name }}</span>
-                        </a>
-                    </li>
-                {% endif %}
-            {% endfor %}
-        </ul>
-    {% endif %}
-{% endfor %}
-
-
-<!-- Mobile viewports: Top-level nav -->
-<ul id="mobile-nav" class="sidenav">
-    {% for item in navigation_items %}
-        <li>
-            {% if item.has_sub_nav %}
-                <a
-                    href="#"
-                    class="dropdown-trigger"
-                    data-target="dropdown-mobile-{{ item.link_name|slugify }}"
-                >
-                    <span class="flow-text">{{ item.link_name }}</span>
-                    <span class="material-icons">arrow_drop_down</span>
-                </a>
-            {% else %}
-                <a href="{{ item.link }}">
-                    <span class="flow-text">{{ item.link_name }}</span>
-                </a>
-            {% endif %}
-        </li>
-    {% endfor %}
-</ul>
-
-
-<!-- Large viewports: Dropdown content lists -->
-{% for top_item in navigation_items %}
-    {% if top_item.has_sub_nav %}
-        <ul 
-            id="dropdown-top-{{ top_item.link_name|slugify }}"
-            class="dropdown-content"
-        >
-            {% for sub_item in top_item.sub_nav_items %}
-                {% if top_item.link_name == sub_item.top_level_nav.link_name %}
-                    <li class="flow-text">
-                        <a href="/{{ sub_item.link }}">
-                            <span class="flow-text">{{ sub_item.link_name }}</span>
-                        </a>
-                    </li>
-                {% endif %}
-            {% endfor %}
-        </ul>
-    {% endif %}
-{% endfor %}
-
-
-<!-- Large viewports: Top-level nav -->
-<!-- Also: logo and mobile menu trigger -->
 <nav>
     <div class="container">
         <div class="nav-wrapper row">
@@ -89,26 +23,22 @@
             >
                 <span class="material-icons md-36">menu</span>
             </a>
+
+            <!-- Large viewports: Top-level list -->
             <ul id="large-viewport-nav" class="right hide-on-med-and-down">
-                {% for item in navigation_items %}
-                    <li>
-                        {% if item.has_sub_nav %}
-                            <a
-                                href="#"
-                                class="dropdown-trigger"
-                                data-target="dropdown-top-{{ item.link_name|slugify }}"
-                            >
-                                <span class="flow-text">{{ item.link_name }}</span>
-                                <span class="material-icons">arrow_drop_down</span>
-                            </a>
-                        {% else %}
-                            <a href="{{ item.link }}">
-                                <span class="flow-text">{{ item.link_name }}</span>
-                            </a>
-                        {% endif %}
-                    </li>
-                {% endfor %}
+                {% include 'press/nav_elements.html' with viewport='large' %}
             </ul>
+
         </div>
     </div>
 </nav>
+
+{% include 'press/dropdown_content.html' with viewport='large' %}
+
+
+<ul id="mobile-nav" class="sidenav">
+    {% include 'press/nav_elements.html' with viewport='mobile' %}
+</ul>
+
+{% include 'press/dropdown_content.html' with viewport='mobile' %}
+
