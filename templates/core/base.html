@@ -6,13 +6,13 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        {% block title %}{% endblock title %}
+        <title>{% block title %}{% endblock title %}</title>
         <link href="{% static "path/css/app.css" %}" rel="stylesheet">
         <link
             href="https://fonts.googleapis.com/icon?family=Material+Icons"
             rel="stylesheet"
         >
-        {% block head %}{% endblock head %}
+        {% include 'press/head.html' %}
     </head>
     <style>
         /* Rules for sizing the icon. */
@@ -32,7 +32,7 @@
 
     <body>
         <header>
-            {% block navbar %}{% endblock navbar %}
+            {% include "press/nav.html" %}
         </header>
         <main>
             <div class="container flow-text">
@@ -40,7 +40,7 @@
             </div>
         </main>
         <footer>
-            {% block footer %}{% endblock footer %}
+            <!-- include press/footer.html -->
         </footer>
         <script
             src="https://code.jquery.com/jquery-3.6.3.min.js"

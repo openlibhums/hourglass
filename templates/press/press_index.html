@@ -1,8 +1,6 @@
-{% extends "press/base.html" %}
+{% extends "core/base.html" %}
 
-{% block title %}
-    <title>{{ request.press.name }}</title>
-{% endblock title %}
+{% block title %}{{ request.press.name }}{% endblock title %}
 
 {% block body %}
     {% for element in homepage_elements %}

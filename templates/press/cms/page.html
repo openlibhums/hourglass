@@ -1,7 +1,7 @@
-{% extends "press/base.html" %}
+{% extends "core/base.html" %}
 
 {% block title %}
-    <title>{{ page.display_name }} - {{ request.press.name }}</title>
+    {{ page.display_name }} - {{ request.press.name }}
 {% endblock title %}
 
 {% block body %}
