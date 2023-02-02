@@ -21,3 +21,9 @@ Rather than a `build_assets.py` file, this library currently has a `compile.js` 
     npm install
     node compile.js
     ```
+
+## Customization
+
+If you have the [Custom Styling Plugin](https://github.com/BirkbeckCTP/customstyling) installed in your Janeway instance, you can add CSS code to override the default colors and fonts.
+
+What color values should you use? See the [Materialize color palette](https://materializecss.github.io/materialize/color.html#palette) for ideas.
