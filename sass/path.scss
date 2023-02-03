@@ -1,17 +1,22 @@
 @charset "UTF-8";
 
-// Materialize color
+// Materialize color variables
 @import "../node_modules/@materializecss/materialize/sass/components/color-variables";
+
+// Custom color variables
+@import "components/_color-variables";
+
+// Materialize color classes
 @import "../node_modules/@materializecss/materialize/sass/components/color-classes";
 
 // Materialize variables;
 @import "../node_modules/@materializecss/materialize/sass/components/variables";
 
-// Materialize reset
-@import "../node_modules/@materializecss/materialize/sass/components/normalize";
-
 // Custom variables
 @import "components/variables";
+
+// Materialize reset
+@import "../node_modules/@materializecss/materialize/sass/components/normalize";
 
 // Materialize components
 @import "../node_modules/@materializecss/materialize/sass/components/global";

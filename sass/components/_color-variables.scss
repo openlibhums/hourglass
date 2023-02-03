@@ -1,0 +1,31 @@
+@use "sass:map";
+
+
+// Create a color variable set
+$bau: (
+  "base":     #03658C,
+  "blue":     #03658C,
+  "off-blue": #03738C,
+  "yellow":   #F2A03D,
+  "black":    #1F1C1C,
+  "red":      #D93D3D,
+  "paper":    #F2DCC9,
+);
+
+$custom-colors: (
+  "bau": $bau
+);
+
+$colors: map.merge($colors, $custom-colors);
+
+
+// Set the primary and secondary colors, and a few other colors
+// Strictly speaking this would go in the custom _variables.scss, but it is here
+// so that all the variables that get assigned in Materialize _variables.scss
+// use these as the basis.
+
+$primary-color: color("bau", "base");
+$primary-color-light: lighten($primary-color, 15%);
+$primary-color-dark: darken($primary-color, 15%);
+$secondary-color: color("bau", "yellow");
+$card-link-color: color("bau", "off-blue");
