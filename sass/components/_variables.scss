@@ -1,0 +1,8 @@
+@use "sass:math";
+
+// 22. Flow Text
+// ==========================================================================
+
+$range : $medium-screen - $small-screen;
+$intervals: 10;
+$interval-size: math.div($range, $intervals);
