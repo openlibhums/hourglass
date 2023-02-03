@@ -1,7 +1,6 @@
 {
 	"type": "module",
 	"dependencies": {
-    "@materializecss/materialize": "^1.2.1",
-    "sass": "^1.58.0"
+    "@materializecss/materialize": "^1.2.1"
   }
 }
