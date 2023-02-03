@@ -3,33 +3,31 @@
 
 
 <nav>
-    <div class="container">
-        <div class="nav-wrapper row">
-            <a href="{{ request.press_base_url }}" class="brand-logo col l4">
+    <div class="nav-wrapper">
+        <a href="{{ request.press_base_url }}" class="brand-logo">
+            <div class="responsive-img">
                 {% if 'svg' in request.press_cover %}
                     {% svg request.press_cover %}
                 {% else %}
                     <img
                         src="{% url 'press_cover_download' %}"
                         alt="{{ request.press.name }}"
-                        class="responsive-img"
                     >
                 {% endif %}
-            </a>
-            <a
-                href="#"
-                data-target="mobile-nav"
-                class="sidenav-trigger"
-            >
-                <span class="material-icons md-36">menu</span>
-            </a>
+            </div>
+        </a>
+        <a
+            href="#"
+            data-target="mobile-nav"
+            class="sidenav-trigger"
+        >
+            <i class="material-icons large">menu</i>
+        </a>
 
-            <!-- Large viewports: Top-level list -->
-            <ul id="large-viewport-nav" class="right hide-on-med-and-down">
-                {% include 'press/nav_elements.html' with viewport='large' %}
-            </ul>
-
-        </div>
+        <!-- Large viewports: Top-level list -->
+        <ul id="large-viewport-nav" class="right hide-on-med-and-down">
+            {% include 'press/nav_elements.html' with viewport='large' %}
+        </ul>
     </div>
 </nav>
 

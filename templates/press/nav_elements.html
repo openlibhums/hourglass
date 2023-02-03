@@ -7,7 +7,7 @@
                 data-target="dropdown-{{ viewport }}-{{ item.link_name|slugify }}"
             >
                 <span class="flow-text">{{ item.link_name }}</span>
-                <span class="material-icons">arrow_drop_down</span>
+                <i class="material-icons right">arrow_drop_down</i>
             </a>
         {% else %}
             <a href="{{ item.link }}">
@@ -40,6 +40,6 @@
         data-target="dropdown-{{ viewport }}-account"
     >
         <span class="flow-text">{% trans 'Account' %}</span>
-        <span class="material-icons">arrow_drop_down</span>
+        <i class="material-icons right">arrow_drop_down</i>
     </a>
 </li>
