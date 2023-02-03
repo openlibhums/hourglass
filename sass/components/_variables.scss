@@ -1,6 +1,21 @@
 @use "sass:math";
 
 
+// 20. Typography
+// ==========================================================================
+
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+$font-stack: Lato, sans-serif;
+
+// Header Styles
+$h1-fontsize: 3.0rem;
+$h2-fontsize: 2.6rem;
+$h3-fontsize: 2.2rem;
+$h4-fontsize: 1.8rem;
+$h5-fontsize: 1.5rem;
+$h6-fontsize: 1.2rem;
+
+
 // 22. Flow Text
 // ==========================================================================
 
