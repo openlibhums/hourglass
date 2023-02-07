@@ -1,6 +1,7 @@
 {
 	"type": "module",
 	"dependencies": {
-    "@materializecss/materialize": "^1.2.1"
-  }
+		"@materializecss/materialize": "^1.2.1",
+		"lunr": "^2.3.9"
+	}
 }

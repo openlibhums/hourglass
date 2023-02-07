@@ -7,7 +7,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>{% block title %}{% endblock title %}</title>
-        <link href="{% static "path/path.min.css" %}" rel="stylesheet">
+        <link href="{% static 'path/path.min.css' %}" rel="stylesheet">
         <link
             href="https://fonts.googleapis.com/icon?family=Material+Icons"
             rel="stylesheet"
@@ -35,5 +35,7 @@
             src="https://cdn.jsdelivr.net/npm/@materializecss/materialize@1.2.1/dist/js/materialize.min.js">
         </script>
         <script>M.AutoInit();</script>
+        <script src="{% static 'path/lunr.min.js' %}"></script>
+        <script src="{% static 'path/customLunr.js' %}" type="module"></script>
     </body>
 </html>
