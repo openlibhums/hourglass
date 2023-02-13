@@ -1,15 +1,16 @@
-async function init(searchInputId = 'search') {
+async function init(searchInputId = 'search-input') {
 	const searchInput = document.getElementById(searchInputId);
-	const { documents, searchIndex } = await makeSearchIndex(searchInput);
+	const searchResultsUl = document.getElementById('search-results');
+	const { documents, searchIndex } = await makeSearchIndex(searchInput, searchResultsUl);
 	searchInput.addEventListener(
 		"change",
-		event => updateResultsList(event, documents, searchIndex)
+		event => updateResultsList(event, documents, searchIndex, searchResultsUl)
 	);
 }
 
 
-async function makeSearchIndex(searchInput) {
-	const documentString = searchInput.getAttribute('data-site-search');
+async function makeSearchIndex(searchInput, searchResultsUl) {
+	const documentString = searchResultsUl.parentNode.getAttribute('data-site-search');
 	const documents = await JSON.parse(documentString);
 	const searchIndex = lunr(function () {
 		this.ref('url');
@@ -24,16 +25,16 @@ async function makeSearchIndex(searchInput) {
 }
 
 
-async function updateResultsList(event, documents, searchIndex) {
+async function updateResultsList(event, documents, searchIndex, searchResultsUl) {
 	const searchResults = await searchIndex.search(event.target.value)
-	const resultsHTML = document.getElementById('results');
-	resultsHTML.innerHTML = '';
+	searchResultsUl.innerHTML = '';
 	for (let result of searchResults) {
 		let doc = documents[result.ref];
 		let mergedPositions = getPositionsByField(result);
 		let li = makeResultListItem(doc, result.ref, mergedPositions);
-		resultsHTML.appendChild(li);
+		searchResultsUl.appendChild(li);
 	}
+	searchResultsUl.parentNode.removeAttribute('hidden');
 }
 
 
