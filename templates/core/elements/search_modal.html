@@ -1,0 +1,21 @@
+<div id="search-modal" class="modal">
+    <div class="modal-content">
+        <div class="search-modal-title">
+            <h4>Search this site</h4>
+            <i id="search-close" class="material-icons medium right">close</i>
+        </div>
+        <form id="search-form">
+            <div id="search-bar" class="input-field">
+                <input id="search-input" class="flow-text" type="search">
+                <label class="label-icon" for="search-input">
+                    <i class="material-icons">search</i>
+                </label>
+            </div>
+        </form>
+        <div id="search-results" class="row">
+            <div class="col">
+                <ul id="result-list" class="collection" data-site-search="{{ request.site_search_data }}"></ul>
+            </div>
+        </div>
+    </div>
+</div>

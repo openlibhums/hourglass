@@ -1,18 +1,65 @@
-.highlight {
-	background-color: color("bau", "paper");
-}
+// A lot of this has been copied from _modal.scss, _navbar.scss, and _input-fields.scss in order to override defaults or extend functionality only applied to nav inputs and icons
 
-.container {
-	position: relative;
-}
+#search-modal {
 
-#search {
-	position: absolute;
-	top: 0;
-	z-index: 2;
-	margin: auto;
-}
+  width: 80%;
+  max-height: 90%;
 
-#search .col {
-	background-color: #FFF;
+  .search-modal-title h4 {
+    display: inline-block;
+    height: $navbar-height-mobile;
+    line-height: $navbar-line-height-mobile;
+  }
+
+  .search-modal-title,
+  #search-bar {
+    line-height: $navbar-line-height-mobile;
+    position: relative;
+    height: 100%;
+    margin: 0;
+
+    label,
+    i.material-icons {
+      color: black;
+      display: block;
+      height: $navbar-height-mobile;
+      line-height: inherit;
+    }
+
+    input {
+      height: inherit;
+      padding-left: 3rem;
+      width: calc(100% - 3rem);
+      font-size: 1.2rem;
+      border-bottom-width: 0;
+
+      &:focus {
+        border-bottom: 1px solid $input-focus-color;
+        box-shadow: 0 1px 0 0 $input-focus-color;
+        color: black;
+      }
+    }
+
+    #search-close {
+      position: absolute;
+      top: 0;
+      right: 1rem;
+      cursor: pointer;
+    }
+
+  }
+
+  @media #{$medium-and-up} {
+    #search-bar,
+    #search-bar i,
+    #search-bar i.material-icons {
+      height: $navbar-height;
+      line-height: $navbar-line-height;
+    }
+  }
+
+  .highlight {
+    background-color: color("bau", "paper");
+  }
+
 }

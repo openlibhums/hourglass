@@ -20,8 +20,8 @@
         </header>
         <main>
             <div class="container flow-text">
-                {% include 'core/search_results.html' with site_search_data=request.site_search_data %}
                 {% block body %}{% endblock body %}
+                {% include 'core/elements/search_modal.html' %}
             </div>
         </main>
         <footer>

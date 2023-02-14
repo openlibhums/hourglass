@@ -1,40 +1,46 @@
-async function init(searchInputId = 'search-input') {
-	const searchInput = document.getElementById(searchInputId);
-	const searchResultsUl = document.getElementById('search-results');
-	const { documents, searchIndex } = await makeSearchIndex(searchInput, searchResultsUl);
+// See https://materializecss.github.io/materialize/modals.html
 
-	// User types something
-	searchInput.addEventListener(
-		"keyup",
-		event => debounce(handleKeyup(event, documents, searchInput, searchIndex, searchResultsUl))
-	);
+const modal = document.getElementById('search-modal');
+const input = document.getElementById('search-input');
+const close = document.getElementById('search-close');
+const form = document.getElementById('search-form');
+const ul = document.getElementById('result-list');
+const data = ul.getAttribute('data-site-search');
+const modalOptions = {
+	opacity: .3,
+	inDuration: 100,
+	outDuration: 100,
+	onOpenEnd: event => input.focus(),
+	startingTop: '10%',
+	endingTop: '2%',
+}
 
-	// User clicks the X on the search bar
-	document.querySelector('.search-bar i.close').addEventListener(
-    "click",
-    event => closeSearch(event, searchResultsUl)
-  );
 
-	// User clicks outside of the search bar or results
-	document.querySelector('.search-bar').addEventListener(
-    "click",
-    event => event.stopPropagation()
-  );
-  document.querySelector('#search').addEventListener(
-    "click",
-    event => event.stopPropagation()
-  );
-  document.querySelector('body').addEventListener(
-    "click",
-    event => closeSearch(event, searchResultsUl)
-  );
+async function init() {
+  const modalObj = M.Modal.init(modal, modalOptions);
+  const { documents, searchIndex } = await makeSearchIndex();
+  addEventListeners(documents, searchIndex, modalObj);
+}
+
+
+function addEventListeners(documents, searchIndex, modalObj) {
+
+  // User presses Enter in form
+  form.addEventListener("submit", event => event.preventDefault());
+
+  // User types something
+  input.addEventListener("keyup", event => {
+    debounce(handleKeyup(event, documents, searchIndex))
+  });
+
+  // User clicks the X in the search bar
+  close.addEventListener("click", event => modalObj.close());
 
 }
 
 
-async function makeSearchIndex(searchInput, searchResultsUl) {
-	const documentString = searchResultsUl.getAttribute('data-site-search');
-	const documents = await JSON.parse(documentString);
+async function makeSearchIndex() {
+	const documents = await JSON.parse(data);
 	const searchIndex = lunr(function () {
 		this.ref('url');
 		this.field('name');
@@ -51,7 +57,7 @@ async function makeSearchIndex(searchInput, searchResultsUl) {
 function debounce(fn) {
 // Thanks to Materialize for this function: 
 // https://github.com/materializecss/materialize/blob/f71022051b7d388dc77bd84c27cf4ac0bdb35263/docs/js/search.js#L282-L293
-	let timeout;
+  let timeout;
   return function () {
     let args = Array.prototype.slice.call(arguments);
     let ctx = this;
@@ -63,40 +69,32 @@ function debounce(fn) {
 };
 
 
-function handleKeyup(event, documents, searchInput, searchIndex, searchResultsUl) {
+function handleKeyup(event, documents, searchIndex) {
 
-	// Only 1 or 2 letters have been typed in so far
-	if (searchInput.value.length < 3) {
-		searchResultsUl.innerHTML = '';
-		document.querySelector('#search').setAttribute('hidden', '');
+	// Only 1 letter has been typed in so far
+	if (input.value.length < 2) {
+		ul.innerHTML = '';
 		return;
 	}
 
-  // User hit the escape key
-  if (event.keyCode === 27) {
-	  closeSearch(event, searchResultsUl);
-    return;
-	}
-
 	// Otherwise
-	updateResultsList(event, documents, searchInput, searchIndex, searchResultsUl);
+	updateResultsList(documents, searchIndex);
 }
 
 
-async function updateResultsList(event, documents, searchInput, searchIndex, searchResultsUl) {
-	searchResultsUl.innerHTML = '';
-	const searchResults = await searchIndex.search(event.target.value);
+async function updateResultsList(documents, searchIndex) {
+	ul.innerHTML = '';
+	const searchResults = await searchIndex.search(input.value);
 	for (let result of searchResults) {
 		let doc = documents[result.ref];
 		let mergedPositions = getPositionsByField(result);
 		let li = makeResultListItem(doc, result.ref, mergedPositions);
-		searchResultsUl.appendChild(li);
+		ul.appendChild(li);
 	}
 
-	if (searchResultsUl.children.length == 0) {
-		searchResultsUl.innerHTML = '<li class="collection-item">No results</li>';
+	if (ul.children.length == 0) {
+		ul.innerHTML = '<li class="collection-item"><p>No results</p></li>';
 	}
-	document.querySelector('#search').removeAttribute('hidden');
 }
 
 
@@ -121,14 +119,14 @@ function getPositionsByField(result){
 
 
 function makeResultListItem(doc, ref, positions) {
-	let h3 = document.createElement('h3');
-  h3.innerHTML = highlightFieldText(doc, 'name', positions);
+	let h5 = document.createElement('h5');
+  h5.innerHTML = highlightFieldText(doc, 'name', positions);
 	let p = document.createElement('p');
   p.innerHTML = highlightFieldText(doc, 'text', positions);
   p.className = 'black-text';
 	let a = document.createElement('a');
 	a.href = ref;
-	a.appendChild(h3);
+	a.appendChild(h5);
 	let li = document.createElement('li');
   li.className = 'collection-item';
   li.appendChild(a);
@@ -172,12 +170,4 @@ function highlightFieldText(doc, field, positions, charLimit=200) {
 }
 
 
-function closeSearch(event, searchResultsUl) {
-	searchResultsUl.innerHTML = '';
-	document.querySelector('#search').setAttribute('hidden', '');
-	document.querySelector('#search-input').value = '';
-	document.querySelector('#search-input').blur();
-}
-
-
-init();
+document.addEventListener('DOMContentLoaded', event => init());
