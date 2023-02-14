@@ -2,15 +2,38 @@ async function init(searchInputId = 'search-input') {
 	const searchInput = document.getElementById(searchInputId);
 	const searchResultsUl = document.getElementById('search-results');
 	const { documents, searchIndex } = await makeSearchIndex(searchInput, searchResultsUl);
+
+	// User types something
 	searchInput.addEventListener(
-		"change",
-		event => updateResultsList(event, documents, searchIndex, searchResultsUl)
+		"keyup",
+		event => debounce(handleKeyup(event, documents, searchInput, searchIndex, searchResultsUl))
 	);
+
+	// User clicks the X on the search bar
+	document.querySelector('.search-bar i.close').addEventListener(
+    "click",
+    event => closeSearch(event, searchResultsUl)
+  );
+
+	// User clicks outside of the search bar or results
+	document.querySelector('.search-bar').addEventListener(
+    "click",
+    event => event.stopPropagation()
+  );
+  document.querySelector('#search').addEventListener(
+    "click",
+    event => event.stopPropagation()
+  );
+  document.querySelector('body').addEventListener(
+    "click",
+    event => closeSearch(event, searchResultsUl)
+  );
+
 }
 
 
 async function makeSearchIndex(searchInput, searchResultsUl) {
-	const documentString = searchResultsUl.parentNode.getAttribute('data-site-search');
+	const documentString = searchResultsUl.getAttribute('data-site-search');
 	const documents = await JSON.parse(documentString);
 	const searchIndex = lunr(function () {
 		this.ref('url');
@@ -25,16 +48,55 @@ async function makeSearchIndex(searchInput, searchResultsUl) {
 }
 
 
-async function updateResultsList(event, documents, searchIndex, searchResultsUl) {
-	const searchResults = await searchIndex.search(event.target.value)
+function debounce(fn) {
+// Thanks to Materialize for this function: 
+// https://github.com/materializecss/materialize/blob/f71022051b7d388dc77bd84c27cf4ac0bdb35263/docs/js/search.js#L282-L293
+	let timeout;
+  return function () {
+    let args = Array.prototype.slice.call(arguments);
+    let ctx = this;
+    clearTimeout(timeout);
+    timeout = setTimeout(function () {
+      fn.apply(ctx, args);
+    }, 100);
+  };
+};
+
+
+function handleKeyup(event, documents, searchInput, searchIndex, searchResultsUl) {
+
+	// Only 1 or 2 letters have been typed in so far
+	if (searchInput.value.length < 3) {
+		searchResultsUl.innerHTML = '';
+		document.querySelector('#search').setAttribute('hidden', '');
+		return;
+	}
+
+  // User hit the escape key
+  if (event.keyCode === 27) {
+	  closeSearch(event, searchResultsUl);
+    return;
+	}
+
+	// Otherwise
+	updateResultsList(event, documents, searchInput, searchIndex, searchResultsUl);
+}
+
+
+async function updateResultsList(event, documents, searchInput, searchIndex, searchResultsUl) {
 	searchResultsUl.innerHTML = '';
+	const searchResults = await searchIndex.search(event.target.value);
 	for (let result of searchResults) {
 		let doc = documents[result.ref];
 		let mergedPositions = getPositionsByField(result);
 		let li = makeResultListItem(doc, result.ref, mergedPositions);
 		searchResultsUl.appendChild(li);
 	}
-	searchResultsUl.parentNode.removeAttribute('hidden');
+
+	if (searchResultsUl.children.length == 0) {
+		searchResultsUl.innerHTML = '<li class="collection-item">No results</li>';
+	}
+	document.querySelector('#search').removeAttribute('hidden');
 }
 
 
@@ -59,17 +121,19 @@ function getPositionsByField(result){
 
 
 function makeResultListItem(doc, ref, positions) {
-	let h2 = document.createElement('h2');
-  h2.innerHTML = highlightFieldText(doc, 'name', positions);
+	let h3 = document.createElement('h3');
+  h3.innerHTML = highlightFieldText(doc, 'name', positions);
 	let p = document.createElement('p');
   p.innerHTML = highlightFieldText(doc, 'text', positions);
+  p.className = 'black-text';
 	let a = document.createElement('a');
 	a.href = ref;
-	a.appendChild(h2);
-	a.appendChild(p);
+	a.appendChild(h3);
 	let li = document.createElement('li');
-	li.appendChild(a);
-	return li;
+  li.className = 'collection-item';
+  li.appendChild(a);
+  li.appendChild(p);
+  return li;
 }
 
 
@@ -106,5 +170,14 @@ function highlightFieldText(doc, field, positions, charLimit=200) {
 	}
 	return innerHTML;
 }
+
+
+function closeSearch(event, searchResultsUl) {
+	searchResultsUl.innerHTML = '';
+	document.querySelector('#search').setAttribute('hidden', '');
+	document.querySelector('#search-input').value = '';
+	document.querySelector('#search-input').blur();
+}
+
 
 init();

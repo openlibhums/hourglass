@@ -1,0 +1,18 @@
+.highlight {
+	background-color: color("bau", "paper");
+}
+
+.container {
+	position: relative;
+}
+
+#search {
+	position: absolute;
+	top: 0;
+	z-index: 2;
+	margin: auto;
+}
+
+#search .col {
+	background-color: #FFF;
+}
