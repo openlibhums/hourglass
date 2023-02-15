@@ -1,0 +1,61 @@
+{% extends "core/base.html" %}
+
+{% load truncate %}
+
+{% block title %}{{ journal_settings.news.news_title }} - {{ request.press.name }}{% endblock %}
+
+
+{% block body %}
+    <div class="row">
+        <div class="col s12 m5 l4">
+            <h1>News</h1>
+            {% if tag %}
+                <p>{% trans "Filtered by" %}</p>
+                <div class="chip black-text">{{ tag }}
+                    <a href="{% url 'core_news_list' %}">
+                        <i class="close material-icons">close</i>
+                    </a>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+    <ul class="collection">
+        {% for item in news_items %}
+            <li class="collection-item">
+                <div class="row">
+                    <div class="col s12 m5 l4">
+                        {% if item.large_image_file %}
+                            <img
+                                class="responsive-img"
+                                src="{{ item.best_image_url }}"
+                            >
+                        {% endif %}
+                    </div>
+                    <div class="col s12 m7 l8">
+                        <h2>
+                            <a href="{% url 'core_news_item' item.pk %}">
+                                {{ item.title }}
+                            </a>
+                        </h2>
+                        <p class="byline">
+                            {{ item.byline }} {% trans "on" %} {{ item.posted|date:"Y-m-d" }}
+                        </p>
+                        <div>
+                            {% for item_tag in item.tags.all %}
+                            <a href="{% url 'core_news_list_tag' item_tag %}">
+                                <span class="chip black-text">
+                                    {{ item_tag }}
+                                </span>
+                            </a>
+                            {% endfor %}
+                        </div>
+                        <p>{{ item.body|striptags|truncatesmart:400 }}</p>
+                    </div>
+                </div>
+            </li>
+        {% empty %}
+            <li class="collection-item"><p>{% trans "No items to display" %}</p></li>
+        {% endfor %}
+    </ul>
+    {% include 'core/elements/pagination.html' with page_obj=news_items %}
+{% endblock body %}
