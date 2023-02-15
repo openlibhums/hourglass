@@ -36,7 +36,7 @@
             </li>
         {% endif %}
         <li class="divider"></li>
-        <li>
+        <li hidden>
             <a href="{% url 'core_edit_profile' %}">
                 <span class="flow-text">{% trans 'Profile' %}</span>
             </a>
@@ -54,7 +54,7 @@
                 </span>
             </a>
         </li>
-        <li>
+        <li hidden>
             <a href="{% url 'core_register' %}">
                 <span class="flow-text">{% trans "Register" %}</span>
             </a>
