@@ -40,16 +40,16 @@
                         <p class="byline">
                             {{ item.byline }} {% trans "on" %} {{ item.posted|date:"Y-m-d" }}
                         </p>
+                        <p>{{ item.body|striptags|truncatesmart:400 }}</p>
                         <div>
                             {% for item_tag in item.tags.all %}
-                            <a href="{% url 'core_news_list_tag' item_tag %}">
+                            <a href="{% url 'core_news_list_tag' item_tag.text %}">
                                 <span class="chip black-text">
-                                    {{ item_tag }}
+                                    {{ item_tag.text }}
                                 </span>
                             </a>
                             {% endfor %}
                         </div>
-                        <p>{{ item.body|striptags|truncatesmart:400 }}</p>
                     </div>
                 </div>
             </li>
