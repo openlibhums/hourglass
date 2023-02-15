@@ -20,6 +20,13 @@ p.byline {
   font-size: 75%;
 }
 
+// Labels (such as for above headers)
+p.label {
+  color: $secondary-color;
+  font-size: 75%;
+  text-transform: uppercase;
+}
+
 
 // 22. Flow Text
 // ==========================================================================

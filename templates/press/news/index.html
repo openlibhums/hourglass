@@ -12,7 +12,7 @@
             {% if tag %}
                 <p>{% trans "Filtered by" %}</p>
                 <div class="chip black-text">{{ tag }}
-                    <a href="{% url 'core_news_list' %}">
+                    <a href="{% url 'core_news_list_presswide' presswide='all' %}">
                         <i class="close material-icons">close</i>
                     </a>
                 </div>
@@ -32,6 +32,9 @@
                         {% endif %}
                     </div>
                     <div class="col s12 m7 l8">
+                        <p class="label">
+                            <a href="{{ item.object.site_url}}">{{ item.object.name }}</a>
+                        </p>
                         <h2>
                             <a href="{% url 'core_news_item' item.pk %}">
                                 {{ item.title }}
