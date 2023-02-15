@@ -58,6 +58,10 @@
     }
   }
 
+  @media #{$large-and-up} {
+    width: 60%;
+  }
+
   .highlight {
     background-color: color("baustel", "dijon");
   }
