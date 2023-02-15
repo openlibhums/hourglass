@@ -15,9 +15,9 @@
                 </a>
             </li>
         {% endif %}
-        {% for page in page_obj.paginator.page_range %}
-            <li class="waves-effect {% if page_obj.number == page %}active{% endif %}">
-                <a href="?page={{ page }}">{{ page }}</a>
+        {% for page in page_obj|slice_pages:3 %}
+            <li class="waves-effect {% if page_obj.number == page.number %}active{% endif %}">
+                <a href="?page={{ page.number }}">{{ page.number }}</a>
             </li>
         {% endfor %}
         {% if page_obj.has_next %}
