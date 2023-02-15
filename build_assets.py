@@ -15,6 +15,9 @@ OTHER_SOURCE_PATHS = [
     os.path.join(
         settings.BASE_DIR, 'themes', THEME_NAME, 'js', 'search.js'
     ),
+    os.path.join(
+        settings.BASE_DIR, 'themes', THEME_NAME, 'js', 'dropdown.js'
+    ),
 ]
 
 JANEWAY_STATIC_PATH = os.path.join(settings.BASE_DIR, 'static', THEME_NAME)
