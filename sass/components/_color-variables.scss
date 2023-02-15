@@ -48,4 +48,5 @@ $primary-color-light: color("baustel", "light");
 // $primary-color-light: lighten($primary-color, 15%);
 $primary-color-dark: darken($primary-color, 15%);
 $secondary-color: color("baustel", "clay");
-$card-link-color: color("bau", "blue");
+$link-color: darken(color("baustel", "dijon"), 50%);
+$card-link-color: $link-color;

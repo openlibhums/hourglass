@@ -27,7 +27,7 @@
                     </div>
                     <div class="col s12 m7 l8">
                         <h2>{{ current_journal.name }}</h2>
-                        <p><span>{{ current_journal.description_for_press|truncatesmart:300 }}</span></p>
+                        <p><span>{{ current_journal.description_for_press|safe }}</span></p>
                         {% if current_journal.is_remote %}
                             {% if not submission_disabled %}
                                 <a href="{{ current_journal.remote_submit_url }}" class="btn">

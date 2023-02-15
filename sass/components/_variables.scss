@@ -8,12 +8,17 @@
 $font-stack: Lato, sans-serif;
 
 // Header Styles
-$h1-fontsize: 3.0rem;
-$h2-fontsize: 2.6rem;
-$h3-fontsize: 2.2rem;
+$h1-fontsize: 2.7rem;
+$h2-fontsize: 2.4rem;
+$h3-fontsize: 2.1rem;
 $h4-fontsize: 1.8rem;
 $h5-fontsize: 1.5rem;
 $h6-fontsize: 1.2rem;
+
+// Bylines
+p.byline {
+  font-size: 75%;
+}
 
 
 // 22. Flow Text
