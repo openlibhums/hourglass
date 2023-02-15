@@ -1,0 +1,37 @@
+{% load pages %}
+
+{% if page_obj %}
+    <ul class="pagination">
+        {% if page_obj.has_previous %}
+            <li class="waves-effect">
+                <a href="?page={{ page_obj.previous_page_number }}">
+                    <i class="material-icons">chevron_left</i>
+                </a>
+            </li>
+        {% else %}
+            <li class="disabled">
+                <a>
+                    <i class="material-icons">chevron_left</i>
+                </a>
+            </li>
+        {% endif %}
+        {% for page in page_obj.paginator.page_range %}
+            <li class="waves-effect {% if page_obj.number == page %}active{% endif %}">
+                <a href="?page={{ page }}">{{ page }}</a>
+            </li>
+        {% endfor %}
+        {% if page_obj.has_next %}
+            <li class="waves-effect">
+                <a href="?page={{ page_obj.next_page_number }}">
+                    <i class="material-icons">chevron_right</i>
+                </a>
+            </li>
+        {% else %}
+            <li class="disabled">
+                <a>
+                    <i class="material-icons">chevron_right</i>
+                </a>
+            </li>
+        {% endif %}
+    </ul>
+{% endif %}
