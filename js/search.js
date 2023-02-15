@@ -1,16 +1,20 @@
 // See https://materializecss.github.io/materialize/modals.html
 
+const trigger = document.getElementById('search-trigger');
 const modal = document.getElementById('search-modal');
 const input = document.getElementById('search-input');
 const close = document.getElementById('search-close');
 const form = document.getElementById('search-form');
 const ul = document.getElementById('result-list');
 const data = ul.getAttribute('data-site-search');
+
+
 const modalOptions = {
 	opacity: .3,
 	inDuration: 100,
 	outDuration: 100,
 	onOpenEnd: event => input.focus(),
+	onCloseEnd: event => trigger.focus(),
 	startingTop: '10%',
 	endingTop: '2%',
 }
