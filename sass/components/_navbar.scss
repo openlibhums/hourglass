@@ -1,0 +1,27 @@
+nav {
+  .upper-nav {
+    line-height: 0;
+
+    div.responsive-img {
+      display: inline-block;
+      width: 60%;
+      svg,
+      img {
+        margin: 1.4rem;
+        height: 56px;
+      }
+    }
+
+    i.material-icons {
+      font-size: 40px;
+      height: 40px;
+      line-height: 40px;
+      margin: 1.4rem;
+    }
+  }
+
+  .lower-nav {
+    display: flex;
+    justify-content: center;
+  }
+}

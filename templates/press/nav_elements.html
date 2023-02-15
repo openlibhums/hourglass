@@ -1,5 +1,3 @@
-{% include 'press/nav_search.html' %}
-
 {% for item in navigation_items %}
     <li>
         {% if item.has_sub_nav %}
@@ -35,13 +33,3 @@
     </li>
 {% endif %}
 
-<li>
-    <a
-        href="#"
-        class="dropdown-trigger"
-        data-target="dropdown-{{ viewport }}-account"
-    >
-        <span class="flow-text">{% trans 'Account' %}</span>
-        <i class="material-icons right">arrow_drop_down</i>
-    </a>
-</li>

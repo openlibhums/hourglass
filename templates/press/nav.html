@@ -2,10 +2,17 @@
 {% load hooks %}
 
 
-<nav>
-    <div class="nav-wrapper">
-        <a href="{{ request.press_base_url }}" class="brand-logo">
-            <div class="responsive-img">
+<nav class="nav-extended">
+    <div class="upper-nav">
+        <a
+            href="#"
+            data-target="mobile-nav"
+            class="sidenav-trigger"
+        >
+            <i class="material-icons large">menu</i>
+        </a>
+        <div class="responsive-img">
+            <a href="{{ request.press_base_url }}">
                 {% if 'svg' in request.press_cover %}
                     {% svg request.press_cover %}
                 {% else %}
@@ -14,28 +21,38 @@
                         alt="{{ request.press.name }}"
                     >
                 {% endif %}
-            </div>
-        </a>
-        <a
-            href="#"
-            data-target="mobile-nav"
-            class="sidenav-trigger"
-        >
-            <i class="material-icons large">menu</i>
-        </a>
+            </a>
+        </div>
+        <div class="hide-on-med-and-down right">
+            {% include 'press/nav_account.html' with viewport='medium' %}
+        </div>
+        <div class="hide-on-med-and-down right">
+            <a href="#search-modal" class="modal-trigger">
+                <i class="material-icons">search</i>
+            </a>
+        </div>
+    </div>
 
+    <div class="nav-wrapper lower-nav hide-on-med-and-down">
         <!-- Large viewports: Top-level list -->
-        <ul id="large-viewport-nav" class="right hide-on-med-and-down">
-            {% include 'press/nav_elements.html' with viewport='large' %}
+        <ul>
+            {% include 'press/nav_elements.html' with viewport='medium' %}
         </ul>
     </div>
 </nav>
 
-{% include 'press/dropdown_content.html' with viewport='large' %}
-
+{% include 'press/dropdown_content.html' with viewport='medium' %}
 
 <ul id="mobile-nav" class="sidenav">
+    <li>
+        <a href="#search-modal" class="modal-trigger">
+            <i class="material-icons">search</i>
+        </a>
+    </li>
     {% include 'press/nav_elements.html' with viewport='mobile' %}
+    <li>
+        {% include 'press/nav_account.html' with viewport='mobile' %}
+    </li>
 </ul>
 
 {% include 'press/dropdown_content.html' with viewport='mobile' %}
