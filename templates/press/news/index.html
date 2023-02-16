@@ -36,7 +36,7 @@
                             <a href="{{ item.object.site_url}}">{{ item.object.name }}</a>
                         </p>
                         <h2>
-                            <a href="{% url 'core_news_item' item.pk %}">
+                            <a href="{{ item.url }}">
                                 {{ item.title }}
                             </a>
                         </h2>
