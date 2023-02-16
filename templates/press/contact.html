@@ -15,7 +15,7 @@
             </h2>
             <ul class="collection">
             {% for contact in contacts %}
-                <li class="collection-item valign-wrapper baustel olive">
+                <li class="collection-item valign-wrapper baustel light white-text">
                     <i class="material-icons left medium">person</i>
                     <div>
                         <p>{{ contact.name }}</p>
@@ -44,7 +44,10 @@
                     {{ contact_form.captcha|materializecss:'m6' }}
                 </div>
                 <div class="row">
-                    <button type="submit" class="btn btn-large">{% trans "Send Message" %}</button>
+                    <button type="submit" class="btn btn-large">
+                        <i class="material-icons left">send</i>
+                        {% trans "Send Message" %}
+                    </button>
                 </div>
             </form>
         </div>

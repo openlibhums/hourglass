@@ -18,14 +18,14 @@
             <li class="collection-item">
                 {% setting_var current_journal 'disable_journal_submission' as submission_disabled %}
                 <div class="row">
-                    <div class="col s12 m5 l4">
+                    <div class="col s12 m5 xl4">
                         <img
                             class="responsive-img"
                             src="{% if current_journal.default_cover_image %}{{ current_journal.default_cover_image.url }}{% endif %}"
                             alt="{{ current_journal.name }}"
                         >
                     </div>
-                    <div class="col s12 m7 l8">
+                    <div class="col s12 m7 xl8">
                         <h2>{{ current_journal.name }}</h2>
                         <p><span>{{ current_journal.description_for_press|safe }}</span></p>
                         {% if current_journal.is_remote %}
