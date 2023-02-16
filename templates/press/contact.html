@@ -1,0 +1,53 @@
+{% extends "core/base.html" %}
+
+{% load materializecss %}
+
+{% block title %}{% trans "Contact" %} - {{ request.press.name }}{% endblock %}
+
+{% block body %}
+    <div class="row">
+        <h1>{% trans 'Contact' %}</h1>
+    </div>
+    <div class="card baustel paper">
+        <div class="card-content">
+            <h2 class="card-title">
+                {% trans 'Press Representatives' %}
+            </h2>
+            <ul class="collection">
+            {% for contact in contacts %}
+                <li class="collection-item valign-wrapper baustel olive">
+                    <i class="material-icons left medium">person</i>
+                    <div>
+                        <p>{{ contact.name }}</p>
+                        <p class="byline">{{ contact.role }}</p>
+                    </div>
+                </li>
+            {% endfor %}
+            </ul>
+        </div>
+    </div>
+    <div class="card baustel paper">
+        <div class="card-content">
+            <div class="row">
+                <h2 class="card-title">
+                    {% trans "Compose Message" %}
+                </h2>
+            </div>
+            <form>
+                {% csrf_token %}
+                <div class="row">
+                    {% include "elements/forms/errors.html" with form=contact_form %}
+                    {{ contact_form.recipient|materializecss:'m8' }}
+                    {{ contact_form.sender|materializecss:'m8' }}
+                    {{ contact_form.subject|materializecss }}
+                    {{ contact_form.body|materializecss }}
+                    {{ contact_form.captcha|materializecss:'m6' }}
+                </div>
+                <div class="row">
+                    <button type="submit" class="btn btn-large">{% trans "Send Message" %}</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+{% endblock %}
