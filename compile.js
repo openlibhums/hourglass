@@ -1,4 +1,5 @@
-// This little file has to exist so that we can avoid installing
+// This little file has to exist independently of build_assets.py
+// so that we can avoid installing
 // Dart Sass globally on servers, while also avoiding committing
 // compiled CSS to Git.
 // See https://sass-lang.com/documentation/js-api
