@@ -65,6 +65,8 @@ def build():
     print('\n')
     print(f"Building theme: {THEME_NAME}")
 
+    if not os.path.exists(ASSETS_PATH):
+        os.makedirs(ASSETS_PATH)
     install_theme_dependencies()
     compile_sass()
     collect_assets()
