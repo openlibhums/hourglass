@@ -1,50 +1,49 @@
 # Path Subtheme for Janeway
 
-## How this repository is structured
+This is a testing repository for a press subtheme based on Materialize using the Material theme as a backup. Everything about this repository is provisional, which is why it is private and sans license.
 
-Janeway subtheme architecture is laid out in [the Janeway documentation](https://janeway.readthedocs.io/en/latest/configuration.html#theming), and involves a `build_assets.py` that is run when the Django `manage.py` command `build_assets` is run. This subtheme conforms to that expectation, but not for the compiling of the SASS code into CSS.
-
-For compiling, we have to use Node and npm so that we can use [`sass`](https://www.npmjs.com/package/sass). As of January 2023 there is no Python SASS library (!) that supports the latest SASS syntax, such as `@use`. The Python library [`libsass`](https://pypi.org/project/libsass/) is based on a [now-deprecated C/C++ compiler](https://github.com/sass/libsass). And the three other Python SASS compilers are more oudated than `libsass`.
-
-Using Node does give us some advantages. It allows us to track `materialize`, which we would otherwise have to include as a git-submodule because there is no up-to-date Python wrapper for it either, that we know about.
-
-At the moment, only CSS is compiled; Materialize JavaScript, Materialize Icons, and jQuery are loaded via CDNs.
-
+I imagine rebuilding the repo once we have agreed on an architecture.
 
 ## Installation
 
-1. Install [Node.js v16.x or later](https://www.digitalocean.com/community/tutorials/how-to-install-node-js-on-ubuntu-20-04) and npm[0]
+1. Clone this subtheme in `src/themes` with `git clone git@github.com:BirkbeckCTP/path-subtheme.git src/themes`
 
-2. Install `sass` globally so that you can access `sass` from the command line.
-```
-sudo npm i -g sass
-```
-3. Clone and install this subtheme
-    ```shell
-    git clone https://github.com/BirkbeckCTP/path
-    cd path
-    npm install
-    ```
+2. Build assets with `python src/manage.py build_assets`.
 
-## Making changes
+## Development
 
+### CSS
 Make changes to `.scss` files in the `sass` subfolder. Any variables or rules declared in these files will overwtie matching rules in Materialize CSS, on which the theme is based.
 
 New files and folders should mirror the names of the file structure in `node_modules/@materializecss/materialize/sass/` with partial files for compoments.
 
-Run this command to auto-compile the minified CSS as you make and save changes.
-```
-sass --watch sass/path.scss:assets/path.min.css --style compressed
-```
+Rerun `python src/manage.py build_assets` from the janeway repo root to build and copy the SCSS, and the changes should appear.
 
-Rerun `python src/manage.py build_assets` from the janeway repo root to copy the minified CSS to Janeway static files.
+### JS
+Modify the files in `js` and rerun `build_assets`.
 
-See the changes live.
+New files need to be added to `OTHER_SOURCE_FILES` in `build_assets.py`.
 
-We commit both source SASS and the compiled minified CSS in this repository, so that from the Janeway architecture perspective, all you have to do is run `python src/manage.py build_assets`. You should not have to install `sass` or `Node` or `npm` on production servers.
+## Engineering
 
-## Customization
+Janeway subtheme architecture is laid out in [the Janeway documentation](https://janeway.readthedocs.io/en/latest/configuration.html#theming), and involves a `build_assets.py` file that is run when the Django `manage.py` command `build_assets` is run. This subtheme conforms to that expectation, but only by introducing [`nodejs-bin`](https://pypi.org/project/nodejs-bin/) as a Python dependency.
 
-If you have the [Custom Styling Plugin](https://github.com/BirkbeckCTP/customstyling) installed in your Janeway instance, you can add CSS code to override the default colors and fonts.
+We have to use Node and npm so that we can compile SCSS with [`sass`](https://www.npmjs.com/package/sass), a.k.a. “Dart Sass”. As of January 2023 there is no Python SASS library (!) that supports the latest SASS syntax, such as `@use`. The Python library [`libsass`](https://pypi.org/project/libsass/) is based on a [now-deprecated C/C++ compiler](https://github.com/sass/libsass). And the three other Python SASS compilers are more oudated than `libsass`.
 
-What color values should you use? See the [Materialize color palette](https://materializecss.github.io/materialize/color.html#palette) for ideas.
+Using Node also allows following a few other best practices. It allows us to track the maintained version of [`materialize`](https://www.npmjs.com/package/@materializecss/materialize) with npm, which we would otherwise have to include as a git-submodule because there is no up-to-date Python wrapper for it either, that we know about.
+
+With these functional requirements, the `build_assets.py` script does these things:
+
+1. Installs the subtheme as a Node package, checking `package.json` to update dependencies in `node_modules`.
+2. Uses [`nodejs-bin`](https://pypi.org/project/nodejs-bin/) to run `compile.js`, which uses `sass` to build the subtheme CSS and CSS source map files and put them in `assets`.
+3. Copies custom JavaScript from `js` to `assets`.
+4. Copies everything to `assets` into a theme folder in `static`.
+5. Calls `collect_static`.
+
+While this configuration is the best option of the ones I've considered, I don't like that build_assets results in an installation script being run. I considered altering the `build_assets` Django command but could not pass options or args to this subtheme without breaking other implementations of `build_assets.build()`. Maybe we could separate the installation part with a separate Django command.
+
+### Alternatives considered
+
+1. Make [`nodejs-bin`](https://pypi.org/project/nodejs-bin/) a dependency of this repository, with its own requirements.txt. Decided against this because it would mean you'd have to install requirements separately for the subtheme. Also, if we do use more JavaScript for frontend development, we will likely want a way to run it with Python, so adding Node as a dependency seems like a solid choice.
+2. Use the Dart Sass command line utility, which must be globally installed, to compile CSS into assets, but commit the compiled code so that servers don't have to run `sass` or Node. Decided against this because we do not want to commit code from dependencies.
+3. Use [`nodeenv`](https://pypi.org/project/nodeenv/), which would allow the "global" installation of Dart Sass and potentially avoid the `nodejs-bin` dependency, but add more virtual environment spaghetti.
