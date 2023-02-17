@@ -13,7 +13,7 @@ I imagine rebuilding the repo once we have agreed on an architecture.
 ## Development
 
 ### CSS
-Make changes to `.scss` files in the `sass` subfolder. Any variables or rules declared in these files will overwtie matching rules in Materialize CSS, on which the theme is based.
+Make changes to `.scss` files in the `sass` subfolder. Any variables or rules declared in these files will overwrite matching rules in Materialize CSS, on which the theme is based.
 
 New files and folders should mirror the names of the file structure in `node_modules/@materializecss/materialize/sass/` with partial files for compoments.
 
