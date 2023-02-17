@@ -16,20 +16,3 @@
         {% endif %}
     </li>
 {% endfor %}
-
-{% if request.press.publishes_journals and not request.press.disable_journals %}
-    <li>
-        <a href="{% url 'press_journals' %}">
-            <span class="flow-text">{% trans 'Journals' %}</span>
-        </a>
-    </li>
-{% endif %}
-
-{% if request.press.publishes_conferences %}
-    <li>
-        <a href="{% url 'press_conferences' %}">
-            <span class="flow-text">{% trans 'Conferences' %}</span>
-        </a>
-    </li>
-{% endif %}
-
