@@ -1,5 +1,3 @@
 /node_modules/
 __pycache__
 /assets/*
-!/assets/path.min.css
-!/assets/path.min.css.map
