@@ -10,12 +10,24 @@
         <div class="col s12 m5 l4">
             <h1>News</h1>
             {% if tag %}
-                <p>{% trans "Filtered by" %}</p>
-                <div class="chip black-text">{{ tag }}
+                <p>Filtered by:</p>
+                <div class="chip active-filter black-text ">
+                    {{ tag.text }}
+                    ({{ tag.tags.count }})
                     <a href="{% url 'core_news_list_presswide' presswide='all' %}">
                         <i class="close material-icons">close</i>
                     </a>
                 </div>
+            {% else %}
+                <p>Filter by tag:</p>
+                {% for tag_obj in all_tags %}
+                    <a href="{% url 'core_news_list_tag' tag_obj.text %}">
+                        <span class="chip black-text">
+                            {{ tag_obj.text }}
+                            ({{ tag_obj.tags.count }})
+                        </span>
+                    </a>
+                {% endfor %}
             {% endif %}
         </div>
     </div>
