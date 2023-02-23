@@ -17,8 +17,8 @@ ASSETS_PATH = os.path.join(THEME_PATH, 'assets')
 
 OTHER_SOURCE_PATHS = [
     os.path.join(THEME_PATH, 'node_modules', 'lunr', 'lunr.min.js'),
-    os.path.join(THEME_PATH, 'js', 'search.js'),
-    os.path.join(THEME_PATH, 'js', 'dropdown.js'),
+    os.path.join(THEME_PATH, 'js'),
+    os.path.join(THEME_PATH, 'fonts'),
 ]
 
 JANEWAY_STATIC_PATH = os.path.join(settings.BASE_DIR, 'static', THEME_NAME)
@@ -51,7 +51,10 @@ def collect_assets():
 
     for path in OTHER_SOURCE_PATHS:
         print(path)
-        shutil.copy(path, ASSETS_PATH)
+        if os.path.isdir(path):
+            shutil.copytree(path, ASSETS_PATH, dirs_exist_ok=True)
+        else:
+            shutil.copy(path, ASSETS_PATH)
 
 
 def copy_assets_to_static():
