@@ -37,16 +37,12 @@
                 {% csrf_token %}
                 <div class="row">
                     {% include "elements/forms/errors.html" with form=contact_form %}
-                    {{ contact_form.recipient|materializecss:'m8' }}
-                    {{ contact_form.sender|materializecss:'m8' }}
-                    {{ contact_form.subject|materializecss }}
-                    {{ contact_form.body|materializecss }}
-                    {{ contact_form.captcha|materializecss:'m6' }}
+                    {{ contact_form|materializecss }}
                 </div>
                 <div class="row">
                     <button type="submit" class="btn btn-large">
-                        <i class="material-icons left">send</i>
                         {% trans "Send Message" %}
+                        <i class="material-icons right">send</i>
                     </button>
                 </div>
             </form>
