@@ -13,12 +13,10 @@
                 <p class="byline">
                     {{ news_item.byline }} {% trans "on" %} {{ news_item.posted|date:"Y-m-d" }}
                 </p>
-                {% if news_item.large_image_file %}
-                    <img
-                        class="responsive-img"
-                        src="{{ news_item.best_image_url }}"
-                    >
-                {% endif %}
+                <img
+                    class="responsive-img"
+                    src="{{ news_item.best_image_url }}"
+                >
             </div>
         </header>
         <main class="row">

@@ -40,19 +40,14 @@
             {% endif %}
         </div>
     </div>
-    <ul class="collection">
+    <div class="row flex">
         {% for item in news_items %}
-            <li class="collection-item">
-                <div class="row">
-                    <div class="col s12 m5 l4">
-                        {% if item.large_image_file %}
-                            <img
-                                class="responsive-img"
-                                src="{{ item.best_image_url }}"
-                            >
-                        {% endif %}
+            <div class="col s12 m6 xl4">
+                <div class="card">
+                    <div class="card-image">
+                        <img src="{{ item.best_image_url }}">
                     </div>
-                    <div class="col s12 m7 l8">
+                    <div class="card-content">
                         {% if item.pinned %}
                             <div
                                 aria-label="pinned"
@@ -60,7 +55,9 @@
                             >push_pin</div>
                         {% endif %}
                         <p class="label">
-                            <a href="{{ item.object.site_url}}">{{ item.object.name }}</a>
+                            <a href="{{ item.object.site_url}}">
+                                {{ item.object.name }}
+                            </a>
                         </p>
                         <div>
                             <h2>
@@ -70,9 +67,11 @@
                             </h2>
                         </div>
                         <p class="byline">
-                            {{ item.byline }} {% trans "on" %} {{ item.posted|date:"Y-m-d" }}
+                            {{ item.byline }}
+                            {% trans "on" %}
+                            {{ item.posted|date:"Y-m-d" }}
                         </p>
-                        <p>{{ item.body|striptags|truncatesmart:400 }}</p>
+                        <p>{{ item.body|striptags|truncatesmart:100 }}</p>
                         <div>
                             {% for item_tag in item.tags.all %}
                                 <a href="{% url 'core_news_list_tag' item_tag.text %}">
@@ -84,10 +83,8 @@
                         </div>
                     </div>
                 </div>
-            </li>
-        {% empty %}
-            <li class="collection-item"><p>{% trans "No items to display" %}</p></li>
+            </div>
         {% endfor %}
-    </ul>
+    </div>
     {% include 'core/elements/pagination.html' with page_obj=news_items %}
 {% endblock body %}

@@ -1,0 +1,8 @@
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+  .col {
+    float: unset;
+    margin-left: unset !important;
+  }
+}
