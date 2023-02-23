@@ -44,25 +44,33 @@
                         {% endif %}
                     </div>
                     <div class="col s12 m7 l8">
+                        {% if item.pinned %}
+                            <div
+                                aria-label="pinned"
+                                class="right material-icons"
+                            >push_pin</div>
+                        {% endif %}
                         <p class="label">
                             <a href="{{ item.object.site_url}}">{{ item.object.name }}</a>
                         </p>
-                        <h2>
-                            <a href="{{ item.url }}">
-                                {{ item.title }}
-                            </a>
-                        </h2>
+                        <div>
+                            <h2>
+                                <a href="{{ item.url }}">
+                                    {{ item.title }}
+                                </a>
+                            </h2>
+                        </div>
                         <p class="byline">
                             {{ item.byline }} {% trans "on" %} {{ item.posted|date:"Y-m-d" }}
                         </p>
                         <p>{{ item.body|striptags|truncatesmart:400 }}</p>
                         <div>
                             {% for item_tag in item.tags.all %}
-                            <a href="{% url 'core_news_list_tag' item_tag.text %}">
-                                <span class="chip black-text">
-                                    {{ item_tag.text }}
-                                </span>
-                            </a>
+                                <a href="{% url 'core_news_list_tag' item_tag.text %}">
+                                    <span class="chip black-text">
+                                        {{ item_tag.text }}
+                                    </span>
+                                </a>
                             {% endfor %}
                         </div>
                     </div>
