@@ -7,7 +7,7 @@
 
 {% block body %}
     <div class="row">
-        <div class="col s12 m5 l4">
+        <div class="col s12">
             <h1>News</h1>
             {% if tag %}
                 <p>Filtered by:</p>
@@ -20,14 +20,23 @@
                 </div>
             {% else %}
                 <p>Filter by tag:</p>
-                {% for tag_obj in all_tags %}
-                    <a href="{% url 'core_news_list_tag' tag_obj.text %}">
+                {% for tag_obj in all_tags|slice:":15" %}
+                    <a
+                        href="{% url 'core_news_list_tag' tag_obj.text %}"
+                    >
                         <span class="chip black-text">
                             {{ tag_obj.text }}
                             ({{ tag_obj.tags.count }})
                         </span>
                     </a>
                 {% endfor %}
+                {% if all_tags.count > 15 %}
+                    <a>
+                        <span class="chip black-text">
+                            ...
+                        </span>
+                    </a>
+                {% endif %}
             {% endif %}
         </div>
     </div>
