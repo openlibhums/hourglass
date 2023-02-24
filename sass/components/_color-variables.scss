@@ -18,7 +18,7 @@ $baustel: (
   "light":    rgb(96,  123, 164),
   "olive":    rgb(204, 213, 152),
   "brick":    rgb(248, 152, 150),
-  "sky":      rgb(204, 232, 242),
+  "sky":      rgb(221, 231, 237),
   "dijon":    rgb(241, 223, 149),
   "grey":     rgb(195, 194, 184),
   "paper":    rgb(230, 229, 224),
@@ -51,3 +51,4 @@ $secondary-color: color("baustel", "clay");
 $link-color: darken($secondary-color, 20%);
 $card-link-color: $link-color;
 $chip-selected-color: color("baustel", "dijon");
+$callout-bg-color: color("baustel", "sky");

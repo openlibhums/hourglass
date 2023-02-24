@@ -1,0 +1,42 @@
+.callout {
+	background-color: $callout-bg-color;
+  padding: $card-padding;
+  margin: $element-top-margin 0 $element-bottom-margin 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	.callout-img img {
+    display: block;
+    border-radius: 2px 2px 0 0;
+    position: relative;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+	}
+	.callout-text {
+		p, span, h1, h2, h3, h4 {
+			font-size: 1.3rem;
+			font-family: "Trueno Bold";
+			margin: 0;
+		}
+	}
+
+	border-radius: 0px 20px 0px 0px;
+
+	/* Angled bottom left corner */
+	position: relative;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	$cathetus: 15px;
+	clip-path: polygon(
+		0% 0%,
+    100% 0%,
+    100% 100%,
+		$cathetus 100%,
+    0% calc(100% - $cathetus),
+    0% 0%
+	);
+}
