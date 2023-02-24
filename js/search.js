@@ -125,27 +125,37 @@ function getPositionsByField(result){
 
 
 function makeResultListItem(doc, ref, positions) {
-	let h5 = document.createElement('h5');
-  h5.innerHTML = highlightFieldText(doc, 'name', positions);
-	let people = document.createElement('p');
-	people.innerHTML = highlightFieldText(doc, 'people', positions);
-	people.className = 'black-text byline';
-	let p = document.createElement('p');
-  p.innerHTML = highlightFieldText(doc, 'text', positions);
-  p.className = 'black-text';
-	let tags = document.createElement('span');
-  tags.innerHTML = highlightFieldText(doc, 'tags', positions);
-  tags.className = 'black-text';
+	let li = document.createElement('li');
+	li.className = 'collection-item';
+
 	let a = document.createElement('a');
 	a.href = ref;
+	let h5 = document.createElement('h5');
+	h5.innerHTML = highlightFieldText(doc, 'name', positions);
 	a.appendChild(h5);
-	let li = document.createElement('li');
-  li.className = 'collection-item';
-  li.appendChild(a);
-	li.appendChild(people);
-  li.appendChild(p);
-	li.appendChild(tags);
-  return li;
+	li.appendChild(a);
+
+	if ('text' in doc) {
+		let people = document.createElement('p');
+		people.innerHTML = highlightFieldText(doc, 'people', positions);
+		people.className = 'black-text byline';
+		li.appendChild(people);
+	}
+	if ('people' in doc) {
+		let p = document.createElement('p');
+		p.innerHTML = highlightFieldText(doc, 'text', positions);
+		p.className = 'black-text';
+		li.appendChild(p);
+	}
+
+	if ('tags' in doc) {
+		let tags = document.createElement('span');
+		tags.innerHTML = highlightFieldText(doc, 'tags', positions);
+		tags.className = 'black-text';
+		li.appendChild(tags);
+	}
+
+	return li;
 }
 
 
