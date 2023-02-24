@@ -12,25 +12,21 @@
             >
                 <i class="material-icons large">menu</i>
             </a>
-            <div class="responsive-img">
-                <a href="{{ request.press_base_url }}">
-                    {% if 'svg' in request.press_cover %}
-                        {% svg request.press_cover %}
-                    {% else %}
-                        <img
-                            src="{% url 'press_cover_download' %}"
-                            alt="{{ request.press.name }}"
-                        >
-                    {% endif %}
-                </a>
-            </div>
-            <div class="hide-on-med-and-down right">
-                {% include 'press/nav_account.html' with viewport='medium' %}
-            </div>
-            <div class="hide-on-med-and-down right">
+            <a href="{{ request.press_base_url }}">
+                {% if 'svg' in request.press_cover %}
+                    {% svg request.press_cover %}
+                {% else %}
+                    <img
+                        src="{% url 'press_cover_download' %}"
+                        alt="{{ request.press.name }}"
+                    >
+                {% endif %}
+            </a>
+            <div class="hide-on-med-and-down top-right-icons">
                 <a id="search-trigger" href="#search-modal" class="modal-trigger">
                     <i class="material-icons">search</i>
                 </a>
+                {% include 'press/nav_account.html' with viewport='medium' %}
             </div>
         </div>
     

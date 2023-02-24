@@ -19,3 +19,9 @@
 img.responsive-img {
 	width: 100%;
 }
+
+@media #{$small-and-down} {
+  .container {
+    width: 97%;
+  }
+}

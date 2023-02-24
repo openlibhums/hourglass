@@ -1,22 +1,30 @@
 nav {
   .upper-nav {
-    line-height: 0;
+    display: flex;
+    align-items: start;
 
-    div.responsive-img {
-      display: inline-block;
-      width: 60%;
-      svg,
-      img {
-        margin: 1.4rem;
-        height: 56px;
+    svg,
+    img {
+      display: block;
+      width: 100%;
+      margin: .5rem 0;
+      max-height: calc($navbar-height-mobile - .5rem);
+      @media #{$large-and-up} {
+        margin: 1.5rem 0;
+        max-height: 76px;
       }
     }
 
-    i.material-icons {
-      font-size: 40px;
-      height: 40px;
-      line-height: 40px;
-      margin: 1.4rem;
+    .top-right-icons {
+      margin-left: auto;
+      display: flex;
+      i.material-icons {
+        font-size: 40px;
+        height: 40px;
+        line-height: 40px;
+        margin-top: 1.5rem;
+        margin-left: 1rem;
+      }
     }
   }
 
