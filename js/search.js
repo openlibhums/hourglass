@@ -48,6 +48,7 @@ async function makeSearchIndex() {
 	const searchIndex = lunr(function () {
 		this.ref('url');
 		this.field('name');
+		this.field('people');
 		this.field('text');
 		this.metadataWhitelist = ['position'];
 		for (let key in documents) {
@@ -125,6 +126,9 @@ function getPositionsByField(result){
 function makeResultListItem(doc, ref, positions) {
 	let h5 = document.createElement('h5');
   h5.innerHTML = highlightFieldText(doc, 'name', positions);
+	let people = document.createElement('p');
+	people.innerHTML = highlightFieldText(doc, 'people', positions);
+	people.className = 'black-text byline';
 	let p = document.createElement('p');
   p.innerHTML = highlightFieldText(doc, 'text', positions);
   p.className = 'black-text';
@@ -134,6 +138,7 @@ function makeResultListItem(doc, ref, positions) {
 	let li = document.createElement('li');
   li.className = 'collection-item';
   li.appendChild(a);
+	li.appendChild(people);
   li.appendChild(p);
   return li;
 }
