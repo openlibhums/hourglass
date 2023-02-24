@@ -50,6 +50,7 @@ async function makeSearchIndex() {
 		this.field('name');
 		this.field('people');
 		this.field('text');
+		this.field('tags');
 		this.metadataWhitelist = ['position'];
 		for (let key in documents) {
 			this.add(documents[key]);
@@ -132,6 +133,9 @@ function makeResultListItem(doc, ref, positions) {
 	let p = document.createElement('p');
   p.innerHTML = highlightFieldText(doc, 'text', positions);
   p.className = 'black-text';
+	let tags = document.createElement('span');
+  tags.innerHTML = highlightFieldText(doc, 'tags', positions);
+  tags.className = 'black-text';
 	let a = document.createElement('a');
 	a.href = ref;
 	a.appendChild(h5);
@@ -140,6 +144,7 @@ function makeResultListItem(doc, ref, positions) {
   li.appendChild(a);
 	li.appendChild(people);
   li.appendChild(p);
+	li.appendChild(tags);
   return li;
 }
 
