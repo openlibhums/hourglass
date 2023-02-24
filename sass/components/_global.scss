@@ -4,5 +4,8 @@
   .col {
     float: unset;
     margin-left: unset !important;
+    .card {
+      height: calc(100% - 1.5rem)
+    }
   }
 }
