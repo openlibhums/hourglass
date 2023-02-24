@@ -130,9 +130,9 @@ function makeResultListItem(doc, ref, positions) {
 
 	let a = document.createElement('a');
 	a.href = ref;
-	let h5 = document.createElement('h5');
-	h5.innerHTML = highlightFieldText(doc, 'name', positions);
-	a.appendChild(h5);
+	let h3 = document.createElement('h3');
+	h3.innerHTML = highlightFieldText(doc, 'name', positions);
+	a.appendChild(h3);
 	li.appendChild(a);
 
 	if ('text' in doc) {
