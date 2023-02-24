@@ -1,3 +1,8 @@
+.container h1,
+.container article{
+	max-width: 768px;
+}
+
 .flex {
   display: flex;
   flex-wrap: wrap;
