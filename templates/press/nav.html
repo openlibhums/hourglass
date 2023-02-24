@@ -3,41 +3,43 @@
 
 
 <nav class="nav-extended">
-    <div class="upper-nav">
-        <a
-            href="#"
-            data-target="mobile-nav"
-            class="sidenav-trigger"
-        >
-            <i class="material-icons large">menu</i>
-        </a>
-        <div class="responsive-img">
-            <a href="{{ request.press_base_url }}">
-                {% if 'svg' in request.press_cover %}
-                    {% svg request.press_cover %}
-                {% else %}
-                    <img
-                        src="{% url 'press_cover_download' %}"
-                        alt="{{ request.press.name }}"
-                    >
-                {% endif %}
+    <div class="container">
+        <div class="upper-nav">
+            <a
+                href="#"
+                data-target="mobile-nav"
+                class="sidenav-trigger"
+            >
+                <i class="material-icons large">menu</i>
             </a>
+            <div class="responsive-img">
+                <a href="{{ request.press_base_url }}">
+                    {% if 'svg' in request.press_cover %}
+                        {% svg request.press_cover %}
+                    {% else %}
+                        <img
+                            src="{% url 'press_cover_download' %}"
+                            alt="{{ request.press.name }}"
+                        >
+                    {% endif %}
+                </a>
+            </div>
+            <div class="hide-on-med-and-down right">
+                {% include 'press/nav_account.html' with viewport='medium' %}
+            </div>
+            <div class="hide-on-med-and-down right">
+                <a id="search-trigger" href="#search-modal" class="modal-trigger">
+                    <i class="material-icons">search</i>
+                </a>
+            </div>
         </div>
-        <div class="hide-on-med-and-down right">
-            {% include 'press/nav_account.html' with viewport='medium' %}
+    
+        <div class="nav-wrapper lower-nav hide-on-med-and-down">
+            <!-- Large viewports: Top-level list -->
+            <ul>
+                {% include 'press/nav_elements.html' with viewport='medium' %}
+            </ul>
         </div>
-        <div class="hide-on-med-and-down right">
-            <a id="search-trigger" href="#search-modal" class="modal-trigger">
-                <i class="material-icons">search</i>
-            </a>
-        </div>
-    </div>
-
-    <div class="nav-wrapper lower-nav hide-on-med-and-down">
-        <!-- Large viewports: Top-level list -->
-        <ul>
-            {% include 'press/nav_elements.html' with viewport='medium' %}
-        </ul>
     </div>
 </nav>
 
