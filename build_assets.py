@@ -1,5 +1,4 @@
 import os
-import sys
 import shutil
 from nodejs import node, npm
 
@@ -34,7 +33,7 @@ def install_theme_dependencies():
     python_dir = os.getcwd()
     os.chdir(THEME_PATH)
     print(f"Installing as Node.js module: {THEME_PATH}")
-    npm.run(['install'], check=True)
+    npm.run(['install', '--omit=dev'], check=True)
     os.chdir(python_dir)
 
 
@@ -70,6 +69,8 @@ def build():
 
     if not os.path.exists(ASSETS_PATH):
         os.makedirs(ASSETS_PATH)
+    # You can comment out the following line in development
+    # if rebuilding assets frequently
     install_theme_dependencies()
     compile_sass()
     collect_assets()

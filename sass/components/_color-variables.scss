@@ -1,5 +1,5 @@
 @use "sass:map";
-
+@use "sass:color";
 
 // Create a color variable set
 $bau: (
@@ -12,16 +12,17 @@ $bau: (
   "paper":    #F2DCC9,
 );
 
+// Second color set
 $baustel: (
-  "base":     rgb(33,  84,  131),
-  "clay":     rgb(168, 124, 132),
-  "light":    rgb(96,  123, 164),
-  "olive":    rgb(204, 213, 152),
-  "brick":    rgb(248, 152, 150),
-  "sky":      rgb(221, 231, 237),
-  "dijon":    rgb(241, 223, 149),
-  "grey":     rgb(195, 194, 184),
-  "paper":    rgb(230, 229, 224),
+  "base":     #215483,
+  "clay":     #A87C84,
+  "light":    #607BA4,
+  "olive":    #CCD598,
+  "brick":    #F89896,
+  "sky":      #DDE7ED,
+  "dijon":    #F1DF95,
+  "grey":     #C3C2B8,
+  "paper":    #E6E5E0,
 );
 
 // ORCID
@@ -29,12 +30,14 @@ $orcid: (
   "base":     #A2CB46,
 );
 
+// Concatenate custom colors
 $custom-colors: (
   "bau": $bau,
   "baustel": $baustel,
   "orcid": $orcid,
 );
 
+// Add to colors
 $colors: map.merge($colors, $custom-colors);
 
 
@@ -45,10 +48,9 @@ $colors: map.merge($colors, $custom-colors);
 
 $primary-color: color("baustel", "base");
 $primary-color-light: color("baustel", "light");
-// $primary-color-light: lighten($primary-color, 15%);
-$primary-color-dark: darken($primary-color, 15%);
+$primary-color-dark: color.adjust($primary-color, $lightness: -15%);
 $secondary-color: color("baustel", "clay");
-$link-color: darken($secondary-color, 20%);
+$link-color: color.adjust($secondary-color, $lightness: -20%);
 $card-link-color: $link-color;
 $chip-selected-color: color("baustel", "dijon");
 $callout-bg-color: color("baustel", "sky");

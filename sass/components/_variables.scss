@@ -6,28 +6,29 @@
 
 // Fonts
 @font-face {
-  font-family: 'Bungee';
+  font-family: Bungee;
   font-display: swap;
-  src: url(bungee/Bungee-Regular.ttf) format('woff2');
+  src: url('bungee/Bungee-Regular.ttf') format('woff2');
 }
 
 @font-face {
   font-family: 'Trueno Bold';
   font-display: swap;
-  src: url(trueno/TruenoBold-XYE2.otf) format('woff2');
+  src: url('trueno/TruenoBold-XYE2.otf') format('woff2');
 }
 
 @font-face {
   font-family: 'Trueno Light';
   font-display: swap;
-  src: url(trueno/TruenoLight-E2pg.otf) format('woff2');
+  src: url("trueno/TruenoLight-E2pg.otf") format('woff2');
 }
 
 $font-stack: 'Trueno Light', sans-serif;
 
 h1 {
-  font-family: 'Bungee', 'Trueno Bold', sans-serif;
+  font-family: Bungee, 'Trueno Bold', sans-serif;
 }
+
 h2,
 h3 {
   font-family: 'Trueno Bold', sans-serif;
@@ -57,6 +58,6 @@ p.label {
 // 22. Flow Text
 // ==========================================================================
 
-$range : $medium-screen - $small-screen;
+$range: $medium-screen - $small-screen;
 $intervals: 10;
 $interval-size: math.div($range, $intervals);

@@ -1,9 +1,11 @@
 .flex {
   display: flex;
   flex-wrap: wrap;
+
   .col {
     float: unset;
     margin-left: unset !important;
+
     .card {
       height: calc(100% - 1.5rem)
     }
@@ -11,17 +13,39 @@
 }
 
 .prose {
-	max-width: 640px;
-	margin-right: auto;
-	margin-left: auto;
+  max-width: 640px;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 img.responsive-img {
-	width: 100%;
+  width: 100%;
 }
 
 @media #{$small-and-down} {
   .container {
     width: 97%;
+  }
+}
+
+@media #{$small-and-down} {
+  .container:has(.decant) {
+    width: 97%;
+  }
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 1280px;
+  width: 90%;
+}
+@media #{$medium-and-up} {
+  .container {
+    width: 85%;
+  }
+}
+@media #{$large-and-up} {
+  .container {
+    width: 70%;
   }
 }
