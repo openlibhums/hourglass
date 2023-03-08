@@ -1,13 +1,14 @@
 .timeline {
 
-  section {
-    padding: 100px 0;
+  .timeline-section {
+    padding-top: 25px;
+
+    @media #{$medium-and-up} {
+      padding: 100px 0;
+    }
 
     margin-bottom: 0;
     position: relative;
-  }
-
-  .timeline-section {
     justify-content: space-between;
 
     &:nth-of-type(even) {
@@ -29,7 +30,7 @@
         line-height: 50px;
       }
 
-      // Line beneath year
+      // Line left-to-right
       &:after {
         display: block;
         position: relative;
@@ -38,6 +39,9 @@
         width: 100%;
         height: calc(100% - 200px);
         background: black;
+        @media #{$small-and-down} {
+          height: 100px;
+        }
         transform: translate(30%);
         clip-path: polygon(
         calc(50% - 3px) 0,
@@ -48,17 +52,7 @@
       }
     }
 
-    &:nth-of-type(even) .timeline-graphic:after {
-      transform: translate(-30%);
-      clip-path: polygon(
-      calc(50% + 3px) 0,
-      calc(50% - 3px) 0,
-      calc(100% - 6px) 95%,
-      100% 95%,
-      );
-
-    }
-
+    // Triangle left-to-right
     &:after {
       display: block;
       position: relative;
@@ -74,12 +68,28 @@
       );
     }
 
-    &:nth-of-type(even):after {
-      clip-path: polygon(
-      100% 0,
-      0 100px,
-      100% 100px,
-      );
+    &:nth-of-type(even) {
+
+      // Line right-to-left 
+      .timeline-graphic:after {
+        transform: translate(-30%);
+        clip-path: polygon(
+        calc(50% + 3px) 0,
+        calc(50% - 3px) 0,
+        calc(100% - 6px) 95%,
+        100% 95%,
+        );
+
+      }
+
+      // Triangle right-to-left
+      &:after {
+        clip-path: polygon(
+        100% 0,
+        0 100px,
+        100% 100px,
+        );
+      }
     }
   }
 }
