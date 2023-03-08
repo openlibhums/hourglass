@@ -4,6 +4,16 @@
 
 {% block title %}{{ news_item.title }} - {{ request.press.name }}{% endblock %}
 
+{% block head %}
+    <meta name="description" content="{{ news_item.body|striptags|truncatewords:30 }}">
+    {% if news_item.large_image_file %}
+        <meta property="og:image" content="{% site_url 'news_file_download' 'id' news_item.pk news_item.large_image_file.pk %}" alt="">
+        <meta name="twitter:image" content="{% site_url 'news_file_download' 'id' news_item.pk news_item.large_image_file.pk %}" alt="">
+    {% else %}
+        <meta property="og:image" content="{% site_url 'press_cover_download' %}" alt="">
+        <meta name="twitter:image" content="{% site_url 'press_cover_download' %}" alt="">
+    {% endif %}
+{% endblock head %}
 
 {% block body %}
     <article>

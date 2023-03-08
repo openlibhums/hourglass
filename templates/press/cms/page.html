@@ -1,8 +1,16 @@
 {% extends "core/base.html" %}
 
 {% block title %}
-    {{ page.display_name }} - {{ request.press.name }}
+    {{ page.display_name|truncatewords_html:5 }} - {{ request.press.name }}
 {% endblock title %}
+
+{% block head %}
+    <meta name="description" content="{{ page.content|striptags|truncatewords:30 }}">
+    {% if request.press.thumbnail_image %}
+        <meta property="og:image" content="{% site_url 'press_cover_download' %}" alt="">
+        <meta name="twitter:image" content="{% site_url 'press_cover_download' %}" alt="">
+    {% endif %}
+{% endblock head %}
 
 {% block body %}
     {{ page.content|safe }}

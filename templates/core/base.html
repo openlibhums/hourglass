@@ -1,7 +1,8 @@
 {% load static %}
+{% get_current_language as current_language %}
 
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="{{ current_language }}">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,7 +13,18 @@
             href="https://fonts.googleapis.com/icon?family=Material+Icons"
             rel="stylesheet"
         >
-        {% include 'press/head.html' %}
+        {% if request.press.favicon %}
+            <link rel="icon" href="{{ press.favicon.url }}" type="image/x-icon">
+        {% endif %}
+        {% block head %}
+            {% if request.press.description %}
+                <meta name="description" content="{{ press.description }}">
+            {% endif %}
+            {% if request.press.thumbnail_image %}
+                <meta property="og:image" content="{% site_url 'press_cover_download' %}" alt="">
+                <meta name="twitter:image" content="{% site_url 'press_cover_download' %}" alt="">
+            {% endif %}
+        {% endblock head %}
     </head>
     <body>
         <header>
