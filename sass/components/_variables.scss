@@ -18,29 +18,49 @@
 }
 
 @font-face {
+  font-family: 'Trueno Regular';
+  font-display: swap;
+  src: url('trueno/Trueno-wml2.otf') format('woff2');
+}
+
+@font-face {
   font-family: 'Trueno Light';
   font-display: swap;
   src: url("trueno/TruenoLight-E2pg.otf") format('woff2');
 }
 
-$font-stack: 'Trueno Light', sans-serif;
-
-h1 {
-  font-family: Bungee, 'Trueno Bold', sans-serif;
+h1,
+h2 {
+  font-family: 'Trueno Bold', sans-serif;
+  padding-top: 1.5rem;
 }
 
-h2,
-h3 {
-  font-family: 'Trueno Bold', sans-serif;
+h3,
+h4,
+h5,
+h6,
+nav {
+  font-family: 'Trueno Regular', sans-serif;
 }
 
 // Header Styles
-$h1-fontsize: 2.7rem;
-$h2-fontsize: 2.4rem;
-$h3-fontsize: 2.1rem;
+$h1-fontsize: 3rem;
+$h2-fontsize: 2.6rem;
+$h3-fontsize: 2.2rem;
 $h4-fontsize: 1.8rem;
 $h5-fontsize: 1.5rem;
 $h6-fontsize: 1.2rem;
+
+// Body
+$font-stack: 'Trueno Light', sans-serif;
+
+p:first-child {
+  margin-top: 0;
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
 
 // Bylines
 p.byline {
@@ -59,5 +79,11 @@ p.label {
 // ==========================================================================
 
 $range: $medium-screen - $small-screen;
-$intervals: 10;
+$intervals: 5;
 $interval-size: math.div($range, $intervals);
+
+
+// 23. Collections
+// ==========================================================================
+
+$collection-line-height: 1.5;

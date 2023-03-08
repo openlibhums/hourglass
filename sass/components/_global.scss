@@ -12,11 +12,11 @@
   }
 }
 
-.prose {
-  max-width: 640px;
-  margin-right: auto;
-  margin-left: auto;
-}
+// Width helpers
+
+.max640 { max-width: 640px; margin-left: 0; margin-right: auto; }
+.max800 { max-width: 800px; margin-left: 0; margin-right: auto; }
+.max960 { max-width: 960px; margin-left: 0; margin-right: auto; }
 
 // SVGs need this
 img.responsive-img {
@@ -30,16 +30,22 @@ img.responsive-img {
   }
 }
 
+// Padded sections
+.padded-section {
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+    
 // Full-width backgrounds
 html {
   overflow-x: hidden;
-} 
+}
 
 .background-full {
   position: relative;
 }
 
-.background-full:before {
+.background-full::before {
   content: '';
   position: absolute;
   top: 0;

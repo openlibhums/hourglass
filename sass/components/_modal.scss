@@ -1,0 +1,8 @@
+.modal {
+  h1 { font-size: calc($h1-fontsize / 1.5); margin: calc($h1-fontsize / 2) 0 calc($h1-fontsize / 2) 0;}
+  h2 { font-size: calc($h2-fontsize / 1.5); margin: calc($h2-fontsize / 2) 0 calc($h2-fontsize / 2) 0;}
+  h3 { font-size: calc($h3-fontsize / 1.5); margin: calc($h3-fontsize / 2) 0 calc($h3-fontsize / 2) 0;}
+  h4 { font-size: calc($h4-fontsize / 1.5); margin: calc($h4-fontsize / 2) 0 calc($h4-fontsize / 2) 0;}
+  h5 { font-size: calc($h5-fontsize / 1.5); margin: calc($h5-fontsize / 2) 0 calc($h5-fontsize / 2) 0;}
+  h6 { font-size: calc($h6-fontsize / 1.5); margin: calc($h6-fontsize / 2) 0 calc($h6-fontsize / 2) 0;}
+}

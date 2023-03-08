@@ -1,0 +1,21 @@
+html{
+  line-height: 1.5;
+
+  @media only screen and (min-width: $medium-screen-up) {
+    line-height: 1.55;
+  }
+
+  @media only screen and (min-width: $large-screen-up) {
+    line-height: 1.6;
+  }
+
+}
+
+.white-text {
+  color: #FFF !important;
+
+  a {
+    color: color('baustel', 'clay');
+  }
+}
+

@@ -1,5 +1,4 @@
 .timeline {
-
   .timeline-section {
     padding-top: 25px;
 
@@ -10,10 +9,6 @@
     margin-bottom: 0;
     position: relative;
     justify-content: space-between;
-
-    &:nth-of-type(even) {
-      flex-direction: row-reverse;
-    }
 
     .timeline-graphic {
       margin: 1rem 0;
@@ -31,17 +26,19 @@
       }
 
       // Line left-to-right
-      &:after {
+      &::after {
         display: block;
         position: relative;
         content: '';
         top: 0;
         width: 100%;
         height: calc(100% - 200px);
-        background: black;
+        background: $off-black;
+
         @media #{$small-and-down} {
           height: 100px;
         }
+
         transform: translate(30%);
         clip-path: polygon(
         calc(50% - 3px) 0,
@@ -53,7 +50,7 @@
     }
 
     // Triangle left-to-right
-    &:after {
+    &::after {
       display: block;
       position: relative;
       top: 0;
@@ -69,9 +66,10 @@
     }
 
     &:nth-of-type(even) {
+      flex-direction: row-reverse;
 
       // Line right-to-left 
-      .timeline-graphic:after {
+      .timeline-graphic::after {
         transform: translate(-30%);
         clip-path: polygon(
         calc(50% + 3px) 0,
@@ -83,7 +81,7 @@
       }
 
       // Triangle right-to-left
-      &:after {
+      &::after {
         clip-path: polygon(
         100% 0,
         0 100px,
