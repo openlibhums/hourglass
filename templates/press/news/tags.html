@@ -1,0 +1,35 @@
+{% if tag %}
+    <p>Filtered by:</p>
+    <div class="chip active-filter black-text ">
+        {{ tag.text }}
+        ({{ tag.tags.count }})
+        <a href="{% url 'core_news_list_presswide' presswide='all' %}">
+            <i class="close material-icons">close</i>
+        </a>
+    </div>
+{% else %}
+    <p>
+        <a class="modal-trigger" href="#search-modal">
+            <i class="material-icons left">search</i>
+            Search all news
+        </a>
+        or filter by tag:
+    </p>
+    {% for tag_obj in all_tags|slice:":10" %}
+        <a
+            href="{% url 'core_news_list_tag_presswide' presswide='all' tag=tag_obj.text %}"
+        >
+            <span class="chip black-text">
+                {{ tag_obj.text }}
+                ({{ tag_obj.tags.count }})
+            </span>
+        </a>
+    {% endfor %}
+    {% if all_tags.count > 15 %}
+        <a>
+            <span class="chip black-text">
+                ...
+            </span>
+        </a>
+    {% endif %}
+{% endif %}

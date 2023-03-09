@@ -1,0 +1,66 @@
+{% extends "core/base.html" %}
+
+{% load i18n %}
+
+{% block title %}{% trans 'Announcements &amp; Blog' %} - {{ request.press.name }}{% endblock %}
+
+{% block body %}
+
+    <h1>{% trans 'Announcements &amp; Blog' %}</h1>
+    {% if all_tags %}
+        <aside class="row">
+            {% include 'press/news/tags.html' with tag="" all_tags=all_tags %}
+        </aside>
+    {% endif %}
+    <main class="row">
+        <div class="col s12 xl8">
+            {% if press_items %}
+                <h2>{% trans 'Publisher Updates' %}</h2>
+                <div class="row flex">
+                    {% for item in press_items|slice:":6" %}
+                        <div class="col s12 m6">
+                            {% include 'press/news/list_item.html' with item=item %}
+                        </div>
+                    {% endfor %}
+                </div>
+                <div class="card">
+                    <a class="align-center" href="{% url 'core_news_list' %}">
+                        <div class="card-content baustel grey">
+                            <div class="center">{% trans 'View all' %}</div>
+                        </div>
+                    </a>
+                </div>
+            {% endif %}
+            {% if journal_items %}
+                <h2>{% trans 'News from our Journals' %}</h2>
+                <div class="row flex">
+                    {% for item in non_press_items|slice:":6" %}
+                        <div class="col s12 m6">
+                        {% include 'press/news/list_item.html' with item=item %}
+                        </div>
+                    {% endfor %}
+                </div>
+                <div class="card">
+                    <a class="align-center" href="{% url 'core_news_list_presswide' %}">
+                        <div class="card-content baustel grey">
+                            <div class="center">{% trans 'View all' %}</div>
+                        </div>
+                    </a>
+                </div>
+            {% endif %}
+        </div>
+        {% if pinned_items %}
+            <aside class="col s12 xl3 push-xl1">
+                <h2>{% trans 'Pinned' %}</h2>
+                <div class="row flex">
+                    {% for item in pinned_items %}
+                        <div class="col s12 m6 xl12">
+                        {% include 'press/news/list_item.html' with item=item %}
+                        </div>
+                    {% endfor %}
+                </div>
+            </aside>
+        {% endif %}
+    </main>
+
+{% endblock body %}

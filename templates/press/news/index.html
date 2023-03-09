@@ -1,90 +1,22 @@
 {% extends "core/base.html" %}
 
-{% load truncate %}
-
-{% block title %}News - {{ request.press.name }}{% endblock %}
-
+{% block title %}{% trans 'News' %} - {{ request.press.name }}{% endblock %}
 
 {% block body %}
-    <div class="row">
-        <div class="col s12">
-            <h1>News</h1>
-            {% if tag %}
-                <p>Filtered by:</p>
-                <div class="chip active-filter black-text ">
-                    {{ tag.text }}
-                    ({{ tag.tags.count }})
-                    <a href="{% url 'core_news_list_presswide' presswide='all' %}">
-                        <i class="close material-icons">close</i>
-                    </a>
-                </div>
-            {% else %}
-                <p>Filter by tag:</p>
-                {% for tag_obj in all_tags|slice:":15" %}
-                    <a
-                        href="{% url 'core_news_list_tag' tag_obj.text %}"
-                    >
-                        <span class="chip black-text">
-                            {{ tag_obj.text }}
-                            ({{ tag_obj.tags.count }})
-                        </span>
-                    </a>
-                {% endfor %}
-                {% if all_tags.count > 15 %}
-                    <a>
-                        <span class="chip black-text">
-                            ...
-                        </span>
-                    </a>
-                {% endif %}
-            {% endif %}
-        </div>
-    </div>
-    <div class="row flex">
+
+    <h1>{% trans 'News' %}</h1>
+    {% if tag or all_tags %}
+        <aside class="row">
+            {% include 'press/news/tags.html' with tag=tag all_tags=all_tags %}
+        </aside>
+    {% endif %}
+    <main class="row flex">
         {% for item in news_items %}
-            <div class="col s12 m6 xl4">
-                <div class="card">
-                    <div class="card-image">
-                        <img src="{{ item.best_image_url }}">
-                    </div>
-                    <div class="card-content">
-                        {% if item.pinned %}
-                            <div
-                                aria-label="pinned"
-                                class="right material-icons"
-                            >push_pin</div>
-                        {% endif %}
-                        <p class="label">
-                            <a href="{{ item.object.site_url}}">
-                                {{ item.object.name }}
-                            </a>
-                        </p>
-                        <div>
-                            <h2>
-                                <a href="{{ item.url }}">
-                                    {{ item.title }}
-                                </a>
-                            </h2>
-                        </div>
-                        <p class="byline">
-                            {{ item.byline }}
-                            {% trans "on" %}
-                            {{ item.posted|date:"Y-m-d" }}
-                        </p>
-                        <p>{{ item.body|striptags|truncatesmart:100 }}</p>
-                        <div>
-                            {% for item_tag in item.tags.all %}
-                                <a href="{% url 'core_news_list_tag' item_tag.text %}">
-                                    <span class="chip black-text">
-                                        {{ item_tag.text }}
-                                    </span>
-                                </a>
-                            {% endfor %}
-                        </div>
-                    </div>
-                </div>
+            <div class="col s12 m6 l4">
+                {% include 'press/news/list_item.html' with item=item %}
             </div>
         {% endfor %}
-    </div>
+    </main>
     {% include 'core/elements/pagination.html' with page_obj=news_items %}
+
 {% endblock body %}

@@ -1,0 +1,34 @@
+<div class="card">
+    <div class="card-image">
+        <img src="{{ item.best_image_url }}">
+    </div>
+    <div class="card-content">
+        <p class="label">
+            <a href="{{ item.object.site_url}}">
+                {{ item.object.name }}
+            </a>
+        </p>
+        <div>
+            <h3>
+                <a href="{{ item.url }}">
+                    {{ item.title }}
+                </a>
+            </h3>
+        </div>
+        <p class="byline">
+            {{ item.byline }}
+                {% trans "on" %}
+            {{ item.posted|date:"Y-m-d" }}
+        </p>
+        <p>{{ item.body|striptags|truncatewords_html:10 }}</p>
+        <div>
+            {% for item_tag in item.tags.all %}
+                <a href="{% url 'core_news_list_tag' item_tag.text %}">
+                    <span class="chip black-text">
+                        {{ item_tag.text }}
+                    </span>
+                </a>
+            {% endfor %}
+        </div>
+    </div>
+</div>
