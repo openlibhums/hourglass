@@ -31,7 +31,7 @@
                     </a>
                 </div>
             {% endif %}
-            {% if journal_items %}
+            {% if non_press_items %}
                 <h2>{% trans 'News from our Journals' %}</h2>
                 <div class="row flex">
                     {% for item in non_press_items|slice:":6" %}
@@ -41,7 +41,7 @@
                     {% endfor %}
                 </div>
                 <div class="card">
-                    <a class="align-center" href="{% url 'core_news_list_presswide' %}">
+                    <a class="align-center" href="{% url 'core_news_list_presswide' presswide='all' %}">
                         <div class="card-content baustel grey">
                             <div class="center">{% trans 'View all' %}</div>
                         </div>
