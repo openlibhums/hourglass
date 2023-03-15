@@ -9,7 +9,8 @@ const input = document.getElementById('search-input')
 const close = document.getElementById('search-close')
 const form = document.getElementById('search-form')
 const ul = document.getElementById('result-list')
-const data = ul.getAttribute('data-site-search')
+const docsUrl = ul.getAttribute('data-site-search-docs-url')
+const indexUrl = ul.getAttribute('data-site-search-index-url')
 
 const modalOptions = {
   opacity: 0.3,
@@ -23,8 +24,18 @@ const modalOptions = {
 
 async function init () {
   const modalObj = M.Modal.init(modal, modalOptions)
-  const { documents, searchIndex } = await makeSearchIndex()
+  const { documents, searchIndex } = await getData()
   addEventListeners(documents, searchIndex, modalObj)
+}
+
+async function getData () {
+  const docsFile = await fetch(docsUrl)
+  const indexFile = await fetch(indexUrl)
+  const documents = await docsFile.json()
+  const searchIndex = await lunr.Index.load(
+    await indexFile.json()
+  )
+  return { documents, searchIndex }
 }
 
 function addEventListeners (documents, searchIndex, modalObj) {
@@ -38,22 +49,6 @@ function addEventListeners (documents, searchIndex, modalObj) {
 
   // User clicks the X in the search bar
   close.addEventListener('click', event => modalObj.close())
-}
-
-async function makeSearchIndex () {
-  const documents = await JSON.parse(data)
-  const searchIndex = lunr(function () {
-    this.ref('url')
-    this.field('name')
-    this.field('people')
-    this.field('text')
-    this.field('tags')
-    this.metadataWhitelist = ['position']
-    for (const key in documents) {
-      this.add(documents[key])
-    }
-  })
-  return { documents, searchIndex }
 }
 
 function debounce (fn) {
@@ -85,7 +80,7 @@ async function updateResultsList (documents, searchIndex) {
   ul.innerHTML = ''
   const searchResults = await searchIndex.search(input.value)
   for (const result of searchResults) {
-    const doc = documents[result.ref]
+    const doc = documents.filter(doc => doc.url === result.ref)[0]
     const mergedPositions = getPositionsByField(result)
     const li = makeResultListItem(doc, result.ref, mergedPositions)
     ul.appendChild(li)
