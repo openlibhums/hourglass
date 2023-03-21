@@ -7,50 +7,54 @@
     }
 
     margin-bottom: 0;
-    position: relative;
-    justify-content: space-between;
 
-    .timeline-graphic {
-      margin: 1rem 0;
-      padding: 0;
+    .timeline-item {
+      margin-bottom: 0;
       position: relative;
+      justify-content: space-between;
 
-      .timeline-year {
-        display: block;
-        text-align: center;
-        padding: 75px 40px;
-        clip-path: circle(75px);
-        font-family: Bungee, sans-serif;
-        margin: auto;
-        line-height: 50px;
-      }
-
-      // Line left-to-right
-      &::after {
-        display: block;
+      .timeline-graphic {
+        margin: 1rem 0;
+        padding: 0;
         position: relative;
-        content: '';
-        top: 0;
-        width: 100%;
-        height: calc(100% - 200px);
-        background: $off-black;
 
-        @media #{$small-and-down} {
-          height: 100px;
+        .timeline-year {
+          display: block;
+          text-align: center;
+          padding: 75px 40px;
+          clip-path: circle(75px);
+          font-family: Bungee, sans-serif;
+          margin: auto;
+          line-height: 50px;
         }
 
-        transform: translate(30%);
-        clip-path: polygon(
-        calc(50% - 3px) 0,
-        calc(50% + 3px) 0,
-        6px 95%,
-        0 95%,
-        );
+        // Line left-to-right
+        &::after {
+          display: block;
+          position: relative;
+          content: '';
+          top: 0;
+          width: 100%;
+          height: calc(100% - 200px);
+          background: $off-black;
+
+          @media #{$small-and-down} {
+            height: 100px;
+          }
+
+          transform: translate(30%);
+          clip-path: polygon(
+          calc(50% - 3px) 0,
+          calc(50% + 3px) 0,
+          6px 95%,
+          0 95%,
+          );
+        }
       }
     }
 
     // Triangle left-to-right
-    &::after {
+    & .timeline-item::after {
       display: block;
       position: relative;
       top: 0;
@@ -65,7 +69,7 @@
       );
     }
 
-    &:nth-of-type(even) {
+    &:nth-of-type(even) .timeline-item {
       flex-direction: row-reverse;
 
       // Line right-to-left 
