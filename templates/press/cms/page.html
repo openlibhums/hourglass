@@ -3,14 +3,20 @@
 {% block title %}
     {{ page.display_name|truncatewords_html:5 }} - {{ request.press.name }}
 {% endblock title %}
-
-{% block head %}
-    <meta name="description" content="{{ page.content|striptags|truncatewords:30 }}">
-    {% if request.press.thumbnail_image %}
-        <meta property="og:image" content="{% site_url 'press_cover_download' %}" alt="">
-        <meta name="twitter:image" content="{% site_url 'press_cover_download' %}" alt="">
-    {% endif %}
-{% endblock head %}
+{% block meta_title %}
+    <meta property="og:title" content="
+        {{ page.display_name|truncatewords_html:5 }} - {{ request.press.name }}
+    ">
+    <meta name="twitter:title" content="
+        {{ page.display_name|truncatewords_html:5 }} - {{ request.press.name }}
+    ">
+{% endblock meta_title %}
+{% block meta_description %}
+    {% with desc=page.content|striptags|truncatewords:30 %}
+        <meta name="twitter:description" content="{{ desc }}">
+        <meta property="og:description" content="{{ desc }}">
+    {% endwith %}
+{% endblock meta_description %}
 
 {% block body %}
     {{ page.content|safe }}

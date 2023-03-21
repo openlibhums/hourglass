@@ -1,24 +1,37 @@
 {% extends "core/base.html" %}
 
-{% block title %}{{ news_item.title }} - {{ request.press.name }}{% endblock %}
-
-{% block head %}
-    <meta name="description" content="{{ news_item.body|striptags|truncatewords:30 }}">
-    {% if news_item.large_image_file %}
-        <meta property="og:image" content="{% site_url 'news_file_download' 'id' news_item.pk news_item.large_image_file.pk %}" alt="">
-        <meta name="twitter:image" content="{% site_url 'news_file_download' 'id' news_item.pk news_item.large_image_file.pk %}" alt="">
-    {% else %}
-        <meta property="og:image" content="{% site_url 'press_cover_download' %}" alt="">
-        <meta name="twitter:image" content="{% site_url 'press_cover_download' %}" alt="">
+{% block title %}
+    {{ news_item.title }} - {{ request.press.name }}
+{% endblock title %}
+{% block meta_base %}
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="{{ request.build_absolute_uri }}">
+    <meta property="og:site_name" content="{{ request.press.name }}">
+    <meta name="twitter:card" content="summary_large_image">
+{% endblock meta_base %}
+{% block meta_title %}
+    <meta property="og:title" content="{{ news_item.title }}" />
+    <meta name="twitter:title" content="{{ news_item.title }}">
+{% endblock meta_title %}
+{% block meta_description %}
+    {% with desc=news_item.body|striptags|truncatewords:30 %}
+        <meta name="twitter:description" content="{{ desc }}">
+        <meta property="og:description" content="{{ desc }}">
+    {% endwith %}
+{% endblock meta_description %}
+{% block meta_image %}
+    {% if news_item.best_image_url %}
+        <meta name="twitter:image" content="{{ news_item.best_image_url }}">
+        <meta property="og:image" content="{{ news_item.best_image_url }}">
     {% endif %}
-{% endblock head %}
+{% endblock meta_image %}
 
 {% block body %}
     <article>
         <header class="row max800">
             <h1>{{ news_item.title }}</h1>
             <p class="byline">
-                {{ news_item.byline }} {% trans "on" %} {{ news_item.posted|date:"Y-m-d" }}
+                {{ news_item.byline }} {% trans "on" %} {{ news_item.posted|date:"j F Y" }}
             </p>
             <img class="responsive-img" src="{{ news_item.best_image_url }}">
         </header>
@@ -26,7 +39,7 @@
             {{ news_item.body|safe }}
         </main>
         {% if news_item.tags.all %}
-            <footer class="row prose" aria-label="tags">
+            <footer class="row max640" aria-label="tags">
                     {% for item_tag in news_item.tags.all %}
                         <a href="{% url 'core_news_list_tag' item_tag.text %}">
                             <span class="chip black-text">

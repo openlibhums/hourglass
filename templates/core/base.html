@@ -1,4 +1,5 @@
 {% load static %}
+{% load fqdn %}
 {% get_current_language as current_language %}
 
 <!DOCTYPE html>
@@ -16,15 +17,32 @@
         {% if request.press.favicon %}
             <link rel="icon" href="{{ press.favicon.url }}" type="image/x-icon">
         {% endif %}
-        {% block head %}
+        {% block meta_base %}
+            <meta property="og:type" content="website">
+            <meta property="og:url" content="{{ request.build_absolute_uri }}">
+            <meta property="og:site_name" content="{{ request.press.name }}">
+            <meta name="twitter:card" content="summary_large_image">
+        {% endblock meta_base %}
+        {% block meta_title %}
+            <meta property="og:title" content="{{ request.press.name }}">
+            <meta name="twitter:title" content="{{ request.press.name }}">
+        {% endblock meta_title %}
+        {% block meta_description %}
             {% if request.press.description %}
-                <meta name="description" content="{{ press.description }}">
+                <meta name="twitter:description" content="{{ press.description }}">
+                <meta property="og:description" content="{{ press.description }}">
             {% endif %}
-            {% if request.press.thumbnail_image %}
-                <meta property="og:image" content="{% site_url 'press_cover_download' %}" alt="">
-                <meta name="twitter:image" content="{% site_url 'press_cover_download' %}" alt="">
+        {% endblock meta_description %}
+        {% block meta_image %}
+            {% if request.press.default_carousel_image %}
+                <meta property="og:image" content="
+                    {% build_absolute_uri request.press.default_carousel_image.url %}
+                ">
+                <meta name="twitter:image" content="
+                    {% build_absolute_uri request.press.default_carousel_image.url %}
+                ">
             {% endif %}
-        {% endblock head %}
+        {% endblock meta_image %}
     </head>
     <body>
         <header>
