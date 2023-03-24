@@ -12,11 +12,15 @@
   }
 }
 
-// Width helpers
+// Width and horizontal margin helpers
 
-.max640 { max-width: 640px; margin-left: 0; margin-right: auto; }
-.max800 { max-width: 800px; margin-left: 0; margin-right: auto; }
-.max960 { max-width: 960px; margin-left: 0; margin-right: auto; }
+.max640 { max-width: 640px }
+.max800 { max-width: 800px }
+.max960 { max-width: 960px }
+
+.margin-left { margin-left: 0; margin-right: auto; }
+.margin-right { margin-left: auto; margin-right: 0; }
+.margin-auto { margin-left: auto; margin-right: auto; }
 
 // SVGs need this
 svg {
