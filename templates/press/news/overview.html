@@ -14,39 +14,47 @@
     {% endif %}
     <main class="row">
         <div class="col s12 xl8">
-            {% if press_items %}
-                <h2>{% trans 'Publisher Updates' %}</h2>
-                <div class="row flex">
-                    {% for item in press_items|slice:":6" %}
-                        <div class="col s12 m6">
-                            {% include 'press/news/list_item.html' with item=item %}
-                        </div>
-                    {% endfor %}
-                </div>
-                <div class="card">
-                    <a class="align-center" href="{% url 'core_news_list' %}">
-                        <div class="card-content baustel grey">
-                            <div class="center">{% trans 'View all' %}</div>
-                        </div>
-                    </a>
-                </div>
+            {% if tag_sets %}
+                {% for tag, items in tag_sets.items %}
+                    {% blocktrans %}
+                        <h2>Tag: {{ tag }}</h2>
+                    {% endblocktrans %}
+                    <div class="row flex">
+                        {% for item in items|slice:":6" %}
+                            <div class="col s12 m6">
+                                {% include 'press/news/list_item.html' with item=item %}
+                            </div>
+                        {% endfor %}
+                    </div>
+                    <div class="card">
+                        <a class="align-center" href="{% url 'core_news_list_tag_presswide' presswide='all' tag=tag %}">
+                            <div class="card-content baustel grey">
+                                <div class="center">{% trans 'View all' %}</div>
+                            </div>
+                        </a>
+                    </div>
+                {% endfor %}
             {% endif %}
-            {% if non_press_items %}
-                <h2>{% trans 'News from our Journals' %}</h2>
-                <div class="row flex">
-                    {% for item in non_press_items|slice:":6" %}
-                        <div class="col s12 m6">
-                        {% include 'press/news/list_item.html' with item=item %}
-                        </div>
-                    {% endfor %}
-                </div>
-                <div class="card">
-                    <a class="align-center" href="{% url 'core_news_list_presswide' presswide='all' %}">
-                        <div class="card-content baustel grey">
-                            <div class="center">{% trans 'View all' %}</div>
-                        </div>
-                    </a>
-                </div>
+            {% if object_sets %}
+                {% for model, items in object_sets.items %}
+                    {% blocktrans with model_name=model|capfirst %}
+                        <h2>{{ model_name }} News</h2>
+                    {% endblocktrans %}
+                    <div class="row flex">
+                        {% for item in items|slice:":6" %}
+                            <div class="col s12 m6">
+                            {% include 'press/news/list_item.html' with item=item %}
+                            </div>
+                        {% endfor %}
+                    </div>
+                    <div class="card">
+                        <a class="align-center" href="{% url 'core_news_list_presswide' presswide='all' %}">
+                            <div class="card-content baustel grey">
+                                <div class="center">{% trans 'View all' %}</div>
+                            </div>
+                        </a>
+                    </div>
+                {% endfor %}
             {% endif %}
         </div>
         {% if pinned_items %}
