@@ -24,3 +24,14 @@ ul.bibliography li {
   text-indent: -3rem;
   margin-bottom: 1rem;
 }
+
+dl {
+  dt {
+    font-weight: bold;
+    font-family: "Trueno Regular", sans-serif;
+  }
+
+  dd {
+    margin-bottom: 1rem;
+  }
+}
