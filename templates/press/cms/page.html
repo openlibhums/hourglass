@@ -1,4 +1,5 @@
 {% extends "core/base.html" %}
+{% load render_string %}
 
 {% block title %}
     {{ page.display_name|truncatewords_html:5 }} - {{ request.press.name }}
@@ -19,5 +20,8 @@
 {% endblock meta_description %}
 
 {% block body %}
-    {{ page.content|safe }}
+    {% if request.user.is_staff %}
+        <p class="right"><a href="{% url 'cms_page_edit' page.pk %}">✏️ Edit this page</a><p>
+    {% endif %}
+    {% render_string page.content %}
 {% endblock body %}
