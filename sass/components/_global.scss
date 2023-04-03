@@ -23,7 +23,7 @@
 .margin-auto { margin-left: auto; margin-right: auto; }
 
 // SVGs need this
-svg {
+nav svg {
   width: 100%;
 }
 
@@ -59,4 +59,12 @@ html {
   width: 100vw;
   background: inherit;
   z-index: -5;
+}
+
+td, th{
+  padding: 15px 10px;
+  display: table-cell;
+  text-align: left;
+  vertical-align: middle;
+  border-radius: 0;
 }
