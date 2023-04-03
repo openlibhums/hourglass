@@ -81,6 +81,18 @@ p.label {
   text-transform: uppercase;
 }
 
+// Help text on forms
+
+form .help-block {
+  color: color('red', 'darken-2');
+  font-size: 75%;
+}
+
+form .input-field p {
+  margin-top: 0;
+  font-size: 75%;
+}
+
 
 // 22. Flow Text
 // ==========================================================================
