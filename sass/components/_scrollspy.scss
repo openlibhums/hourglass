@@ -1,0 +1,8 @@
+ul.table-of-contents {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: space-evenly;
+  max-height: 60%;
+  width: inherit;
+}
