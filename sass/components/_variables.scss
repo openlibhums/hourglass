@@ -81,10 +81,14 @@ p.label {
   text-transform: uppercase;
 }
 
+// Card panels
+.card-panel {
+  font-size: 75%;
+}
+
 // Help text on forms
 
 form .help-block {
-  color: color('red', 'darken-2');
   font-size: 75%;
 }
 
