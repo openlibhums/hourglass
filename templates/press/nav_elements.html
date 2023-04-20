@@ -1,18 +1,20 @@
 {% for item in navigation_items %}
     <li>
-        {% if item.has_sub_nav %}
-            <a
-                href="#"
-                class="dropdown-trigger"
-                data-target="dropdown-{{ viewport }}-{{ item.link_name|slugify }}"
-            >
-                <span class="flow-text">{{ item.link_name }}</span>
-                <i class="material-icons right">arrow_drop_down</i>
-            </a>
-        {% else %}
-            <a href="{{ item.link }}">
-                <span class="flow-text">{{ item.link_name }}</span>
-            </a>
+        {% if not item.for_footer %}
+            {% if item.has_sub_nav %}
+                <a
+                    href="#"
+                    class="dropdown-trigger"
+                    data-target="dropdown-{{ viewport }}-{{ item.link_name|slugify }}"
+                >
+                    <span class="flow-text">{{ item.link_name }}</span>
+                    <i class="material-icons right">arrow_drop_down</i>
+                </a>
+            {% else %}
+                <a href="{{ item.link }}">
+                    <span class="flow-text">{{ item.link_name }}</span>
+                </a>
+            {% endif %}
         {% endif %}
     </li>
 {% endfor %}
