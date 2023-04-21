@@ -33,9 +33,9 @@
                         <a href="{% journal_base_url journal %}">
                             <h2 class="name">{{ journal.name }}</h2>
                         </a>
-                        <p class="description">
-                            <span>{{ journal.description_for_press|safe }}</span>
-                        </p>
+                        <div class="description">
+                            {{ journal.description_for_press|safe }}
+                        </div>
                         <div class="discipline">
                             {% for keyword in journal.keywords.all %}
                                 <span class="chip">
