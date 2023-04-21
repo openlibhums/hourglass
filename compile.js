@@ -6,17 +6,24 @@
 
 import sass from 'sass'
 import path from 'node:path'
-import { writeFileSync } from 'node:fs'
+import { statSync, mkdirSync, writeFileSync } from 'node:fs'
 
 const sassPath = path.join('sass', 'path.scss')
 
-const assetsPath = path.join('assets')
+const assetsDir = path.join('assets')
+const cssDir = path.join(assetsDir, 'css')
+
+try {
+  statSync(cssDir)
+} catch (error) {
+  mkdirSync(cssDir, { recursive: true })
+}
 
 const cssFileName = 'path.min.css'
 const cssMapFileName = 'path.min.css.map'
 
-const cssPath = path.join(assetsPath, cssFileName)
-const cssMapPath = path.join(assetsPath, cssMapFileName)
+const cssPath = path.join(cssDir, cssFileName)
+const cssMapPath = path.join(cssDir, cssMapFileName)
 
 console.log('Compiling SASS to CSS in theme folder:')
 console.log(`From ${sassPath} to ${cssPath} and ${cssMapPath}`)

@@ -1,0 +1,53 @@
+{% load svg from press_url %}
+{% load render_string %}
+
+<footer class="page-footer">
+    <div class="container">
+        <div class="row flex">
+            <div class="col s12 m5 xl4">
+                {% if press.secondary_image %}
+                <img src="{{ press.secondary_image.url }}">
+                {% endif %}
+            </div>
+            <div class="col s12 m3 push-m1 xl2 push-xl4 white-text">
+                <ul class="center">
+                    {% for item in navigation_items %}
+                        {% if item.for_footer %}
+                            <li>
+                                <a href="{{ item.link }}">
+                                    {{ item.link_name }}
+                                </a>
+                            </li>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+            </div>
+            <div class="col s12 m3 push-m1 xl2 push-xl4 white-text">
+                <ul class="center">
+                    <li>
+                        <a href="{% url 'website_sitemap' %}">
+                            {% trans "Sitemap" %}
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{% url 'contact' %}">
+                            {% trans "Contact" %}
+                        </a>
+                    </li>
+                    {% if not request.user.is_authenticated %}
+                    <li>
+                        <a href="{% url 'core_login' %}">
+                            {% trans 'Log in' %}
+                        </a>
+                    </li>
+                    {% endif %}
+                </ul>
+            </div>
+        </div>
+        <div class="row flex">
+            <div class="col s12 l10 xl8">
+                {{ press.footer_description|safe }}
+            </div>
+        </div>
+    </div>
+</div>

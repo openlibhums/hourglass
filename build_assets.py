@@ -15,9 +15,90 @@ COMPILE_PATH = os.path.join(THEME_PATH, 'compile.js')
 ASSETS_PATH = os.path.join(THEME_PATH, 'assets')
 
 OTHER_SOURCE_PATHS = [
-    os.path.join(THEME_PATH, 'node_modules', 'lunr', 'lunr.min.js'),
-    os.path.join(THEME_PATH, 'js'),
-    os.path.join(THEME_PATH, 'fonts'),
+    (
+        os.path.join(
+            THEME_PATH,
+            'node_modules',
+            'lunr',
+            'lunr.min.js',
+        ),
+        os.path.join(
+            ASSETS_PATH,
+            'js',
+            'lunr.min.js',
+        )
+    ),
+    (
+        os.path.join(
+            THEME_PATH,
+            'js',
+        ),
+        os.path.join(
+            ASSETS_PATH,
+            'js',
+        )
+    ),
+    (
+        os.path.join(
+            THEME_PATH,
+            'fonts',
+        ),
+        os.path.join(
+            ASSETS_PATH,
+            'fonts',
+        )
+    ),
+    (
+        os.path.join(
+            THEME_PATH,
+            'node_modules',
+            '@fortawesome',
+            'fontawesome-free',
+            'css',
+            'fontawesome.min.css',
+        ),
+        os.path.join(
+            ASSETS_PATH,
+            'fonts',
+            'fontawesome',
+            'css',
+            'fontawesome.min.css',
+        )
+    ),
+    (
+        os.path.join(
+            THEME_PATH,
+            'node_modules',
+            '@fortawesome',
+            'fontawesome-free',
+            'css',
+            'brands.min.css',
+        ),
+        os.path.join(
+            ASSETS_PATH,
+            'fonts',
+            'fontawesome',
+            'css',
+            'brands.min.css',
+        )
+    ),
+    (
+        os.path.join(
+            THEME_PATH,
+            'node_modules',
+            '@fortawesome',
+            'fontawesome-free',
+            'webfonts',
+            'fa-brands-400.woff2',
+        ),
+        os.path.join(
+            ASSETS_PATH,
+            'fonts',
+            'fontawesome',
+            'webfonts',
+            'fa-brands-400.woff2',
+        )
+    )
 ]
 
 JANEWAY_STATIC_PATH = os.path.join(settings.BASE_DIR, 'static', THEME_NAME)
@@ -48,12 +129,14 @@ def collect_assets():
 
     print(f"Collecting other assets in {ASSETS_PATH}")
 
-    for path in OTHER_SOURCE_PATHS:
-        print(path)
-        if os.path.isdir(path):
-            shutil.copytree(path, ASSETS_PATH, dirs_exist_ok=True)
+    for source, destination in OTHER_SOURCE_PATHS:
+        print(source)
+        if os.path.isdir(source):
+            shutil.copytree(source, destination, dirs_exist_ok=True)
         else:
-            shutil.copy(path, ASSETS_PATH)
+            if not os.path.exists(os.path.dirname(destination)):
+                os.makedirs(os.path.dirname(destination))
+            shutil.copy(source, destination)
 
 
 def copy_assets_to_static():
@@ -72,8 +155,8 @@ def build():
     # You can comment out the following line in development
     # if rebuilding assets frequently
     install_theme_dependencies()
-    compile_sass()
     collect_assets()
+    compile_sass()
     copy_assets_to_static()
     print('\n')
     call_command('collectstatic', '--noinput')
