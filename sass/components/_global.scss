@@ -35,9 +35,16 @@ nav svg {
 }
 
 // Padded sections
+.pad100,
 .padded-section {
   padding-top: 100px;
   padding-bottom: 100px;
+}
+
+// Padded sections
+.pad50{
+  padding-top: 50px;
+  padding-bottom: 50px;
 }
 
 // Full-width backgrounds
@@ -96,5 +103,4 @@ main {
       color: color('baustel', 'brick');
     }
   }
-
 }
