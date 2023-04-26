@@ -71,6 +71,13 @@
             src="https://cdn.jsdelivr.net/npm/@materializecss/materialize@1.2.2/dist/js/materialize.min.js">
         </script>
         <script>M.AutoInit()</script>
+        <script>
+            {% if messages %}
+                {% for message in messages %}
+                    M.toast({unsafeHTML: '{{ message }}'})
+                {% endfor %}
+            {% endif %}
+        </script>
         <script src="{% static 'path/js/lunr.min.js' %}"></script>
         <script src="{% static 'path/js/search.js' %}" type="module"></script>
         <script src="{% static 'path/js/dropdown.js' %}" type="module"></script>
