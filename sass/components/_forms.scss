@@ -1,0 +1,21 @@
+// Input labels
+.input-field {
+  & > label {
+    color: $primary-color-dark;
+    font-size: $label-font-size;
+
+    &:not(.label-icon).active {
+      transform: translateY(-1.5rem);
+    }
+  }
+
+  & > input[type]:-webkit-autofill:not(.browser-default):not([type="search"]) + label,
+  & > input[type=date]:not(.browser-default) + label,
+  & > input[type=time]:not(.browser-default) + label {
+    transform: translateY(-1.5rem);
+  }
+}
+
+.select-wrapper + label {
+  top: -2.35rem;
+}
