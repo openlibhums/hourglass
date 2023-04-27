@@ -4,27 +4,41 @@
 {% block title %}{% trans "Reset Password" %} - {{ request.press.name }}{% endblock title %}
 
 {% block body %}
-    <div class="row pad50">
-        <div class="col s12 m6">
-            <h1>Reset Password</h1>
-            <form method="POST">
-                {% csrf_token %}
-                {% trans "Enter your email address to begin the reset process" %}
-                <div class="input-field">
-                    <input name="email_address"
-                           id="email_address"
-                           type="email"
-                           placeholder="janeway@example.edu">
-                    <label for="email_address">
-                        {% trans "Email" %}
-                    </label>
+    <div class="pad50">
+        <form method="POST">
+            {% csrf_token %}
+            <div class="row">
+                <div class="col s12 m6">
+                    <h1>Reset Password</h1>
                 </div>
-                <button
-                    type="submit"
-                    class="btn btn-large">
-                    {% trans "Get Reset Link" %}
-                </button>
-            </form>
-        </div>
+            </div>
+            <div class="row">
+                <div class="col s12 m6">
+                    <p>
+                        {% blocktrans %}
+                            Enter your email address to begin the reset process
+                        {% endblocktrans %}
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s12 m6">
+                    <div class="input-field">
+                        <input name="email_address"
+                               id="email_address"
+                               type="email"
+                               placeholder="janeway@example.edu">
+                        <label for="email_address">
+                            {% trans "Email" %}
+                        </label>
+                    </div>
+                    <button
+                        type="submit"
+                        class="btn btn-large">
+                        {% trans "Get Reset Link" %}
+                    </button>
+                </div>
+            </div>
+        </form>
     </div>
 {% endblock body %}
