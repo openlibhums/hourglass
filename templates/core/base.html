@@ -62,14 +62,10 @@
             </div>
         </main>
         {% include 'press/footer.html' %}
-        <script
-            src="https://code.jquery.com/jquery-3.6.3.min.js"
-            integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU="
-            crossorigin="anonymous">
-        </script>
-        <script
-            src="https://cdn.jsdelivr.net/npm/@materializecss/materialize@1.2.2/dist/js/materialize.min.js">
-        </script>
+
+        <!-- JavaScript dependencies -->
+        <script src="{% static 'path/js/jquery.min.js' %}"></script>
+        <script src="{% static 'path/js/materialize.min.js' %}"></script>
         <script>M.AutoInit()</script>
         <script>
             {% if messages %}
@@ -78,9 +74,13 @@
                 {% endfor %}
             {% endif %}
         </script>
+        <script src="{% static 'path/js/list.min.js' %}"></script>
         <script src="{% static 'path/js/lunr.min.js' %}"></script>
+
+        <!-- custom JavaScript -->
         <script src="{% static 'path/js/search.js' %}" type="module"></script>
         <script src="{% static 'path/js/dropdown.js' %}" type="module"></script>
+
         {% block js %}{% endblock js %}
     </body>
 </html>
