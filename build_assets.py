@@ -14,7 +14,39 @@ COMPILE_PATH = os.path.join(THEME_PATH, 'compile.js')
 
 ASSETS_PATH = os.path.join(THEME_PATH, 'assets')
 
+JANEWAY_STATIC_PATH = os.path.join(settings.BASE_DIR, 'static', THEME_NAME)
+
 OTHER_SOURCE_PATHS = [
+    (
+        os.path.join(
+            THEME_PATH,
+            'node_modules',
+            'jquery',
+            'dist',
+            'jquery.min.js',
+        ),
+        os.path.join(
+            ASSETS_PATH,
+            'js',
+            'jquery.min.js',
+        )
+    ),
+    (
+        os.path.join(
+            THEME_PATH,
+            'node_modules',
+            '@materializecss',
+            'materialize',
+            'dist',
+            'js',
+            'materialize.min.js',
+        ),
+        os.path.join(
+            ASSETS_PATH,
+            'js',
+            'materialize.min.js',
+        )
+    ),
     (
         os.path.join(
             THEME_PATH,
@@ -26,6 +58,20 @@ OTHER_SOURCE_PATHS = [
             ASSETS_PATH,
             'js',
             'lunr.min.js',
+        )
+    ),
+    (
+        os.path.join(
+            THEME_PATH,
+            'node_modules',
+            'list.js',
+            'dist',
+            'list.min.js',
+        ),
+        os.path.join(
+            ASSETS_PATH,
+            'js',
+            'list.min.js',
         )
     ),
     (
@@ -101,8 +147,6 @@ OTHER_SOURCE_PATHS = [
     )
 ]
 
-JANEWAY_STATIC_PATH = os.path.join(settings.BASE_DIR, 'static', THEME_NAME)
-
 
 def install_theme_dependencies():
 
@@ -154,7 +198,7 @@ def build():
         os.makedirs(ASSETS_PATH)
     # You can comment out the following line in development
     # if rebuilding assets frequently
-    install_theme_dependencies()
+    # install_theme_dependencies()
     collect_assets()
     compile_sass()
     copy_assets_to_static()
