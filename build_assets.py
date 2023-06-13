@@ -5,7 +5,7 @@ from nodejs import node, npm
 from django.conf import settings
 from django.core.management import call_command
 
-THEME_NAME = 'path'
+THEME_NAME = 'hourglass'
 
 THEME_PATH = os.path.join(settings.BASE_DIR, 'themes', THEME_NAME)
 
