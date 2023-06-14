@@ -1,9 +1,10 @@
-# Hourglass Subtheme for Janeway
+# Hourglass Theme for Janeway
 
 ## Installing
 
-1. Navigate to the root of your Janeway installation, and clone this
-   subtheme into `src/themes`:
+1. Navigate to the root of your
+   [Janeway](https://github.com/BirkbeckCTP/janeway) installation, and
+   clone this subtheme into `src/themes`:
 
    ```shell
    git clone git@github.com:BirkbeckCTP/hourglass.git src/themes
@@ -74,4 +75,5 @@ New files need to be added to `OTHER_SOURCE_FILES` in `build_assets.py`.
 
 ## Engineering
 
-As an alternative, we could use https://github.com/timonweb/django-tailwind
+As an alternative, we could use
+[django-tailwind](https://github.com/timonweb/django-tailwind).
