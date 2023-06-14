@@ -73,6 +73,25 @@ Modify the files in `js` and rerun `build_assets`.
 
 New files need to be added to `OTHER_SOURCE_FILES` in `build_assets.py`.
 
+### Code styling and linting
+
+The repository is set up with a few formatters and linters:
+
+- [Standard](https://standardjs.com/) for JavaScript
+
+- [djhtml](https://github.com/rtts/djhtml) for Django template file indentation,
+  using 2-space-indents to better handle long Tailwind class lines
+
+Please run these two commands before pushing:
+
+```shell
+standard --fix
+djhtml --tabwidth 2 templates
+```
+
+We haven’t enforced them as a pre-commit hook, because we’d need to
+discuss the implications of that first.
+
 ## Engineering
 
 As an alternative, we could use

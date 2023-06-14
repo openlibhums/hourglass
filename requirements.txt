@@ -1,1 +1,2 @@
 nodejs-bin[cmd]==18.4.0a4
+djhtml==3.0.6
