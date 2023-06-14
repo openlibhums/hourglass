@@ -1,63 +1,63 @@
 {% for top_item in navigation_items %}
-    {% if top_item.has_sub_nav %}
-        <ul 
-            id="dropdown-{{ viewport }}-{{ top_item.link_name|slugify }}"
-            class="dropdown-content"
-        >
-            {% for sub_item in top_item.sub_nav_items %}
-                <li>
-                    <a href="/{{ sub_item.link }}">
-                        <span class="flow-text">{{ sub_item.link_name }}</span>
-                    </a>
-                </li>
-            {% endfor %}
-        </ul>
-    {% endif %}
+  {% if top_item.has_sub_nav %}
+    <ul
+      id="dropdown-{{ viewport }}-{{ top_item.link_name|slugify }}"
+      class="dropdown-content"
+    >
+      {% for sub_item in top_item.sub_nav_items %}
+        <li>
+          <a href="/{{ sub_item.link }}">
+            <span class="flow-text">{{ sub_item.link_name }}</span>
+          </a>
+        </li>
+      {% endfor %}
+    </ul>
+  {% endif %}
 {% endfor %}
 
 
 <ul
-    id="dropdown-{{ viewport }}-account"
-    class="dropdown-content"
+  id="dropdown-{{ viewport }}-account"
+  class="dropdown-content"
 >
-    {% if request.user.is_authenticated %}
-        {% if user_is_editor or request.user.is_staff %}
-            <li>
-                <a href="{% url 'core_manager_index' %}">
-                    <span class="flow-text">{% trans 'Manager' %}</span>
-                </a>
-            </li>
-        {% endif %}
-        {% if request.user.is_staff %}
-            <li>
-                <a href="/admin/">
-                    <span class="flow-text">{% trans 'Admin' %}</span>
-                </a>
-            </li>
-        {% endif %}
-        <li class="divider"></li>
-        <li>
-            <a href="{% url 'core_edit_profile' %}">
-                <span class="flow-text">{% trans 'Profile' %}</span>
-            </a>
-        </li>
-        <li>
-            <a href="{% url 'core_logout' %}">
-                <span class="flow-text">{% trans 'Log out' %}</span>
-            </a>
-        </li>
-    {% else %}
-        <li>
-            <a href="{% url 'core_login' %}">
-                <span class="flow-text">
-                    {% trans "Login" %}
-                </span>
-            </a>
-        </li>
-        <li hidden>
-            <a href="{% url 'core_register' %}">
-                <span class="flow-text">{% trans "Register" %}</span>
-            </a>
-        </li>
+  {% if request.user.is_authenticated %}
+    {% if user_is_editor or request.user.is_staff %}
+      <li>
+        <a href="{% url 'core_manager_index' %}">
+          <span class="flow-text">{% trans 'Manager' %}</span>
+        </a>
+      </li>
     {% endif %}
+    {% if request.user.is_staff %}
+      <li>
+        <a href="/admin/">
+          <span class="flow-text">{% trans 'Admin' %}</span>
+        </a>
+      </li>
+    {% endif %}
+    <li class="divider"></li>
+    <li>
+      <a href="{% url 'core_edit_profile' %}">
+        <span class="flow-text">{% trans 'Profile' %}</span>
+      </a>
+    </li>
+    <li>
+      <a href="{% url 'core_logout' %}">
+        <span class="flow-text">{% trans 'Log out' %}</span>
+      </a>
+    </li>
+  {% else %}
+    <li>
+      <a href="{% url 'core_login' %}">
+        <span class="flow-text">
+          {% trans "Login" %}
+        </span>
+      </a>
+    </li>
+    <li hidden>
+      <a href="{% url 'core_register' %}">
+        <span class="flow-text">{% trans "Register" %}</span>
+      </a>
+    </li>
+  {% endif %}
 </ul>

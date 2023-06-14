@@ -2,26 +2,26 @@
 {% load render_string %}
 
 {% block title %}
-    {{ page.display_name|truncatewords_html:5 }} - {{ request.press.name }}
+  {{ page.display_name|truncatewords_html:5 }} - {{ request.press.name }}
 {% endblock title %}
 {% block meta_title %}
-    <meta property="og:title" content="
-        {{ page.display_name|truncatewords_html:5 }} - {{ request.press.name }}
-    ">
-    <meta name="twitter:title" content="
-        {{ page.display_name|truncatewords_html:5 }} - {{ request.press.name }}
-    ">
+  <meta
+    property="og:title"
+    content="{{ page.display_name|truncatewords_html:5 }} - {{ request.press.name }}">
+  <meta
+    name="twitter:title"
+    content="{{ page.display_name|truncatewords_html:5 }} - {{ request.press.name }}">
 {% endblock meta_title %}
 {% block meta_description %}
-    {% with desc=page.content|striptags|truncatewords:30 %}
-        <meta name="twitter:description" content="{{ desc }}">
-        <meta property="og:description" content="{{ desc }}">
-    {% endwith %}
+  {% with desc=page.content|striptags|truncatewords:30 %}
+    <meta name="twitter:description" content="{{ desc }}">
+    <meta property="og:description" content="{{ desc }}">
+  {% endwith %}
 {% endblock meta_description %}
 
 {% block body %}
-    {% if request.user.is_staff %}
-        <p class="right"><a href="{% url 'cms_page_edit' page.pk %}">✏️ Edit this page</a><p>
-    {% endif %}
-    {% render_string page.content %}
+  {% if request.user.is_staff %}
+    <p class="right"><a href="{% url 'cms_page_edit' page.pk %}">✏️ Edit this page</a><p>
+  {% endif %}
+  {% render_string page.content %}
 {% endblock body %}

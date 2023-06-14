@@ -4,70 +4,70 @@
 
 <!DOCTYPE html>
 <html lang="{{ current_language }}">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>{% block title %}{% endblock title %}</title>
-        <link
-            href="{% static 'hourglass/css/output.min.css' %}"
-            rel="stylesheet">
-        <link
-            href="{% static 'hourglass/fonts/fontawesome/css/fontawesome.min.css' %}"
-            rel="stylesheet">
-        <link
-            href="{% static 'hourglass/fonts/fontawesome/css/brands.min.css' %}"
-            rel="stylesheet">
-        {% if request.press.favicon %}
-            <link rel="icon" href="{{ press.favicon.url }}" type="image/x-icon">
-        {% endif %}
-        {% block meta_base %}
-            <meta property="og:type" content="website">
-            <meta property="og:url" content="{{ request.build_absolute_uri }}">
-            <meta property="og:site_name" content="{{ request.press.name }}">
-            <meta name="twitter:card" content="summary_large_image">
-        {% endblock meta_base %}
-        {% block meta_title %}
-            <meta property="og:title" content="{{ request.press.name }}">
-            <meta name="twitter:title" content="{{ request.press.name }}">
-        {% endblock meta_title %}
-        {% block meta_description %}
-            {% if request.press.description %}
-                <meta name="twitter:description" content="{{ press.description }}">
-                <meta property="og:description" content="{{ press.description }}">
-            {% endif %}
-        {% endblock meta_description %}
-        {% block meta_image %}
-            {% if request.press.default_carousel_image %}
-                <meta property="og:image" content="
-                    {% build_absolute_uri request.press.default_carousel_image.url %}
-                ">
-                <meta name="twitter:image" content="
-                    {% build_absolute_uri request.press.default_carousel_image.url %}
-                ">
-            {% endif %}
-        {% endblock meta_image %}
-    </head>
-    <body>
-        <header>
-            {% include "press/nav.html" %}
-        </header>
-        <main>
-            <div class="container flow-text">
-                {% block body %}{% endblock body %}
-                {% include 'core/elements/search_modal.html' %}
-            </div>
-        </main>
-        {% include 'press/footer.html' %}
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock title %}</title>
+    <link
+      href="{% static 'hourglass/css/output.min.css' %}"
+      rel="stylesheet">
+    <link
+      href="{% static 'hourglass/fonts/fontawesome/css/fontawesome.min.css' %}"
+      rel="stylesheet">
+    <link
+      href="{% static 'hourglass/fonts/fontawesome/css/brands.min.css' %}"
+      rel="stylesheet">
+    {% if request.press.favicon %}
+      <link rel="icon" href="{{ press.favicon.url }}" type="image/x-icon">
+    {% endif %}
+    {% block meta_base %}
+      <meta property="og:type" content="website">
+      <meta property="og:url" content="{{ request.build_absolute_uri }}">
+      <meta property="og:site_name" content="{{ request.press.name }}">
+      <meta name="twitter:card" content="summary_large_image">
+    {% endblock meta_base %}
+    {% block meta_title %}
+      <meta property="og:title" content="{{ request.press.name }}">
+      <meta name="twitter:title" content="{{ request.press.name }}">
+    {% endblock meta_title %}
+    {% block meta_description %}
+      {% if request.press.description %}
+        <meta name="twitter:description" content="{{ press.description }}">
+        <meta property="og:description" content="{{ press.description }}">
+      {% endif %}
+    {% endblock meta_description %}
+    {% block meta_image %}
+      {% if request.press.default_carousel_image %}
+        <meta
+          property="og:image"
+          content="{% build_absolute_uri request.press.default_carousel_image.url %}">
+        <meta
+          name="twitter:image"
+          content="{% build_absolute_uri request.press.default_carousel_image.url %}">
+      {% endif %}
+    {% endblock meta_image %}
+  </head>
+  <body>
+    <header>
+      {% include "press/nav.html" %}
+    </header>
+    <main>
+      <div class="container flow-text">
+        {% block body %}{% endblock body %}
+        {% include 'core/elements/search_modal.html' %}
+      </div>
+    </main>
+    {% include 'press/footer.html' %}
 
         <!-- JavaScript dependencies -->
-        <script src="{% static 'hourglass/js/list.min.js' %}"></script>
-        <script src="{% static 'hourglass/js/lunr.min.js' %}"></script>
+    <script src="{% static 'hourglass/js/list.min.js' %}"></script>
+    <script src="{% static 'hourglass/js/lunr.min.js' %}"></script>
 
         <!-- custom JavaScript -->
-        <script src="{% static 'hourglass/js/search.js' %}" type="module"></script>
-        <script src="{% static 'hourglass/js/dropdown.js' %}" type="module"></script>
+    <script src="{% static 'hourglass/js/search.js' %}" type="module"></script>
+    <script src="{% static 'hourglass/js/dropdown.js' %}" type="module"></script>
 
-        {% block js %}{% endblock js %}
-    </body>
+    {% block js %}{% endblock js %}
+  </body>
 </html>

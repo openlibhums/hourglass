@@ -3,45 +3,47 @@
 {% load orcid %}
 {% load materializecss %}
 
-{% block title %}{% trans "Login" %} - {{ request.press.name }}{% endblock title %}
+{% block title %}
+  {% trans "Login" %} - {{ request.press.name }}
+{% endblock title %}
 
 {% block body %}
-    <div class="row pad50">
-        <div class="col s12">
-            <h1>Log In</h1>
-        </div>
-        <form method="POST">
-            {% csrf_token %}
-            <div class="col s12 m6">
-                <h2 style="font-size: 1.4rem;">With ORCID</h2>
-                <a
-                    class="btn-large waves-effect waves-light orcid"
-                    href="{{ settings.ORCID_URL }}?client_id={{ settings.ORCID_CLIENT_ID }}&response_type=code&scope=/authenticate&redirect_uri={% orcid_redirect_uri %}"
-                >
-                    <span class="flow-text">{% trans "Connect ORCiD" %}</span>
-                    <i class="material-icons right">sync</i>
-                </a>
-            </div>
-            <div class="col s12 m6">
-                <h2 style="font-size: 1.4rem;">With {{ request.press.name }}</h2>
-                {{ form|materializecss:'s12' }}
-                <button
-                    class="btn-large waves-effect waves-light"
-                >
-                    <span class="flow-text">{% trans "Log in" %}</span>
-                    <i class="material-icons right">login</i>
-                </button>
-                <p>
-                    <a href="{% url 'core_register' %}">
-                        {% trans "Register an Account" %}
-                    </a>
-                </p>
-                <p>
-                    <a href="{% url 'core_get_reset_token' %}">
-                        {% trans "Reset your Password" %}
-                    </a>
-                </p>
-            </div>
-        </form>
+  <div class="row pad50">
+    <div class="col s12">
+      <h1>Log In</h1>
     </div>
+    <form method="POST">
+      {% csrf_token %}
+      <div class="col s12 m6">
+        <h2 style="font-size: 1.4rem;">With ORCID</h2>
+        <a
+          class="btn-large waves-effect waves-light orcid"
+          href="{{ settings.ORCID_URL }}?client_id={{ settings.ORCID_CLIENT_ID }}&response_type=code&scope=/authenticate&redirect_uri={% orcid_redirect_uri %}"
+        >
+          <span class="flow-text">{% trans "Connect ORCiD" %}</span>
+          <i class="material-icons right">sync</i>
+        </a>
+      </div>
+      <div class="col s12 m6">
+        <h2 style="font-size: 1.4rem;">With {{ request.press.name }}</h2>
+        {{ form|materializecss:'s12' }}
+        <button
+          class="btn-large waves-effect waves-light"
+        >
+          <span class="flow-text">{% trans "Log in" %}</span>
+          <i class="material-icons right">login</i>
+        </button>
+        <p>
+          <a href="{% url 'core_register' %}">
+            {% trans "Register an Account" %}
+          </a>
+        </p>
+        <p>
+          <a href="{% url 'core_get_reset_token' %}">
+            {% trans "Reset your Password" %}
+          </a>
+        </p>
+      </div>
+    </form>
+  </div>
 {% endblock %}
