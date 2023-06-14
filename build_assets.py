@@ -1,6 +1,6 @@
 import os
 import shutil
-from nodejs import node, npm
+from nodejs import npm
 
 from django.conf import settings
 from django.core.management import call_command
@@ -9,10 +9,7 @@ THEME_NAME = 'hourglass'
 
 THEME_PATH = os.path.join(settings.BASE_DIR, 'themes', THEME_NAME)
 
-COMPILE_PATH = os.path.join(THEME_PATH, 'compile.js')
-# Note! See also paths defined in compile.js
-
-ASSETS_PATH = os.path.join(THEME_PATH, 'assets')
+DIST_PATH = os.path.join(THEME_PATH, 'dist')
 
 JANEWAY_STATIC_PATH = os.path.join(settings.BASE_DIR, 'static', THEME_NAME)
 
@@ -21,41 +18,11 @@ OTHER_SOURCE_PATHS = [
         os.path.join(
             THEME_PATH,
             'node_modules',
-            'jquery',
-            'dist',
-            'jquery.min.js',
-        ),
-        os.path.join(
-            ASSETS_PATH,
-            'js',
-            'jquery.min.js',
-        )
-    ),
-    (
-        os.path.join(
-            THEME_PATH,
-            'node_modules',
-            '@materializecss',
-            'materialize',
-            'dist',
-            'js',
-            'materialize.min.js',
-        ),
-        os.path.join(
-            ASSETS_PATH,
-            'js',
-            'materialize.min.js',
-        )
-    ),
-    (
-        os.path.join(
-            THEME_PATH,
-            'node_modules',
             'lunr',
             'lunr.min.js',
         ),
         os.path.join(
-            ASSETS_PATH,
+            DIST_PATH,
             'js',
             'lunr.min.js',
         )
@@ -69,7 +36,7 @@ OTHER_SOURCE_PATHS = [
             'list.min.js',
         ),
         os.path.join(
-            ASSETS_PATH,
+            DIST_PATH,
             'js',
             'list.min.js',
         )
@@ -80,17 +47,18 @@ OTHER_SOURCE_PATHS = [
             'js',
         ),
         os.path.join(
-            ASSETS_PATH,
+            DIST_PATH,
             'js',
         )
     ),
     (
         os.path.join(
             THEME_PATH,
+            'src',
             'fonts',
         ),
         os.path.join(
-            ASSETS_PATH,
+            DIST_PATH,
             'fonts',
         )
     ),
@@ -104,7 +72,7 @@ OTHER_SOURCE_PATHS = [
             'fontawesome.min.css',
         ),
         os.path.join(
-            ASSETS_PATH,
+            DIST_PATH,
             'fonts',
             'fontawesome',
             'css',
@@ -121,7 +89,7 @@ OTHER_SOURCE_PATHS = [
             'brands.min.css',
         ),
         os.path.join(
-            ASSETS_PATH,
+            DIST_PATH,
             'fonts',
             'fontawesome',
             'css',
@@ -138,7 +106,7 @@ OTHER_SOURCE_PATHS = [
             'fa-brands-400.woff2',
         ),
         os.path.join(
-            ASSETS_PATH,
+            DIST_PATH,
             'fonts',
             'fontawesome',
             'webfonts',
@@ -148,30 +116,16 @@ OTHER_SOURCE_PATHS = [
 ]
 
 
-def install_theme_dependencies():
-
-    """
-    Runs `npm install` to pick up the theme's
-    Node dependencies listed in package.json.
-    """
-
+def compile_css():
     python_dir = os.getcwd()
     os.chdir(THEME_PATH)
-    print(f"Installing as Node.js module: {THEME_PATH}")
-    npm.run(['install', '--omit=dev'], check=True)
+    npm.call(['run', 'build'])
     os.chdir(python_dir)
 
 
-def compile_sass():
-    python_dir = os.getcwd()
-    os.chdir(THEME_PATH)
-    node.run([COMPILE_PATH], check=True)
-    os.chdir(python_dir)
+def gather_assets():
 
-
-def collect_assets():
-
-    print(f"Collecting other assets in {ASSETS_PATH}")
+    print(f"Collecting other assets in {DIST_PATH}")
 
     for source, destination in OTHER_SOURCE_PATHS:
         print(source)
@@ -186,7 +140,7 @@ def collect_assets():
 def copy_assets_to_static():
 
     print(f"Copying assets to {JANEWAY_STATIC_PATH}")
-    shutil.copytree(ASSETS_PATH, JANEWAY_STATIC_PATH, dirs_exist_ok=True)
+    shutil.copytree(DIST_PATH, JANEWAY_STATIC_PATH, dirs_exist_ok=True)
 
 
 def build():
@@ -194,13 +148,13 @@ def build():
     print('\n')
     print(f"Building theme: {THEME_NAME}")
 
-    if not os.path.exists(ASSETS_PATH):
-        os.makedirs(ASSETS_PATH)
+    if not os.path.exists(DIST_PATH):
+        os.makedirs(DIST_PATH)
     # You can comment out the following line in development
     # if rebuilding assets frequently
     # install_theme_dependencies()
-    collect_assets()
-    compile_sass()
+    gather_assets()
+    compile_css()
     copy_assets_to_static()
     print('\n')
     call_command('collectstatic', '--noinput')

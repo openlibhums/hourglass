@@ -10,16 +10,13 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>{% block title %}{% endblock title %}</title>
         <link
-            href="{% static 'path/css/path.min.css' %}"
+            href="{% static 'hourglass/css/output.min.css' %}"
             rel="stylesheet">
         <link
-            href="{% static 'path/fonts/fontawesome/css/fontawesome.min.css' %}"
+            href="{% static 'hourglass/fonts/fontawesome/css/fontawesome.min.css' %}"
             rel="stylesheet">
         <link
-            href="{% static 'path/fonts/fontawesome/css/brands.min.css' %}"
-            rel="stylesheet">
-        <link
-            href="https://fonts.googleapis.com/icon?family=Material+Icons"
+            href="{% static 'hourglass/fonts/fontawesome/css/brands.min.css' %}"
             rel="stylesheet">
         {% if request.press.favicon %}
             <link rel="icon" href="{{ press.favicon.url }}" type="image/x-icon">
@@ -64,22 +61,12 @@
         {% include 'press/footer.html' %}
 
         <!-- JavaScript dependencies -->
-        <script src="{% static 'path/js/jquery.min.js' %}"></script>
-        <script src="{% static 'path/js/materialize.min.js' %}"></script>
-        <script>M.AutoInit()</script>
-        <script>
-            {% if messages %}
-                {% for message in messages %}
-                    M.toast({unsafeHTML: '{{ message }}'})
-                {% endfor %}
-            {% endif %}
-        </script>
-        <script src="{% static 'path/js/list.min.js' %}"></script>
-        <script src="{% static 'path/js/lunr.min.js' %}"></script>
+        <script src="{% static 'hourglass/js/list.min.js' %}"></script>
+        <script src="{% static 'hourglass/js/lunr.min.js' %}"></script>
 
         <!-- custom JavaScript -->
-        <script src="{% static 'path/js/search.js' %}" type="module"></script>
-        <script src="{% static 'path/js/dropdown.js' %}" type="module"></script>
+        <script src="{% static 'hourglass/js/search.js' %}" type="module"></script>
+        <script src="{% static 'hourglass/js/dropdown.js' %}" type="module"></script>
 
         {% block js %}{% endblock js %}
     </body>
