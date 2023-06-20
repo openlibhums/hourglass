@@ -1,9 +1,20 @@
+import typography from '@tailwindcss/typography'
+import forms from '@tailwindcss/forms'
+
 export default {
   content: [
-    './src/**/*.{html,js}'
+    './src/**/*.js',
+    './templates/**/*.html'
   ],
   theme: {
-    extend: {}
+    extend: {
+      fontFamily: {
+        poppins: ['Poppins Regular', 'sans-serif']
+      }
+    }
   },
-  plugins: []
+  plugins: [
+    typography,
+    forms
+  ]
 }

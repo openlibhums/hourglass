@@ -44,6 +44,7 @@ OTHER_SOURCE_PATHS = [
     (
         os.path.join(
             THEME_PATH,
+            'src',
             'js',
         ),
         os.path.join(
