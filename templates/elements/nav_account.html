@@ -1,0 +1,77 @@
+<li>
+  <a
+    href="#"
+    class="
+      inline-block align-center
+      px-2 py-2
+      text-orange-600
+      sm:max-lg:hidden
+      pb-7 opens-dropdown
+    "
+    data-target="dropdown-account">
+    Acc
+  </a>
+  <ul
+    class="
+      bg-zinc-200
+      flex flex-col
+      w-max
+      sm:max-lg:block
+      lg:hidden
+      lg:absolute
+      lg:top-full
+    "
+    id="dropdown-account">
+
+    {% if request.user.is_authenticated %}
+      {% if user_is_editor or request.user.is_staff %}
+        <li>
+          <a
+            class="inline-block align-center px-2 py-2 sm:max-lg:hidden"
+            href="{% url 'core_manager_index' %}">
+            {% trans 'Manager' %}
+          </a>
+        </li>
+      {% endif %}
+      {% if request.user.is_staff %}
+        <li>
+          <a
+            class="inline-block align-center px-2 py-2 sm:max-lg:hidden"
+            href="/admin/">
+            {% trans 'Admin' %}
+          </a>
+        </li>
+      {% endif %}
+      <li>
+        <a
+          class="inline-block align-center px-2 py-2 sm:max-lg:hidden"
+          href="{% url 'core_edit_profile' %}">
+          {% trans 'Profile' %}
+        </a>
+      </li>
+      <li>
+        <a
+          class="inline-block align-center px-2 py-2 sm:max-lg:hidden"
+          href="{% url 'core_logout' %}">
+          {% trans 'Log out' %}
+        </a>
+      </li>
+    {% else %}
+      <li>
+        <a
+          class="inline-block align-center px-2 py-2 sm:max-lg:hidden"
+          href="{% url 'core_login' %}">
+          {% trans "Login" %}
+        </a>
+      </li>
+      <li>
+        <a
+          class="inline-block align-center px-2 py-2 sm:max-lg:hidden"
+          href="{% url 'core_register' %}">
+          {% trans "Register" %}
+        </a>
+      </li>
+    {% endif %}
+  </ul>
+
+</li>

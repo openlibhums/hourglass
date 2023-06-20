@@ -1,56 +1,51 @@
-{% load svg from press_url %}
 {% load hooks %}
+{% load press_url %}
 
-
-<nav class="nav-extended">
-  <div class="container">
-    <div class="upper-nav">
-      <a
-        href="#"
-        data-target="mobile-nav"
-        class="sidenav-trigger"
-      >
-        <i class="material-icons large">menu</i>
-      </a>
+<div class="bg-zinc-200 sticky top-0">
+  <div class="container pt-3 mx-auto max-w-screen-xl flex justify-between">
+    <div class="px-6 pt-4 pb-5 ml-6 flex">
       <a href="{{ request.press_base_url }}">
-        {% if 'svg' in request.press_cover %}
-          {% svg request.press_cover %}
-        {% else %}
-          <img
-            src="{% url 'press_cover_download' %}"
-            alt="{{ request.press.name }}"
-          >
-        {% endif %}
+        <img
+          class="h-9"
+          src="{% url 'press_cover_download' %}"
+          alt="{{ request.press.name }}">
       </a>
-      <div class="hide-on-med-and-down top-right-icons">
-        <a id="search-trigger" href="#search-modal" class="modal-trigger">
-          <i class="material-icons">search</i>
-        </a>
-        {% include 'press/nav_account.html' with viewport='medium' %}
-      </div>
     </div>
-
-    <div class="nav-wrapper lower-nav hide-on-med-and-down">
-            <!-- Large viewports: Top-level list -->
-      <ul>
-        {% include 'press/nav_elements.html' with viewport='medium' %}
-      </ul>
+    <div class="px-6 pt-4 mr-6">
+      <nav>
+        <ul
+          id="nav-options"
+          class="sm:max-lg:hidden font-poppins flex justify-center space-x-2">
+          {% for item in navigation_items %}
+            {% if not item.for_footer %}
+              {% include 'elements/nav_item.html' with viewport='medium' %}
+            {% endif %}
+          {% endfor %}
+          {% include 'elements/nav_search.html' with viewport='medium' %}
+          {% include 'elements/nav_account.html' with viewport='medium' %}
+        </ul>
+        <ul class="lg:hidden">
+          {% include 'elements/nav_slide_drawer.html' with viewport='medium' %}
+        </ul>
+      </nav>
     </div>
   </div>
-</nav>
+</div>
 
-{% include 'press/dropdown_content.html' with viewport='medium' %}
+<script>
 
-<ul id="mobile-nav" class="sidenav">
-  <li>
-    <a href="#search-modal" class="modal-trigger">
-      <i class="material-icons">search</i>
-    </a>
-  </li>
-  {% include 'press/nav_elements.html' with viewport='mobile' %}
-  <li>
-    {% include 'press/nav_account.html' with viewport='mobile' %}
-  </li>
-</ul>
+  function toggleDropdown(topNavItem) {
+    dropdownId = topNavItem.getAttribute('data-target')
+    const dropdown = document.getElementById(dropdownId)
+    dropdown.classList.toggle('lg:hidden')
+  }
 
-{% include 'press/dropdown_content.html' with viewport='mobile' %}
+  // Drop down on click
+  const topNavItems = document.getElementsByClassName('opens-dropdown')
+  for (const item of topNavItems) {
+    item.addEventListener('click', event => {
+      toggleDropdown(item)
+    })
+  }
+
+</script>

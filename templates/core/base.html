@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}{% endblock title %}</title>
     <link
-      href="{% static 'hourglass/css/output.min.css' %}"
+      href="{% static 'hourglass/css/output.css' %}"
       rel="stylesheet">
     <link
       href="{% static 'hourglass/fonts/fontawesome/css/fontawesome.min.css' %}"
@@ -55,7 +55,7 @@
     <main>
       <div class="container flow-text">
         {% block body %}{% endblock body %}
-        {% include 'core/elements/search_modal.html' %}
+        {% include 'elements/search_modal.html' %}
       </div>
     </main>
     {% include 'press/footer.html' %}

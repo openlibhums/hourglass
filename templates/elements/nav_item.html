@@ -1,0 +1,47 @@
+<li class="relative">
+  <a
+    class="
+      inline-block align-center
+      px-2 pt-2
+      {% if item.link in request.path %}
+        underline decoration-2 underline-offset-8
+      {% endif %}
+      {% if item.has_sub_nav %}
+        pb-7 opens-dropdown
+        {% for sub_item in item.sub_nav_items %} 
+          {% if sub_item.link in request.path %}
+            underline decoration-2 underline-offset-8
+          {% endif %}
+        {% endfor %}
+      {% else %}
+        pb-2
+      {% endif %}
+    "
+    data-target="dropdown-{{ item.pk }}"
+    href="
+      {% if item.has_sub_nav %}
+        #
+      {% else %}
+        {{ item.link }}
+      {% endif %}
+    ">
+    {{ item.link_name }}
+  </a>
+  {% if item.has_sub_nav %}
+    <ul
+      class="
+        bg-zinc-200
+        sm:max-lg:block
+        flex flex-col
+        w-max
+        lg:hidden
+        lg:absolute
+        lg:top-full
+      "
+      id="dropdown-{{ item.pk }}">
+      {% for sub_item in item.sub_nav_items %}
+        {% include 'elements/nav_item.html' with item=sub_item %}
+      {% endfor %}
+    </ul>
+  {% endif %}
+</li>
