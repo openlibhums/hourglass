@@ -56,6 +56,17 @@ OTHER_SOURCE_PATHS = [
         os.path.join(
             THEME_PATH,
             'src',
+            'media',
+        ),
+        os.path.join(
+            DIST_PATH,
+            'media',
+        )
+    ),
+    (
+        os.path.join(
+            THEME_PATH,
+            'src',
             'fonts',
         ),
         os.path.join(
