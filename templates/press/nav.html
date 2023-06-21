@@ -3,7 +3,7 @@
 
 <div class="bg-zinc-200 sticky top-0">
   <div class="container pt-3 mx-auto max-w-screen-xl flex justify-between">
-    <div class="px-6 pt-4 pb-5 ml-6 flex">
+    <div class="px-6 pt-4 pb-5 flex">
       <a href="{{ request.press_base_url }}">
         <img
           class="h-9"
@@ -11,11 +11,11 @@
           alt="{{ request.press.name }}">
       </a>
     </div>
-    <div class="px-6 pt-4 mr-6">
+    <div class="px-6 pt-4">
       <nav>
         <ul
           id="nav-options"
-          class="sm:max-lg:hidden font-poppins flex justify-center space-x-2">
+          class="sm:max-lg:hidden text-sm font-poppins flex justify-center space-x-2">
           {% for item in navigation_items %}
             {% if not item.for_footer %}
               {% include 'elements/nav_item.html' with viewport='medium' %}
