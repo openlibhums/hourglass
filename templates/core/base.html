@@ -49,25 +49,29 @@
     {% endblock meta_image %}
   </head>
   <body>
-    <header>
-      {% include "press/nav.html" %}
-    </header>
-    <main>
-      <div class="container flow-text">
-        {% block body %}{% endblock body %}
-        {% include 'elements/search_modal.html' %}
-      </div>
-    </main>
-    {% include 'press/footer.html' %}
+    <div class="flex flex-col min-h-screen justify-between">
+      <header>
+        {% include "press/nav.html" %}
+      </header>
+      <main class="mb-auto">
+        <div class="container flow-text">
+          {% block body %}{% endblock body %}
+          {% include 'elements/search_modal.html' %}
+        </div>
+      </main>
+      <footer>
+        {% include 'press/footer.html' %}
+      </footer>
 
-        <!-- JavaScript dependencies -->
-    <script src="{% static 'hourglass/js/list.min.js' %}"></script>
-    <script src="{% static 'hourglass/js/lunr.min.js' %}"></script>
+          <!-- JavaScript dependencies -->
+      <script src="{% static 'hourglass/js/list.min.js' %}"></script>
+      <script src="{% static 'hourglass/js/lunr.min.js' %}"></script>
 
-        <!-- custom JavaScript -->
-    <script src="{% static 'hourglass/js/search.js' %}" type="module"></script>
-    <script src="{% static 'hourglass/js/dropdown.js' %}" type="module"></script>
+          <!-- custom JavaScript -->
+      <script src="{% static 'hourglass/js/search.js' %}" type="module"></script>
+      <script src="{% static 'hourglass/js/dropdown.js' %}" type="module"></script>
 
-    {% block js %}{% endblock js %}
+      {% block js %}{% endblock js %}
+    </div>
   </body>
 </html>
