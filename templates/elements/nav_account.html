@@ -3,20 +3,26 @@
     href="#"
     class="
       inline-block align-center
-      px-2 py-2
-      text-orange-600
-      sm:max-lg:hidden
-      pb-7 opens-dropdown
-    "
-    data-target="dropdown-account">
-    Acc
+      px-2
+      max-lg:cursor-default
+      max-lg:uppercase
+      max-lg:py-2
+      lg:pt-2
+      lg:pb-7
+    ">
+    <span
+      class="max-lg:hidden text-orange-600 lg:opens-dropdown"
+      data-target="dropdown-account">
+      Acc
+    </span>
+    <span class="lg:hidden">Account</span>
   </a>
   <ul
     class="
       bg-zinc-200
       flex flex-col
       w-max
-      sm:max-lg:block
+      max-lg:block
       lg:hidden
       lg:absolute
       lg:top-full
@@ -27,7 +33,7 @@
       {% if user_is_editor or request.user.is_staff %}
         <li>
           <a
-            class="inline-block align-center px-2 py-2 sm:max-lg:hidden"
+            class="inline-block align-center p-2"
             href="{% url 'core_manager_index' %}">
             {% trans 'Manager' %}
           </a>
@@ -36,7 +42,7 @@
       {% if request.user.is_staff %}
         <li>
           <a
-            class="inline-block align-center px-2 py-2 sm:max-lg:hidden"
+            class="inline-block align-center p-2"
             href="/admin/">
             {% trans 'Admin' %}
           </a>
@@ -44,14 +50,14 @@
       {% endif %}
       <li>
         <a
-          class="inline-block align-center px-2 py-2 sm:max-lg:hidden"
+          class="inline-block align-center p-2"
           href="{% url 'core_edit_profile' %}">
           {% trans 'Profile' %}
         </a>
       </li>
       <li>
         <a
-          class="inline-block align-center px-2 py-2 sm:max-lg:hidden"
+          class="inline-block align-center p-2"
           href="{% url 'core_logout' %}">
           {% trans 'Log out' %}
         </a>
@@ -59,14 +65,14 @@
     {% else %}
       <li>
         <a
-          class="inline-block align-center px-2 py-2 sm:max-lg:hidden"
+          class="inline-block align-center p-2"
           href="{% url 'core_login' %}">
           {% trans "Login" %}
         </a>
       </li>
       <li>
         <a
-          class="inline-block align-center px-2 py-2 sm:max-lg:hidden"
+          class="inline-block align-center p-2"
           href="{% url 'core_register' %}">
           {% trans "Register" %}
         </a>

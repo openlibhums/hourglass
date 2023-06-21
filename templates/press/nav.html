@@ -2,20 +2,50 @@
 {% load press_url %}
 
 <div class="bg-zinc-200 sticky top-0">
-  <div class="container pt-3 mx-auto max-w-screen-xl flex justify-between">
-    <div class="px-6 pt-4 pb-5 flex">
-      <a href="{{ request.press_base_url }}">
-        <img
-          class="h-9"
-          src="{% url 'press_cover_download' %}"
-          alt="{{ request.press.name }}">
-      </a>
-    </div>
-    <div class="px-6 pt-4">
-      <nav>
+  <div
+    class="
+      container mx-auto max-w-screen-xl
+      pt-3
+    ">
+    <div class="flex flex-col lg:flex-row gap-3 justify-between">
+      <div class="flex gap-3 justify-between">
+        <div class="px-6 pt-4 pb-5 flex-none flex">
+          <a href="{{ request.press_base_url }}">
+            <img
+              class="h-9"
+              src="{% url 'press_cover_download' %}"
+              alt="{{ request.press.name }}">
+          </a>
+        </div>
+        <nav
+          class="
+            px-6 pt-4
+            lg:hidden
+            ">
+          <ul
+            class="
+              text-sm font-poppins
+              flex flex-col lg:flex-row justify-center gap-x-2
+            ">
+            {% include 'elements/nav_slide_drawer.html' with viewport='medium' %}
+          </ul>
+        </nav>
+      </div>
+      <nav
+        id="nav-options"
+        class="
+          px-6 pt-4
+          max-lg:hidden
+          max-lg:pb-4
+        ">
         <ul
-          id="nav-options"
-          class="sm:max-lg:hidden text-sm font-poppins flex justify-center space-x-2">
+          class="
+            text-sm font-poppins
+            flex flex-col flex-wrap
+            gap-y-6
+            md:flex-row md:gap-x-6
+            lg:justify-center lg:gap-x-2
+          ">
           {% for item in navigation_items %}
             {% if not item.for_footer %}
               {% include 'elements/nav_item.html' with viewport='medium' %}
@@ -24,9 +54,6 @@
           {% include 'elements/nav_search.html' with viewport='medium' %}
           {% include 'elements/nav_account.html' with viewport='medium' %}
         </ul>
-        <ul class="lg:hidden">
-          {% include 'elements/nav_slide_drawer.html' with viewport='medium' %}
-        </ul>
       </nav>
     </div>
   </div>
@@ -34,18 +61,23 @@
 
 <script>
 
-  function toggleDropdown(topNavItem) {
-    dropdownId = topNavItem.getAttribute('data-target')
+  function toggleSideNav(event) {
+    const navOptions = document.getElementById('nav-options')
+    navOptions.classList.toggle('max-lg:hidden')
+  }
+
+  const slideDrawer = document.getElementById('slide-drawer')
+  slideDrawer.addEventListener('click', event => toggleSideNav(event))
+
+  function toggleDropdown(event) {
+    dropdownId = event.target.getAttribute('data-target')
     const dropdown = document.getElementById(dropdownId)
     dropdown.classList.toggle('lg:hidden')
   }
 
-  // Drop down on click
-  const topNavItems = document.getElementsByClassName('opens-dropdown')
+  const topNavItems = document.getElementsByClassName('lg:opens-dropdown')
   for (const item of topNavItems) {
-    item.addEventListener('click', event => {
-      toggleDropdown(item)
-    })
+    item.addEventListener('click', event => toggleDropdown(event))
   }
 
 </script>
