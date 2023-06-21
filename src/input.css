@@ -2,11 +2,29 @@
 @tailwind components;
 @tailwind utilities;
 
-
 @layer base {
   @font-face {
     font-family: 'Poppins Regular';
-    font-display: swap;
     src: url('../fonts/poppins/Poppins-Regular.ttf') format('truetype');
+  }
+  @font-face {
+    font-family: 'Poppins Medium';
+    src: url('../fonts/poppins/Poppins-Medium.ttf') format('truetype');
+  }
+  @font-face {
+    font-family: 'Poppins Bold';
+    src: url('../fonts/poppins/Poppins-Bold.ttf') format('truetype');
+  }
+  @font-face {
+    font-family: 'Source Sans';
+    src: url('../fonts/source-sans/SourceSans3-VariableFont_wght.ttf');
+    font-weight: 100 1000;
+    font-stretch: 25% 151%;
+  }
+  @font-face {
+    font-family: 'Source Sans Italic';
+    src: url('../fonts/source-sans/SourceSans3-Italic-VariableFont_wght.ttf');
+    font-weight: 100 1000;
+    font-stretch: 25% 151%;
   }
 }

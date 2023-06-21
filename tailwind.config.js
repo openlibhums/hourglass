@@ -29,7 +29,11 @@ export default {
     },
     extend: {
       fontFamily: {
-        poppins: ['Poppins Regular', 'sans-serif']
+        poppins: ['Poppins Regular', 'sans-serif'],
+        'poppins-medium': ['Poppins Medium', 'sans-serif'],
+        'poppins-bold': ['Poppins Bold', 'sans-serif'],
+        'source-sans': ['Source Sans', 'sans-serif'],
+        'source-sans-italic': ['Source Sans Italic', 'sans-serif']
       }
     }
   },
