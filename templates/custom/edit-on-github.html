@@ -1,0 +1,19 @@
+{% if request.user.is_staff %}
+  <div
+    class="
+      absolute top-0 right-0 bg-black text-hourglass-tan
+      p-2 rounded-full drop-shadow-xl m-4
+    ">
+    <a href="https://github.com/BirkbeckCTP/path/edit/main/templates/{{ rel_path }}">
+      ✏️ Edit on GitHub
+    </a>
+    <span id="hide-edit-on-gh" class="p-2 cursor-pointer">X</span>
+  </div>
+  <script>
+    const hideEditLink = document.getElementById("hide-edit-on-gh")
+    hideEditLink.addEventListener('click', event => {
+      event.target.parentElement.classList.toggle('hidden')
+    })
+  </script>
+{% endif %}
+
