@@ -2,14 +2,10 @@
 {% load press_url %}
 
 <div class="bg-hourglass-tan">
-  <div
-    class="
-      container mx-auto max-w-screen-xl
-      pt-3
-    ">
-    <div class="flex flex-col lg:flex-row gap-3 justify-between">
+  <div class="container mx-auto max-w-screen-xl">
+    <div class="pt-3 px-8 flex flex-col lg:flex-row gap-3 justify-between">
       <div class="flex gap-3 justify-between">
-        <div class="px-6 pt-4 pb-5 flex-shrink flex">
+        <div class="pt-4 pb-5 flex-shrink flex">
           <a href="{{ request.press_base_url }}">
             <img
               class="max-h-9"
@@ -17,35 +13,23 @@
               alt="{{ request.press.name }}">
           </a>
         </div>
-        <nav
-          class="
-            px-6 pt-4
-            lg:hidden
-            ">
-          <ul
-            class="
-              text-sm font-poppins
-              flex flex-col lg:flex-row justify-center gap-x-2
-            ">
+        <nav class="lg:hidden">
+          <ul class="text-sm font-poppins-medium">
             {% include 'elements/nav_slide_drawer.html' with viewport='medium' %}
           </ul>
         </nav>
       </div>
       <nav
         id="nav-options"
-        class="
-          pt-4
-          max-lg:px-6
-          max-lg:hidden
-          max-lg:pb-4
+        class="pt-4 max-lg:hidden max-lg:pb-4
         ">
         <ul
           class="
-            text-sm font-poppins
+            text-sm font-poppins-medium
             flex flex-col flex-wrap
             gap-y-6
             md:flex-row md:gap-x-6
-            lg:justify-center lg:gap-x-2
+            lg:justify-center lg:gap-x-5
           ">
           {% for item in navigation_items %}
             {% if not item.for_footer %}

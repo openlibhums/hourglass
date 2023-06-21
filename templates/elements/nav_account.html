@@ -3,7 +3,6 @@
     href="#"
     class="
       inline-block align-center
-      px-2
       max-lg:cursor-default
       max-lg:uppercase
       max-lg:py-2
@@ -20,7 +19,7 @@
   <ul
     class="
       bg-hourglass-tan
-      flex flex-col
+      flex flex-col gap-x-6
       w-max
       max-lg:block
       lg:hidden
@@ -33,7 +32,7 @@
       {% if user_is_editor or request.user.is_staff %}
         <li>
           <a
-            class="inline-block align-center p-2"
+            class="inline-block align-center py-2"
             href="{% url 'core_manager_index' %}">
             {% trans 'Manager' %}
           </a>
@@ -42,7 +41,7 @@
       {% if request.user.is_staff %}
         <li>
           <a
-            class="inline-block align-center p-2"
+            class="inline-block align-center py-2"
             href="/admin/">
             {% trans 'Admin' %}
           </a>
@@ -50,14 +49,14 @@
       {% endif %}
       <li>
         <a
-          class="inline-block align-center p-2"
+          class="inline-block align-center py-2"
           href="{% url 'core_edit_profile' %}">
           {% trans 'Profile' %}
         </a>
       </li>
       <li>
         <a
-          class="inline-block align-center p-2"
+          class="inline-block align-center py-2"
           href="{% url 'core_logout' %}">
           {% trans 'Log out' %}
         </a>
@@ -65,14 +64,14 @@
     {% else %}
       <li>
         <a
-          class="inline-block align-center p-2"
+          class="inline-block align-center py-2"
           href="{% url 'core_login' %}">
           {% trans "Login" %}
         </a>
       </li>
       <li>
         <a
-          class="inline-block align-center p-2"
+          class="inline-block align-center py-2"
           href="{% url 'core_register' %}">
           {% trans "Register" %}
         </a>
