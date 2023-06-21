@@ -1,7 +1,7 @@
 {% load hooks %}
 {% load press_url %}
 
-<div class="bg-zinc-200 sticky top-0">
+<div class="bg-hourglass-tan">
   <div
     class="
       container mx-auto max-w-screen-xl
@@ -9,10 +9,10 @@
     ">
     <div class="flex flex-col lg:flex-row gap-3 justify-between">
       <div class="flex gap-3 justify-between">
-        <div class="px-6 pt-4 pb-5 flex-none flex">
+        <div class="px-6 pt-4 pb-5 flex-shrink flex">
           <a href="{{ request.press_base_url }}">
             <img
-              class="h-9"
+              class="max-h-9"
               src="{% url 'press_cover_download' %}"
               alt="{{ request.press.name }}">
           </a>
@@ -34,7 +34,8 @@
       <nav
         id="nav-options"
         class="
-          px-6 pt-4
+          pt-4
+          max-lg:px-6
           max-lg:hidden
           max-lg:pb-4
         ">
