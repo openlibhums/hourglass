@@ -7,6 +7,15 @@ export default {
     './templates/**/*.html'
   ],
   theme: {
+    container: {
+      padding: {
+        DEFAULT: '3rem',
+        sm: '6rem',
+        lg: '8rem',
+        xl: '10rem',
+        '2xl': '12rem'
+      }
+    },
     extend: {
       fontFamily: {
         poppins: ['Poppins Regular', 'sans-serif']
