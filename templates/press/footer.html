@@ -3,27 +3,27 @@
 <div class="bg-black text-white">
   <div class="container py-12 mx-auto max-w-screen-xl flex flex-col justify-between">
     <div class="pb-8 md:pb-12 flex justify-between content-start">
-        <a href="{{ request.press_base_url }}">
-          <img
-            class="h-16 md:h-24"
-            src="{% url 'press_cover_download' %}"
-            alt="{{ request.press.name }}">
-        </a>
-        {% if press.secondary_image %}
-          {% if press.secondary_image_url %}
-            <a href="{{ press.secondary_image_url }}">
-              <img
-                class="h-16 md:h-24"
-                src="{{ press.secondary_image.url }}"
-                alt="Janeway">
-            </a>
-          {% else %}
-            <img src="{{ press.secondary_image.url }}">
-          {% endif %}
+      <a href="{{ request.press_base_url }}">
+        <img
+          class="h-16 md:h-24"
+          src="{% url 'press_cover_download' %}"
+          alt="{{ request.press.name }}">
+      </a>
+      {% if press.secondary_image %}
+        {% if press.secondary_image_url %}
+          <a href="{{ press.secondary_image_url }}">
+            <img
+              class="h-16 md:h-24"
+              src="{{ press.secondary_image.url }}"
+              alt="Janeway">
+          </a>
+        {% else %}
+          <img src="{{ press.secondary_image.url }}">
         {% endif %}
+      {% endif %}
     </div>
     <nav>
-      <ul class="py-4 flex gap-4 flex-wrap font-poppins text-sm uppercase">
+      <ul class="py-4 flex gap-4 flex-wrap font-poppins-bold text-sm uppercase tracking-wider">
         {% for item in navigation_items %}
           {% if item.for_footer %}
             {% include "elements/footer_link_custom.html" %}
