@@ -2,23 +2,22 @@
   <a
     class="
       inline-block align-center
+      max-lg:py-4 lg:pt-2 lg:pb-7
+      max-lg:px-2 lg:px-4 w-full
+      max-lg:border-b border-hourglass-tan-light
+      max-lg:font-poppins-bold lg:hover:font-poppins-bold
+      lg:hover:ease-in transition duration-150 ease-out
+      lg:group-hover:opacity-70 lg:hover:group-hover:opacity-100
       {% if item.link in request.path %}
-        underline decoration-2 underline-offset-8
+        lg:underline lg:decoration-2 lg:underline-offset-8
       {% endif %}
       {% if item.has_sub_nav %}
-        max-lg:cursor-default
-        max-lg:uppercase
-        pt-2
-        md:pb-2
-        lg:opens-dropdown
-        lg:pb-7
-        {% for sub_item in item.sub_nav_items %} 
+        toggles-dropdown
+        {% for sub_item in item.sub_nav_items %}
           {% if sub_item.link in request.path %}
-            underline decoration-2 underline-offset-8
+            lg:underline lg:decoration-2 lg:underline-offset-8
           {% endif %}
         {% endfor %}
-      {% else %}
-        py-2
       {% endif %}
     "
     data-target="dropdown-{{ item.pk }}"
@@ -34,17 +33,15 @@
   {% if item.has_sub_nav %}
     <ul
       class="
-        bg-hourglass-tan
-        max-lg:block
-        flex flex-col
-        w-max
-        lg:hidden
-        lg:absolute
-        lg:top-full
+        lg:bg-white
+        flex flex-col gap-x-6
+        max-lg:w-full lg:w-max
+        hidden
+        lg:absolute lg:top-full
       "
       id="dropdown-{{ item.pk }}">
       {% for sub_item in item.sub_nav_items %}
-        {% include 'elements/nav_item.html' with item=sub_item %}
+        {% include 'elements/nav_sub_item.html' with item=sub_item %}
       {% endfor %}
     </ul>
   {% endif %}

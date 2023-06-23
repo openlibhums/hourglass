@@ -1,0 +1,32 @@
+<li>
+  <a
+    class="
+      inline-block align-center
+      px-4
+      max-lg:py-4 lg:py-2
+      w-full
+      lg:hover:bg-hourglass-tan-light
+      max-lg:border-b border-hourglass-tan-light
+      {% if item.link in request.path %}
+        lg:underline lg:decoration-2 lg:underline-offset-8
+      {% endif %}
+    "
+    href="
+      {% if item %}
+        {{ item.link }}
+      {% else %}
+        {% url url_name %}
+      {% endif %}
+    ">
+    <div class="flex gap-4 justify-between">
+      <span>
+        {% if item %}
+          {{ item.link_name }}
+        {% else %}
+          {% trans label %}
+        {% endif %}
+      </span>
+      <span>&rarr;</span>
+    </div>
+  </a>
+</li>
