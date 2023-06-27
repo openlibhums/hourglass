@@ -1,21 +1,23 @@
+{% load static %}
+
 <li>
   <a
     href="#"
     data-target="dropdown-account"
     class="
-      inline-block align-center
-      max-lg:py-4 lg:pt-2 lg:pb-7
-      max-lg:px-2 lg:px-4 w-full
+      max-lg:inline-block max-lg:align-center
+      max-lg:py-4
+      max-lg:px-2
       max-lg:border-b border-hourglass-tan-light
       max-lg:font-poppins-bold lg:hover:font-poppins-bold
       lg:hover:ease-in transition duration-150 ease-out
       lg:group-hover:opacity-70 lg:hover:group-hover:opacity-100
       toggles-dropdown
     ">
-    <span
-      class="max-lg:hidden text-hourglass-red">
-      Acc
-    </span>
+    <img
+      class="max-lg:hidden h-8"
+      src="{% static 'hourglass/media/icons/account.svg' %}"
+      alt="Account">
     <span class="lg:hidden">Account</span>
   </a>
   <ul

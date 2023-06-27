@@ -1,15 +1,16 @@
+{% load static %}
 {% load hooks %}
 {% load press_url %}
 
 <div class="bg-hourglass-tan">
   <div class="container mx-auto max-w-screen-xl">
-    <div class="pt-3 lg:px-8 flex flex-col lg:flex-row gap-3 justify-between">
+    <div class="pt-2 lg:px-8 flex flex-col lg:flex-row gap-3 justify-between">
       <div class="flex gap-3 justify-between">
-        <div class="pt-4 pb-5 flex-shrink flex">
+        <div class="max-lg:p-8 lg:pt-6 flex-shrink flex">
           <a href="{{ request.press_base_url }}">
             <img
-              class="max-h-9"
-              src="{% url 'press_cover_download' %}"
+              class="max-lg:h-6 lg:h-7"
+              src="{% static 'hourglass/media/logo/OLH-symbol-black.svg' %}"
               alt="{{ request.press.name }}">
           </a>
         </div>
@@ -21,7 +22,7 @@
       </div>
       <nav
         id="nav-options"
-        class="lg:pt-4 max-lg:hidden group
+        class="max-lg:hidden group
         ">
         <ul
           class="
@@ -29,6 +30,7 @@
             flex max-lg:flex-col
             lg:flex-row
             lg:justify-center
+            lg:items-center
           ">
           {% for item in navigation_items %}
             {% if not item.for_footer %}
@@ -57,7 +59,6 @@
     event.preventDefault()
     dropdownId = item.getAttribute('data-target')
     const dropdown = document.getElementById(dropdownId)
-    item.parentElement.classList.toggle('lg:bg-white')
     item.classList.toggle('lg:font-poppins-bold')
     dropdown.classList.toggle('hidden')
   }
