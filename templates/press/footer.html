@@ -3,10 +3,10 @@
 
 <div class="bg-black text-white relative z-40">
   <div class="container relative py-12 mx-auto max-w-screen-xl flex flex-col justify-between">
-    <div class="pt-8 pb-28 lg:px-8 flex justify-between content-start">
+    <div class="pt-8 pb-28 lg:px-8 flex max-md:gap-8 md:gap-28 justify-between content-start">
       <a href="{{ request.press_base_url }}">
         <img
-          class="md:h-24 lg:h-10"
+          class="max-lg:h-24 lg:h-10"
           src="{% static 'hourglass/media/logo/OLH-logo-white.svg' %}"
           alt="{{ request.press.name }}">
       </a>
@@ -14,7 +14,7 @@
         {% if press.secondary_image_url %}
           <a href="{{ press.secondary_image_url }}">
             <img
-              class="md:h-24 lg:h-10"
+              class="max-lg:h-24 lg:h-10"
               src="{{ press.secondary_image.url }}"
               alt="Janeway">
           </a>

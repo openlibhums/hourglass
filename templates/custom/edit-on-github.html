@@ -10,12 +10,11 @@
     <span id="hide-edit-on-gh" class="p-2 cursor-pointer">X</span>
   </div>
   <script>
-    const queryString = window.location.search
     const hideEditLink = document.getElementById("hide-edit-on-gh")
     hideEditLink.addEventListener('click', event => {
       hideEditLink.parentElement.classList.toggle('hidden')
     })
-    if (queryString.includes('hide-edit-on-gh')) {
+    if (window.location.search.includes('hide-edit-on-gh')) {
       hideEditLink.parentElement.classList.toggle('hidden')
     }
   </script>

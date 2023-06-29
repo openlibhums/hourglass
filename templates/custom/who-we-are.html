@@ -3,20 +3,33 @@
 <article>
   <div class="container mx-auto max-w-screen-xl relative">
     <img
-      class="lg:hidden absolute -top-8 -right-32 sm:-right-12 md:right-4 max-w-md"
+      class="
+        lg:hidden absolute -top-8 -right-32 sm:-right-12 md:right-4 max-w-md 
+        motion-safe:rallax
+      "
       src="{% static 'hourglass/media/backgrounds/striped-umbrella.png' %}"
       alt="A couple in old-timey dress holding a striped umbrella">
+
     <img
-      class="max-lg:hidden absolute top-8 -right-12"
+      class="absolute max-lg:hidden top-8 -right-12 motion-safe:rallax"
       src="{% static 'hourglass/media/backgrounds/striped-umbrella-lg.png' %}"
       alt="A couple in old-timey dress holding a striped umbrella">
     {% include 'custom/edit-on-github.html' with rel_path='custom/who-we-are.html' %}
     <div class="relative z-40">
-      <h1 class="max-lg:text-4xl lg:text-7xl font-poppins-bold max-lg:pt-64 max-lg:pb-12 lg:py-28 px-8">
+      <h1
+        class="
+          max-lg:text-4xl lg:text-7xl
+          font-poppins-bold max-lg:pt-64 max-lg:pb-12 lg:py-28 px-8
+        ">
         Who We Are
       </h1>
     </div>
-    <div class="p-8 bg-hourglass-orange flex max-lg:flex-col lg:flex-row gap-x-16 gap-y-6 relative z-40">
+    <div
+      class="
+        p-8 bg-hourglass-orange
+        flex max-lg:flex-col lg:flex-row gap-x-16 gap-y-6
+        relative z-40
+      ">
       <div class="basis-1/2 flex flex-col gap-6">
         <p class="font-poppins-bold max-lg:text-2xl lg:text-3xl">We are building a model of open access publishing that functions for the humanities – for free, for everyone, for ever.</p>
         <p class="font-source-sans max-lg:text-lg lg:text-xl">The Open Library of Humanities (OLH) is an award-winning publisher of humanities scholarship based at Birkbeck, University of London. We play a leading role within a growing ecosystem of scholar-led digital publishing, that combines cutting-edge technology with community governance and not-for-profit principles. This has become known as diamond open access.</p>
@@ -28,13 +41,18 @@
     </div>
   </div>
   <div class="container mx-auto max-w-screen-xl relative">
-    <div class="px-8 py-28 flex flex-col gap-y-6">
+    <div class="relative z-40 px-8 py-28 flex flex-col gap-y-6">
       <blockquote class="font-poppins-bold max-lg:text-3xl lg:text-4xl max-w-2xl leading-snug">“The Open Library of Humanities is a transformative venture on the leading edge of open-access initiatives on both sides of the Atlantic. As ambitious as it is well-planned, it presents a cogent vision of the future with well-designed pathways to its realisation. There is hardly a more important project in train for scholarship in the humanities today.”</blockquote>
       <p class="font-poppins max-lg:text-lg lg:text-xl max-w-md"><span class="font-poppins-bold">David Armitage,</span> <span class="">Lloyd C. Blankfein Professor of History, Harvard University</span></p>
     </div>
     <div class="max-lg:h-64">
       <img
-        class="absolute -bottom-24 right-8 max-h-96"
+        class="
+          absolute
+          right-8 max-h-96
+          motion-reduce:max-md:-bottom-12 motion-safe:max-md:bottom-0 md:max-lg:bottom-20
+          motion-reduce:lg:-bottom-24 motion-safe:lg:top-48 motion-safe:rallax
+        "
         src="{% static 'hourglass/media/backgrounds/camera.png' %}"
         alt="A camera lens in a collage with red blocks">
     </div>
@@ -66,7 +84,10 @@
   </div>
   <div class="container mx-auto max-w-screen-xl relative">
     <img
-      class="absolute lg:left-12 lg:-top-48 h-80"
+      class="
+        absolute lg:left-12 h-80
+        motion-reduce:lg:-top-48 motion-safe:lg:-top-80 motion-safe:rallax
+      "
       src="{% static 'hourglass/media/backgrounds/triangle-blue-textured.png' %}"
       alt="">
     <div
@@ -81,7 +102,11 @@
           px-8 py-28 flex flex-col gap-y-6 z-40 relative
           bg-hourglass-orange
         ">
-        <div class="flex max-lg:flex-col lg:flex-row max-lg:items-center gap-y-6 justify-around">
+        <div
+          class="
+            flex max-lg:flex-col lg:flex-row
+            max-lg:items-center gap-y-6 justify-around
+          ">
           <div class="flex flex-col max-lg:items-center">
             <p class="py-6 font-source-sans font-semibold max-lg:text-lg lg:text-xl">
               Journals
@@ -111,9 +136,15 @@
     </div>
   </div>
   <div class="container mx-auto max-w-screen-xl relative">
-    <div class="relative -top-20 max-md:right-0 md:-right-24 flex justify-end max-lg:max-h-64 lg:max-h-0">
+    <div
+      class="
+        relative
+        motion-safe:-top-56 motion-reduce:-top-24
+        max-md:right-0 md:-right-24 flex justify-end max-lg:max-h-64 lg:max-h-0
+      ">
       <div class="basis-1/2">
         <img
+          class="motion-safe:rallax"
           src="{% static 'hourglass/media/backgrounds/building-upside-down-circle-triangle.png' %}"
           alt="An upside-down Modernist building in a collage with a triangle and a circle">
       </div>
@@ -180,7 +211,8 @@
           class="
             absolute z-0
             max-lg:hidden
-            -bottom-32 -right-80 max-w-md
+            -right-96 max-w-md
+            motion-reduce:-top-6 motion-safe:-top-56 motion-safe:rallax
           "
           src="{% static 'hourglass/media/backgrounds/robot-head-shoulder-lg.png' %}"
           alt="Head and shoulders of a metallic, humanoid robot">
@@ -207,8 +239,9 @@
       <img
         class="
           absolute lg:hidden
-          -right-32 -bottom-80
+          -right-32
           max-w-sm
+          motion-safe:-bottom-80 motion-safe:rallax
         "
         src="{% static 'hourglass/media/backgrounds/robot-head-shoulder.png' %}"
         alt="Head and shoulders of a metallic, humanoid robot">
@@ -216,7 +249,8 @@
         class="
           absolute
           max-lg:hidden
-          left-16 -top-8 max-h-36
+          left-16 max-h-36
+          motion-reduce:-top-6 motion-safe:-top-24 motion-safe:rallax
         "
         src="{% static 'hourglass/media/backgrounds/circles-red-two-vertical.png' %}"
         alt="">
@@ -224,7 +258,8 @@
         class="
           absolute
           max-lg:hidden
-          left-4 -bottom-28 w-96
+          left-4 w-96
+          motion-reduce:-bottom-36 motion-safe:top-96 motion-safe:rallax
         "
         src="{% static 'hourglass/media/backgrounds/circle-blue-textured.png' %}"
         alt="">
@@ -242,7 +277,9 @@
           px-8 py-14 flex flex-col gap-y-6 z-40 relative
           bg-white max-w-3xl
         ">
-        <h2 class="font-poppins-bold max-lg:text-2xl lg:text-3xl">Plan S Compliancy</h2>
+        <h2 class="font-poppins-bold max-lg:text-2xl lg:text-3xl">
+          Plan S Compliancy
+        </h2>
         <p class="font-source-sans max-lg:text-lg lg:text-xl"><span class="font-semibold ">Plan S is an initiative and set of <a href="https://www.coalition-s.org/plan_s_principles/" target="_blank">principles</a> to ensure that publicly funded research is published in Open Access Journals, Open Access Platforms or made immediately available through Open Access Repositories without embargo.</span> All our journals are compliant with Plan S funder mandates and have been included in the Plan S compliance <a href="https://journalcheckertool.org/" target="_blank">Journal Checker tool</a>.</p>
       </div>
     </div>
@@ -261,7 +298,8 @@
       ">
       <div
         class="
-          max-lg:px-8 lg:px-16 max-md:py-28 md:pt-28 flex max-md:flex-col md:flex-row gap-12 z-40 relative
+          max-lg:px-8 lg:px-16 max-md:py-28 md:pt-28
+          flex max-md:flex-col md:flex-row gap-12 z-40 relative
           bg-hourglass-orange justify-around
         ">
           <img
@@ -304,7 +342,9 @@
           px-8 py-14 flex flex-col gap-y-6 z-40 relative
           bg-white max-w-3xl
         ">
-        <h2 class="font-poppins-bold max-lg:text-2xl lg:text-3xl">Grants &amp; Awards</h2>
+        <h2 class="font-poppins-bold max-lg:text-2xl lg:text-3xl">
+          Grants &amp; Awards
+        </h2>
         <p class="font-source-sans font-semibold max-lg:text-lg lg:text-xl">The OLH has received major funding in the form of research and development grants from the Andrew W. Mellon Foundation and Arcadia – a charitable fund of Lisbet Rausing and Professor Peter Baldwin.</p>
         <p class="font-source-sans max-lg:text-lg lg:text-xl">The work of the Open Library of Humanities has been internationally recognised for its important contribution to open access for the humanities, as well as its innovative business model. We have been Highly Commended at the <a href="https://www.alpsp.org/news/alpsp-awards-2020-winners-announced-sep-2020" target="_blank">ALPSP Awards for Innovation in Publishing</a> 2020, won a <a href="https://www.openlibhums.org/news/348/" target="_blank">Coko Foundation Open Publishing Award</a> in the category of Open Publishing Models in 2019, and received an award for <a href="https://www.ukaop.org/hub/aop-announces-winners-for-the-digital-publishing-awards-2020" target="_blank">Small Digital Publisher of the Year</a> from the Association of Online Publishers (AOP) in October 2020.</p>
         <div class="flex gap-8 grayscale items-center">
@@ -328,9 +368,9 @@
     </div>
   </div>
   <div class="container mx-auto max-w-screen-xl relative">
-    <div class="relative lg:-left-16 lg:-bottom-32">
+    <div class="relative lg:-left-16 lg:-bottom-32 motion-safe:rallax">
       <img
-        class="z-0 absolute w-16 h-192 -bottom-96 left-4"
+        class="z-0 absolute w-16 h-192 -top-[60rem] left-4"
         src="{% static 'hourglass/media/backgrounds/bars-vertical-three.svg' %}"
         alt="">
       <img
@@ -363,5 +403,5 @@
         {% include 'custom/subscribe.html' %}
       </div>
     </div>
-</div>
+  </div>
 </article>
