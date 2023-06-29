@@ -67,6 +67,26 @@ provided by Tailwind. To watch for changes, use this NPM command:
 npm run dev
 ```
 
+#### Styling notes
+
+Each section of content is given a container and relative positioning, so
+that it can be used as an anchor for background colors and images.
+
+Z-index is used as follows:
+
+- `-z-10` for the solid light tan background
+
+- `z-0`, `z-10`, and `z-20` for the constructivist collages of geometric shapes and cut-out photos
+
+- `z-30` for pseudo-elements used to extend alternate color backgrounds
+outside the container to the edge left and/or right
+
+- `z-40` for the content layer, along with its immediate, in-container
+background color
+
+- `z-50` for the sticky desktop nav so it is persistent on top of
+everything else
+
 ### JavaScript
 
 Modify the files in `js` and rerun `build_assets`.

@@ -1,11 +1,10 @@
 {% if request.user.is_staff %}
-<div class="container relative">
   <div
     class="
-      absolute top-0 right-0 bg-black text-hourglass-tan
-      p-2 rounded-full drop-shadow-xl m-4
+      absolute top-0 left-18 bg-black text-hourglass-tan
+      p-2 rounded-full drop-shadow-xl mx-8 my-4 z-50
     ">
-    <a href="https://github.com/BirkbeckCTP/path/edit/main/templates/{{ rel_path }}">
+    <a href="https://github.com/BirkbeckCTP/hourglass/edit/main/templates/{{ rel_path }}">
       ✏️ Edit on GitHub
     </a>
     <span id="hide-edit-on-gh" class="p-2 cursor-pointer">X</span>
@@ -20,6 +19,5 @@
       hideEditLink.parentElement.classList.toggle('hidden')
     }
   </script>
-  </div>
 {% endif %}
 

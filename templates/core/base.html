@@ -3,7 +3,9 @@
 {% get_current_language as current_language %}
 
 <!DOCTYPE html>
-<html lang="{{ current_language }}">
+<html
+  lang="{{ current_language }}"
+  class="overflow-x-clip">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -48,12 +50,12 @@
       {% endif %}
     {% endblock meta_image %}
   </head>
-  <body class="relative overflow-x-clip">
-    <div class="flex flex-col min-h-screen justify-between">
-      <header class="lg:sticky lg:top-0 z-20">
+  <body class="relative">
+    <div class="relative flex flex-col min-h-screen justify-between">
+      <header class="lg:sticky lg:top-0 z-50">
         {% include "press/nav.html" %}
       </header>
-      <main class="mb-auto">
+      <main class="relative mb-auto">
         {% block body %}{% endblock body %}
         {% include 'elements/search_modal.html' %}
       </main>
