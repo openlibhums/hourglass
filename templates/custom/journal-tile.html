@@ -1,0 +1,13 @@
+{% load static %}
+
+<div class="flex gap-5 flex-col items-center">
+  <img
+    src="{{ journal.default_cover_image.url }}"
+    alt="{{ journal.name }}">
+  <h3 class="font-poppins-bold text-lg text-center">
+    {{ journal.name }}
+  </h3>
+  {% with url=journal.site_url label="Read more" %}
+    {% include 'custom/button-action.html' %}
+  {% endwith %}
+</div>

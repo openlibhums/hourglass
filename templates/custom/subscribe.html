@@ -1,48 +1,84 @@
-<h2 class="font-poppins-bold max-lg:text-2xl lg:text-3xl text-white max-w-xl">
-  Be the first to know
-</h2>
-<input
-  class="
-    max-w-lg
-    my-6
-    bg-hourglass-blue
-    border-white
-    border-t-0
-    border-r-0
-    border-b-1
-    border-l-0
-    text-white
-    cursor-white
-    placeholder:text-white
-    max-lg:placeholder:text-md
-    lg:placeholder:text-lg
-    focus:ring-transparent
-    focus:border-hourglass-orange
-  "
-  id="email"
-  name="email"
-  placeholder="Your email"
-  type="email">
-<label
-  class="hidden" for="email">
-</label>
+{% load static %}
+
+<div class="relative lg:-left-16 lg:-bottom-32 motion-safe:rallax">
+  <img
+    class="z-0 absolute w-16 h-192 -top-[60rem] left-4"
+    src="{% static 'hourglass/media/backgrounds/bars-vertical-three.svg' %}"
+    alt="">
+  <img
+    class="z-10 absolute -top-44 left-0 rotate-90 max-w-xs"
+    src="{% static 'hourglass/media/backgrounds/triangle-blue-textured.png' %}"
+    alt="">
+  <img
+    class="z-20 absolute -top-36 left-48 w-24 lg:hidden"
+    src="{% static 'hourglass/media/backgrounds/circle-red.svg' %}"
+    alt="">
+  <img
+    class="z-20 absolute -top-32 -left-4 h-36 max-lg:hidden"
+    src="{% static 'hourglass/media/backgrounds/rectangle-red.svg' %}"
+    alt="">
+</div>
 <div
   class="
-    flex gap-x-4
-    py-6 font-poppins-bold font-semibold text-xs text-white
-    uppercase tracking-widest underline-offset-8 max-w-xl
+    relative after:z-30 after:block after:absolute
+    after:inset-y-0 after:w-[50vw]
+    max-lg:after:right-1/2 lg:after:left-1/2
+    after:bg-hourglass-blue
+    max-lg:mt-56 lg:mt-28
   ">
-  <a
-    href="https://twitter.com/openlibhums"
-    target="_blank"
-    rel="noopener noreferrer">
-    Twitter
-  </a>
-  <span>|</span>
-  <a
-    href="https://www.facebook.com/OpenLibHums"
-    target="_blank"
-    rel="noopener noreferrer">
-    Facebook
-  </a>
+  <div
+    class="
+      max-lg:px-8 lg:px-32 py-32 flex flex-col gap-y-6 z-40 relative
+      bg-hourglass-blue
+      lg:ml-8
+    ">
+    <h2 class="font-poppins-bold max-lg:text-2xl lg:text-3xl text-white max-w-xl">
+      Be the first to know
+    </h2>
+    <input
+      class="
+        max-w-lg
+        my-6
+        bg-hourglass-blue
+        border-white
+        border-t-0
+        border-r-0
+        border-b-1
+        border-l-0
+        text-white
+        cursor-white
+        placeholder:text-white
+        max-lg:placeholder:text-md
+        lg:placeholder:text-lg
+        focus:ring-transparent
+        focus:border-hourglass-orange
+      "
+      id="email"
+      name="email"
+      placeholder="Your email"
+      type="email">
+    <label
+      class="hidden" for="email">
+    </label>
+    <div
+      class="
+        flex gap-x-4
+        py-6 font-poppins-medium text-xs text-white
+        uppercase tracking-widest underline-offset-8 max-w-xl
+      ">
+      <a
+        href="https://twitter.com/openlibhums"
+        target="_blank"
+        rel="noopener noreferrer">
+        Twitter
+      </a>
+      <span>|</span>
+      <a
+        href="https://www.facebook.com/OpenLibHums"
+        target="_blank"
+        rel="noopener noreferrer">
+        Facebook
+      </a>
+    </div>
+  </div>
 </div>

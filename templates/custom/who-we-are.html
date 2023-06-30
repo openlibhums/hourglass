@@ -9,7 +9,6 @@
       "
       src="{% static 'hourglass/media/backgrounds/striped-umbrella.png' %}"
       alt="A couple in old-timey dress holding a striped umbrella">
-
     <img
       class="absolute max-lg:hidden top-8 -right-12 motion-safe:rallax"
       src="{% static 'hourglass/media/backgrounds/striped-umbrella-lg.png' %}"
@@ -90,50 +89,7 @@
       "
       src="{% static 'hourglass/media/backgrounds/triangle-blue-textured.png' %}"
       alt="">
-    <div
-      class="
-        relative after:z-30 after:block after:absolute
-        after:inset-y-0 after:w-[50vw]
-        after:left-1/2 after:bg-hourglass-orange
-        mt-28
-      ">
-      <div
-        class="
-          px-8 py-28 flex flex-col gap-y-6 z-40 relative
-          bg-hourglass-orange
-        ">
-        <div
-          class="
-            flex max-lg:flex-col lg:flex-row
-            max-lg:items-center gap-y-6 justify-around
-          ">
-          <div class="flex flex-col max-lg:items-center">
-            <p class="py-6 font-source-sans font-semibold max-lg:text-lg lg:text-xl">
-              Journals
-            </p>
-            <p class="font-poppins-bold text-8xl">
-              {{ request.press.active_journals.count }}
-            </p>
-          </div>
-          <div class="flex flex-col max-lg:items-center">
-            <p class="py-6 font-source-sans font-semibold max-lg:text-lg lg:text-xl">
-              Articles published
-            </p>
-            <p class="font-poppins-bold text-8xl">
-              {{ request.press.published_articles.count }}
-            </p>
-          </div>
-          <div class="flex flex-col max-lg:items-center">
-            <p class="py-6 font-source-sans font-semibold max-lg:text-lg lg:text-xl">
-              Lorem ipsum dolor
-            </p>
-            <p class="font-poppins-bold text-8xl">
-              999
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
+    {% include 'custom/counter-block.html' %}
   </div>
   <div class="container mx-auto max-w-screen-xl relative">
     <div
@@ -194,6 +150,8 @@
         </div>
       </div>
     </div>
+  </div>
+  <div class="container mx-auto max-w-screen-xl relative">
     <div
       class="
         relative before:z-30 before:block before:absolute
@@ -368,40 +326,6 @@
     </div>
   </div>
   <div class="container mx-auto max-w-screen-xl relative">
-    <div class="relative lg:-left-16 lg:-bottom-32 motion-safe:rallax">
-      <img
-        class="z-0 absolute w-16 h-192 -top-[60rem] left-4"
-        src="{% static 'hourglass/media/backgrounds/bars-vertical-three.svg' %}"
-        alt="">
-      <img
-        class="z-10 absolute -top-44 left-0 rotate-90 max-w-xs"
-        src="{% static 'hourglass/media/backgrounds/triangle-blue-textured.png' %}"
-        alt="">
-      <img
-        class="z-20 absolute -top-36 left-48 w-24 lg:hidden"
-        src="{% static 'hourglass/media/backgrounds/circle-red.svg' %}"
-        alt="">
-      <img
-        class="z-20 absolute -top-32 -left-4 h-36 max-lg:hidden"
-        src="{% static 'hourglass/media/backgrounds/rectangle-red.svg' %}"
-        alt="">
-    </div>
-    <div
-      class="
-        relative after:z-30 after:block after:absolute
-        after:inset-y-0 after:w-[50vw]
-        max-lg:after:right-1/2 lg:after:left-1/2
-        after:bg-hourglass-blue
-        max-lg:mt-56 lg:mt-28
-      ">
-      <div
-        class="
-          max-lg:px-8 lg:px-32 py-32 flex flex-col gap-y-6 z-40 relative
-          bg-hourglass-blue
-          lg:ml-8
-        ">
-        {% include 'custom/subscribe.html' %}
-      </div>
-    </div>
+    {% include 'custom/subscribe.html' %}
   </div>
 </article>

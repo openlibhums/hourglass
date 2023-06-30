@@ -1,0 +1,18 @@
+{% load static %}
+
+<a
+  class="
+    p-4
+    border rounded-full border-hourglass-blue
+    flex gap-4 items-center
+  "
+  href="{{ url }}">
+  <span
+    class="uppercase text-hourglass-blue font-medium text-xs">
+    {{ label }}
+  </span>
+  <img
+    class="h-4"
+    src="{% static 'hourglass/media/icons/arrow-blue.svg' %}"
+    alt="arrow pointing right">
+</a>
