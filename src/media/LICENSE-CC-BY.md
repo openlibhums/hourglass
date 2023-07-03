@@ -1,0 +1,1 @@
+The original content and visual designs in this directory and subdirectories are the copyright of Birkbeck, University of London, and are licensed under a [Creative Commons Attribution (CC BY) 4.0 license](https://creativecommons.org/licenses/by/4.0/).
