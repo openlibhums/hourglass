@@ -113,3 +113,45 @@ commit code from dependencies.
 3. Use [`nodeenv`](https://pypi.org/project/nodeenv/), which would allow
 the "global" installation of Dart Sass and potentially avoid the `nodejs-bin`
 dependency, but add more virtual environment spaghetti.
+
+## Licensing
+
+The code in this repository is licensed under AGPL 3.0.
+
+Unless otherwise stated, the original textual content and visual designs
+in this repository are the copyright of Birkbeck, University of London,
+and they are licenced under a [Creative Commons Attribution 4.0
+International License](https://creativecommons.org/licenses/by/4.0/) (CC
+BY 4.0). The Open Library of Humanities and its logos are registered
+trademarks.
+
+The attribution-required and trademarked content is restricted to the
+following folders:
+
+- `templates/custom/*`
+
+- `src/media/*`
+
+The CC BY license lets you share and adapt these materials so long as you
+properly credit the source. Proper attribution of the OLH must be given in
+the following manner:
+
+- Attribute the materials wherever they appear, including published
+  end-product websites.
+
+- Spell out the full name of the Open Library of Humanities and provide
+a link to our website, as in one of these examples:
+
+  - “The Open Access Movement” was first published by the Open Library of
+Humanities, openlibhums.org
+
+  - Diamond open access diagram by the
+    [Open Library of Humanities](https://www.openlibhums.org/)
+
+- Display the attribution so that it is clearly visible and easily
+  legible, not obscured or hidden, with text that is the same size as the
+  main text in your work, or a minimum of 12pt (print) or 18px (web),
+  whichever is larger
+
+- Under no circumstances may your use or attribution of our materials
+  misconstrue the Open Library of Humanities as a publisher of your works
