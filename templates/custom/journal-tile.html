@@ -1,10 +1,10 @@
 {% load static %}
 
-<div class="flex gap-5 flex-col items-center">
+<div class="px-3 lg:basis-1/3 flex gap-5 flex-col max-lg:items-center lg:items-start">
   <img
     src="{{ journal.default_cover_image.url }}"
     alt="{{ journal.name }}">
-  <h3 class="font-poppins-bold text-lg text-center">
+  <h3 class="font-poppins-bold text-lg max-lg:text-center">
     {{ journal.name }}
   </h3>
   {% with url=journal.site_url label="Read more" %}

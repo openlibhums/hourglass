@@ -5,15 +5,19 @@
     <img
       class="
         lg:hidden absolute
-        -top-56 max-sm:-right-24 sm:-right-12 md:right-4 max-w-md
-        motion-safe:rallax
+        max-sm:-right-32 sm:-right-12 md:right-4 max-w-md
+        motion-reduce:-top-56 motion-safe:-top-64 motion-safe:rallax
       "
       src="{% static 'hourglass/media/backgrounds/laptop-lady-upside-down-circles.png' %}"
       alt="A woman typing on a laptop, in an upside-down collage with circles">
     <img
-      class="absolute max-lg:hidden top-8 -right-12 motion-safe:rallax"
-      src="{% static 'hourglass/media/backgrounds/striped-umbrella-lg.png' %}"
-      alt="A couple in old-timey dress holding a striped umbrella">
+      class="
+        max-lg:hidden absolute
+        -right-4 max-w-md
+        top-8 motion-safe:rallax
+      "
+      src="{% static 'hourglass/media/backgrounds/laptop-lady-rightside-up-dancer.png' %}"
+      alt="A woman typing on a laptop with a breakdancer in the background">
     <div class="relative z-40">
       <h1
         class="
@@ -26,7 +30,7 @@
     <div
       class="
         p-8 bg-hourglass-orange
-        flex max-lg:flex-col lg:flex-row gap-x-16 gap-y-6
+        flex max-md:flex-col md:flex-row gap-x-16 gap-y-6
         relative z-40
       ">
       <div class="basis-1/2 flex flex-col gap-6">
@@ -38,11 +42,19 @@
     </div>
     <img
       class="
-        absolute z-0
-        -left-48 -bottom-60
-        motion-reduce:lg:-top-48 motion-safe:lg:-top-80 motion-safe:rallax
+        absolute lg:hidden z-0
+        -left-48 max-w-sm
+        motion-reduce:-bottom-60 motion-safe:-bottom-12 motion-safe:rallax
       "
       src="{% static 'hourglass/media/backgrounds/triangle-blue-circles-red-four.png' %}"
+      alt="">
+    <img
+      class="
+        absolute max-lg:hidden z-0
+        -left-36 max-w-xs
+        motion-reduce:-bottom-64 motion-safe:-bottom-36 motion-safe:rallax
+      "
+      src="{% static 'hourglass/media/backgrounds/triangle-blue-textured-circle-red.png' %}"
       alt="">
   </div>
   <div class="container mx-auto max-w-screen-xl relative">
@@ -52,15 +64,46 @@
         before:inset-y-0 before:w-[50vw]
         before:right-1/2 before:bg-white
         max-lg:mt-[32rem]
+        lg:mt-28
       ">
       <img
         class="
-          absolute z-0
-          -right-32 -top-[26rem]
-          motion-reduce:lg:-top-48 motion-safe:lg:-top-80 motion-safe:rallax
+          absolute lg:hidden z-0
+          -right-32
+          motion-reduce:-top-[32rem] motion-safe:-top-[36rem]
+          motion-safe:rallax
         "
         src="{% static 'hourglass/media/backgrounds/dancer-jeans-triangle-blue.png' %}"
-        alt="">
+        alt="Dancer wearing ripped jeans suspended in mid-air">
+      <div
+        class="
+          relative max-lg:hidden z-10
+          -right-12 top-0
+          motion-safe:rallax
+        ">
+        <img
+          class="
+            absolute z-10
+            -right-40
+            -top-20
+          "
+          src="{% static 'hourglass/media/backgrounds/dancer-jeans-circles-red-four.png' %}"
+          alt="Dancer wearing ripped jeans suspended in mid-air">
+        <img
+          class="
+            absolute z-0 right-0 rotate-180 w-80
+            top-[23.6rem]
+          "
+          src="{% static 'hourglass/media/backgrounds/triangle-blue-textured.png' %}"
+          alt="">
+        <img
+          class="
+            absolute z-0 right-0 rotate-180 w-80
+            top-[43.5rem]
+          "
+          src="{% static 'hourglass/media/backgrounds/triangle-blue-textured.png' %}"
+          alt="">
+      </div>
       <div
         class="
           px-8 py-14 flex flex-col gap-y-6 z-40 relative
@@ -83,7 +126,7 @@
         relative before:z-30 before:block before:absolute
         before:inset-y-0 before:w-[50vw]
         before:right-1/2 before:bg-white
-        max-lg:mt-8
+        mt-8
       ">
       <div
         class="
@@ -106,7 +149,7 @@
         relative before:z-30 before:block before:absolute
         before:inset-y-0 before:w-[50vw]
         before:right-1/2 before:bg-white
-        max-lg:mt-8
+        mt-8
       ">
       <div
         class="
@@ -130,7 +173,7 @@
         relative before:z-30 before:block before:absolute
         before:inset-y-0 before:w-[50vw]
         before:right-1/2 before:bg-white
-        max-lg:mt-8
+        mt-8
       ">
       <div
         class="
@@ -145,10 +188,28 @@
         <p class="font-source-sans font-semibold max-lg:text-lg lg:text-xl">Rallying our global community of librarians, editors, and academics around our shared vision of not-for-profit humanities publishing.</p>
         <p class="font-source-sans max-lg:text-lg lg:text-xl">We deliver talks, participate in working groups and committees, write, lead, and collaborate, to champion open access as an equitable and sustainable alternative to commercial publishing. We also present awards to recognise exemplary contributions to the OA community (and we’ve won a few of our own).</p>
       </div>
+      <img
+        class="
+          absolute max-lg:hidden z-0
+          -right-12 max-w-md
+          motion-reduce:-bottom-64 motion-safe:-bottom-36
+          motion-safe:rallax
+        "
+        src="{% static 'hourglass/media/backgrounds/water-tower-circle-blue.png' %}"
+        alt="A multi-faceted round water-tower in a collage with a circle">
     </div>
   </div>
   <div class="container mx-auto max-w-screen-xl relative">
     {% include 'custom/counter-block.html' %}
+    <img
+      class="
+        absolute max-lg:hidden z-0
+        left-0 max-w-sm
+        motion-reduce:-bottom-40 motion-safe:-bottom-40
+        motion-safe:rallax
+      "
+      src="{% static 'hourglass/media/backgrounds/circle-blue-textured.png' %}"
+      alt="">
   </div>
   <div class="container mx-auto max-w-screen-xl relative">
     <div
@@ -156,32 +217,30 @@
         relative before:z-30 before:block before:absolute
         before:inset-y-0 before:w-[50vw]
         before:right-1/2 before:bg-white
-        mt-96
+        max-lg:mt-96 lg:mt-28
       ">
-      <div class="max-w-3xl relative">
-        <img
+      <img
+        class="
+          absolute lg:hidden z-0
+          right-0 max-w-md
+          motion-reduce:-top-80 motion-safe:-top-96
+          motion-safe:rallax
+        "
+        src="{% static 'hourglass/media/backgrounds/water-tower-circle-blue.png' %}"
+        alt="A multi-faceted round water-tower in a collage with a circle">
+      <div class="p-12 bg-white z-40 relative">
+        <h2 class="pb-6 font-poppins-bold max-lg:text-2xl lg:text-3xl">
+          Featured Journals
+        </h2>
+        <div
           class="
-            absolute z-0
-            right-0 max-w-md
-            motion-reduce:-top-80 motion-safe:-top-56 motion-safe:rallax
-          "
-          src="{% static 'hourglass/media/backgrounds/water-tower-circle-blue.png' %}"
-          alt="A multi-faceted round water-tower in a collage with a circle">
-        <div class="p-12 bg-white z-40 relative">
-          <h2 class="pb-6 font-poppins-bold max-lg:text-2xl lg:text-3xl">
-            Featured Journals
-          </h2>
-          <div class="flex flex-col gap-y-16">
-            {% for journal in request.press.featured_journals.all|slice:":2" %}
-              {% if request.press.random_featured_journals %}
-                {% with journal=request.press.featured_journals.all|random %}
-                  {% include 'custom/journal-tile.html' %}
-                {% endwith %}
-              {% else %}
-                {% include 'custom/journal-tile.html' %}
-              {% endif %}
-            {% endfor %}
-          </div>
+            flex -mx-3
+            max-lg:flex-col gap-y-16
+            lg:flex-row lg:flex-wrap lg:justify-between
+          ">
+          {% for journal in request.press.featured_journals.all|slice:":6" %}
+            {% include 'custom/journal-tile.html' %}
+          {% endfor %}
         </div>
       </div>
     </div>
