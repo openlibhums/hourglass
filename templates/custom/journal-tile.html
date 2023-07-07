@@ -7,7 +7,7 @@
   <h3 class="font-poppins-bold text-lg max-lg:text-center">
     {{ journal.name }}
   </h3>
-  {% with url=journal.site_url label="Read more" %}
+  {% with rel_path=journal.site_url label="Read more" %}
     {% include 'custom/button-action.html' %}
   {% endwith %}
 </div>

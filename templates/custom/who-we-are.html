@@ -2,6 +2,7 @@
 
 <article>
   <div class="container mx-auto max-w-screen-xl relative">
+    {% include 'custom/edit-on-github.html' with rel_path='custom/who-we-are.html' %}
     <img
       class="
         lg:hidden absolute -top-8 -right-32 sm:-right-12 md:right-4 max-w-md 
@@ -13,7 +14,6 @@
       class="absolute max-lg:hidden top-8 -right-12 motion-safe:rallax"
       src="{% static 'hourglass/media/backgrounds/striped-umbrella-lg.png' %}"
       alt="A couple in old-timey dress holding a striped umbrella">
-    {% include 'custom/edit-on-github.html' with rel_path='custom/who-we-are.html' %}
     <div class="relative z-40">
       <h1
         class="
