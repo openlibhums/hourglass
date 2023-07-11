@@ -1,0 +1,496 @@
+{% load static %}
+
+<article>
+  <div class="container mx-auto max-w-screen-xl relative">
+    {% include 'custom/edit-on-github.html' with rel_path='custom/our-team.html' %}
+    <img
+      class="
+        lg:hidden absolute
+        max-sm:-right-24 sm:-right-12 md:right-4
+        w-[28rem]
+        top-0 motion-safe:rallax
+      "
+      src="{% static 'hourglass/media/backgrounds/hairdo-lady-on-bench.png' %}"
+      alt="Woman with Victorian hairdo sitting on a park bench holding a book">
+    <img
+      class="
+        max-lg:hidden absolute
+        -right-36 w-[28rem]
+        top-0 motion-safe:rallax
+      "
+      src="{% static 'hourglass/media/backgrounds/hairdo-lady-on-bench-lg.png' %}"
+      alt="Woman with Victorian hairdo sitting on a park bench holding a book">
+    <div class="relative z-40">
+      <h1
+        class="
+          max-lg:text-4xl lg:text-7xl
+          font-poppins-bold max-lg:pt-48 max-lg:pb-12 lg:py-28 px-8
+        ">
+        Our Team
+      </h1>
+    </div>
+    <div
+      class="
+        p-8 bg-hourglass-orange
+        flex max-md:flex-col md:flex-row gap-x-16 gap-y-6
+        relative z-40
+      ">
+      <div class="basis-1/2 flex flex-col gap-6">
+        <p class="font-poppins-bold max-lg:text-2xl lg:text-3xl">We are based at Birkbeck, University of London, but make up a geographically distributed network of expert bookworms, specialist software developers, and typography enthusiasts.</p>
+      </div>
+      <div class="basis-1/2 flex flex-col gap-6">
+        <p class="font-source-sans max-lg:text-lg lg:text-xl">Although we work remotely from across the UK and beyond, we’re united by our belief in the power of shared knowledge and our commitment to the open access revolution. We have a shared love of arts and culture, retro gaming, AI glitches,  dreadful puns; we spend our days sharing ironic gratitude memes and working to make the world of academic publishing a better place.</p>
+      </div>
+    </div>
+  </div>
+  <div class="container mx-auto max-w-screen-xl relative">
+    <div
+      class="
+        relative after:z-30 after:block after:absolute
+        after:inset-y-0 after:w-screen
+        max-lg:after:left-1/2 lg:after:-right-12
+        after:bg-white
+        mt-28
+      ">
+      <div
+        class="
+          relative z-40
+          py-20 px-8 bg-white
+          flex flex-col gap-y-8
+        ">
+        <h2 class="font-poppins-bold text-3xl max-lg:text-center">
+          Directors
+        </h2>
+        <div
+          class="
+            flex max-lg:flex-col gap-y-20
+            lg:flex-row lg:justify-between
+          ">
+          <div
+            class="
+              flex flex-col gap-y-8 max-lg:items-center
+              lg:items-start lg:w-[30%]
+            ">
+            <img
+              class="object-contain w-64 h-64"
+              src="https://www.openlibhums.org/media/press/Caroline.jpg"
+              alt="">
+            <div class="flex flex-col">
+              <h3 class="font-poppins-bold max-lg:text-xl lg:text-2xl max-lg:text-center">
+                Dr Caroline Edwards
+              </h3>
+              <p class="font-source-sans max-lg:text-lg lg:text-xl max-lg:text-center">
+                Executive Director
+              </p>
+              <p class="italic font-source-sans max-lg:text-lg lg:text-xl max-lg:text-center">
+                The Revolutionary
+              </p>
+            </div>
+            {% with rel_path="/site/dr-caroline-edwards" label="Full profile" %}
+              {% include 'custom/button-action.html' %}
+            {% endwith %}
+          </div>
+          <div
+            class="
+              flex flex-col gap-y-8 max-lg:items-center
+              lg:items-start lg:w-[30%]
+            ">
+            <img
+              class="object-contain w-64 h-64"
+              src="https://www.openlibhums.org/media/press/Rose.jpg"
+              alt="">
+            <div class="flex flex-col">
+              <h3 class="font-poppins-bold max-lg:text-xl lg:text-2xl max-lg:text-center">
+                Dr Rose Harris-Birtill
+              </h3>
+              <p class="font-source-sans max-lg:text-lg lg:text-xl max-lg:text-center">
+                Deputy Director &amp; Head of Editorial
+              </p>
+              <p class="italic font-source-sans max-lg:text-lg lg:text-xl max-lg:text-center">
+                The Strategist
+              </p>
+            </div>
+            {% with rel_path="/site/dr-rose-harris-birtill" label="Full profile" %}
+              {% include 'custom/button-action.html' %}
+            {% endwith %}
+          </div>
+          <div
+            class="
+              flex flex-col gap-y-8 max-lg:items-center
+              lg:items-start lg:w-[30%]
+            ">
+            <img
+              class="object-contain w-64 h-64"
+              src="https://www.openlibhums.org/media/press/Andy.jpg"
+              alt="">
+            <div class="flex flex-col">
+              <h3 class="font-poppins-bold max-lg:text-xl lg:text-2xl max-lg:text-center">
+                Andy Byers
+              </h3>
+              <p class="font-source-sans max-lg:text-lg lg:text-xl max-lg:text-center">
+                Senior Publishing Technology Developer
+              </p>
+              <p class="italic font-source-sans max-lg:text-lg lg:text-xl max-lg:text-center">
+                Defender of the Code
+              </p>
+            </div>
+            {% with rel_path="/site/andy-byers" label="Full profile" %}
+              {% include 'custom/button-action.html' %}
+            {% endwith %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container mx-auto max-w-screen-xl relative">
+    <img
+      class="
+        max-lg:hidden absolute z-0
+        left-4 max-w-xs
+        motion-reduce:-top-20 motion-safe:-top-96 motion-safe:rallax
+      "
+      src="{% static 'hourglass/media/backgrounds/circle-blue-textured.png' %}"
+      alt="">
+    <img
+      class="
+        max-lg:hidden absolute z-10
+        h-36 left-24
+        motion-reduce:top-8 motion-safe:-top-72 motion-safe:rallax
+      "
+      src="{% static 'hourglass/media/backgrounds/rectangle-red.svg' %}"
+      alt="">
+    <div class="lg:flex">
+      <div
+        class="
+          relative before:z-30 before:block before:absolute
+          before:inset-y-0 before:w-screen
+          max-lg:before:right-1/2 lg:before:-left-12
+          before:bg-white
+          mt-28
+        ">
+        <div
+          class="
+            relative right-0 z-40
+            py-20 px-8 bg-white
+            flex flex-col gap-y-8
+          ">
+          <h2 class="font-poppins-bold text-3xl max-lg:text-center lg:w-[50%]">
+            Editorial &amp; Marketing
+          </h2>
+          <div
+            class="
+              flex max-lg:flex-col gap-y-20
+              lg:flex-row lg:justify-between gap-x-8
+            ">
+            <div
+              class="
+                flex flex-col gap-y-8 max-lg:items-center
+                lg:items-start lg:flex-1
+              ">
+              <img
+                class="object-contain w-64 h-64"
+                src="https://www.openlibhums.org/media/press/Simon.jpg"
+                alt="">
+              <div class="flex flex-col">
+                <h3 class="font-poppins-bold max-lg:text-xl lg:text-2xl max-lg:text-center">
+                  Dr Simon Everett
+                </h3>
+                <p class="font-source-sans max-lg:text-lg lg:text-xl max-lg:text-center">
+                  Editorial Officer
+                </p>
+                <p class="italic font-source-sans max-lg:text-lg lg:text-xl max-lg:text-center">
+                  The Archivist
+                </p>
+              </div>
+              {% with rel_path="/site/dr-caroline-edwards" label="Full profile" %}
+                {% include 'custom/button-action.html' %}
+              {% endwith %}
+            </div>
+            <div
+              class="
+                flex flex-col gap-y-8 max-lg:items-center
+                lg:items-start lg:flex-1
+              ">
+              <img
+                class="object-contain w-64 h-64"
+                src="https://www.openlibhums.org/media/press/Paula.jpg"
+                alt="">
+              <div class="flex flex-col">
+                <h3 class="font-poppins-bold max-lg:text-xl lg:text-2xl max-lg:text-center">
+                  Paula Clemente Vega
+                </h3>
+                <p class="font-source-sans max-lg:text-lg lg:text-xl max-lg:text-center">
+                  Marketing Officer
+                </p>
+                <p class="italic font-source-sans max-lg:text-lg lg:text-xl max-lg:text-center">
+                  The Artist
+                </p>
+              </div>
+              {% with rel_path="/site/paula-clemente-vega" label="Full profile" %}
+                {% include 'custom/button-action.html' %}
+              {% endwith %}
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="
+          relative after:z-30 after:block after:absolute
+          after:inset-y-0 after:w-screen
+          max-lg:after:left-1/2 lg:after:-left-12
+          after:bg-white
+          mt-28
+        ">
+        <div
+          class="
+            relative z-40
+            py-20 px-8 bg-white
+            flex flex-col gap-y-8
+          ">
+          <h2 class="font-poppins-bold text-3xl max-lg:text-center">
+            Projects &amp; Development
+          </h2>
+          <div
+            class="
+              flex max-lg:flex-col gap-y-20
+              lg:flex-row lg:justify-between gap-x-8
+            ">
+            <div
+              class="
+                flex flex-col gap-y-8 max-lg:items-center
+                lg:items-start lg:flex-1
+              ">
+              <img
+                class="object-contain w-64 h-64"
+                src="https://www.openlibhums.org/media/press/Katherine.jpg"
+                alt="">
+              <div class="flex flex-col">
+                <h3 class="font-poppins-bold max-lg:text-xl lg:text-2xl max-lg:text-center">
+                  Dr Katherine Parker-Hay
+                </h3>
+                <p class="font-source-sans max-lg:text-lg lg:text-xl max-lg:text-center">
+                  Publishing Development Officer
+                </p>
+                <p class="italic font-source-sans max-lg:text-lg lg:text-xl max-lg:text-center">
+                  Project Whisperer
+                </p>
+              </div>
+              {% with rel_path="/site/dr-katherine-parker-hay" label="Full profile" %}
+                {% include 'custom/button-action.html' %}
+              {% endwith %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container mx-auto max-w-screen-xl relative">
+    <div
+      class="
+        relative z-40
+        px-8 py-28 max-lg:mb-80 lg:mb-20
+        flex
+      ">
+      <div
+        class="
+          max-lg:hidden
+          w-16 h-16 bg-hourglass-blue rounded-full
+          my-24 mx-12
+          flex items-center
+          opacity-50
+        ">
+        <img
+          class="w-8 h-8 rotate-180 mx-auto"
+          src="{% static 'hourglass/media/icons/arrow-white.svg' %}"
+          alt="">
+      </div>
+      <div class="relative z-40 flex flex-col gap-y-6 lg:items-start">
+        <blockquote
+          class="
+            font-poppins-bold
+            max-sm:text-3xl sm:text-4xl
+            max-sm:-indent-4 sm:-indent-5
+            max-lg:max-w-md lg:max-w-xl
+            leading-snug 
+          ">
+          “Quote about how great the OLH is lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.”
+        </blockquote>
+        <p class="font-poppins max-lg:text-lg lg:text-xl max-lg:max-w-xs lg:max-w-xl">
+          <span class="font-poppins-bold">Sue Smith,</span>
+          University of Essex
+        </p>
+        <div class="py-8 flex gap-x-6">
+          <img
+            class="w-4 h-4"
+            src="{% static 'hourglass/media/backgrounds/circle-blue.svg' %}"
+            alt="">
+          <img
+            class="w-4 h-4 opacity-60"
+            src="{% static 'hourglass/media/backgrounds/circle-blue.svg' %}"
+            alt="">
+          <img
+            class="w-4 h-4 opacity-30"
+            src="{% static 'hourglass/media/backgrounds/circle-blue.svg' %}"
+            alt="">
+        </div>
+      </div>
+      <div
+        class="
+          max-lg:hidden
+          w-16 h-16 bg-hourglass-blue rounded-full
+          my-24 mx-12
+          flex items-center
+        ">
+        <img
+          class="w-8 h-8 mx-auto"
+          src="{% static 'hourglass/media/icons/arrow-white.svg' %}"
+          alt="">
+      </div>
+    </div>
+    <img
+      class="
+        absolute lg:hidden
+        sm:right-0 sm:max-w-xl
+        motion-reduce:-bottom-72 motion-safe:top-48 motion-safe:rallax
+      "
+      src="{% static 'hourglass/media/backgrounds/shakespeare-drag-actor-flowers-stripes.png' %}"
+      alt="Actor singing with arms raised wearing dress and flowery crown">
+    <img
+      class="
+        absolute max-lg:hidden
+        right-0 max-w-2xl
+        motion-reduce:top-80 motion-safe:top-16 motion-safe:rallax
+      "
+      src="{% static 'hourglass/media/backgrounds/shakespeare-drag-actor-flowers-stripes.png' %}"
+      alt="Actor singing with arms raised wearing dress and flowery crown">
+  </div>
+  <div class="container mx-auto max-w-screen-xl relative">
+    <div class="lg:flex">
+      <div
+        class="
+          relative before:z-30 before:block before:absolute
+          before:inset-y-0 before:w-screen
+          max-lg:before:right-1/2 lg:before:-right-12
+          before:bg-white
+          mt-28
+        ">
+        <div
+          class="
+            relative z-40
+            py-20 px-8 bg-white
+            flex flex-col gap-y-8
+          ">
+          <h2 class="font-poppins-bold text-3xl max-lg:text-center">
+            Engineering
+          </h2>
+          <div
+            class="
+              flex max-lg:flex-col gap-y-20
+              lg:flex-row lg:justify-between gap-x-8
+            ">
+            <div
+              class="
+                flex flex-col gap-y-8 max-lg:items-center
+                lg:items-start lg:flex-1
+              ">
+              <img
+                class="object-contain w-64 h-64"
+                src="https://www.openlibhums.org/media/press/Mauro.jpg"
+                alt="">
+              <div class="flex flex-col">
+                <h3 class="font-poppins-bold max-lg:text-xl lg:text-2xl max-lg:text-center">
+                  Mauro Sanchez
+                </h3>
+                <p class="font-source-sans max-lg:text-lg lg:text-xl max-lg:text-center">
+                  Senior Publishing Technologies Developer
+                </p>
+                <p class="italic font-source-sans max-lg:text-lg lg:text-xl max-lg:text-center">
+                  Back-End Ninja
+                </p>
+              </div>
+              {% with rel_path="/site/mauro-sanchez" label="Full profile" %}
+                {% include 'custom/button-action.html' %}
+              {% endwith %}
+            </div>
+            <div
+              class="
+                flex flex-col gap-y-8 max-lg:items-center
+                lg:items-start lg:flex-1
+              ">
+              <img
+                class="object-contain w-64 h-64"
+                src="https://www.openlibhums.org/media/press/Joseph.jpg"
+                alt="">
+              <div class="flex flex-col">
+                <h3 class="font-poppins-bold max-lg:text-xl lg:text-2xl max-lg:text-center">
+                  Joseph Muller
+                </h3>
+                <p class="font-source-sans max-lg:text-lg lg:text-xl max-lg:text-center">
+                  Publishing Technologies Developer
+                </p>
+                <p class="italic font-source-sans max-lg:text-lg lg:text-xl max-lg:text-center">
+                  The Translator
+                </p>
+              </div>
+              {% with rel_path="/site/joseph-muller" label="Full profile" %}
+                {% include 'custom/button-action.html' %}
+              {% endwith %}
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="
+          relative after:z-30 after:block after:absolute
+          after:inset-y-0 after:w-screen
+          max-lg:after:left-1/2 lg:after:-right-12
+          after:bg-white
+          mt-28
+        ">
+        <div
+          class="
+            relative z-40
+            py-20 px-8 bg-white
+            flex flex-col gap-y-8
+          ">
+          <h2 class="font-poppins-bold text-3xl max-lg:text-center">
+            Internship
+          </h2>
+          <div
+            class="
+              flex max-lg:flex-col gap-y-20
+              lg:flex-row lg:justify-between
+            ">
+            <div
+              class="
+                flex flex-col gap-y-8 max-lg:items-center
+                lg:items-start lg:flex-1
+              ">
+              <img
+                class="object-contain w-64 h-64"
+                src="https://www.openlibhums.org/media/press/Cate.jpg"
+                alt="">
+              <div class="flex flex-col">
+                <h3 class="font-poppins-bold max-lg:text-xl lg:text-2xl max-lg:text-center">
+                  Cate Meredith
+                </h3>
+                <p class="font-source-sans max-lg:text-lg lg:text-xl max-lg:text-center">
+                  CHASE Doctoral Training Partnership Intern
+                </p>
+                <p class="italic font-source-sans max-lg:text-lg lg:text-xl max-lg:text-center">
+                  The Polymath
+                </p>
+              </div>
+              {% with rel_path="/site/cate-meredith" label="Full profile" %}
+                {% include 'custom/button-action.html' %}
+              {% endwith %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container mx-auto max-w-screen-xl relative">
+    {% include 'custom/subscribe.html' %}
+  </div>
+</article>
