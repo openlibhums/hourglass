@@ -31,6 +31,37 @@ OTHER_SOURCE_PATHS = [
         os.path.join(
             THEME_PATH,
             'node_modules',
+            '@glidejs',
+            'glide',
+            'dist',
+            'glide.min.js',
+        ),
+        os.path.join(
+            DIST_PATH,
+            'js',
+            'glide.min.js',
+        )
+    ),
+    (
+        os.path.join(
+            THEME_PATH,
+            'node_modules',
+            '@glidejs',
+            'glide',
+            'dist',
+            'css',
+            'glide.core.min.css',
+        ),
+        os.path.join(
+            DIST_PATH,
+            'css',
+            'glide.core.min.css',
+        )
+    ),
+    (
+        os.path.join(
+            THEME_PATH,
+            'node_modules',
             'rallax.js',
             'dist',
             'rallax.js',

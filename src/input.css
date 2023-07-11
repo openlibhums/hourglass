@@ -1,5 +1,17 @@
 @tailwind base;
 @tailwind components;
+
+/* glide.js styles */
+button.glide__arrow--disabled {
+  @apply opacity-50 cursor-default;
+}
+button.glide__bullet--active {
+  @apply opacity-100;
+}
+button.glide__bullet:not(.glide__bullet--active) {
+  @apply opacity-50;
+}
+
 @tailwind utilities;
 
 @layer base {
