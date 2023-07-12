@@ -12,6 +12,11 @@ button.glide__bullet:not(.glide__bullet--active) {
   @apply opacity-50;
 }
 
+/* simple-scrollspy.js styles */
+#scroll-menu li a.active {
+  @apply underline underline-offset-4 decoration-1;
+}
+
 @tailwind utilities;
 
 @layer base {

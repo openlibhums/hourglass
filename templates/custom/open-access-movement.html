@@ -1,7 +1,9 @@
 {% load static %}
 
 <article>
-  <section id="headline" class="container mx-auto max-w-screen-xl relative max-lg:mt-52">
+  <section
+    id="headline"
+    class="container mx-auto max-w-screen-xl relative max-lg:mt-52">
     {% include 'custom/edit-on-github.html' with rel_path='custom/open-access-movement.html' %}
     <div
       class="
@@ -50,7 +52,9 @@
       </h1>
     </div>
   </section>
-  <section id="introduction" class="container mx-auto max-w-screen-xl relative lg:mt-28">
+  <section
+    id="introduction"
+    class="container mx-auto max-w-screen-xl relative lg:mt-28">
     <div
       class="
         p-8 bg-hourglass-orange
@@ -65,7 +69,9 @@
       </div>
     </div>
   </section>
-  <section id="serials-crisis" class="container mx-auto max-w-screen-xl relative max-lg:mt-56 lg:mt-28">
+  <section
+     id="serials-crisis"
+     class="container mx-auto max-w-screen-xl relative max-lg:mt-56 lg:mt-28">
     <div
       class="
         relative left-0 motion-safe:rallax
@@ -83,15 +89,15 @@
     </div>
     <div
       class="
-        relative max-lg:hidden top-0 motion-safe:rallax
+        relative max-lg:hidden top-64 motion-safe:rallax
         max-sm:-right-40 sm:max-md:-right-28 md:max-lg:-right-16
       ">
       <img
-        class="z-10 absolute w-64 h-192 top-64 -right-40"
+        class="z-10 absolute w-64 h-192 top-28 -right-40"
         src="{% static 'hourglass/media/backgrounds/bars-vertical-orange-three-triangle-blue.svg' %}"
         alt="">
       <img
-        class="absolute z-0 top-[46rem] -right-60 max-w-md"
+        class="absolute z-0 top-[38rem] -right-60 max-w-md"
         srcset="
           {% static 'hourglass/media/backgrounds/square-blue-textured.png' %} 335w,
           {% static 'hourglass/media/backgrounds/square-blue-textured-lg.png' %} 669w
@@ -119,7 +125,9 @@
       </div>
     </div>
   </section>
-  <section id="diamond-infographic" class="container mx-auto max-w-screen-xl relative mt-28">
+  <section
+    id="diamond-infographic"
+    class="container mx-auto max-w-screen-xl relative mt-28">
     <div
       class="
         relative 
@@ -165,7 +173,9 @@
         alt="">
     </div>
   </section>
-  <section id="diamond-explainer" class="container mx-auto max-w-screen-xl relative max-lg:mt-80 lg:mt-28">
+  <section
+    id="diamond-explainer"
+    class="container mx-auto max-w-screen-xl relative max-lg:mt-80 lg:mt-28">
     <div
       class="
         relative before:z-30 before:block before:absolute
@@ -186,31 +196,35 @@
       </div>
     </div>
   </section>
-  <div class="w-screen relative">
-    <section id="table-of-contents" class="container max-w-screen-xl max-lg:hidden z-40 sticky top-28">
-      <nav class="absolute right-0">
+  <div class="scroll-container relative">
+    <section
+      id="table-of-contents"
+      class="container mx-auto max-w-screen-xl max-lg:hidden z-40 sticky top-28">
+      <nav class="absolute right-0 max-xl:right-16 xl:right-36">
         <ul
+          id="scroll-menu"
           class="
             p-6 bg-hourglass-blue font-poppins-bold text-xl text-white
             w-24 flex flex-col items-left
           ">
-          <li><a href="#1991">1991</a></li>
-          <li><a href="#1997">1997</a></li>
-          <li><a href="#2000">2000</a></li>
-          <li><a href="#2001">2001</a></li>
-          <li><a href="#2003">2003</a></li>
-          <li><a href="#2005">2005</a></li>
-          <li><a href="#2006">2006</a></li>
-          <li><a href="#2009">2009</a></li>
-          <li><a href="#2011">2011</a></li>
-          <li><a href="#2012">2012</a></li>
-          <li><a href="#2013">2013</a></li>
-          <li><a href="#2014">2014</a></li>
-          <li><a href="#2015">2015</a></li>
-          <li><a href="#2016">2016</a></li>
-          <li><a href="#2018">2018</a></li>
-          <li><a href="#2020">2020</a></li>
-          <li><a href="#2022">2022</a></li>
+          <li><a href="#y1991">1991</a></li>
+          <li><a href="#y1997">1997</a></li>
+          <li><a href="#y1999">1999</a></li>
+          <li><a href="#y2000">2000</a></li>
+          <li><a href="#y2001">2001</a></li>
+          <li><a href="#y2003">2003</a></li>
+          <li><a href="#y2005">2005</a></li>
+          <li><a href="#y2006">2006</a></li>
+          <li><a href="#y2009">2009</a></li>
+          <li><a href="#y2011">2011</a></li>
+          <li><a href="#y2012">2012</a></li>
+          <li><a href="#y2013">2013</a></li>
+          <li><a href="#y2014">2014</a></li>
+          <li><a href="#y2015">2015</a></li>
+          <li><a href="#y2016">2016</a></li>
+          <li><a href="#y2018">2018</a></li>
+          <li><a href="#y2020">2020</a></li>
+          <li><a href="#y2022">2022</a></li>
         </ul>
         <img
           class="w-24"
@@ -218,7 +232,9 @@
           alt="">
       </nav>
     </section>
-    <section id="timeline-opener" class="container mx-auto max-w-screen-xl relative max-lg:mt-56 lg:mt-28">
+    <section
+      id="timeline-opener"
+      class="container mx-auto max-w-screen-xl relative max-lg:mt-56 lg:mt-28">
       <div
         class="
           relative right-12 motion-safe:rallax
@@ -246,14 +262,15 @@
             px-8 max-lg:py-8 lg:py-24 max-w-3xl bg-hourglass-orange
             flex flex-col gap-y-6 z-40 relative
           ">
-
           <h2 class="font-poppins-bold max-lg:text-2xl lg:text-3xl">The Story of Open Access</h2>
           <p class="font-source-sans font-semibold max-lg:text-xl lg:text-3xl">What follows is a timeline of the history of open access. It is a story of rampant commercialisation of higher education in the UK, US, Europe, and across the globe.</p>
           <p class="font-source-sans max-lg:text-lg lg:text-xl">It is also a story of the passionate individuals who stood up for their academic communities and refused to allow global corporate publishing giants to cripple academic scholarship. From high-profile academic boycotts of notorious publishers to the creation of collaborative open-source digital platforms and tools, this is the story of the individuals who chose to stand up to big business in the political struggle for open access to scholarly knowledge.</p>
         </div>
       </div>
     </section>
-    <section id="1991" class="container mx-auto max-w-screen-xl relative mt-8">
+    <section
+      id="y1991"
+      class="container mx-auto max-w-screen-xl relative mt-8 scroll-target">
       <div
         class="
           relative before:z-30 before:block before:absolute
@@ -290,7 +307,9 @@
         </div>
       </div>
     </section>
-    <section id="1997" class="container mx-auto max-w-screen-xl relative mt-8">
+    <section
+      id="y1997"
+      class="container mx-auto max-w-screen-xl relative mt-8 scroll-target">
       <div
         class="
           relative before:z-30 before:block before:absolute
@@ -331,7 +350,9 @@
         </div>
       </div>
     </section>
-    <section id="1999" class="container mx-auto max-w-screen-xl relative mt-8">
+    <section
+      id="y1999"
+      class="container mx-auto max-w-screen-xl relative mt-8 scroll-target">
       <div
         class="
           relative before:z-30 before:block before:absolute
@@ -368,7 +389,9 @@
         </div>
       </div>
     </section>
-    <section id="2000" class="container mx-auto max-w-screen-xl relative mt-8">
+    <section
+      id="y2000"
+      class="container mx-auto max-w-screen-xl relative mt-8 scroll-target">
       <div
         class="
           relative before:z-30 before:block before:absolute
@@ -408,7 +431,9 @@
         </div>
       </div>
     </section>
-    <section id="2001" class="container mx-auto max-w-screen-xl relative mt-8">
+    <section
+      id="y2001"
+      class="container mx-auto max-w-screen-xl relative mt-8 scroll-target">
       <div
         class="
           relative before:z-30 before:block before:absolute
@@ -446,7 +471,9 @@
         </div>
       </div>
     </section>
-    <section id="2003" class="container mx-auto max-w-screen-xl relative mt-8">
+    <section
+      id="y2003"
+      class="container mx-auto max-w-screen-xl relative mt-8 scroll-target">
       <div
         class="
           relative before:z-30 before:block before:absolute
@@ -485,7 +512,9 @@
         </div>
       </div>
     </section>
-    <section id="2005" class="container mx-auto max-w-screen-xl relative mt-8">
+    <section
+      id="y2005"
+      class="container mx-auto max-w-screen-xl relative mt-8 scroll-target">
       <div
         class="
           relative before:z-30 before:block before:absolute
@@ -523,7 +552,9 @@
         </div>
       </div>
     </section>
-    <section id="2006" class="container mx-auto max-w-screen-xl relative mt-8">
+    <section
+      id="y2006"
+      class="container mx-auto max-w-screen-xl relative mt-8 scroll-target">
       <div
         class="
           relative before:z-30 before:block before:absolute
@@ -563,7 +594,9 @@
         </div>
       </div>
     </section>
-    <section id="2009" class="container mx-auto max-w-screen-xl relative mt-8">
+    <section
+      id="y2009"
+      class="container mx-auto max-w-screen-xl relative mt-8 scroll-target">
       <div
         class="
           relative before:z-30 before:block before:absolute
@@ -600,7 +633,9 @@
         </div>
       </div>
     </section>
-    <section id="2011" class="container mx-auto max-w-screen-xl relative mt-8">
+    <section
+      id="y2011"
+      class="container mx-auto max-w-screen-xl relative mt-8 scroll-target">
       <div
         class="
           relative before:z-30 before:block before:absolute
@@ -639,7 +674,9 @@
         </div>
       </div>
     </section>
-    <section id="2012" class="container mx-auto max-w-screen-xl relative mt-8">
+    <section
+      id="y2012"
+      class="container mx-auto max-w-screen-xl relative mt-8 scroll-target">
       <div
         class="
           relative before:z-30 before:block before:absolute
@@ -678,7 +715,9 @@
         </div>
       </div>
     </section>
-    <section id="2013" class="container mx-auto max-w-screen-xl relative mt-8">
+    <section
+      id="y2013"
+      class="container mx-auto max-w-screen-xl relative mt-8 scroll-target">
       <div
         class="
           relative before:z-30 before:block before:absolute
@@ -718,7 +757,9 @@
         </div>
       </div>
     </section>
-    <section id="2014" class="container mx-auto max-w-screen-xl relative mt-8">
+    <section
+      id="y2014"
+      class="container mx-auto max-w-screen-xl relative mt-8 scroll-target">
       <div
         class="
           relative before:z-30 before:block before:absolute
@@ -756,7 +797,9 @@
         </div>
       </div>
     </section>
-    <section id="2015" class="container mx-auto max-w-screen-xl relative mt-8">
+    <section
+      id="y2015"
+      class="container mx-auto max-w-screen-xl relative mt-8 scroll-target">
       <div
         class="
           relative before:z-30 before:block before:absolute
@@ -797,7 +840,9 @@
         </div>
       </div>
     </section>
-    <section id="2016" class="container mx-auto max-w-screen-xl relative mt-8">
+    <section
+      id="y2016"
+      class="container mx-auto max-w-screen-xl relative mt-8 scroll-target">
       <div
         class="
           relative before:z-30 before:block before:absolute
@@ -834,7 +879,9 @@
         </div>
       </div>
     </section>
-    <section id="2018" class="container mx-auto max-w-screen-xl relative mt-8">
+    <section
+      id="y2018"
+      class="container mx-auto max-w-screen-xl relative mt-8 scroll-target">
       <div
         class="
           relative before:z-30 before:block before:absolute
@@ -874,7 +921,9 @@
         </div>
       </div>
     </section>
-    <section id="2020" class="container mx-auto max-w-screen-xl relative mt-8">
+    <section
+      id="y2020"
+      class="container mx-auto max-w-screen-xl relative mt-8 scroll-target">
       <div
         class="
           relative before:z-30 before:block before:absolute
@@ -911,7 +960,9 @@
         </div>
       </div>
     </section>
-    <section id="2022" class="container mx-auto max-w-screen-xl relative mt-8">
+    <section
+      id="y2022"
+      class="container mx-auto max-w-screen-xl relative mt-8 scroll-target">
       <div
         class="
           relative before:z-30 before:block before:absolute
@@ -951,7 +1002,9 @@
       </div>
     </div>
   </section>
-  <section id="sources" class="container mx-auto max-w-screen-xl relative mt-8">
+  <section
+    id="sources"
+    class="container mx-auto max-w-screen-xl relative mt-8">
     <div
       class="
         relative before:z-30 before:block before:absolute

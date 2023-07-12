@@ -69,15 +69,45 @@
       <!-- JavaScript dependencies -->
       <script src="{% static 'hourglass/js/list.min.js' %}"></script>
       <script src="{% static 'hourglass/js/glide.min.js' %}"></script>
+      <script src="{% static 'hourglass/js/simple-scrollspy.min.js' %}"></script>
       <script src="{% static 'hourglass/js/lunr.min.js' %}"></script>
       <script src="{% static 'hourglass/js/rallax.js' %}"></script>
 
       <!-- custom JavaScript -->
-      <script src="{% static 'hourglass/js/search.js' %}" type="module"></script>
-      <script src="{% static 'hourglass/js/parallax.js' %}"></script>
       <script>
-        const options = {rewind: false}
-        new Glide('.glide', options).mount()
+        // Check user's motion preference
+        const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)')
+        const prefersReducedMotion = mediaQuery.matches
+      </script>
+      <script src="{% static 'hourglass/js/search.js' %}" type="module"></script>
+      <script>
+        if (!prefersReducedMotion) {
+          for (const image of document.getElementsByClassName('motion-safe:rallax')) {
+            rallax(image)
+          }
+        }
+      </script>
+      <script type="module">
+        import jump from '{% static "hourglass/js/jump.module.js" %}'
+        const scrollOptions = {
+          sectionClass: '.scroll-target',
+          // scrollContainer: '.scroll-container',
+          smoothScroll: !prefersReducedMotion,
+          offset: -3700,
+          smoothScrollBehavior: function (element, options) {
+            jump(element, {
+              duration: 600,
+              offset: -100,
+            })
+          }
+        }
+        window.scrollSpy('#scroll-menu', scrollOptions)
+      </script>
+      <script>
+        const glideOptions = {rewind: false}
+        for (const carousel of document.getElementsByClassName('glide')) {
+          new window.Glide(carousel, glideOptions).mount()
+        }
       </script>
 
       {% block js %}{% endblock js %}

@@ -62,6 +62,35 @@ OTHER_SOURCE_PATHS = [
         os.path.join(
             THEME_PATH,
             'node_modules',
+            'simple-scrollspy',
+            'demo',
+            'dist',
+            'simple-scrollspy.min.js',
+        ),
+        os.path.join(
+            DIST_PATH,
+            'js',
+            'simple-scrollspy.min.js',
+        )
+    ),
+    (
+        os.path.join(
+            THEME_PATH,
+            'node_modules',
+            'jump.js',
+            'dist',
+            'jump.module.js',
+        ),
+        os.path.join(
+            DIST_PATH,
+            'js',
+            'jump.module.js',
+        )
+    ),
+    (
+        os.path.join(
+            THEME_PATH,
+            'node_modules',
             'rallax.js',
             'dist',
             'rallax.js',
