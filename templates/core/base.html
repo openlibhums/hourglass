@@ -53,16 +53,16 @@
       {% endif %}
     {% endblock meta_image %}
   </head>
-  <body class="relative">
+  <body class="relative bg-hourglass-tan">
     <div class="relative flex flex-col min-h-screen justify-between">
       <header class="lg:sticky lg:top-0 lg:z-50">
         {% include "press/nav.html" %}
       </header>
-      <main class="relative mb-auto">
+      <main class="relative z-0 mb-auto">
         {% block body %}{% endblock body %}
         {% include 'elements/search_modal.html' %}
       </main>
-      <footer>
+      <footer class-"relative z-0">
         {% include 'press/footer.html' %}
       </footer>
 
