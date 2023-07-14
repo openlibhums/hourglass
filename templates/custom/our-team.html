@@ -1,30 +1,66 @@
 {% load static %}
 
 <article>
-  <div class="container mx-auto max-w-screen-xl relative">
+  <div class="container mx-auto max-w-screen-xl relative max-lg:mt-56 lg:mt-8">
     {% include 'custom/edit-on-github.html' with rel_path='custom/our-team.html' %}
-    <img
+    <div
       class="
-        lg:hidden absolute
-        max-sm:-right-24 sm:-right-12 md:right-4
-        w-[28rem]
-        top-0 motion-safe:rallax
-      "
-      src="{% static 'hourglass/media/backgrounds/hairdo-lady-on-bench.png' %}"
-      alt="Woman with Victorian hairdo sitting on a park bench holding a book">
-    <img
-      class="
-        max-lg:hidden absolute
-        -right-36 w-[28rem]
-        top-0 motion-safe:rallax
-      "
-      src="{% static 'hourglass/media/backgrounds/hairdo-lady-on-bench-lg.png' %}"
-      alt="Woman with Victorian hairdo sitting on a park bench holding a book">
+        relative max-lg:-top-72 lg:-top-24 motion-safe:rallax
+        max-lg:right-0 lg:-right-20 xl:-right-32
+      ">
+      <img
+        class="
+          z-0 absolute max-lg:h-36 lg:h-44
+          max-lg:top-24 lg:top-52 max-lg:right-48 lg:right-80
+        "
+        src="{% static 'hourglass/media/backgrounds/rectangle-red.svg' %}"
+        alt="">
+      <img
+        class="
+          z-0 absolute max-lg:h-36 lg:h-44
+          max-lg:top-28 lg:top-64 max-lg:right-36 lg:right-64
+        "
+        src="{% static 'hourglass/media/backgrounds/rectangle-black.svg' %}"
+        alt="">
+      <img
+        class="z-0 absolute max-lg:top-24 lg:-top-56 max-lg:right-0 lg:right-20 w-12"
+        src="{% static 'hourglass/media/backgrounds/bars-vertical-orange-three-flat-top.svg' %}"
+        alt="">
+      <img
+        class="
+          absolute z-10 max-lg:top-24 lg:top-20 max-lg:-right-20 lg:-right-40
+          max-lg:max-w-md lg:max-w-lg
+        "
+        srcset="
+          {% static 'hourglass/media/backgrounds/hairdo-lady-on-bench.png' %} 343w,
+          {% static 'hourglass/media/backgrounds/hairdo-lady-on-bench-lg.png' %} 1065w
+        "
+        src="{% static 'hourglass/media/backgrounds/hairdo-lady-on-bench-lg.png' %}"
+        sizes="(max-width: 1024px) 343px, 1065px"
+        alt="Woman with Victorian hairdo and blouse sitting on a park bench with a book in hand">
+      <img
+        class="lg:hidden z-20 absolute top-[30rem] -right-8 w-36"
+        src="{% static 'hourglass/media/backgrounds/square-red.svg' %}"
+        alt="">
+      <img
+        class="
+          max-lg:hidden z-20 absolute h-44
+          top-[41rem] right-8
+        "
+        src="{% static 'hourglass/media/backgrounds/rectangle-red.svg' %}"
+        alt="">
+      <img
+        class="absolute z-10 max-lg:top-[32rem] lg:top-[42rem] max-lg:-right-24 lg:-right-20"
+        src="{% static 'hourglass/media/backgrounds/circle-blue-textured.png' %}"
+        width="434"
+        alt="">
+    </div>
     <div class="relative z-40">
       <h1
         class="
-          max-lg:text-4xl lg:text-7xl
-          font-poppins-bold max-lg:pt-48 max-lg:pb-12 lg:py-28 px-8
+          max-lg:text-4xl lg:text-7xl !leading-snug
+          max-lg:max-w-xs lg:max-w-2xl
+          font-poppins-bold max-lg:py-12 lg:py-20 px-8
         ">
         Our Team
       </h1>
