@@ -205,7 +205,7 @@ OTHER_SOURCE_PATHS = [
 def compile_css():
     python_dir = os.getcwd()
     os.chdir(THEME_PATH)
-    npm.call(['run', 'build'])
+    npm.call(['run', 'buildcss'])
     os.chdir(python_dir)
 
 
