@@ -8,15 +8,22 @@ export default {
   ],
   theme: {
     colors: {
-      'hourglass-blue': '#1579A0',
-      'hourglass-orange': '#EC8323',
-      'hourglass-red': '#E94C33',
-      'hourglass-tan': '#D6CBBC',
-      'hourglass-tan-light': '#EAE5DD',
+      blue: '#1579a0',
+      'blue-medium': '#5ba1bc',
+      'blue-light': '#a1c9d9',
+      tan: '#d6cbbc',
+      'tan-medium': '#e2dad0',
+      'tan-light': '#efeae4',
+      red: '#e94c33',
+      'red-medium': '#f08170',
+      'red-light': '#f6b7ad',
+      orange: '#ec8323',
+      'orange-medium': '#f2a865',
+      'orange-light': '#f7cda7',
+      black: '#202124',
+      white: '#fdfeff',
       transparent: 'transparent',
-      current: 'currentColor',
-      white: '#ffffff',
-      black: '#000000'
+      current: 'currentColor'
     },
     container: {
       padding: {
