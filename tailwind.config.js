@@ -1,6 +1,15 @@
 import typography from '@tailwindcss/typography'
 import forms from '@tailwindcss/forms'
 
+// Algorithms from https://github.com/tailwindlabs/tailwindcss-typography/blob/master/src/styles.js
+const round = (num) =>
+  num
+    .toFixed(7)
+    .replace(/(\.[0-9]+?)0+$/, '$1')
+    .replace(/\.0$/, '')
+const rem = (px) => `${round(px / 16)}rem`
+const em = (px, base) => `${round(px / base)}em`
+
 export default {
   content: [
     './src/**/*.js',
@@ -41,7 +50,70 @@ export default {
         'poppins-bold': ['Poppins Bold', 'sans-serif'],
         'source-sans': ['Source Sans', 'sans-serif'],
         'source-sans-italic': ['Source Sans Italic', 'sans-serif']
-      }
+      },
+      // Customisation of Tailwind Typography plugin
+      typography: ({ theme }) => ({
+        DEFAULT: {
+          css: {
+            '--tw-prose-links': theme('colors.blue'),
+            '--tw-prose-body': theme('colors.black'),
+            '--tw-prose-headings': theme('colors.black'),
+            '--tw-prose-bold': theme('colors.black'),
+            '--tw-prose-lead': theme('colors.black'),
+            '--tw-prose-bullets': theme('colors.black'),
+            p: {
+              fontSize: rem(18),
+              lineHeight: round(25 / 16),
+              marginTop: em(12, 16),
+              marginBottom: em(12, 16)
+            },
+            '[class~="lead"]': {
+              fontFamily: 'Poppins Bold',
+              fontSize: em(24, 16),
+              lineHeight: round(28 / 20)
+            },
+            h1: {
+              fontFamily: 'Poppins Bold',
+              fontWeight: 'normal'
+            },
+            h2: {
+              fontFamily: 'Poppins Bold',
+              fontWeight: 'normal'
+            },
+            h3: {
+              fontFamily: 'Poppins Bold',
+              fontWeight: 'normal'
+            },
+            h4: {
+              fontFamily: 'Poppins Medium',
+              fontWeight: 'normal'
+            },
+            h5: {
+              fontFamily: 'Poppins Medium',
+              fontWeight: 'normal'
+            },
+            h6: {
+              fontFamily: 'Poppins Medium',
+              fontWeight: 'normal'
+            }
+          }
+        },
+        lg: {
+          css: {
+            p: {
+              fontSize: rem(20),
+              lineHeight: round(26 / 18),
+              marginTop: em(18, 18),
+              marginBottom: em(18, 18)
+            },
+            '[class~="lead"]': {
+              fontFamily: 'Poppins Bold',
+              fontSize: em(28, 18),
+              lineHeight: round(26 / 20)
+            }
+          }
+        }
+      })
     }
   },
   plugins: [
