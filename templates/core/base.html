@@ -101,11 +101,13 @@
             })
           }
         }
-        window.scrollSpy('#scroll-menu', scrollOptions)
+        if (document.querySelector('#scroll-menu')) {
+          window.scrollSpy('#scroll-menu', scrollOptions)
+        }
       </script>
       <script>
         const glideOptions = {rewind: false}
-        for (const carousel of document.getElementsByClassName('glide')) {
+        for (const carousel of document.querySelectorAll('.glide')) {
           new window.Glide(carousel, glideOptions).mount()
         }
       </script>

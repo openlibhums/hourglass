@@ -49,26 +49,56 @@
 </div>
 
 <script>
-
   function toggleSideNav(event) {
-    const navOptions = document.getElementById('nav-options')
+    const navOptions = document.querySelector('#nav-options')
     navOptions.classList.toggle('max-lg:hidden')
   }
 
-  const slideDrawer = document.getElementById('slide-drawer')
+  const slideDrawer = document.querySelector('#slide-drawer')
   slideDrawer.addEventListener('click', event => toggleSideNav(event))
 
-  function toggleDropdown(event, item) {
+  const toggleDuration = 200
+
+  function toggleThisDropdown(event) {
     event.preventDefault()
-    dropdownId = item.getAttribute('data-target')
-    const dropdown = document.getElementById(dropdownId)
-    item.classList.toggle('lg:font-poppins-bold')
-    dropdown.classList.toggle('hidden')
+    event.currentTarget.classList.toggle('lg:font-poppins-bold')
+    const dropdownId = event.currentTarget.getAttribute('data-target')
+    const dropdown = document.querySelector(`#${dropdownId}`)
+    if (dropdown.classList.contains('lg:collapse')) {
+      dropdown.classList.remove('lg:collapse')
+    } else {
+      setTimeout(() => {
+        dropdown.classList.add('lg:collapse')
+      }, toggleDuration)
+    }
+    dropdown.classList.toggle('lg:opacity-0')
+    dropdown.classList.toggle('max-lg:collapse')
   }
 
-  const topNavItems = document.getElementsByClassName('toggles-dropdown')
-  for (const item of topNavItems) {
-    item.addEventListener('click', event => toggleDropdown(event, item))
+  const topNavItems = document.querySelectorAll('.toggles-dropdown')
+
+  function closeOtherDropdown(item) {
+    item.classList.remove('lg:font-poppins-bold')
+    const dropdownId = item.getAttribute('data-target')
+    const dropdown = document.querySelector(`#${dropdownId}`)
+    dropdown.classList.add('lg:opacity-0')
+    setTimeout(() => {
+      dropdown.classList.add('lg:collapse')
+    }, toggleDuration)
   }
+
+  function closeOtherDropdowns(event) {
+    const otherItems = Array.from(topNavItems).filter(item => item != event.currentTarget)
+    for (item of otherItems) closeOtherDropdown(item)
+    event.stopPropagation()
+  }
+
+  for (const item of topNavItems) {
+    item.addEventListener('click', event => toggleThisDropdown(event))
+    item.addEventListener('click', event => closeOtherDropdowns(event))
+  }
+
+  const body = document.querySelector('body')
+  body.addEventListener('click', event => closeOtherDropdowns(event))
 
 </script>
