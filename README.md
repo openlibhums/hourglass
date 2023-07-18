@@ -2,27 +2,28 @@
 
 ## Installing
 
-1. Navigate to the root of your
-   [Janeway](https://github.com/BirkbeckCTP/janeway) installation, and
-   clone this subtheme into `src/themes`:
+1. Clone this repository into the theme folder of your
+   [Janeway](https://github.com/BirkbeckCTP/janeway) installation:
 
    ```shell
-   git clone git@github.com:BirkbeckCTP/hourglass.git src/themes
+   cd src/themes
+   git clone git@github.com:BirkbeckCTP/hourglass.git
    ```
 
-2. Still in the Janeway root, install Node in your Janeway virtual
-   environment using pip:
+2. With your Python virtual environment activated, install the Python
+   dependencies using pip.
 
    ```shell
-   pip install -r src/themes/hourglass/requirements.txt
+   pip install -r requirements.txt
    ```
 
-3. Install the JavaScript dependencies
-   in `src/themes/hourglass/package.json` using NPM:
+3. Install the JavaScript dependencies using NPM:
 
    ```shell
-   npm install --prefix ./src/themes/hourglass
+   npm install
    ```
+
+   You should see a new `node_modules` file in the `hourglass` folder.
 
 ## Deploying to production
 
