@@ -20,29 +20,29 @@
       alt="Account">
     <span class="lg:hidden">Account</span>
   </a>
-  <ul
+  <div
     class="
       lg:bg-white
-      flex flex-col gap-x-6
       max-lg:w-full lg:w-max
-      max-lg:collapse
-      lg:collapse lg:opacity-0 lg:transition lg:duration-200
-      lg:absolute lg:top-full lg:-translate-x-4
+      transition-all ease-in-out duration-300
+      max-h-0 overflow-clip
+      lg:absolute lg:z-50 lg:top-full lg:-translate-x-4
     "
     id="dropdown-account">
-
-    {% if request.user.is_authenticated %}
-      {% if user_is_editor or request.user.is_staff %}
-        {% include 'elements/nav_sub_item.html' with url_name='core_manager_index' label='Manager' %}
+    <ul class="hidden">
+      {% if request.user.is_authenticated %}
+        {% if user_is_editor or request.user.is_staff %}
+          {% include 'elements/nav_sub_item.html' with url_name='core_manager_index' label='Manager' %}
+        {% endif %}
+        {% if request.user.is_staff %}
+          {% include 'elements/nav_sub_item.html' with url_name='admin:index' label='Admin' %}
+        {% endif %}
+        {% include 'elements/nav_sub_item.html' with url_name='core_edit_profile' label='Profile' %}
+        {% include 'elements/nav_sub_item.html' with url_name='core_logout' label='Log out' %}
+      {% else %}
+        {% include 'elements/nav_sub_item.html' with url_name='core_login' label='Log in' %}
+        {% include 'elements/nav_sub_item.html' with url_name='core_register' label='Register' %}
       {% endif %}
-      {% if request.user.is_staff %}
-        {% include 'elements/nav_sub_item.html' with url_name='admin:index' label='Admin' %}
-      {% endif %}
-      {% include 'elements/nav_sub_item.html' with url_name='core_edit_profile' label='Profile' %}
-      {% include 'elements/nav_sub_item.html' with url_name='core_logout' label='Log out' %}
-    {% else %}
-      {% include 'elements/nav_sub_item.html' with url_name='core_login' label='Log in' %}
-      {% include 'elements/nav_sub_item.html' with url_name='core_register' label='Register' %}
-    {% endif %}
-  </ul>
+    </ul>
+  </div>
 </li>

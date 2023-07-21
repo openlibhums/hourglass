@@ -23,27 +23,28 @@
           </ul>
         </nav>
       </div>
-      <nav
+      <div
         id="nav-options"
-        class="max-lg:hidden group/top
+        class="
+          max-lg:transition-all max-lg:ease-in-out max-lg:duration-300
+          max-lg:max-h-0 max-lg:overflow-clip
         ">
-        <ul
-          class="
-            text-sm font-poppins-medium
-            flex max-lg:flex-col
-            lg:flex-row
-            lg:justify-center
-            lg:items-center
-          ">
-          {% for item in navigation_items %}
-            {% if not item.for_footer %}
-              {% include 'elements/nav_item.html' with viewport='medium' %}
-            {% endif %}
-          {% endfor %}
-          {% include 'elements/nav_search.html' with viewport='medium' %}
-          {% include 'elements/nav_account.html' with viewport='medium' %}
-        </ul>
-      </nav>
+        <nav class="max-lg:hidden group/top">
+          <ul
+            class="
+              text-sm font-poppins-medium
+              flex max-lg:flex-col lg:flex-row lg:justify-center lg:items-center
+            ">
+            {% for item in navigation_items %}
+              {% if not item.for_footer %}
+                {% include 'elements/nav_item.html' with viewport='medium' %}
+              {% endif %}
+            {% endfor %}
+            {% include 'elements/nav_search.html' with viewport='medium' %}
+            {% include 'elements/nav_account.html' with viewport='medium' %}
+          </ul>
+        </nav>
+      </div>
     </div>
   </div>
 </div>
@@ -51,28 +52,38 @@
 <script>
   function toggleSideNav(event) {
     const navOptions = document.querySelector('#nav-options')
-    navOptions.classList.toggle('max-lg:hidden')
+    innerNav = navOptions.querySelector('nav')
+    if (innerNav.classList.contains('max-lg:hidden')) {
+      innerNav.classList.remove('max-lg:hidden')
+    } else {
+      setTimeout(() => {
+        innerNav.classList.add('max-lg:hidden')
+      }, toggleDuration)
+    }
+    navOptions.classList.toggle('max-lg:max-h-screen')
+    navOptions.classList.toggle('max-lg:max-h-0')
   }
 
   const slideDrawer = document.querySelector('#slide-drawer')
   slideDrawer.addEventListener('click', event => toggleSideNav(event))
 
-  const toggleDuration = 200
+  const toggleDuration = 300
 
   function toggleThisDropdown(event) {
     event.preventDefault()
     event.currentTarget.classList.toggle('lg:font-poppins-bold')
     const dropdownId = event.currentTarget.getAttribute('data-target')
     const dropdown = document.querySelector(`#${dropdownId}`)
-    if (dropdown.classList.contains('lg:collapse')) {
-      dropdown.classList.remove('lg:collapse')
+    const innerDropdown = dropdown.querySelector('ul')
+    if (innerDropdown.classList.contains('hidden')) {
+      innerDropdown.classList.remove('hidden')
     } else {
       setTimeout(() => {
-        dropdown.classList.add('lg:collapse')
+        innerDropdown.classList.add('hidden')
       }, toggleDuration)
     }
-    dropdown.classList.toggle('lg:opacity-0')
-    dropdown.classList.toggle('max-lg:collapse')
+    dropdown.classList.toggle('max-h-[50vh]')
+    dropdown.classList.toggle('max-h-0')
   }
 
   const topNavItems = document.querySelectorAll('.toggles-dropdown')
@@ -81,9 +92,11 @@
     item.classList.remove('lg:font-poppins-bold')
     const dropdownId = item.getAttribute('data-target')
     const dropdown = document.querySelector(`#${dropdownId}`)
-    dropdown.classList.add('lg:opacity-0')
+    const innerDropdown = dropdown.querySelector('ul')
+    dropdown.classList.toggle('max-h-0', force=true)
+    dropdown.classList.toggle('max-h-[50vh]', force=false)
     setTimeout(() => {
-      dropdown.classList.add('lg:collapse')
+      innerDropdown.classList.toggle('hidden', force=true)
     }, toggleDuration)
   }
 
