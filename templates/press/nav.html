@@ -50,7 +50,10 @@
 </div>
 
 <script>
+  const toggleDuration = 300
+
   function toggleSideNav(event) {
+    event.stopPropagation()
     const navOptions = document.querySelector('#nav-options')
     innerNav = navOptions.querySelector('nav')
     if (innerNav.classList.contains('max-lg:hidden')) {
@@ -58,20 +61,29 @@
     } else {
       setTimeout(() => {
         innerNav.classList.add('max-lg:hidden')
+        closeOtherDropdowns(event)
       }, toggleDuration)
     }
     navOptions.classList.toggle('max-lg:max-h-screen')
     navOptions.classList.toggle('max-lg:max-h-0')
   }
 
+  function closeSideNav(item) {
+    const navOptions = document.querySelector('#nav-options')
+    innerNav = navOptions.querySelector('nav')
+    navOptions.classList.toggle('max-lg:max-h-0', force=true)
+    navOptions.classList.toggle('max-lg:max-h-screen', force=false)
+    setTimeout(() => {
+      innerNav.classList.add('max-lg:hidden')
+    }, toggleDuration)
+  }
+
   const slideDrawer = document.querySelector('#slide-drawer')
   slideDrawer.addEventListener('click', event => toggleSideNav(event))
 
-  const toggleDuration = 300
-
   function toggleThisDropdown(event) {
     event.preventDefault()
-    event.currentTarget.classList.toggle('lg:font-poppins-bold')
+    event.currentTarget.classList.toggle('lg:text-shadow')
     const dropdownId = event.currentTarget.getAttribute('data-target')
     const dropdown = document.querySelector(`#${dropdownId}`)
     const innerDropdown = dropdown.querySelector('ul')
@@ -89,7 +101,7 @@
   const topNavItems = document.querySelectorAll('.toggles-dropdown')
 
   function closeOtherDropdown(item) {
-    item.classList.remove('lg:font-poppins-bold')
+    item.classList.remove('lg:text-shadow')
     const dropdownId = item.getAttribute('data-target')
     const dropdown = document.querySelector(`#${dropdownId}`)
     const innerDropdown = dropdown.querySelector('ul')
@@ -112,6 +124,9 @@
   }
 
   const body = document.querySelector('body')
-  body.addEventListener('click', event => closeOtherDropdowns(event))
+  body.addEventListener('click', event => {
+    closeOtherDropdowns(event)
+    closeSideNav(event)
+  })
 
 </script>
