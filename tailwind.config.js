@@ -1,5 +1,6 @@
 import typography from '@tailwindcss/typography'
 import forms from '@tailwindcss/forms'
+import plugin from 'tailwindcss/plugin'
 
 // Algorithms from https://github.com/tailwindlabs/tailwindcss-typography/blob/master/src/styles.js
 const round = (num) =>
@@ -113,11 +114,24 @@ export default {
             }
           }
         }
-      })
+      }),
+      textShadow: {
+        DEFAULT: '.65px -0.40px 0.5px theme("colors.black")'
+      }
     }
   },
   plugins: [
     typography,
-    forms
+    forms,
+    plugin(function ({ matchUtilities, theme }) {
+      matchUtilities(
+        {
+          'text-shadow': (value) => ({
+            textShadow: value,
+          }),
+        },
+        { values: theme('textShadow') }
+      )
+    })
   ]
 }
