@@ -1,0 +1,343 @@
+{% load static %}
+
+<article>
+  <div class="container mx-auto max-w-screen-xl relative">
+    {% include 'custom/edit-on-github.html' with rel_path='custom/who-we-are.html' %}
+    <img
+      class="
+        lg:hidden absolute -top-8 -right-32 sm:-right-12 md:right-4 max-w-md 
+        motion-safe:rallax
+      "
+      src="{% static 'hourglass/media/backgrounds/striped-umbrella.png' %}"
+      alt="A couple in old-timey dress holding a striped umbrella">
+    <img
+      class="absolute max-lg:hidden top-8 -right-12 motion-safe:rallax"
+      src="{% static 'hourglass/media/backgrounds/striped-umbrella-lg.png' %}"
+      alt="A couple in old-timey dress holding a striped umbrella">
+    <div class="relative z-40">
+      <h1
+        class="
+          max-lg:text-4xl lg:text-7xl
+          font-poppins-bold max-lg:pt-64 max-lg:pb-12 lg:py-28 px-8
+        ">
+        Who We Are
+      </h1>
+    </div>
+    <div
+      class="
+        p-8 bg-orange
+        flex max-md:flex-col md:flex-row gap-x-16 gap-y-6
+        relative z-40
+      ">
+      <div class="basis-1/2 prose lg:prose-lg">
+        <p class="lead font-poppins-bold">We are building a model of open access publishing that functions for the humanities – for free, for everyone, for ever.</p>
+        <p>The Open Library of Humanities (OLH) is an award-winning publisher of humanities scholarship based at Birkbeck, University of London. We play a leading role within a growing ecosystem of scholar-led digital publishing, that combines cutting-edge technology with community governance and not-for-profit principles. This has become known as diamond open access.</p>
+      </div>
+      <div class="basis-1/2 prose lg:prose-lg">
+        <p>We publish 28 open access journals and are funded by more than 340 university and public libraries worldwide, who have joined us in our mission to make scholarly publishing fairer, more accessible, and rigorously preserved for the digital future.</p>
+        <p>The peer-reviewed scholarship we publish showcases some of the most dynamic research in humanities disciplines– from classics, modern languages and cultures, philosophy, theology and history, to political theory, sociology, anthropology, film and new media studies, and digital humanities. Our journals benefit from the latest advances in online journal publishing – with high-quality presentation, annotative functionality, robust digital preservation, strong discoverability and easy-to-share social media buttons.</p>
+      </div>
+    </div>
+  </div>
+  <div class="container mx-auto max-w-screen-xl relative">
+    <div class="relative z-40 px-8 py-28 flex flex-col gap-y-6">
+      <blockquote
+        class="
+          font-poppins-bold max-lg:text-3xl lg:text-4xl max-w-2xl leading-snug
+          max-sm:mr-4 sm:mr-5
+          max-sm:-indent-4 sm:-indent-5
+        ">
+        “The Open Library of Humanities is a transformative venture on the leading edge of open-access initiatives on both sides of the Atlantic. As ambitious as it is well-planned, it presents a cogent vision of the future with well-designed pathways to its realisation. There is hardly a more important project in train for scholarship in the humanities today.”
+      </blockquote>
+      <p class="font-poppins max-lg:text-lg lg:text-xl max-w-md"><span class="font-poppins-bold">David Armitage,</span> <span class="">Lloyd C. Blankfein Professor of History, Harvard University</span></p>
+    </div>
+    <div class="max-lg:h-64">
+      <img
+        class="
+          absolute
+          right-8 max-h-96
+          motion-reduce:max-md:-bottom-12 motion-safe:max-md:bottom-0 md:max-lg:bottom-20
+          motion-reduce:lg:-bottom-24 motion-safe:lg:top-48 motion-safe:rallax
+        "
+        src="{% static 'hourglass/media/backgrounds/camera.png' %}"
+        alt="A camera lens in a collage with red blocks">
+    </div>
+  </div>
+  <div class="container mx-auto max-w-screen-xl relative">
+    <div
+      class="
+        relative before:z-30 before:block before:absolute
+        before:inset-y-0 before:w-[50vw]
+        before:right-1/2 before:bg-white
+        max-lg:after:z-30 max-lg:after:block max-lg:after:absolute
+        max-lg:after:inset-y-0 max-lg:after:w-[50vw]
+        max-lg:after:left-1/2 max-lg:after:bg-white
+      ">
+      <div
+        class="
+          px-8 py-28 flex flex-col gap-y-6 z-40 relative
+          bg-white
+        ">
+        <div class="h-48 w-16">
+        </div>
+        <p class="mx-auto font-poppins-bold text-4xl uppercase text-blue">
+          Diamond infographic here
+        </p>
+        <div class="h-48 w-16">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container mx-auto max-w-screen-xl relative">
+    <img
+      class="
+        absolute max-lg:hidden lg:left-12 h-80
+        motion-reduce:lg:-top-48 motion-safe:lg:-top-80 motion-safe:rallax
+      "
+      src="{% static 'hourglass/media/backgrounds/triangle-blue-textured.png' %}"
+      alt="">
+    {% include 'custom/counter-block.html' %}
+  </div>
+  <div class="container mx-auto max-w-screen-xl relative">
+    <div
+      class="
+        relative
+        motion-safe:-top-56 motion-reduce:-top-24
+        max-md:right-0 md:-right-24 flex justify-end max-lg:max-h-64 lg:max-h-0
+      ">
+      <div class="basis-1/2">
+        <img
+          class="motion-safe:rallax"
+          src="{% static 'hourglass/media/backgrounds/building-upside-down-circle-triangle.png' %}"
+          alt="An upside-down Modernist building in a collage with a triangle and a circle">
+      </div>
+    </div>
+    <div
+      class="
+        relative before:z-30 before:block before:absolute
+        before:inset-y-0 before:w-[50vw]
+        before:right-1/2 before:bg-white
+        mt-28
+      ">
+      <div
+        class="
+          prose lg:prose-lg
+          px-8 py-14 z-40 relative
+          bg-white max-w-3xl
+        ">
+        <h2>Our Story</h2>
+        <p class="font-semibold">The OLH was originally launched as an international network of scholars, librarians, programmers, and publishers in 2013. Co-founders Dr Caroline Edwards and Professor Martin Paul Eve wanted to rebuild an unfair system in which corporate publishers make immense profits from publicly funded research by selling it back to universities in prohibitively expensive subscription packages.</p>
+        <p>As disabled PhD student, Martin had spent many weeks in hospital trying to carry on with his studies on his laptop from his hospital bed. He was frustrated by how few academic journals were openly available beyond a university library. Caroline, meanwhile, was setting up a new open access journal for 21st-century culture and wanted the cutting-edge scholarship in her academic community to make best use of digital publishing technologies.</p>
+        <p>Martin and Caroline began working together, building on their respective visions for open access. By 2015 this had become a scholar-led movement, advocating for a not-for-profit alternative to corporate publishers who were providing open access by passing the cost of publication onto authors as a way of recouping lost subscriptions. Too often publishing companies profit from our scholarship and editorial labour, whilst university and library budgets are squeezed. We built an organisation around the passionately held belief that academic research should be made available to <i>anyone with an internet connection</i> – without passing the cost of publishing onto authors.</p>
+      </div>
+    </div>
+  </div>
+  <div class="container mx-auto max-w-screen-xl relative">
+    <div
+      class="
+        relative
+        max-lg:before:z-30 max-lg:before:block max-lg:before:absolute
+        max-lg:before:inset-y-0 max-lg:before:w-[50vw]
+        max-lg:before:right-1/2 max-lg:before:bg-white
+        after:z-30 after:block after:absolute
+        after:inset-y-0 after:w-[50vw]
+        after:left-1/2 after:bg-white
+        mt-28
+      ">
+      <div
+        class="
+          px-8 py-28 flex flex-col gap-y-6 z-40 relative
+          bg-white
+        ">
+        <div class="h-48 w-16">
+        </div>
+        <p class="mx-auto font-poppins-bold text-4xl uppercase text-blue">
+          OLH Model Infographic Here
+        </p>
+        <div class="h-48 w-16">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container mx-auto max-w-screen-xl relative">
+    <div
+      class="
+        relative before:z-30 before:block before:absolute
+        before:inset-y-0 before:w-[50vw]
+        max-lg:before:left-1/2 lg:before:right-1/2 before:bg-white
+        mt-28
+      ">
+      <div class="max-w-3xl relative">
+        <div class="
+            prose lg:prose-lg
+            px-8 py-14 z-40 relative
+            bg-white max-w-3xl
+          ">
+          <h2>What We Offer</h2>
+          <p class="font-semibold">When you publish with the OLH you are joining a worldwide community. We offer experienced, friendly editorial guidance, bespoke technological support, and regular events organised for our editors, authors, and librarians. Our journals extend this community through the scholarly associations that founded them, the conferences that are their lifeblood, and the university classrooms in which our published materials are taught on curricula worldwide.</p>
+          <p>Our current team of 8 full-time staff provides years of academic editorial experience with cutting-edge publishing technology. Our dedicated in-house software engineers have built a leading platform for journal hosting, migration, manuscript submission and review, copy-editing and typesetting.</p>
+        </div>
+        <img
+          class="
+            absolute z-0
+            max-lg:hidden
+            -right-96 max-w-md
+            motion-reduce:-top-6 motion-safe:-top-56 motion-safe:rallax
+          "
+          src="{% static 'hourglass/media/backgrounds/robot-head-shoulder-lg.png' %}"
+          alt="Head and shoulders of a metallic, humanoid robot">
+      </div>
+    </div>
+  </div>
+  <div class="container mx-auto max-w-screen-xl relative">
+    <div class="px-8 py-28 max-lg:mb-48 lg:ml-36">
+      <div class="relative z-40 flex flex-col gap-y-6 lg:items-start">
+        <blockquote
+          class="
+            font-poppins-bold
+            max-lg:text-3xl lg:text-4xl
+            max-lg:max-w-md lg:max-w-xl
+            leading-snug
+            max-sm:mr-4 sm:mr-5
+            max-sm:-indent-4 sm:-indent-5
+          ">
+          “The Open Library of Humanities promises crucial changes in the debate surrounding open access publishing, by bringing together a robust, standards- based technical platform with rigorous scholarly oversight, innovative editorial practices, and an emphasis on community outreach.”
+        </blockquote>
+        <p class="font-poppins max-lg:text-lg lg:text-xl max-lg:max-w-xs lg:max-w-xl">
+          <span class="font-poppins-bold">Kathleen Fitzpatrick,</span>
+          Head of Scholarly Communications, Modern Language Association of America
+        </p>
+      </div>
+      <img
+        class="
+          absolute lg:hidden
+          -right-32
+          max-w-sm
+          motion-safe:-bottom-80 motion-safe:rallax
+        "
+        src="{% static 'hourglass/media/backgrounds/robot-head-shoulder.png' %}"
+        alt="Head and shoulders of a metallic, humanoid robot">
+      <img
+        class="
+          absolute
+          max-lg:hidden
+          left-16 max-h-36
+          motion-reduce:-top-6 motion-safe:-top-24 motion-safe:rallax
+        "
+        src="{% static 'hourglass/media/backgrounds/circles-red-two-vertical.png' %}"
+        alt="">
+      <img
+        class="
+          absolute
+          max-lg:hidden
+          left-4 w-96
+          motion-reduce:-bottom-36 motion-safe:top-96 motion-safe:rallax
+        "
+        src="{% static 'hourglass/media/backgrounds/circle-blue-textured.png' %}"
+        alt="">
+    </div>
+  </div>
+  <div class="container mx-auto max-w-screen-xl relative">
+    <div
+      class="
+        relative before:z-30 before:block before:absolute
+        before:inset-y-0 before:w-[50vw]
+        before:right-1/2 before:bg-white
+      ">
+      <div
+        class="
+          prose lg:prose-lg
+          px-8 py-14 z-40 relative
+          bg-white max-w-3xl
+        ">
+        <h2>Plan S Compliancy</h2>
+        <p><span class="font-semibold">Plan S is an initiative and set of <a href="https://www.coalition-s.org/plan_s_principles/">principles</a> to ensure that publicly funded research is published in Open Access Journals, Open Access Platforms or made immediately available through Open Access Repositories without embargo.</span> All our journals are compliant with Plan S funder mandates and have been included in the Plan S compliance <a href="https://journalcheckertool.org/">Journal Checker tool</a>.</p>
+      </div>
+    </div>
+  </div>
+  <div class="container mx-auto max-w-screen-xl relative">
+    <div
+      class="
+        relative
+        max-lg:before:z-30 max-lg:before:block max-lg:before:absolute
+        max-lg:before:inset-y-0 max-lg:before:w-[50vw]
+        max-lg:before:right-1/2 max-lg:before:bg-orange
+        after:z-30 after:block after:absolute
+        after:inset-y-0 after:w-[50vw]
+        after:left-1/2 after:bg-orange
+        mt-28
+      ">
+      <div
+        class="
+          max-lg:px-8 lg:px-16 max-md:py-28 md:pt-28
+          flex max-md:flex-col md:flex-row gap-12 z-40 relative
+          bg-orange justify-around
+        ">
+          <img
+            class="max-w-xs"
+            src="{% static 'hourglass/media/backgrounds/publishing-revolution.png' %}"
+            alt="Fist clenched and raised in protest in collage with circles and rectangles">
+          <div class="flex flex-col">
+            <p
+              class="
+                font-poppins-bold text-white
+                max-md:text-5xl md:max-xl:text-7xl xl:text-8xl
+                max-xl:max-w-sm xl:max-w-xl
+              ">
+              Join the publishing revolution
+            </p>
+            <p
+              class="
+                py-6 font-poppins font-semibold max-lg:text-sm lg:text-md
+                uppercase tracking-wider underline underline-offset-8 max-w-xl
+              ">
+                <a href="https://www.openlibhums.org/media/press/OLH-Prospectus-Feb-2023.pdf">
+                  Download our prospectus
+                </a>
+            </p>
+          </div>
+      </div>
+    </div>
+  </div>
+  <div class="container mx-auto max-w-screen-xl relative">
+    <div
+      class="
+        relative before:z-30 before:block before:absolute
+        before:inset-y-0 before:w-[50vw]
+        max-lg:before:left-1/2 lg:before:right-1/2
+        before:bg-white
+        mt-28
+      ">
+      <div
+        class="
+          prose max-lg:prose-base lg:prose-lg
+          px-8 py-14 z-40 relative
+          bg-white max-w-3xl
+        ">
+        <h2>Grants &amp; Awards</h2>
+        <p class="font-semibold">The OLH has received major funding in the form of research and development grants from the Andrew W. Mellon Foundation and Arcadia – a charitable fund of Lisbet Rausing and Professor Peter Baldwin.</p>
+        <p>The work of the Open Library of Humanities has been internationally recognised for its important contribution to open access for the humanities, as well as its innovative business model. We have been Highly Commended at the <a href="https://www.alpsp.org/news/alpsp-awards-2020-winners-announced-sep-2020">ALPSP Awards for Innovation in Publishing</a> 2020, won a <a href="https://www.openlibhums.org/news/348/">Coko Foundation Open Publishing Award</a> in the category of Open Publishing Models in 2019, and received an award for <a href="https://www.ukaop.org/hub/aop-announces-winners-for-the-digital-publishing-awards-2020">Small Digital Publisher of the Year</a> from the Association of Online Publishers (AOP) in October 2020.</p>
+        <div class="flex gap-8 grayscale items-center">
+          <div class="flex-1">
+            <img
+              src="{% static 'hourglass/media/aop-digital-publishing-awards.png' %}"
+              alt="AOP Digital Publishing Awards Winner 2020">
+          </div>
+          <div class="flex-1">
+            <img
+              src="{% static 'hourglass/media/open-publishing-awards.png' %}"
+              alt="Open Publishing Awards">
+          </div>
+          <div class="flex-1">
+            <img
+              src="{% static 'hourglass/media/alpsp-awards-innovation-publishing-2020.png' %}"
+              alt="ALPSP Awards for Innovation in Publishing 2020">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container mx-auto max-w-screen-xl relative">
+    {% include 'custom/subscribe.html' %}
+  </div>
+</article>

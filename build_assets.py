@@ -31,6 +31,80 @@ OTHER_SOURCE_PATHS = [
         os.path.join(
             THEME_PATH,
             'node_modules',
+            '@glidejs',
+            'glide',
+            'dist',
+            'glide.min.js',
+        ),
+        os.path.join(
+            DIST_PATH,
+            'js',
+            'glide.min.js',
+        )
+    ),
+    (
+        os.path.join(
+            THEME_PATH,
+            'node_modules',
+            '@glidejs',
+            'glide',
+            'dist',
+            'css',
+            'glide.core.min.css',
+        ),
+        os.path.join(
+            DIST_PATH,
+            'css',
+            'glide.core.min.css',
+        )
+    ),
+    (
+        os.path.join(
+            THEME_PATH,
+            'node_modules',
+            'simple-scrollspy',
+            'demo',
+            'dist',
+            'simple-scrollspy.min.js',
+        ),
+        os.path.join(
+            DIST_PATH,
+            'js',
+            'simple-scrollspy.min.js',
+        )
+    ),
+    (
+        os.path.join(
+            THEME_PATH,
+            'node_modules',
+            'jump.js',
+            'dist',
+            'jump.module.js',
+        ),
+        os.path.join(
+            DIST_PATH,
+            'js',
+            'jump.module.js',
+        )
+    ),
+    (
+        os.path.join(
+            THEME_PATH,
+            'node_modules',
+            'rallax.js',
+            'dist',
+            'rallax.js',
+        ),
+        os.path.join(
+            DIST_PATH,
+            'js',
+            'rallax.js',
+        )
+    ),
+    (
+        os.path.join(
+            THEME_PATH,
+            'node_modules',
             'list.js',
             'dist',
             'list.min.js',
@@ -44,11 +118,23 @@ OTHER_SOURCE_PATHS = [
     (
         os.path.join(
             THEME_PATH,
+            'src',
             'js',
         ),
         os.path.join(
             DIST_PATH,
             'js',
+        )
+    ),
+    (
+        os.path.join(
+            THEME_PATH,
+            'src',
+            'media',
+        ),
+        os.path.join(
+            DIST_PATH,
+            'media',
         )
     ),
     (
@@ -119,7 +205,7 @@ OTHER_SOURCE_PATHS = [
 def compile_css():
     python_dir = os.getcwd()
     os.chdir(THEME_PATH)
-    npm.call(['run', 'build'])
+    npm.call(['run', 'buildcss'])
     os.chdir(python_dir)
 
 

@@ -1,0 +1,21 @@
+{% load static %}
+
+<a
+  class="
+    p-4
+    border rounded-full border-blue
+    flex gap-4 items-center
+  "
+  href="{{ rel_path }}">
+  <span
+    class="
+      uppercase text-blue
+      font-poppins-bold text-xs tracking-widest
+    ">
+    {{ label }}
+  </span>
+  <img
+    class="h-4"
+    src="{% static 'hourglass/media/icons/arrow-blue.svg' %}"
+    alt="arrow pointing right">
+</a>

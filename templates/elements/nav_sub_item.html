@@ -1,0 +1,38 @@
+{% load static %}
+
+<li>
+  <a
+    class="
+      group/sub
+      inline-block align-center
+      px-4
+      max-lg:py-4 lg:py-2
+      w-full
+      lg:hover:bg-tan-light
+      max-lg:border-b border-tan-light
+      {% if item.link in request.path %}
+        lg:underline lg:decoration-2 lg:underline-offset-8
+      {% endif %}
+    "
+    href="
+      {% if item %}
+        {{ item.link }}
+      {% else %}
+        {% url url_name %}
+      {% endif %}
+    ">
+    <div class="flex gap-6 justify-between items-center">
+      <span>
+        {% if item %}
+          {{ item.link_name }}
+        {% else %}
+          {% trans label %}
+        {% endif %}
+      </span>
+      <img
+        class="h-3 opacity-0 group-hover/sub:opacity-100"
+        src="{% static 'hourglass/media/icons/arrow-black.svg' %}"
+        alt="">
+    </div>
+  </a>
+</li>

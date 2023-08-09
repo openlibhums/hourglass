@@ -1,0 +1,22 @@
+{% if request.user.is_staff %}
+  <div
+    class="
+      absolute top-0 right-36 bg-black text-white
+      p-2 rounded-full drop-shadow-xl mx-8 my-4 z-50
+    ">
+    <a href="https://github.com/BirkbeckCTP/hourglass/edit/main/templates/{{ rel_path }}">
+      ✏️ Edit on GitHub
+    </a>
+    <span id="hide-edit-on-gh" class="p-2 cursor-pointer">X</span>
+  </div>
+  <script>
+    const hideEditLink = document.getElementById("hide-edit-on-gh")
+    hideEditLink.addEventListener('click', event => {
+      hideEditLink.parentElement.classList.toggle('hidden')
+    })
+    if (window.location.search.includes('hide-edit-on-gh')) {
+      hideEditLink.parentElement.classList.toggle('hidden')
+    }
+  </script>
+{% endif %}
+

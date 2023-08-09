@@ -1,61 +1,60 @@
-{% load svg from press_url %}
+{% load static %}
 {% load render_string %}
 
-<footer class="page-footer">
-    <div class="container">
-        <div class="row flex">
-            <div class="col s12 l6" style="margin: 10px;">
-                {{ press.footer_description|safe }}
-            </div>
-            <div class="col s12 l5 push-l1 flex" style="align-content: space-between;">
-                <div class="col s12 row flex">
-                    <div class="col s12 m6 white-text">
-                        <ul class="center">
-                            {% for item in navigation_items %}
-                                {% if item.for_footer %}
-                                    <li>
-                                        <a href="{{ item.link }}">
-                                            {{ item.link_name }}
-                                        </a>
-                                    </li>
-                                {% endif %}
-                            {% endfor %}
-                        </ul>
-                    </div>
-                    <div class="col s12 m6 white-text">
-                        <ul class="center">
-                            <li>
-                                <a href="{% url 'website_sitemap' %}">
-                                    {% trans "Sitemap" %}
-                                </a>
-                            </li>
-                            <li>
-                                <a href="{% url 'contact' %}">
-                                    {% trans "Contact" %}
-                                </a>
-                            </li>
-                            {% if not request.user.is_authenticated %}
-                            <li>
-                                <a href="{% url 'core_login' %}">
-                                    {% trans 'Log in' %}
-                                </a>
-                            </li>
-                            {% endif %}
-                        </ul>
-                    </div>
-                </div>
-                <div class="col s12">
-                    {% if press.secondary_image %}
-                        {% if press.secondary_image_url %}
-                            <a href="{{ press.secondary_image_url }}">
-                                <img src="{{ press.secondary_image.url }}">
-                            </a>
-                        {% else %}
-                            <img src="{{ press.secondary_image.url }}">
-                        {% endif %}
-                    {% endif %}
-                </div>
-            </div>
-        </div>
+<div class="bg-black text-white relative z-40">
+  <div class="container relative py-12 mx-auto max-w-screen-xl flex flex-col justify-between">
+    <div class="pt-8 pb-28 lg:px-8 flex max-md:gap-8 md:gap-28 justify-between content-start">
+      <a href="{{ request.press_base_url }}">
+        <img
+          class="max-lg:h-24 lg:h-10"
+          src="{% static 'hourglass/media/logo/OLH-logo-white.svg' %}"
+          alt="{{ request.press.name }}">
+      </a>
+      {% if press.secondary_image %}
+        {% if press.secondary_image_url %}
+          <a href="{{ press.secondary_image_url }}">
+            <img
+              class="max-lg:h-24 lg:h-10"
+              src="{{ press.secondary_image.url }}"
+              alt="Janeway">
+          </a>
+        {% else %}
+          <img src="{{ press.secondary_image.url }}">
+        {% endif %}
+      {% endif %}
     </div>
-</footer>
+    <nav class="py-4 lg:px-8">
+      <ul class="flex gap-4 flex-wrap font-poppins-bold text-sm uppercase tracking-wider">
+        {% for item in navigation_items %}
+          {% if item.for_footer %}
+            {% include "elements/footer_link_custom.html" %}
+          {% endif %}
+        {% endfor %}
+        <li class="flex gap-4">
+          <a href="{% url 'website_sitemap' %}">
+            {% trans "Sitemap" %}
+          </a>
+          <span>|</span>
+        </li>
+        <li class="flex gap-4">
+          <a href="{% url 'contact' %}">
+            {% trans "Contact" %}
+          </a>
+          {% if not request.user.is_authenticated %}
+            <span>|</span>
+          {% endif %}
+        </li>
+        {% if not request.user.is_authenticated %}
+          <li class="flex gap-4">
+            <a href="{% url 'core_login' %}">
+              {% trans 'Log in' %}
+            </a>
+          </li>
+        {% endif %}
+      </ul>
+    </nav>
+    <div class="lg:px-8 text-xs">
+      {% render_string press.footer_description %}
+    </div>
+  </div>
+</div>

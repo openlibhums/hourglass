@@ -1,9 +1,11 @@
 {% extends "core/base.html" %}
 
-{% block title %}{{ request.press.name }}{% endblock title %}
+{% block title %}
+  {{ request.press.name }}
+{% endblock title %}
 
 {% block body %}
-    {% for element in homepage_elements %}
-        {% include element.template_path %}
-    {% endfor %}
+  {% for element in homepage_elements %}
+    {% include element.template_path %}
+  {% endfor %}
 {% endblock body %}

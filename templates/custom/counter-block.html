@@ -1,0 +1,44 @@
+<div
+  class="
+    relative after:z-30 after:block after:absolute
+    after:inset-y-0 after:w-[50vw]
+    after:left-1/2 after:bg-orange
+    mt-28
+  ">
+  <div
+    class="
+      px-8 py-28 flex flex-col gap-y-6 z-40 relative
+      bg-orange
+    ">
+    <div
+      class="
+        flex max-lg:flex-col lg:flex-row
+        max-lg:items-center gap-y-6 justify-around
+      ">
+      <div class="flex flex-col max-lg:items-center">
+        <p class="py-6 font-semibold max-lg:text-lg lg:text-xl">
+          Journals
+        </p>
+        <p class="font-poppins-bold max-lg:text-6xl lg:text-8xl">
+          {{ request.press.active_journals.count }}
+        </p>
+      </div>
+      <div class="flex flex-col max-lg:items-center">
+        <p class="py-6 font-semibold max-lg:text-lg lg:text-xl">
+          Articles published
+        </p>
+        <p class="font-poppins-bold max-lg:text-6xl lg:text-8xl">
+          {{ request.press.published_articles.count }}
+        </p>
+      </div>
+      <div class="flex flex-col max-lg:items-center">
+        <p class="py-6 font-semibold max-lg:text-lg lg:text-xl">
+          Funding received
+        </p>
+        <p class="font-poppins-bold max-lg:text-6xl lg:text-8xl">
+          £2.5m
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,56 +1,117 @@
-{% load svg from press_url %}
+{% load static %}
 {% load hooks %}
+{% load press_url %}
 
-
-<nav class="nav-extended">
-    <div class="container">
-        <div class="upper-nav">
-            <a
-                href="#"
-                data-target="mobile-nav"
-                class="sidenav-trigger"
-            >
-                <i class="material-icons large">menu</i>
-            </a>
-            <a href="{{ request.press_base_url }}">
-                {% if 'svg' in request.press_cover %}
-                    {% svg request.press_cover %}
-                {% else %}
-                    <img
-                        src="{% url 'press_cover_download' %}"
-                        alt="{{ request.press.name }}"
-                    >
-                {% endif %}
-            </a>
-            <div class="hide-on-med-and-down top-right-icons">
-                <a id="search-trigger" href="#search-modal" class="modal-trigger">
-                    <i class="material-icons">search</i>
-                </a>
-                {% include 'press/nav_account.html' with viewport='medium' %}
-            </div>
+<div class="bg-tan">
+  <div class="container mx-auto max-w-screen-xl relative max-lg:z-50">
+    <div
+      class="
+        max-lg:pb-2 pt-2 lg:px-8 flex flex-col lg:flex-row gap-3 justify-between
+      ">
+      <div class="flex gap-3 justify-between">
+        <div class="max-lg:p-8 lg:pt-5 flex-shrink flex">
+          <a href="{{ request.press_base_url }}">
+            <img
+              class="max-lg:h-[1.65rem] lg:h-7"
+              src="{% static 'hourglass/media/logo/OLH-symbol-black.svg' %}"
+              alt="{{ request.press.name }}">
+          </a>
         </div>
-    
-        <div class="nav-wrapper lower-nav hide-on-med-and-down">
-            <!-- Large viewports: Top-level list -->
-            <ul>
-                {% include 'press/nav_elements.html' with viewport='medium' %}
-            </ul>
-        </div>
+        <nav class="lg:hidden">
+          <ul class="text-sm font-poppins-medium">
+            {% include 'elements/nav_slide_drawer.html' with viewport='medium' %}
+          </ul>
+        </nav>
+      </div>
+      <div
+        id="nav-options"
+        class="
+          max-lg:transition-all max-lg:ease-in-out max-lg:duration-300
+          max-lg:max-h-0 max-lg:overflow-clip
+        ">
+        <nav class="max-lg:hidden group/top">
+          <ul
+            class="
+              text-sm font-poppins-medium
+              flex max-lg:flex-col lg:flex-row lg:justify-center lg:items-center
+            ">
+            {% for item in navigation_items %}
+              {% if not item.for_footer %}
+                {% include 'elements/nav_item.html' with viewport='medium' %}
+              {% endif %}
+            {% endfor %}
+            {% include 'elements/nav_search.html' with viewport='medium' %}
+            {% include 'elements/nav_account.html' with viewport='medium' %}
+          </ul>
+        </nav>
+      </div>
     </div>
-</nav>
+  </div>
+</div>
 
-{% include 'press/dropdown_content.html' with viewport='medium' %}
+<script>
+  function toggleSideNav(event) {
+    const navOptions = document.querySelector('#nav-options')
+    innerNav = navOptions.querySelector('nav')
+    if (innerNav.classList.contains('max-lg:hidden')) {
+      innerNav.classList.remove('max-lg:hidden')
+    } else {
+      setTimeout(() => {
+        innerNav.classList.add('max-lg:hidden')
+      }, toggleDuration)
+    }
+    navOptions.classList.toggle('max-lg:max-h-screen')
+    navOptions.classList.toggle('max-lg:max-h-0')
+  }
 
-<ul id="mobile-nav" class="sidenav">
-    <li>
-        <a href="#search-modal" class="modal-trigger">
-            <i class="material-icons">search</i>
-        </a>
-    </li>
-    {% include 'press/nav_elements.html' with viewport='mobile' %}
-    <li>
-        {% include 'press/nav_account.html' with viewport='mobile' %}
-    </li>
-</ul>
+  const slideDrawer = document.querySelector('#slide-drawer')
+  slideDrawer.addEventListener('click', event => toggleSideNav(event))
 
-{% include 'press/dropdown_content.html' with viewport='mobile' %}
+  const toggleDuration = 300
+
+  function toggleThisDropdown(event) {
+    event.preventDefault()
+    event.currentTarget.classList.toggle('lg:font-poppins-bold')
+    const dropdownId = event.currentTarget.getAttribute('data-target')
+    const dropdown = document.querySelector(`#${dropdownId}`)
+    const innerDropdown = dropdown.querySelector('ul')
+    if (innerDropdown.classList.contains('hidden')) {
+      innerDropdown.classList.remove('hidden')
+    } else {
+      setTimeout(() => {
+        innerDropdown.classList.add('hidden')
+      }, toggleDuration)
+    }
+    dropdown.classList.toggle('max-h-[50vh]')
+    dropdown.classList.toggle('max-h-0')
+  }
+
+  const topNavItems = document.querySelectorAll('.toggles-dropdown')
+
+  function closeOtherDropdown(item) {
+    item.classList.remove('lg:font-poppins-bold')
+    const dropdownId = item.getAttribute('data-target')
+    const dropdown = document.querySelector(`#${dropdownId}`)
+    const innerDropdown = dropdown.querySelector('ul')
+    dropdown.classList.toggle('max-h-0', force=true)
+    dropdown.classList.toggle('max-h-[50vh]', force=false)
+    setTimeout(() => {
+      innerDropdown.classList.toggle('hidden', force=true)
+    }, toggleDuration)
+  }
+
+  function closeOtherDropdowns(event) {
+    const otherItems = Array.from(topNavItems).filter(item => item != event.currentTarget)
+    for (item of otherItems) closeOtherDropdown(item)
+    event.stopPropagation()
+  }
+
+  for (const item of topNavItems) {
+    item.addEventListener('click', event => toggleThisDropdown(event))
+    item.addEventListener('click', event => closeOtherDropdowns(event))
+  }
+
+  const body = document.querySelector('body')
+  body.addEventListener('click', event => closeOtherDropdowns(event))
+
+</script>

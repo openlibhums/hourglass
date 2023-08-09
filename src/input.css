@@ -1,3 +1,47 @@
 @tailwind base;
 @tailwind components;
+
+/* glide.js styles */
+button.glide__arrow--disabled {
+  @apply opacity-50 cursor-default;
+}
+button.glide__bullet--active {
+  @apply opacity-100;
+}
+button.glide__bullet:not(.glide__bullet--active) {
+  @apply opacity-50;
+}
+
+/* simple-scrollspy.js styles */
+#scroll-menu li a.active {
+  @apply underline underline-offset-4 decoration-1;
+}
+
 @tailwind utilities;
+
+@layer base {
+  @font-face {
+    font-family: 'Poppins Regular';
+    src: url('../fonts/poppins/Poppins-Regular.ttf') format('truetype');
+  }
+  @font-face {
+    font-family: 'Poppins Medium';
+    src: url('../fonts/poppins/Poppins-Medium.ttf') format('truetype');
+  }
+  @font-face {
+    font-family: 'Poppins Bold';
+    src: url('../fonts/poppins/Poppins-Bold.ttf') format('truetype');
+  }
+  @font-face {
+    font-family: 'Source Sans';
+    src: url('../fonts/source-sans/SourceSans3-VariableFont_wght.ttf');
+    font-weight: 100 1000;
+    font-stretch: 25% 151%;
+  }
+  @font-face {
+    font-family: 'Source Sans Italic';
+    src: url('../fonts/source-sans/SourceSans3-Italic-VariableFont_wght.ttf');
+    font-weight: 100 1000;
+    font-stretch: 25% 151%;
+  }
+}

@@ -4,133 +4,135 @@
 
 {% user_has_role request 'reader' staff_override=False as reader %}
 
-{% block title %}{% trans "Edit Profile" %} - {{ request.press.name }}{% endblock title %}
+{% block title %}
+  {% trans "Edit Profile" %} - {{ request.press.name }}
+{% endblock title %}
 
 {% block body %}
-    <div class="pad50">
-        <div class="row">
-            <div class="col s12">
-                <h1>Edit Account</h1>
-            </div>
-        </div>
-        <form method="POST">
-            <div class="row">
-                <div class="col s12">
-                    <h2>{% trans "Email" %}</h2>
-                </div>
-                {% csrf_token %}
-                <div class="col s12 m6 l5">
-                    <div class="input-field">
-                        <input
-                            type="email"
-                            name="email_address"
-                            value="{{ request.user.email }}">
-                        <label for="email_address">
-                            {% trans "Email" %}
-                        </label>
-                    </div>
-                </div>
-                <div class="col s12 m6 l5">
-                    <button
-                        type="submit"
-                        name="email"
-                        class="btn btn-large">
-                        {% trans "Update Email Address" %}
-                    </button>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col s12 m8">
-                    <p>
-                        {% blocktrans %}
-                            Please note: If you update your password,
-                            You will be logged out, and you won't be
-                            able to log in again until you follow
-                            the verification link in an email
-                            sent to your new email address.
-                        {% endblocktrans %}
-                    </p>
-                </div>
-            </div>
-        </form>
-
-        <div class="row">
-            <div class="col s12">
-                <h2>{% trans "Password" %}</h2>
-            </div>
-            <form method="POST">
-                {% csrf_token %}
-                <div class="col s12 m6 l5">
-                    <div class="input-field">
-                        <input type="password" name="current_password">
-                        <label for="current_password">{% trans "Current Password" %}</label>
-                    </div>
-                    <div class="input-field">
-                        <input type="password" name="new_password_one">
-                        <label for="new_password_one">{% trans "New Password" %}</label>
-                    </div>
-                    <div class="input-field">
-                        <input type="password" name="new_password_two">
-                        <label for="new_password_two">{% trans "New Password Again" %}</label>
-                    </div>
-                </div>
-                <div class="col s12 m6 l5">
-                    <button
-                        type="submit"
-                        name="change_password"
-                        class="btn btn-large">
-                        {% trans "Update Password" %}
-                    </button>
-                </div>
-            </form>
-        </div>
-
-        <form method="POST" enctype="multipart/form-data">
-            {% csrf_token %}
-            <div class="row">
-                <div class="col s12">
-                    <h2>{% trans "Profile" %}</h2>
-                </div>
-            </div>
-            <div class="row">
-                {{ form.salutation|materializecss:'s12 l3' }}
-            </div>
-            <div class="row">
-                {{ form.first_name|materializecss:'s12 l4' }}
-                {{ form.middle_name|materializecss:'s12 l4' }}
-                {{ form.last_name|materializecss:'s12 l4' }}
-            </div>
-            <div class="row">
-                {{ form.suffix|materializecss:'s12 l3' }}
-            </div>
-            <div class="row">
-                {{ form.department|materializecss:'s12 l5' }}
-                {{ form.institution|materializecss:'s12 l5' }}
-                {{ form.country|materializecss:'s12 l5' }}
-                {{ form.preferred_timezone|materializecss:'s12 l5' }}
-            </div>
-            <div class="row">
-                {{ form.twitter|materializecss:'s12 l4' }}
-                {{ form.facebook|materializecss:'s12 l4' }}
-                {{ form.orcid|materializecss:'s12 l4' }}
-                {{ form.github|materializecss:'s12 l4' }}
-                {{ form.linkedin|materializecss:'s12 l4' }}
-                {{ form.website|materializecss:'s12 l4' }}
-            </div>
-            <div class="row">
-                {{ form.biography|materializecss:'s12 l7' }}
-                {{ form.signature|materializecss:'s12 l7' }}
-            </div>
-            <div class="row">
-                <div class="col s12">
-                    <button
-                        type="submit"
-                        name="edit_profile"
-                        class="btn btn-large">
-                        {% trans "Update Profile" %}
-                    </button>
-                </div>
-            </div>
-        </form>
+  <div class="pad50">
+    <div class="row">
+      <div class="col s12">
+        <h1>Edit Account</h1>
+      </div>
     </div>
+    <form method="POST">
+      <div class="row">
+        <div class="col s12">
+          <h2>{% trans "Email" %}</h2>
+        </div>
+        {% csrf_token %}
+        <div class="col s12 m6 l5">
+          <div class="input-field">
+            <input
+              type="email"
+              name="email_address"
+              value="{{ request.user.email }}">
+            <label for="email_address">
+              {% trans "Email" %}
+            </label>
+          </div>
+        </div>
+        <div class="col s12 m6 l5">
+          <button
+            type="submit"
+            name="email"
+            class="btn btn-large">
+            {% trans "Update Email Address" %}
+          </button>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col s12 m8">
+          <p>
+            {% blocktrans %}
+              Please note: If you update your password,
+              You will be logged out, and you won't be
+              able to log in again until you follow
+              the verification link in an email
+              sent to your new email address.
+            {% endblocktrans %}
+          </p>
+        </div>
+      </div>
+    </form>
+
+    <div class="row">
+      <div class="col s12">
+        <h2>{% trans "Password" %}</h2>
+      </div>
+      <form method="POST">
+        {% csrf_token %}
+        <div class="col s12 m6 l5">
+          <div class="input-field">
+            <input type="password" name="current_password">
+            <label for="current_password">{% trans "Current Password" %}</label>
+          </div>
+          <div class="input-field">
+            <input type="password" name="new_password_one">
+            <label for="new_password_one">{% trans "New Password" %}</label>
+          </div>
+          <div class="input-field">
+            <input type="password" name="new_password_two">
+            <label for="new_password_two">{% trans "New Password Again" %}</label>
+          </div>
+        </div>
+        <div class="col s12 m6 l5">
+          <button
+            type="submit"
+            name="change_password"
+            class="btn btn-large">
+            {% trans "Update Password" %}
+          </button>
+        </div>
+      </form>
+    </div>
+
+    <form method="POST" enctype="multipart/form-data">
+      {% csrf_token %}
+      <div class="row">
+        <div class="col s12">
+          <h2>{% trans "Profile" %}</h2>
+        </div>
+      </div>
+      <div class="row">
+        {{ form.salutation|materializecss:'s12 l3' }}
+      </div>
+      <div class="row">
+        {{ form.first_name|materializecss:'s12 l4' }}
+        {{ form.middle_name|materializecss:'s12 l4' }}
+        {{ form.last_name|materializecss:'s12 l4' }}
+      </div>
+      <div class="row">
+        {{ form.suffix|materializecss:'s12 l3' }}
+      </div>
+      <div class="row">
+        {{ form.department|materializecss:'s12 l5' }}
+        {{ form.institution|materializecss:'s12 l5' }}
+        {{ form.country|materializecss:'s12 l5' }}
+        {{ form.preferred_timezone|materializecss:'s12 l5' }}
+      </div>
+      <div class="row">
+        {{ form.twitter|materializecss:'s12 l4' }}
+        {{ form.facebook|materializecss:'s12 l4' }}
+        {{ form.orcid|materializecss:'s12 l4' }}
+        {{ form.github|materializecss:'s12 l4' }}
+        {{ form.linkedin|materializecss:'s12 l4' }}
+        {{ form.website|materializecss:'s12 l4' }}
+      </div>
+      <div class="row">
+        {{ form.biography|materializecss:'s12 l7' }}
+        {{ form.signature|materializecss:'s12 l7' }}
+      </div>
+      <div class="row">
+        <div class="col s12">
+          <button
+            type="submit"
+            name="edit_profile"
+            class="btn btn-large">
+            {% trans "Update Profile" %}
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
 {% endblock body %}

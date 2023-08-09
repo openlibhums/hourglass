@@ -1,0 +1,50 @@
+<li class="relative">
+  <a
+    class="
+      inline-block max-lg:align-center
+      max-lg:py-4 lg:py-6
+      max-lg:px-2 lg:px-4 w-full
+      max-lg:border-b border-tan-light
+      max-lg:font-poppins-bold lg:hover:font-poppins-bold
+      lg:hover:ease-in transition duration-150 ease-out
+      lg:group-hover/top:opacity-70 lg:hover:group-hover/top:opacity-100
+      {% if item.link in request.path %}
+        lg:underline lg:decoration-2 lg:underline-offset-8
+      {% endif %}
+      {% if item.has_sub_nav %}
+        toggles-dropdown
+        {% for sub_item in item.sub_nav_items %}
+          {% if sub_item.link in request.path %}
+            lg:underline lg:decoration-2 lg:underline-offset-8
+          {% endif %}
+        {% endfor %}
+      {% endif %}
+    "
+    data-target="dropdown-{{ item.pk }}"
+    href="
+      {% if item.has_sub_nav %}
+        #
+      {% else %}
+        {{ item.link }}
+      {% endif %}
+    ">
+    {{ item.link_name }}
+  </a>
+  {% if item.has_sub_nav %}
+    <div
+      class="
+        lg:bg-white
+        max-lg:w-full lg:w-max
+        transition-all ease-in-out duration-300
+        max-h-0 overflow-clip
+        lg:absolute lg:top-full
+      "
+      id="dropdown-{{ item.pk }}">
+      <ul class="hidden">
+        {% for sub_item in item.sub_nav_items %}
+          {% include 'elements/nav_sub_item.html' with item=sub_item %}
+        {% endfor %}
+      </ul>
+    </div>
+  {% endif %}
+</li>
