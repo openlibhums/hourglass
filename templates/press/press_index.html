@@ -5,7 +5,5 @@
 {% endblock title %}
 
 {% block body %}
-  {% for element in homepage_elements %}
-    {% include element.template_path %}
-  {% endfor %}
+  {% include "custom/landing.html" %}
 {% endblock body %}
