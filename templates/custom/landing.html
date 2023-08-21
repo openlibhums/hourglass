@@ -1,0 +1,432 @@
+{% load static %}
+
+<article>
+  <div class="container mx-auto max-w-screen-xl relative lg:mt-8">
+    {% include "custom/edit-on-github.html" with rel_path="custom/landing.html" %}
+    <div class="z-40 relative">
+      <h1
+        class="
+          max-md:text-4xl md:max-lg:text-5xl lg:text-7xl !leading-snug
+          font-poppins-bold max-lg:py-6 lg:py-20 pl-8
+        ">
+        We are the<br> Open Library<br> of Humanities.
+      </h1>
+    </div>
+    <div
+      class="
+        z-0 relative max-md:top-8 md:max-lg:-top-48 lg:-top-96 motion-safe:rallax
+        max-lg:right-12 lg:right-0
+      ">
+      <img
+        class="absolute z-0 w-64 max-lg:top-12 lg:top-36 max-lg:right-24 lg:right-64"
+        src="{% static 'hourglass/media/backgrounds/circle-blue-textured.png' %}"
+        width="434"
+        alt="">
+      <img
+        class="
+          absolute z-20 h-96
+          max-lg:-top-4 lg:top-20 max-lg:right-16 lg:right-52
+        "
+        src="{% static 'hourglass/media/backgrounds/arc-orange.svg' %}"
+        alt="">
+      <img
+        class="
+          absolute max-lg:z-20 lg:z-30 w-14 h-14
+          max-lg:-right-6 lg:right-28 max-lg:top-16 lg:top-32
+        "
+        src="{% static 'hourglass/media/backgrounds/circle-red.svg' %}"
+        alt="">
+      <img
+        class="
+          absolute max-lg:z-30 lg:z-20 max-lg:top-8 lg:top-24
+          max-lg:-right-20 lg:right-4 max-lg:w-64 lg:w-80
+        "
+        src="{% static 'hourglass/media/backgrounds/book-face-lady.png' %}"
+        alt="Woman burying her face in the pages of a book">
+      <img
+        class="
+          absolute z-10 max-lg:top-40 lg:top-[20rem] max-lg:right-40 lg:-left-16
+          w-32
+        "
+        src="{% static 'hourglass/media/backgrounds/hoop-earrings-lady.png' %}"
+        alt="Woman with hoop earrings dancing and waving arms">
+      <img
+        class="
+          max-lg:hidden absolute z-20 w-64 max-lg:top-12 lg:top-[28rem]
+          max-lg:right-24 lg:-left-20
+        "
+        src="{% static 'hourglass/media/backgrounds/circle-blue-textured.png' %}"
+        width="434"
+        alt="">
+    </div>
+  </div>
+  <div class="container mx-auto max-w-screen-xl relative max-md:mt-96 md:max-lg:mt-48 lg:mt-28">
+    <div class="p-8 bg-blue relative z-40">
+      <div class="flex max-md:flex-col md:flex-row gap-x-16 gap-y-6">
+        <div class="basis-1/4 prose lg:prose-lg">
+          <p class="lead text-white">
+            For free.<br>
+            For everyone.<br>
+            Forever.
+          </p>
+        </div>
+        <div class="basis-3/4 text-white prose lg:prose-lg">
+          <p class="text-white">The Open Library of Humanities is lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+          <div class="not-prose flex">
+            {% with rel_path="/site/who-we-are" label="Find out more" %}
+              {% include 'custom/button-action-white.html' %}
+            {% endwith %}
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="
+        z-10 relative motion-safe:rallax
+        motion-reduce:-top-24 max-lg:motion-safe:-top-96 lg:motion-safe:-top-48
+        max-md:right-0 md:-right-24 max-lg:max-h-64 lg:max-h-0
+      ">
+        <img
+          class="absolute z-20 w-28 h-28 max-lg:-left-4 lg:-left-32 top-16"
+          src="{% static 'hourglass/media/backgrounds/circle-red.svg' %}"
+          alt="">
+        <img
+          class="absolute z-10 max-lg:left-0 lg:-left-20 top-0 w-96"
+          src="{% static 'hourglass/media/backgrounds/building-brutalist-fluted-upside-down.png' %}"
+          alt="An upside-down Modernist building in a collage with a triangle and a circle">
+    </div>
+  </div>
+  <div class="container mx-auto max-w-screen-xl relative mt-28">
+    <div
+      class="
+        relative after:z-30 after:block after:absolute
+        after:inset-y-0 after:w-screen
+        max-lg:after:left-1/2 lg:after:-right-12
+        after:bg-white
+      ">
+      <div
+        class="
+          relative z-40
+          py-20 px-8 bg-white
+          flex flex-col gap-y-8
+        ">
+        <div
+          class="
+            flex max-lg:flex-col gap-y-20
+            lg:flex-row lg:justify-between
+          ">
+          <div
+            class="
+              flex flex-col gap-y-8 items-center
+               lg:w-[30%]
+            ">
+            <img
+              class="w-44 h-44"
+              src="{% static 'hourglass/media/icons/Join-the-Conversation.svg' %}"
+              alt="">
+            <h2 class="font-poppins-bold max-lg:text-xl lg:text-2xl text-center">
+              Join the Conversation
+            </h2>
+            {% with rel_path="TBD" label="Find out more" %}
+              {% include 'custom/button-action-blue.html' %}
+            {% endwith %}
+          </div>
+          <div
+            class="
+              flex flex-col gap-y-8 items-center
+               lg:w-[30%]
+            ">
+            <img
+              class="w-44 h-44"
+              src="{% static 'hourglass/media/icons/Read-our-News.svg' %}"
+              alt="">
+            <h2 class="font-poppins-bold max-lg:text-xl lg:text-2xl text-center">
+              Read Our News
+            </h2>
+            {% with rel_path="/news/press_overview/?tags__text=Announcement" label="Find out more" %}
+              {% include 'custom/button-action-blue.html' %}
+            {% endwith %}
+          </div>
+          <div
+            class="
+              flex flex-col gap-y-8 items-center
+               lg:w-[30%]
+            ">
+            <img
+              class="w-44 h-44"
+              src="{% static 'hourglass/media/icons/Hear-our-Ideas.svg' %}"
+              alt="">
+            <h2 class="font-poppins-bold max-lg:text-xl lg:text-2xl text-center">
+              Hear Our Ideas
+            </h2>
+            {% with rel_path="/news/press_overview/?tags__text=Blog" label="Find out more" %}
+              {% include 'custom/button-action-blue.html' %}
+            {% endwith %}
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="
+        motion-reduce:-bottom-64 max-lg:motion-safe:-bottom-12 lg:motion-safe:-bottom-36
+        motion-safe:rallax z-0 relative left-2
+      ">
+      <img
+        class="z-20 absolute w-[0.3rem] -bottom-44 left-4"
+        src="{% static 'hourglass/media/backgrounds/bar-vertical-orange.svg' %}"
+        alt="">
+      <img
+        class="z-0 absolute w-[0.3rem] -bottom-36 left-12"
+        src="{% static 'hourglass/media/backgrounds/bar-vertical-orange.svg' %}"
+        alt="">
+      <img
+        class="z-0 absolute w-[0.3rem] -bottom-28 left-20"
+        src="{% static 'hourglass/media/backgrounds/bar-vertical-orange.svg' %}"
+        alt="">
+      <img
+        class="z-10 absolute -top-44 -left-8 rotate-180 max-w-xs"
+        src="{% static 'hourglass/media/backgrounds/triangle-blue-textured.png' %}"
+        alt="">
+      <img
+        class="absolute z-20 w-20 h-20 left-32 bottom-12"
+        src="{% static 'hourglass/media/backgrounds/circle-red.svg' %}"
+        alt="">
+      <img
+        class="z-10 absolute -bottom-28 left-4 max-w-xs"
+        src="{% static 'hourglass/media/backgrounds/hand-reaching-right.png' %}"
+        alt="A person's arm and hand reaching out">
+    </div>
+  </div>
+  <div class="container mx-auto max-w-screen-xl relative max-lg:mt-96 lg:mt-0">
+    <div class="relative z-40 max-lg:pl-8 lg:pl-96 pr-8 py-28 flex flex-col gap-y-6">
+      <div class="prose lg:prose-lg">
+        <p>Our Mission</p>
+        <p class="lead">Value proposition lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      </div>
+    </div>
+  </div>
+  <div class="container mx-auto max-w-screen-xl relative mt-0 lg:mt-12">
+    <div
+      class="
+        z-10 relative -right-24
+        motion-safe:-top-32 motion-reduce:-top-12 motion-safe:rallax
+      ">
+      <img
+        class="lg:hidden absolute z-0 w-96 top-0 right-0"
+        src="{% static 'hourglass/media/backgrounds/circle-blue-textured.png' %}"
+        width="434"
+        alt="">
+    </div>
+    <div
+      class="
+        relative before:z-30 before:block before:absolute
+        before:inset-y-0 before:w-[50vw]
+        before:right-1/2
+        before:bg-blue
+      ">
+      <div class="p-8 bg-blue relative z-40 max-w-2xl">
+        <div class="prose lg:prose-lg">
+          <h2 class="text-white">What We Do</h2>
+          <p class="text-white">What we do lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          <p class="text-white">Dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        </div>
+        <div class="flex mt-6">
+          {% with rel_path="/site/what-we-do" label="More about us" %}
+            {% include 'custom/button-action-white.html' %}
+          {% endwith %}
+        </div>
+      </div>
+    </div>
+    <div class="z-0 relative -left-20 -bottom-48 motion-safe:rallax">
+      <img
+        class="max-lg:hidden absolute z-0 w-96 bottom-0 left-0"
+        src="{% static 'hourglass/media/backgrounds/circle-blue-textured.png' %}"
+        width="434"
+        alt="">
+    </div>
+    <div class="lg:hidden z-0 relative -right-12 -bottom-12 motion-safe:rallax">
+      <img
+        class="absolute w-96 right-0 bottom-0"
+        src="{% static 'hourglass/media/backgrounds/triangle-orange.svg' %}"
+        alt="">
+    </div>
+    <div
+      class="
+        max-lg:hidden z-0 relative -right-12
+        motion-reduce:-bottom-12 motion-safe:bottom-24 motion-safe:rallax
+      ">
+      <img
+        class="absolute z-0 -bottom-4 right-28 rotate-180 w-56"
+        src="{% static 'hourglass/media/backgrounds/triangle-blue-textured.png' %}"
+        alt="">
+      <img
+        class="absolute z-10 w-28 bottom-44 right-12"
+        src="{% static 'hourglass/media/backgrounds/square-orange.svg' %}"
+        alt="">
+      <img
+        class="absolute z-0 w-16 bottom-64 right-4"
+        src="{% static 'hourglass/media/backgrounds/circle-red.svg' %}"
+        alt="">
+      <img
+        class="absolute z-10 -bottom-36 right-12 w-64"
+        src="{% static 'hourglass/media/backgrounds/ar-vr-headset-man.png' %}"
+        alt="A person wearing an AR/VR headset and a hamburger t-shirt">
+    </div>
+  </div>
+  <div class="container mx-auto max-w-screen-xl relative mt-28">
+    <div
+      class="
+        relative after:z-30 after:block after:absolute
+        after:inset-y-0 after:w-screen
+        max-lg:after:left-1/2 lg:after:-right-12
+        after:bg-white
+      ">
+      <div
+        class="
+          relative z-40
+          py-20 px-8 bg-white
+          flex flex-col gap-y-8
+        ">
+        <div
+          class="
+            flex max-lg:flex-col gap-y-20
+            lg:flex-row lg:justify-between
+          ">
+          <div
+            class="
+              flex flex-col gap-y-8 items-center
+              lg:w-[30%]
+            ">
+            <img
+              class="w-44 h-44"
+              src="{% static 'hourglass/media/icons/Become-a-Supporter.svg' %}"
+              alt="">
+            <h2 class="font-poppins-bold max-lg:text-xl lg:text-2xl text-center">
+              Librarians &amp; Supporters
+            </h2>
+            {% with rel_path="/site/for-librarians-consortia" label="Find out more" %}
+              {% include 'custom/button-action-blue.html' %}
+            {% endwith %}
+          </div>
+          <div
+            class="
+              flex flex-col gap-y-8 items-center
+              lg:w-[30%]
+            ">
+            <img
+              class="w-44 h-44"
+              src="{% static 'hourglass/media/icons/Authors.svg' %}"
+              alt="">
+            <h2 class="font-poppins-bold max-lg:text-xl lg:text-2xl text-center">
+              Authors & Readers
+            </h2>
+            {% with rel_path="/site/for-authors-readers" label="Find out more" %}
+              {% include 'custom/button-action-blue.html' %}
+            {% endwith %}
+          </div>
+          <div
+            class="
+              flex flex-col gap-y-8 items-center
+              lg:w-[30%]
+            ">
+            <img
+              class="w-44 h-44"
+              src="{% static 'hourglass/media/icons/Editors.svg' %}"
+              alt="">
+            <h2 class="font-poppins-bold max-lg:text-xl lg:text-2xl text-center">
+              Editors
+            </h2>
+            {% with rel_path="/site/for-editors" label="Find out more" %}
+              {% include 'custom/button-action-blue.html' %}
+            {% endwith %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container mx-auto max-w-screen-xl relative mt-0">
+    {% include "custom/quote-glide.html" %}
+  </div>
+  <div
+    class="
+      container mx-auto max-w-screen-xl relative
+      max-md:mt-36 md:max-lg:mt-24 lg:mt-0
+    ">
+    <div
+      class="
+        z-0 relative motion-safe:rallax max-lg:right-0 lg:left-28
+        max-lg:top-0 lg:motion-reduce:top-72 lg:motion-safe:top-28
+      ">
+      <img
+        class="
+          z-0 absolute max-lg:-right-4 lg:-left-36
+          max-lg:-top-48 lg:-top-36 max-lg:h-24 lg:h-36
+        "
+        src="{% static 'hourglass/media/backgrounds/bars-horizontal-red.svg' %}"
+        alt="">
+      <img
+        class="
+          z-10 absolute max-lg:-right-6 lg:-left-20
+          -top-72 max-lg:w-64 lg:w-96
+        "
+        src="{% static 'hourglass/media/backgrounds/triangle-orange.svg' %}"
+        alt="">
+      <img
+        class="
+          z-20 absolute max-lg:-right-12 lg:max-xl:-left-48 xl:-left-20
+          max-lg:-top-56 lg:-top-36 max-lg:w-72 lg:w-96
+        "
+        src="{% static 'hourglass/media/backgrounds/laptop-lady-facing-left.png' %}"
+        width="790"
+        alt="">
+    </div>
+    <div class="z-0 relative max-lg:-top-32 lg:-top-56 -right-20 motion-safe:rallax">
+      <img
+        class="max-lg:hidden absolute z-0 w-96 top-0 right-0"
+        src="{% static 'hourglass/media/backgrounds/circle-blue-textured.png' %}"
+        width="434"
+        alt="">
+    </div>
+    <div
+      class="
+        relative before:z-30 before:block before:absolute
+        before:inset-y-0 before:w-[50vw]
+        max-lg:before:right-1/2 lg:before:left-1/2
+        before:bg-blue
+        flex justify-end
+      ">
+      <div class="p-8 bg-blue relative z-40 max-w-2xl">
+        <div class="prose lg:prose-lg">
+          <h2 class="text-white">How We Work</h2>
+          <p class="text-white">How we work lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          <p class="text-white">Dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        </div>
+        <div class="flex mt-6">
+          {% with rel_path="/site/how-we-work" label="More about us" %}
+            {% include 'custom/button-action-white.html' %}
+          {% endwith %}
+        </div>
+      </div>
+    </div>
+    <div class="z-0 relative -right-12 -bottom-12 motion-safe:rallax">
+      <img
+        class="lg:hidden absolute w-96 -left-40 -bottom-48"
+        src="{% static 'hourglass/media/backgrounds/circle-blue-textured.png' %}"
+        width="434"
+        alt="">
+    </div>
+  </div>
+  <div class="container mx-auto max-w-screen-xl relative mt-28">
+    <div
+      class="
+        relative after:z-30 after:block after:absolute
+        after:inset-y-0 after:w-[50vw]
+        after:left-1/2 after:bg-white
+      ">
+      {% include "custom/featured-journals.html" %}
+    </div>
+  </div>
+  <div class="container mx-auto max-w-screen-xl relative">
+    {% include 'custom/subscribe.html' %}
+  </div>
+</article>

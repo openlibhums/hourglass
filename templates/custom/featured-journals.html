@@ -1,0 +1,17 @@
+{% load static %}
+
+<div class="p-12 bg-white z-40 relative">
+  <h2 class="pb-6 font-poppins-bold max-lg:text-2xl lg:text-3xl">
+    Featured Journals
+  </h2>
+  <div
+    class="
+      flex -mx-3
+      max-lg:flex-col gap-y-16
+      lg:flex-row lg:flex-wrap lg:justify-between
+    ">
+    {% for journal in request.press.featured_journals.all|slice:":6" %}
+      {% include 'custom/journal-tile.html' %}
+    {% endfor %}
+  </div>
+</div>
