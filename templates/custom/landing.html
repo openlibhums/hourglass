@@ -2,6 +2,7 @@
 
 <article>
   <div class="container mx-auto max-w-screen-xl relative lg:mt-8">
+    {% include "custom/edit-on-github.html" with rel_path="custom/landing.html" %}
     <div class="z-40 relative">
       <h1
         class="
@@ -126,7 +127,7 @@
             <h2 class="font-poppins-bold max-lg:text-xl lg:text-2xl text-center">
               Join the Conversation
             </h2>
-            {% with rel_path="/site/olh-journal-applications" label="Find out more" %}
+            {% with rel_path="TBD" label="Find out more" %}
               {% include 'custom/button-action-blue.html' %}
             {% endwith %}
           </div>
@@ -142,7 +143,7 @@
             <h2 class="font-poppins-bold max-lg:text-xl lg:text-2xl text-center">
               Read Our News
             </h2>
-            {% with rel_path="/news/press_overview/?tags__text=Announcement&tags__text=Blog&content_type__model=journal" label="Find out more" %}
+            {% with rel_path="/news/press_overview/?tags__text=Announcement" label="Find out more" %}
               {% include 'custom/button-action-blue.html' %}
             {% endwith %}
           </div>
@@ -158,7 +159,7 @@
             <h2 class="font-poppins-bold max-lg:text-xl lg:text-2xl text-center">
               Hear Our Ideas
             </h2>
-            {% with rel_path="/site/open-access-movement" label="Find out more" %}
+            {% with rel_path="/news/press_overview/?tags__text=Blog" label="Find out more" %}
               {% include 'custom/button-action-blue.html' %}
             {% endwith %}
           </div>
@@ -225,12 +226,12 @@
       ">
       <div class="p-8 bg-blue relative z-40 max-w-2xl">
         <div class="prose lg:prose-lg">
-          <h2 class="text-white">How We Work</h2>
-          <p class="text-white">How we work lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          <h2 class="text-white">What We Do</h2>
+          <p class="text-white">What we do lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
           <p class="text-white">Dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
         </div>
         <div class="flex mt-6">
-          {% with rel_path="/site/how-we-work" label="More about us" %}
+          {% with rel_path="/site/what-we-do" label="More about us" %}
             {% include 'custom/button-action-white.html' %}
           {% endwith %}
         </div>
@@ -396,12 +397,12 @@
       ">
       <div class="p-8 bg-blue relative z-40 max-w-2xl">
         <div class="prose lg:prose-lg">
-          <h2 class="text-white">What We Do</h2>
-          <p class="text-white">What we do lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          <h2 class="text-white">How We Work</h2>
+          <p class="text-white">How we work lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
           <p class="text-white">Dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
         </div>
         <div class="flex mt-6">
-          {% with rel_path="/site/what-we-do" label="More about us" %}
+          {% with rel_path="/site/how-we-work" label="More about us" %}
             {% include 'custom/button-action-white.html' %}
           {% endwith %}
         </div>
