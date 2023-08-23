@@ -1,0 +1,169 @@
+{% load static %}
+
+<article id="journals">
+  <div class="container mx-auto max-w-screen-xl relative">
+    {% include "custom/edit-on-github.html" with rel_path="custom/journals.html" %}
+    <div
+      class="
+        z-0 relative max-md:top-4 md:max-lg:-top-32 motion-safe:rallax
+        max-md:-right-72 md:-right-36
+      ">
+      <img
+        class="absolute z-20 w-20 right-96 max-md:top-0 md:top-32"
+        src="{% static 'hourglass/media/backgrounds/circle-blue.svg' %}"
+        alt="">
+      <img
+        class="absolute z-10 w-64 top-40 right-72"
+        src="{% static 'hourglass/media/backgrounds/circle-quarter-blue-textured.png' %}"
+        width="434"
+        alt="">
+      <img
+        class="absolute z-0 h-64 max-w-none top-40 -right-80"
+        src="{% static 'hourglass/media/backgrounds/bars-horizontal-red-five.svg' %}"
+        height="600"
+        alt="">
+      <img
+        class="
+          absolute z-30 max-lg:top-20 lg:top-14 max-lg:right-16 lg:right-0 max-w-none
+          max-lg:w-[32rem] lg:w-[40rem]
+        "
+        src="{% static 'hourglass/media/backgrounds/dancer-ballet.png' %}"
+        width="1122"
+        alt="Ballet dancer wearing black dress suspended in mid air with arms outstretched">
+    </div>
+  </div>
+  <div class="container mx-auto max-w-screen-xl relative max-md:pt-64 md:pt-12">
+    <div class="z-40 relative">
+      <h1
+        class="
+          max-md:text-5xl md:max-lg:text-6xl lg:text-7xl !leading-snug
+          font-poppins-bold max-lg:py-6 lg:pt-20 lg:pb-6 pl-8
+        ">
+        Journals
+      </h1>
+    </div>
+    <div class="z-40 relative">
+      <div class="flex max-w-md px-8 gap-4">
+        <img
+          class="w-8"
+          src="{% static 'hourglass/media/icons/filter.svg' %}"
+          >
+        <input
+          placeholder="Filter"
+          class="
+            search
+            bg-tan-light
+            flex-1 h-9 p-2 w-28 border-none
+            lg:mx-4
+            placeholder:text-sm
+            focus:ring-transparent
+          ">
+      </div>
+    </div>
+  </div>
+  <div class="list">
+    <div class="container mx-auto max-w-screen-xl relative max-md:mt-28 md:mt-14">
+      <div
+        class="
+          p-8 bg-orange
+          flex max-md:flex-col md:flex-row gap-x-16 gap-y-6
+          relative z-40
+        ">
+        <div class="basis-1/2 prose lg:prose-lg">
+          <p class="lead">Journals lead lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </div>
+        <div class="basis-1/2 prose lg:prose-lg">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        </div>
+      </div>
+      <div
+        class="
+          z-0 relative left-0
+          motion-reduce:-bottom-24 motion-safe:bottom-0 motion-safe:rallax
+        ">
+        <img class="absolute z-20 w-32 left-20 bottom-0"
+          src="{% static 'hourglass/media/backgrounds/circles-one-one-half-blue.svg' %}"
+          alt="">
+        <img
+          class="absolute z-10 w-64 -left-32 -bottom-16"
+          src="{% static 'hourglass/media/backgrounds/circle-quarter-blue-textured.png' %}"
+          width="434"
+          alt="">
+      </div>
+    </div>
+    {% for journal in request.press.active_journals %}
+      <div class="container mx-auto max-w-screen-xl relative my-28">
+        <div
+          class="
+            relative after:z-30 after:block after:absolute
+            after:inset-y-0 after:w-screen after:bg-white
+            {% cycle 'after:right-1/2' 'after:left-1/2' %}
+          ">
+          <div
+            class="
+              relative z-40
+              py-20 px-8 bg-white
+              flex max-md:flex-col md:flex-row gap-x-8
+            ">
+            <div class="md:basis-1/3">
+              <a href="{{ journal.site_url }}">
+                <img
+                  src="{{ journal.default_cover_image.url }}"
+                  alt="{{ journal.name }}">
+              </a>
+            </div>
+            <div class="md:basis-2/3 prose lg:prose-lg">
+              <h2 class="name font-poppins-bold text-3xl mt-8">
+                {{ journal.name }}
+              </h2>
+              <div class="description">
+                {{ journal.description_for_press|safe }}
+              </div>
+              {% if journal.keywords.count %}
+                <div class="discipline not-prose flex flex-wrap gap-6 mt-6">
+                  {% for keyword in journal.keywords.all %}
+                    <span class="bg-blue rounded-full py-2 px-4 font-poppins-medium text-white">
+                      {{ keyword }}
+                    </span>
+                  {% endfor %}
+                </div>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+        <div
+          class="
+            {% cycle '' 'hidden' %}
+            motion-reduce:-bottom-24 max-lg:motion-safe:-bottom-12 lg:motion-safe:-bottom-12
+            motion-safe:rallax z-0 relative -right-16
+          ">
+          <img
+            class="absolute z-10 w-64 -bottom-16 right-0"
+            src="{% static 'hourglass/media/backgrounds/circle-quarter-blue-textured.png' %}"
+            width="434"
+            alt="">
+          <img
+            class="absolute z-10 w-64 -bottom-16 right-64"
+            src="{% static 'hourglass/media/backgrounds/circle-quarter-blue-textured.png' %}"
+            width="434"
+            alt="">
+        </div>
+      </div>
+    {% endfor %}
+    <div class="container mx-auto max-w-screen-xl relative">
+      {% include 'custom/subscribe.html' %}
+    </div>
+  </div>
+</article>
+
+{% block js %}
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const options = {
+        valueNames: [ 'name', 'description', 'discipline' ]
+      };
+
+      const userList = new List('journals', options);
+    })
+  </script>
+{% endblock js %}
