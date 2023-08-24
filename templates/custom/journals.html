@@ -1,6 +1,6 @@
 {% load static %}
 
-<article id="journals">
+<div id="journals">
   <div class="container mx-auto max-w-screen-xl relative">
     {% include "custom/edit-on-github.html" with rel_path="custom/journals.html" %}
     <div
@@ -70,10 +70,10 @@
           relative z-40
         ">
         <div class="basis-1/2 prose lg:prose-lg">
-          <p class="lead">Journals lead lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          <p class="lead">The OLH publishes open access journals covering a broad range of topics across the humanities, commanding the respect of the academic communities we serve.</p>
         </div>
         <div class="basis-1/2 prose lg:prose-lg">
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          <p>With our flagship <i>Open Library of Humanities Journal</i> featured, our journals are then arranged alphabetically by title. Journals can also be filtered by keyword and subject. Most of our scholarship is published under the CC-BY international licence or another open licence to help ensure the widest possible readership.</p>
         </div>
       </div>
       <div
@@ -154,7 +154,7 @@
       {% include 'custom/subscribe.html' %}
     </div>
   </div>
-</article>
+</div>
 
 {% block js %}
   <script>
