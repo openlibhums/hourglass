@@ -155,15 +155,3 @@
     </div>
   </div>
 </div>
-
-{% block js %}
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const options = {
-        valueNames: [ 'name', 'description', 'discipline' ]
-      };
-
-      const userList = new List('journals', options);
-    })
-  </script>
-{% endblock js %}
