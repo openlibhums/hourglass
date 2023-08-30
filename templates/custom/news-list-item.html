@@ -1,0 +1,38 @@
+{% load static %}
+
+<div class="flex flex-col gap-x-8 md:px-6">
+  <img
+    src="{{ item.large_image_file.url }}"
+    alt="{{ item.title }}">
+  <div class="prose lg:prose-lg flex flex-col max-md:items-center">
+    <div class="pt-4 max-md:text-center">
+      {{ item.posted|date:"j F Y" }}
+    </div>
+    <h3 class="font-poppins-bold text-xl !mt-4 max-md:text-center">
+      {{ item.title }}
+    </h3>
+    <div class="max-md:text-center">
+      {{ item.byline }}
+    </div>
+    {% if item.tags.all %}
+      <div
+        class="
+          not-prose text-xs flex flex-wrap gap-6
+          mt-4 max-md:place-content-center
+        ">
+        {% for item_tag in item.tags.all %}
+          <a
+            class="bg-tan border-white border-2 rounded-full py-2 px-4"
+            href="{% url 'core_news_list_tag' item_tag.text %}">
+            {{ item_tag }}
+          </a>
+        {% endfor %}
+      </div>
+    {% endif %}
+    <div class="flex not-prose mt-8">
+      {% with rel_path=item.url label="Read more" %}
+        {% include "custom/button-action-blue.html" %}
+      {% endwith %}
+    </div>
+  </div>
+</div>

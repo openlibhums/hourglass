@@ -1,0 +1,140 @@
+{% load static %}
+{% load i18n %}
+
+<div class="container mx-auto max-w-screen-xl relative">
+  {% include "custom/edit-on-github.html" with rel_path="custom/announcements-blog.html" %}
+  {% include "custom/news-art-opener.html" %}
+</div>
+<div class="container mx-auto max-w-screen-xl relative max-md:pt-24 md:pt-12">
+  <div class="z-40 relative">
+    <h1
+      class="
+        max-md:text-4xl md:max-lg:text-5xl lg:text-7xl !leading-snug
+        font-poppins-bold max-lg:py-6 lg:pt-20 lg:pb-6 max-md:pl-4 md:px-8 max-w-sm
+      ">
+      Announcements &amp; Blog
+    </h1>
+  </div>
+  {% if all_tags %}
+    {% include "custom/tags.html" with tag="" all_tags=all_tags %}
+  {% endif %}
+</div>
+{% if tag_sets %}
+  {% for tag, items in tag_sets.items %}
+    <div class="container mx-auto max-w-screen-xl relative mt-8">
+      <div class="z-0 relative {% cycle 'hidden' '' %}">
+        {% include "custom/news-art-middle.html" %}
+      </div>
+      <div
+        class="
+          relative after:z-30 after:block after:absolute
+          after:inset-y-0 after:w-screen after:bg-white
+          {% cycle 'after:right-1/2' 'after:left-1/2 md:flex md:justify-end' %}
+        ">
+        <div
+          class="
+            relative z-40 py-8 max-md:px-4 md:px-8 bg-white
+            {% cycle '' 'max-w-3xl' %}
+          ">
+          <h2 class="name font-poppins-bold text-3xl py-8 max-md:text-center">
+            Tag: {{ tag }}
+          </h2>
+          <div class="flex max-md:flex-col md:flex-row md:flex-wrap gap-y-20 md:-mx-6">
+            {% cycle 'md:basis-1/3' 'md:basis-1/2' as fraction silent %}
+            {% for item in items|slice:":6" %}
+              <div class="{{ fraction }}">
+                {% include "custom/news-list-item.html" with item=item %}
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container mx-auto max-w-screen-xl relative mb-28">
+      <div
+        class="
+          relative after:z-30 after:block after:absolute
+          after:inset-y-0 after:w-screen after:bg-blue
+          {% cycle 'after:right-1/2' 'after:left-1/2 md:flex md:justify-end' %}
+        ">
+        <div
+          class="
+            relative z-40 py-4 max-md:px-4 md:px-8 bg-blue
+            {% cycle '' 'max-w-3xl' %}
+          ">
+          <div class="flex flex-col items-center">
+            <a
+              class="p-4 border rounded-full border-white flex gap-4 items-center"
+              href="{% url 'core_news_list_tag_presswide' presswide='all' tag=tag %}">
+              {% with label="View all" %}
+                {% include "custom/button-action-inner-white.html" %}
+              {% endwith %}
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  {% endfor %}
+{% endif %}
+{% if object_sets %}
+  {% for model, items in object_sets.items %}
+    <div class="container mx-auto max-w-screen-xl relative mt-8">
+      <div
+        class="
+          relative after:z-30 after:block after:absolute
+          after:inset-y-0 after:w-screen after:bg-white
+          {% cycle 'after:right-1/2' 'after:left-1/2' %}
+        ">
+        <div
+          class="
+            relative z-40 py-8 max-md:px-4 md:px-8 bg-white
+            {% cycle 'max-w-3xl' '' %}
+          ">
+          {% blocktrans with model_name=model|capfirst %}
+            <h2 class="name font-poppins-bold text-3xl py-8 max-md:text-center">
+              {{ model_name }} News
+            </h2>
+          {% endblocktrans %}
+          <div class="flex max-md:flex-col md:flex-row md:flex-wrap gap-y-20 md:-mx-6">
+            {% cycle 'md:basis-1/2' 'md:basis-1/3' as fraction silent %}
+            {% for item in items|slice:":6" %}
+              <div class="{{ fraction }}">
+                {% include "custom/news-list-item.html" with item=item %}
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+        <div class="z-0 relative {% cycle '' 'hidden' %}">
+          {% include "custom/news-art-end.html" %}
+        </div>
+      </div>
+    </div>
+    <div class="container mx-auto max-w-screen-xl relative mb-28">
+      <div
+        class="
+          relative after:z-30 after:block after:absolute
+          after:inset-y-0 after:w-screen after:bg-blue
+          {% cycle 'after:right-1/2' 'after:left-1/2' %}
+        ">
+        <div
+          class="
+            relative z-40 py-4 max-md:px-4 md:px-8 bg-blue
+            {% cycle 'max-w-3xl' '' %}
+          ">
+          <div class="flex flex-col items-center">
+            <a
+              class="p-4 border rounded-full border-white flex gap-4 items-center"
+              href="{% url 'core_news_list_presswide' presswide='all' %}">
+              {% with label="View all" %}
+                {% include "custom/button-action-inner-white.html" %}
+              {% endwith %}
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  {% endfor %}
+{% endif %}
+<div class="container mx-auto max-w-screen-xl relative">
+  {% include 'custom/subscribe.html' %}
+</div>
