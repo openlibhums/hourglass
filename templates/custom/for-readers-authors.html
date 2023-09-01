@@ -1,0 +1,165 @@
+{% load static %}
+
+<div class="container mx-auto max-w-screen-xl relative">
+  {% include 'custom/edit-on-github.html' with rel_path='custom/for-readers-authors.html' %}
+  <div class="relative z-0 top-0 right-0">
+    <img
+      class="
+        motion-safe:rallax absolute z-10 w-20 max-lg:top-8 lg:top-0
+        max-lg:right-52 lg:-right-8
+      "
+      src="{% static 'hourglass/media/backgrounds/circle-blue.svg' %}"
+      alt="">
+    <img
+      class="
+        absolute max-lg:z-20 lg:z-0 max-lg:top-48 lg:top-0
+        max-lg:right-12 lg:-right-12 max-lg:max-w-sm
+      "
+      src="{% static 'hourglass/media/backgrounds/circle-blue-textured.png' %}"
+      width="434"
+      alt="">
+    <img
+      class="
+        motion-safe:rallax absolute max-lg:z-0 lg:z-10 max-lg:top-4 lg:top-0 max-lg:-right-32 lg:-right-8
+        max-lg:w-80 max-lg:max-w-none lg:max-w-md
+      "
+      src="{% static 'hourglass/media/backgrounds/man-with-video-camera.png' %}"
+      width="847"
+      alt="A man with his hair in a bun operating a video camera">
+    <img
+      class="
+        motion-safe:rallax max-lg:z-10 lg:z-20 absolute max-lg:-right-56 lg:-right-4
+        max-lg:top-72 lg:top-96 h-28 max-w-none
+      "
+      src="{% static 'hourglass/media/backgrounds/bars-horizontal-red-three.svg' %}"
+      alt="">
+  </div>
+  <div class="relative z-40">
+    <h1
+      class="
+        max-lg:text-4xl lg:text-7xl max-lg:max-w-xs lg:max-w-lg
+        font-poppins-bold max-lg:pt-64 max-lg:pb-12 lg:py-28 px-8
+      ">
+      Info for Readers &amp; Authors
+    </h1>
+  </div>
+</div>
+<div class="container mx-auto max-w-screen-xl relative max-lg:pb-[32rem]">
+  <div class="flex max-lg:flex-col lg:flex-row lg:flex-wrap lg:px-2">
+    <div class="max-lg: py-5 lg:p-5 lg:basis-1/2">
+      <div
+        class="
+          relative z-40 p-8 h-full bg-white flex flex-col
+          gap-y-6 max-lg:items-center lg:items-start
+        ">
+        <img
+          class="-m-3 w-32 h-32"
+          src="{% static 'hourglass/media/icons/Our-Flagship-Journal.svg' %}"
+          alt="">
+        <h2 class="font-poppins-bold max-lg:text-2xl lg:text-3xl max-lg:text-center">
+          Our Flagship Journal
+        </h2>
+        <p class="max-lg:text-lg lg:text-xl max-lg:text-center">
+          Explore our interdisciplinary, diamond open access&nbsp;<i>Open Library of Humanities</i> journal
+        </p>
+        {% with rel_path="/site/open-library-of-humanities-journal" label="Find out more" %}
+          {% include 'custom/button-action-blue.html' %}
+        {% endwith %}
+      </div>
+    </div>
+    <div class="max-lg: py-5 lg:p-5 lg:basis-1/2">
+      <div
+        class="
+          relative z-40 p-8 h-full bg-white flex flex-col
+          gap-y-6 max-lg:items-center lg:items-start
+        ">
+        <img
+          class="-m-3 w-32 h-32"
+          src="{% static 'hourglass/media/icons/Awards-Prizes.svg' %}"
+          alt="">
+        <h2 class="font-poppins-bold max-lg:text-2xl lg:text-3xl max-lg:text-center">
+          Awards &amp; Prizes
+        </h2>
+        <p class="max-lg:text-lg lg:text-xl max-lg:text-center">
+          View highlights from our publishing output and activities
+        </p>
+        {% with rel_path="/site/awards-prizes" label="Find out more" %}
+          {% include 'custom/button-action-blue.html' %}
+        {% endwith %}
+      </div>
+    </div>
+    <div class="max-lg: py-5 lg:p-5 lg:basis-1/2">
+      <div
+        class="
+          relative z-40 p-8 h-full bg-white flex flex-col
+          gap-y-6 max-lg:items-center lg:items-start
+        ">
+        <img
+          class="-m-3 w-32 h-32"
+          src="{% static 'hourglass/media/icons/Publish-With-Us.svg' %}"
+          alt="">
+        <h2 class="font-poppins-bold max-lg:text-2xl lg:text-3xl max-lg:text-center">
+          Publish With Us
+        </h2>
+        <p class="max-lg:text-lg lg:text-xl max-lg:text-center">
+          Information for new authors, and our publisher-wide Call for Papers
+        </p>
+        {% with rel_path="/site/publish-with-us" label="Find out more" %}
+          {% include 'custom/button-action-blue.html' %}
+        {% endwith %}
+      </div>
+    </div>
+    <div class="max-lg: py-5 lg:p-5 lg:basis-1/2">
+      <div
+        class="
+          relative z-40 p-8 h-full bg-white flex flex-col
+          gap-y-6 max-lg:items-center lg:items-start
+        ">
+        <img
+          class="-m-3 w-32 h-32"
+          src="{% static 'hourglass/media/icons/FAQs.svg' %}"
+          alt="">
+        <h2 class="font-poppins-bold max-lg:text-2xl lg:text-3xl max-lg:text-center">
+          FAQs
+        </h2>
+        <p class="max-lg:text-lg lg:text-xl max-lg:text-center">
+          Get a quick answer to your question
+        </p>
+        {% with rel_path="/site/faq#readers-authors" label="Find out more" %}
+          {% include 'custom/button-action-blue.html' %}
+        {% endwith %}
+      </div>
+    </div>
+  </div>
+  <div
+    class="
+      relative z-0 max-lg:-right-12 lg:-right-28 motion-safe:rallax
+      max-lg:motion-reduce:bottom-32 lg:motion-reduce:bottom-96
+      max-lg:motion-safe:bottom-96 lg:motion-safe:bottom-[40rem]
+    ">
+    <img
+      class="absolute z-20 h-24 top-0 right-0"
+      src="{% static 'hourglass/media/backgrounds/triangle-orange-pointing-down.svg' %}"
+      alt="">
+    <img
+      class="absolute z-20 h-24 top-24 right-0"
+      src="{% static 'hourglass/media/backgrounds/triangle-orange-pointing-down.svg' %}"
+      alt="">
+    <img
+      class="absolute z-20 h-24 top-48 right-0"
+      src="{% static 'hourglass/media/backgrounds/triangle-orange-pointing-down.svg' %}"
+      alt="">
+    <img
+      class="absolute z-0 top-72 -right-28 max-w-xs"
+      src="{% static 'hourglass/media/backgrounds/circle-blue-textured.png' %}"
+      width="434"
+      alt="">
+    <img
+      class="absolute z-20 w-12 top-[34rem] right-28"
+      src="{% static 'hourglass/media/backgrounds/circle-blue.svg' %}"
+      alt="">
+  </div>
+</div>
+<div class="container mx-auto max-w-screen-xl relative">
+  {% include 'custom/subscribe.html' %}
+</div>
