@@ -25,6 +25,16 @@
 
    You should see a new `node_modules` file in the `hourglass` folder.
 
+4. Add the app name to your `INSTALLED_APPS` in `settings.py`:
+
+```py
+INSTALLED_APPS = [
+    ...,
+    'themes.hourglass’,
+    ...,
+]
+```
+
 ## Deploying to production
 
 From the Janeway root, build assets for all themes:
@@ -61,12 +71,18 @@ a custom component, make changes to `src/input.css` using `@layer` and
 `@apply` commands.
 
 When making lots of small CSS changes that you want to see in the browser
-during development, you can use the hot-module replacement (HMR) feature
-provided by Tailwind. To watch for changes, use this NPM command:
+during development, you can use the hot replacement (HMR) feature provided
+by Tailwind. To watch for changes and recompile the CSS based on classes
+used automatically, use this NPM command:
 
 ```shell
 npm run dev
 ```
+
+This should work smoothly with the `django-browser-reload` configuration
+in Janeway so that you only have to save the HTML file you’re working in
+to see the changes take place in the browser. Templates and static CSS
+files are both watched and can trigger reloads independently.
 
 #### Styling notes
 
