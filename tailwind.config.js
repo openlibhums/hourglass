@@ -14,7 +14,8 @@ const em = (px, base) => `${round(px / base)}em`
 export default {
   content: [
     './src/**/*.js',
-    './templates/**/*.html'
+    './templates/**/*.html',
+    './components/**/*.{py,js,html}' // django-components
   ],
   theme: {
     colors: {

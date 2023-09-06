@@ -27,13 +27,15 @@
 
 4. Add the app name to your `INSTALLED_APPS` in `settings.py`:
 
-```py
-INSTALLED_APPS = [
-    ...,
-    'themes.hourglass’,
-    ...,
-]
-```
+   ```py
+   INSTALLED_APPS = [
+       ...,
+       'themes.hourglass’,
+       ...,
+   ]
+   ```
+
+5. Make changes to `INSTALLED_APPS` for `django-components` according to the [installation instructions](https://github.com/EmilStenstrom/django-components/tree/d9342782266b6ec41e3f2c39229d71d975f809a2#installation):
 
 ## Deploying to production
 
@@ -149,6 +151,8 @@ The attribution-required and trademarked content is restricted to the
 following folders:
 
 - `templates/custom/*`
+
+- `components/*`
 
 - `src/media/*`
 
