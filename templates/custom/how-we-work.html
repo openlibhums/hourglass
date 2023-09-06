@@ -1,0 +1,148 @@
+{% load static %}
+
+<div class="container mx-auto max-w-screen-xl relative">
+  {% include 'custom/edit-on-github.html' with rel_path='custom/how-we-work.html' %}
+  <div class="relative z-0 top-0 max-md:0 md:top-24 right-0">
+    <img
+      class="motion-safe:rallax absolute z-10 h-36 -top-24 -right-8"
+      src="{% static 'hourglass/media/backgrounds/triangle-orange-pointing-down.svg' %}"
+      alt="">
+    <img
+      class="
+        z-10 absolute -top-8
+        max-lg:-right-24 lg:-right-20 max-w-sm
+      "
+      src="{% static 'hourglass/media/backgrounds/clapper-board-circle.png' %}"
+      width="529"
+      alt="Clapper board about to be clapped on a film set">
+    <img
+      class="motion-safe:rallax absolute z-20 h-36 top-44 -right-10 rotate-180"
+      src="{% static 'hourglass/media/backgrounds/triangle-orange-pointing-down.svg' %}"
+      alt="">
+    <img
+      class="
+        motion-safe:rallax absolute max-lg:z-0 lg:z-10 w-12 max-lg:top-32 lg:top-72
+        max-lg:right-64 lg:-right-16
+      "
+      src="{% static 'hourglass/media/backgrounds/circle-red.svg' %}"
+      alt="">
+  </div>
+  <div class="relative z-40">
+    <h1
+      class="
+        max-lg:text-4xl lg:text-7xl max-lg:max-w-xs lg:max-w-xl
+        font-poppins-bold max-lg:pt-64 max-lg:pb-12 lg:py-28 px-8
+      ">
+      How We Work
+    </h1>
+  </div>
+</div>
+<div class="container mx-auto max-w-screen-xl relative max-lg:pb-[30rem] lg:pb-[15rem]">
+  <div class="flex max-lg:flex-col lg:flex-row lg:flex-wrap lg:px-2">
+    <div class="max-lg: py-5 lg:p-5 lg:basis-1/2">
+      <div
+        class="
+          relative z-40 p-8 h-full bg-white flex flex-col
+          gap-y-6 max-lg:items-center lg:items-start
+        ">
+        <img
+          class="-m-3 w-32 h-32"
+          src="{% static 'hourglass/media/icons/OLH-Model.svg' %}"
+          alt="">
+        <h2 class="font-poppins-bold max-lg:text-2xl lg:text-3xl max-lg:text-center">
+          The OLH Model
+        </h2>
+        <p class="max-lg:text-lg lg:text-xl max-lg:text-center">
+          Learn about our not-for profit model: collective support from a pool of libraries means authors can publish open access, for free
+        </p>
+        {% with rel_path="/site/olh-model" label="Find out more" %}
+          {% include 'custom/button-action-blue.html' %}
+        {% endwith %}
+      </div>
+    </div>
+    <div class="max-lg: py-5 lg:p-5 lg:basis-1/2">
+      <div
+        class="
+          relative z-40 p-8 h-full bg-white flex flex-col
+          gap-y-6 max-lg:items-center lg:items-start
+        ">
+        <img
+          class="-m-3 w-32 h-32"
+          src="{% static 'hourglass/media/icons/Janeway.svg' %}"
+          alt="">
+        <h2 class="font-poppins-bold max-lg:text-2xl lg:text-3xl max-lg:text-center">
+          Janeway
+        </h2>
+        <p class="max-lg:text-lg lg:text-xl max-lg:text-center">
+          Explore the powerful, in-house publishing software that sustains our journals
+        </p>
+        {% with rel_path="/site/janeway" label="Find out more" %}
+          {% include 'custom/button-action-blue.html' %}
+        {% endwith %}
+      </div>
+    </div>
+    <div class="max-lg: py-5 lg:p-5 lg:basis-1/2">
+      <div
+        class="
+          relative z-40 p-8 h-full bg-white flex flex-col
+          gap-y-6 max-lg:items-center lg:items-start
+        ">
+        <img
+          class="-m-3 w-32 h-32"
+          src="{% static 'hourglass/media/icons/Governance-and-Finances.svg' %}"
+          alt="">
+        <h2 class="font-poppins-bold max-lg:text-2xl lg:text-3xl max-lg:text-center">
+          Governance and Finances
+        </h2>
+        <p class="max-lg:text-lg lg:text-xl max-lg:text-center">
+          Find out how we're run, and how we organise our finances
+        </p>
+        {% with rel_path="/site/governance-and-finances" label="Find out more" %}
+          {% include 'custom/button-action-blue.html' %}
+        {% endwith %}
+      </div>
+    </div>
+    <div class="max-lg: py-5 lg:p-5 lg:basis-1/2">
+      <div
+        class="
+          relative z-40 p-8 h-full bg-white flex flex-col
+          gap-y-6 max-lg:items-center lg:items-start
+        ">
+        <img
+          class="-m-3 w-32 h-32"
+          src="{% static 'hourglass/media/icons/Guiding-Values.svg' %}"
+          alt="">
+        <h2 class="font-poppins-bold max-lg:text-2xl lg:text-3xl max-lg:text-center">
+          Guiding Values
+        </h2>
+        <p class="max-lg:text-lg lg:text-xl max-lg:text-center">
+          Discover the principles that guide our daily activities and long-term plans
+        </p>
+        {% with rel_path="/site/guiding-values" label="Find out more" %}
+          {% include 'custom/button-action-blue.html' %}
+        {% endwith %}
+      </div>
+    </div>
+  </div>
+  <div
+    class="
+      relative z-0 max-lg:-right-12 lg:-right-20 motion-safe:rallax
+      max-lg:motion-reduce:bottom-0 lg:motion-reduce:bottom-16
+      max-lg:motion-safe:bottom-48 lg:motion-safe:bottom-[20rem]
+    ">
+    <img class="absolute z-10 h-28 top-0 right-20"
+      src="{% static 'hourglass/media/backgrounds/triangle-orange-pointing-down.svg' %}"
+      alt="">
+    <img class="absolute z-0 top-20 -right-4 max-w-xs"
+      src="{% static 'hourglass/media/backgrounds/circle-blue-textured.png' %}"
+      width="434"
+      alt="">
+    <img class="absolute z-10 top-36 right-4 max-w-xs"
+      src="{% static 'hourglass/media/backgrounds/robot-arm.png' %}"
+      width="708"
+      alt="An industrial robotic arm">
+  </div>
+</div>
+<div class="container mx-auto max-w-screen-xl relative">
+  {% include 'custom/subscribe.html' %}
+</div>
