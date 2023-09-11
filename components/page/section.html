@@ -1,0 +1,29 @@
+{% load component_tags %}
+
+<div
+  class="
+    relative before:z-30 before:block before:absolute
+    before:inset-y-0 before:w-[50vw]
+    before:bg-white
+    {% if anchor == "left" %}
+      before:right-1/2
+    {% else %}
+      before:left-1/2 flex justify-end
+    {% endif %}
+  ">
+  <div class="relative z-40 bg-white py-20 px-8 max-w-3xl">
+    <div
+      class="
+        {% if prose %}
+          prose lg:prose-lg
+        {% endif %}
+        {% if anchor == "left " %}
+          lg:mr-16
+        {% else %}
+          lg:ml-16
+        {% endif %}
+      ">
+      {% slot "content" default %}{% endslot %}
+    </div>
+  </div>
+</div>

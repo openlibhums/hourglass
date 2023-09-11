@@ -1,0 +1,12 @@
+{% load component_tags %}
+
+<div class="p-8 bg-blue relative z-40">
+  <div class="flex max-md:flex-col md:flex-row gap-x-16 gap-y-6">
+    <div class="md:basis-1/2 text-white prose lg:prose-lg">
+      {% slot "column_one" %}{% endslot %}
+    </div>
+    <div class="md:basis-1/2 text-white prose lg:prose-lg">
+      {% slot "column_two" %}{% endslot %}
+    </div>
+  </div>
+</div>
