@@ -8,14 +8,14 @@
     {% if anchor == "left" %}
       before:right-1/2
     {% else %}
-      before:left-1/2 flex justify-end
+      before:left-1/2 lg:flex lg:justify-end
     {% endif %}
   ">
-  <div class="relative z-40 bg-white py-20 px-8 max-w-3xl">
+  <div class="relative z-40 bg-white py-20 px-8 lg:max-w-3xl">
     <div
       class="
         {% if prose %}
-          prose lg:prose-lg
+          prose lg:prose-lg break-words
         {% endif %}
         {% if anchor == "left " %}
           lg:mr-16
