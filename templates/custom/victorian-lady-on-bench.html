@@ -1,0 +1,14 @@
+{% load static %}
+
+<img
+  class="
+    absolute z-10 max-lg:top-24 lg:top-20 max-lg:-right-20 lg:-right-40
+    max-lg:max-w-md lg:max-w-lg
+  "
+  srcset="
+    {% static 'hourglass/media/backgrounds/hairdo-lady-on-bench.png' %} 343w,
+    {% static 'hourglass/media/backgrounds/hairdo-lady-on-bench-lg.png' %} 1065w
+  "
+  src="{% static 'hourglass/media/backgrounds/hairdo-lady-on-bench-lg.png' %}"
+  sizes="(max-width: 1024px) 343px, 1065px"
+  alt="Woman with Victorian hairdo and blouse sitting on a park bench with a book in hand">
