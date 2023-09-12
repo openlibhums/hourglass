@@ -1,0 +1,208 @@
+{% load static %}
+{% load component_tags %}
+
+<article>
+  <div class="container mx-auto max-w-screen-xl relative">
+    {% include 'custom/edit-on-github.html' with rel_path='custom/oa-glossary.html' %}
+    <div class="relative z-0 top-20 right-0">
+      <img
+        class="
+          motion-safe:rallax z-0 absolute max-lg:top-16 lg:top-28
+          max-lg:right-8 lg:right-20 max-lg:w-64 lg:w-96
+        "
+        src="{% static 'hourglass/media/backgrounds/square-blue.svg' %}"
+        alt="">
+      <img
+        class="z-10 absolute max-lg:right-0 lg:right-8 top-4 lg:-rotate-90 max-w-none"
+        srcset="
+          {% static 'hourglass/media/backgrounds/triangle-blue-textured.png' %} 335w,
+          {% static 'hourglass/media/backgrounds/triangle-blue-textured-lg.png' %} 669w
+        "
+        src="{% static 'hourglass/media/backgrounds/triangle-blue-textured.png' %}"
+        sizes="(max-width: 1024px) 335px, 669px"
+        alt="">
+      <img
+        class="
+          motion-safe:rallax max-lg:z-0 lg:z-20 absolute -right-8 -top-10
+          max-lg:max-w-xs lg:max-w-lg
+        "
+        src="{% static 'hourglass/media/backgrounds/model-sunglasses.png' %}"
+        width="685"
+        alt="">
+      <img
+        class="
+          motion-safe:rallax max-lg:z-0 lg:z-20 absolute max-lg:right-8 lg:-right-28
+          max-lg:top-80 lg:top-96 max-lg:w-40 lg:w-64
+        "
+        src="{% static 'hourglass/media/backgrounds/square-orange.svg' %}"
+        alt="">
+      <img
+        class="
+          z-20 absolute max-lg:-right-4 lg:-right-36
+          max-lg:top-48 lg:top-80 max-lg:w-8 lg:w-20
+        "
+        src="{% static 'hourglass/media/backgrounds/circle-red.svg' %}"
+        alt="">
+    </div>
+    <div class="relative z-40">
+      <h1
+        class="
+          max-md:text-4xl md:max-lg:text-5xl lg:text-7xl !leading-snug
+          font-poppins-bold max-lg:pt-64 max-lg:pb-12 lg:py-28 px-8 max-w-md
+        ">
+        Open Access Glossary
+      </h1>
+    </div>
+  </div>
+  <div class="container mx-auto max-w-screen-xl relative">
+    {% component_block "page_section" anchor="left" %}
+    <div id="glossary">
+      <div class="not-prose">
+        {% include "custom/filter-input.html" %}
+      </div>
+      <dl class="list">
+        <div>
+          <dt class="term">Accepted author manuscript (AAM)</dt>
+          <dd class="description">the peer-reviewed, final version of an article prior to publication, and before copy-editing and typesetting by the publisher.</dd>
+        </div>
+        <div>
+          <dt class="term">Article processing charge (APC)</dt>
+          <dd class="description">a supply-side (i.e. author-side, institution-side or funder-side) payment to publishers to cover the publishing costs of their work in order to achieve gold open access.</dd>
+        </div>
+        <div>
+          <dt class="term">Big deal</dt>
+          <dd class="description">bundled journal subscriptions that offer savings when compared to á la carte prices. Libraries complain that journal publishers abuse their monopolies to charge inflated subscription prices. See this <a href="https://sparcopen.org/our-work/big- deal-cancellation-tracking" target="_blank">list</a> of libraries that have cancelled big deals.</dd>
+        </div>
+        <div>
+          <dt class="term">Bronze open access</dt>
+          <dd class="description">content made freely available on the websites of scholarly publishers but without an open licence like Creative Commons. Bronze OA is not considered truly OA since the publisher can decide to close off free access at any time.</dd>
+        </div>
+        <div>
+          <dt class="term">CLOCKSS</dt>
+          <dd class="description">a digital preservation initiative. Acronym for Controlled Lots of Copies Keeps Stuff Safe.</dd>
+        </div>
+        <div>
+          <dt class="term">Creative Commons licenses</dt>
+          <dd class="description">a series of licenses designed to allow the free distribution of an otherwise copyrighted work. CC licenses allow authors to remain the copyright holders and grant third parties the right to use, reproduce, and share their materials according to the chosen Creative Commons license agreement. The most frequently used and the one required by cOAlition S for Plan S compliance is the CC BY (or attribution) license, which allows others to distribute, remix, adapt, and build upon the material in any medium or format, so long as attribution is given to the author.</dd>
+        </div>
+        <div>
+          <dt class="term">Diamond Open Access</dt>
+          <dd class="description">Diamond is a form of gold open access publication model in which journals and platforms do not charge fees (APCs) to either authors or readers. The costs of publication are normally covered by a third party, a funding agency or a consortium of university libraries such us in the case of the Open Library of Humanities. Diamond Open Access journals are normally community-driven, academic-led, and academic-owned publishing initiatives.</dd>
+        </div>
+        <div>
+          <dt class="term">Document Object Identifier (DOI)</dt>
+          <dd class="description">an identifier in the form <code>10.7766/orbit.v2.1.50</code> or <code>http://dx.doi.org/10.7766/orbit.v2.1.50</code> that uniquely addresses a scholarly resource. The DOI system is part of the digital preservation infrastructure as, in the event that a journal goes offline or the publisher folds, the DOI is updated to point to the preserved version, ensuring continued access. A DOI is supposed to be an identifier that will always return the resource and it comes with substantial social structures (such as financial penalties if metadata are not kept up-to date) to ensure this.</dd>
+        </div>
+        <div>
+          <dt class="term">Double dipping</dt>
+          <dd class="description">an instance when a hybrid journal that levies an article processing charge also charges for subscriptions without offsetting the subscription price to reflect revenue claimed from the APC.</dd>
+        </div>
+        <div>
+          <dt class="term">Embargo Period</dt>
+          <dd class="description">refers to a period during which access to scholarly work is restricted to those who have paid the subscription. The duration of the embargo is usually specified by the publisher or the funding agency. Once the embargo period ends, an article can be deposited in a repository.</dd>
+        </div>
+        <div>
+          <dt class="term">Fair open access</dt>
+          <dd class="description">a form of non-profit scholarly publishing in OA that safeguards full control over the publication process by the scholarly community. These principles are supported by the Fair Open Access Alliance (FOAA).</dd>
+        </div>
+        <div>
+          <dt class="term">Fair principles</dt>
+          <dd class="description">these principles state that data should be Findable, Accessible, Interoperable and Reusable. A cornerstone of the growing open data movement.</dd>
+        </div>
+        <div>
+          <dt class="term">Gold open access</dt>
+          <dd class="description">scholarly material made open access directly on the publisher’s website. Gold open access does not refer to any specific business model. The cost of publishing is either covered by authors or their institutions through the payment of article processing charges (APCs) or by a third party (Diamond OA).</dd>
+        </div>
+        <div>
+          <dt class="term">Green open access</dt>
+          <dd class="description">scholarly material made open access by deposit in a repository. Note that green open access does not refer to any specific business model.</dd>
+        </div>
+        <div>
+          <dt class="term">Hybrid journal</dt>
+          <dd class="description">a subscription journal that offers an open-access option.</dd>
+        </div>
+        <div>
+          <dt class="term">Legacy publisher</dt>
+          <dd class="description">a term often used pejoratively to describe publishers who trace their origins to a 19th and 20th-century model of book and journal publishing. Often used to differentiate from ‘new’ modes of scholarly communication. This term is used interchangeably with the more positive ‘traditional’ publishing or ‘trade’ publishing.</dd>
+        </div>
+        <div>
+          <dt class="term">LOCKSS</dt>
+          <dd class="description">a digital preservation initiative, acronym for Lots of Copies Keeps Stuff Safe.</dd>
+        </div>
+        <div>
+          <dt class="term">Mandate</dt>
+          <dd class="description">a requirement that work be made open access, usually requested and enforced by a government, funding body, or institution.</dd>
+        </div>
+        <div>
+          <dt class="term">Metadata</dt>
+          <dd class="description">peripheral information about an object, in this case a scholarly resource. For instance, author, affiliation, title, date published, journal name, issue, volume etc. are all pieces of metadata pertaining to a journal article.</dd>
+        </div>
+        <div>
+          <dt class="term">Offsetting agreement</dt>
+          <dd class="description"><a href="https://unlockingresearch-blog.lib.cam.ac.uk/?tag=offset-agreements" target="_blank">compensation</a> by a publisher to an institution for the extra money they are putting into the system through payment of APCs. See ‘article processing charge (APC)’ and ‘double dipping’</dd>
+        </div>
+        <div>
+          <dt class="term">Open access (OA)</dt>
+          <dd class="description">according to the Budapest Open Access initiative, open access refers to the publication of academic research that is free for the public to access, read, download, copy, share, or use through the applications of open licenses. See also green open access, gold open access and diamond open access.</dd>
+        </div>
+        <div>
+          <dt class="term">Open Access repository</dt>
+          <dd class="description">also referred as the Green OA route, is a digital archive of an institution’s scholarly outputs. Repositories provide free and instant access to scholarly research outputs allowing researchers to self-archive their work. They are normally run by research institutions or related organisations and operate as a central location for storing, preserving, and disseminating research outputs.</dd>
+        </div>
+        <div>
+          <dt class="term">Open data</dt>
+          <dd class="description">the free availability and reusability of data without restriction or copyright. See also ‘FAIR principles’ and ‘open science’.</dd>
+        </div>
+        <div>
+          <dt class="term">Open science</dt>
+          <dd class="description">scientific research, data and dissemination accessible to all by design. See also ‘open access (OA)’ and ‘open data’.</dd>
+        </div>
+        <div>
+          <dt class="term">Plan S</dt>
+          <dd class="description">initiative for Open Access publishing that was launched in September 2018. The plan is supported by cOAlition S, an international consortium of research funding organisations. Plan S requires that, from 2021, research publications that are funded by its member organisations to be made immediately available in open access journals or reputed open access repositories without an embargo period.</dd>
+        </div>
+        <div>
+          <dt class="term">Portico</dt>
+          <dd class="description">a digital preservation initiative.</dd>
+        </div>
+        <div>
+          <dt class="term">Post-print</dt>
+          <dd class="description">a manuscript that has passed peer review.</dd>
+        </div>
+        <div>
+          <dt class="term">Pre-print</dt>
+          <dd class="description">a manuscript that has not yet been peer-reviewed.</dd>
+        </div>
+        <div>
+          <dt class="term">Scholar-led</dt>
+          <dd class="description">publishing initiatives founded and run by scholars. These initiatives tend to be small, not-for-profit, progressive, and focused on a specialist niche.</dd>
+        </div>
+        <div>
+          <dt class="term">Self-archiving</dt>
+          <dd class="description">the process of an author making his or her work green open access by depositing the work in a repository.</dd>
+        </div>
+        <div>
+          <dt class="term">Serials crisis</dt>
+          <dd class="description">the growing inability of library budgets to keep up with the rapid inflation of subscription fees. This crisis has been ongoing since the 1980s.</dd>
+        </div>
+        <div>
+          <dt class="term">Transformative Agreements (TAs)</dt>
+          <dd class="description">also known as 'read and publish' agreements are contracts negotiated between institutions and publishers aimed at transforming the business model underlying scholarly publishing from subscription-based reading towards OA publishing models.</dd>
+        </div>
+      </dl>
+    </div>
+    {% endcomponent_block %}
+  </div>
+  <div class="container mx-auto max-w-screen-xl relative">
+    {% include 'custom/subscribe.html' %}
+  </div>
+</article>
+
+<script type="module">
+  import '{% static "hourglass/js/list.min.js" %}'
+  document.addEventListener('DOMContentLoaded', () => {
+    new List('glossary', {
+      valueNames: [ 'term', 'description' ]
+    })
+  })
+</script>
