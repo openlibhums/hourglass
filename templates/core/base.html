@@ -1,6 +1,7 @@
 {% load static %}
 {% load fqdn %}
 {% get_current_language as current_language %}
+{% load component_tags %}
 
 <!DOCTYPE html>
 <html
@@ -70,7 +71,6 @@
       <script src="{% static 'hourglass/js/list.min.js' %}"></script>
       <script src="{% static 'hourglass/js/glide.min.js' %}"></script>
       <script src="{% static 'hourglass/js/simple-scrollspy.min.js' %}"></script>
-      <script src="{% static 'hourglass/js/lunr.min.js' %}"></script>
       <script src="{% static 'hourglass/js/rallax.js' %}"></script>
 
       <!-- custom JavaScript -->
@@ -79,7 +79,6 @@
         const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)')
         const prefersReducedMotion = mediaQuery.matches
       </script>
-      <script src="{% static 'hourglass/js/search.js' %}" type="module"></script>
       <script>
         if (!prefersReducedMotion) {
           for (const image of document.getElementsByClassName('motion-safe:rallax')) {
