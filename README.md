@@ -1,4 +1,4 @@
-# Hourglass Subtheme for Janeway
+# Path Subtheme for Janeway
 
 This is a testing repository for a press subtheme based on Materialize using
 the Material theme as a backup. Everything about it is provisional. I
