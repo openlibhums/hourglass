@@ -22,9 +22,11 @@
 {% if tag_sets %}
   {% for tag, items in tag_sets.items %}
     <div class="container mx-auto max-w-screen-xl relative mt-8">
-      <div class="z-0 relative {% cycle 'hidden' '' %}">
-        {% include "custom/news-art-middle.html" %}
-      </div>
+      {% if items.count > 3 %}
+        <div class="z-0 relative {% cycle 'hidden' '' %}">
+          {% include "custom/news-art-middle.html" %}
+        </div>
+      {% endif %}
       <div
         class="
           relative after:z-30 after:block after:absolute
@@ -104,9 +106,11 @@
             {% endfor %}
           </div>
         </div>
-        <div class="z-0 relative {% cycle '' 'hidden' %}">
-          {% include "custom/news-art-end.html" %}
-        </div>
+        {% if items.count > 3 %}
+          <div class="z-0 relative {% cycle '' 'hidden' %}">
+            {% include "custom/news-art-end.html" %}
+          </div>
+        {% endif %}
       </div>
     </div>
     <div class="container mx-auto max-w-screen-xl relative mb-28">
