@@ -1,25 +1,25 @@
 {% load static %}
-
-{% include 'custom/edit-on-github.html' with rel_path='custom/our-team.html' %}
+{% load component_tags %}
 
 <article>
   <div class="container mx-auto max-w-screen-xl relative max-lg:mt-56 lg:mt-8">
+    {% include 'custom/edit-on-github.html' with rel_path='custom/our-team.html' %}
     <div
       class="
-        relative max-lg:-top-72 lg:-top-24 motion-safe:rallax
+        relative max-lg:-top-72 lg:-top-24
         max-lg:right-0 lg:-right-20 xl:-right-32
       ">
       <img
         class="
-          z-0 absolute max-lg:h-36 lg:h-44
-          max-lg:top-24 lg:top-52 max-lg:right-48 lg:right-80
+          motion-safe:rallax z-0 absolute max-lg:h-36 lg:h-44
+          max-lg:top-24 lg:top-52 max-lg:right-60 lg:right-96
         "
         src="{% static 'hourglass/media/backgrounds/rectangle-red.svg' %}"
         alt="">
       <img
         class="
-          z-0 absolute max-lg:h-36 lg:h-44
-          max-lg:top-28 lg:top-64 max-lg:right-36 lg:right-64
+          motion-safe:rallax z-0 absolute max-lg:h-36 lg:h-44
+          max-lg:top-28 lg:top-64 max-lg:right-48 lg:right-80
         "
         src="{% static 'hourglass/media/backgrounds/rectangle-black.svg' %}"
         alt="">
@@ -29,29 +29,40 @@
         alt="">
       <img
         class="
-          absolute z-10 max-lg:top-24 lg:top-20 max-lg:-right-20 lg:-right-40
-          max-lg:max-w-md lg:max-w-lg
+          motion-safe:rallax absolute z-10 max-lg:top-24 lg:top-20
+          max-lg:-right-20 lg:-right-40 max-lg:max-w-md lg:max-w-lg
         "
         srcset="
-          {% static 'hourglass/media/backgrounds/hairdo-lady-on-bench.png' %} 343w,
-          {% static 'hourglass/media/backgrounds/hairdo-lady-on-bench-lg.png' %} 1065w
+          {% static 'hourglass/media/backgrounds/hairdo-lady-on-bench.pngx' %} 343w,
+          {% static 'hourglass/media/backgrounds/hairdo-lady-on-bench-lg.pngx' %} 1065w
         "
-        src="{% static 'hourglass/media/backgrounds/hairdo-lady-on-bench-lg.png' %}"
+        src="{% static 'hourglass/media/backgrounds/hairdo-lady-on-bench-lg.pngx' %}"
         sizes="(max-width: 1024px) 343px, 1065px"
-        alt="Woman with Victorian hairdo and blouse sitting on a park bench with a book in hand">
+        alt="">
       <img
-        class="lg:hidden z-20 absolute top-[30rem] -right-8 w-36"
+        class="
+          motion-safe:rallax absolute z-10 max-lg:top-40 lg:top-28
+          max-lg:-right-64 lg:-right-48 max-lg:max-w-md lg:max-w-lg
+        "
+        src="{% static 'hourglass/media/backgrounds/typewriter.png' %}"
+        width="700"
+        alt="A mid-century typewriter with French words typed on a piece of paper">
+      <img
+        class="motion-safe:rallax lg:hidden z-20 absolute top-[38rem] -right-8 w-36"
         src="{% static 'hourglass/media/backgrounds/square-red.svg' %}"
         alt="">
       <img
         class="
-          max-lg:hidden z-20 absolute h-44
-          top-[41rem] right-8
+          motion-safe:rallax max-lg:hidden z-20 absolute h-44
+          top-[38rem] right-8
         "
         src="{% static 'hourglass/media/backgrounds/rectangle-red.svg' %}"
         alt="">
       <img
-        class="absolute z-10 max-lg:top-[32rem] lg:top-[42rem] max-lg:-right-24 lg:-right-20"
+        class="
+          absolute max-lg:z-20 lg:z-10 max-lg:top-64 lg:top-[42rem]
+          max-lg:-left-6 lg:-right-20
+        "
         src="{% static 'hourglass/media/backgrounds/circle-blue-textured.png' %}"
         width="434"
         alt="">
@@ -66,19 +77,16 @@
         Our Team
       </h1>
     </div>
-    <div
-      class="
-        p-8 bg-orange
-        flex max-md:flex-col md:flex-row gap-x-16 gap-y-6
-        relative z-40
-      ">
-      <div class="basis-1/2 prose lg:prose-lg">
-        <p class="lead">We are based at Birkbeck, University of London, but make up a geographically distributed network of expert bookworms, specialist software developers, and typography enthusiasts.</p>
-      </div>
-      <div class="basis-1/2 prose lg:prose-lg">
+  </div>
+  <div class="container mx-auto max-w-screen-xl relative">
+    {% component_block "page_intro" %}
+      {% fill "column_one" %}
+        <p class="lead text-white">We are based at Birkbeck, University of London, but make up a geographically distributed network of expert bookworms, specialist software developers, and typography enthusiasts.</p>
+      {% endfill %}
+      {% fill "column_two" %}
         <p>Although we work remotely from across the UK and beyond, we’re united by our belief in the power of shared knowledge and our commitment to the open access revolution. We have a shared love of arts and culture, retro gaming, AI glitches,  dreadful puns; we spend our days sharing ironic gratitude memes and working to make the world of academic publishing a better place.</p>
-      </div>
-    </div>
+      {% endfill %}
+    {% endcomponent_block %}
   </div>
   <div class="container mx-auto max-w-screen-xl relative">
     <div
