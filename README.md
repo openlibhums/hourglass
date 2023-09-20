@@ -30,12 +30,12 @@
    ```py
    INSTALLED_APPS = [
        ...,
-       'themes.hourglass’,
+       'themes.hourglass',
        ...,
    ]
    ```
 
-5. Make changes to `INSTALLED_APPS` for `django-components` according to the [installation instructions](https://github.com/EmilStenstrom/django-components/tree/d9342782266b6ec41e3f2c39229d71d975f809a2#installation):
+5. Make changes to settings for `django-components` according to the [installation instructions](https://github.com/EmilStenstrom/django-components/tree/d9342782266b6ec41e3f2c39229d71d975f809a2#installation):
 
 ## Deploying to production
 
