@@ -1,0 +1,27 @@
+{% load static %}
+
+<div class="relative z-0 top-0 right-0">
+  <img
+    class="absolute z-20 w-32 right-40 top-0 rotate-180"
+    src="{% static 'hourglass/media/backgrounds/circles-one-one-half-blue.svg' %}"
+    alt="">
+  <img
+    class="
+      absolute max-lg:z-20 lg:z-0 max-lg:w-96 lg:w-64 max-w-none
+      max-lg:top-56 lg:top-[30rem] max-lg:-left-12 lg:-right-36
+    "
+    src="{% static 'hourglass/media/backgrounds/triangle-orange-pointing-down.svg' %}"
+    alt="">
+  <img
+    class="
+      motion-safe:rallax absolute z-10 max-lg:-top-4 lg:top-10
+      max-lg:-right-24 lg:-right-16 max-w-lg
+    "
+    srcset="
+      {% static 'hourglass/media/backgrounds/tudor-couple.png' %} 328w,
+      {% static 'hourglass/media/backgrounds/tudor-couple-lg.png' %} 655w
+    "
+    src="{% static 'hourglass/media/backgrounds/tudor-couple.png' %}"
+    sizes="(max-width: 1024px) 328px, 655px"
+    alt="Illustration of a man and woman dressed as Tudor aristocrats">
+</div>
