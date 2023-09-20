@@ -1,0 +1,190 @@
+{% load static %}
+{% load component_tags %}
+
+<article>
+  <div class="container mx-auto max-w-screen-xl relative">
+    {% include 'custom/edit-on-github.html' with rel_path='custom/internships.html' %}
+    <div class="relative z-0 top-0 right-0">
+      <img
+        class="
+          motion-safe:rallax absolute z-10 w-20 max-lg:top-8 lg:top-20
+          max-lg:right-52 lg:right-12
+        "
+        src="{% static 'hourglass/media/backgrounds/circle-blue.svg' %}"
+        alt="">
+      <img
+        class="
+          absolute max-lg:z-20 lg:z-0 max-lg:top-48 lg:top-28
+          max-lg:right-0 lg:-right-12 max-lg:max-w-sm
+        "
+        src="{% static 'hourglass/media/backgrounds/circle-blue-textured.png' %}"
+        width="434"
+        alt="">
+      <img
+        class="
+          motion-safe:rallax absolute max-lg:z-0 lg:z-10 max-lg:top-4 lg:top-0 max-lg:-right-32 lg:-right-16
+          max-lg:w-80 max-lg:max-w-none lg:max-w-md
+        "
+        src="{% static 'hourglass/media/backgrounds/woman-sitting-head-turned-away.png' %}"
+        width="847"
+        alt="A man with his hair in a bun operating a video camera">
+      <img
+        class="
+          motion-safe:rallax max-lg:z-10 lg:z-20 absolute max-lg:-right-36 lg:-right-24
+          max-lg:top-56 lg:top-72 max-lg:h-48 lg:h-64 max-w-none
+        "
+        src="{% static 'hourglass/media/backgrounds/bars-horizontal-orange-five.svg' %}"
+        alt="">
+    </div>
+    <div class="relative z-40">
+      <h1
+        class="
+          max-md:text-4xl md:max-lg:text-5xl lg:text-7xl !leading-snug
+          font-poppins-bold max-lg:pt-64 max-lg:pb-12 lg:py-20 px-8 max-w-md
+        ">
+        Internships with the OLH
+      </h1>
+    </div>
+  </div>
+  <div class="container mx-auto max-w-screen-xl relative max-lg:mt-8 lg:-mt-4">
+    {% component_block "page_intro" %}
+      {% fill "column_one" %}
+        <p class="lead text-white">As part of our commitment to sustainable working practices in the humanities, we are proud to be part of the CHASE Doctoral Training Partnership internship placement scheme.</p>
+        <p>This scheme is available to CHASE-funded humanities PhD researchers and is a fully paid opportunity to work within the OLH and gain valuable experience in publishing, across our editorial, technical and marketing teams.</p>
+      {% endfill %}
+      {% fill "column_two" %}
+        <p>The placement is available for 6 months full time, or equivalent part time for up to 12 months by arrangement. It is fully set up for remote working, and so there is no travel requirement involved. Interns learn about the entire publication process, but the position can also be geared towards the individual’s interests.</p>
+        <p>Our interns are valued parts of our team, and we work closely with them to help ensure that they have a well-rounded, enjoyable and interesting time with us, and leave equipped with the skills, knowledge and confidence to help launch their future careers, whether within open access publishing or beyond.</p>
+      {% endfill %}
+    {% endcomponent_block %}
+  </div>
+  <div class="container mx-auto max-w-screen-xl relative mt-28">
+    <div
+      class="
+        relative z-0 motion-safe:rallax
+        max-lg:-left-20 lg:left-8
+        motion-reduce:max-lg:-top-32 motion-safe:max-lg:-top-64
+        motion-reduce:lg:-top-24 motion-safe:lg:-top-72
+      ">
+      <img
+        class="absolute z-20 top-0 left-0 w-96"
+        src="{% static 'hourglass/media/backgrounds/dancer-jeans.png' %}"
+        width="800"
+        alt="Dancer wearing ripped jeans suspended in mid-air">
+      <img
+        class="
+          absolute z-0 max-lg:top-96 lg:top-80
+          max-lg:left-0 lg:-left-12 max-lg:max-w-sm
+        "
+        src="{% static 'hourglass/media/backgrounds/circle-blue-textured.png' %}"
+        width="434"
+        alt="">
+    </div>
+    {% component_block "page_section" anchor="right" %}
+      <h2>What our team say...</h2>
+      <div class="lg:flex lg:flex-row lg:gap-x-12">
+        <div class="max-w-xs lg:basis-1/3">
+          <img
+            src="https://www.openlibhums.org/media/press/Katherine.jpg"
+            alt="">
+        </div>
+        <div class="lg:basis-2/3">
+          <blockquote>
+            <p>Our organisation is small and non-hierarchical, which means that our interns get to experience work across editorial, marketing and tech and gain a real sense of how these aspects strategically combine. My favourite thing about working with our interns is them finding that their perspectives are just as valuable as anybody else’s in the team. Indeed, as an expanding organisation, with big aspirations, we are always critiquing our internal processes, and a pair of fresh eyes is both a privilege and a source of energy.</p>
+          </blockquote>
+          <p class="pl-8">– Katherine Parker-Hay, OLH Editorial Officer, 2023</p>
+        </div>
+      </div>
+      <div class="lg:flex lg:flex-row lg:gap-x-12">
+        <div class="max-w-xs lg:basis-1/3">
+          <img
+            src="https://www.openlibhums.org/media/press/Joseph.jpg"
+            alt="">
+        </div>
+        <div class="lg:basis-2/3">
+          <blockquote>
+            <p>Like many people, I got into publishing through an internship at a university press. It was unpaid, which was only feasible because I had no caring responsibilities and I could work another part-time job that just barely paid the bills. I am so glad that OLH interns are compensated through CHASE, providing what I hope is a more equitable career path into mission-driven humanities publishing.</p>
+          </blockquote>
+          <p class="pl-8">– Joseph Muller, Publishing Technologies Developer, 2023</p>
+        </div>
+      </div>
+    {% endcomponent_block %}
+  </div>
+  <div class="container mx-auto max-w-screen-xl relative mt-28">
+    <div
+      class="
+        relative z-0 motion-safe:rallax
+        max-lg:-right-12 lg:right-8 max-lg:-top-32 lg:top-8
+      ">
+      <img
+        class="z-0 absolute top-0 right-36 w-10" alt=""
+        src="{% static 'hourglass/media/backgrounds/bar-vertical-orange-wide.svg' %}">
+      <img
+        class="z-0 absolute top-0 right-20 w-10" alt=""
+        src="{% static 'hourglass/media/backgrounds/bar-vertical-orange-wide.svg' %}">
+      <img
+        class="z-20 absolute top-0 right-4 w-10" alt=""
+        src="{% static 'hourglass/media/backgrounds/bar-vertical-orange-wide.svg' %}">
+      <img
+        class="z-20 absolute top-0 -right-12 w-10" alt=""
+        src="{% static 'hourglass/media/backgrounds/bar-vertical-orange-wide.svg' %}">
+      <img
+        class="z-20 absolute top-0 -right-28 w-10" alt=""
+        src="{% static 'hourglass/media/backgrounds/bar-vertical-orange-wide.svg' %}">
+      <img
+        class="absolute z-10 top-20 right-0 w-96"
+        src="{% static 'hourglass/media/backgrounds/circle-blue-textured.png' %}"
+        width="434"
+        alt="">
+    </div>
+    {% component_block "page_section" anchor="left" %}
+      <h2>What our interns say...</h2>
+      <div class="lg:flex lg:flex-row lg:gap-x-12">
+        <div class="max-w-xs lg:basis-1/3">
+          <img
+            class="grayscale"
+            src="https://www.openlibhums.org/media/press/stacked-books.jpeg"
+            alt="">
+        </div>
+        <div class="lg:basis-2/3">
+          <blockquote>
+            <p>[The internship has] not only been a great first step into academic publishing, but also an illuminating peep into the politics and the economics of academic research and publications. As a student, I have been taught about the contents of many papers, but no one ever mentioned the machinations that go on behind the scenes […]. Whilst studying at Birkbeck made me a more critical reader, this internship made me look behind the ‘what’ of the content to the ‘why’ of the paper itself.</p>
+          </blockquote>
+          <p class="ml-8">
+            – <a href="/news/579/">'Mentorship, open access and violin memes'</a>, Francesca Tambellini, University of Falmouth, OLH Intern 2021.
+          </p>
+        </div>
+      </div>
+      <div class="lg:flex lg:flex-row lg:gap-x-12">
+        <div class="max-w-xs lg:basis-1/3">
+          <img
+            class="grayscale"
+            src="https://www.openlibhums.org/media/press/lindsey_zelvin.jpeg"
+            alt="">
+        </div>
+        <div class="lg:basis-2/3">
+          <blockquote>
+            <p>I will always treasure my time with OLH. They introduced me to the world of academic publishing and open access, and they helped me develop into a more independent, assertive, and efficient person. </p>
+            <p>I thank them for my growth in confidence not only in my editorial, marketing, and outreach skills, but also in my ability to contribute to the development of an organization. </p>
+            <p>I leave them knowing my worth, both as a person and an employee, and I will always count them as dear friends and mentors. Therefore, I refuse to say goodbye to the Open Library of Humanities. Instead, I will say ‘Until next time.’ Thank you for everything.</p>
+          </blockquote>
+          <p class="ml-8">
+            – <a href="/news/608/">'A Year with the Open Library of Humanities'</a>, Lindsey Zelvin, University of Kent, OLH Intern 2022.
+          </p>
+        </div>
+      </div>
+      <p>To read more about what it’s like to work with the OLH, see our <a href="https://www.openlibhums.org/news/tag/Internship/">blogs from previous interns</a>.</p>
+    {% endcomponent_block %}
+  </div>
+  <div class="container mx-auto max-w-screen-xl relative mt-28">
+    {% component_block "page_section" anchor="right" %}
+      <h2>Current opportunities</h2>
+      <p>To find out more about current placement opportunities see the <a href="https://www.chase.ac.uk/current-placements" target="_blank">CHASE website</a>. Vacancies with the Open Library of Humanities will be announced on OLH social media channels when available, so follow our <a href="https://twitter.com/openlibhums" target="_blank">OLH twitter</a> page for the latest vacancy updates. For an informal conversation about when our next internships are likely to be open, you are also welcome to message us via our <a href="https://olhbeta.janeway.systems/contact/" target="_blank">contact form</a>.</p>
+    {% endcomponent_block %}
+  </div>
+  <div class="container mx-auto max-w-screen-xl relative">
+    {% include 'custom/subscribe.html' %}
+  </div>
+
+
+</article>
