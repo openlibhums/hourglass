@@ -2,8 +2,9 @@
 
 <div class="flex flex-col gap-x-8 md:px-6">
   <img
-    src="{{ item.large_image_file.url }}"
-    alt="{{ item.title }}">
+    class="grayscale"
+    src="{{ item.best_image_url }}"
+    alt="">
   <div class="prose lg:prose-lg flex flex-col max-md:items-center">
     <div class="pt-4 max-md:text-center">
       {{ item.posted|date:"j F Y" }}
@@ -15,19 +16,7 @@
       {{ item.byline }}
     </div>
     {% if item.tags.all %}
-      <div
-        class="
-          not-prose text-xs flex flex-wrap gap-6
-          mt-4 max-md:place-content-center
-        ">
-        {% for item_tag in item.tags.all %}
-          <a
-            class="bg-tan border-white border-2 rounded-full py-2 px-4"
-            href="{% url 'core_news_list_tag' item_tag.text %}">
-            {{ item_tag }}
-          </a>
-        {% endfor %}
-      </div>
+      {% include 'custom/news-item-tags.html' with tags=item.tags.all %}
     {% endif %}
     <div class="flex not-prose mt-8">
       {% with rel_path=item.url label="Read more" %}
