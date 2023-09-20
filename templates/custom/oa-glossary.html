@@ -4,46 +4,7 @@
 <article>
   <div class="container mx-auto max-w-screen-xl relative">
     {% include 'custom/edit-on-github.html' with rel_path='custom/oa-glossary.html' %}
-    <div class="relative z-0 max-lg:top-2 lg:top-20 right-0">
-      <img
-        class="
-          motion-safe:rallax z-0 absolute max-lg:top-16 lg:top-28
-          max-lg:right-8 lg:right-20 max-lg:w-64 lg:w-96
-        "
-        src="{% static 'hourglass/media/backgrounds/square-blue.svg' %}"
-        alt="">
-      <img
-        class="z-10 absolute max-lg:right-0 lg:right-8 top-4 lg:-rotate-90 max-w-none"
-        srcset="
-          {% static 'hourglass/media/backgrounds/triangle-blue-textured.png' %} 335w,
-          {% static 'hourglass/media/backgrounds/triangle-blue-textured-lg.png' %} 669w
-        "
-        src="{% static 'hourglass/media/backgrounds/triangle-blue-textured.png' %}"
-        sizes="(max-width: 1024px) 335px, 669px"
-        alt="">
-      <img
-        class="
-          motion-safe:rallax max-lg:z-0 lg:z-20 absolute -right-8 -top-10
-          max-lg:max-w-xs lg:max-w-lg
-        "
-        src="{% static 'hourglass/media/backgrounds/model-sunglasses.png' %}"
-        width="685"
-        alt="">
-      <img
-        class="
-          motion-safe:rallax max-lg:z-0 lg:z-20 absolute max-lg:right-8 lg:-right-28
-          max-lg:top-80 lg:top-96 max-lg:w-40 lg:w-64
-        "
-        src="{% static 'hourglass/media/backgrounds/square-orange.svg' %}"
-        alt="">
-      <img
-        class="
-          z-20 absolute max-lg:-right-4 lg:-right-36
-          max-lg:top-48 lg:top-80 max-lg:w-8 lg:w-20
-        "
-        src="{% static 'hourglass/media/backgrounds/circle-red.svg' %}"
-        alt="">
-    </div>
+    {% include 'custom/sunglasses-model-opener.html' %}
     <div class="relative z-40">
       <h1
         class="

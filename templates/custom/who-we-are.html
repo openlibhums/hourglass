@@ -255,49 +255,8 @@
       </div>
     </div>
   </div>
-  <div class="container mx-auto max-w-screen-xl relative">
-    <div
-      class="
-        relative
-        max-lg:before:z-30 max-lg:before:block max-lg:before:absolute
-        max-lg:before:inset-y-0 max-lg:before:w-[50vw]
-        max-lg:before:right-1/2 max-lg:before:bg-orange
-        after:z-30 after:block after:absolute
-        after:inset-y-0 after:w-[50vw]
-        after:left-1/2 after:bg-orange
-        mt-28
-      ">
-      <div
-        class="
-          max-lg:px-8 lg:px-16 max-md:py-28 md:pt-28
-          flex max-md:flex-col md:flex-row gap-12 z-40 relative
-          bg-orange justify-around
-        ">
-          <img
-            class="max-w-xs"
-            src="{% static 'hourglass/media/backgrounds/publishing-revolution.png' %}"
-            alt="Fist clenched and raised in protest in collage with circles and rectangles">
-          <div class="flex flex-col">
-            <p
-              class="
-                font-poppins-bold text-white
-                max-md:text-5xl md:max-xl:text-7xl xl:text-8xl
-                max-xl:max-w-sm xl:max-w-xl
-              ">
-              Join the publishing revolution
-            </p>
-            <p
-              class="
-                py-6 font-poppins font-semibold max-lg:text-sm lg:text-md
-                uppercase tracking-wider underline underline-offset-8 max-w-xl
-              ">
-                <a href="https://www.openlibhums.org/media/press/OLH-Prospectus-Feb-2023.pdf">
-                  Download our prospectus
-                </a>
-            </p>
-          </div>
-      </div>
-    </div>
+  <div class="container mx-auto max-w-screen-xl relative mt-28">
+    {% include 'custom/olh-prospectus.html' %}
   </div>
   <div class="container mx-auto max-w-screen-xl relative">
     <div
