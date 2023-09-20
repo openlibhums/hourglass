@@ -42,23 +42,8 @@
         Journals
       </h1>
     </div>
-    <div class="z-40 relative">
-      <div class="flex max-w-md px-8 gap-4">
-        <img
-          class="w-8"
-          src="{% static 'hourglass/media/icons/filter.svg' %}"
-          >
-        <input
-          placeholder="Filter"
-          class="
-            search
-            bg-tan-light
-            flex-1 h-9 p-2 w-28 border-none
-            lg:mx-4
-            placeholder:text-sm
-            focus:ring-transparent
-          ">
-      </div>
+    <div class="z-40 relative px-8">
+      {% include "custom/filter-input.html" %}
     </div>
   </div>
   <div class="list">
