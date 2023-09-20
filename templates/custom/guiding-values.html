@@ -1,0 +1,142 @@
+{% load static %}
+{% load component_tags %}
+
+<article>
+  <div class="container mx-auto max-w-screen-xl relative">
+    {% include 'custom/edit-on-github.html' with rel_path='custom/guiding-values.html' %}
+    <div class="relative z-0 top-0 right-0">
+      <img
+        class="
+          motion-safe:rallax absolute z-20 w-20 max-lg:top-8 lg:top-0
+          max-lg:right-52 lg:right-96
+        "
+        src="{% static 'hourglass/media/backgrounds/circle-blue.svg' %}"
+        alt="">
+      <img
+        class="
+          absolute max-lg:z-20 lg:z-0 max-lg:top-36 lg:top-0
+          max-lg:right-12 lg:right-12 max-lg:max-w-sm
+        "
+        src="{% static 'hourglass/media/backgrounds/circle-quarter-blue-textured.png' %}"
+        width="580"
+        alt="">
+      <img
+        class="
+          motion-safe:rallax z-10 absolute max-lg:-right-20 lg:-right-4
+          max-lg:top-72 lg:top-12 w-[30rem]
+        "
+        src="{% static 'hourglass/media/backgrounds/triangle-orange-on-side.svg' %}"
+        alt="">
+      <img
+        class="
+          motion-safe:rallax absolute max-lg:z-0 lg:z-20
+          max-lg:top-4 lg:top-28 max-lg:-right-32 lg:-right-44
+          max-lg:w-80
+        "
+        src="{% static 'hourglass/media/backgrounds/earth.png' %}"
+        width="600"
+        alt="A satellite picture of earth with clouds covering southern Africa">
+    </div>
+    <div class="relative z-40">
+      <h1
+        class="
+          max-md:text-4xl md:max-lg:text-5xl lg:text-7xl !leading-snug
+          font-poppins-bold pt-64 max-lg:pb-12 lg:pb-20 px-8 max-w-md
+        ">
+        Guiding Values
+      </h1>
+    </div>
+  </div>
+  <div class="container mx-auto max-w-screen-xl relative max-lg:mt-8 lg:-mt-4">
+    {% component_block "page_intro" %}
+      {% fill "column_one" %}
+        <p class="lead text-white">These are the OLH’s guiding values. They are the principles we use to guide our decision making and ensure our professional integrity in all that we do.</p>
+      {% endfill %}
+      {% fill "column_two" %}
+        <p>After voting on them in 2021, the team met to reflect on what the five words mean to us in practice.</p>
+        <p>We are attentive to how these values intersect and can create competing priorities. When they do, we meet, discuss and resolve, using these as a set of principles that keep us accountable.</p>
+      {% endfill %}
+    {% endcomponent_block %}
+  </div>
+  <div class="container mx-auto max-w-screen-xl relative max-lg:mt-32 lg:mt-40">
+    <div class="flex place-content-center">
+      <div class="relative z-40 max-lg:-left-8 lg:-left-16 font-poppins-bold">
+        <div class="relative max-lg:left-20 lg:left-48">
+          <strong class="max-lg:text-3xl lg:text-6xl">
+            Sustainability
+          </strong>
+        </div>
+        <div class="relative lg:top-2 max-lg:left-10 lg:left-24">
+          <strong class="max-lg:text-4xl lg:text-7xl">
+            Excellence
+          </strong>
+        </div>
+        <div class="relative">
+          <strong class="max-lg:text-5xl lg:text-8xl">
+            Openness
+          </strong>
+        </div>
+        <div class="relative max-lg:left-16 lg:left-32">
+          <strong class="max-lg:text-4xl lg:text-7xl">
+            Inclusivity
+          </strong>
+        </div>
+        <div class="relative max-lg:left-8 lg:left-14">
+          <strong class="max-lg:text-3xl lg:text-6xl">
+            Collectivity
+          </strong>
+        </div>
+      </div>
+    </div>
+    <div class="motion-safe:rallax relative z-0 bottom-0 left-0">
+      <img
+        class="
+          absolute z-0 max-lg:bottom-48 lg:bottom-28
+          max-lg:-left-64 lg:-left-48 max-lg:max-w-sm
+        "
+        src="{% static 'hourglass/media/backgrounds/circle-blue-textured.png' %}"
+        width="434"
+        alt="">
+    </div>
+  </div>
+  <div class="container mx-auto max-w-screen-xl relative max-lg:mt-20 lg:mt-28">
+    <div
+      class="
+        relative before:z-30 before:block before:absolute
+        before:inset-y-0 before:w-[50vw]
+        before:bg-white before:right-1/2
+      ">
+      <div
+        class="
+          relative z-40 bg-white py-20 max-lg:px-8 lg:px-20
+          flex gap-y-12 max-lg:flex-col justify-between
+        ">
+        <div class="basis-[37%] prose lg:prose-lg">
+          <h2>Lead with openness.</h2>
+          <p>Accessibility and transparency run through our work, from our openly accessible articles to our open source publishing platform Janeway, our equitable business model, and our international advocacy work in open access. Openness is our leading value – the frame through which we understand our other values.</p>
+          <h2>Redefine excellence.</h2>
+          <p>We are a multi-award-winning organisation and ensure that our journals meet the highest standards of academic rigour and research assessment compliance. But we also keep in sight the ordinary language connotations of being ‘an excellent publisher’: innovation and outstanding service run through all we do, and we believe excellence is 
+          strengthened by compassion.</p>
+        </div>
+        <div class="basis-[52%] prose lg:prose-lg">
+          <h2>Work inclusively for structural change.</h2>
+          <p>The knowledge that we produce is for the benefit of all, regardless of geographical location or financial means. Our tiered funding model redistributes institutional wealth to tackle entrenched research inequalities and share the benefits of knowledge equitably across the globe.</p>
+          <h2>Think long-term.</h2>
+          <p>Our work is underpinned by sustainable working practices for our team and fair rates for our supporters, envisioning a sustainable model of open access that is – and stays – truly open.</p>
+          <h2>Decide collectively.</h2>
+          <p>We approach our work like a collaborative online project where everyone has a link. Inspired by the spirit of collective action, we use our position to advocate for change, in dialogue with our authors, editors, our library partners, and the wider open access movement.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container mx-auto max-w-screen-xl relative max-lg:mt-8 lg:mt-28">
+    {% component_block 'page_section' anchor='right' %}
+      <h2>Equality and Diversity</h2>
+      <p>The OLH is committed to promoting equality and diversity in all aspects of its activities, from the removal of price and permission barriers to access and publish research, to the adherence of the College’s <a href="https://www.bbk.ac.uk/student-services/about-us/equality" target="_blank">equality and diversity action plan</a> that the OLH proudly supports.</p>
+    {% endcomponent_block %}
+  </div>
+</article>
+
+<div class="container mx-auto max-w-screen-xl relative">
+  {% include 'custom/subscribe.html' %}
+</div>
