@@ -1,0 +1,44 @@
+{% load static %}
+{% load component_tags %}
+
+<article>
+  <div class="container mx-auto max-w-screen-xl relative">
+    {% include 'custom/edit-on-github.html' with rel_path='custom/olh-award.html' %}
+    {% include 'custom/tudor-couple-opener.html' %}
+    <div class="relative z-40">
+      <h1
+        class="
+          max-md:text-4xl md:max-lg:text-5xl lg:text-7xl !leading-snug
+          font-poppins-bold pt-64 max-lg:pb-12 lg:pb-20 px-8 max-w-md
+        ">
+        The OLH Award
+      </h1>
+    </div>
+  </div>
+  <div class="container mx-auto max-w-screen-xl relative max-lg:mt-8 lg:-mt-4">
+    {% component_block "page_intro" %}
+      {% fill "column_one" %}
+        <p class="lead text-white">{% lorem 15 w %}.</p>
+      {% endfill %}
+      {% fill "column_two" %}
+        <p>{% lorem 15 w %}.</p>
+        <p>{% lorem 25 w %}.</p>
+      {% endfill %}
+    {% endcomponent_block %}
+  </div>
+  <div class="container mx-auto max-w-screen-xl relative max-lg:mt-8 lg:mt-28">
+    {% include 'custom/tudor-couple-halfway.html' %}
+    {% component_block "page_section" anchor="right" %}
+      <img
+        class="grayscale"
+        src="https://www.openlibhums.org/media/press/martin-olh-award-2023.jpg"
+        alt="Martin Paul Eve stands smiling broadly in front of wildflowers and trees. He wears a Janeway T-shirt, holds the 2023 OLH Award in one hand, and uses a cane for support with the other hand.">
+      <h3>Martin Paul Eve, 2023</h3>
+      <p>{% lorem %}.</p>
+    {% endcomponent_block %}
+  </div>
+</article>
+
+<div class="container mx-auto max-w-screen-xl relative">
+  {% include 'custom/subscribe.html' %}
+</div>

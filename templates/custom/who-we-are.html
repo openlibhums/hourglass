@@ -1,4 +1,5 @@
 {% load static %}
+{% load component_tags %}
 
 <article>
   <div class="container mx-auto max-w-screen-xl relative">
@@ -336,6 +337,21 @@
         </div>
       </div>
     </div>
+  </div>
+  <div class="container mx-auto max-w-screen-xl relative mt-28">
+    {% component_block "page_section" anchor="right" %}
+      <h2>The OLH Award</h2>
+      <p>{% lorem 10 w %}</p>
+      <img
+        class="grayscale"
+        src="https://www.openlibhums.org/media/press/martin-olh-award-2023.jpg"
+        alt="Martin Paul Eve stands smiling broadly in front of wildflowers and trees. He wears a Janeway T-shirt, holds the 2023 OLH Award in one hand, and uses a cane for support with the other hand.">
+      <div class="flex max-lg:items-start max-lg:flex-col gap-8">
+        {% with rel_path="/site/olh-award" label="Read more" %}
+          {% include 'custom/button-action-blue.html' %}
+        {% endwith %}
+      </div>
+    {% endcomponent_block %}
   </div>
   <div class="container mx-auto max-w-screen-xl relative">
     {% include 'custom/subscribe.html' %}
