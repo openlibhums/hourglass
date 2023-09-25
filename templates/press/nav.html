@@ -19,7 +19,7 @@
         </div>
         <nav class="lg:hidden">
           <ul class="text-sm font-poppins-medium">
-            {% include 'elements/nav_slide_drawer.html' with viewport='medium' %}
+            {% include 'elements/nav_slide_drawer.html' %}
           </ul>
         </nav>
       </div>
@@ -37,11 +37,11 @@
             ">
             {% for item in navigation_items %}
               {% if not item.for_footer %}
-                {% include 'elements/nav_item.html' with viewport='medium' %}
+                {% include 'elements/nav_item.html' %}
               {% endif %}
             {% endfor %}
-            {% include 'elements/nav_search.html' with viewport='medium' %}
-            {% include 'elements/nav_account.html' with viewport='medium' %}
+            {% include 'elements/nav_search.html' %}
+            {% include 'elements/nav_account.html' %}
           </ul>
         </nav>
       </div>
@@ -118,15 +118,33 @@
     event.stopPropagation()
   }
 
+  const searchResults = document.querySelector('#search-results')
+  searchResults.addEventListener('click', event => {
+    event.stopPropagation()
+  })
+
+  function closeSearchResults(event) {
+    searchResults.classList.toggle('hidden', force=true)
+    event.stopPropagation()
+  }
+
   for (const item of topNavItems) {
     item.addEventListener('click', event => toggleThisDropdown(event))
     item.addEventListener('click', event => closeOtherDropdowns(event))
+    item.addEventListener('click', event => closeSearchResults(event))
   }
 
   const body = document.querySelector('body')
   body.addEventListener('click', event => {
     closeOtherDropdowns(event)
     closeSideNav(event)
+    closeSearchResults(event)
+  })
+
+  searchInput = document.querySelector('#search-input')
+
+  searchInput.addEventListener('click', event => {
+    closeOtherDropdowns(event)
   })
 
 </script>

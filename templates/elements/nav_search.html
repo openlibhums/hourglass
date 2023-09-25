@@ -1,20 +1,146 @@
-<li class="max-lg:order-first max-lg:w-full">
+{% load static %}
+
+<li class="site_search max-lg:order-first max-lg:w-full">
   <input
-    id="search-trigger"
-    href="#search-modal"
+    id="search-input"
     type="search"
     placeholder="Quick search..."
     aria-label="Quick search"
     class="
-      bg-tan-light
-      h-9 p-2 w-36 border-none
-      my-4
-      lg:mx-4
-      max-lg:w-full
-      placeholder:text-sm
-      focus:ring-transparent
+      bg-tan-light placeholder:text-sm
+      h-9 p-2 w-36 border-none my-4 lg:mx-4 max-lg:w-full
+      focus:ring-transparent lg:focus:w-56 focus:bg-white lg:transition-[width]
       lg:hover:placeholder:font-poppins-bold
       lg:hover:ease-in transition duration-150 ease-out
       lg:group-hover/top:opacity-70 lg:hover:group-hover/top:opacity-100
     ">
+  <div class="lg:relative lg:top-0 lg:right-4">
+    <div
+      id="search-results"
+      class="
+        hidden lg:absolute lg:top-0 lg:right-0 bg-tan-light
+        lg:w-[30rem] overflow-auto
+        transition-all ease-in-out duration-300
+      ">
+      <h2
+        id="search-message"
+        class="px-6 py-3 font-semibold truncate">
+      </h2>
+      <ul
+        id="results-list"
+        data-site-search-docs-url="{{ request.site_search_docs_url }}">
+      </ul>
+    </div>
+  </div>
 </li>
+
+<script type="module">
+  import MiniSearch from '{% static "hourglass/js/minisearch.js" %}'
+
+  document.addEventListener('DOMContentLoaded', async () => {
+
+    const input = document.getElementById('search-input')
+    const message = document.getElementById('search-message')
+    const results = document.getElementById('search-results')
+    const ul = document.getElementById('results-list')
+    const docsUrl = ul.getAttribute('data-site-search-docs-url')
+
+    async function getData () {
+      const docsFile = await fetch(docsUrl)
+      const documents = await docsFile.json()
+      const searchIndex = new MiniSearch({
+        fields: ['name', 'text'],
+        storeFields: []
+      })
+      searchIndex.addAll(documents)
+      return { documents, searchIndex }
+    }
+
+    function debounce (fn) {
+    // Thanks to Materialize for this function:
+    // https://github.com/materializecss/materialize/blob/f71022051b7d388dc77bd84c27cf4ac0bdb35263/docs/js/search.js#L282-L293
+      let timeout
+      return function () {
+        const args = Array.prototype.slice.call(arguments)
+        const ctx = this
+        clearTimeout(timeout)
+        timeout = setTimeout(function () {
+          fn.apply(ctx, args)
+        }, 100)
+      }
+    }
+
+    function makeListItem () {
+      const li = document.createElement('li')
+      li.classList.add('border-t', 'border-white', 'hover:bg-white')
+      return li
+    }
+
+    function makeResultListItem (doc) {
+      const li = makeListItem()
+      li.innerHTML = `\
+        <div class="p-2">
+          <a href="${doc.url}">
+            <div class="p-2">
+              <h3 class="lg:text-lg px-2 pb-2 font-poppins-bold truncate">${doc.name}</h3>
+              <p class="px-2 truncate">${doc.text}</p>
+            </div>
+          </a>
+        </div>
+      `
+      return li
+    }
+
+    async function updateResultsList (documents, searchIndex) {
+      results.classList.remove('hidden')
+      ul.innerHTML = ''
+      message.innerHTML = `Searching for ‘${input.value}’...`
+      const searchResults = await searchIndex.search(
+        input.value,
+        { boost: { title: 2 } }
+      )
+      for (const result of searchResults.slice(0, 5)) {
+        const doc = documents.filter(doc => doc.id === result.id)[0]
+        ul.appendChild(makeResultListItem(doc))
+      }
+
+      if (ul.children.length === 0) {
+        const li = makeListItem()
+        li.innerHTML = `\
+          <p class="px-6 py-4">
+            No results
+          </p>
+        `
+        ul.appendChild(li)
+      }
+    }
+
+    function handleKeyup (event, documents, searchIndex) {
+      // Only 1 letter has been typed in so far
+      if (input.value.length < 2) {
+        message.innerHTML = ''
+        ul.innerHTML = ''
+        results.classList.add('hidden')
+        return
+      }
+
+      // Otherwise
+      updateResultsList(documents, searchIndex)
+    }
+
+    function addEventListeners (documents, searchIndex) {
+
+      // User types something
+      input.addEventListener('keyup', event => {
+        debounce(handleKeyup(event, documents, searchIndex))
+      })
+
+      // User clicks the X in the search bar
+      // close.addEventListener('click', event => modalObj.close())
+    }
+
+    const { documents, searchIndex } = await getData()
+    addEventListeners(documents, searchIndex)
+
+  })
+</script>

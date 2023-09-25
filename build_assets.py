@@ -18,13 +18,15 @@ OTHER_SOURCE_PATHS = [
         os.path.join(
             THEME_PATH,
             'node_modules',
-            'lunr',
-            'lunr.min.js',
+            'minisearch',
+            'dist',
+            'es',
+            'index.js',
         ),
         os.path.join(
             DIST_PATH,
             'js',
-            'lunr.min.js',
+            'minisearch.js',
         )
     ),
     (
