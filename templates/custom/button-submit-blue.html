@@ -1,0 +1,20 @@
+{% load static %}
+
+<button
+  class="
+    p-4 not-prose
+    rounded-full border-2 border-white bg-blue
+    flex gap-4 items-center
+  ">
+  <span
+    class="
+      uppercase text-white
+      font-poppins-bold text-xs tracking-widest
+    ">
+    {{ label }}
+  </span>
+  <img
+    class="h-4"
+    src="{% static 'hourglass/media/icons/arrow-white.svg' %}"
+    alt="arrow pointing right">
+</button>
