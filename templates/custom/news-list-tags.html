@@ -1,0 +1,30 @@
+{% load static %}
+
+<div class="z-40 relative">
+  {% if tag %}
+    <div class="flex flex-wrap gap-x-4 gap-y-2 max-md:pl-4 md:px-8">
+      <div class="bg-tan border-white border-2 rounded-full py-2 px-4 flex gap-4 items-center">
+        <span>{{ tag.text }} ({{ tag.tags.count }})</span>
+        <a href="{% url 'core_news_list_presswide' presswide='all' %}">
+          <span class="font-poppins-bold text-3xl">X</span>
+        </a>
+      </div>
+    </div>
+  {% else %}
+    <div class="flex flex-wrap gap-x-4 gap-y-2 max-md:pl-4 md:px-8">
+      {% for tag_obj in all_tags|slice:":10" %}
+        <a
+          class="bg-tan border-white border-2 rounded-full py-2 px-4"
+          href="{% url 'core_news_list_tag_presswide' presswide='all' tag=tag_obj.text %}"
+        >
+          {{ tag_obj.text }} ({{ tag_obj.tags.count }})
+        </a>
+      {% endfor %}
+      {% if all_tags.count > 10 %}
+        <span class="bg-tan border-white border-2 rounded-full py-2 px-4">
+          ...
+        </span>
+      {% endif %}
+    </div>
+  {% endif %}
+</div>

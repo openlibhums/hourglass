@@ -1,0 +1,89 @@
+{% load static %}
+{% load component_tags %}
+
+<article>
+  <header>
+    <div class="container mx-auto max-w-screen-xl relative">
+      {% include 'custom/edit-on-github.html' with rel_path='custom/news-item.html' %}
+      <div class="relative z-0 top-0 max-md:-right-36 md:-right-12">
+        <img
+          class="
+            motion-safe:rallax absolute z-0 w-12 max-lg:top-0 lg:top-0
+            max-lg:right-52 lg:right-96
+          "
+          src="{% static 'hourglass/media/backgrounds/circle-red.svg' %}"
+          alt="">
+        <img
+          class="
+            absolute max-lg:z-20 lg:z-0 max-lg:top-8 lg:top-16
+            max-lg:right-0 lg:right-20
+          "
+          src="{% static 'hourglass/media/backgrounds/circle-blue-textured.png' %}"
+          width="434"
+          alt="">
+        <img
+          class="motion-safe:rallax z-10 absolute top-56 -right-8 w-48"
+          src="{% static 'hourglass/media/backgrounds/square-red.svg' %}"
+          alt="">
+        <img
+          class="motion-safe:rallax absolute max-lg:hidden z-20 top-96 right-16 h-36"
+          src="{% static 'hourglass/media/backgrounds/triangle-orange-pointing-down.svg' %}"
+          alt="">
+      </div>
+      <div class="relative z-40">
+        <div class="prose lg:prose-lg pt-64 max-md:pr-8 md:px-8">
+          <h1 class="font-poppins-bold !leading-snug">
+            {{ news_item.title }}
+          </h1>
+          <p>
+            {% if news_item.byline %}
+              {{ news_item.byline }} {% trans "on" %}
+            {% endif %}
+            {{ news_item.posted|date:"j F Y" }}
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="container mx-auto max-w-screen-xl relative max-lg:mt-8 lg:mt-12">
+      <div class="lg:m-8 relative z-40">
+        <div class="
+          bg-tan-light md:max-w-[750px] md:max-h-[324px]
+          flex place-content-center
+        ">
+          <img
+            class="grayscale"
+            src="{{ news_item.best_image_url }}">
+        </div>
+        <div class="pt-4">
+          {% if news_item.tags.all %}
+            {% include "custom/news-item-tags.html" with tags=news_item.tags.all %}
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="container mx-auto max-w-screen-xl relative max-lg:mt-8 lg:mt-12">
+      <div class="z-20 relative left-0 top-12">
+        <img
+          class="
+            motion-safe:rallax absolute z-20 w-12 top-64
+            max-lg:-left-6 lg:left-12
+          "
+          src="{% static 'hourglass/media/backgrounds/rectangle-red.svg' %}"
+          alt="">
+        <img
+          class="absolute z-10 w-96 -left-20 top-48"
+          src="{% static 'hourglass/media/backgrounds/circle-blue-textured.png' %}"
+          width="434"
+          alt="">
+      </div>
+      {% component_block "page_section" anchor="right" %}
+        {{ news_item.body|safe }}
+      {% endcomponent_block %}
+    </div>
+  </main>
+</article>
+<div class="container mx-auto max-w-screen-xl relative">
+  {% include 'custom/subscribe.html' %}
+</div>

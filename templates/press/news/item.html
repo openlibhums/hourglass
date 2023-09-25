@@ -27,27 +27,5 @@
 {% endblock meta_image %}
 
 {% block body %}
-  <article>
-    <header class="row max800">
-      <h1>{{ news_item.title }}</h1>
-      <p class="byline">
-        {{ news_item.byline }} {% trans "on" %} {{ news_item.posted|date:"j F Y" }}
-      </p>
-      <img class="responsive-img" src="{{ news_item.best_image_url }}">
-    </header>
-    <main class="row max640">
-      {{ news_item.body|safe }}
-    </main>
-    {% if news_item.tags.all %}
-      <footer class="row max640" aria-label="tags">
-        {% for item_tag in news_item.tags.all %}
-          <a href="{% url 'core_news_list_tag' item_tag.text %}">
-            <span class="chip black-text">
-              {{ item_tag.text }}
-            </span>
-          </a>
-        {% endfor %}
-      </footer>
-    {% endif %}
-  </article>
+  {% include "custom/news-item.html" %}
 {% endblock body %}

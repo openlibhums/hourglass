@@ -6,19 +6,6 @@
 
 {% block body %}
 
-  <h1>{% trans 'News' %}</h1>
-  {% if tag or all_tags %}
-    <aside class="row">
-      {% include 'press/news/tags.html' with tag=tag all_tags=all_tags %}
-    </aside>
-  {% endif %}
-  <main class="row flex">
-    {% for item in news_items %}
-      <div class="col s12 m6 l4">
-        {% include 'press/news/list_item.html' with item=item %}
-      </div>
-    {% endfor %}
-  </main>
-  {% include 'core/elements/pagination.html' with page_obj=news_items %}
+  {% include "custom/news.html" %}
 
 {% endblock body %}

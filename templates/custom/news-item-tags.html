@@ -1,0 +1,15 @@
+{% load static %}
+
+<div
+  class="
+    not-prose text-sm flex flex-wrap gap-6
+    mt-4 max-md:place-content-center
+  ">
+  {% for tag in tags %}
+    <a
+      class="bg-tan border-white border-2 rounded-full py-2 px-4"
+      href="{% url 'core_news_list_tag_presswide' presswide='all' tag=tag.text %}">
+      {{ tag }}
+    </a>
+  {% endfor %}
+</div>

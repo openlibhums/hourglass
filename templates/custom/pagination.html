@@ -1,0 +1,53 @@
+{% load pages %}
+{% load static %}
+
+<div class="container mx-auto max-w-screen-xl relative mb-28">
+  {% if page_obj and page_obj.has_other_pages %}
+    <div class="relative z-40 py-4 max-md:px-4 md:px-8 bg-blue">
+      <ul class="flex justify-center items-center gap-4">
+        {% if page_obj.has_previous %}
+          <li class="">
+            <a
+              class="h-14 p-4 border rounded-full border-white flex gap-4 items-center"
+              href="?page={{ page_obj.previous_page_number }}">
+              <img
+                class="h-4 rotate-180"
+                src="{% static 'hourglass/media/icons/arrow-white.svg' %}"
+                alt="arrow pointing left">
+            </a>
+          </li>
+        {% endif %}
+        {% for page in page_obj|slice_pages:3 %}
+          <li
+            class="
+              {% if page_obj.number == page.number %}
+                underline underline-offset-4
+              {% endif %}
+            ">
+            <a
+              class="
+                h-14 w-14 p-4 border rounded-full border-white
+                flex gap-4 place-content-center
+                text-white font-poppins-bold
+              "
+              href="?page={{ page.number }}">
+              {{ page.number }}
+            </a>
+          </li>
+        {% endfor %}
+        {% if page_obj.has_next %}
+          <li class="">
+            <a
+              class="h-14 p-4 border rounded-full border-white flex gap-4 items-center"
+              href="?page={{ page_obj.next_page_number }}">
+              <img
+                class="h-4"
+                src="{% static 'hourglass/media/icons/arrow-white.svg' %}"
+                alt="arrow pointing left">
+            </a>
+          </li>
+        {% endif %}
+      </ul>
+    </div>
+  {% endif %}
+</div>
