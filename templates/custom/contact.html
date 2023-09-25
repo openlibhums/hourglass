@@ -1,0 +1,40 @@
+{% load static %}
+{% load component_tags %}
+
+<article>
+  <div class="container mx-auto max-w-screen-xl relative max-lg:mt-56 lg:mt-8">
+    {% include 'custom/edit-on-github.html' with rel_path='custom/contact.html' %}
+    {% include 'custom/hand-laptop-opener.html' %}
+    <div class="relative z-40">
+      <h1
+        class="
+          max-lg:text-4xl lg:text-7xl !leading-snug
+          max-lg:max-w-xs lg:max-w-2xl
+          font-poppins-bold max-lg:py-12 lg:py-20 px-8
+        ">
+        {% trans 'Contact' %}
+      </h1>
+    </div>
+  </div>
+  <div class="container mx-auto max-w-screen-xl relative lg:-mt-4">
+    <div class="relative z-40 max-md:py-6 md:py-20 bg-blue md:px-12 lg:max-w-3xl">
+      <div class="m-6">
+        <img
+          class="-m-4 pb-8 w-48"
+          src="{% static 'hourglass/media/icons/FAQs.svg' %}"
+          alt="">
+        <form method=POST>
+          {% csrf_token %}
+          {% component_block 'form' form=contact_form form_method='post' %}
+            {% fill 'button' %}
+              {% include 'custom/button-submit-white.html' with label="Send message" %}
+            {% endfill %}
+          {% endcomponent_block %}
+        </form>
+      </div>
+    </div>
+  </div>
+</article>
+<div class="container mx-auto max-w-screen-xl relative mt-28 pb-28">
+  {% include 'custom/subscribe-art.html' %}
+</div>
