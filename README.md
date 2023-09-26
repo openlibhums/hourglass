@@ -139,21 +139,25 @@ management system. You can propose changes in GitHub by following these steps:
 1. Make sure you have a GitHub account and that you’ve been added to an OLH
    GitHub team with the right access.
 
-2. Find the live page you want to edit, and click on the “Edit on GitHub” link.
-   You should be taken to the page with the source code. You should also see
-   the name of the branch at the top of the page, after the file path.
+2. Make sure you have a Janeway account for the installation that you want
+   to edit and that your account has staff access.
+
+3. While logged in to the website, find the live page you want to edit,
+   and click on the “Edit on GitHub” link. You should be taken to the
+   GitHub page with the source code. You should also see the name of the
+   branch at the top of the page, after the file path.
 
    ![The copyediting branch on this GitHub repository](src/media/copyediting-branch.png)
 
-3. Edit the file, and then select “Commit changes”. Enter a commit message, and
-   leave “Commit directly to the copyediting branch” selected. Select “Commit
-   changes”.
+4. Edit the file, and then select “Commit changes”. Enter a commit
+   message, and leave “Commit directly to the copyediting branch”
+   selected. Select “Commit changes”.
 
    ![The commit window](src/media/copyediting-commit.png)
 
-4. Open a pull request from the copyediting branch to the main branch. Or just
-   ask a member of the tech team to do so for you. They will review your edits
-   and merge them into the live version of the website.
+5. Open a pull request from the copyediting branch to the main branch. Or
+   just ask a member of the tech team to do so for you. They will review
+   your edits and merge them into the live version of the website.
 
 ## Engineering
 
