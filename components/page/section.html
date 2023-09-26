@@ -11,13 +11,19 @@
       before:left-1/2 lg:flex lg:justify-end
     {% endif %}
   ">
-  <div class="relative z-40 bg-white py-20 px-8 lg:max-w-3xl">
+  <div
+    class="
+      relative z-40 bg-white py-20 px-8
+      {% if width == "part" %}
+        lg:max-w-3xl
+      {% endif %}
+    ">
     <div
       class="
         {% if prose %}
           prose lg:prose-lg break-words
         {% endif %}
-        {% if anchor == "left " %}
+        {% if anchor == "left" %}
           lg:mr-16
         {% else %}
           lg:ml-16

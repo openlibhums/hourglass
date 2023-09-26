@@ -318,22 +318,11 @@
         <h2>Grants &amp; Awards</h2>
         <p class="font-semibold">The OLH has received major funding in the form of research and development grants from the Andrew W. Mellon Foundation and Arcadia – a charitable fund of Lisbet Rausing and Professor Peter Baldwin.</p>
         <p>The work of the Open Library of Humanities has been internationally recognised for its important contribution to open access for the humanities, as well as its innovative business model. We have been Highly Commended at the <a href="https://www.alpsp.org/news/alpsp-awards-2020-winners-announced-sep-2020">ALPSP Awards for Innovation in Publishing</a> 2020, won a <a href="https://www.openlibhums.org/news/348/">Coko Foundation Open Publishing Award</a> in the category of Open Publishing Models in 2019, and received an award for <a href="https://www.ukaop.org/hub/aop-announces-winners-for-the-digital-publishing-awards-2020">Small Digital Publisher of the Year</a> from the Association of Online Publishers (AOP) in October 2020.</p>
-        <div class="flex gap-8 grayscale items-center">
-          <div class="flex-1">
-            <img
-              src="{% static 'hourglass/media/aop-digital-publishing-awards.png' %}"
-              alt="AOP Digital Publishing Awards Winner 2020">
-          </div>
-          <div class="flex-1">
-            <img
-              src="{% static 'hourglass/media/open-publishing-awards.png' %}"
-              alt="Open Publishing Awards">
-          </div>
-          <div class="flex-1">
-            <img
-              src="{% static 'hourglass/media/alpsp-awards-innovation-publishing-2020.png' %}"
-              alt="ALPSP Awards for Innovation in Publishing 2020">
-          </div>
+        {% include 'custom/awards-prizes-images.html' %}
+        <div class="flex max-lg:items-start max-lg:flex-col gap-8">
+          {% with rel_path="/site/awards-prizes" label="Find out more" %}
+            {% include 'custom/button-action-blue.html' %}
+          {% endwith %}
         </div>
       </div>
     </div>
