@@ -1,17 +1,34 @@
 {% load static %}
+{% load component_tags %}
 
-<div class="p-12 bg-white z-40 relative">
+<div
+  id="featured-journals"
+  class="max-lg:p-8 lg:p-12 bg-white z-40 relative">
   <h2 class="pb-6 font-poppins-bold max-lg:text-2xl lg:text-3xl">
     Featured Journals
   </h2>
-  <div
-    class="
-      flex -mx-3
-      max-lg:flex-col gap-y-16
-      lg:flex-row lg:flex-wrap lg:justify-between
-    ">
-    {% for journal in request.press.featured_journals.all|slice:":6" %}
-      {% include 'custom/journal-tile.html' %}
-    {% endfor %}
-  </div>
+  {% component_block "glide" glide_id="featured-journals" glide_type="gallery" %}
+    {% fill "slides" %}
+      {% for journal in request.press.featured_journals.all|slice:":6" %}
+        {% component_block "glide_slide" %}
+          <div class="flex gap-5 flex-col max-lg:items-center lg:items-start !h-auto">
+            <img
+              src="{{ journal.default_cover_image.url }}"
+              alt="{{ journal.name }}">
+            <h3 class="font-poppins-bold text-lg max-lg:text-center grow">
+              {{ journal.name }}
+            </h3>
+            {% with rel_path=journal.site_url label="Read more" %}
+              {% include 'custom/button-action-blue.html' %}
+            {% endwith %}
+          </div>
+        {% endcomponent_block %}
+      {% endfor %}
+    {% endfill %}
+    {% fill "bullets" %}
+      {% for journal in request.press.featured_journals.all|slice:":6" %}
+        {% component "glide_bullet" slide_index=forloop.counter0 %}
+      {% endfor %}
+    {% endfill %}
+  {% endcomponent_block %}
 </div>

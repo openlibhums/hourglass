@@ -40,30 +40,32 @@
       </div>
     </div>
   </div>
-  <div class="container mx-auto max-w-screen-xl relative">
-    <div class="relative z-40 px-8 py-28 flex flex-col gap-y-6">
-      {% component_block "quote" %}
-        {% fill "quote" %}
-          “The Open Library of Humanities is a transformative venture on the leading edge of open-access initiatives on both sides of the Atlantic. There is hardly a more important project in train for scholarship in the humanities today.”
-        {% endfill %}
-        {% fill "by" %}
-          <span class="font-poppins-bold">David Armitage,</span> Lloyd C. Blankfein Professor of History, Harvard University
-        {% endfill %}
-      {% endcomponent_block %}
+  <div class="container mx-auto max-w-screen-xl relative max-lg:mt-16 lg:mt-28">
+    <div class="flex max-lg:justify-center lg:justify-end md:max-w-3xl">
+      <div class="relative z-40">
+        {% component_block "quote" %}
+          {% fill "quote" %}
+            “The Open Library of Humanities is a transformative venture on the leading edge of open-access initiatives on both sides of the Atlantic. There is hardly a more important project in train for scholarship in the humanities today.”
+          {% endfill %}
+          {% fill "by" %}
+            <span class="font-poppins-bold">David Armitage,</span> Lloyd C. Blankfein Professor of History, Harvard University
+          {% endfill %}
+        {% endcomponent_block %}
+      </div>
     </div>
     <div class="max-lg:h-64">
       <img
         class="
           absolute
           right-8 max-h-96
-          motion-reduce:max-md:-bottom-12 motion-safe:max-md:bottom-0 md:max-lg:bottom-20
-          motion-reduce:lg:-bottom-24 motion-safe:lg:top-48 motion-safe:rallax
+          motion-reduce:max-md:-bottom-12 motion-safe:max-md:bottom-0 md:max-lg:bottom-4
+          motion-reduce:lg:-bottom-36 motion-safe:lg:top-48 motion-safe:rallax
         "
         src="{% static 'hourglass/media/backgrounds/camera.png' %}"
         alt="A camera lens in a collage with red blocks">
     </div>
   </div>
-  <div class="container mx-auto max-w-screen-xl relative">
+  <div class="container mx-auto max-w-screen-xl relative max-lg:mt-16 lg:mt-28">
     <div
       class="
         relative before:z-30 before:block before:absolute
@@ -189,9 +191,9 @@
       </div>
     </div>
   </div>
-  <div class="container mx-auto max-w-screen-xl relative">
-    <div class="px-8 py-28 max-lg:mb-48 lg:ml-36">
-      <div class="relative z-40 flex flex-col gap-y-6 lg:items-start">
+  <div class="container mx-auto max-w-screen-xl relative max-lg:mt-16 lg:mt-28">
+    <div class="flex max-lg:justify-center lg:justify-end md:max-w-3xl max-lg:mb-48">
+      <div class="relative z-40">
         {% component_block "quote" %}
           {% fill "quote" %}
             “The Open Library of Humanities promises crucial changes in the debate surrounding open access publishing, by bringing together a robust, standards- based technical platform with rigorous scholarly oversight, innovative editorial practices, and an emphasis on community outreach.”
@@ -231,7 +233,7 @@
         alt="">
     </div>
   </div>
-  <div class="container mx-auto max-w-screen-xl relative">
+  <div class="container mx-auto max-w-screen-xl relative max-lg:mt-16 lg:mt-28">
     <div
       class="
         relative before:z-30 before:block before:absolute

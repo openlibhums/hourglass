@@ -2,20 +2,25 @@
 {% load component_tags %}
 
 <div
+  id="{{ glide_id }}"
   class="
     glide
     relative z-40
-    px-8 py-28
     flex
   ">
   <div
-    class="glide__arrows max-lg:hidden"
+    class="relative inset-y-0 top-0 glide__arrows max-lg:hidden"
     data-glide-el="controls">
     <button
       class="
+        {% if glide_type == "quotes" %}
+          relative left-0 top-1/3
+        {% elif glide_type == "gallery" %}
+          absolute -left-36 top-1/3
+        {% endif %}
         glide__arrow glide__arrow--left
         w-16 h-16 bg-blue rounded-full
-        my-24 mx-12
+        my-auto mx-12
         flex items-center
       "
       data-glide-dir="<">
@@ -25,27 +30,36 @@
         alt="Previous">
     </button>
   </div>
-  <div class="glide__track" data-glide-el="track">
-    <ul class="glide__slides">
+  <div class="glide__track relative z-40" data-glide-el="track">
+    <ul class="glide__slides items-stretch">
       {% slot 'slides' %}{% endslot %}
     </ul>
     <div
       class="
-        max-sm:ml-4 sm:ml-5
-        glide__bullets py-8 flex gap-x-6
+        glide__bullets flex gap-x-6
+        {% if glide_type == "quotes" %}
+          max-sm:ml-4 sm:ml-5 py-8
+        {% elif glide_type == "gallery" %}
+          justify-center pt-12
+        {% endif %}
       "
       data-glide-el="controls[nav]">
       {% slot 'bullets' %}{% endslot %}
     </div>
   </div>
   <div
-    class="glide__arrows max-lg:hidden"
+    class="relative inset-y-0 top-0 glide__arrows max-lg:hidden"
     data-glide-el="controls">
     <button
       class="
+        {% if glide_type == "quotes" %}
+          relative right-0 top-1/3
+        {% elif glide_type == "gallery" %}
+          absolute -right-36 top-1/3
+        {% endif %}
         glide__arrow glide__arrow--right
         w-16 h-16 bg-blue rounded-full
-        my-24 mx-12
+        my-auto mx-12
         flex items-center
       "
       data-glide-dir=">">
@@ -56,3 +70,8 @@
     </button>
   </div>
 </div>
+
+<script type="module">
+  import Glide from "{% static 'hourglass/js/glide.esm.js' %}"
+  new Glide('#{{ glide_id }}', JSON.parse('{{ options|escapejs }}')).mount()
+</script>
