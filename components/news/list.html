@@ -1,0 +1,12 @@
+{% load component_tags %}
+
+<div class="relative z-40 bg-white">
+  {% if h %}
+    <h2 class="name font-poppins-bold text-3xl py-8 max-md:text-center">
+      {{ h }}
+    </h2>
+  {% endif %}
+  <div class="flex max-md:flex-col md:flex-row md:flex-wrap gap-y-20 md:-mx-6">
+    {% slot "items" default %}{% endslot %}
+  </div>
+</div>
