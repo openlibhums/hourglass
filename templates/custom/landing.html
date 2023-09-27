@@ -98,75 +98,46 @@
     </div>
   </div>
   <div class="container mx-auto max-w-screen-xl relative mt-28">
-    <div
-      class="
-        relative after:z-30 after:block after:absolute
-        after:inset-y-0 after:w-screen
-        max-lg:after:left-1/2 lg:after:-right-12
-        after:bg-white
-      ">
-      <div
-        class="
-          relative z-40
-          py-20 px-8 bg-white
-          flex flex-col gap-y-8
-        ">
-        <div
-          class="
-            flex max-lg:flex-col gap-y-20
-            lg:flex-row lg:justify-between
-          ">
-          <div
-            class="
-              flex flex-col gap-y-8 items-center justify-between
-              lg:w-[30%]
-            ">
-            <img
-              class="w-44 h-44"
-              src="{% static 'hourglass/media/icons/Join-the-Conversation.svg' %}"
-              alt="">
-            <h2 class="font-poppins-bold max-lg:text-xl lg:text-2xl text-center">
-              Join the Conversation
-            </h2>
-            {% with rel_path="TBD" label="Find out more" %}
-              {% include 'custom/button-action-blue.html' %}
-            {% endwith %}
-          </div>
-          <div
-            class="
-              flex flex-col gap-y-8 items-center justify-between
-               lg:w-[30%]
-            ">
-            <img
-              class="w-44 h-44"
-              src="{% static 'hourglass/media/icons/Read-our-News.svg' %}"
-              alt="">
-            <h2 class="font-poppins-bold max-lg:text-xl lg:text-2xl text-center">
-              Read Our News
-            </h2>
-            {% with rel_path="/news/press_overview/?tags__text=Announcement" label="Find out more" %}
-              {% include 'custom/button-action-blue.html' %}
-            {% endwith %}
-          </div>
-          <div
-            class="
-              flex flex-col gap-y-8 items-center justify-between
-               lg:w-[30%]
-            ">
-            <img
-              class="w-44 h-44"
-              src="{% static 'hourglass/media/icons/Hear-our-Ideas.svg' %}"
-              alt="">
-            <h2 class="font-poppins-bold max-lg:text-xl lg:text-2xl text-center">
-              Hear Our Ideas
-            </h2>
-            {% with rel_path="/news/press_overview/?tags__text=Blog" label="Find out more" %}
-              {% include 'custom/button-action-blue.html' %}
-            {% endwith %}
-          </div>
-        </div>
-      </div>
-    </div>
+    {% component_block "page_section" prose=False anchor="left" width="full" %}
+      {% component_block "cta_list_three" %}
+        {% component_block "cta_list_item" %}
+          <img
+            class="w-44 h-44"
+            src="{% static 'hourglass/media/icons/Join-the-Conversation.svg' %}"
+            alt="">
+          <h2 class="font-poppins-bold max-lg:text-xl lg:text-2xl text-center">
+            Join the Conversation
+          </h2>
+          {% with rel_path="TBD" label="Find out more" %}
+            {% include 'custom/button-action-blue.html' %}
+          {% endwith %}
+        {% endcomponent_block %}
+        {% component_block "cta_list_item" %}
+          <img
+            class="w-44 h-44"
+            src="{% static 'hourglass/media/icons/Read-our-News.svg' %}"
+            alt="">
+          <h2 class="font-poppins-bold max-lg:text-xl lg:text-2xl text-center">
+            Read Our News
+          </h2>
+          {% with rel_path="/news/press_overview/?tags__text=Announcement" label="Find out more" %}
+            {% include 'custom/button-action-blue.html' %}
+          {% endwith %}
+        {% endcomponent_block %}
+        {% component_block "cta_list_item" %}
+          <img
+            class="w-44 h-44"
+            src="{% static 'hourglass/media/icons/Hear-our-Ideas.svg' %}"
+            alt="">
+          <h2 class="font-poppins-bold max-lg:text-xl lg:text-2xl text-center">
+            Hear Our Ideas
+          </h2>
+          {% with rel_path="/news/press_overview/?tags__text=Blog" label="Find out more" %}
+            {% include 'custom/button-action-blue.html' %}
+          {% endwith %}
+        {% endcomponent_block %}
+      {% endcomponent_block %}
+    {% endcomponent_block %}
     <div
       class="
         motion-reduce:-bottom-64 max-lg:motion-safe:-bottom-12 lg:motion-safe:-bottom-36
@@ -275,75 +246,46 @@
     </div>
   </div>
   <div class="container mx-auto max-w-screen-xl relative mt-28">
-    <div
-      class="
-        relative after:z-30 after:block after:absolute
-        after:inset-y-0 after:w-screen
-        max-lg:after:left-1/2 lg:after:-right-12
-        after:bg-white
-      ">
-      <div
-        class="
-          relative z-40
-          py-20 px-8 bg-white
-          flex flex-col gap-y-8
-        ">
-        <div
-          class="
-            flex max-lg:flex-col gap-y-20
-            lg:flex-row lg:justify-between
-          ">
-          <div
-            class="
-              flex flex-col gap-y-8 items-center justify-between
-              lg:w-[30%]
-            ">
-            <img
-              class="w-44 h-44"
-              src="{% static 'hourglass/media/icons/Become-a-Supporter.svg' %}"
-              alt="">
-            <h2 class="font-poppins-bold max-lg:text-xl lg:text-2xl text-center">
-              Librarians &amp; Supporters
-            </h2>
-            {% with rel_path="/site/for-librarians-consortia" label="Find out more" %}
-              {% include 'custom/button-action-blue.html' %}
-            {% endwith %}
-          </div>
-          <div
-            class="
-              flex flex-col gap-y-8 items-center justify-between
-              lg:w-[30%]
-            ">
-            <img
-              class="w-44 h-44"
-              src="{% static 'hourglass/media/icons/Authors.svg' %}"
-              alt="">
-            <h2 class="font-poppins-bold max-lg:text-xl lg:text-2xl text-center">
-              Readers & Authors
-            </h2>
-            {% with rel_path="/site/for-readers-authors" label="Find out more" %}
-              {% include 'custom/button-action-blue.html' %}
-            {% endwith %}
-          </div>
-          <div
-            class="
-              flex flex-col gap-y-8 items-center justify-between
-              lg:w-[30%]
-            ">
-            <img
-              class="w-44 h-44"
-              src="{% static 'hourglass/media/icons/Editors.svg' %}"
-              alt="">
-            <h2 class="font-poppins-bold max-lg:text-xl lg:text-2xl text-center">
-              Editors
-            </h2>
-            {% with rel_path="/site/for-editors" label="Find out more" %}
-              {% include 'custom/button-action-blue.html' %}
-            {% endwith %}
-          </div>
-        </div>
-      </div>
-    </div>
+    {% component_block "page_section" prose=False anchor="left" width="full" %}
+      {% component_block "cta_list_three" %}
+        {% component_block "cta_list_item" %}
+          <img
+            class="w-44 h-44"
+            src="{% static 'hourglass/media/icons/Become-a-Supporter.svg' %}"
+            alt="">
+          <h2 class="font-poppins-bold max-lg:text-xl lg:text-2xl text-center">
+            Librarians &amp; Supporters
+          </h2>
+          {% with rel_path="/site/for-librarians-consortia" label="Find out more" %}
+            {% include 'custom/button-action-blue.html' %}
+          {% endwith %}
+        {% endcomponent_block %}
+        {% component_block "cta_list_item" %}
+          <img
+            class="w-44 h-44"
+            src="{% static 'hourglass/media/icons/Authors.svg' %}"
+            alt="">
+          <h2 class="font-poppins-bold max-lg:text-xl lg:text-2xl text-center">
+            Readers & Authors
+          </h2>
+          {% with rel_path="/site/for-readers-authors" label="Find out more" %}
+            {% include 'custom/button-action-blue.html' %}
+          {% endwith %}
+        {% endcomponent_block %}
+        {% component_block "cta_list_item" %}
+          <img
+            class="w-44 h-44"
+            src="{% static 'hourglass/media/icons/Editors.svg' %}"
+            alt="">
+          <h2 class="font-poppins-bold max-lg:text-xl lg:text-2xl text-center">
+            Editors
+          </h2>
+          {% with rel_path="/site/for-editors" label="Find out more" %}
+            {% include 'custom/button-action-blue.html' %}
+          {% endwith %}
+        {% endcomponent_block %}
+      {% endcomponent_block %}
+    {% endcomponent_block %}
   </div>
   <div class="container mx-auto max-w-screen-xl relative mt-0">
     {% component_block "glide" %}
