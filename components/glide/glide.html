@@ -1,0 +1,58 @@
+{% load static %}
+{% load component_tags %}
+
+<div
+  class="
+    glide
+    relative z-40
+    px-8 py-28
+    flex
+  ">
+  <div
+    class="glide__arrows max-lg:hidden"
+    data-glide-el="controls">
+    <button
+      class="
+        glide__arrow glide__arrow--left
+        w-16 h-16 bg-blue rounded-full
+        my-24 mx-12
+        flex items-center
+      "
+      data-glide-dir="<">
+      <img
+        class="w-8 h-8 rotate-180 mx-auto"
+        src="{% static 'hourglass/media/icons/arrow-white.svg' %}"
+        alt="Previous">
+    </button>
+  </div>
+  <div class="glide__track" data-glide-el="track">
+    <ul class="glide__slides">
+      {% slot 'slides' %}{% endslot %}
+    </ul>
+    <div
+      class="
+        max-sm:ml-4 sm:ml-5
+        glide__bullets py-8 flex gap-x-6
+      "
+      data-glide-el="controls[nav]">
+      {% slot 'bullets' %}{% endslot %}
+    </div>
+  </div>
+  <div
+    class="glide__arrows max-lg:hidden"
+    data-glide-el="controls">
+    <button
+      class="
+        glide__arrow glide__arrow--right
+        w-16 h-16 bg-blue rounded-full
+        my-24 mx-12
+        flex items-center
+      "
+      data-glide-dir=">">
+      <img
+        class="w-8 h-8 mx-auto"
+        src="{% static 'hourglass/media/icons/arrow-white.svg' %}"
+        alt="Next">
+    </button>
+  </div>
+</div>

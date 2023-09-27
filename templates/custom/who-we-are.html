@@ -42,15 +42,14 @@
   </div>
   <div class="container mx-auto max-w-screen-xl relative">
     <div class="relative z-40 px-8 py-28 flex flex-col gap-y-6">
-      <blockquote
-        class="
-          font-poppins-bold max-lg:text-3xl lg:text-4xl max-w-2xl leading-snug
-          max-sm:mr-4 sm:mr-5
-          max-sm:-indent-4 sm:-indent-5
-        ">
-        “The Open Library of Humanities is a transformative venture on the leading edge of open-access initiatives on both sides of the Atlantic. There is hardly a more important project in train for scholarship in the humanities today.”
-      </blockquote>
-      <p class="font-poppins max-lg:text-lg lg:text-xl max-w-md"><span class="font-poppins-bold">David Armitage,</span> <span class="">Lloyd C. Blankfein Professor of History, Harvard University</span></p>
+      {% component_block "quote" %}
+        {% fill "quote" %}
+          “The Open Library of Humanities is a transformative venture on the leading edge of open-access initiatives on both sides of the Atlantic. There is hardly a more important project in train for scholarship in the humanities today.”
+        {% endfill %}
+        {% fill "by" %}
+          <span class="font-poppins-bold">David Armitage,</span> Lloyd C. Blankfein Professor of History, Harvard University
+        {% endfill %}
+      {% endcomponent_block %}
     </div>
     <div class="max-lg:h-64">
       <img
@@ -193,21 +192,15 @@
   <div class="container mx-auto max-w-screen-xl relative">
     <div class="px-8 py-28 max-lg:mb-48 lg:ml-36">
       <div class="relative z-40 flex flex-col gap-y-6 lg:items-start">
-        <blockquote
-          class="
-            font-poppins-bold
-            max-lg:text-3xl lg:text-4xl
-            max-lg:max-w-md lg:max-w-xl
-            leading-snug
-            max-sm:mr-4 sm:mr-5
-            max-sm:-indent-4 sm:-indent-5
-          ">
-          “The Open Library of Humanities promises crucial changes in the debate surrounding open access publishing, by bringing together a robust, standards- based technical platform with rigorous scholarly oversight, innovative editorial practices, and an emphasis on community outreach.”
-        </blockquote>
-        <p class="font-poppins max-lg:text-lg lg:text-xl max-lg:max-w-xs lg:max-w-xl">
-          <span class="font-poppins-bold">Kathleen Fitzpatrick,</span>
-          Head of Scholarly Communications, Modern Language Association of America
-        </p>
+        {% component_block "quote" %}
+          {% fill "quote" %}
+            “The Open Library of Humanities promises crucial changes in the debate surrounding open access publishing, by bringing together a robust, standards- based technical platform with rigorous scholarly oversight, innovative editorial practices, and an emphasis on community outreach.”
+          {% endfill %}
+          {% fill "by" %}
+            <span class="font-poppins-bold">Kathleen Fitzpatrick,</span>
+            Head of Scholarly Communications, Modern Language Association of America
+          {% endfill %}
+        {% endcomponent_block %}
       </div>
       <img
         class="

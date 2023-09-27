@@ -36,12 +36,12 @@ OTHER_SOURCE_PATHS = [
             '@glidejs',
             'glide',
             'dist',
-            'glide.min.js',
+            'glide.esm.js',
         ),
         os.path.join(
             DIST_PATH,
             'js',
-            'glide.min.js',
+            'glide.esm.js',
         )
     ),
     (
