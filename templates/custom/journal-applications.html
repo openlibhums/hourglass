@@ -4,18 +4,19 @@
 <article>
   <div class="container mx-auto max-w-screen-xl relative">
     {% include 'custom/edit-on-github.html' with rel_path='custom/journal-applications.html' %}
-    {% include 'custom/sunglasses-model-opener.html' %}
+    {% include 'custom/revolution-opener.html' %}
     <div class="relative z-40">
       <h1
         class="
           max-md:text-4xl md:max-lg:text-5xl lg:text-7xl !leading-snug
-          font-poppins-bold max-lg:pt-64 max-lg:pb-12 lg:py-28 px-8 max-w-md
+          font-poppins-bold max-lg:pt-64 max-lg:pb-12 lg:py-28 px-8
+          max-md:max-w-md md:max-w-xl
         ">
         Join the Publishing Revolution
       </h1>
     </div>
   </div>
-  <div class="container mx-auto max-w-screen-xl relative max-lg:mt-8 lg:-mt-4">
+  <div class="container mx-auto max-w-screen-xl relative max-lg:mt-0 lg:mt-40">
     {% component_block "page_intro" %}
       {% fill "column_one" %}
         <p class="lead text-white">Our mission is to support and extend open access to scholarship in the humanities — for free, for everyone, forever.</p>
@@ -25,6 +26,13 @@
         <p>As a diamond open access publisher, we will never demand any payments from your authors. When you join the OLH, we commit to publishing your journal on our platform in perpetuity.</p>
       {% endfill %}
     {% endcomponent_block %}
+    <img
+      class="
+        absolute motion-safe:rallax max-lg:hidden
+        lg:z-20 -right-8 -bottom-56 w-96
+      "
+      src="{% static 'hourglass/media/backgrounds/square-orange.svg' %}"
+      alt="">
   </div>
   <div class="container mx-auto max-w-screen-xl relative max-lg:mt-8 lg:mt-28">
     {% include 'custom/sunglasses-model-halfway.html' %}
@@ -74,7 +82,7 @@
               alt="A poster with a padlock closed on the left and open on the right saying research is a battleground in the style of Barbara Kruger's your body is a battleground">
         </div>
       </div>
-      <div class="flex not-prose">
+      <div class="not-prose flex">
         {% with rel_path="/site/olh-poster-series/" label="Full poster series" %}
           {% include 'custom/button-action-blue.html' %}
         {% endwith %}

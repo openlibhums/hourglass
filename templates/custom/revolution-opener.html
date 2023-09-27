@@ -1,0 +1,47 @@
+{% load static %}
+
+<div class="relative z-0 max-lg:top-2 lg:top-20 right-0">
+  <img
+    class="
+      grayscale motion-safe:rallax max-md:z-0 md:max-lg:z-10 lg:z-20
+      absolute w-96
+      max-lg:right-0 max-lg:w-56
+      lg:-right-12 xl:-right-36 -top-16
+    "
+    src="{% static 'hourglass/media/backgrounds/woman-with-fist.png' %}"
+    width="400"
+    alt="A woman with dark curly hair raises her fist and yells into a megaphone">
+  <img
+    class="
+      motion-safe:rallax z-0 absolute
+      max-lg:hidden top-28 right-20 w-80
+    "
+    src="{% static 'hourglass/media/backgrounds/square-blue.svg' %}"
+    alt="">
+  <img
+    class="
+      z-10 absolute max-lg:-right-8 lg:right-8 max-lg:top-20 lg:top-4
+      lg:-rotate-90 max-w-none
+    "
+    srcset="
+      {% static 'hourglass/media/backgrounds/triangle-blue-textured.png' %} 335w,
+      {% static 'hourglass/media/backgrounds/triangle-blue-textured-lg.png' %} 669w
+    "
+    src="{% static 'hourglass/media/backgrounds/triangle-blue-textured.png' %}"
+    sizes="(max-width: 1024px) 335px, 669px"
+    alt="">
+  <img
+    class="
+      motion-safe:rallax max-md:z-0 md:z-20 absolute
+      lg:hidden -right-8 top-80 w-40
+    "
+    src="{% static 'hourglass/media/backgrounds/square-orange.svg' %}"
+    alt="">
+  <img
+    class="
+      z-20 absolute max-lg:-right-4 lg:-right-32 xl:-right-48
+      max-lg:top-8 lg:top-40 max-lg:w-8 lg:w-20
+    "
+    src="{% static 'hourglass/media/backgrounds/circle-red.svg' %}"
+    alt="">
+</div>
