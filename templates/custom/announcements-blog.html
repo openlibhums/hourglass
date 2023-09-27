@@ -1,5 +1,6 @@
 {% load static %}
 {% load i18n %}
+{% load component_tags %}
 
 <div class="container mx-auto max-w-screen-xl relative">
   {% include "custom/edit-on-github.html" with rel_path="custom/announcements-blog.html" %}
@@ -44,9 +45,7 @@
           <div class="flex max-md:flex-col md:flex-row md:flex-wrap gap-y-20 md:-mx-6">
             {% cycle 'md:basis-1/3' 'md:basis-1/2' as fraction silent %}
             {% for item in items|slice:":6" %}
-              <div class="{{ fraction }}">
-                {% include "custom/news-list-item.html" with item=item %}
-              </div>
+              {% component "news_list_item" item=item fraction=fraction %}
             {% endfor %}
           </div>
         </div>
@@ -100,9 +99,7 @@
           <div class="flex max-md:flex-col md:flex-row md:flex-wrap gap-y-20 md:-mx-6">
             {% cycle 'md:basis-1/2' 'md:basis-1/3' as fraction silent %}
             {% for item in items|slice:":6" %}
-              <div class="{{ fraction }}">
-                {% include "custom/news-list-item.html" with item=item %}
-              </div>
+              {% component "news_list_item" item=item fraction=fraction %}
             {% endfor %}
           </div>
         </div>
