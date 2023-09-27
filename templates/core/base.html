@@ -102,20 +102,6 @@
           window.scrollSpy('#scroll-menu', scrollOptions)
         }
       </script>
-      <script type="module">
-        import Glide from "{% static 'hourglass/js/glide.esm.js' %}"
-        const glideOptions = {
-          rewind: false,
-          // perView: 3,
-          // breakpoints: {
-          //   1024: { perView: 2 },
-          //   768: { perView: 1 }
-          // }
-        }
-        for (const glide of document.querySelectorAll('.glide')) {
-          new Glide(glide, glideOptions).mount()
-        }
-      </script>
 
       {% block js %}{% endblock js %}
     </div>
