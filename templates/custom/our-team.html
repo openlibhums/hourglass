@@ -330,7 +330,45 @@
     </div>
   </div>
   <div class="container mx-auto max-w-screen-xl relative">
-    {% include "custom/quote-glide.html" %}
+    {% component_block "glide" %}
+      {% fill 'slides' %}
+        {% component_block "glide_slide" %}
+          {% component_block "quote" %}
+            {% fill "quote" %}
+              “Working at the OLH is like being on a sports team full of Tolkien nerds. You’re challenged and inspired to do your best, without being precious. You genuinely have each others’ backs because the wins are collective, and dawn is not far off.”
+            {% endfill %}
+            {% fill "by" %}
+              <span class="font-poppins-bold">Joseph Muller</span>
+            {% endfill %}
+          {% endcomponent_block %}
+        {% endcomponent_block %}
+        {% component_block "glide_slide" %}
+          {% component_block "quote" %}
+            {% fill "quote" %}
+              “I’m proud to work for such an excellent organisation and a genuinely important cause. The culture at OLH is really positive, inclusive and welcoming – our small close-knit team feels more like a family.”
+            {% endfill %}
+            {% fill "by" %}
+              <span class="font-poppins-bold">Dr Rose Harris-Birtill</span>
+            {% endfill %}
+          {% endcomponent_block %}
+        {% endcomponent_block %}
+        {% component_block "glide_slide" %}
+          {% component_block "quote" %}
+            {% fill "quote" %}
+              “The OLH is home to an eclectic mix of people who are working together for a common political goal but know how to enjoy themselves in the process.”
+            {% endfill %}
+            {% fill "by" %}
+              <span class="font-poppins-bold">Dr Katherine Parker-Hay</span>
+            {% endfill %}
+          {% endcomponent_block %}
+        {% endcomponent_block %}
+      {% endfill %}
+      {% fill 'bullets' %}
+        {% component 'glide_bullet' slide_index='0' %}
+        {% component 'glide_bullet' slide_index='1' %}
+        {% component 'glide_bullet' slide_index='2' %}
+      {% endfill %}
+    {% endcomponent_block %}
   </div>
   <div class="container mx-auto max-w-screen-xl relative max-lg:mt-28 lg:mt-16">
     <div class="z-0 relative right-0 max-lg:top-0 lg:-top-20 motion-safe:rallax">
