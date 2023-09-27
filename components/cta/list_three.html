@@ -1,0 +1,10 @@
+{% load static %}
+{% load component_tags %}
+
+<div
+  class="
+    flex max-lg:flex-col gap-y-20
+    lg:flex-row lg:justify-between
+  ">
+  {% slot "content" default %}{% endslot %}
+</div>
