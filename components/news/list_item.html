@@ -26,16 +26,23 @@
     {% endif %}
     <div
       class="
-        lg:h-28 grow relative z-0 overflow-hidden
+        grow relative z-0 overflow-hidden
         flex flex-col justify-end
       ">
-      <div class="max-lg:hidden py-4 absolute z-0 top-0 inset-x-0 opacity-30">
+      <div class="max-lg:hidden py-4 absolute z-0 top-0 inset-x-0">
         {{ item.body|striptags|truncatechars:"300" }}
       </div>
-      <div class="relative z-10 flex max-lg:items-center not-prose max-lg:mt-8 lg:m-6">
-        {% with rel_path=item.url label="Read more" %}
-          {% include "custom/button-action-blue.html" %}
-        {% endwith %}
+      <div
+        class="
+          relative z-10 lg:h-36 flex flex-col justify-end
+          bg-gradient-to-b from-transparent via-white to-white
+          lg:items-start not-prose
+        ">
+        <div class="max-lg:mt-8 lg:m-6">
+          {% with rel_path=item.url label="Read more" %}
+            {% include "custom/button-action-blue.html" %}
+          {% endwith %}
+        </div>
       </div>
     </div>
   </div>
