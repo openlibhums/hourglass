@@ -1,0 +1,109 @@
+{% load static %}
+{% load component_tags %}
+
+<div class="container mx-auto max-w-screen-xl relative max-lg:mt-0 lg:mt-8">
+  {% include 'custom/edit-on-github.html' with rel_path='custom/profile.html' %}
+  {% include 'custom/generic-art-opener.html' %}
+  <div class="relative z-40">
+    <h1
+      class="
+        max-lg:text-4xl lg:text-7xl !leading-snug
+        max-lg:max-w-xs lg:max-w-2xl
+        font-poppins-bold max-lg:py-12 lg:py-20 px-8
+      ">
+      Edit Account
+    </h1>
+  </div>
+</div>
+<div class="container mx-auto max-w-screen-xl relative lg:-mt-4">
+  <div class="relative z-40 max-md:py-6 md:py-20 bg-blue md:px-12 lg:max-w-3xl">
+    <section class="m-6 text-white">
+      <h2 class="font-poppins-bold text-3xl max-lg:text-center pb-4">
+        {% trans "Email" %}
+      </h2>
+      {% component_block "form" button_label="Update Email Address" form_method="POST" %}
+        {% fill "fields" %}
+          {% component_block "form_field" id_for_label="email_address" label="Email" required=True %}
+            {% fill "field" %}
+              {% component "form_input" type="email" name="email_address" value=request.user.email %}
+            {% endfill %}
+            {% fill "help_text" %}
+              <p class="py-2">
+                {% blocktrans %}
+                  Please note: If you update your password,
+                  You will be logged out, and you won't be
+                  able to log in again until you follow
+                  the verification link in an email
+                  sent to your new email address.
+                {% endblocktrans %}
+              </p>
+            {% endfill %}
+          {% endcomponent_block %}
+        {% endfill %}
+        {% fill "button" %}
+          {% include 'custom/button-submit-white.html' with label="Update Email Address" name="email" %}
+        {% endfill %}
+      {% endcomponent_block %}
+    </section>
+    <section class="m-6 text-white">
+      <h2 class="font-poppins-bold text-3xl max-lg:text-center max-lg:mt-12 pb-4">
+        {% trans "Password" %}
+      </h2>
+      {% component_block "form" form_method="POST" %}
+        {% fill "fields" %}
+          {% component_block "form_field" id_for_label="current_password" label="Current Password" required=True %}
+            {% component "form_input" type="password" name="current_password" %}
+          {% endcomponent_block %}
+          {% component_block "form_field" id_for_label="new_password_one" label="New Password" required=True %}
+            {% component "form_input" type="password" name="new_password_one" %}
+          {% endcomponent_block %}
+          {% component_block "form_field" id_for_label="new_password_two" label="Confirm New Password" required=True %}
+            {% component "form_input" type="password" name="new_password_two" %}
+          {% endcomponent_block %}
+        {% endfill %}
+        {% fill "button" %}
+          {% include 'custom/button-submit-white.html' with label="Update Password" name="change_password" %}
+        {% endfill %}
+      {% endcomponent_block %}
+    </section>
+    <section class="m-6 text-white">
+      <h2 class="font-poppins-bold text-3xl max-lg:text-center max-lg:mt-12 pb-4">
+        {% trans "Profile" %}
+      </h2>
+      {% component_block "form" form=form form_method="POST" enctype="multipart/form-data" %}
+
+        {% fill "fields" %}
+          <div>
+            {% component "form_field" field=form.salutation %}
+          </div>
+          {% component "form_field" field=form.first_name %}
+          {% component "form_field" field=form.middle_name %}
+          {% component "form_field" field=form.last_name %}
+          <div>
+            {% component "form_field" field=form.suffix %}
+          </div>
+          {% component "form_field" field=form.department %}
+          {% component "form_field" field=form.institution %}
+          {% component "form_field" field=form.country %}
+          {% component "form_field" field=form.preferred_timezone %}
+          {% component "form_field" field=form.twitter %}
+          {% component "form_field" field=form.facebook %}
+          {% component "form_field" field=form.orcid %}
+          {% component "form_field" field=form.github %}
+          {% component "form_field" field=form.linkedin %}
+          {% component "form_field" field=form.website %}
+          {% component "form_field" field=form.biography %}
+          {% component "form_field" field=form.signature %}
+        {% endfill %}
+        {% fill "button" %}
+          {% include 'custom/button-submit-white.html' with label="Update Profile" name="edit_profile" %}
+        {% endfill %}
+      {% endcomponent_block %}
+    </section>
+  </div>
+</div>
+
+
+<div class="container mx-auto max-w-screen-xl relative mt-28 pb-28">
+  {% include 'custom/subscribe-art.html' %}
+</div>

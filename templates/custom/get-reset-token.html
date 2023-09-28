@@ -1,0 +1,39 @@
+{% load static %}
+{% load component_tags %}
+{% load orcid %}
+
+<div class="container mx-auto max-w-screen-xl relative">
+  {% include 'custom/edit-on-github.html' with rel_path='custom/get-reset-token.html' %}
+  {% include 'custom/generic-art-opener.html' %}
+</div>
+<div class="container mx-auto max-w-screen-xl relative max-lg:mt-12 lg:mt-24">
+  <div class="relative z-40 max-md:py-8 md:py-20 bg-blue md:px-8 text-white max-w-2xl">
+    <div class="m-6 flex flex-col">
+      <h1 class="font-poppins-bold text-2xl max-lg:text-center pb-4">
+        Reset Password
+      </h1>
+      {% component_block "form" form=form form_method="POST" %}
+        {% fill "fields" %}
+          {% component_block "form_field" id_for_label="email_address" label="Email" required=True %}
+            {% fill "field" %}
+              {% component "form_input" type="email" name="email_address" %}
+            {% endfill %}
+            {% fill "help_text" %}
+              <p class="py-2">
+                {% blocktrans %}
+                  Enter your email address to begin the reset process
+                {% endblocktrans %}
+              </p>
+            {% endfill %}
+          {% endcomponent_block %}
+        {% endfill %}
+        {% fill "button" %}
+          {% include 'custom/button-submit-white.html' with label="Get Reset Link" %}
+        {% endfill %}
+      {% endcomponent_block %}
+    </div>
+  </div>
+</div>
+<div class="container mx-auto max-w-screen-xl relative mt-28 pb-28">
+  {% include 'custom/subscribe-art.html' %}
+</div>
