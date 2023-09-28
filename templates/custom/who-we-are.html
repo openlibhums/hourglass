@@ -24,21 +24,20 @@
         Who We Are
       </h1>
     </div>
-    <div
-      class="
-        p-8 bg-orange
-        flex max-md:flex-col md:flex-row gap-x-16 gap-y-6
-        relative z-40
-      ">
-      <div class="basis-1/2 prose lg:prose-lg">
-        <p class="lead font-poppins-bold">We are building a model of open access publishing that functions for the humanities – for free, for everyone, for ever.</p>
+    {% component_block "page_intro" %}
+      {% fill "column_one" %}
+        <p class="lead text-white">We are building a model of open access publishing that functions for the humanities – for free, for everyone, for ever.</p>
+      {% endfill %}
+      {% fill "column_two" %}
         <p>The Open Library of Humanities (OLH) is an award-winning publisher of humanities scholarship based at Birkbeck, University of London. We play a leading role within a growing ecosystem of scholar-led digital publishing, that combines cutting-edge technology with community governance and not-for-profit principles. This has become known as diamond open access.</p>
-      </div>
-      <div class="basis-1/2 prose lg:prose-lg">
-        <p>We publish 28 open access journals and are funded by more than 340 university and public libraries worldwide, who have joined us in our mission to make scholarly publishing fairer, more accessible, and rigorously preserved for the digital future.</p>
-        <p>The peer-reviewed scholarship we publish showcases some of the most dynamic research in humanities disciplines– from classics, modern languages and cultures, philosophy, theology and history, to political theory, sociology, anthropology, film and new media studies, and digital humanities. Our journals benefit from the latest advances in online journal publishing – with high-quality presentation, annotative functionality, robust digital preservation, strong discoverability and easy-to-share social media buttons.</p>
-      </div>
-    </div>
+      {% endfill %}
+    {% endcomponent_block %}
+  </div>
+  <div class="container mx-auto max-w-screen-xl relative mt-28">
+    {% component_block "page_section" anchor="left" %}
+      <p class="font-semibold">We publish 28 open access journals and are funded by more than 340 university and public libraries worldwide, who have joined us in our mission to make scholarly publishing fairer, more accessible, and rigorously preserved for the digital future.</p>
+      <p>The peer-reviewed scholarship we publish showcases some of the most dynamic research in humanities disciplines– from classics, modern languages and cultures, philosophy, theology and history, to political theory, sociology, anthropology, film and new media studies, and digital humanities. Our journals benefit from the latest advances in online journal publishing – with high-quality presentation, annotative functionality, robust digital preservation, strong discoverability and easy-to-share social media buttons.</p>
+    {% endcomponent_block %}
   </div>
   <div class="container mx-auto max-w-screen-xl relative max-lg:mt-16 lg:mt-28">
     <div class="flex max-lg:justify-center lg:justify-end md:max-w-3xl">
@@ -90,7 +89,7 @@
       </div>
     </div>
   </div>
-  <div class="container mx-auto max-w-screen-xl relative">
+  <div class="container mx-auto max-w-screen-xl relative mt-28">
     <img
       class="
         absolute max-lg:hidden lg:left-12 h-80
@@ -100,7 +99,7 @@
       alt="">
     {% include 'custom/counter-block.html' %}
   </div>
-  <div class="container mx-auto max-w-screen-xl relative">
+  <div class="container mx-auto max-w-screen-xl relative mt-28">
     <div
       class="
         relative
@@ -114,25 +113,12 @@
           alt="An upside-down Modernist building in a collage with a triangle and a circle">
       </div>
     </div>
-    <div
-      class="
-        relative before:z-30 before:block before:absolute
-        before:inset-y-0 before:w-[50vw]
-        before:right-1/2 before:bg-white
-        mt-28
-      ">
-      <div
-        class="
-          prose lg:prose-lg
-          px-8 py-14 z-40 relative
-          bg-white max-w-3xl
-        ">
-        <h2>Our Story</h2>
-        <p class="font-semibold">The OLH launched as an international movement of scholars, librarians, programmers, and publishers in 2013. Co-founders Dr Caroline Edwards and Professor Martin Paul Eve wanted to rebuild an unfair system in which corporate publishers make huge profits from publicly funded research by selling it back to universities in subscription packages.</p>
-        <p>Martin and Caroline began working together, building on their respective visions for open access. By 2015 the Open Library of Humanities had become a scholar-led publisher offering a not-for-profit route to open access. The OLH challenged commercial scholarly publishing, which quickly adopted an “author-pays” model of open access, passing the cost of publication onto authors to recoup lost subscriptions.</p>
-        <p>Too often publishing companies profit from our scholarship and editorial labour, whilst university and library budgets are squeezed. We built an organisation around the passionately held belief that academic research should be made available to anyone with an internet connection.</p>
-      </div>
-    </div>
+    {% component_block "page_section" anchor="left" %}
+      <h2>Our Story</h2>
+      <p class="font-semibold">The OLH launched as an international movement of scholars, librarians, programmers, and publishers in 2013. Co-founders Dr Caroline Edwards and Professor Martin Paul Eve wanted to rebuild an unfair system in which corporate publishers make huge profits from publicly funded research by selling it back to universities in subscription packages.</p>
+      <p>Martin and Caroline began working together, building on their respective visions for open access. By 2015 the Open Library of Humanities had become a scholar-led publisher offering a not-for-profit route to open access. The OLH challenged commercial scholarly publishing, which quickly adopted an “author-pays” model of open access, passing the cost of publication onto authors to recoup lost subscriptions.</p>
+      <p>Too often publishing companies profit from our scholarship and editorial labour, whilst university and library budgets are squeezed. We built an organisation around the passionately held belief that academic research should be made available to anyone with an internet connection.</p>
+    {% endcomponent_block %}
   </div>
   <div class="container mx-auto max-w-screen-xl relative">
     <div
@@ -161,38 +147,22 @@
       </div>
     </div>
   </div>
-  <div class="container mx-auto max-w-screen-xl relative">
-    <div
+  <div class="container mx-auto max-w-screen-xl relative mt-28">
+    {% component_block "page_section" anchor="left" %}
+      <h2>What We Offer</h2>
+      <p class="font-semibold">When you publish with the OLH you are joining a worldwide community. We offer experienced, friendly editorial guidance, bespoke technological support, and regular events organised for our editors, authors, and librarians. Our journals extend this community through the scholarly associations that founded them, the conferences that are their lifeblood, and the university classrooms in which our published materials are taught on curricula worldwide.</p>
+      <p>Our current team of 10 full-time staff provides years of academic editorial experience with cutting-edge publishing technology. Our dedicated in-house software engineers have built a leading platform for journal hosting, migration, manuscript submission and review, copy-editing and typesetting.</p>
+    {% endcomponent_block %}
+    <img
       class="
-        relative before:z-30 before:block before:absolute
-        before:inset-y-0 before:w-[50vw]
-        max-lg:before:left-1/2 lg:before:right-1/2 before:bg-white
-        mt-28
-      ">
-      <div class="max-w-3xl relative">
-        <div class="
-            prose lg:prose-lg
-            px-8 py-14 z-40 relative
-            bg-white max-w-3xl
-          ">
-          <h2>What We Offer</h2>
-          <p class="font-semibold">When you publish with the OLH you are joining a worldwide community. We offer experienced, friendly editorial guidance, bespoke technological support, and regular events organised for our editors, authors, and librarians. Our journals extend this community through the scholarly associations that founded them, the conferences that are their lifeblood, and the university classrooms in which our published materials are taught on curricula worldwide.</p>
-          <p>Our current team of 10 full-time staff provides years of academic editorial experience with cutting-edge publishing technology. Our dedicated in-house software engineers have built a leading platform for journal hosting, migration, manuscript submission and review, copy-editing and typesetting.</p>
-        </div>
-        <img
-          class="
-            absolute z-0
-            max-lg:hidden
-            -right-96 max-w-md
-            motion-reduce:-top-6 motion-safe:-top-56 motion-safe:rallax
-          "
-          src="{% static 'hourglass/media/backgrounds/robot-head-shoulder-lg.png' %}"
-          alt="Head and shoulders of a metallic, humanoid robot">
-      </div>
-    </div>
+        absolute z-0 max-lg:hidden right-0 max-w-md
+        motion-reduce:-top-6 motion-safe:-top-56 motion-safe:rallax
+      "
+      src="{% static 'hourglass/media/backgrounds/robot-head-shoulder-lg.png' %}"
+      alt="Head and shoulders of a metallic, humanoid robot">
   </div>
-  <div class="container mx-auto max-w-screen-xl relative max-lg:mt-16 lg:mt-28">
-    <div class="flex max-lg:justify-center lg:justify-end md:max-w-3xl max-lg:mb-48">
+  <div class="container mx-auto max-w-screen-xl relative mt-28">
+    <div class="flex max-lg:justify-center lg:justify-end md:max-w-3xl">
       <div class="relative z-40">
         {% component_block "quote" %}
           {% fill "quote" %}
@@ -204,15 +174,6 @@
           {% endfill %}
         {% endcomponent_block %}
       </div>
-      <img
-        class="
-          absolute lg:hidden
-          -right-32
-          max-w-sm
-          motion-safe:-bottom-80 motion-safe:rallax
-        "
-        src="{% static 'hourglass/media/backgrounds/robot-head-shoulder.png' %}"
-        alt="Head and shoulders of a metallic, humanoid robot">
       <img
         class="
           absolute
@@ -233,53 +194,27 @@
         alt="">
     </div>
   </div>
-  <div class="container mx-auto max-w-screen-xl relative max-lg:mt-16 lg:mt-28">
-    <div
-      class="
-        relative before:z-30 before:block before:absolute
-        before:inset-y-0 before:w-[50vw]
-        before:right-1/2 before:bg-white
-      ">
-      <div
-        class="
-          prose lg:prose-lg
-          px-8 py-14 z-40 relative
-          bg-white max-w-3xl
-        ">
-        <h2>Plan S Compliancy</h2>
-        <p><span class="font-semibold">All our journals are compliant with Plan S funder mandates and have been included in the Plan S compliance <a href="https://journalcheckertool.org/">Journal Checker tool</a>.</span> <a href="https://www.coalition-s.org/why-plan-s/">Plan S</a> is an international initiative set up by researcher funders and other academic organisations to ensure that publicly funded research is published in open access journals, open access platforms or made immediately available through open access repositories without embargo.</p>
-      </div>
-    </div>
+  <div class="container mx-auto max-w-screen-xl relative mt-28">
+    {% component_block "page_section" anchor="left" %}
+      <h2>Plan S Compliancy</h2>
+      <p><span class="font-semibold">All our journals are compliant with Plan S funder mandates and have been included in the Plan S compliance <a href="https://journalcheckertool.org/">Journal Checker tool</a>.</span> <a href="https://www.coalition-s.org/why-plan-s/">Plan S</a> is an international initiative set up by researcher funders and other academic organisations to ensure that publicly funded research is published in open access journals, open access platforms or made immediately available through open access repositories without embargo.</p>
+    {% endcomponent_block %}
   </div>
   <div class="container mx-auto max-w-screen-xl relative mt-28">
     {% include 'custom/olh-prospectus.html' %}
   </div>
-  <div class="container mx-auto max-w-screen-xl relative">
-    <div
-      class="
-        relative before:z-30 before:block before:absolute
-        before:inset-y-0 before:w-[50vw]
-        max-lg:before:left-1/2 lg:before:right-1/2
-        before:bg-white
-        mt-28
-      ">
-      <div
-        class="
-          prose max-lg:prose-base lg:prose-lg
-          px-8 py-14 z-40 relative
-          bg-white max-w-3xl
-        ">
-        <h2>Grants &amp; Awards</h2>
-        <p class="font-semibold">The OLH has received major funding in the form of research and development grants from the Andrew W. Mellon Foundation and Arcadia – a charitable fund of Lisbet Rausing and Professor Peter Baldwin.</p>
-        <p>The work of the Open Library of Humanities has been internationally recognised for its important contribution to open access for the humanities, as well as its innovative business model. We have been Highly Commended at the <a href="https://www.alpsp.org/news/alpsp-awards-2020-winners-announced-sep-2020">ALPSP Awards for Innovation in Publishing</a> 2020, won a <a href="https://www.openlibhums.org/news/348/">Coko Foundation Open Publishing Award</a> in the category of Open Publishing Models in 2019, and received an award for <a href="https://www.ukaop.org/hub/aop-announces-winners-for-the-digital-publishing-awards-2020">Small Digital Publisher of the Year</a> from the Association of Online Publishers (AOP) in October 2020.</p>
-        {% include 'custom/awards-prizes-images.html' %}
-        <div class="flex max-lg:items-start max-lg:flex-col gap-8">
-          {% with rel_path="/site/awards-prizes" label="Find out more" %}
-            {% include 'custom/button-action-blue.html' %}
-          {% endwith %}
-        </div>
+  <div class="container mx-auto max-w-screen-xl relative mt-28">
+    {% component_block "page_section" anchor="left" %}
+      <h2>Grants &amp; Awards</h2>
+      <p class="font-semibold">The OLH has received major funding in the form of research and development grants from the Andrew W. Mellon Foundation and Arcadia – a charitable fund of Lisbet Rausing and Professor Peter Baldwin.</p>
+      <p>The work of the Open Library of Humanities has been internationally recognised for its important contribution to open access for the humanities, as well as its innovative business model. We have been Highly Commended at the <a href="https://www.alpsp.org/news/alpsp-awards-2020-winners-announced-sep-2020">ALPSP Awards for Innovation in Publishing</a> 2020, won a <a href="https://www.openlibhums.org/news/348/">Coko Foundation Open Publishing Award</a> in the category of Open Publishing Models in 2019, and received an award for <a href="https://www.ukaop.org/hub/aop-announces-winners-for-the-digital-publishing-awards-2020">Small Digital Publisher of the Year</a> from the Association of Online Publishers (AOP) in October 2020.</p>
+      {% include 'custom/awards-prizes-images.html' %}
+      <div class="flex max-lg:items-start max-lg:flex-col gap-8">
+        {% with rel_path="/site/awards-prizes" label="Find out more" %}
+          {% include 'custom/button-action-blue.html' %}
+        {% endwith %}
       </div>
-    </div>
+    {% endcomponent_block %}
   </div>
   <div class="container mx-auto max-w-screen-xl relative mt-28">
     {% component_block "page_section" anchor="right" %}

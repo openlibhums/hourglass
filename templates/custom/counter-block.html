@@ -3,11 +3,10 @@
     relative after:z-30 after:block after:absolute
     after:inset-y-0 after:w-[50vw]
     after:left-1/2 after:bg-orange
-    mt-28
   ">
   <div
     class="
-      px-8 py-28 flex flex-col gap-y-6 z-40 relative
+      py-8 flex flex-col gap-y-6 z-40 relative
       bg-orange
     ">
     <div
@@ -20,7 +19,8 @@
           Journals
         </p>
         <p class="font-poppins-bold max-lg:text-6xl lg:text-8xl">
-          {{ request.press.active_journals.count }}
+          26
+          <!-- Once live we can use request.press.active_journals.count -->
         </p>
       </div>
       <div class="flex flex-col max-lg:items-center">
@@ -28,7 +28,8 @@
           Articles published
         </p>
         <p class="font-poppins-bold max-lg:text-6xl lg:text-8xl">
-          {{ request.press.published_articles.count }}
+          6,740
+          <!-- Once live we can use request.press.published_articles.count -->
         </p>
       </div>
       <div class="flex flex-col max-lg:items-center">
