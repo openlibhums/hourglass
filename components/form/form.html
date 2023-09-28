@@ -1,41 +1,38 @@
 {% load static %}
 {% load component_tags %}
 
-<div class="prose lg:prose-lg">
-  {{ form.non_field_errors }}
-</div>
-<div
-  class="
-    flex max-lg:flex-col lg:flex-wrap gap-4
-    md:max-lg:max-w-xl lg:max-w-3xl
-  ">
-  {% for field in form %}
-    <div class="text-white flex flex-col w-full">
-      <label
-        class="py-2 px-3 font-poppins-medium"
-        for="{{ field.id_for_label }}">
-        {{ field.label }}
-      </label>
-      {% if field.errors %}
-        <div
-          class="
-            py-2 px-3 flex flex-row items-center gap-x-2
-            text-orange-light font-bold max-lg:text-md lg:text-lg
-          ">
-          <img
-            class="h-6"
-            src="{% static 'hourglass/media/icons/arrow-orange-light.svg' %}"
-            alt="arrow pointing right">
-          {{ field.errors }}
-        </div>
-      {% endif %}
-      {{ field }}
-      {% if field.help_text %}
-        <p>{{ field.help_text|safe }}</p>
-      {% endif %}
+<form
+  {% if form_method %}
+    method="{{ form_method}}"
+  {% endif %}
+  >
+  {% if form_method|lower == 'post'%}
+    {% csrf_token %}
+  {% endif %}
+  {% if form %}
+    <div class="prose lg:prose-lg">
+      {{ form.non_field_errors }}
     </div>
-  {% endfor %}
-  <div class="mt-8 w-full flex justify-end">
-    {% slot 'button' %}{% endslot %}
+  {% endif %}
+  <p class="px-2 pb-4">
+    <span class="text-orange-medium">*</span> required field
+  </p>
+  <div
+    class="
+      flex max-lg:flex-col lg:flex-wrap gap-4
+      md:max-lg:max-w-xl lg:max-w-3xl
+    ">
+    {% slot "fields" default %}
+      {% if form %}
+        {% for field in form %}
+          {% component "form_field" field=field %}
+        {% endfor %}
+      {% endif %}
+    {% endslot %}
+    <div class="w-full flex flex-col items-end">
+      {% slot "button" %}
+        {% include 'custom/button-submit-white.html' with label="Submit" %}
+      {% endslot %}
+    </div>
   </div>
-</div>
+</form>

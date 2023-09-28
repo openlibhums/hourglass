@@ -1,6 +1,8 @@
 {% load static %}
 
 <button
+  type="{{ type|default:'submit' }}"
+  name="{{ name|default:'' }}"
   class="
     p-4 not-prose
     rounded-full border-2 border-blue bg-white
@@ -11,7 +13,7 @@
       uppercase text-blue
       font-poppins-bold text-xs tracking-widest
     ">
-    {{ label }}
+    {{ label|default:'' }}
   </span>
   <img
     class="h-4"
