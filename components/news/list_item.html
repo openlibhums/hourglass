@@ -1,0 +1,49 @@
+{% load static %}
+
+{% if item %}
+  <div
+    class="
+      {{ fraction }} flex flex-col space-between md:px-6
+      max-md:items-center prose lg:prose-lg
+    ">
+    <img
+      class="grayscale !mb-4"
+      src="{{ item.best_image_url }}"
+      alt="">
+    {% if include_date %}
+      <div class="pt-4 max-md:text-center">
+        {{ item.posted|date:"j F Y" }}
+      </div>
+    {% endif %}
+    <strong class="py-4 font-poppins-bold text-2xl max-md:text-center">
+      {{ item.title }}
+    </strong>
+    <div class="max-md:text-center">
+      {{ item.byline }}
+    </div>
+    {% if item.tags.all and include_tags %}
+      {% include 'custom/news-item-tags.html' with tags=item.tags.all %}
+    {% endif %}
+    <div
+      class="
+        grow relative z-0 overflow-hidden
+        flex flex-col justify-end
+      ">
+      <div class="max-lg:hidden py-4 absolute z-0 top-0 inset-x-0">
+        {{ item.body|striptags|truncatechars:"300" }}
+      </div>
+      <div
+        class="
+          relative z-10 lg:h-36 flex flex-col justify-end
+          bg-gradient-to-b from-transparent via-white to-white
+          lg:items-start not-prose
+        ">
+        <div class="max-lg:mt-8 lg:m-6">
+          {% with rel_path=item.url label="Read more" %}
+            {% include "custom/button-action-blue.html" %}
+          {% endwith %}
+        </div>
+      </div>
+    </div>
+  </div>
+{% endif %}

@@ -1,0 +1,243 @@
+{% load static %}
+{% load component_tags %}
+
+<article>
+  <div class="container mx-auto max-w-screen-xl relative max-lg:mt-56 lg:mt-8">
+    {% include 'custom/edit-on-github.html' with rel_path='custom/olh-journal.html' %}
+    {% include 'custom/puppet-opener.html' %}
+    <div class="relative z-40">
+      <h1
+        class="
+          max-lg:text-4xl lg:text-7xl !leading-snug
+          max-lg:max-w-xs lg:max-w-2xl
+          font-poppins-bold max-lg:py-12 lg:py-20 px-8
+        ">
+        Open<br> Library of<br> Humanities<br> Journal
+      </h1>
+    </div>
+  </div>
+  <div class="container mx-auto max-w-screen-xl relative">
+    {% component_block "page_intro" %}
+      {% fill "column_one" %}
+        <p class="lead text-white">{% lorem 15 w %}</p>
+      {% endfill %}
+      {% fill "column_two" %}
+        <p>Since the Open Library of Humanities launched as a publisher in 2015, our flagship <i>Open Library of Humanities</i> journal (<i>OLHJ</i>) has been showcasing diamond open access, peer reviewed scholarship from across the humanities.</p>
+      {% endfill %}
+    {% endcomponent_block %}
+  </div>
+  <div class="container mx-auto max-w-screen-xl relative mt-28">
+    {% component_block "page_section" anchor="left" %}
+      <img
+        class="-m-4 w-48"
+        src="{% static 'hourglass/media/icons/Our-Flagship-Journal.svg' %}"
+        alt="">
+      <h2>History and Purpose</h2>
+      <p><i>OLHJ</i> was inspired by experiments with open access <a href="https://www.aje.com/arc/what-is-a-megajournal/">megajournals</a> that were surfacing in the sciences during the early 2000s, such as <a href="https://journals.plos.org/plosone/">PLOS ONE</a>. These journals aimed to accelerate article publication, experiment with new forms of review, and provide coverage of a broad range of subject areas.</p>
+      <p>Back in 2013, we asked whether these publishing innovations could be adapted to humanities scholarship.&nbsp;<i>OLHJ</i> is an evolution of some of these concepts and aspirations for open access, that surfaced around the turn of the millennium. Though we offer an elastic model of publication, efficient publication timelines, and eschew disciplinary boundaries in favour of a broad readership, we meet the needs and expectations of the humanities community by publishing according to a rigorous double-blind review process and within field-specific, curated collections that are open access but with no author or reader fees.</p>
+      <p>We aim to offer a home for quality open access scholarship and a bespoke service for curated, often niche, issues of articles that form a cohesive body of research.</p>
+      <p>As a publisher, maintaining a flagship journal also keeps us aligned with the research communities that our work serves:</p>
+      <ul>
+        <li><i>OLHJ</i> showcases our dedication to the humanities and the possibilities for quality open access research within it. The OLH is proudly academic-led and by commissioning, copyediting, and running events for our flagship journal, our editorial staff remain active within humanities research.</li>
+        <li>A flagship journal allows us to model best practices and editorial standards for publishing open access in the humanities. We use this expertise to assist other journals that join the OLH community.</li>
+        <li><i>OLHJ</i> provides a space for the editorial team to test our bespoke, in-house journal publication software, Janeway. We gain instant user feedback, which the tech team use to inform the development of a submission platform that is emphatically open source, not for profit and tailored to researcher needs.</li>
+      </ul>
+    {% endcomponent_block %}
+  </div>
+  <div class="container mx-auto max-w-screen-xl relative mt-28">
+    {% include 'custom/puppet-halfway.html' %}
+    {% component_block "page_section" anchor="right" %}
+      <h2>Special Collections</h2>
+      <p>The articles <i>OLHJ</i> publishes are part of curated ‘Special Collections’—guest edited issues of articles related to a specific field, subject, or event within the humanities—and these are proposed to <i>OLHJ</i> by potential editors as a Special Collection application.</p>
+      <p><i>OLHJ</i> does not publish general submissions. After some early experimentation, we realised that to best serve humanities scholarship we needed to retain the focus associated with traditional scholarly journals, by using Special Collections as a forum of exchange among colleagues. The Special Collection format has some additional advantages. For example, work that could have otherwise formed an edited chapter in a book, typically with a for-profit academic publisher, can become an organically growing, rolling series of open access publications.</p>
+      <blockquote>For me, the Special Collection format at the <i>Open Library of Humanities</i> journal is an excellent alternative to more traditional forms of edited collection, both because of the brilliant editorial support that we received from the OLH and also because the open rolling format was so generative. Being able to decide how long submissions could be kept open meant that the collection developed in ways we could never have imagined in advance. The resulting gathering of work is genuinely diverse, inspired by our research context and questions but not limited by them.</blockquote>
+      <p class="pl-8">—Catherine Grant, Co-editor of ‘<a href="https://olh.openlibhums.org/collections/423/">Pride Revisited</a>’ <i>OLHJ</i> Special Collection</p>
+      <p>And, crucially, unlike an edited book collection, the articles are available to all, without restriction, and as soon as each article submission is ready for publication. This ensures maximum visibility</p>
+    {% endcomponent_block %}
+  </div>
+  <div class="container mx-auto max-w-screen-xl relative mt-28">
+    {% component_block "page_section" prose=False anchor="right" width="full" %}
+      {% component_block "cta_list_three" %}
+        {% component_block "cta_list_item" %}
+          <img
+            class="w-44 h-44"
+            src="{% static 'hourglass/media/icons/Publish.svg' %}"
+            alt="">
+          <strong class="font-poppins-bold max-lg:text-xl lg:text-2xl text-center">
+            Calls for Papers
+          </strong>
+          {% with rel_path="/news/all/tag/CFP/" label="Find out more" %}
+            {% include 'custom/button-action-blue.html' %}
+          {% endwith %}
+        {% endcomponent_block %}
+        {% component_block "cta_list_item" %}
+          <img
+            class="w-44 h-44"
+            src="{% static 'hourglass/media/icons/Special-Collection-Editors.svg' %}"
+            alt="">
+          <strong class="font-poppins-bold max-lg:text-xl lg:text-2xl text-center">
+            Published Special Collections
+          </strong>
+          {% with rel_path="https://olh.openlibhums.org/collections/collection/" label="Find out more" %}
+            {% include 'custom/button-action-blue.html' %}
+          {% endwith %}
+        {% endcomponent_block %}
+        {% component_block "cta_list_item" %}
+          <img
+            class="w-44 h-44"
+            src="{% static 'hourglass/media/icons/FAQs.svg' %}"
+            alt="">
+          <strong class="font-poppins-bold max-lg:text-xl lg:text-2xl text-center">
+            Editor Testimonials
+          </strong>
+          {% with rel_path="/site/testimonials/" label="Find out more" %}
+            {% include 'custom/button-action-blue.html' %}
+          {% endwith %}
+        {% endcomponent_block %}
+      {% endcomponent_block %}
+    {% endcomponent_block %}
+  </div>
+  <div class="container mx-auto max-w-screen-xl relative mt-28">
+    {% include 'custom/puppet-last.html' %}
+    {% component_block "page_section" anchor="left" %}
+      <h2>Bespoke service</h2>
+      <p>We think that the level of personalised, customisable, and dedicated support we offer is unmatched, whether in the form of video meetings, professional copyediting, tailored tech training sessions, instant messenger, or mechanisms for using editor feedback to improve our in-house submissions platform.</p>
+      <p>Our small and friendly editorial team are available during normal working hours throughout the year to answer editorial and technology queries and take each published article through a thorough in-house copyedit before publication. The OLH combines this professionalism with our tradition of being proudly academic-led: each member of our editorial team is a qualified academic with a PhD in the humanities and therefore has personal experience of peer reviewed, academic publishing.</p>
+      <blockquote>I really enjoyed working with the OLH, and thought their work was excellent: just the right amount of editing and always fast, and always patient as we tried to navigate the workflow. I’ve worked with a lot of publishers and journals by now, and that was the smoothest, friendliest and best-value experience I’ve had in the last 15 years. I hope to work with them again in the future.</blockquote>
+      <p class="pl-8">—Bettina Bildhauer, Co-editor of ‘<a href="https://olh.openlibhums.org/collections/505/">Politics and History of Menstruation</a>’ Special Collection</p>
+      <p>Crucially we provide this bespoke service without any author or reader-facing fees, thanks to the generous support of our worldwide network of library partners, who back our vision for a more equitable, ethical, and sustainable model of open access.</p>
+    {% endcomponent_block %}
+  </div>
+  <div class="container mx-auto max-w-screen-xl relative mt-28">
+    {% component_block "page_section" prose=False anchor="right" width="full" %}
+      {% component_block "news_list" h="Interviews and insights" %}
+        {% component "news_list_item" item="585" include_tags=False %}
+        {% component "news_list_item" item="523" include_tags=False %}
+        {% component "news_list_item" item="593" include_tags=False %}
+      {% endcomponent_block %}
+    {% endcomponent_block %}
+  </div>
+  <div class="container mx-auto max-w-screen-xl relative mt-28">
+    {% component_block "page_section" prose=False anchor="left" width="full" %}
+      <div class="prose lg:prose-lg pb-8">
+        <p>Here are some of the things that you get when publishing with <i>OLHJ</i>:</p>
+      </div>
+      <div class="max-lg:flex max-lg:flex-col lg:grid grid-cols-3 gap-8">
+        <div class="basis-1/3 prose lg:prose-lg">
+          <div class="flex place-content-center not-prose">
+            <img
+              class="w-44"
+              src="{% static 'hourglass/media/icons/Special-Collection-Editors.svg' %}"
+              alt="">
+          </div>
+          <h3 class="text-center">Special Collection Editors</h3>
+          <ul>
+            <li>
+              Join a revolution in academic publishing and benefit from the support of over 300 libraries and institutions who financially back our model
+            </li>
+            <li>
+              OLH Editorial team assistance and professional expertise from humanities scholars
+            </li>
+            <li>
+              Access to our Janeway publishing platform and technical support
+            </li>
+            <li>
+              Full support documentation and tailored training to help you get started
+            </li>
+            <li>
+              Access to iThenticate anti-plagiarism software
+            </li>
+            <li>
+              Robust publisher policies, adhering to COPE standards of best practise
+            </li>
+            <li>
+              Marketing help, to publicise your special collection
+            </li>
+          </ul>
+        </div>
+        <div class="prose lg:prose-lg">
+          <div class="flex place-content-center not-prose">
+            <img
+              class="w-44"
+              src="{% static 'hourglass/media/icons/Both.svg' %}"
+              alt="">
+          </div>
+          <h3 class="text-center">Both</h3>
+          <ul>
+            <li>
+              Diamond open access publication with an award-winning publisher
+            </li>
+            <li>
+              No article processing charges for authors, or fees for readers
+            </li>
+            <li>
+              Robust archiving and indexing for maximum accessibility and digital preservation
+            </li>
+            <li>
+              Open access publication under a Creative Commons CC-BY 4.0 licence for maximum visibility
+            </li>
+            <li>
+              Timely publication, with each article published as soon as it is ready
+            </li>
+          </ul>
+        </div>
+        <div class="prose lg:prose-lg">
+          <div class="flex place-content-center not-prose">
+            <img
+              class="w-44"
+              src="{% static 'hourglass/media/icons/Authors.svg' %}"
+              alt="">
+          </div>
+          <h3 class="text-center">Authors</h3>
+          <ul>
+            <li>
+              A unique DOI for your article
+            </li>
+            <li>Enhanced author attribution and identification through ORCID iD
+            </li>
+            <li>
+              Instantly track your article's total view and downloads
+            </li>
+            <li>
+              Rigorous double-blind peer review of your article by at least two peer-reviewers
+            </li>
+            <li>
+              Multiple rounds of copyediting from experienced humanities scholars
+            </li>
+            <li>
+              A publication that is REF-admissable with full Plan S compliancy
+            </li>
+            <li>
+              Quick share buttons to instantly share your work across social media
+            </li>
+            <li>
+              An article that is professionally copyedited and typeset, with downloadable web and PDF versions
+            </li>
+          </ul>
+        </div>
+      </div>
+    {% endcomponent_block %}
+  </div>
+  <div class="container mx-auto max-w-screen-xl relative mt-28">
+    {% component_block "page_section" prose=False width="full" anchor="right" %}
+      {% component_block "cta_singular" %}
+        <img
+          class="-m-3 max-lg:w-32 max-lg:h-32 lg:w-44 lg:h-44"
+          src="{% static 'hourglass/media/icons/Publish-With-Us.svg' %}"
+          alt="">
+        <div class="prose lg:prose-lg">
+          <h2>Apply to edit a Special Collection with <i>OLHJ</i></h2>
+          <p>{% lorem 18 w %}</p>
+          <div class="flex not-prose">
+            {% with rel_path="https://olh.openlibhums.org/site/special-collections/" label="Apply" %}
+              {% include 'custom/button-action-blue.html' %}
+            {% endwith %}
+          </div>
+        </div>
+      {% endcomponent_block %}
+    {% endcomponent_block %}
+  </div>
+</article>
+<div class="container mx-auto max-w-screen-xl relative">
+  {% include 'custom/subscribe.html' %}
+</div>

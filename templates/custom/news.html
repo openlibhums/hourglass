@@ -1,5 +1,6 @@
 {% load static %}
 {% load i18n %}
+{% load component_tags %}
 
 <div class="container mx-auto max-w-screen-xl relative">
   {% include "custom/edit-on-github.html" with rel_path="custom/news.html" %}
@@ -29,9 +30,7 @@
     <div class="relative z-40 py-8 max-md:px-4 md:px-8 bg-white">
       <div class="flex max-md:flex-col md:flex-row md:flex-wrap gap-y-20 md:-mx-6">
         {% for item in news_items|slice:":12" %}
-          <div class="md:basis-1/3">
-            {% include "custom/news-list-item.html" with item=item %}
-          </div>
+          {% component "news_list_item" item=item %}
         {% endfor %}
       </div>
     </div>
