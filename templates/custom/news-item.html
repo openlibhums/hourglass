@@ -5,31 +5,7 @@
   <header>
     <div class="container mx-auto max-w-screen-xl relative">
       {% include 'custom/edit-on-github.html' with rel_path='custom/news-item.html' %}
-      <div class="relative z-0 top-0 max-md:-right-36 md:-right-12">
-        <img
-          class="
-            motion-safe:rallax absolute z-0 w-12 max-lg:top-0 lg:top-0
-            max-lg:right-52 lg:right-96
-          "
-          src="{% static 'hourglass/media/backgrounds/circle-red.svg' %}"
-          alt="">
-        <img
-          class="
-            absolute max-lg:z-20 lg:z-0 max-lg:top-8 lg:top-16
-            max-lg:right-0 lg:right-20
-          "
-          src="{% static 'hourglass/media/backgrounds/circle-blue-textured.png' %}"
-          width="434"
-          alt="">
-        <img
-          class="motion-safe:rallax z-10 absolute top-56 -right-8 w-48"
-          src="{% static 'hourglass/media/backgrounds/square-red.svg' %}"
-          alt="">
-        <img
-          class="motion-safe:rallax absolute max-lg:hidden z-20 top-96 right-16 h-36"
-          src="{% static 'hourglass/media/backgrounds/triangle-orange-pointing-down.svg' %}"
-          alt="">
-      </div>
+      {% include 'custom/generic-art-opener.html' %}
       <div class="relative z-40">
         <div class="prose lg:prose-lg pt-64 max-md:pr-8 md:px-8">
           <h1 class="font-poppins-bold !leading-snug">
