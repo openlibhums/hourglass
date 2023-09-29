@@ -1,0 +1,25 @@
+{% load static %}
+{% load component_tags %}
+
+<div class="bg-white relative z-10 -left-4 h-48">
+  <div class="relative z-10 flex flex-row items-start gap-4 pl-4 py-4">
+    <img
+      class="-m-3 max-md:w-24 md:max-xl:w-32 xl:w-36"
+      src="{% static 'hourglass/media/icons/' %}{{ icon_filename }}"
+      alt="">
+    <div class="flex flex-col">
+      <h3 class="font-poppins-bold text-2xl">
+        {% slot "h3" %}{% endslot %}
+      </h3>
+      <p class="pt-2">
+        {% slot "p" %}{% endslot %}
+      </p>
+    </div>
+  </div>
+  <div class="absolute z-0 top-0 right-0">
+    <img
+      class="w-48 origin-top-right -rotate-90"
+      src="{% static 'hourglass/media/backgrounds/triangle-white-short.svg' %}"
+      alt="">
+  </div>
+</div>
