@@ -23,8 +23,7 @@ class Glide(component.Component):
                 'focusAt': 'center',
                 'perView': 3,
                 'breakpoints': {
-                    '1024': {'perView': 2},
-                    '768': {'perView': 1},
+                    '1024': {'perView': 1},
                 }
             }
         context['options'] = json.dumps(options)
