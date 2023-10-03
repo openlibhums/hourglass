@@ -3,9 +3,9 @@
 <div
   class="
     p-8 relative z-40
-    {% if color == "blue" %}
+    {% if color == 'blue' %}
       bg-blue
-    {% elif color == "orange" %}
+    {% elif color == 'orange' %}
       bg-orange
     {% endif %}
   ">
@@ -13,14 +13,14 @@
     <div
       class="
         md:basis-1/2 prose lg:prose-lg
-      {% if color == "blue" %}text-white{% endif %}
+      {% if color == 'blue' %}text-white{% endif %}
       ">
       {% slot "column_one" %}{% endslot %}
     </div>
     <div
       class="
         md:basis-1/2 prose lg:prose-lg
-        {% if color == "blue" %}text-white{% endif %}
+        {% if color == 'blue' %}text-white{% endif %}
       ">
       {% slot "column_two" %}{% endslot %}
     </div>
