@@ -1,0 +1,23 @@
+{% load static %}
+
+<img
+  class="absolute z-10 max-lg:top-40 lg:top-20 max-lg:right-4 lg:-right-12 lg:max-w-md"
+  srcset="
+    {% static 'hourglass/media/backgrounds/square-blue-textured.png' %} 335w,
+    {% static 'hourglass/media/backgrounds/square-blue-textured-lg.png' %} 669w
+  "
+  src="{% static 'hourglass/media/backgrounds/square-blue-textured-lg.png' %}"
+  sizes="(max-width: 1024px) 335px, 669px"
+  alt="">
+<img
+  class="z-20 absolute max-lg:top-20 lg:top-12 max-lg:right-36 lg:-right-20 w-16 h-16"
+  src="{% static 'hourglass/media/backgrounds/circle-red.svg' %}"
+  alt="">
+<img
+  class="lg:hidden z-30 absolute top-[27rem] right-8 w-56"
+  src="{% static 'hourglass/media/backgrounds/triangles-blue-three.svg' %}"
+  alt="">
+<img
+  class="max-lg:hidden max-lg:z-20 lg:z-10 absolute top-[17rem] -right-40 w-64"
+  src="{% static 'hourglass/media/backgrounds/triangles-blue-four.svg' %}"
+  alt="">
