@@ -3,7 +3,10 @@
 
 <form
   {% if form_method %}
-    method="{{ form_method}}"
+    method="{{ form_method }}"
+  {% endif %}
+  {% if form_action %}
+    action="{{ form_action }}"
   {% endif %}
   >
   {% if form_method|lower == 'post'%}
@@ -14,7 +17,7 @@
       {{ form.non_field_errors }}
     </div>
   {% endif %}
-  <p class="px-2 pb-4">
+  <p class="text-white px-2 pb-4">
     <span class="text-orange-medium">*</span> required field
   </p>
   <div
@@ -29,10 +32,11 @@
         {% endfor %}
       {% endif %}
     {% endslot %}
-    <div class="w-full flex flex-col items-end">
-      {% slot "button" %}
-        {% include 'custom/button-submit-white.html' with label="Submit" %}
-      {% endslot %}
-    </div>
+  </div>
+  {% slot "other" %}{% endslot %}
+  <div class="w-full flex flex-col items-end pt-4">
+    {% slot "button" %}
+      {% include 'custom/button-submit-white.html' with label="Submit" %}
+    {% endslot %}
   </div>
 </form>

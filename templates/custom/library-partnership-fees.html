@@ -1,0 +1,85 @@
+{% load static %}
+{% load component_tags %}
+{% load humanize %}
+
+<article>
+  <div
+    class="container mx-auto max-w-screen-xl relative max-lg:mt-52 lg:top-0">
+    {% include 'custom/edit-on-github.html' with rel_path='custom/library-partnership-fees.html' %}
+    {% include 'custom/astrolabe-opener.html' %}
+    {% include 'custom/generic-h1.html' with h1="Library Partnership Fees" %}
+  </div>
+  <div class="container mx-auto max-w-screen-xl relative">
+    {% component_block "page_intro" color="orange" %}
+      {% fill "column_one" %}
+        <p class="lead">This page can be used to calculate your membership fee, understand our consortial offer or sign up to our model.</p>
+      {% endfill %}
+      {% fill "column_two" %}
+        <p>You can also read about the benefits of becoming a supporter.</p>
+        <div class="not-prose flex">
+          {% with rel_path="/site/become-a-supporter/" label="Find out more" %}
+            {% include 'custom/button-action-black.html' %}
+          {% endwith %}
+        </div>
+      {% endfill %}
+    {% endcomponent_block %}
+  </div>
+  <div class="container mx-auto max-w-screen-xl relative mt-28">
+    {% component_block "page_section" anchor="left" %}
+      <img
+        class="-m-4 w-48"
+        src="{% static 'hourglass/media/icons/Library-Partnership-Fees.svg' %}"
+        alt="">
+      <h2>Calculate your Membership Fee</h2>
+      <p>When your institution signs-up to support OLH, it helps fund open access journals in the humanities by covering the costs of publication, while allowing us to grow our range of academic journals at a sustainable rate. Membership is renewable on an annual basis.</p>
+      <p>Our fees are banded, based on country and size of institution, which means that scholars and institutions worldwide stand to benefit. Universities are also given the opportunity to voluntarily support us at a higher membership rate, tiered into bronze, silver, and gold levels.</p>
+      <p>Please use this calculator to assess your membership fee. Or, if your institution belongs to a geographical region that is not covered here, please contact our Marketing Officer at paula.clementevega@bbk.ac.uk.</p>
+    {% endcomponent_block %}
+  </div>
+  <div class="container mx-auto max-w-screen-xl relative mt-28">
+    {% include 'custom/square-arch-halfway.html' %}
+    {% component_block "page_section" anchor="right" colors="dark" %}
+      <h2 class="text-white">Enter Your Details</h2>
+      <span id="calculate-anchor"></span>
+      {% component_block "form" form=band_form form_action="#calculate-anchor" %}
+        {% fill "fields" %}
+          {% component "form_field" field=band_form.country %}
+          {% component "form_field" field=band_form.size %}
+          {% component "form_field" field=band_form.level %}
+          {% component "form_field" field=band_form.currency %}
+        {% endfill %}
+        {% fill "other" %}
+          {% include 'custom/button-calculate.html' %}
+          {% if band_form.fee.value and not supporter_form %}
+            <div class="w-full flex flex-col items-end">
+              {% include 'custom/button-submit-white.html' with label="Start Signup" name="start_signup" %}
+            </div>
+          {% endif %}
+        {% endfill %}
+        {% fill "button" %}{% endfill %}
+      {% endcomponent_block %}
+    {% endcomponent_block %}
+  </div>
+  <div class="container mx-auto max-w-screen-xl relative mt-28">
+    {% component_block "page_section" %}
+      <h2>Consortial Offer</h2>
+      <p>The OLH seeks to strengthen libraries’ bargaining power against legacy publishers, in an era of escalating big deal costs and Article Processing Charge inflation. We believe that it is crucial to come together in solidarity to choose a more equitable model of publishing.</p>
+      <p>We therefore welcome expressions of interest from consortia, societies, networks, and scholarly projects interested in joining the OLH as a bloc. Applied to each institution’s fee, consortial groups gain a discount of:</p>
+      <ul class="browser-default">
+        <li>
+          5% if a group of 10 institutions joins  
+        </li>
+        <li>
+          10% if 20 institutions join  
+        </li>
+        <li>
+          15% if more than 30 join 
+        </li>
+      </ul>
+      <p>To benefit from this offer, or get further information, please email the OLH Marketing Officer <a href="mailto:paula.clementevega@bbk.ac.uk">paula.clementevega@bbk.ac.uk</a>.</p>
+    {% endcomponent_block %}
+  </div>
+</article>
+<div class="container mx-auto max-w-screen-xl relative">
+  {% include 'custom/subscribe.html' %}
+</div>

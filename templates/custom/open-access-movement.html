@@ -5,52 +5,8 @@
     id="headline"
     class="container mx-auto max-w-screen-xl relative max-lg:mt-52">
     {% include 'custom/edit-on-github.html' with rel_path='custom/open-access-movement.html' %}
-    <div
-      class="
-        relative max-lg:-top-72 lg:top-0 motion-safe:rallax
-        max-sm:-right-40 sm:max-md:-right-28 md:max-lg:-right-16
-      ">
-      <img
-        class="absolute z-10 max-lg:top-40 lg:top-20 max-lg:right-4 lg:-right-12 lg:max-w-md"
-        srcset="
-          {% static 'hourglass/media/backgrounds/square-blue-textured.png' %} 335w,
-          {% static 'hourglass/media/backgrounds/square-blue-textured-lg.png' %} 669w
-        "
-        src="{% static 'hourglass/media/backgrounds/square-blue-textured-lg.png' %}"
-        sizes="(max-width: 1024px) 335px, 669px"
-        alt="">
-      <img
-        class="z-20 absolute max-lg:top-20 lg:top-12 max-lg:right-36 lg:-right-20 w-16 h-16"
-        src="{% static 'hourglass/media/backgrounds/circle-red.svg' %}"
-        alt="">
-      <img
-        class="absolute z-30 max-lg:top-12 lg:top-20 max-lg:-right-24 lg:-right-40 max-lg:max-w-screen-sm lg:max-w-xl"
-        srcset="
-          {% static 'hourglass/media/backgrounds/roman-sculpture-helmet.png' %} 466w,
-          {% static 'hourglass/media/backgrounds/roman-sculpture-helmet-lg.png' %} 873w
-        "
-        src="{% static 'hourglass/media/backgrounds/roman-sculpture-helmet-lg.png' %}"
-        sizes="(max-width: 1024px) 466px, 873px"
-        alt="Sculpture of Roman soldier with helmet in collage with square, circle, and triangles">
-      <img
-        class="lg:hidden z-30 absolute top-[27rem] right-8 w-56"
-        src="{% static 'hourglass/media/backgrounds/triangles-blue-three.svg' %}"
-        alt="">
-      <img
-        class="max-lg:hidden z-10 absolute top-[17rem] -right-40 w-64"
-        src="{% static 'hourglass/media/backgrounds/triangles-blue-four.svg' %}"
-        alt="">
-    </div>
-    <div class="relative z-40">
-      <h1
-        class="
-          max-lg:text-4xl lg:text-7xl !leading-snug
-          max-lg:max-w-xs lg:max-w-2xl
-          font-poppins-bold max-lg:py-12 lg:py-20 px-8
-        ">
-        Open Access Movement
-      </h1>
-    </div>
+    {% include 'custom/open-access-opener.html' %}
+    {% include 'custom/generic-h1.html' with h1="Open Access Movement" %}
   </section>
   <section
     id="introduction"

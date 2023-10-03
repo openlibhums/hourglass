@@ -1,0 +1,27 @@
+{% load humanize %}
+
+<div class="py-6 w-full flex flex-col items-start">
+  <button
+    type="submit"
+    name="calculate"
+    class="p-4 rounded-full border-2 border-white bg-transparent flex">
+    <span class="uppercase text-white font-poppins-bold text-xs tracking-widest">
+      {% if band_form.fee.value %}
+        Recalculate
+      {% else %}
+        Calculate
+      {% endif %}
+    </span>
+  </button>
+</div>
+{% if band_form.fee.value %}
+  <div class="py-4 text-2xl font-semibold flex max-md:flex-col gap-2">
+    <span>Your annual fee:</span>
+    <strong class="text-white font-poppins-bold">
+      {{ band_form.fee.value|intcomma }} {{ band.currency.code }}
+    </strong>
+  </div>
+{% endif %}
+{% if band.warnings %}
+  {{ band.warnings|safe }}
+{% endif %}
