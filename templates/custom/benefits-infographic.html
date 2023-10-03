@@ -1,0 +1,68 @@
+{% load static %}
+{% load component_tags %}
+
+<div class="max-md:mx-2 lg:-mx-4">
+  <h2 class="font-poppins-bold max-lg:text-3xl lg:text-4xl text-center pb-8">
+    The benefits of supporting us
+  </h2>
+  <div
+    class="
+      grid sm:max-md:grid-cols-1 md:max-lg:grid-cols-2 lg:grid-cols-3
+      gap-10 md:place-items-center relative
+    ">
+    {% component_block "benefits_tile" icon_filename="Become-a-Supporter.svg" %}
+      {% fill "h3" %}
+        01. Join us
+      {% endfill %}
+      {% fill "p" %}
+        Join a collectively-funded sustainable publishing ecosystem.
+      {% endfill %}
+    {% endcomponent_block %}
+    {% component_block "benefits_tile" icon_filename="Fund.svg" %}
+      {% fill "h3" %}
+        02. Fund
+      {% endfill %}
+      {% fill "p" %}
+        Fund 26 diamond open access humanities journals.
+      {% endfill %}
+    {% endcomponent_block %}
+    {% component_block "benefits_tile" icon_filename="Network.svg" %}
+      {% fill "h3" %}
+        03. Network
+      {% endfill %}
+      {% fill "p" %}
+        Join a growing network of 300+ international supporters.
+      {% endfill %}
+    {% endcomponent_block %}
+    <div class="absolute inset-x-0 top-0 max-md:hidden">
+      {% include 'custom/benefits-arrow.html' %}
+    </div>
+    {% component_block "benefits_tile" icon_filename="Archive.svg" %}
+      {% fill "h3" %}
+        04. Archive
+      {% endfill %}
+      {% fill "p" %}
+        Robust archiving and indexing for maximum discoverability.
+      {% endfill %}
+    {% endcomponent_block %}
+    <div class="absolute inset-x-0 top-[232px] max-md:hidden lg:hidden">
+      {% include 'custom/benefits-arrow.html' %}
+    </div>
+    {% component_block "benefits_tile" icon_filename="Awards-Prizes.svg" %}
+      {% fill "h3" %}
+        05. Badges
+      {% endfill %}
+      {% fill "p" %}
+        Member listing on OLH website – earn badges for your institution.
+      {% endfill %}
+    {% endcomponent_block %}
+    {% component_block "benefits_tile" icon_filename="Governance-and-Finances.svg" %}
+      {% fill "h3" %}
+        06. Flexibility
+      {% endfill %}
+      {% fill "p" %}
+        Flexible membership tiers from c. £1000 per year.
+      {% endfill %}
+    {% endcomponent_block %}
+  </div>
+</div>

@@ -1,0 +1,18 @@
+{% load static %}
+
+<div class="relative top-0 left-0">
+  <img
+    class="absolute z-20 left-32 -top-96 motion-safe:rallax"
+    src="{% static 'hourglass/media/backgrounds/circle-blue-textured.png' %}"
+    width="434"
+    alt="">
+  <img
+    class="absolute z-10 -left-24 -top-28"
+    srcset="
+      {% static 'hourglass/media/backgrounds/building-concrete-arches.png' %} 452w,
+      {% static 'hourglass/media/backgrounds/building-concrete-arches-lg.png' %} 592w
+    "
+    sizes="(max-width: 1024px) 452px, 592px"
+    src="{% static 'hourglass/media/backgrounds/building-concrete-arches-lg.png' %}"
+    alt="">
+</div>

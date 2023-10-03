@@ -1,37 +1,19 @@
 from django_components import component
-from django.forms import widgets
+from themes.hourglass.components.form import form_base
 
 
 @component.register("form")
-class Form(component.Component):
+class Form(form_base.FormBase):
 
     template_name = "form/form.html"
 
     def get_context_data(self, *args, **kwargs):
-        form_method = kwargs.pop('form_method')
-        form = kwargs.pop('form')
+        form_action = kwargs.pop('form_action', '')
+        form_method = kwargs.pop('form_method', '')
+        enctype = kwargs.pop('enctype', '')
         context = super().get_context_data(*args, **kwargs)
-        for field_name, field in form.fields.items():
-            tailwind = '''
-                bg-transparent border-white
-                text-white cursor-white placeholder:text-white
-                max-lg:placeholder:text-md lg:placeholder:text-lg
-                max-lg:text-md lg:text-lg
-                focus:ring-transparent focus:border-orange
-            '''
-            if isinstance(field.widget, widgets.Select):
-                form.fields[field_name].widget.attrs['class'] = tailwind + '''
-                    border-t-0 border-r-0 border-b-1 border-l-0
-                '''
-            elif isinstance(field.widget, widgets.Textarea):
-                form.fields[field_name].widget.attrs['class'] = tailwind + '''
-                    border-1
-                '''
-            else:
-                form.fields[field_name].widget.attrs['class'] = tailwind + '''
-                    border-t-0 border-r-0 border-b-1 border-l-0
-                '''
 
-        context['form'] = form
         context['form_method'] = form_method
+        context['form_action'] = form_action
+        context['enctype'] = enctype
         return context

@@ -58,6 +58,9 @@
     <div class="relative flex flex-col min-h-screen justify-between">
       <header class="lg:sticky lg:top-0 lg:z-50">
         {% include "press/nav.html" %}
+        {% if messages %}
+          {% component "messages" messages=messages %}
+        {% endif %}
       </header>
       <main class="relative z-0 mb-auto">
         {% block body %}{% endblock body %}

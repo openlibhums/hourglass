@@ -4,7 +4,11 @@
   class="
     relative before:z-30 before:block before:absolute
     before:inset-y-0 before:w-[50vw]
-    before:bg-white
+    {% if colors == "light" %}
+      before:bg-white
+    {% elif colors == "dark" %}
+      before:bg-blue
+    {% endif %}
     {% if anchor == "left" %}
       before:right-1/2
     {% else %}
@@ -13,7 +17,12 @@
   ">
   <div
     class="
-      relative z-40 bg-white py-20 px-8
+      relative z-40 py-20 px-8
+      {% if colors == "light" %}
+        bg-white
+      {% elif colors == "dark" %}
+        bg-blue
+      {% endif %}
       {% if width == "part" %}
         lg:max-w-3xl
       {% endif %}
@@ -27,6 +36,9 @@
           lg:mr-16
         {% else %}
           lg:ml-16
+        {% endif %}
+        {% if colors == "dark" %}
+          text-white
         {% endif %}
       ">
       {% slot "content" default %}{% endslot %}

@@ -12,9 +12,14 @@ class PageSection(component.Component):
 
     template_name = "page/section.html"
 
-    def get_context_data(self, prose=True, anchor="left", width="part"):
-        return {
-            "prose": prose,
-            "anchor": anchor,
-            "width": width,
-        }
+    def get_context_data(self, *args, **kwargs):
+        prose = kwargs.pop("prose", True)
+        anchor = kwargs.pop("anchor", "left")
+        width = kwargs.pop("width", "part")
+        colors = kwargs.pop("colors", "light")
+        context = super().get_context_data(*args, **kwargs)
+        context["prose"] = prose
+        context["anchor"] = anchor
+        context["width"] = width
+        context["colors"] = colors
+        return context
