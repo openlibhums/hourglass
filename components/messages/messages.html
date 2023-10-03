@@ -1,0 +1,33 @@
+{% for message in messages %}
+  <div
+    id="message-{{ message|slugify }}"
+    class="relative z-50 top-0 inset-x-0">
+    <div
+      class="
+        absolute top-0 inset-x-0
+        {% if message.level == DEFAULT_MESSAGE_LEVELS.DEBUG %}
+          bg-white
+        {% elif message.level == DEFAULT_MESSAGE_LEVELS.INFO %}
+          bg-blue text-white
+        {% elif message.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %}
+          bg-blue text-white
+        {% elif message.level == DEFAULT_MESSAGE_LEVELS.WARNING %}
+          bg-white text-orange
+        {% elif message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}
+          bg-white text-red
+        {% endif %}
+      ">
+      <div class="container mx-auto max-w-screen-xl flex justify-end">
+        <div class="max-md:px-4 md:px-8 py-4">
+          <p class="font-bold text-md">
+            {{ message }}
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script type="module">
+    const message = document.querySelector('#message-{{ message|slugify }}')
+    setTimeout(() => message.classList.toggle('hidden'), 5000)
+  </script>
+{% endfor %}

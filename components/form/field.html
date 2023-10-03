@@ -1,0 +1,40 @@
+{% load static %}
+{% load component_tags %}
+
+<div class="text-white flex flex-col w-full">
+  {% if label %}
+    <label
+      class="py-2 px-3 font-poppins-medium"
+      for="{{ id_for_label }}">
+      {{ label }}
+      {% if required %}
+        <span class="text-orange-medium">*</span>
+      {% endif %}
+    </label>
+  {% endif %}
+  {% if errors %}
+    <div
+      class="
+        py-2 px-3 flex flex-row items-center gap-x-2
+        text-orange-light font-bold max-lg:text-md lg:text-lg
+      ">
+      <img
+        class="h-6"
+        src="{% static 'hourglass/media/icons/arrow-orange-light.svg' %}"
+        alt="arrow pointing right">
+      {{ errors }}
+    </div>
+  {% endif %}
+  {% slot "field" default %}
+    {% if field %}
+      {{ field }}
+    {% endif %}
+  {% endslot %}
+  <div class="px-3 prose text-white">
+    {% slot "help_text" %}
+      {% if help_text %}
+        <p class="py-2">{{ help_text|safe }}</p>
+      {% endif %}
+    {% endslot %}
+  </div>
+</div>
