@@ -63,6 +63,7 @@ export default {
             '--tw-prose-bold': theme('colors.black'),
             '--tw-prose-lead': theme('colors.black'),
             '--tw-prose-bullets': theme('colors.black'),
+            '--tw-prose-invert-bullets': theme('colors.white'),
             p: {
               fontSize: rem(18),
               lineHeight: round(25 / 16),
