@@ -107,6 +107,21 @@ OTHER_SOURCE_PATHS = [
         os.path.join(
             THEME_PATH,
             'node_modules',
+            '@tarekraafat',
+            'autocomplete.js',
+            'dist',
+            'autoComplete.min.js',
+        ),
+        os.path.join(
+            DIST_PATH,
+            'js',
+            'autoComplete.min.js',
+        )
+    ),
+    (
+        os.path.join(
+            THEME_PATH,
+            'node_modules',
             'list.js',
             'dist',
             'list.min.js',
