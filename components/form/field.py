@@ -13,7 +13,7 @@ class FormField(component.Component):
             id_for_label = field.id_for_label
             label = field.label if not field.is_hidden else ''
             errors = field.errors
-            help_text = field.errors
+            help_text = field.help_text
             required = field.field.required
         else:
             id_for_label = kwargs.pop('id_for_label', '')
