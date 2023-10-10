@@ -1,4 +1,5 @@
 {% extends "core/base.html" %}
+{% load static %}
 {% load render_string %}
 {% load component_tags %}
 
@@ -56,6 +57,18 @@
         {% component_block "form" form=supporter_form form_method="POST" %}
           {% fill "fields" %}
             {% component "form_field" field=supporter_form.name %}
+            <div class="hidden">
+              {% component "form_field" field=supporter_form.ror %}
+            </div>
+            <div class="prose-invert px-3">
+              <p class="mt-2 pb-2">
+                <span class="font-poppins-medium">ROR</span>:
+                <a id="rorDisplay" href=""></a>
+              </p>
+              <p>
+                <a class="" href="https://ror.org/">What is a ROR?</a>
+              </p>
+            </div>
             {% component "form_field" field=supporter_form.address %}
             {% component "form_field" field=supporter_form.postal_code %}
             {% component_block "form_inner" form=band_form %}
@@ -84,4 +97,59 @@
   <div class="container mx-auto max-w-screen-xl relative">
     {% include 'custom/subscribe.html' %}
   </div>
+  <script type="module">
+    import '{% static "hourglass/js/autoComplete.min.js" %}'
+    const base = 'https://api.ror.org/organizations?'
+    const searchParams = new URLSearchParams()
+    const name = document.querySelector('#{{ supporter_form.name.id_for_label }}')
+    const ror = document.querySelector('#{{ supporter_form.ror.id_for_label }}')
+    const rorDisplay = document.querySelector('#rorDisplay')
+
+    function clearRor (event) {
+      ror.value = ''
+      rorDisplay.innerText = ''
+      rorDisplay.setAttribute('href', '')
+    }
+    name.addEventListener('input', clearRor)
+
+    async function searchROR (query) {
+      searchParams.set('query', query)
+      const response = await fetch(base + searchParams.toString())
+      const results = await response.json()
+      return results.items
+    }
+
+    const config = {
+      selector: '#{{ supporter_form.name.id_for_label }}',
+      debounce: 300,
+      data: {
+        src: searchROR,
+        keys: ['id', 'name']
+      },
+      resultsList: {
+        class: `
+          p-0 not-prose bg-white text-black
+        `,
+        tabSelect: true,
+      },
+      resultItem: {
+        class: `
+          cursor-pointer lg:hover:bg-tan-light
+          px-4 max-lg:py-4 lg:py-2 w-full
+        `
+      },
+      events: {
+        input: {
+          selection(event) {
+            name.value = event.detail.selection.value.name
+            ror.value = event.detail.selection.value.id
+            rorDisplay.innerText = event.detail.selection.value.id
+            rorDisplay.setAttribute('href', event.detail.selection.value.id)
+          }
+        }
+      },
+    }
+    const autoCompleteJS = new autoComplete( config );
+
+  </script>
 {% endblock body %}
