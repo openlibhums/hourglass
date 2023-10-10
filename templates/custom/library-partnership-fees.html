@@ -30,7 +30,7 @@
         class="-m-4 w-48"
         src="{% static 'hourglass/media/icons/Library-Partnership-Fees.svg' %}"
         alt="">
-      <h2>Calculate your Membership Fee</h2>
+      <h2>Calculate your membership fee.</h2>
       <p>When your institution signs-up to support OLH, it helps fund open access journals in the humanities by covering the costs of publication, while allowing us to grow our range of academic journals at a sustainable rate. Membership is renewable on an annual basis.</p>
       <p>Our fees are banded, based on country and size of institution, which means that scholars and institutions worldwide stand to benefit. Universities are also given the opportunity to voluntarily support us at a higher membership rate, tiered into bronze, silver, and gold levels.</p>
       <p>Please use this calculator to assess your membership fee. Or, if your institution belongs to a geographical region that is not covered here, please contact our Marketing Officer at paula.clementevega@bbk.ac.uk.</p>
@@ -39,7 +39,9 @@
   <div class="container mx-auto max-w-screen-xl relative mt-28">
     {% include 'custom/square-arch-halfway.html' %}
     {% component_block "page_section" anchor="right" colors="dark" %}
-      <h2 class="text-white">Enter Your Details</h2>
+      <h2 class="text-white">
+        Enter your details.
+      </h2>
       <span id="calculate-anchor"></span>
       {% component_block "form" form=band_form form_action="#calculate-anchor" %}
         {% fill "fields" %}
@@ -62,7 +64,7 @@
   </div>
   <div class="container mx-auto max-w-screen-xl relative mt-28">
     {% component_block "page_section" %}
-      <h2>Consortial Offer</h2>
+      <h2>Consortial offer.</h2>
       <p>The OLH seeks to strengthen libraries’ bargaining power against legacy publishers, in an era of escalating big deal costs and Article Processing Charge inflation. We believe that it is crucial to come together in solidarity to choose a more equitable model of publishing.</p>
       <p>We therefore welcome expressions of interest from consortia, societies, networks, and scholarly projects interested in joining the OLH as a bloc. Applied to each institution’s fee, consortial groups gain a discount of:</p>
       <ul class="browser-default">
