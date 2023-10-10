@@ -13,7 +13,7 @@ class FormBase(component.Component):
 
         for field_name, field in form.fields.items():
             tailwind = '''
-                bg-transparent border-white
+                bg-transparent border-white w-full
                 text-white cursor-white placeholder:text-white
                 max-lg:placeholder:text-md lg:placeholder:text-lg
                 max-lg:text-md lg:text-lg
