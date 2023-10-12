@@ -1,0 +1,33 @@
+{% load static %}
+{% load component_tags %}
+
+{% if not band_form.fee.value %}
+  <div class="w-full flex flex-col items-end">
+    <a
+      class="
+        p-4 not-prose border rounded-full border-white
+        flex gap-4 items-center
+      "
+      href="{% url 'supporter_signup' %}">
+      {% include "custom/button-action-inner-white.html" with label="Skip to Signup" %}
+    </a>
+  </div>
+{% endif %}
+<span id="calculate-anchor"></span>
+{% component_block "form" form=band_form form_action="#calculate-anchor" %}
+  {% fill "fields" %}
+    {% component "form_field" field=band_form.country %}
+    {% component "form_field" field=band_form.size %}
+    {% component "form_field" field=band_form.level %}
+    {% component "form_field" field=band_form.currency %}
+  {% endfill %}
+  {% fill "other" %}
+    {% include 'custom/button-calculate.html' %}
+    {% if band_form.fee.value %}
+      <div class="w-full flex flex-col items-end">
+        {% include 'custom/button-submit-white.html' with label="Start Signup" name="start_signup" %}
+      </div>
+    {% endif %}
+  {% endfill %}
+  {% fill "button" %}{% endfill %}
+{% endcomponent_block %}
