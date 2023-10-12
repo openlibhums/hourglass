@@ -1,0 +1,48 @@
+{% load static %}
+{% load component_tags %}
+{% load humanize %}
+
+<table>
+  <col>
+  <colgroup span="5"></colgroup>
+  <tr>
+    <th rowspan="2">Country</th>
+    <th colspan="5" scope="colgroup">
+      <div class="text-center">
+        Membership level
+      </div>
+    </th>
+  </tr>
+  <tr>
+    {% for level in data.thead %}
+      <th
+        scope="col"
+        class="px-3 last:pr-0">
+        <div class="text-end">
+          {{ level }}
+        </div>
+      </th>
+    {% endfor %}
+  </tr>
+  {% for size, countries in data.tbody.items %}
+    <tr>
+      <td colspan="6">
+        <div class="pt-4 font-poppins-bold max-lg:text-lg lg:text-xl">
+          {{ size }}
+        </div>
+      </td>
+    </tr>
+    {% for country, levels in countries.items %}
+      <tr>
+        <th scope="row">{{ country }}</th>
+        {% for level, cell in levels.items %}
+          <td>
+            <div class="text-end">
+              {{ cell.currency }}{{ cell.fee|intcomma }}
+            </div>
+          </td>
+        {% endfor %}
+      </tr>
+    {% endfor %}
+  {% endfor %}
+</table>
