@@ -6,36 +6,5 @@
 {% endblock title %}
 
 {% block body %}
-
-  <div class="row pad50">
-    <div class="col s12 m6">
-      <h1>{% trans "Account Activation" %}</h1>
-      {% if account %}
-        <form method="POST">
-          {% csrf_token %}
-          <p>
-            {% blocktrans %}
-              You can complete the activation process by clicking the button below.
-            {% endblocktrans %}
-          </p>
-          <button class="btn btn-large" name="activate">
-            {% trans 'Activate' %}
-          </button>
-        </form>
-      {% else %}
-        <div class="material-icons">warning</div>
-        <p>
-          {% blocktrans %}
-            Sorry, we couldn't find an account to activate,
-            or your account is active already.
-            You can check if it's active by attempting to log in.
-          {% endblocktrans %}
-        </p>
-        <a class="btn btn-large" href="{% url 'core_login' %}">
-          {% trans "Log in" %}
-        </a>
-      {% endif %}
-    </div>
-  </div>
-
+  {% include 'custom/activate-account.html' %}
 {% endblock body %}

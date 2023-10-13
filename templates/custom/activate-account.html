@@ -1,0 +1,40 @@
+{% load static %}
+{% load component_tags %}
+
+<div class="container mx-auto max-w-screen-xl relative">
+  {% include 'custom/edit-on-github.html' with rel_path='custom/activate-account.html' %}
+  {% include 'custom/generic-art-opener.html' %}
+</div>
+<div class="container mx-auto max-w-screen-xl relative max-lg:my-12 lg:my-24">
+  <div class="relative z-40 max-md:py-8 md:py-20 bg-blue md:px-8 text-white max-w-2xl">
+    <div class="m-6 flex flex-col">
+      <h1 class="font-poppins-bold text-2xl max-lg:text-center pb-4">
+        Account activation.
+      </h1>
+      <div class="prose lg:prose-lg">
+        {% if account %}
+          <form method="POST">
+            {% csrf_token %}
+            <p class="text-white">
+              You can complete the activation process by clicking the button below.
+            </p>
+            <div class="w-full flex flex-col items-end pt-4">
+              {% include 'custom/button-submit-white.html' with name="activate" label="Activate" %}
+            </div>
+          </form>
+        {% else %}
+          <p class="text-white">
+            Sorry, we couldn't find an account to activate, or your account is active already. You can check if it's active by attempting to log in.
+          </p>
+          <div class="flex mt-6 not-prose">
+            <a
+              class="p-4 border rounded-full border-white flex gap-4 items-center"
+              href="{% url 'core_login' %}">
+              {% include "custom/button-action-inner-white.html" with label="Log in" %}
+            </a>
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
