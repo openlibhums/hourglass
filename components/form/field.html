@@ -2,16 +2,31 @@
 {% load component_tags %}
 
 <div class="text-white flex flex-col w-full">
-  {% if label %}
-    <label
-      class="py-2 px-3 font-poppins-medium"
-      for="{{ id_for_label }}">
-      {{ label }}
-      {% if required %}
-        <span class="text-orange-medium">*</span>
+  <div
+    class="
+      flex w-full
+      {% if field.widget_type == "checkbox" %}
+        flex-row-reverse items-center justify-end px-3
+      {% else %}
+        flex-col
       {% endif %}
-    </label>
-  {% endif %}
+    ">
+    {% if label %}
+      <label
+        class="py-2 px-3 font-poppins-medium"
+        for="{{ id_for_label }}">
+        {{ label }}
+        {% if required %}
+          <span class="text-orange-medium">*</span>
+        {% endif %}
+      </label>
+    {% endif %}
+    {% slot "field" default %}
+      {% if field %}
+        {{ field }}
+      {% endif %}
+    {% endslot %}
+  </div>
   {% if errors %}
     <div
       class="
@@ -19,17 +34,12 @@
         text-orange-light font-bold max-lg:text-md lg:text-lg
       ">
       <img
-        class="h-6"
+        class="h-5"
         src="{% static 'hourglass/media/icons/arrow-orange-light.svg' %}"
         alt="arrow pointing right">
       {{ errors }}
     </div>
   {% endif %}
-  {% slot "field" default %}
-    {% if field %}
-      {{ field }}
-    {% endif %}
-  {% endslot %}
   <div class="px-3 prose text-white">
     {% slot "help_text" %}
       {% if help_text %}

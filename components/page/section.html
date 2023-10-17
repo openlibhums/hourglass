@@ -8,6 +8,8 @@
       before:bg-white
     {% elif colors == "dark" %}
       before:bg-blue
+    {% elif colors == "transparent" %}
+      before:bg-transparent
     {% endif %}
     {% if anchor == "left" %}
       before:right-1/2
@@ -22,6 +24,8 @@
         bg-white
       {% elif colors == "dark" %}
         bg-blue
+      {% elif colors == "transparent" %}
+        bg-transparent
       {% endif %}
       {% if width == "part" %}
         lg:max-w-3xl

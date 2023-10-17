@@ -40,6 +40,13 @@
     </div>
   {% endif %}
   <div class="container mx-auto max-w-screen-xl relative mt-28">
+    <img
+      class="
+        motion-safe:rallax absolute z-20 w-24
+        max-lg:-top-32 lg:top-64 max-lg:-right-6 lg:right-40
+      "
+      src="{% static 'hourglass/media/backgrounds/circles-one-one-half-red.svg' %}"
+      alt="">
     {% component_block "page_section" anchor="left" colors="dark" %}
       {% if redirect_text %}
         <h2 class="text-white">
@@ -75,6 +82,7 @@
                 <a class="" href="https://ror.org/">What is a ROR?</a>
               </p>
             </div>
+            {% component "form_field" field=supporter_form.display %}
             {% component "form_field" field=supporter_form.address %}
             {% component "form_field" field=supporter_form.postal_code %}
             {% component_block "form_inner" form=band_form %}
