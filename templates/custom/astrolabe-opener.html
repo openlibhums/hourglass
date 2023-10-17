@@ -5,12 +5,28 @@
     relative max-lg:-top-72 lg:top-0 motion-safe:rallax
     max-sm:-right-40 sm:max-md:-right-28 md:max-lg:-right-16
   ">
-  {% include 'custom/arc-opener.html' %}
+  <img
+    class="absolute z-10 max-lg:top-40 lg:top-20 max-lg:right-4 lg:-right-12 lg:max-w-md"
+    srcset="
+      {% static 'hourglass/media/backgrounds/square-blue-textured.png' %} 335w,
+      {% static 'hourglass/media/backgrounds/square-blue-textured-lg.png' %} 669w
+    "
+    src="{% static 'hourglass/media/backgrounds/square-blue-textured-lg.png' %}"
+    sizes="(max-width: 1024px) 335px, 669px"
+    alt="">
+  <img
+    class="max-lg:hidden lg:z-20 absolute top-52 right-56 w-56"
+    src="{% static 'hourglass/media/backgrounds/square-red.svg' %}"
+    alt="">
+  <img
+    class="absolute z-20 w-16 top-4 max-lg:right-72 lg:-right-20"
+    src="{% static 'hourglass/media/backgrounds/circles-one-one-half-red.svg' %}"
+    alt="">
   <img
     class="
-      absolute max-lg:z-10 lg:z-30 max-lg:top-12 lg:top-20
-      max-lg:-right-24 lg:-right-40 max-lg:max-w-screen-sm lg:max-w-xl"
-    src=""
-    width=""
-    alt="">
+      absolute max-lg:z-10 lg:z-30 max-lg:top-12 lg:top-0
+      max-lg:right-8 lg:right-8 w-72"
+    src="{% static 'hourglass/media/backgrounds/astrolabe.png' %}"
+    width="397"
+    alt="A spherical mechanical device with concentric rotating bands on a pedestal">
 </div>
