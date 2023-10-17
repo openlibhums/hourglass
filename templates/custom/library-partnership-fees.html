@@ -26,7 +26,13 @@
     {% endcomponent_block %}
   </div>
   <div class="container mx-auto max-w-screen-xl relative mt-28">
-    {% include 'custom/square-arch-halfway.html' %}
+    <img
+      class="
+        motion-safe:rallax absolute z-20 w-28
+        max-lg:-top-32 lg:top-64 max-lg:-right-6 lg:right-40
+      "
+      src="{% static 'hourglass/media/backgrounds/circles-one-one-half-red.svg' %}"
+      alt="">
     {% component_block "page_section" anchor="left" colors="dark" %}
       <img
         class="-m-4 w-48"
@@ -45,10 +51,22 @@
       <p>Our fees are banded, based on country and size of institution, which means that scholars and institutions worldwide stand to benefit. Universities are also given the opportunity to voluntarily support us at a higher membership rate, tiered into bronze, silver, gold, and platinum levels.</p>
       <p>We adjust the fees by country using data from the World Bank on gross national income (GNI) per capita. There is no perfect indicator of economic disparity by country and region, but GNI is better than the alternatives at tracking wealth. It cares about who receives income, rather than where goods and services are produced, so it shows who profits from labour more clearly. With this model we can estimate purchasing power around the world. The estimate is rough, so we are committed to making exceptions where circumstances call for them.</p>
       <p>The table below shows fees for a sample spread of countries.</p>
-      {% component 'supporters_demo_bands' %}
     {% endcomponent_block %}
   </div>
-  <div class="container mx-auto max-w-screen-xl relative mt-28">
+  <div class="container mx-auto max-w-screen-xl relative max-lg:mt-0 lg:mt-48">
+    {% include 'custom/laptop-lady-quadrant-halfway.html' %}
+    {% component_block "page_section" anchor="left" colors="transparent" prose=False %}
+      {% component 'supporters_demo_bands' %}
+    {% endcomponent_block %}
+    <img
+      class="
+        absolute z-20 w-24 scale-y-[-1] motion-safe:rallax
+        max-lg:bottom-0 lg:bottom-48 max-lg:right-0 lg:right-24
+      "
+      src="{% static 'hourglass/media/backgrounds/circles-one-one-half-red.svg' %}"
+      alt="">
+  </div>
+  <div class="container mx-auto max-w-screen-xl relative mt-16">
     {% component_block "page_section" %}
       <h2>Consortial offer.</h2>
       <p>The OLH seeks to strengthen libraries’ bargaining power against legacy publishers, in an era of escalating big deal costs and Article Processing Charge inflation. We believe that it is crucial to come together in solidarity to choose a more equitable model of publishing.</p>
