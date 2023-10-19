@@ -1,0 +1,75 @@
+{% load static %}
+{% load component_tags %}
+{% load humanize %}
+
+<div
+  class="
+    mb-8
+    not-prose overflow-x-auto max-md:-mx-12
+    sm:max-md:flex sm:max-md:justify-center
+  ">
+  <table
+    class="
+      table-auto border-collapse
+      text-white max-lg:text-md lg:text-lg
+    ">
+    <caption
+      class="
+        max-lg:text-lg lg:text-xl
+        p-3 text-start text-blue font-poppins-bold
+      ">
+      {% slot "caption" %}{% endslot "caption" %}
+    </caption>
+    <col>
+    <colgroup span="5"></colgroup>
+    <tr>
+      <th
+        class="
+          bg-orange text-black text-start align-top px-3 py-2
+          font-poppins-bold
+        "
+        rowspan="2">
+        Country
+      </th>
+      <th
+        class="bg-blue text-start px-3 py-2 font-poppins-medium"
+        colspan="5"
+        scope="colgroup">
+        {% slot "columns_label" %}{% endslot "columns_label" %}
+      </th>
+    </tr>
+    <tr
+      class="bg-gradient-to-r from-blue to-blue-medium">
+      {% for col_heading in table.thead %}
+        <th
+          scope="col"
+          class="
+            px-3 py-2 text-start w-28 font-poppins-medium
+            border-t border-r border-tan-light last:border-r-0
+          ">
+          {{ col_heading }}
+        </th>
+      {% endfor %}
+    </tr>
+    {% for country, cells in table.tbody.items %}
+      <tr>
+        <th
+          class="bg-orange text-black px-3 py-2 text-start font-poppins-bold"
+          scope="row">
+          {{ country }}
+        </th>
+        {% for col_heading, cell in cells.items %}
+          <td
+            class="
+              px-3 py-2
+              bg-white text-black
+              border-t border-r border-tan last:border-r-0
+              border-dotted font-semibold
+            ">
+            {{ cell.currency }}{{ cell.fee|intcomma }}
+          </td>
+        {% endfor %}
+      </tr>
+    {% endfor %}
+  </table>
+</div>
