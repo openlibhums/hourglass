@@ -12,9 +12,11 @@ class FormInput(component.Component):
         input_type = kwargs.pop('type', 'text')
         input_name = kwargs.pop('name', '')
         input_value = kwargs.pop('value', '')
+        placeholder = kwargs.pop('placeholder', '')
         context = super().get_context_data(*args, **kwargs)
         context['input_id'] = input_id
         context['input_type'] = input_type
         context['input_name'] = input_name
         context['input_value'] = input_value
+        context['placeholder'] = placeholder
         return context
