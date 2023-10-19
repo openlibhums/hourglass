@@ -12,15 +12,3 @@
 {% block body %}
   {% include "custom/journals.html" %}
 {% endblock body %}
-
-{% block js %}
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const options = {
-        valueNames: [ 'name', 'description', 'discipline' ]
-      };
-
-      new List('journals', options);
-    })
-  </script>
-{% endblock js %}

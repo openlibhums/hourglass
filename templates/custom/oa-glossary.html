@@ -17,10 +17,7 @@
   </div>
   <div class="container mx-auto max-w-screen-xl relative">
     {% component_block "page_section" anchor="left" %}
-      <div id="glossary">
-        <div class="not-prose">
-          {% include "custom/filter-input.html" %}
-        </div>
+      {% component_block "filterable_list" list_id="glossary" value_names="term description" %}
         <dl class="list">
           <div>
             <dt class="term">Accepted author manuscript (AAM)</dt>
@@ -155,19 +152,10 @@
             <dd class="description">An academic journal published by a commercial publisher that has lost the respect and support of its scholarly community. Zombie journals are formed when editorial boards resign en masse from running an academic journal in response to the anti-intellectual and commercial practices of the publisher. This is often followed by the launch of a new open access journal to which the academic community migrates, leaving behind the undead zombie title, a husk of its former self, and emblem of the acquisitive motives of unscrupulous commercial scholarly publishers. Related to vampire capitalism, which Karl Marx defined in Capital, Vol. 1 as “dead labour which, vampire-like, lives only by sucking living labour.”</dd>
           </div>
         </dl>
-      </div>
+      {% endcomponent_block %}
     {% endcomponent_block %}
   </div>
   <div class="container mx-auto max-w-screen-xl relative">
     {% include 'custom/subscribe.html' %}
   </div>
 </article>
-
-<script type="module">
-  import '{% static "hourglass/js/list.min.js" %}'
-  document.addEventListener('DOMContentLoaded', () => {
-    new List('glossary', {
-      valueNames: [ 'term', 'description' ]
-    })
-  })
-</script>

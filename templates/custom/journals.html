@@ -141,3 +141,11 @@
     </div>
   </div>
 </div>
+
+<script type="module">
+  const listId = 'journals'
+  const valueNames = [ 'name', 'description', 'discipline' ]
+  document.addEventListener('DOMContentLoaded', () => {
+    new List(listId, { valueNames })
+  })
+</script>
