@@ -1,41 +1,9 @@
 {% load static %}
 
 <div class="container mx-auto max-w-screen-xl relative">
-  {% include 'custom/edit-on-github.html' with rel_path='custom/for-librarians-consortia.html' %}
-  <div class="relative z-0 top-0 right-0">
-    <img
-      class="
-        motion-safe:rallax absolute z-0 w-12 max-lg:top-8 lg:top-0
-        max-lg:right-52 lg:right-96
-      "
-      src="{% static 'hourglass/media/backgrounds/circle-red.svg' %}"
-      alt="">
-    <img
-      class="
-        absolute max-lg:z-20 lg:z-0 max-lg:top-48 lg:top-0
-        max-lg:-left-24 lg:right-20 max-lg:max-w-sm
-      "
-      src="{% static 'hourglass/media/backgrounds/circle-blue-textured.png' %}"
-      width="434"
-      alt="">
-    <img
-      class="
-        motion-safe:rallax z-10 absolute max-lg:-right-12 lg:-right-20
-        max-lg:-top-24 lg:top-0 max-lg:w-72 lg:w-96
-      "
-      src="{% static 'hourglass/media/backgrounds/laptop-lady-facing-right.png' %}"
-      width="831"
-      alt="">
-  </div>
-  <div class="relative z-40">
-    <h1
-      class="
-        max-lg:text-4xl lg:text-7xl max-lg:max-w-xs lg:max-w-lg
-        font-poppins-bold max-lg:pt-64 max-lg:pb-12 lg:py-28 px-8
-      ">
-      Info for librarians &amp; consortia.
-    </h1>
-  </div>
+  {% include "custom/edit-on-github.html" with rel_path="custom/for-librarians-consortia.html" %}
+  {% include "custom/library-opener.html" %}
+  {% include "custom/generic-h1.html" with h1="Info for<br> libraries &amp; consortia." %}
 </div>
 <div class="container mx-auto max-w-screen-xl relative max-lg:pb-64">
   <div class="flex max-lg:flex-col lg:flex-row lg:flex-wrap lg:px-2">
