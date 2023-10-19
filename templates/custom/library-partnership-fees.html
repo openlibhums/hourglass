@@ -50,13 +50,30 @@
       <h2>Supporter bands.</h2>
       <p>Our fees are banded, based on country and size of institution, which means that scholars and institutions worldwide stand to benefit. Universities are also given the opportunity to voluntarily support us at a higher membership rate, tiered into bronze, silver, gold, and platinum levels.</p>
       <p>We adjust the fees by country using data from the World Bank on gross national income (GNI) per capita. There is no perfect indicator of economic disparity by country and region, but GNI is better than the alternatives at tracking wealth. It cares about who receives income, rather than where goods and services are produced, so it shows who profits from labour more clearly. With this model we can estimate purchasing power around the world. The estimate is rough, so we are committed to making exceptions where circumstances call for them.</p>
-      <p>The table below shows fees for a sample spread of countries.</p>
+      <p>The table below shows fees for a sample spread of countries, in US dollars, Euro, and British pounds.</p>
     {% endcomponent_block %}
   </div>
   <div class="container mx-auto max-w-screen-xl relative max-lg:mt-0 lg:mt-48">
     {% include 'custom/laptop-lady-quadrant-halfway.html' %}
     {% component_block "page_section" anchor="left" colors="transparent" prose=False %}
-      {% component 'supporters_demo_bands' %}
+      {% component_block "supporters_demo_bands_split" %}
+        {% component_block "supporters_demo_table" table=higher_supporter_table %}
+          {% fill "caption" %}
+            Higher membership levels
+          {% endfill %}
+          {% fill "columns_label" %}
+            Membership level
+          {% endfill %}
+        {% endcomponent_block %}
+        {% component_block "supporters_demo_table" table=standard_supporter_table %}
+          {% fill "caption" %}
+            Standard membership
+          {% endfill %}
+          {% fill "columns_label" %}
+            Institution size
+          {% endfill %}
+        {% endcomponent_block %}
+      {% endcomponent_block %}
     {% endcomponent_block %}
     <img
       class="
