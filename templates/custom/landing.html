@@ -4,62 +4,8 @@
 <article>
   <div class="container mx-auto max-w-screen-xl relative lg:mt-8">
     {% include "custom/edit-on-github.html" with rel_path="custom/landing.html" %}
-    <div class="z-40 relative">
-      <h1
-        class="
-          max-md:text-4xl md:max-lg:text-5xl lg:text-7xl !leading-snug
-          font-poppins-bold max-lg:py-6 lg:py-20 pl-8
-        ">
-        We are the<br> Open Library<br> of Humanities.
-      </h1>
-    </div>
-    <div
-      class="
-        z-0 relative max-md:top-8 md:max-lg:-top-48 lg:-top-96 motion-safe:rallax
-        max-lg:right-12 lg:right-0
-      ">
-      <img
-        class="absolute z-0 w-64 max-lg:top-12 lg:top-36 max-lg:right-24 lg:right-64"
-        src="{% static 'hourglass/media/backgrounds/circle-blue-textured.png' %}"
-        width="434"
-        alt="">
-      <img
-        class="
-          absolute z-20 h-96
-          max-lg:-top-4 lg:top-20 max-lg:right-16 lg:right-52
-        "
-        src="{% static 'hourglass/media/backgrounds/arc-orange.svg' %}"
-        alt="">
-      <img
-        class="
-          absolute max-lg:z-20 lg:z-30 w-14 h-14
-          max-lg:-right-6 lg:right-28 max-lg:top-16 lg:top-32
-        "
-        src="{% static 'hourglass/media/backgrounds/circle-red.svg' %}"
-        alt="">
-      <img
-        class="
-          absolute max-lg:z-30 lg:z-20 max-lg:top-8 lg:top-24
-          max-lg:-right-20 lg:right-4 max-lg:w-64 lg:w-80
-        "
-        src="{% static 'hourglass/media/backgrounds/book-face-lady.png' %}"
-        alt="Woman burying her face in the pages of a book">
-      <img
-        class="
-          absolute z-10 max-lg:top-40 lg:top-[20rem] max-lg:right-40 lg:-left-16
-          w-32
-        "
-        src="{% static 'hourglass/media/backgrounds/hoop-earrings-lady.png' %}"
-        alt="Woman with hoop earrings dancing and waving arms">
-      <img
-        class="
-          max-lg:hidden absolute z-20 w-64 max-lg:top-12 lg:top-[28rem]
-          max-lg:right-24 lg:-left-20
-        "
-        src="{% static 'hourglass/media/backgrounds/circle-blue-textured.png' %}"
-        width="434"
-        alt="">
-    </div>
+    {% include "custom/generic-h1-higher.html" with h1="We are the<br> Open Library<br> of Humanities." %}
+    {% include "custom/book-face-opener.html" %}
   </div>
   <div class="container mx-auto max-w-screen-xl relative max-md:mt-96 md:max-lg:mt-48 lg:mt-28">
     <div class="p-8 bg-blue relative z-40">
