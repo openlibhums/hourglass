@@ -1,5 +1,6 @@
 {% load static %}
 {% load render_string %}
+{% load component_tags %}
 
 <div class="bg-black text-white relative z-40">
   <div class="container relative py-12 mx-auto max-w-screen-xl flex flex-col justify-between">
@@ -32,34 +33,18 @@
       </a>
     </div>
     <nav class="py-4 lg:px-8">
-      <ul class="flex gap-4 flex-wrap font-poppins-bold text-sm uppercase tracking-wider">
+      {% component_block "link_list" %}
         {% for item in navigation_items %}
           {% if item.for_footer %}
-            {% include "elements/footer_link_custom.html" %}
+            {% component "link" href=item.link label=item.link_name %}
           {% endif %}
         {% endfor %}
-        <li class="flex gap-4">
-          <a href="{% url 'website_sitemap' %}">
-            {% trans "Sitemap" %}
-          </a>
-          <span>|</span>
-        </li>
-        <li class="flex gap-4">
-          <a href="{% url 'contact' %}">
-            {% trans "Contact" %}
-          </a>
-          {% if not request.user.is_authenticated %}
-            <span>|</span>
-          {% endif %}
-        </li>
+        {% component "link" django_url="website_sitemap" label="Sitemap" %}
+        {% component "link" django_url="contact" label="Contact" %}
         {% if not request.user.is_authenticated %}
-          <li class="flex gap-4">
-            <a href="{% url 'core_login' %}">
-              {% trans 'Log in' %}
-            </a>
-          </li>
+          {% component "link" django_url="core_login" label="Log in" %}
         {% endif %}
-      </ul>
+      {% endcomponent_block %}
     </nav>
     <div class="lg:px-8 text-xs">
       {% render_string press.footer_description %}
