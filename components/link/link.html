@@ -1,0 +1,15 @@
+{% load static %}
+
+<li class="flex gap-4 group">
+  {% if django_url %}
+    <a href="{% url django_url %}">
+      {{ label }}
+    </a>
+    <span class="group-last-of-type:hidden">|</span>
+  {% else %}
+    <a href="{{ href }}">
+      {{ label }}
+    </a>
+    <span class="group-last-of-type:hidden">|</span>
+  {% endif %}
+</li>
