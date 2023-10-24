@@ -1,0 +1,77 @@
+{% extends "core/base.html" %}
+
+{% load static %}
+{% load component_tags %}
+
+{% block title %}
+  Our supporters - {{ request.press.name }}
+{% endblock title %}
+{% block meta_title %}
+  <meta
+    property="og:title"
+    content="Our supporters - {{ request.press.name }}">
+  <meta
+    name="twitter:title"
+    content="Our supporters - {{ request.press.name }}">
+{% endblock meta_title %}
+{% block meta_description %}
+  <meta name="twitter:description" content="The full list of institutions that support us through our diamond open access model">
+  <meta property="og:description" content="The full list of institutions that support us through our diamond open access model">
+{% endblock meta_description %}
+
+{% block body %}
+
+<article>
+  <div class="container mx-auto max-w-screen-xl relative">
+    {% include "custom/edit-on-github.html" with rel_path="custom/supporters.html" %}
+    {% include "custom/library-opener.html" %}
+    {% include "custom/generic-h1.html" with h1="Our<br> supporters.<br>" %}
+  </div>
+  <div class="container mx-auto max-w-screen-xl relative mt-8">
+    {% component_block "page_intro" %}
+      {% fill "column_one" %}
+        <p class="lead text-white">{% lorem 15 w %}</p>
+      {% endfill %}
+      {% fill "column_two" %}
+        <p>{% lorem 15 w %}</p>
+        <p>You can also read about the benefits of becoming a supporter.</p>
+        <div class="not-prose flex">
+          {% with rel_path="/site/become-a-supporter/" label="Find out more" %}
+            {% include 'custom/button-action-white.html' %}
+          {% endwith %}
+        </div>
+      {% endfill %}
+    {% endcomponent_block %}
+  </div>
+  <div class="container mx-auto max-w-screen-xl relative mt-28">
+    {% include 'custom/camera-man-bun-halfway.html' %}
+    {% component_block "page_section" anchor="right" %}
+      <h2 class="w-full">Supporters by country.</h2>
+      {% component_block "filterable_list" list_id="supporters" value_names="country supporter" %}
+        {% regroup supporters by country as supporter_list %}
+        <div class="list">
+          {% for country, supporters_in_country in supporter_list %}
+            {% if country %}
+              <h3>{{ country.name }}</h3>
+              {% for supporter in supporters_in_country %}
+                <div class="first:mt-8 pb-2">
+                  <div class="supporter">
+                    {{ supporter }}
+                  </div>
+                  <div class="country hidden">
+                    {{ country.code }} {{ country.alpha3 }} {{ country.name }}
+                  </div>
+                </div>
+              {% endfor %}
+            {% endif %}
+          {% endfor %}
+        </div>
+      {% endcomponent_block %}
+    {% endcomponent_block %}
+  </div>
+</article>
+<div class="container mx-auto max-w-screen-xl relative">
+  {% include 'custom/subscribe.html' %}
+</div>
+
+{% endblock body %}

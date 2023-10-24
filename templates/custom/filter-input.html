@@ -6,7 +6,7 @@
     src="{% static 'hourglass/media/icons/filter.svg' %}"
     >
   <input
-    placeholder="Filter"
+    placeholder="{{ placeholder|default:'Filter' }}"
     class="
       search
       bg-tan-light

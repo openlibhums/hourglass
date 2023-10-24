@@ -1,0 +1,17 @@
+{% load static %}
+{% load component_tags %}
+
+<div id="{{ list_id }}">
+  <div class="not-prose w-full">
+    {% include "custom/filter-input.html" with placeholder=placeholder %}
+  </div>
+  {% slot "list" default %}{% endslot %}
+</div>
+
+<script type="module">
+  const listId = '{{ list_id }}'
+  const valueNames = '{{ value_names }}'.split(' ')
+  document.addEventListener('DOMContentLoaded', () => {
+    new List(listId, { valueNames })
+  })
+</script>

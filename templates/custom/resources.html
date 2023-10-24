@@ -28,11 +28,8 @@
   </div>
   <div class="container mx-auto max-w-screen-xl relative mt-28">
     {% component_block "page_section" anchor="left" %}
-      <div id="advocacy">
-        <h2>Open access advocacy.</h2>
-        <div class="not-prose">
-          {% include "custom/filter-input.html" %}
-        </div>
+      <h2>Open access advocacy.</h2>
+      {% component_block "filterable_list" list_id="advocacy" value_names="name type description date" %}
         <div class="overflow-x-auto">
           <table>
             <thead>
@@ -117,18 +114,15 @@
             </tbody>
           </table>
         </div>
-      </div>
+      {% endcomponent_block %}
     {% endcomponent_block %}
   </div>
   <div class="container mx-auto max-w-screen-xl relative mt-28">
     {% include 'custom/camera-man-bun-halfway.html' %}
     {% component_block "page_section" anchor="right" %}
-      <div id="archive">
-        <h2>The OLH archive.</h2>
-        <div class="not-prose">
-          {% include "custom/filter-input.html" %}
-        </div>
-        <div class="overflow-x-auto">
+      <h2>The OLH archive.</h2>
+      <div class="overflow-x-auto">
+        {% component_block "filterable_list" list_id="archive" value_names="name type description date" %}
           <table>
             <thead>
               <tr>
@@ -213,7 +207,7 @@
               </tr>
             </tbody>
           </table>
-        </div>
+        {% endcomponent_block %}
       </div>
     {% endcomponent_block %}
   </div>
@@ -265,15 +259,3 @@
     {% include 'custom/subscribe.html' %}
   </div>
 </article>
-
-<script type="module">
-  import '{% static "hourglass/js/list.min.js" %}'
-  document.addEventListener('DOMContentLoaded', () => {
-    new List('advocacy', {
-      valueNames: [ 'name', 'type', 'description', 'date' ]
-    })
-    new List('archive', {
-      valueNames: [ 'name', 'type', 'description', 'date' ]
-    })
-  })
-</script>
