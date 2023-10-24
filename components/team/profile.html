@@ -44,16 +44,20 @@
         {% slot "bio" %}{% endslot "bio" %}
       {% endcomponent_block %}
     </div>
-    <div class="relative max-lg:mt-8 lg:mt-28">
-      {% component_block "page_section" anchor="right" %}
-        {% slot "publications" %}{% endslot "publications" %}
-      {% endcomponent_block %}
-    </div>
-    <div class="relative max-lg:mt-8 lg:mt-28">
-      {% component_block "page_section" anchor="left" colors="dark" %}
-        {% slot "social_links" %}{% endslot %}
-      {% endcomponent_block %}
-    </div>
+    {% if publications %}
+      <div class="relative max-lg:mt-8 lg:mt-28">
+        {% component_block "page_section" anchor="right" %}
+          {% slot "publications" %}{% endslot "publications" %}
+        {% endcomponent_block %}
+      </div>
+    {% endif %}
+    {% if social_links %}
+      <div class="relative max-lg:mt-8 lg:mt-28">
+        {% component_block "page_section" anchor="left" colors="dark" %}
+          {% slot "social_links" %}{% endslot %}
+        {% endcomponent_block %}
+      </div>
+    {% endif %}
   </article>
 </div>
 
