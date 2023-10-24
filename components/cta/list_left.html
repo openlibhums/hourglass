@@ -1,0 +1,13 @@
+{% load static %}
+{% load component_tags %}
+
+<div
+  class="
+    flex max-lg:flex-col lg:flex-row lg:flex-wrap
+    gap-x-8 gap-y-20 max-lg:items-center max-lg:justify-around lg:justify-between
+    {% if width == "part" %}
+      lg:max-w-xl
+    {% endif %}
+  ">
+  {% slot "content" default %}{% endslot %}
+</div>
