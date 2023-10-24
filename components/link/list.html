@@ -1,0 +1,11 @@
+{% load component_tags %}
+
+<div class="not-prose">
+  <ul
+    class="
+      flex gap-4 flex-wrap
+      text-white font-poppins-bold text-sm uppercase tracking-wider
+    ">
+    {% slot "links" default %}{% endslot %}
+  </ul>
+</div>

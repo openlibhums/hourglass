@@ -76,39 +76,18 @@
       {% endfill %}
     {% endcomponent_block %}
   </div>
-  <div class="container mx-auto max-w-screen-xl relative">
-    <div
-      class="
-        relative after:z-30 after:block after:absolute
-        after:inset-y-0 after:w-screen
-        max-lg:after:left-1/2 lg:after:-right-12
-        after:bg-white
-        mt-28
-      ">
-      <div
-        class="
-          relative z-40
-          py-20 px-8 bg-white
-          flex flex-col gap-y-8
-        ">
+  <div class="container mx-auto max-w-screen-xl relative mt-28">
+    {% component_block "page_section" prose=False anchor="left" width="full" %}
+      <div class="flex flex-col gap-y-8">
         <h2 class="font-poppins-bold text-3xl max-lg:text-center">
           Directors.
         </h2>
-        <div
-          class="
-            flex max-lg:flex-col gap-y-20
-            lg:flex-row lg:justify-between
-          ">
-          <div
-            class="
-              flex flex-col gap-y-8 max-lg:items-center
-              lg:items-start lg:w-[30%]
-            ">
+        {% component_block "cta_list_left" width="full" %}
+          {% component_block "cta_list_item_left" %}
             <img
-              class="object-contain w-64 h-64"
               src="https://www.openlibhums.org/media/press/Caroline.jpg"
               alt="">
-            <div class="flex flex-col">
+            <div class="flex flex-col gap-y-2">
               <h3 class="font-poppins-bold max-lg:text-xl lg:text-2xl max-lg:text-center">
                 Dr Caroline Edwards
               </h3>
@@ -122,17 +101,12 @@
             {% with rel_path="/site/dr-caroline-edwards" label="Full profile" %}
               {% include 'custom/button-action-blue.html' %}
             {% endwith %}
-          </div>
-          <div
-            class="
-              flex flex-col gap-y-8 max-lg:items-center
-              lg:items-start lg:w-[30%]
-            ">
+          {% endcomponent_block %}
+          {% component_block "cta_list_item_left" %}
             <img
-              class="object-contain w-64 h-64"
               src="https://www.openlibhums.org/media/press/Rose.jpg"
               alt="">
-            <div class="flex flex-col">
+            <div class="flex flex-col gap-y-2">
               <h3 class="font-poppins-bold max-lg:text-xl lg:text-2xl max-lg:text-center">
                 Dr Rose Harris-Birtill
               </h3>
@@ -146,17 +120,12 @@
             {% with rel_path="/site/dr-rose-harris-birtill" label="Full profile" %}
               {% include 'custom/button-action-blue.html' %}
             {% endwith %}
-          </div>
-          <div
-            class="
-              flex flex-col gap-y-8 max-lg:items-center
-              lg:items-start lg:w-[30%]
-            ">
+          {% endcomponent_block %}
+          {% component_block "cta_list_item_left" %}
             <img
-              class="object-contain w-64 h-64"
               src="https://www.openlibhums.org/media/press/Andy.jpg"
               alt="">
-            <div class="flex flex-col">
+            <div class="flex flex-col gap-y-2">
               <h3 class="font-poppins-bold max-lg:text-xl lg:text-2xl max-lg:text-center">
                 Andy Byers
               </h3>
@@ -170,12 +139,12 @@
             {% with rel_path="/site/andy-byers" label="Full profile" %}
               {% include 'custom/button-action-blue.html' %}
             {% endwith %}
-          </div>
-        </div>
+          {% endcomponent_block %}
+        {% endcomponent_block %}
       </div>
-    </div>
+    {% endcomponent_block %}
   </div>
-  <div class="container mx-auto max-w-screen-xl relative">
+  <div class="container mx-auto max-w-screen-xl relative mt-28">
     <img
       class="
         max-lg:hidden absolute z-0
@@ -192,130 +161,93 @@
       "
       src="{% static 'hourglass/media/backgrounds/rectangle-red.svg' %}"
       alt="">
-    <div class="lg:flex">
-      <div
-        class="
-          relative before:z-30 before:block before:absolute
-          before:inset-y-0 before:w-screen
-          max-lg:before:right-1/2 lg:before:-left-12
-          before:bg-white
-          mt-28
-        ">
-        <div
-          class="
-            relative right-0 z-40
-            py-20 px-8 bg-white
-            flex flex-col gap-y-8
-          ">
-          <h2 class="font-poppins-bold text-3xl max-lg:text-center lg:w-[50%]">
-            Editorial &amp; marketing.
-          </h2>
-          <div
-            class="
-              flex max-lg:flex-col gap-y-20
-              lg:flex-row lg:justify-between gap-x-8
-            ">
-            <div
-              class="
-                flex flex-col gap-y-8 max-lg:items-center
-                lg:items-start lg:flex-1
-              ">
-              <img
-                class="object-contain w-64 h-64"
-                src="https://www.openlibhums.org/media/press/Simon.jpg"
-                alt="">
-              <div class="flex flex-col">
-                <h3 class="font-poppins-bold max-lg:text-xl lg:text-2xl max-lg:text-center">
-                  Dr Simon Everett
-                </h3>
-                <p class="max-lg:text-lg lg:text-xl max-lg:text-center">
-                  Editorial Officer
-                </p>
-                <p class="italic max-lg:text-lg lg:text-xl max-lg:text-center">
-                  The Archivist
-                </p>
-              </div>
+    {% component_block "page_section" prose=False anchor="right" %}
+      <div class="flex flex-col gap-y-8">
+        <h2 class="font-poppins-bold text-3xl max-lg:text-center">
+          Editorial, marketing &amp; projects.
+        </h2>
+        {% component_block "cta_list_left" %}
+          {% component_block "cta_list_item_left" %}
+            <img
+              src="https://www.openlibhums.org/media/press/Simon.jpg"
+              alt="">
+            <div class="flex flex-col gap-y-2">
+              <h3 class="font-poppins-bold max-lg:text-xl lg:text-2xl max-lg:text-center">
+                Dr Simon Everett
+              </h3>
+              <p class="max-lg:text-lg lg:text-xl max-lg:text-center">
+                Editorial Officer
+              </p>
+              <p class="italic max-lg:text-lg lg:text-xl max-lg:text-center">
+                The Archivist
+              </p>
+            </div>
+            <div class="flex">
               {% with rel_path="/site/dr-caroline-edwards" label="Full profile" %}
                 {% include 'custom/button-action-blue.html' %}
               {% endwith %}
             </div>
-            <div
-              class="
-                flex flex-col gap-y-8 max-lg:items-center
-                lg:items-start lg:flex-1
-              ">
-              <img
-                class="object-contain w-64 h-64"
-                src="https://www.openlibhums.org/media/press/Paula.jpg"
-                alt="">
-              <div class="flex flex-col">
-                <h3 class="font-poppins-bold max-lg:text-xl lg:text-2xl max-lg:text-center">
-                  Paula Clemente Vega
-                </h3>
-                <p class="max-lg:text-lg lg:text-xl max-lg:text-center">
-                  Marketing Officer
-                </p>
-                <p class="italic max-lg:text-lg lg:text-xl max-lg:text-center">
-                  The Artist
-                </p>
-              </div>
-              {% with rel_path="/site/paula-clemente-vega" label="Full profile" %}
-                {% include 'custom/button-action-blue.html' %}
-              {% endwith %}
+          {% endcomponent_block %}
+          {% component_block "cta_list_item_left" %}
+            <img
+              src="https://www.openlibhums.org/media/press/Paula.jpg"
+              alt="">
+            <div class="flex flex-col gap-y-2">
+              <h3 class="font-poppins-bold max-lg:text-xl lg:text-2xl max-lg:text-center">
+                Paula Clemente Vega
+              </h3>
+              <p class="max-lg:text-lg lg:text-xl max-lg:text-center">
+                Marketing Officer
+              </p>
+              <p class="italic max-lg:text-lg lg:text-xl max-lg:text-center">
+                The Artist
+              </p>
             </div>
-          </div>
-        </div>
-      </div>
-      <div
-        class="
-          relative after:z-30 after:block after:absolute
-          after:inset-y-0 after:w-screen
-          max-lg:after:left-1/2 lg:after:-left-12
-          after:bg-white
-          mt-28
-        ">
-        <div
-          class="
-            relative z-40
-            py-20 px-8 bg-white
-            flex flex-col gap-y-8
-          ">
-          <h2 class="font-poppins-bold text-3xl max-lg:text-center">
-            Projects &amp; development.
-          </h2>
-          <div
-            class="
-              flex max-lg:flex-col gap-y-20
-              lg:flex-row lg:justify-between gap-x-8
-            ">
-            <div
-              class="
-                flex flex-col gap-y-8 max-lg:items-center
-                lg:items-start lg:flex-1
-              ">
-              <img
-                class="object-contain w-64 h-64"
-                src="https://www.openlibhums.org/media/press/Katherine.jpg"
-                alt="">
-              <div class="flex flex-col">
-                <h3 class="font-poppins-bold max-lg:text-xl lg:text-2xl max-lg:text-center">
-                  Dr Katherine Parker-Hay
-                </h3>
-                <p class="max-lg:text-lg lg:text-xl max-lg:text-center">
-                  Publishing Development Officer
-                </p>
-                <p class="italic max-lg:text-lg lg:text-xl max-lg:text-center">
-                  Project Whisperer
-                </p>
-              </div>
-              {% with rel_path="/site/dr-katherine-parker-hay" label="Full profile" %}
-                {% include 'custom/button-action-blue.html' %}
-              {% endwith %}
+            {% with rel_path="/site/paula-clemente-vega" label="Full profile" %}
+              {% include 'custom/button-action-blue.html' %}
+            {% endwith %}
+          {% endcomponent_block %}
+          {% component_block "cta_list_item_left" %}
+            <img
+              src="https://www.openlibhums.org/media/press/Katherine.jpg"
+              alt="">
+            <div class="flex flex-col gap-y-2">
+              <h3 class="font-poppins-bold max-lg:text-xl lg:text-2xl max-lg:text-center">
+                Dr Katherine Parker-Hay
+              </h3>
+              <p class="max-lg:text-lg lg:text-xl max-lg:text-center">
+                Publishing Development Officer
+              </p>
+              <p class="italic max-lg:text-lg lg:text-xl max-lg:text-center">
+                Project Whisperer
+              </p>
             </div>
-          </div>
-        </div>
+            {% with rel_path="/site/dr-katherine-parker-hay" label="Full profile" %}
+              {% include 'custom/button-action-blue.html' %}
+            {% endwith %}
+          {% endcomponent_block %}
+          {% component_block "cta_list_item_left" %}
+            <img
+              src="https://www.openlibhums.org/media/press/Cate.jpg"
+              alt="">
+            <div class="flex flex-col gap-y-2">
+              <h3 class="font-poppins-bold max-lg:text-xl lg:text-2xl max-lg:text-center">
+                Cate Meredith
+              </h3>
+              <p class="max-lg:text-lg lg:text-xl max-lg:text-center">
+                CHASE Doctoral Training Partnership Intern
+              </p>
+              <p class="italic max-lg:text-lg lg:text-xl max-lg:text-center">
+                The Polymath
+              </p>
+            </div>
+            {% with rel_path="/site/cate-meredith" label="Full profile" %}
+              {% include 'custom/button-action-blue.html' %}
+            {% endwith %}
+          {% endcomponent_block %}
+        {% endcomponent_block %}
       </div>
-    </div>
+    {% endcomponent_block %}
   </div>
   <div class="container mx-auto max-w-screen-xl relative max-lg:mt-16 lg:mt-28">
     {% component_block "glide" glide_id="team-quotes" glide_type="quotes" %}
@@ -371,129 +303,71 @@
         src="{% static 'hourglass/media/backgrounds/shakespeare-drag-actor-flowers-stripes.png' %}"
         alt="Actor singing with arms raised wearing dress and flowery crown">
     </div>
-    <div class="lg:flex">
-      <div
-        class="
-          relative before:z-30 before:block before:absolute
-          before:inset-y-0 before:w-screen
-          max-lg:before:right-1/2 lg:before:-right-12
-          before:bg-white
-        ">
-        <div
-          class="
-            relative z-40
-            py-20 px-8 bg-white
-            flex flex-col gap-y-8
-          ">
-          <h2 class="font-poppins-bold text-3xl max-lg:text-center">
-            Engineering.
-          </h2>
-          <div
-            class="
-              flex max-lg:flex-col gap-y-20
-              lg:flex-row lg:justify-between gap-x-8
-            ">
-            <div
-              class="
-                flex flex-col gap-y-8 max-lg:items-center
-                lg:items-start lg:flex-1
-              ">
-              <img
-                class="object-contain w-64 h-64"
-                src="https://www.openlibhums.org/media/press/Mauro.jpg"
-                alt="">
-              <div class="flex flex-col">
-                <h3 class="font-poppins-bold max-lg:text-xl lg:text-2xl max-lg:text-center">
-                  Mauro Sanchez
-                </h3>
-                <p class="max-lg:text-lg lg:text-xl max-lg:text-center">
-                  Senior Publishing Technologies Developer
-                </p>
-                <p class="italic max-lg:text-lg lg:text-xl max-lg:text-center">
-                  The Architect
-                </p>
-              </div>
-              {% with rel_path="/site/mauro-sanchez" label="Full profile" %}
-                {% include 'custom/button-action-blue.html' %}
-              {% endwith %}
+    {% component_block "page_section" prose=False anchor="left" width="full" %}
+      <div class="flex flex-col gap-y-8">
+        <h2 class="font-poppins-bold text-3xl max-lg:text-center">
+          Publishing technology.
+        </h2>
+        {% component_block "cta_list_left" width="full" %}
+          {% component_block "cta_list_item_left" %}
+            <img
+              src="https://www.openlibhums.org/media/press/Mauro.jpg"
+              alt="">
+            <div class="flex flex-col gap-y-2">
+              <h3 class="font-poppins-bold max-lg:text-xl lg:text-2xl max-lg:text-center">
+                Mauro Sanchez
+              </h3>
+              <p class="max-lg:text-lg lg:text-xl max-lg:text-center">
+                Senior Publishing Technologies Developer
+              </p>
+              <p class="italic max-lg:text-lg lg:text-xl max-lg:text-center">
+                The Architect
+              </p>
             </div>
-            <div
-              class="
-                flex flex-col gap-y-8 max-lg:items-center
-                lg:items-start lg:flex-1
-              ">
-              <img
-                class="object-contain w-64 h-64"
-                src="https://www.openlibhums.org/media/press/Joseph.jpg"
-                alt="">
-              <div class="flex flex-col">
-                <h3 class="font-poppins-bold max-lg:text-xl lg:text-2xl max-lg:text-center">
-                  Joseph Muller
-                </h3>
-                <p class="max-lg:text-lg lg:text-xl max-lg:text-center">
-                  Senior Publishing Technologies Developer
-                </p>
-                <p class="italic max-lg:text-lg lg:text-xl max-lg:text-center">
-                  The Translator
-                </p>
-              </div>
-              {% with rel_path="/site/joseph-muller" label="Full profile" %}
-                {% include 'custom/button-action-blue.html' %}
-              {% endwith %}
+            {% with rel_path="/site/mauro-sanchez" label="Full profile" %}
+              {% include 'custom/button-action-blue.html' %}
+            {% endwith %}
+          {% endcomponent_block %}
+          {% component_block "cta_list_item_left" %}
+            <img
+              src="https://www.openlibhums.org/media/press/Joseph.jpg"
+              alt="">
+            <div class="flex flex-col gap-y-2">
+              <h3 class="font-poppins-bold max-lg:text-xl lg:text-2xl max-lg:text-center">
+                Joseph Muller
+              </h3>
+              <p class="max-lg:text-lg lg:text-xl max-lg:text-center">
+                Senior Publishing Technologies Developer
+              </p>
+              <p class="italic max-lg:text-lg lg:text-xl max-lg:text-center">
+                The Translator
+              </p>
             </div>
-          </div>
-        </div>
+            {% with rel_path="/site/joseph-muller" label="Full profile" %}
+              {% include 'custom/button-action-blue.html' %}
+            {% endwith %}
+          {% endcomponent_block %}
+          {% component_block "cta_list_item_left" %}
+            <img
+              src="https://www.openlibhums.org/media/press/Siobhan.png"
+              alt="">
+            <div class="flex flex-col gap-y-2">
+              <h3 class="font-poppins-bold max-lg:text-xl lg:text-2xl max-lg:text-center">
+                Siobhan Haime
+              </h3>
+              <p class="max-lg:text-lg lg:text-xl max-lg:text-center">
+                Publishing Technologies Librarian
+              </p>
+              <p class="italic max-lg:text-lg lg:text-xl max-lg:text-center">
+              </p>
+            </div>
+            {% with rel_path="/site/siobhan-haime" label="Full profile" %}
+              {% include 'custom/button-action-blue.html' %}
+            {% endwith %}
+          {% endcomponent_block %}
+        {% endcomponent_block %}
       </div>
-      <div
-        class="
-          relative after:z-30 after:block after:absolute
-          after:inset-y-0 after:w-screen
-          max-lg:after:left-1/2 lg:after:-right-12
-          after:bg-white
-          max-lg:mt-28
-        ">
-        <div
-          class="
-            relative z-40
-            py-20 px-8 bg-white
-            flex flex-col gap-y-8
-          ">
-          <h2 class="font-poppins-bold text-3xl max-lg:text-center">
-            Internship.
-          </h2>
-          <div
-            class="
-              flex max-lg:flex-col gap-y-20
-              lg:flex-row lg:justify-between
-            ">
-            <div
-              class="
-                flex flex-col gap-y-8 max-lg:items-center
-                lg:items-start lg:flex-1
-              ">
-              <img
-                class="object-contain w-64 h-64"
-                src="https://www.openlibhums.org/media/press/Cate.jpg"
-                alt="">
-              <div class="flex flex-col">
-                <h3 class="font-poppins-bold max-lg:text-xl lg:text-2xl max-lg:text-center">
-                  Cate Meredith
-                </h3>
-                <p class="max-lg:text-lg lg:text-xl max-lg:text-center">
-                  CHASE Doctoral Training Partnership Intern
-                </p>
-                <p class="italic max-lg:text-lg lg:text-xl max-lg:text-center">
-                  The Polymath
-                </p>
-              </div>
-              {% with rel_path="/site/cate-meredith" label="Full profile" %}
-                {% include 'custom/button-action-blue.html' %}
-              {% endwith %}
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+    {% endcomponent_block %}
   </div>
   <div class="container mx-auto max-w-screen-xl relative">
     {% include 'custom/subscribe.html' %}

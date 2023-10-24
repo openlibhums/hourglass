@@ -36,23 +36,10 @@
         </div>
       </form>
     {% endcomponent_block %}
-    <div
-      class="
-        flex gap-x-4
-        py-6 font-poppins-medium text-xs text-white
-        uppercase tracking-widest underline-offset-8 max-w-xl
-      ">
-      <a
-        href="https://twitter.com/openlibhums"
-        rel="noopener noreferrer">
-        Twitter
-      </a>
-      <span>|</span>
-      <a
-        href="https://www.facebook.com/OpenLibHums"
-        rel="noopener noreferrer">
-        Facebook
-      </a>
-    </div>
+    {% component_block "link_list" %}
+      {% component "link" label="Twitter" href="https://twitter.com/openlibhums" %}
+      {% component "link" label="Facebook" href="https://www.facebook.com/OpenLibHums" %}
+      {% component "link" label="Mastodon" href="https://mstdn.social/@openlibhums@hcommons.social" %}
+    {% endcomponent_block %}
   </div>
 </div>

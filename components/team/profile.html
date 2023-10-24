@@ -1,0 +1,62 @@
+{% load static %}
+{% load component_tags %}
+
+<div class="container mx-auto max-w-screen-xl">
+  <article>
+    <div class="relative max-lg:mt-0 lg:mt-8">
+      {% include 'custom/generic-h1-higher.html' with h1=name %}
+      <div
+        class="
+          z-0 relative max-md:top-8 md:max-lg:-top-48 lg:-top-96 motion-safe:rallax
+          max-lg:right-12 lg:right-0
+        ">
+        <img
+          class="motion-safe:rallax z-10 absolute top-56 -right-8 w-48"
+          src="{% static 'hourglass/media/backgrounds/circle-blue.svg' %}"
+          alt="">
+        <img
+          class="
+            z-0 absolute w-12
+            max-md:-top-20 md:max-lg:top-24 lg:-top-56
+            max-md:-right-8 md:max-lg:right-0 lg:right-20
+          "
+          src="{% static 'hourglass/media/backgrounds/bars-vertical-orange-three.svg' %}"
+          alt="">
+        <img
+          class="
+            absolute z-20 max-lg:w-64 lg:w-80
+            max-md:-top-4 md:max-lg:top-44 lg:top-16
+            max-md:-right-4 md:max-lg:right-12 lg:max-xl:right-8 xl:right-28
+          "
+          src="{{ image_url }}"
+          alt="">
+        <img
+          class="
+            motion-safe:rallax absolute z-20 w-12 max-lg:-top-8 lg:top-8
+            max-lg:-right-12 lg:right-4
+          "
+          src="{% static 'hourglass/media/backgrounds/circle-red.svg' %}"
+          alt="">
+      </div>
+    </div>
+    <div class="relative max-md:mt-72 md:max-lg:mt-56 lg:-mt-8">
+      {% component_block "page_section" anchor="left" %}
+        {% slot "bio" %}{% endslot "bio" %}
+      {% endcomponent_block %}
+    </div>
+    <div class="relative max-lg:mt-8 lg:mt-28">
+      {% component_block "page_section" anchor="right" %}
+        {% slot "publications" %}{% endslot "publications" %}
+      {% endcomponent_block %}
+    </div>
+    <div class="relative max-lg:mt-8 lg:mt-28">
+      {% component_block "page_section" anchor="left" colors="dark" %}
+        {% slot "social_links" %}{% endslot %}
+      {% endcomponent_block %}
+    </div>
+  </article>
+</div>
+
+<div class="container mx-auto max-w-screen-xl relative mt-28 pb-28">
+  {% include 'custom/subscribe-art.html' %}
+</div>
