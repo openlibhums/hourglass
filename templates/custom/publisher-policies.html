@@ -1,0 +1,407 @@
+{% load static %}
+{% load component_tags %}
+
+<div class="container mx-auto max-w-screen-xl">
+  <article>
+    <div class="relative max-lg:mt-56 lg:mt-8">
+      {% include 'custom/edit-on-github.html' with rel_path='custom/publisher-policies.html' %}
+      {% include 'custom/vase-opener.html' %}
+      {% include 'custom/generic-h1.html' with h1="Publisher Policies" %}
+    </div>
+    <div class="relative mt-8">
+      {% component_block "page_section" anchor="left" %}
+        <nav class="flex flex-col gap-y-4">
+          <div class="flex flex-row justify-center">
+            <a href="#research-integrity"><b>Research Integrity</b></a>
+          </div>
+          <div class="flex flex-row flex-wrap gap-x-2 justify-center">
+            <a href="#open-access">Open Access</a> |
+            <a href="#anti-plagiarism">Anti-plagiarism Checking</a> |
+            <a href="#peer-review">Rigorous Peer Review</a> |
+            <a href="#archiving-and-indexing">Archiving and Indexing</a>
+          </div>
+          <div class="flex flex-row justify-center">
+            <a href="#publication-ethics-and-malpractice"><b>Publication Ethics and Malpractice</b></a>
+          </div>
+          <div class="flex flex-row flex-wrap gap-x-2 justify-center">
+            <b>Ethics:</b>
+            <a href="#academic-standards">Academic Standards</a> |
+            <a href="#oa-content">OA Content</a> |
+            <a href="#author-name-changes">Author Name Changes</a> |
+            <a href="#ethics-policies">Ethics Policies</a>
+          </div>
+          <div class="flex flex-row flex-wrap gap-x-2 justify-center">
+            <b>Malpractice:</b>
+            <a href="#publisher-responsibilities">Responsibilities of the Publisher</a> |
+            <a href="#editor-responsibilities">Responsibilities of the Editors</a> |
+            <a href="#reviewer-responsibilities">Responsibilities of Reviewers</a> |
+            <a href="#author-responsibilities">Responsibilities of the Author(s)</a> |
+            <a href="#authorship-and-contributorship">Authorship and Contributorship</a>
+          </div>
+          <div class="flex flex-row justify-center">
+            <b>Revised June 2023</b>
+          </div>
+        </nav>
+      {% endcomponent_block %}
+    </div>
+    <div class="relative max-lg:mt-16 lg:mt-28">
+      {% component_block "page_section" anchor="right" colors="dark" %}
+        <h2 class="text-white" id="research-integrity">Research Integrity</h2>
+        <p>The following policies apply to all Open Library of Humanities (OLH) journals.</p>
+      {% endcomponent_block %}
+      {% include "custom/circle-halfway.html" %}
+    </div>
+    <div class="relative mt-8">
+      {% component_block "page_section" anchor="right" %}
+        <h3 id="open-access">Open Access Policy</h3>
+        <p>Our journals provide immediate access to their content on the principle that making research freely available to the public supports a greater global exchange of knowledge. Authors of published articles remain the copyright holders and grant third parties the right to use, reproduce, and share the article according to a <a href="http://creativecommons.org/" target="_blank" rel="noreferrer noopener">Creative Commons</a> license agreement. In some exceptional cases, copyright holders for articles published in journals that migrate to the OLH may differ for back content published prior to the journal joining the OLH.</p>
+        <p>One of the benefits of open access publishing lies in others being able to re-use material. We believe that the greatest societal good is possible when people are free to re-distribute scholarship and to create derivative works. This is why we use the <a href="http://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noreferrer noopener">CC BY 4.0</a> license, under which others may re-use your work, on condition that they cite you.</p>
+        <p>If a more restrictive licence is required (for example, if you are reproducing third party material that cannot be reproduced under more open licences), please make this request upon submission in the ‘Comment to the Editor’ field or email your editor directly, stating the reasons why.</p>
+        <h3 id="anti-plagiarism">Anti-plagiarism Checking</h3>
+        <p>A combination of pre-screening and open access is the best possible defence against plagiarism. All articles submitted to Open Library of Humanities (OLH) journals can be screened for plagiarism by the iThenticate system from <a href="https://www.crossref.org" target="_blank">Crossref</a>. This system compares incoming articles to a large database of academic content, and alerts editors to any possible issues.</p>
+        <h3 id="peer-review">Rigorous Peer Review</h3>
+        <p>All OLH published journals adhere to a rigorous peer review policy to ensure the integrity of the scholarship we publish. The majority of OLH journals use the double-anonymous peer review system for submitted articles, with some journals opting for single-anonymous or even open peer review. The only materials exempt from peer review are editorials, book reviews, conference reports, interviews, and other non-article pieces, which do not require peer review to be published and are subject to editorial review and revisions as required. Journal editors are responsible for sourcing potential peer reviewers for submitted articles and as a general publisher policy the OLH does not endorse the practice of authors suggesting potential reviewers. Although this is an acceptable scholarly practice <a href="https://publicationethics.org/resources/flowcharts/how-recognise-potential-manipulation-peer-review-process" target="_blank">as outlined by COPE</a>, the OLH believes that inviting authors to contribute to the review process can potentially lead to manipulation and abuse of peer review in some disciplines. The OLH therefore understands that for some disciplines the practice of authors suggesting potential reviewers is accepted best practice and we can make exceptions to this publisher policy for specific journals in consultation with journal editorial boards.</p>
+        <p>For OLH journals operating an anonymous review policy, authors and editors may find it useful to consult OLH's guide to '<a href="https://www.openlibhums.org/site/blindreview/" target="_blank">Ensuring an Anonymous Review</a>'.</p>
+        <h3 id="archiving-and-indexing">Archiving and Indexing Policy</h3>
+        <p>OLH is committed to ensuring that content is discoverable and accessible through indexing and archiving services. Every effort is made to submit and maintain journal listings on major indexes and archives.</p>
+        <p>OLH journals are, where possible, indexed by the following services:</p>
+        <ul>
+          <li><a href="https://www.doaj.org" target="_blank">Directory of Open Access Journals</a> (DOAJ)</li>
+          <li><a href="https://portal.issn.org" target="_blank">ISSN Portal</a></li>
+          <li><a href="https://v2.sherpa.ac.uk/romeo/" target="_blank">Sherpa Romeo</a></li>
+          <li><a href="https://www.kbplus.ac.uk/kbplus7/" target="_blank">JISC Knowledge Base+</a></li>
+          <li><a href="https://kanalregister.hkdir.no/publiseringskanaler/Forside" target="_blank">Norwegian Register for Scientific Journals, Series and Publishers</a>, including <a href="https://kanalregister.hkdir.no/publiseringskanaler/erihplus/" target="_blank">ERIH PLUS</a></li>
+          <li><a href="https://journalfinder.chronoshub.io/?fq=" target="_blank">ChronosHub</a></li>
+          <li><a href="https://www.ebsco.com/products/ebsco-knowledge-services" target="_blank">EBSCO Knowledge Services</a></li>
+          <li><a href="https://www.scienceopen.com" target="_blank">ScienceOpen</a></li>
+          <li><a href="https://explore.openaire.eu" target="_blank">OpenAIRE</a></li>
+        </ul>
+        <p>As of 2023, OLH is undertaking the ongoing process of indexing journals on the following services:</p>
+        <ul>
+          <li><a href="https://www.scopus.com/sources.uri" target="_blank">Scopus</a></li>
+          <li><a href="https://clarivate.com" target="_blank">Clarivate</a> services, including <a href="https://mjl.clarivate.com/search-results">Web of Science</a>, <a href="https://www.exlibrisgroup.com">ExLibris</a> and <a href="https://www.proquest.com">ProQuest</a></li>
+        </ul>
+        <p>All OLH content is indexed with <a href="https://www.crossref.org" target="_blank">Crossref</a> and assigned a <a href="https://www.doi.org" target="_blank">Digital Object Identifier (DOI)</a>. This means that all of our references are made available so that citations can be tracked by the publishing community, and the content is added to the iThenticate anti-plagiarism database. All journals contain the correct website information to be harvested by <a href="https://scholar.google.com" target="_blank">Google Scholar</a>. In addition, all journals are available for metadata harvesting via <a href="http://www.openarchives.org/pmh/" target="_blank">OAI-PMH</a> and are registered with <a href="http://www.openarchives.org" target="_blank">Open Archives</a>.</p>
+        <p>Journal content is archived around the world to ensure long-term availability. To secure  permanency of all publications, this journal utilises <a href="https://clockss.org" target="_blank">CLOCKSS</a>, and <a href="https://www.lockss.org" target="_blank">LOCKSS</a> archiving systems to create permanent archives for the purposes of preservation and restoration. Where relevant we automatically archive journal and book content with subject specific archives such as <a href="http://www.ncbi.nlm.nih.gov/pmc/">PubMed Central</a> or <a href="http://europepmc.org/">Europe PMC / PMC Bookshelf</a>. Our journals are also archived, or are pending to be archived, with <a href="https://www.portico.org/publishers/olh/" target="_blank">Portico</a> and the <a href="https://www.bl.uk/legal-deposit/about-legal-deposit" target="_blank">British Library's UK Legal Deposit Collection</a>.</p> 
+        <p>We fully support and encourage author self-archiving of all content (sometimes termed 'green' open access). All OLH journals are registered with <a href="http://www.sherpa.ac.uk/romeo/">Sherpa Romeo</a> to ensure that the license terms and self-archiving policies of the journals are 100% clear.</p>
+        <p>If the journal is not indexed by your preferred service, please let us know by emailing <a href="mailto:support@janeway.freshdesk.com" target="_blank">support@janeway.freshdesk.com</a> or alternatively by making an indexing request directly with the service.</p>
+      {% endcomponent_block %}
+    </div>
+    <div class="relative max-lg:mt-16 lg:mt-28">
+      {% include "custom/stripes-end.html" %}
+      {% component_block "page_section" anchor="left" colors="dark" %}
+        <h2 class="text-white" id="publication-ethics-and-malpractice">Publication Ethics and Malpractice Statement</h2>
+        <p>The following statement applies to all OLH journals and has been derived from the <a class="text-white" href="https://publicationethics.org/files/Code_of_conduct_for_journal_editors_Mar11.pdf">Committee on
+    Publication Ethics (COPE) ‘Code of Conduct and Best Practice Guidelines for
+    Journal Editors’</a>.</p>
+      {% endcomponent_block %}
+    </div>
+    <div class="relative mt-8">
+      {% component_block "page_section" anchor="left" %}
+        <h3 id="academic-standards">Academic Standards</h3>
+        <p>Editorials, book reviews, conference reports, interviews, and other non-article pieces, which are the only kinds of articles exempt from the peer review process, should be clearly marked as such and should still adhere to the publisher’s ethical standards set out below. The publisher will clearly indicate the peer review process for each article on the article itself, along with the license it has been published under, its DOI, a ‘Competing Interests’ statement, the dates of the article’s acceptance into the journal and publication, and the XML and PDF files for the article available for download.</p>
+        <h3 id="oa-content">Open Access to Content</h3>
+        <p>The OLH is responsible for, and dedicated to, maintaining constant open access to content for all published journals. We are committed to the preservation of academic research and continually review and update established archives and indexing services where possible with the most up-to-date data (see our <a href="https://olh.openlibhums.org/site/research-integrity/" target="_blank">Archiving and Indexing</a> policy). Journal content is made as accessible and discoverable as possible to external archives and indexers, producing machine-readable formats for our published articles that software systems, search engines, and other kinds of technology can understand. All journals are securely backed up and, should an outage occur, they will be restored as quickly as possible.</p>
+        <p>The OLH strives to maintain the open access of XML and PDF files for all articles, which are openly available for download from an article’s webpage if such files exist. Source files for articles, such as PDF design files, are <a href="https://www.openlibhums.org/contact/" target="_blank">available on request</a> if we have access to them.</p>
+        <p>As members of <a href="https://clockss.org/" target="_blank">CLOCKSS</a> (Controlled Lots of Copies Keep Stuff Safe), our content is regularly archived with many of the world’s leading research libraries. The CLOCKSS archive ensures that OLH content will always be made available as open access, in any eventuality.</p>
+        <p>The OLH seeks the highest standards of <a href="https://www.openlibhums.org/site/accessibility/" target="_blank">accessibility</a> for its titles and to be an inclusive publisher of research material. To this end, we continually work with our partners to update our platform and ensure that we meet relevant professional standards. This includes: enabling dyslexia-friendly fonts and display characteristics across our journal portfolio; providing all of our articles in formats that are accessible to those using screen readers; and, building towards full <a href="https://www.w3.org/WAI/standards-guidelines/wcag/" target="_blank">Web Content Accessibility Guidelines</a> (WCAG 2.1) compliance in all of our titles.</p>
+        <h3 id="author-name-changes">Author Name Changes Post-publication</h3>
+        <p>In accordance with the <a href="https://www.openlibhums.org/site/about/" target="_blank">OLH’s core values</a> of inclusivity and openness, we acknowledge that an author may change their name during their career. The OLH will therefore support post-publication author name changes where we have the technical capacity to do so (i.e., access to PDF source files). This will be actioned without publicly announcing these changes via a correction notice. Requesting authors will not be asked to provide legal evidence or documentation, nor the reason for a name change. However, they may be asked to provide evidence that they are the author of the article in question (for example, email correspondence relating to the submission or revisions). </p>
+        <p>Authors requesting a name change should contact the journal’s editor by email, which can be found on the journal’s ‘Contact’ page.</p>
+        <h3 id="ethics-policies">Ethics Policies for Our Journals</h3>
+        <h4>i) Complaints and appeals process</h4>
+        <p>The OLH will carefully consider complaints, appeals and allegations in line with guidance from the <a href="https://publicationethics.org/guidance/Guidelines" target="_blank">Committee on Publication Ethics (COPE)</a>. This applies both pre- and post-publication.</p>
+        <p>When a complaint is made to a journal, it must be passed to the journal’s editor, who must then inform the publisher, OLH, and address the issue following COPE guidelines. Where necessary, allegations will be referred to the appropriate institution for further investigation. Pending the outcome of an investigation, the published record will be updated accordingly, with a post-publication notice in the form of either a Correction or a Retraction. This notice will be linked to the original article (see 'ii) Options for post-publication discussions and corrections' for further details). A permanent digital object identifier (DOI) and universal resource locator (URL) link between the notice and the full article will enhance transparency and the integrity of the publication record; only in rare cases, where it is in the public interest, will an article be removed.</p>
+        <p>Well-evidenced appeals to editorial decisions are welcome and will be handled by the journal’s editor in the first instance, who will assess the appeal’s validity. If valid, the journal’s editorial board and/or external peer reviewers will review the appeal. A new editorial decision will be made based on the results of this review.</p>
+        <p><strong>To submit a complaint or raise an issue of potential misconduct to a journal, or to appeal an editorial decision:</strong></p>
+        <ol>
+          <li>Contact the journal’s editor with an explanation of your complaint or appeal. If you have a complaint regarding the editors of a journal, you may, alternatively, address your complaint <a href="https://www.openlibhums.org/contact/" target="_blank">directly to the publisher</a> by writing;</li>
+          <li>If the response to your complaint is not satisfactory, raise the matter with <a href="https://www.openlibhums.org/contact/" target="_blank">the publisher</a>, who will investigate the complaint and decide whether a further investigation is required, following COPE guidelines;</li>
+          <li>Especially complex cases may be submitted directly to <a href="https://publicationethics.org" target="_blank">COPE</a> for guidance on how to proceed.&nbsp;</li>
+        </ol>
+        <p>Please submit complaints or appeals by email, or by visiting the journal’s ‘Contact’ page. Our aim is to acknowledge complaints or appeals within 5 days of receipt, and to keep complainants updated throughout the process.</p>
+        <p>If the resolution reached by the journal/publisher is not satisfactory to the complainant, the matter may be escalated to COPE or a similar, appropriate body.</p>
+        <h4>ii) Options for post-publication discussions and corrections</h4>
+        <p>Where post-publication corrections or retractions need to be made, or if an article is to be removed, these will be accompanied by a correction or retraction notice to indicate the incorrect elements of the article and the extent of the corrections made, or the basis for the article’s retraction or removal.</p>
+        <p><strong>Correction</strong> notices are issued to address relatively minor errors in the article’s content or changes that have been made to the article’s metadata. To avoid multiple versions of the same article being circulated, these corrections are strictly limited to, for example, errors of spelling and phrasing that affect meaning, data errors, or mis-citations. These changes are outlined in the corrections notice and the original article must be clearly linked to this notice. Corrections are usually made within a short period after publication (typically within 7 working days).</p>
+        <p><strong>Retraction</strong> notices are issued for major issues affecting the argument or substantive content of an article that a correction would otherwise not fix. When a retraction is made, following <a href="https://publicationethics.org/retraction-guidelines">COPE’s Retraction Guidelines</a>, a retraction notice will be issued, linking to the original article, which states very clearly and exactly which part(s) of the article are incorrect or unreliable and are therefore the basis for the retraction. A ‘Publisher’s Note’ will be added to the original article that links readers to the retraction notice.</p>
+        <p><strong>Removals</strong> are only to be made in rare circumstances, where not doing so would infringe copyright or cause harm. In the case of an article’s removal, the contents of the article will be removed from circulation. It will not be downloadable as a file or displayed on the article’s webpage. A notice of retraction will be issued in the same manner as a standard retraction notice, and it will include the reason(s) for the article’s removal. The original article’s metadata will remain and will be linked to the retraction notice.</p>
+        <h4>iii) Policies on conflicts of interest/competing interests</h4>
+        <p>OLH is committed to transparent and bias-free research. To ensure that all publications are as open as possible all authors, reviewers and editors are required to declare any interests that could appear to compromise, conflict or influence the validity of the publication. This process is designed to reinforce the readers' trust in the research data.</p>
+        <p>Competing interests must be declared at the point of an article's submission. A conflict of interest must be stated if there is any reason why the information or the interpretation of information being produced may be influenced by a personal or financial relationship with other organisations or individuals, or if these relationships could be reasonably perceived from other people as influencing objective data or decision-making. Everyone involved in the submission, editorial processing, peer review and publication should declare any competing interests that they may have as early as possible.</p>
+        <p>Competing interests can take the form of both financial and non-financial relationships. The declaration of such relationships helps to ensure that academic rigour is maintained and that publications cannot be accused of undue bias or misinformation.</p>
+        <p>Examples of competing interests can be:</p>
+        <ul class="browser-default">
+          <li>receipt of payment, in any form, from an organisation or individual related to the subject matter;</li>
+          <li>ownership of stocks or shares in organisations directly related to the subject matter;</li>
+          <li>receipt of grants or funding;</li>
+          <li>membership of relevant boards;</li>
+          <li>related patents/applied for patents;</li>
+          <li>gifts;</li>
+          <li>known relationships that will hinder impartiality (e.g. colleagues, family, mentor, previous supervisor/student);</li>
+          <li>political, religious, ideological interests;</li>
+          <li>commercial.</li>
+        </ul>
+        <p>Competing interests should generally be declared to cover <em>at least</em> the previous 5 years - e.g., if a reviewer supervised the author's PhD then (and if they feel comfortable reviewing the work) their professional relationship should have ended over 5 years ago. This is a minimum requirement, and individuals must declare if they have had a previous relationship with someone/an organisation relevant to the submission that could be deemed to influence decision making.</p>
+        <p>To ensure transparency, neither editors nor board members may be involved in editorial decisions about their own scholarly work. Any published article that lists editors or board members as authors must detail this in a ‘Competing Interests’ statement that follows <a href="https://www.openlibhums.org/site/competing-interests/">OLH guidelines on how to declare a competing interest</a>.</p>
+        <h4>iv) Policies on data sharing and reproducibility</h4>
+        <p>OLH is committed to a more open research landscape and facilitating access to research by enabling reproducibility. OLH encourages authors of articles published in our journals to share their research data where relevant, including, but not limited to, raw data, processed data, software, algorithms, protocols, methods, and materials.</p>
+        <h4>v) Policy on intellectual property</h4>
+        <p>Authors at OLH journals retain their copyright but grant the ability for the publisher
+        to disseminate the work under Creative Commons license CCBY 4.0 (and in very
+        rare circumstances under other CC licences). Full details are available on the ‘Copyright
+        Notice’ of the ‘Submissions’ page of our journals.</p>
+        <h4>vi) Policy on ethical oversight</h4>
+        <p>Research involving human subjects, human material, or human data, must have been performed in accordance with the <a href="https://www.wma.net/policies-post/wma-declaration-of-helsinki-ethical-principles-for-medical-research-involving-human-subjects/" target="_blank">Declaration of Helsinki</a>. Where applicable, the
+        studies must have been approved by an appropriate ethics committee and the
+        authors should include a statement within the article text detailing this
+        approval, including the name of the ethics committee and reference number of
+        the approval. Authors are expected to follow their institutional policies for
+        research ethics. For most research involving human subjects, informed consent
+        to participate in the study should be obtained from participants (or their parent
+        or guardian in the case of children under 16). </p>
+        <p>Peer reviewers are asked to comment on any ethical
+        problems perceived within submissions.</p>
+      {% endcomponent_block %}
+    </div>
+    <div class="relative max-lg:mt-16 lg:mt-28">
+      {% include "custom/circle-halfway.html" %}
+      {% component_block "page_section" anchor="right" %}
+        <h3 id="publisher-responsibilities">Responsibilities of the Publisher</h3>
+        <h4>i) Upholding complaints of misconduct</h4>
+        <p>The publisher, OLH, is ultimately responsible for dealing swiftly and ethically with
+        allegations of editorial misconduct, plagiarism, or any other complaints related
+        to the fraudulent publication of an article. This may, for example, result in
+        following the corrections, retractions and removals policy (see the ‘Publication
+        Ethics’ section above) in close contact with the journal’s editors to ensure that
+        problems are resolved. The publisher will not tolerate misconduct by journal
+        editors or authors when publishing research (here defined as a breach of the
+        points set out in ‘Responsibilities of the Editors’ and ‘Responsibilities
+        of the Author(s)’ below) and will not knowingly allow for such misconduct
+        to persist once identified. The publisher has robust internal policies in place
+        to deal with any instances of misconduct and malpractice and reviews these
+        policies regularly.</p>
+        <h3 id="editor-responsibilities">Responsibilities of the Editors<p></p></h3>
+        <h4>i) Independence and disclosure of competing interests</h4>
+        <p>An editor’s judgement must not be influenced by any organisation, agency,
+        institution or government that is external to the journal and seeks to manipulate
+        an editorial decision. </p>
+        <p>Editors must always withdraw from overseeing editorial processes for an article for
+        which they have any potential conflicts of interest. These may be competitive
+        or financial in nature, or concern relationships with or connections to the
+        author(s) that would make their editorial position inappropriate. If any
+        instance of competing interests compromises an editor’s position, the journal
+        must assign editorial responsibility for the article to another editor.</p>
+        <h4>ii) Neutrality and fairness</h4>
+        <p>Editors must assess research without undue bias. They must base their decisions on the
+        academic rigour of the research, the fit of an article with the journal’s scope,
+        and the overall contribution of an article to its field. Editors must never
+        discriminate against an author’s personal background, ethnicity, disability, religion,
+        citizenship, political alignment, sexuality, gender or otherwise; such
+        behaviour will not be tolerated by the journal or the publisher.</p>
+        <h4>iii) Confidentiality and theft of intellectual property</h4>
+        <p>Editors must never plagiarise the unpublished or published work of authors who have
+        submitted to the journal. The author’s intellectual property, such as their
+        argument, ideas, and text, must be considered privileged, confidential
+        information and should not be used by an editor elsewhere for personal gain. An
+        author’s personal information and data must remain confidential to the
+        editorial team, including any submitted articles and accompanying notes.</p>
+        <p>The Open Library of Humanities uses the <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0
+        Attribution License</a> as the default license
+        for all articles. This license has been developed by the Creative Commons as a
+        public copyright license that is legally enforceable and maintains open access
+        to licensed materials. CC BY 4.0 lets others distribute, remix, adapt, and
+        build upon an author’s work, even commercially, as long as they credit the
+        author for the original creation. </p>
+        <h4>iv) Editorial decisions</h4>
+        <p>Editors are responsible for ensuring that the established editorial policies of the
+        journal are enacted at all parts of the workflow. If a problematic article
+        falls outside the remit of established journal policy, editors should confer
+        with one another to resolve the situation where possible. There must be
+        transparency within the editorial team over the editorial decisions taken. For
+        transparency, all actioned editorial decisions for an article must be logged on
+        the OLH’s in-house Janeway journal publishing system. <a href="https://janeway.systems/about" target="_blank">Janeway</a> is under
+        active development to ensure that editorial decisions,
+        notes and other workflow actions are available for other editors to see at any
+        point in the article’s passage through the journal’s workflow. The publisher
+        maintains oversight of all editorial decisions within the workflow.</p>
+        <h4>v) Compliance with investigations</h4>
+        <p>If a problematic situation arises and an editor is to be investigated for their
+        involvement in any alleged misconduct, they must be compliant with the due
+        process undertaken by the journal and/or publisher. If an editor is found to
+        have breached their responsibilities, they should be removed from the journal’s
+        editorial board.</p>
+        <p>Editors should lead investigations into allegations of plagiarism, inaccurate academic
+        content, or ethical concerns in published and unpublished manuscripts. Many
+        investigative procedures into misconduct can be found in <a href="https://publicationethics.org/guidance/Flowcharts" target="_blank">COPE Flowcharts</a>, and editors must investigate
+        every allegation of malpractice raised. If such allegations, once investigated,
+        are proven to be correct, then adequate and robust action must be taken by the
+        journal editors and/or publisher to remedy the problem immediately. More
+        information can be found on the journal’s complaints and appeals process in the
+        ‘Publication Ethics’ section above.</p>
+        <h4>vi) Citation manipulation, coercive citation manipulation and data falsification</h4>
+        <p>Editors should exercise their discretion as to whether an excessive amount of self-citation by the author or citation of an individual or journal has been used upon the submission of an article. If it is clear the author has done so, then this is grounds for the rejection of their article. If citation manipulation is found to have occurred post-publication, then the editorial team should conduct a full investigation, which may lead to the correction, retraction or removal of the article from the journal.</p>
+        <p>Editors should not engage whatsoever in coercive citation manipulation, such as pressuring an author to cite a particular person’s work or the editor’s own work unnecessarily through article revisions. Such activity is considered editorial malpractice and will result in a thorough investigation and potentially the editor’s removal from the editorial team should they be found to have engaged in coercive behaviour.</p>
+        <p>Editors must be mindful of the practice of coercive citation manipulation in peer review reports. If a reviewer submits a peer review report exhibiting such malpractice, editors must immediately seek another peer reviewer and prevent the problematic review report from being seen by the author. Editors should also avoid asking the reviewer to provide a peer review for the journal in the future.</p>
+        <p>Data falsification (manipulation of data to suit an author’s argument) is a form of malpractice that editors should be aware of when assessing manuscripts. Complaints regarding data falsification should be taken seriously by the journal’s editorial team and the publisher, and should be investigated thoroughly. For published articles, this may lead to a correction, retraction or the removal of an article from the journal.</p>
+        <h3 id="reviewer-responsibilities">Responsibilities of Reviewers</h3>
+        <h4>i) Academic best practice</h4>
+        <p>Peer review is a vital part of the academic publishing process. As such, peer
+        reviewers should be reminded that the highest academic rigour must be applied
+        to any manuscript under review. A peer reviewer’s expertise is a precious
+        resource, and those researchers publishing in academic journals should consider
+        reviewing the work of others where possible for the shared health of academic
+        discourse.</p>
+        <h4>ii) Disclosure of competing interests</h4>
+        <p>If a prospective reviewer has any reason to believe that they recognise and/or
+        have any connection to the title, abstract, or content of the manuscript they
+        have been asked to review, they must immediately raise this with the journal’s
+        editors. While the OLH realises that in smaller or intersecting subfields it
+        can be difficult to maintain anonymous review, we encourage all journals operating double-anonymous peer review to assess peer reviewer concerns about anonymity and to make a
+        judgement on the appropriateness of the peer reviewer following the journal’s
+        own peer review policies.</p>
+        <h4>iii) Confidentiality and theft of intellectual property</h4>
+        <p>Reviewers must keep all details of the manuscript they are reviewing confidential. In the
+        case of anonymous review, they must also ensure that potentially identifying details,
+        such as name and publications, are not given in the review they provide.</p>
+        <p>The ideas, arguments and written content of the manuscript must not be used by the
+        reviewer for any purpose that constitutes personal gain, such as passing it off
+        as their own research. This extends to reviewers who have declined to review but
+        have seen part of the research, such as the abstract or manuscript title. </p>
+        <h4>iv) Conducting reviews</h4>
+        <p>Peer reviewers should let editors know as soon as possible if they require extra
+        time to complete a review. If this is not acceptable, the editor may withdraw
+        the invitation to review and seek another peer reviewer. Completed reviews
+        should be returned promptly, at least within the deadline specified by the
+        editor.</p>
+        <p>Peer review reports should be structured clearly, with full explanations given for
+        areas of the manuscript that need work. Personal and unduly harsh criticism of
+        the author is inappropriate and should not be included in the review. If this
+        occurs, the journal’s editors should seek another peer reviewer to undertake
+        review of the article. In the case of anonymous review, peer reviewers should
+        also not leave any identifying information in reports, such as their name, or
+        indicating that their own publication(s) should be consulted. If such
+        information is detected in anonymous peer review reports, editors must edit the
+        report to remove the identifying text before the author sees it.</p>
+        <p>Reviewers should conduct reviews with as much supporting evidence for their claims as
+        possible, to avoid undue subjective bias. Any relevant sources that the author
+        has failed to cite should be suggested where possible and an explanation of
+        their relevance should be given. If a reviewer has concerns about the
+        manuscript, such as plagiarism of or similarity to another’s work, they must
+        contact the editors immediately with an explanation of their concerns.</p>
+        <h4>v) Coercive citation manipulation</h4>
+        <p>Reviewers should not engage in coercive citation manipulation practices in which they suggest that an author should revise their manuscript to excessively cite or refer to, for example, the reviewer’s own work or the work of a journal or research group they are involved with. Should a peer review report be returned by a reviewer that exhibits such behaviour, the peer review report will not be used for editorial judgements or revisions by the author, and the reviewer will not be asked to provide further reviews for the journal.</p>
+        <h3 id="author-responsibilities">Responsibilities of the Author(s)</h3>
+        <h4>i) Academic standards</h4>
+        <p>Authors should adhere to the journal’s submission guidelines when submitting a
+        manuscript for consideration. All articles should fall within the focus and
+        scope of the journal and adhere to the author style guidelines if such guidance
+        is given.</p>
+        <p>All research articles must contain adequate citations and references that support
+        the arguments being made. This is to ensure that all research is of the
+        required standard to be considered for publication. Authors should neither knowingly
+        present inaccurate information or data, nor present arguments that are deliberately
+        misleading. </p>
+        <h4>ii) Original research and theft of intellectual property</h4>
+        <p>Authors have the responsibility to ensure that their research is genuinely original and
+        not plagiarised or very similar to work that is either already published or
+        known to them as being in the process of publication. Any work that is found to
+        be plagiarised, or research that infringes upon another person’s intellectual
+        property and has not been adequately credited should not be passed off as the
+        author’s own work. If the work of others has informed the formation of the
+        author’s research, this work must be properly credited through citation and
+        referencing.</p>
+        <p>A research manuscript should not be submitted concurrently to multiple journals
+        for consideration. Authors should wait for the result of submission to an OLH journal
+        before submitting their article to another journal.</p>
+        <h4>iii) Disclosure of competing interests</h4>
+        <p>Authors are responsible for disclosing any <a href="https://www.openlibhums.org/site/competing-interests/">competing interests</a> at the point of an article’s
+        submission, which will then be listed on the final published article. Failure
+        to disclose competing interests may result in the journal being unable to
+        publish the article, even if it passes peer review. </p>
+        <h4>iv) Manuscript revisions and editorial compliance</h4>
+        <p>Authors must endeavour to make all necessary revisions to their manuscripts following peer
+        review feedback. If authors are not able to make the necessary changes to their
+        article, this may result in the article’s rejection. If their article is
+        accepted for publication, authors should be amenable to copyediting queries and
+        further suggested changes prior to the article’s publication.</p>
+        <h4>v) Allegations by a third party, investigations, and notification of errors</h4>
+        <p>Authors may be approached by the journal’s editors in the event that the editorial team
+        receives information from a third party relating to the accuracy and integrity
+        of an article. In the event of any alleged malpractice made by a third party,
+        the journal’s editors must conduct an investigation in consultation with the
+        publisher and, if the allegation is upheld as a result of this investigation, the
+        author will be asked to respond. The author’s cooperation during this process
+        is appreciated and the journal editors and publisher will make every effort to
+        seek an adequate and amicable solution to resolve the situation and uphold the integrity
+        of the journal’s research. The publisher and journal editors may need to take
+        remedial steps to ensure that the author’s work is either corrected, retracted
+        or removed from the journal (see the ‘Publication Ethics’ section above).</p>
+        <p>If the author realises that, post-publication, their work contains either
+        fundamental or minor errors, the journal’s editor must be notified immediately so
+        that the process for article correction/retraction/removal can begin, adhering
+        to the publisher’s policy.</p>
+        <h4>vi) Citation manipulation, coercive citation manipulation and data falsification</h4>
+        <p>Authors should not engage in excessive citation of their own work, or an over-reliance on the work of any single author when writing their original research and constructing their own argument. An example of this would be recycling many quotations of a pre-existing publication by the author in their newly submitted research, or citing another researcher’s original work throughout the manuscript to the extent that the author’s own argument is lacking. Authors should also not cite solely to raise the citation frequency of any journal, or of any individual.</p>
+        <p>If an author suspects that the journal’s editor is pressuring them to include citations or references to work that is the editor’s own, or by a journal that the editor has engagement with in a way that the author believes to be unnecessarily coercive, they should inform the journal’s Editor-in-Chief immediately, or the publisher, so that a full investigation can take place into the alleged misconduct.</p>
+        <p>Authors should not, where any data is given, knowingly amend or alter it to suit their own analyses or argument. Such falsification of data is serious and will result in a malpractice investigation which may lead to article rejection, correction, retraction or removal from the journal.</p>
+        <h3 id="authorship-and-contributorship">Authorship and Contributorship</h3>
+        <p>Articles should list names of all those who contributed to the published work, to ensure
+        transparency and the academic integrity of the research. Authors take
+        collective responsibility for determining who should be listed as an author and
+        the order in which they should appear. Individuals who have contributed to the
+        article, but do not meet the full criteria for authorship, should be credited
+        by name and affiliation in the ‘Acknowledgments’ section. </p>
+        <p>The OLH strongly encourages all authors to register for
+        an <a href="https://orcid.org/">Open Researcher and Contributor ID (ORCID)</a> prior
+        to submitting their work. ORCID provides a persistent digital
+        identifier that authors own and control (an ORCID iD), which distinguishes them
+        from every other researcher. ORCID iDs will be displayed on published articles
+        when they are provided by the author.</p>
+        <p>The <a href="https://www.icmje.org/recommendations/browse/roles-and-responsibilities/defining-the-role-of-authors-and-contributors.html" target="_blank">International Committee of Medical Journal Editors (ICMJE)</a> recommends the
+        following criteria for authorship:</p>
+        <ul class="browser-default">
+         <li>Substantial contributions to the conception or design of the
+             work; or the acquisition, analysis, or interpretation of data for the
+             work; AND</li>
+         <li>Drafting the work or revising it critically for important
+             intellectual content; AND</li>
+         <li>Final approval of the version to be published; AND</li>
+         <li>Agreement to be accountable for all aspects of the work in
+             ensuring that questions related to the accuracy or integrity of any part
+             of the work are appropriately investigated and resolved.</li>
+        </ul>
+        <p>Where an article has multiple authors, there should be one primary author contact
+        responsible for dealing with all editorial and publishing queries prior to and
+        after the article’s publication. They must consult with their co-editors and
+        contributors about editorial and publishing queries where appropriate, in order
+        to facilitate an article’s publication. Post-publication, co-authors may wish
+        to include their corresponding email address so that it is visible on the
+        article.</p>
+        <p>All authors must give their approval before being attributed to the submitted
+        article. The primary author must ensure that other co-authors have consulted
+        the above sections; in particular, ‘Responsibilities of the Author(s)’.</p>
+        <p>The ‘Acknowledgements’ section of an article must include the involvement of
+        research groups or organisations and any funding sources. All named figures and
+        sources must give their permission to be acknowledged by the author(s) as this
+        can be construed as an association with, and endorsement of, the research.</p>
+        <p>Authors cannot be added or removed at any point prior to publication unless an adequate
+        reason is given to editors for why this is necessary. Unjustified addition or
+        removal of authors will be considered a case of malpractice and will not be
+        tolerated by the journal and publisher should an investigation prove this to be
+        true.</p>
+        <p>Where editors wish to incorporate the <a href="https://credit.niso.org/">Contributor
+        Roles Taxonomy (CRediT)</a> system to acknowledge different models of contribution, this is
+        permitted on a case-by-case basis.</p>
+      {% endcomponent_block %}
+    </div>
+    <div class="relative max-lg:mt-16 lg:mt-28">
+      {% component_block "page_section" anchor="right" %}
+        <p>As part of the open access and open source movements, the OLH works with multiple publishing and technology partners to generate and maintain non-proprietary knowledge and digital infrastructure. We would like to acknowledge that some text used on our journal websites has been used or adapted from the <a href="https://pkp.sfu.ca" target="_blank">Public Knowledge Project</a> resources, for which we are grateful.</p>
+      {% endcomponent_block %}
+    </div>
+  </article>
+</div>
+<div class="container mx-auto max-w-screen-xl">
+  {% include 'custom/subscribe.html' %}
+</div>
