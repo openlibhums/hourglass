@@ -22,8 +22,7 @@
       <form
         class="md:max-w-md lg:max-w-lg"
         method="POST"
-        action="{{ external_newsletter_signup_url|safe }}"
-        data=temp="https://openlibhums.us4.list-manage.com/subscribe/post?u=db2756fc808a4b20e7a2c2c31&amp;id=0d74ef29f6&amp;f_id=00e978e9f0">
+        action="{{ external_newsletter_signup_url|safe }}">
         <div class="flex flex-col w-full">
           {% component "form_input" id="email" type="email" name="EMAIL" placeholder="Your email" %}
           <label
