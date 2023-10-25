@@ -5,6 +5,18 @@
   <article>
     <div class="relative max-lg:mt-0 lg:mt-8">
       {% include 'custom/generic-h1-higher.html' with h1=name %}
+      <div class="z-40 relative pl-8">
+        <div class="mb-6">
+          <strong class="max-lg:text-2xl lg:text-3xl font-poppins-bold">
+            {% slot "title" %}{% endslot %}
+          </strong>
+        </div>
+        <div class="mb-6">
+          <strong class="max-lg:text-xl lg:text-2xl italic font-poppins-medium">
+            {% slot "codename" %}{% endslot %}
+          </strong>
+        </div>
+      </div>
       <div
         class="
           z-0 relative max-md:top-8 md:max-lg:-top-48 lg:-top-96 motion-safe:rallax
@@ -39,9 +51,9 @@
           alt="">
       </div>
     </div>
-    <div class="relative max-md:mt-72 md:max-lg:mt-56 lg:-mt-8">
+    <div class="relative max-md:mt-72 md:max-lg:mt-56 lg:mt-12">
       {% component_block "page_section" anchor="left" %}
-        {% slot "bio" %}{% endslot "bio" %}
+        {% slot "bio" %}{% endslot %}
       {% endcomponent_block %}
     </div>
     {% if publications %}
