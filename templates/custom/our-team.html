@@ -182,11 +182,9 @@
                 The Archivist
               </p>
             </div>
-            <div class="flex">
-              {% with rel_path="/site/dr-caroline-edwards" label="Full profile" %}
-                {% include 'custom/button-action-blue.html' %}
-              {% endwith %}
-            </div>
+            {% with rel_path="/site/dr-simon-everett" label="Full profile" %}
+              {% include 'custom/button-action-blue.html' %}
+            {% endwith %}
           {% endcomponent_block %}
           {% component_block "cta_list_item_left" %}
             <img
@@ -306,7 +304,7 @@
     {% component_block "page_section" prose=False anchor="left" width="full" %}
       <div class="flex flex-col gap-y-8">
         <h2 class="font-poppins-bold text-3xl max-lg:text-center">
-          Publishing technology.
+          Publishing technologies.
         </h2>
         {% component_block "cta_list_left" width="full" %}
           {% component_block "cta_list_item_left" %}
