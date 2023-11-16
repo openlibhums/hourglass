@@ -1,0 +1,348 @@
+{% load static %}
+{% load component_tags %}
+
+<article>
+  <div class="container mx-auto max-w-screen-xl relative">
+    {% include "custom/edit-on-github.html" with rel_path="custom/resources.html" %}
+    {% include "custom/grumpy-opener.html" %}
+    {% include "custom/generic-h1.html" with h1="Frequently asked questions." %}
+  </div>
+  <div class="container mx-auto max-w-screen-xl relative max-lg:mt-8 lg:-mt-4">
+    {% component_block "page_intro" %}
+      {% fill "column_one" %}
+        <p class="lead text-white">Openness and transparency are core to our activities.</p>
+      {% endfill %}
+      {% fill "column_two" %}
+        <p><a class="text-white" href="/contact">Ask us</a> anything about our model and how we work. And you may even find your question answered here!</p>
+      {% endfill %}
+    {% endcomponent_block %}
+  </div>
+  <div class="container mx-auto max-w-screen-xl relative mt-28">
+    {% include 'custom/rodin-halfway.html' %}
+    {% component_block "page_section" anchor="left" %}
+      <h2 id="libraries-consortia">For libraries &amp; consortia</h2>
+      <details class="py-4">
+        <summary id="what-makes-olh-unique">
+          <h3 class="inline font-poppins-medium">
+            What makes OLH unique in an increasingly competitive environment?
+          </h3>
+        </summary>
+        <p>Our mission to support and sustain open access to peer-reviewed scholarship in the
+        humanities is different to that of our competitors. The OLH was founded in 2012 as an academic-led
+        movement to make diamond open access sustainable on a not-for-profit basis. We believe that
+        university publishing budgets should not be spent on outsourcing public funds to commercial presses
+        that are beholden to their shareholders.</p>
+        <p>Our team provides years of academic editorial experience with cutting-edge publishing technology. Our
+        dedicated in-house software engineers have built a leading platform for journal hosting, migration,
+        manuscript submission and review, copy-editing and typesetting. When you publish with the OLH you
+        are joining a worldwide community. We offer experienced, friendly editorial guidance, bespoke
+        technological support, and regular events organised for our editors, authors, and librarians. Our
+        journals extend this community through the scholarly associations that founded them, the conferences
+        that are their lifeblood, and the university classrooms in which our published materials are taught
+        on curricula worldwide. The research published in our journals commands the respect of the
+        humanities academic communities we serve. Many of the journals that we publish have <a href="http://systems/site/awards-prizes/" target="_blank">award-winning</a> articles in their back catalogues. Other articles published in our journals have received international press coverage.</p>
+      </details>
+      <details class="py-4">
+        <summary id="what-are-the-benefits">
+          <h3 class="inline font-poppins-medium">
+            What are the benefits of OLH consortium membership and what do contributors receive?
+          </h3>
+        </summary>
+        <p>OLH is an extremely cost-effective solution for achieving diamond open access in the humanities
+        disciplines. Because we have our own in-house publishing platform (which is under continuous
+        development), we can offer our journals cutting-edge technology at a fraction of the price of our
+        commercial competitors. This brings down our library membership costs, ensuring the OLH’s
+        sustainable growth into the future.</p>
+        <blockquote>
+          <p>OLH membership is incredibly inexpensive if you look at the value it provides for a university
+          library and its researchers: the right to publish for free in any of the OLH journals, and the
+          privilege to have contributed to making research freely accessible.</p>
+        </blockquote>
+        <p style="font-size: 1.1rem;" class="right-align">— Johan Rooryck, Executive Director of cOAlition S;
+        Editor-in-Chief, <i>Glossa : A Journal of General Linguistics</i> and Visiting Professor at Leiden
+        University, The Netherlands</p>
+        <p>Our Library Partnership Subsidy (<a href="http://systems/site/olh-model/" target="_blank">LPS</a>) 
+        funding model enables a worldwide network of partner libraries
+        to challenge the costs of commercial open access publishing. Each library member pays a relatively
+        small amount of money (see <a href="http://systems/site/become-a-supporter/" target="_blank">banded rates</a>) 
+        so that collectively we can cover the costs of
+        publication and grow our range of academic journals at a sustainable rate. Our library partners have
+        a community stake in the development of the OLH through our library governance structure.</p>
+      </details>
+      <details class="py-4">
+        <summary id="why-should-i-pay">
+          <h3 class="inline font-poppins-medium">
+            Why should I pay when anyone can publish with you?
+          </h3>
+        </summary>
+        <p>As a not-for-profit publisher, the OLH cannot exist without the financial support of our libraries.
+        With 10 years of experience in diamond open access publishing, we have earned the trust of more than
+        320 libraries worldwide. Our sustainable business model has demonstrated that a not-for-profit model
+        of high-quality journals publishing by a scholar-led, community-owned organisation is both possible
+        and cost-effective.</p>
+      </details>
+      <details class="py-4">
+        <summary id="can-you-provide-me">
+          <h3 class="inline font-poppins-medium">
+            Can you provide me with usage data for a member institution?
+          </h3>
+        </summary>
+        <p>We don't currently produce any institution specific statistics, as the OLH is a completely open access
+        publisher we have no paywalls or requirements for login that would allow us to accurately capture
+        this information. More information is available regarding <a target="_blank" href="https://www.martineve.com/2018/01/19/open-access-resources-and-evaluation-or-why-oa-journals-might-fare-badly-in-terms-of-usage/">the
+        context for this decision</a>.</p>
+      </details>
+      <details class="py-4">
+        <summary id="how-can-i-encourage">
+          <h3 class="inline font-poppins-medium">
+            How can I encourage scholars at my institution to engage with OLH journals?
+          </h3>
+        </summary>
+        <p>A crucial way of providing a case for OLH membership is the use of our content by your scholars. We
+        encourage you to:</p>
+        <ul class="browser-default">
+          <li>Recommend our 28 diamond open access journals as publication outlets to your PhD students and
+            researchers. Encourage your staff to propose themed collections for <a href="http://systems/site/open-library-of-humanities-journal/" target="_blank">the OLH flagship journal </a>or
+            our 27 other journal titles, and provide an APC-free publishing outlet for your conferences and
+            library events.</li>
+          <li>Identify departments, faculties, and centres within your institution that match
+            an OLH journal or collection (for example, <i>ASIANetwork Exchange</i> and an Asian Studies department)
+            and make their leadership aware of the &nbsp;OLH.</li>
+          <li>Encourage the use of OLH articles in curricula, to make your membership work for you.</li>
+        </ul>
+      </details>
+      <details class="py-4">
+        <summary id="how-can-i-use">
+          <h3 class="inline font-poppins-medium">
+            How can I use OLH resources to get the most out of membership for my university?
+          </h3>
+        </summary>
+        <p>One of the best ways to maximise the impact of an OLH membership is to make sure that faculty are
+        aware that they can publish with us, without any charges, across our range of journals. Encourage faculty to place OLH articles on reading lists and to use our peer-reviewed material in their
+        teaching practice.</p>
+      </details>
+      <details class="py-4">
+        <summary id="why-should-we-invest">
+          <h3 class="inline font-poppins-medium">
+            Why should we invest in an OLH membership rather than paying APCs for open access content for our
+            scholars?
+          </h3>
+        </summary>
+        <p>Hybrid open access has consistently been shown to be more expensive than pure gold open access.
+        However, even paying APCs can work out to be more expensive than consortial memberships such as the
+        OLH model. This is due to the distribution of funds throughout the library system.</p>
+        <p>The model proposed by the OLH is one where publication costs don't fall on the institution or
+        researchers but are instead financed collaboratively through our international library consortium,
+        where each member pays an annual fee banded according to institutional size and country of
+        institution. Reducing and distributing the costs of publication across its members. OLH annual
+        memberships normally range between 900 and 2400 euros, which is similar to a single APC at many
+        legacy publishers.</p>
+      </details>
+      <details class="py-4">
+        <summary id="how-are-membership-subsidy-fees">
+          <h3 class="inline font-poppins-medium">
+            How are membership subsidy fees spent by the OLH?
+          </h3>
+        </summary>
+        <p>The OLH employs staff for technical support, maintenance, and ongoing platform development of our
+        Janeway in-house publishing platform, as well as editorial and marketing staff. Revenue is spent on
+        these staff costs, but also on external partners’ fees (for instance: Crossref, CLOCKSS, typesetting
+        fees, or university press publishing partnerships).</p>
+        <p>You can see the breakdown of our publishing costs on our <a href="https://olhbeta.janeway.systems/site/governance-and-finances/" target="_blank">Governance and Finances</a> page.</p>
+      </details>
+      <details class="py-4">
+        <summary id="i-am-personally-enthusiastic">
+          <h3 class="inline font-poppins-medium">
+            I am personally enthusiastic about OLH but my institution has budgetary limitations that make a
+            commitment difficult. Are you able to offer flexible banding?
+          </h3>
+        </summary>
+        <p>OLH memberships are banded according to FTE size and country of institution, making the platform
+        affordable to a wide range of institutions. OLH membership rates are paid annually and normally
+        oscillate between 900 and 2400 euros. If you or your institution are unable to commit to our
+        membership rates, please <a href="http://systems/contact/" target="_blank">get in touch</a>.</p>
+      </details>
+      <details class="py-4">
+        <summary id="how-can-i-reduce">
+          <h3 class="inline font-poppins-medium">
+            How can I reduce my membership fee while still supporting the OLH?
+          </h3>
+        </summary>
+        <p>The OLH offers the option of joining OLH library partnership scheme through our <a href="https://olhbeta.janeway.systems/plugins/supporters/site/library-partnership-fees/" target="_blank">consortial offer</a>. This allows you to join as as a bloc, as consortia, societies, networks and as part of
+        scholarly projects, to get a discount.</p>
+      </details>
+      <details class="py-4">
+        <summary id="what-resources-do-you-offer-librarians">
+          <h3 class="inline font-poppins-medium">
+          What resources do you offer to librarians in order to support their open access initiatives?
+          </h3>
+        </summary>
+        <p>We encourage you to take advantage of the following resources:</p>
+        <ul class="browser-default">
+          <li>Check our <a href="/site/resources/" target="_blank">resources</a>&nbsp;page, where you can find our collection of essays, interviews and
+            Twitter chats on a wide range of topics and in collaboration with relevant individuals within
+            the OA communities. You can also access our collection of posters, infographics, and more
+            informative and promotional materials that can be used to help spread the word about the OLH, so they know we exist and that they can publish with us. We also
+            encourage librarians or OA advocates to submit ideas and participate in our <a href="https://www.openlibhums.org/news/tag/Open%20Insights/" target="_blank">Open Insights</a> series of interviews and essays.</li>
+          <li>Spread the word within your university about our <a href="http://systems/site/olh-journal-applications/" target="_blank">journal flipping programme</a> and encourage your
+            peers to flip their subscriptions journals to open access through the OLH. Our journal flipping <a href="http://systems/site/olh-poster-series/" target="_blank">posters</a>&nbsp;are available to download, print and share.</li>
+          <li>Ask us a question on <a href="https://twitter.com/openlibhums" target="_blank">Twitter</a>, <a href="https://www.facebook.com/OpenLibHums" target="_blank">Facebook</a>, or via our <a href="http://systems/contact/" target="_blank">website</a>. We often answer these
+            questions publicly on this FAQ.</li>
+        </ul>
+      </details>
+    {% endcomponent_block %}
+  </div>
+  <div class="container mx-auto max-w-screen-xl relative mt-28">
+    {% include 'custom/wallpainting-end.html' %}
+    {% component_block "page_section" anchor="right" %}
+      <h2 id="editors">For Editors</h2>
+      <details class="py-4">
+        <summary id="what-makes-the-olh-different">
+          <h3 class="inline font-poppins-medium">
+            What makes the OLH different from commercial publishers?
+          </h3>
+        </summary>
+        <p>All OLH journals are supported by the OLH’s Library Partnership Subsidy (<a href="http://systems/site/olh-model/" target="_blank">LPS</a>) scheme, which
+        eliminates author- and reader-facing costs to publish and access articles. Our many LPS supporters,
+        contributing modest sums of money into one pool, ensure that article processing and hosting costs
+        are shared in a sustainable way. The more supporters we have, the more the OLH can help journals to
+        become open access! We also develop our own in-house software, <a href="http://systems/site/janeway/" target="_blank">Janeway</a>, which makes OLH journals
+        sustainable and safeguards our independence from commercial publishers. Janeway is developed in line
+        with feedback from our editors to give them unprecedented control over their workflow.</p>
+        <p>The OLH also strives to maintain robust open access policies that go above and beyond the required open
+        access standards for publishers. These <a href="http://systems/site/publisher-policies/" target="_blank">policies</a> are reviewed and updated in-line with best open access
+        practice, including ethics and malpractice, and research integrity. We have established
+        procedures for article corrections and retractions that follow the <a href="https://publicationethics.org" target="_blank">Committee on Publication Ethics</a>
+        (COPE) guidelines, and are continually adapting to the latest developments in open access
+        best practice.</p>
+      </details>
+      <details class="py-4">
+        <summary id="my-press-wants-to-move">
+          <h3 class="inline font-poppins-medium">
+        My press wants to move to Open Access, can the OLH help?
+      </h3>
+        </summary>
+        <p>The OLH currently cannot take on presses that publish many journals – we are a publisher
+        in our own right, and we’re proud to publish nearly 30 humanities journals open access. However, our
+        in-house developed publishing platform, Janeway, can provide journal hosting at press level and this
+        may be more suited to your requirements. You can <a href="http://systems/site/janeway-platform-migration/" target="_blank">read more</a> about Janeway or contact the
+        Janeway team for further information.</p>
+      </details>
+      <details class="py-4">
+        <summary id="can-the-olh-publish">
+          <h3 class="inline font-poppins-medium">
+            Can the OLH publish my existing journal?
+          </h3>
+        </summary>
+        <p>We’re currently open to applications to ‘flip’ journals to open access; see <a href="http://systems/site/olh-journal-applications/" target="_blank">full information</a> on the criteria and how to apply.</p>
+      </details>
+      <details class="py-4">
+        <summary id="i-want-to-set-up">
+          <h3 class="inline font-poppins-medium">
+            I want to set up a new open access journal. Can the OLH help?
+          </h3>
+        </summary>
+        <p>Unfortunately, we are not taking applications for new journals, as we receive many, many more applications than we are able to support. However, please see our <a href="http://systems/site/resources/" target="_blank">resources page</a> for more help on open access publishing, or feel free to <a href="http://systems/contact/" target="_blank">get in touch</a> for an informal discussion with our Director. You may be interested in using our in-house developed publishing platform, Janeway, and the hosting services we can provide even if the OLH is not your publisher.&nbsp;You can&nbsp;<a href="http://systems/site/janeway-platform-migration/" target="_blank">read more</a>&nbsp;about Janeway or <a href="http://janeway.systems/contact/" target="_blank">contact</a> Andy Byers from the Janeway team for further information.&nbsp;</p>
+      </details>
+      <details class="py-4">
+        <summary id="where-do-you-index">
+          <h3 class="inline font-poppins-medium">
+            Where do you index journals and who oversees it?
+          </h3>
+        </summary>
+        <p>Our OLH journals are indexed on many credible indexing sites, such as the <a href="https://www.doaj.org">Directory of Open Access Journals</a>, <a href="https://v2.sherpa.ac.uk/romeo/">Sherpa Romeo</a> and <a href="https://www.kbplus.ac.uk/kbplus7/">JISC KB+</a>. The OLH team works to ensure that these listings are regularly updated, and that new listings are registered on sites that editors suggest to us where reasonably possible. The OLH has a full <a href="https://olh.openlibhums.org/site/research-integrity/">Archiving and Indexing Policy</a> that expands on this.</p>
+      </details>
+      <details class="py-4">
+        <summary id="where-can-i-get-help">
+          <h3 class="inline font-poppins-medium">
+            Where can I get help using the Janeway platform for my journal?
+          </h3>
+        </summary>
+        <p>See the <a href="https://janeway.readthedocs.io/en/latest/">Janeway help pages</a> for more information on how to use the platform.</p>
+      </details>
+    {% endcomponent_block %}
+  </div>
+  <div class="container mx-auto max-w-screen-xl relative mt-28">
+    {% component_block "page_section" anchor="left" %}
+      <h2 id="readers-authors">For Readers &amp; Authors</h2>
+      <details class="py-4">
+        <summary id="why-should-i-publish-oa">
+          <h3 class="inline font-poppins-medium">
+            Why should I publish Open Access?
+          </h3>
+        </summary>
+        <p>You may be considering open access because of a sense that restricting access to those who have wealthy institutional affiliations feels unjust and unhelpful. Or perhaps you are in solidarity with our library colleagues, who are unable to keep pace with the prices set by commercial publishers. Perhaps, indeed, you are uncomfortable with the notion of treating scholarship like a product, with commercial publishers earning huge profits (often with bigger margins than Google and Coca-Cola) by selling scholars’ work back to universities through extortionate library subscriptions. To find out more about the ‘serials crisis’ and the need for open access models that support humanities work, see our timeline of the <a href="http://systems/site/open-access-movement/" target="_blank">Open Access Movement</a>.</p>
+      </details>
+      <details class="py-4">
+        <summary id="why-should-i-publish-with-olh">
+          <h3 class="inline font-poppins-medium">
+            Why should I publish open access with the Open Library of Humanities?
+          </h3>
+        </summary>
+        <p>Unlike many open access publishers, there are no fees to either you or the reader. Open Access publishers often charge Author Processing Fees (APCs) in place of the subscription fees that traditionally fall to institutional libraries. However, authors in the humanities have often expressed scepticism about the viability of open access when it involves such fees. Our collectively funded business <a href="http://systems/site/olh-model/" target="_blank">model</a>&nbsp;avoids the need for APCs, thus making the open dissemination of work in humanities disciplines possible.</p>
+        <p>At the same time, our articles are subject to rigorous peer review, and benefit from the latest advances in online journal publishing – with high-quality presentation, robust digital preservation, strong discoverability and easy-to-share social media buttons.</p>
+      </details>
+      <details class="py-4">
+        <summary id="how-much-does-it-cost">
+          <h3 class="inline font-poppins-medium">
+            How much does it cost for me to submit my article?
+          </h3>
+        </summary>
+        <p>Nothing! Authors can submit their work to any of our journals at no cost, and should it pass the journal’s peer-review process and proceed to publication, there are no mandatory publication fees for any of our journals, ensuring that all our articles remain free-to-publish and free-to-read. A few of our journals request a Voluntary Author Contribution if an author’s academic budget permits, which in turn goes towards funding the OLH’s publication costs for the wider good of the open access community, but such contributions are entirely voluntary and author waivers are given where this is not possible.</p>
+      </details>
+      <details class="py-4">
+        <summary id="does-it-cost-readers">
+          <h3 class="inline font-poppins-medium">
+            Does it cost readers to access my article?
+          </h3>
+        </summary>
+        <p>No! There are no charges for readers to access, download and read our articles. All are proudly published as open access and are available to read worldwide with no charges.</p>
+      </details>
+      <details class="py-4">
+        <summary id="do-i-still-have-ownership">
+          <h3 class="inline font-poppins-medium">
+            Do I still have ownership of my work when I publish Open Access?
+          </h3>
+        </summary>
+        <p>Yes – all copyright for research articles and other open access published work on OLH journals rests with the author(s). OLH journals by default use the <a href="https://creativecommons.org/about/cclicenses/" target="_blank">Creative Commons CC BY 4.0 license</a>&nbsp;to publish articles which permits the open access sharing of work; however, the author of the original work must always be credited. Your article can be linked to, hosted or displayed on other websites, but you will retain the copyright of your article’s text and in such instances, you must be credited.</p>
+      </details>
+      <details class="py-4">
+        <summary id="will-my-article-be">
+          <h3 class="inline font-poppins-medium">
+            Will my article be peer-reviewed?
+          </h3>
+        </summary>
+        <p>Yes. All our journals are peer-reviewed, and we ensure the highest standards of publication ethics. Most of our journals are double-blind reviewed, but some experiment with innovative models of review – such as open review – that are under active trial around the world. The mode of review will be stated clearly on the journal submission page.</p>
+      </details>
+      <details class="py-4">
+        <summary id="how-can-i-submit">
+          <h3 class="inline font-poppins-medium">
+            How can I submit my work to one of your journals?
+          </h3>
+        </summary>
+        <p>To submit your article to one of our journals, see the <a href="http://systems/journals/" target="_blank">full list</a> of OLH-funded journals and click through to the website for your chosen journal. Full information will be given on how to submit on your chosen journal’s website.</p>
+      </details>
+      <details class="py-4">
+        <summary id="im-having-technical-issues">
+          <h3 class="inline font-poppins-medium">
+            I’m having technical issues with making my submission. Help!
+          </h3>
+        </summary>
+        <p>First, check the Janeway <a href="https://janeway.readthedocs.io/en/latest/editor/editor.html" target="_blank">submission help pages</a>, to ensure you’re following the correct steps. If you’re still having problems, use our <a href="http://systems/contact/" target="_blank">contact form</a>&nbsp;to get in touch and one of the team will help.</p>
+      </details>
+      <details class="py-4">
+        <summary id="i-am-interested-in-olh">
+          <h3 class="inline font-poppins-medium">
+            I am interested in the OLH project. How can I participate?
+          </h3>
+        </summary>
+        <p>OLH is built for academics who want the benefits of open-access but who cannot or do not wish to pay article processing charges. To participate, you can submit an article to one of our journals, propose a special collection for our flagship <i><a href="https://olhbeta.janeway.systems/site/for-readers-authors/" target="_blank">Open Library of Humanities</a></i><a href="https://olhbeta.janeway.systems/site/for-readers-authors/" target="_blank"> journal</a>, or encourage your library to support our financial <a href="http://systems/site/olh-model/" target="_blank">model</a>.</p>
+        <p>One of the best ways to participate is to make sure that faculty are aware that they can publish with us, without any charges, across our range of journals. To help increase awareness, do encourage your colleagues to place OLH articles on reading lists and use our peer-reviewed material in their teaching practice.</p>
+      </details>
+    {% endcomponent_block %}
+  </div>
+  <div class="hidden">faqs</div>
+  <div class="container mx-auto max-w-screen-xl relative">
+    {% include 'custom/subscribe.html' %}
+  </div>
+</article>
