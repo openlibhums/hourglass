@@ -19,11 +19,18 @@
   <div class="container mx-auto max-w-screen-xl relative max-lg:mt-0 lg:mt-40">
     {% component_block "page_intro" %}
       {% fill "column_one" %}
-        <p class="lead text-white">Our mission is to support and extend open access to scholarship in the humanities by bringing journals back into community ownership and developing our own not-for-profit publishing software.</p>
+        <p class="lead text-white">Our mission is to support and extend open
+        access to scholarship in the humanities by bringing journals back into
+        community ownership and developing our own not-for-profit publishing
+        software.</p>
       {% endfill %}
       {% fill "column_two" %}
-        <p>Move your journal to the OLH. We welcome expressions of interest from subscription-based journals interested in moving to diamond open access.</p>
-        <p>As a diamond open access publisher, we will never demand any payments from your authors. When you join the OLH, we commit to publishing your journal on our platform in perpetuity.</p>
+        <p>Move your journal to the OLH. We welcome expressions of interest
+        from subscription-based journals interested in moving to diamond open
+        access.</p>
+        <p>As a diamond open access publisher, we will never demand any
+        payments from your authors. When you join the OLH, we commit to
+        publishing your journal on our platform in perpetuity.</p>
       {% endfill %}
     {% endcomponent_block %}
     <img
@@ -34,21 +41,74 @@
       src="{% static 'hourglass/media/backgrounds/square-orange.svg' %}"
       alt="">
   </div>
-  <div class="container mx-auto max-w-screen-xl relative max-lg:mt-8 lg:mt-28">
+  <div class="container mx-auto max-w-screen-xl relative max-lg:mt-8 lg:mt-40">
     {% include 'custom/sunglasses-model-halfway.html' %}
     {% component_block "page_section" anchor="right" %}
-       <h2>How to apply.</h2>
-      <p>Journals interested in applying to join the OLH should be:</p>
+      <h2>Prestigious, community-minded publishing.</h2>
+      <p>Since 2013, the OLH has become one of the most prestigious diamond
+      open access publishers of humanities journals. If your application is
+      successful, you will become part of a powerful global community of
+      like-minded scholars who are using open access to address structural
+      inequalities within our disciplines. We focus on community ownership and
+      not-for-profit principles, standing against commercial acquisition by
+      publishers preoccupied with their own profit margins. You can read more
+      about our sector-leading standards for preservation, discoverability and
+      governance by downloading our Journals Brochure.</p>
+      <p>Our publishing model is built on the concept of migrating titles from
+      commercial publishers to enable journals to publish open access. Our tech
+      team have years of experience developing the bespoke technical tools
+      required to make the move from your previous publisher happen
+      smoothly.</p>
+    {% endcomponent_block %}
+  </div>
+  <div class="container mx-auto max-w-screen-xl relative max-lg:mt-8 lg:mt-40">
+    <div
+      class="
+        max-lg:hidden motion-safe:rallax
+        relative z-0 max-lg:-top-20 lg:top-20 -right-60
+      ">
+      <img
+        class="
+          absolute max-lg:z-10 lg:z-30 max-lg:top-12 lg:-top-48
+          max-lg:-right-24 lg:-right-40 max-lg:max-w-screen-sm lg:max-w-xl"
+        srcset="
+          {% static 'hourglass/media/backgrounds/roman-sculpture-helmet.png' %} 466w,
+          {% static 'hourglass/media/backgrounds/roman-sculpture-helmet-lg.png' %} 873w
+        "
+        src="{% static 'hourglass/media/backgrounds/roman-sculpture-helmet-lg.png' %}"
+        sizes="(max-width: 1024px) 466px, 873px"
+        alt="Sculpture of Roman soldier with helmet in collage with square, circle, and triangles">
+      <img
+        class="
+          z-0 absolute top-56
+          max-lg:-right-8 lg:-right-32 max-lg:w-64 lg:w-96
+        "
+        src="{% static 'hourglass/media/backgrounds/square-blue.svg' %}"
+        alt="">
+    </div>
+    {% component_block "page_section" anchor="left" %}
+      <h2>How to apply.</h2>
+      <p>We consider applications from subscription journals that want to
+      become open access, without author fees. We also welcome expressions of
+      interest from high-profile titles without secure funding that are looking
+      for a sustainable future.</p>
+      <p>Journals should also be:</p>
       <ul class="browser-default">
-        <li>Peer-reviewed.</li>
+        <li>Peer-reviewed (including double- and single-anonymous and open peer review).</li>
         <li>Established, with an archive of at least five years.</li>
-        <li>Currently funded through a subscription model.</li>
         <li>Based in a humanities or humanities-related social sciences discipline.</li>
-        <li>Internationally recognised, with a geographically diverse editorial board.</li>
+        <li>Internationally recognised, with a geographically diverse editorial
+          board.</li>
       </ul>
-      <p>If you feel your journal fits the above criteria and you are interested in applying for the journal to join the Open Library of Humanities, please download and complete our <a href="https://olh.openlibhums.org/media/journals/2/OLH_Journal_Expression_of_Interest_Form.doc" target="_blank">expression of interest form.</a></p>
-      <p>If your application passes the first stage of the application process, we will send the application to external review. This will require full access to the journal archives for peer reviewers to complete their review.</p>
-      <p>If your journal is successful, we will handle the process of migration from your previous publisher. Our tech team have years of experience developing the bespoke technical tools required to make this happen as smoothly as possible.</p>
+      <p>If you feel your journal fits the above criteria and you are
+      interested in applying to join the Open Library of Humanities, please
+      download and complete our
+      <a href="https://olh.openlibhums.org/media/journals/2/OLH_Journal_Expression_of_Interest_Form.doc">
+      expression of interest form.</a></p>
+      <p>Applications are reviewed periodically by our OLH Editorial Board in a
+      competitive process. If your application passes the first stage, we will
+      send the application to external review. This will require full access to
+      the journal archives for peer reviewers to complete their assessment.</p>
     {% endcomponent_block %}
   </div>
   <div class="container mx-auto max-w-screen-xl relative mt-28">
@@ -58,9 +118,14 @@
     {% include 'custom/sunglasses-model-last.html' %}
     {% component_block "page_section" anchor="left" %}
       <h2>Explore our poster series.</h2>
-      <p>As part of our academic advocacy, the OLH has produced a series of posters highlighting different aspects of our publishing – including journal flipping.</p>
-      <p>Each poster is dedicated to a different historical period and style which pays tribute to the range of humanities scholarship that the OLH publishes in its journals.</p>
-      <p>Please feel free to download and use these posters to inspire discussion or promote open access!</p>
+      <p>As part of our academic advocacy, the OLH has produced a series of
+      posters highlighting different aspects of our publishing – including
+      journal flipping.</p>
+      <p>Each poster is dedicated to a different historical period and style
+      which pays tribute to the range of humanities scholarship that the OLH
+      publishes in its journals.</p>
+      <p>Please feel free to download and use these posters to inspire
+      discussion or promote open access!</p>
       <div
         class="
           flex -mx-3 max-lg:flex-col
