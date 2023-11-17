@@ -7,7 +7,9 @@
     focus:ring-transparent focus:border-orange
     border-t-0 border-r-0 border-b-1 border-l-0
   "
-  id="{{ input_id|default:'' }}"
+  {% if input_id %}
+    id="{{ input_id }}"
+  {% endif %}
   type="{{ input_type|default:'text' }}"
   name="{{ input_name|default:'' }}"
   value="{{ input_value|default:'' }}"
