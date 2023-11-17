@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="layer" data-name="layer" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 136.81">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #e94c33;
+      }
+    </style>
+  </defs>
+  <g id="BACKGROUND">
+    <rect class="cls-1" x="0" y="0" width="100%" height="30.85"/>
+    <rect class="cls-1" x="0" y="53" width="100%" height="30.85"/>
+    <rect class="cls-1" x="0" y="106" width="100%" height="30.85"/>
+  </g>
+</svg>
