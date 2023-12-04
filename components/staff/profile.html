@@ -4,16 +4,16 @@
 <div class="container mx-auto max-w-screen-xl">
   <article>
     <div class="relative max-lg:mt-0 lg:mt-8">
-      {% include 'custom/generic-h1-higher.html' with h1=name %}
+      {% include 'custom/generic-h1-higher.html' with h1=user.full_name %}
       <div class="z-40 relative pl-8">
         <div class="mb-6">
           <strong class="max-lg:text-2xl lg:text-3xl font-poppins-bold">
-            {% slot "title" %}{% endslot %}
+            {{ user.staffgroupmember_set.first.job_title }}
           </strong>
         </div>
         <div class="mb-6">
           <strong class="max-lg:text-xl lg:text-2xl italic font-poppins-medium">
-            {% slot "codename" %}{% endslot %}
+            {{ user.staffgroupmember_set.first.alternate_title }}
           </strong>
         </div>
       </div>
@@ -40,7 +40,7 @@
             max-md:-top-4 md:max-lg:top-44 lg:top-16
             max-md:-right-4 md:max-lg:right-12 lg:max-xl:right-8 xl:right-28
           "
-          src="{{ image_url }}"
+          src="{{ user.profile_image.url }}"
           alt="">
         <img
           class="
@@ -53,20 +53,41 @@
     </div>
     <div class="relative max-md:mt-72 md:max-lg:mt-56 lg:mt-12">
       {% component_block "page_section" anchor="left" %}
-        {% slot "bio" %}{% endslot %}
+        {{ user.biography|safe }}
       {% endcomponent_block %}
     </div>
-    {% if publications %}
+    {% if user.staffgroupmember_set.first.publications %}
       <div class="relative max-lg:mt-8 lg:mt-28">
         {% component_block "page_section" anchor="right" %}
-          {% slot "publications" %}{% endslot "publications" %}
+          <h2>Selected publications.</h2>
+          {{ user.staffgroupmember_set.first.publications|safe }}
         {% endcomponent_block %}
       </div>
     {% endif %}
-    {% if social_links %}
+    {% if user.orcid or user.twitter or user.facebook or user.linkedin or user.website or user.github %}
       <div class="relative max-lg:mt-8 lg:mt-28">
         {% component_block "page_section" anchor="left" colors="dark" %}
-          {% slot "social_links" %}{% endslot %}
+          <h2 class="text-white">Where to find Caroline.</h2>
+          {% component_block "link_list" %}
+            {% if user.orcid %}
+              {% component "link" label="orcid" href=user.orcid %}
+            {% endif %}
+            {% if user.website %}
+              {% component "link" label="website" href=user.website %}
+            {% endif %}
+            {% if user.twitter %}
+              {% component "link" label="twitter" href=user.twitter %}
+            {% endif %}
+            {% if user.facebook %}
+              {% component "link" label="facebook" href=user.facebook %}
+            {% endif %}
+            {% if user.linkedin %}
+              {% component "link" label="linkedin" href=user.linkedin %}
+            {% endif %}
+            {% if user.github %}
+              {% component "link" label="github" href=user.github %}
+            {% endif %}
+          {% endcomponent_block %}
         {% endcomponent_block %}
       </div>
     {% endif %}
