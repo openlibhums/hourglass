@@ -5,6 +5,3 @@ from django_components import component
 class CTASingular(component.Component):
 
     template_name = "cta/singular.html"
-
-    def get_context_data(self):
-        return {}

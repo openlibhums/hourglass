@@ -2,7 +2,8 @@
 {% load component_tags %}
 
 {% include 'custom/subscribe-art.html' %}
-<div
+<aside
+  aria-labelledby="be-the-first-to-know"
   class="
     relative after:z-30 after:block after:absolute
     after:inset-y-0 after:w-[50vw]
@@ -15,7 +16,9 @@
       max-lg:px-8 lg:px-32 py-32 flex flex-col gap-y-6 z-40 relative
       bg-blue lg:ml-8
     ">
-    <h2 class="font-poppins-bold max-lg:text-2xl lg:text-3xl text-white max-w-xl">
+    <h2
+      id="be-the-first-to-know"
+      class="font-poppins-bold max-lg:text-2xl lg:text-3xl text-white max-w-xl">
       Be the first to know.
     </h2>
     {% component_block "external_newsletter_signup_form" %}
@@ -24,12 +27,13 @@
         method="POST"
         action="{{ external_newsletter_signup_url|safe }}">
         <div class="flex flex-col w-full">
-          {% component "form_input" id="email" type="email" name="EMAIL" placeholder="Your email" %}
+          {% component "form_input" id="email" type="email" name="EMAIL" placeholder="Your email" label="Your email" %}
           <label
             class="hidden" for="email">
             Your email
           </label>
-          <div class="w-full flex flex-col max-md:items-start md:items-end pt-4">
+          <div
+            class="w-full flex flex-col max-md:items-start md:items-end pt-4">
             {% include 'custom/button-submit-white.html' with name="subscribe" label="Get our Newsletter" %}
           </div>
         </div>
@@ -41,4 +45,4 @@
       {% component "link" label="Mastodon" href="https://mstdn.social/@openlibhums@hcommons.social" %}
     {% endcomponent_block %}
   </div>
-</div>
+</aside>
