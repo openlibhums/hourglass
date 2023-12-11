@@ -44,4 +44,20 @@ button.glide__bullet:not(.glide__bullet--active) {
     font-weight: 100 1000;
     font-stretch: 25% 151%;
   }
+  @font-face {
+    font-family: 'Space Mono Regular';
+    src: url('../fonts/space-mono/SpaceMono-Regular.ttf') format('truetype');
+  }
+  @font-face {
+    font-family: 'Space Mono Bold';
+    src: url('../fonts/space-mono/SpaceMono-Bold.ttf') format('truetype');
+  }
+  @font-face {
+    font-family: 'Space Mono Italic';
+    src: url('../fonts/space-mono/SpaceMono-Italic.ttf') format('truetype');
+  }
+  @font-face {
+    font-family: 'Space Mono Bold Italic';
+    src: url('../fonts/space-mono/SpaceMono-BoldItalic.ttf') format('truetype');
+  }
 }
