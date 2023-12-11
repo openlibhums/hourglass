@@ -1,0 +1,114 @@
+{% load static %}
+{% load component_tags %}
+
+<article>
+  <div class="container mx-auto max-w-screen-xl">
+    <div class="relative mt-28">
+      {% include "custom/edit-on-github.html" with rel_path="custom/janeway.html" %}
+      {% include "custom/man-writing-planet-opener.html" %}
+      {% include "custom/generic-h1.html" with h1="<br><br>Janeway." %}
+    </div>
+    <div class="relative max-lg:mt-8 lg:-mt-4">
+      {% component_block "page_intro" %}
+        {% fill "column_one" %}
+          <p class="lead text-white">We built Janeway, our in-house,
+          open-source publishing system, to host and provide a sustainable
+          platform for OLH journals.</p>
+        {% endfill %}
+        {% fill "column_two" %}
+          <p> From its humble beginnings as a tentative experiment from one
+          long weekend of coding in June 2017, Janeway has grown into a
+          comprehensive platform for publishing journals, preprints, conference
+          proceedings, and books.</p>
+        {% endfill %}
+      {% endcomponent_block %}
+    </div>
+    <div class="relative mt-36 mb-28">
+      <div class="flex justify-center">
+        <div class="relative z-40 font-space-mono-regular max-md:w-72 md:w-[24rem]">
+          {% include "custom/janeway-article-infographic.html" %}
+        </div>
+      </div>
+    </div>
+    <div class="relative mt-28">
+      {% include 'custom/rodin-halfway.html' %}
+      {% component_block "page_section" anchor="left" %}
+        <p>The revenue provides not only a secure and stable source of funding
+        for the OLH and Birkbeck but also maintains our independence from
+        commercial publishing platforms.</p>
+        <p>Janeway is built to empower editors and give them autonomy over the
+        publishing process. Uniquely, OLH editorial works directly with our
+        Janeway development team, bringing their scholarly expertise to bear on
+        how the platform evolves. We also listen to our broader pool of journal
+        editors: anyone can comment on, make feature suggestions for, or
+        contribute to the codebase. In practice, this means that we are
+        continually developing features with scholars’ needs in mind.</p>
+      {% endcomponent_block %}
+    </div>
+    <div class="relative mt-28 mb-36">
+      <div class="flex max-lg:justify-center lg:justify-end md:max-w-3xl">
+        <div class="relative z-40">
+          {% component_block "quote" %}
+            {% fill "quote" %}
+              “The first thing to know about Janeway is that it
+              is not just a submission system and platform. It
+              is a complete publishing tool that allows the
+              editors to basically operate as . . . a publisher. That
+              makes it hugely empowering.”
+            {% endfill %}
+            {% fill "by" %}
+              — Johan Rooryck, Editor-in-Chief of the linguistics
+              journal <i>Glossa</i>, in a 
+              <a href="/news/579/">first-hand account of using Janeway</a>
+            {% endfill %}
+          {% endcomponent_block %}
+        </div>
+      </div>
+    </div>
+    <div class="relative mt-28">
+      <div class="relative left-0 top-0">
+        <img
+          class="
+            absolute max-lg:z-20 lg:z-0 max-lg:top-36 lg:-top-24
+            max-lg:left-12 lg:-left-24 max-lg:max-w-sm
+          "
+          src="{% static 'hourglass/media/backgrounds/circle-quarter-blue-textured.png' %}"
+          width="580"
+          alt="">
+        <img
+          class="
+            max-lg:hidden motion-safe:rallax absolute z-20
+            -left-28 top-0
+          "
+          src="{% static 'hourglass/media/backgrounds/moon.png' %}"
+          width="300" height="300"
+          alt="A planet covered in grey swirling clouds">
+      </div>
+      {% component_block "page_section" anchor="right" %}
+        <p>Janeway is now the platform of choice for editors,
+        librarians, and publishers at many universities across the globe,
+        including the University of California, the University of Michigan, MIT,
+        the University of Wales, UCL, the University of Ghent, and the Technical
+        University of Darmstadt.</p>
+        <p>We made Janeway open source from the start, and we are proud to be
+        able to share its benefits as widely as possible. Janeway can be used by
+        anyone who has the resources to install and run it, or institutions can
+        enter service agreements with Birkbeck, University of London, to receive
+        a managed installation and comprehensive technical support.</p>
+        <p>Janeway will always remain open-source software, thanks to its
+        progressive, copyleft license, which allows anyone to make changes to the
+        software, so long as they don’t run the application on the web without
+        making their changes similarly open.</p>
+        <p>To read the background to our story, see Martin Paul Eve and Andy
+        Byers, ‘Janeway: A Scholarly Communications
+        Platform’, <i>UKSG Insights</i>, 31: 15, 1–4 (2018),
+        <a href="https://doi.org/10.1629/uksg.396">
+          https://doi.org/10.1629/uksg.396
+        </a>.</p>
+      {% endcomponent_block %}
+    </div>
+    {% include 'custom/subscribe.html' %}
+  </div>
+</article>
+
+
