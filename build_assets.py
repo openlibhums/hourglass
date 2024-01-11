@@ -165,57 +165,6 @@ OTHER_SOURCE_PATHS = [
             'fonts',
         )
     ),
-    (
-        os.path.join(
-            THEME_PATH,
-            'node_modules',
-            '@fortawesome',
-            'fontawesome-free',
-            'css',
-            'fontawesome.min.css',
-        ),
-        os.path.join(
-            DIST_PATH,
-            'fonts',
-            'fontawesome',
-            'css',
-            'fontawesome.min.css',
-        )
-    ),
-    (
-        os.path.join(
-            THEME_PATH,
-            'node_modules',
-            '@fortawesome',
-            'fontawesome-free',
-            'css',
-            'brands.min.css',
-        ),
-        os.path.join(
-            DIST_PATH,
-            'fonts',
-            'fontawesome',
-            'css',
-            'brands.min.css',
-        )
-    ),
-    (
-        os.path.join(
-            THEME_PATH,
-            'node_modules',
-            '@fortawesome',
-            'fontawesome-free',
-            'webfonts',
-            'fa-brands-400.woff2',
-        ),
-        os.path.join(
-            DIST_PATH,
-            'fonts',
-            'fontawesome',
-            'webfonts',
-            'fa-brands-400.woff2',
-        )
-    )
 ]
 
 
