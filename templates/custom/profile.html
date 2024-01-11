@@ -76,6 +76,9 @@
           <div>
             {% component "form_field" field=form.salutation %}
           </div>
+          <div>
+            {% component "form_field" field=form.name_prefix %}
+          </div>
           {% component "form_field" field=form.first_name %}
           {% component "form_field" field=form.middle_name %}
           {% component "form_field" field=form.last_name %}
@@ -84,8 +87,12 @@
           </div>
           {% component "form_field" field=form.department %}
           {% component "form_field" field=form.institution %}
-          {% component "form_field" field=form.country %}
-          {% component "form_field" field=form.preferred_timezone %}
+          <div>
+            {% component "form_field" field=form.country %}
+          </div>
+          <div>
+            {% component "form_field" field=form.preferred_timezone %}
+          </div>
           {% component "form_field" field=form.twitter %}
           {% component "form_field" field=form.facebook %}
           {% component "form_field" field=form.orcid %}
@@ -94,12 +101,35 @@
           {% component "form_field" field=form.website %}
           {% component "form_field" field=form.biography %}
           {% component "form_field" field=form.signature %}
+          {% component "form_field" field=form.profile_image %}
+          {% component "form_field" field=form.enable_public_profile %}
+          {% if form.enable_public_profile.value %}
+            <p class="prose lg:prose-lg mx-3 mb-6">
+              <a
+                class="text-white"
+                href="{% url 'core_public_profile' request.user.uuid %}">
+                  View public profile
+              </a>
+            </p>
+          {% endif %}
         {% endfill %}
         {% fill "button" %}
           {% include 'custom/button-submit-white.html' with label="Update Profile" name="edit_profile" %}
         {% endfill %}
       {% endcomponent_block %}
     </section>
+    {% if staff_group_membership_form %}
+      <section class="m-6 text-white">
+        <h2 class="font-poppins-bold text-3xl max-lg:text-center max-lg:mt-12 pb-4">
+          Staff member profile.
+        </h2>
+        {% component_block "form" form=staff_group_membership_form form_method="POST" %}
+          {% fill "button" %}
+            {% include 'custom/button-submit-white.html' with label="Update Staff Member Info" name="edit_staff_member_info" %}
+          {% endfill %}
+        {% endcomponent_block %}
+      </section>
+    {% endif %}
   </div>
 </div>
 

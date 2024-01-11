@@ -1,374 +1,179 @@
+{% extends "press/cms/page.html" %}
+
 {% load static %}
 {% load component_tags %}
 
-<article>
-  <div class="container mx-auto max-w-screen-xl relative max-lg:mt-56 lg:mt-8">
-    {% include 'custom/edit-on-github.html' with rel_path='custom/our-team.html' %}
-    <div
-      class="
-        relative max-lg:-top-72 lg:-top-24
-        max-lg:right-0 lg:-right-20 xl:-right-32
-      ">
-      <img
+{% block meta_description %}
+  <meta
+    property="og:description"
+    content="We are based at Birkbeck, University of London, but make up a
+    geographically distributed network of expert bookworms, specialist software
+    developers, and typography enthusiasts.">
+{% endblock meta_description %}
+
+{% block body %}
+  <div class="container mx-auto max-w-screen-xl">
+    <div class="relative max-lg:mt-56 lg:mt-8">
+      <div
         class="
-          motion-safe:rallax z-0 absolute max-lg:h-36 lg:h-44
-          max-lg:top-24 lg:top-52 max-lg:right-60 lg:right-96
-        "
-        src="{% static 'hourglass/media/backgrounds/rectangle-red.svg' %}"
-        alt="">
-      <img
-        class="
-          motion-safe:rallax z-0 absolute max-lg:h-36 lg:h-44
-          max-lg:top-28 lg:top-64 max-lg:right-48 lg:right-80
-        "
-        src="{% static 'hourglass/media/backgrounds/rectangle-black.svg' %}"
-        alt="">
-      <img
-        class="z-0 absolute max-lg:top-24 lg:-top-56 max-lg:right-0 lg:right-20 w-12"
-        src="{% static 'hourglass/media/backgrounds/bars-vertical-orange-three-flat-top.svg' %}"
-        alt="">
-      <img
-        class="
-          motion-safe:rallax absolute z-10 max-lg:top-40 lg:top-28
-          max-lg:-right-64 lg:-right-48 max-lg:max-w-md lg:max-w-lg
-        "
-        src="{% static 'hourglass/media/backgrounds/typewriter.png' %}"
-        width="700"
-        alt="A mid-century typewriter with French words typed on a piece of paper">
-      <img
-        class="motion-safe:rallax lg:hidden z-20 absolute top-[38rem] -right-8 w-36"
-        src="{% static 'hourglass/media/backgrounds/square-red.svg' %}"
-        alt="">
-      <img
-        class="
-          motion-safe:rallax max-lg:hidden z-20 absolute h-44
-          top-[38rem] right-8
-        "
-        src="{% static 'hourglass/media/backgrounds/rectangle-red.svg' %}"
-        alt="">
-      <img
-        class="
-          absolute max-lg:z-20 lg:z-10 max-lg:top-64 lg:top-[42rem]
-          max-lg:-left-6 lg:-right-20
-        "
-        src="{% static 'hourglass/media/backgrounds/circle-blue-textured.png' %}"
-        width="434"
-        alt="">
-    </div>
-    <div class="relative z-40">
-      <h1
-        class="
-          max-lg:text-4xl lg:text-7xl !leading-snug
-          max-lg:max-w-xs lg:max-w-2xl
-          font-poppins-bold max-lg:py-12 lg:py-20 px-8
+          relative max-lg:-top-72 lg:-top-24
+          max-lg:right-0 lg:-right-20 xl:-right-32
         ">
-        Our team.
-      </h1>
+        <img
+          class="
+            motion-safe:rallax z-0 absolute max-lg:h-36 lg:h-44
+            max-lg:top-24 lg:top-52 max-lg:right-60 lg:right-96
+          "
+          src="{% static 'hourglass/media/backgrounds/rectangle-red.svg' %}"
+          alt="">
+        <img
+          class="
+            motion-safe:rallax z-0 absolute max-lg:h-36 lg:h-44
+            max-lg:top-28 lg:top-64 max-lg:right-48 lg:right-80
+          "
+          src="{% static 'hourglass/media/backgrounds/rectangle-black.svg' %}"
+          alt="">
+        <img
+          class="z-0 absolute max-lg:top-24 lg:-top-56 max-lg:right-0 lg:right-20 w-12"
+          src="{% static 'hourglass/media/backgrounds/bars-vertical-orange-three-flat-top.svg' %}"
+          alt="">
+        <img
+          class="
+            motion-safe:rallax absolute z-10 max-lg:top-40 lg:top-28
+            max-lg:-right-64 lg:-right-48 max-lg:max-w-md lg:max-w-lg
+          "
+          src="{% static 'hourglass/media/backgrounds/typewriter.png' %}"
+          width="700"
+          alt="A mid-century typewriter with French words typed on a piece of paper">
+        <img
+          class="motion-safe:rallax lg:hidden z-20 absolute top-[38rem] -right-8 w-36"
+          src="{% static 'hourglass/media/backgrounds/square-red.svg' %}"
+          alt="">
+        <img
+          class="
+            motion-safe:rallax max-lg:hidden z-20 absolute h-44
+            top-[38rem] right-8
+          "
+          src="{% static 'hourglass/media/backgrounds/rectangle-red.svg' %}"
+          alt="">
+        <img
+          class="
+            absolute max-lg:z-20 lg:z-10 max-lg:top-64 lg:top-[42rem]
+            max-lg:-left-6 lg:-right-20
+          "
+          src="{% static 'hourglass/media/backgrounds/circle-blue-textured.png' %}"
+          width="434"
+          alt="">
+      </div>
+      <div class="relative z-40">
+        <h1
+          class="
+            max-lg:text-4xl lg:text-7xl !leading-snug
+            max-lg:max-w-xs lg:max-w-2xl
+            font-poppins-bold max-lg:py-12 lg:py-20 px-8
+          ">
+          Our team.
+        </h1>
+      </div>
+    </div>
+    <div class="relative">
+      {% component_block "page_intro" %}
+        {% fill "column_one" %}
+          <p class="lead text-white">We are based at Birkbeck, University of London, but make up a geographically distributed network of expert bookworms, specialist software developers, and typography enthusiasts.</p>
+        {% endfill %}
+        {% fill "column_two" %}
+          <p>Although we work remotely from across the UK and beyond, we’re united by our belief in the power of shared knowledge and our commitment to the open access revolution. We have a shared love of arts and culture, retro gaming, AI glitches, and dreadful puns. We spend our days sharing ironic gratitude memes and working to make the world of academic publishing a better place.</p>
+        {% endfill %}
+      {% endcomponent_block %}
+    </div>
+    {% component_block "staff_page" request=request %}
+      <div class="relative mt-28">
+        {% component_block "page_section" prose=False anchor="left" width="full" %}
+          {% component "staff_group" group=staff_groups.0 %}
+        {% endcomponent_block %}
+      </div>
+      <div class="relative mt-28">
+        <img
+          class="
+            max-lg:hidden absolute z-0
+            left-4 max-w-xs
+            motion-reduce:-top-20 motion-safe:-top-96 motion-safe:rallax
+          "
+          src="{% static 'hourglass/media/backgrounds/circle-blue-textured.png' %}"
+          alt="">
+        <img
+          class="
+            max-lg:hidden absolute z-10
+            h-36 left-24
+            motion-reduce:top-8 motion-safe:-top-72 motion-safe:rallax
+          "
+          src="{% static 'hourglass/media/backgrounds/rectangle-red.svg' %}"
+          alt="">
+        {% component_block "page_section" prose=False anchor="right" %}
+          {% component "staff_group" group=staff_groups.1 %}
+        {% endcomponent_block %}
+      </div>
+      <div class="relative max-lg:mt-16 lg:mt-28">
+        {% component_block "glide" glide_id="team-quotes" glide_type="quotes" %}
+          {% fill 'slides' %}
+            {% component_block "glide_slide" %}
+              {% component_block "quote" %}
+                {% fill "quote" %}
+                  “Working at the OLH is like being on a sports team full of Tolkien nerds. You’re challenged and inspired to do your best, without being precious. You genuinely have each others’ backs because the wins are collective, and dawn is not far off.”
+                {% endfill %}
+                {% fill "by" %}
+                  <span class="font-poppins-bold">Joseph Muller</span>,
+                  Senior Publishing Technologies Developer
+                {% endfill %}
+              {% endcomponent_block %}
+            {% endcomponent_block %}
+            {% component_block "glide_slide" %}
+              {% component_block "quote" %}
+                {% fill "quote" %}
+                  “I’m proud to work for such an excellent organisation and a genuinely important cause. The culture at OLH is really positive, inclusive and welcoming – our small close-knit team feels more like a family.”
+                {% endfill %}
+                {% fill "by" %}
+                  <span class="font-poppins-bold">Dr Rose Harris-Birtill</span>,
+                  Editorial Director
+                {% endfill %}
+              {% endcomponent_block %}
+            {% endcomponent_block %}
+            {% component_block "glide_slide" %}
+              {% component_block "quote" %}
+                {% fill "quote" %}
+                  “The OLH is home to an eclectic mix of people who are working together for a common political goal but know how to enjoy themselves in the process.”
+                {% endfill %}
+                {% fill "by" %}
+                  <span class="font-poppins-bold">Dr Katherine Parker-Hay</span>,
+                  Publishing Development Officer
+                {% endfill %}
+              {% endcomponent_block %}
+            {% endcomponent_block %}
+          {% endfill %}
+          {% fill 'bullets' %}
+            {% component 'glide_bullet' slide_index='0' %}
+            {% component 'glide_bullet' slide_index='1' %}
+            {% component 'glide_bullet' slide_index='2' %}
+          {% endfill %}
+        {% endcomponent_block %}
+      </div>
+      <div class="relative max-lg:mt-48 lg:mt-28">
+        <div class="z-0 relative right-0 max-lg:top-0 lg:-top-20 motion-safe:rallax">
+          <img
+            class="
+              absolute max-lg:w-96 lg:max-w-md
+              right-0 motion-reduce:-top-64 motion-safe:-top-96 motion-safe:rallax
+            "
+            src="{% static 'hourglass/media/backgrounds/shakespeare-drag-actor-flowers-stripes.png' %}"
+            alt="Actor singing with arms raised wearing dress and flowery crown">
+        </div>
+        {% component_block "page_section" prose=False anchor="left" width="full" %}
+          {% component "staff_group" group=staff_groups.2 %}
+        {% endcomponent_block %}
+      </div>
+    {% endcomponent_block "staff_page" %}
+    <div class="relative">
+      {% include 'custom/subscribe.html' %}
     </div>
   </div>
-  <div class="container mx-auto max-w-screen-xl relative">
-    {% component_block "page_intro" %}
-      {% fill "column_one" %}
-        <p class="lead text-white">We are based at Birkbeck, University of London, but make up a geographically distributed network of expert bookworms, specialist software developers, and typography enthusiasts.</p>
-      {% endfill %}
-      {% fill "column_two" %}
-        <p>Although we work remotely from across the UK and beyond, we’re united by our belief in the power of shared knowledge and our commitment to the open access revolution. We have a shared love of arts and culture, retro gaming, AI glitches, and dreadful puns. We spend our days sharing ironic gratitude memes and working to make the world of academic publishing a better place.</p>
-      {% endfill %}
-    {% endcomponent_block %}
-  </div>
-  <div class="container mx-auto max-w-screen-xl relative mt-28">
-    {% component_block "page_section" prose=False anchor="left" width="full" %}
-      <div class="flex flex-col gap-y-8">
-        <h2 class="font-poppins-bold text-3xl max-lg:text-center">
-          Directors.
-        </h2>
-        {% component_block "cta_list_left" width="full" %}
-          {% component_block "cta_list_item_left" %}
-            <img
-              src="https://www.openlibhums.org/media/press/Caroline.jpg"
-              alt="">
-            <div class="flex flex-col gap-y-2">
-              <h3 class="font-poppins-bold max-lg:text-xl lg:text-2xl max-lg:text-center">
-                Dr Caroline Edwards
-              </h3>
-              <p class="max-lg:text-lg lg:text-xl max-lg:text-center">
-                Executive Director
-              </p>
-              <p class="italic max-lg:text-lg lg:text-xl max-lg:text-center">
-                The Revolutionary
-              </p>
-            </div>
-            {% with rel_path="/site/dr-caroline-edwards" label="Full profile" %}
-              {% include 'custom/button-action-blue.html' %}
-            {% endwith %}
-          {% endcomponent_block %}
-          {% component_block "cta_list_item_left" %}
-            <img
-              src="https://www.openlibhums.org/media/press/Rose.jpg"
-              alt="">
-            <div class="flex flex-col gap-y-2">
-              <h3 class="font-poppins-bold max-lg:text-xl lg:text-2xl max-lg:text-center">
-                Dr Rose Harris-Birtill
-              </h3>
-              <p class="max-lg:text-lg lg:text-xl max-lg:text-center">
-                Editorial Director
-              </p>
-              <p class="italic max-lg:text-lg lg:text-xl max-lg:text-center">
-                The Strategist
-              </p>
-            </div>
-            {% with rel_path="/site/dr-rose-harris-birtill" label="Full profile" %}
-              {% include 'custom/button-action-blue.html' %}
-            {% endwith %}
-          {% endcomponent_block %}
-          {% component_block "cta_list_item_left" %}
-            <img
-              src="https://www.openlibhums.org/media/press/Andy.jpg"
-              alt="">
-            <div class="flex flex-col gap-y-2">
-              <h3 class="font-poppins-bold max-lg:text-xl lg:text-2xl max-lg:text-center">
-                Andy Byers
-              </h3>
-              <p class="max-lg:text-lg lg:text-xl max-lg:text-center">
-                Director of Publishing Technologies
-              </p>
-              <p class="italic max-lg:text-lg lg:text-xl max-lg:text-center">
-                Defender of the Code
-              </p>
-            </div>
-            {% with rel_path="/site/andy-byers" label="Full profile" %}
-              {% include 'custom/button-action-blue.html' %}
-            {% endwith %}
-          {% endcomponent_block %}
-        {% endcomponent_block %}
-      </div>
-    {% endcomponent_block %}
-  </div>
-  <div class="container mx-auto max-w-screen-xl relative mt-28">
-    <img
-      class="
-        max-lg:hidden absolute z-0
-        left-4 max-w-xs
-        motion-reduce:-top-20 motion-safe:-top-96 motion-safe:rallax
-      "
-      src="{% static 'hourglass/media/backgrounds/circle-blue-textured.png' %}"
-      alt="">
-    <img
-      class="
-        max-lg:hidden absolute z-10
-        h-36 left-24
-        motion-reduce:top-8 motion-safe:-top-72 motion-safe:rallax
-      "
-      src="{% static 'hourglass/media/backgrounds/rectangle-red.svg' %}"
-      alt="">
-    {% component_block "page_section" prose=False anchor="right" %}
-      <div class="flex flex-col gap-y-8">
-        <h2 class="font-poppins-bold text-3xl max-lg:text-center">
-          Editorial, marketing &amp; projects.
-        </h2>
-        {% component_block "cta_list_left" %}
-          {% component_block "cta_list_item_left" %}
-            <img
-              src="https://www.openlibhums.org/media/press/Simon.jpg"
-              alt="">
-            <div class="flex flex-col gap-y-2">
-              <h3 class="font-poppins-bold max-lg:text-xl lg:text-2xl max-lg:text-center">
-                Dr Simon Everett
-              </h3>
-              <p class="max-lg:text-lg lg:text-xl max-lg:text-center">
-                Editorial Officer
-              </p>
-              <p class="italic max-lg:text-lg lg:text-xl max-lg:text-center">
-                The Archivist
-              </p>
-            </div>
-            {% with rel_path="/site/dr-simon-everett" label="Full profile" %}
-              {% include 'custom/button-action-blue.html' %}
-            {% endwith %}
-          {% endcomponent_block %}
-          {% component_block "cta_list_item_left" %}
-            <img
-              src="https://www.openlibhums.org/media/press/Paula.jpg"
-              alt="">
-            <div class="flex flex-col gap-y-2">
-              <h3 class="font-poppins-bold max-lg:text-xl lg:text-2xl max-lg:text-center">
-                Paula Clemente Vega
-              </h3>
-              <p class="max-lg:text-lg lg:text-xl max-lg:text-center">
-                Marketing Officer
-              </p>
-              <p class="italic max-lg:text-lg lg:text-xl max-lg:text-center">
-                The Artist
-              </p>
-            </div>
-            {% with rel_path="/site/paula-clemente-vega" label="Full profile" %}
-              {% include 'custom/button-action-blue.html' %}
-            {% endwith %}
-          {% endcomponent_block %}
-          {% component_block "cta_list_item_left" %}
-            <img
-              src="https://www.openlibhums.org/media/press/Katherine.jpg"
-              alt="">
-            <div class="flex flex-col gap-y-2">
-              <h3 class="font-poppins-bold max-lg:text-xl lg:text-2xl max-lg:text-center">
-                Dr Katherine Parker-Hay
-              </h3>
-              <p class="max-lg:text-lg lg:text-xl max-lg:text-center">
-                Publishing Development Officer
-              </p>
-              <p class="italic max-lg:text-lg lg:text-xl max-lg:text-center">
-                Project Whisperer
-              </p>
-            </div>
-            {% with rel_path="/site/dr-katherine-parker-hay" label="Full profile" %}
-              {% include 'custom/button-action-blue.html' %}
-            {% endwith %}
-          {% endcomponent_block %}
-          {% component_block "cta_list_item_left" %}
-            <img
-              src="https://www.openlibhums.org/media/press/Cate.jpg"
-              alt="">
-            <div class="flex flex-col gap-y-2">
-              <h3 class="font-poppins-bold max-lg:text-xl lg:text-2xl max-lg:text-center">
-                Cate Meredith
-              </h3>
-              <p class="max-lg:text-lg lg:text-xl max-lg:text-center">
-                CHASE Doctoral Training Partnership Intern
-              </p>
-              <p class="italic max-lg:text-lg lg:text-xl max-lg:text-center">
-                The Polymath
-              </p>
-            </div>
-            {% with rel_path="/site/cate-meredith" label="Full profile" %}
-              {% include 'custom/button-action-blue.html' %}
-            {% endwith %}
-          {% endcomponent_block %}
-        {% endcomponent_block %}
-      </div>
-    {% endcomponent_block %}
-  </div>
-  <div class="container mx-auto max-w-screen-xl relative max-lg:mt-16 lg:mt-28">
-    {% component_block "glide" glide_id="team-quotes" glide_type="quotes" %}
-      {% fill 'slides' %}
-        {% component_block "glide_slide" %}
-          {% component_block "quote" %}
-            {% fill "quote" %}
-              “Working at the OLH is like being on a sports team full of Tolkien nerds. You’re challenged and inspired to do your best, without being precious. You genuinely have each others’ backs because the wins are collective, and dawn is not far off.”
-            {% endfill %}
-            {% fill "by" %}
-              <span class="font-poppins-bold">Joseph Muller</span>,
-              Senior Publishing Technologies Developer
-            {% endfill %}
-          {% endcomponent_block %}
-        {% endcomponent_block %}
-        {% component_block "glide_slide" %}
-          {% component_block "quote" %}
-            {% fill "quote" %}
-              “I’m proud to work for such an excellent organisation and a genuinely important cause. The culture at OLH is really positive, inclusive and welcoming – our small close-knit team feels more like a family.”
-            {% endfill %}
-            {% fill "by" %}
-              <span class="font-poppins-bold">Dr Rose Harris-Birtill</span>,
-              Editorial Director
-            {% endfill %}
-          {% endcomponent_block %}
-        {% endcomponent_block %}
-        {% component_block "glide_slide" %}
-          {% component_block "quote" %}
-            {% fill "quote" %}
-              “The OLH is home to an eclectic mix of people who are working together for a common political goal but know how to enjoy themselves in the process.”
-            {% endfill %}
-            {% fill "by" %}
-              <span class="font-poppins-bold">Dr Katherine Parker-Hay</span>,
-              Publishing Development Officer
-            {% endfill %}
-          {% endcomponent_block %}
-        {% endcomponent_block %}
-      {% endfill %}
-      {% fill 'bullets' %}
-        {% component 'glide_bullet' slide_index='0' %}
-        {% component 'glide_bullet' slide_index='1' %}
-        {% component 'glide_bullet' slide_index='2' %}
-      {% endfill %}
-    {% endcomponent_block %}
-  </div>
-  <div class="container mx-auto max-w-screen-xl relative max-lg:mt-48 lg:mt-28">
-    <div class="z-0 relative right-0 max-lg:top-0 lg:-top-20 motion-safe:rallax">
-      <img
-        class="
-          absolute max-lg:w-96 lg:max-w-md
-          right-0 motion-reduce:-top-64 motion-safe:-top-96 motion-safe:rallax
-        "
-        src="{% static 'hourglass/media/backgrounds/shakespeare-drag-actor-flowers-stripes.png' %}"
-        alt="Actor singing with arms raised wearing dress and flowery crown">
-    </div>
-    {% component_block "page_section" prose=False anchor="left" width="full" %}
-      <div class="flex flex-col gap-y-8">
-        <h2 class="font-poppins-bold text-3xl max-lg:text-center">
-          Publishing technologies.
-        </h2>
-        {% component_block "cta_list_left" width="full" %}
-          {% component_block "cta_list_item_left" %}
-            <img
-              src="https://www.openlibhums.org/media/press/Mauro.jpg"
-              alt="">
-            <div class="flex flex-col gap-y-2">
-              <h3 class="font-poppins-bold max-lg:text-xl lg:text-2xl max-lg:text-center">
-                Mauro Sanchez
-              </h3>
-              <p class="max-lg:text-lg lg:text-xl max-lg:text-center">
-                Senior Publishing Technologies Developer
-              </p>
-              <p class="italic max-lg:text-lg lg:text-xl max-lg:text-center">
-                The Architect
-              </p>
-            </div>
-            {% with rel_path="/site/mauro-sanchez" label="Full profile" %}
-              {% include 'custom/button-action-blue.html' %}
-            {% endwith %}
-          {% endcomponent_block %}
-          {% component_block "cta_list_item_left" %}
-            <img
-              src="https://www.openlibhums.org/media/press/Joseph.jpg"
-              alt="">
-            <div class="flex flex-col gap-y-2">
-              <h3 class="font-poppins-bold max-lg:text-xl lg:text-2xl max-lg:text-center">
-                Joseph Muller
-              </h3>
-              <p class="max-lg:text-lg lg:text-xl max-lg:text-center">
-                Senior Publishing Technologies Developer
-              </p>
-              <p class="italic max-lg:text-lg lg:text-xl max-lg:text-center">
-                The Translator
-              </p>
-            </div>
-            {% with rel_path="/site/joseph-muller" label="Full profile" %}
-              {% include 'custom/button-action-blue.html' %}
-            {% endwith %}
-          {% endcomponent_block %}
-          {% component_block "cta_list_item_left" %}
-            <img
-              src="https://www.openlibhums.org/media/press/Siobhan.png"
-              alt="">
-            <div class="flex flex-col gap-y-2">
-              <h3 class="font-poppins-bold max-lg:text-xl lg:text-2xl max-lg:text-center">
-                Siobhan Haimé
-              </h3>
-              <p class="max-lg:text-lg lg:text-xl max-lg:text-center">
-                Publishing Technologies Librarian
-              </p>
-              <p class="italic max-lg:text-lg lg:text-xl max-lg:text-center">
-                The Tactician
-              </p>
-            </div>
-            {% with rel_path="/site/siobhan-haime" label="Full profile" %}
-              {% include 'custom/button-action-blue.html' %}
-            {% endwith %}
-          {% endcomponent_block %}
-        {% endcomponent_block %}
-      </div>
-    {% endcomponent_block %}
-  </div>
-  <div class="container mx-auto max-w-screen-xl relative">
-    {% include 'custom/subscribe.html' %}
-  </div>
-</article>
+{% endblock body %}
