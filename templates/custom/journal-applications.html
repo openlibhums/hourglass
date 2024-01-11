@@ -1,161 +1,184 @@
+{% extends "press/cms/page.html" %}
+
 {% load static %}
 {% load component_tags %}
 
-<article>
-  <div class="container mx-auto max-w-screen-xl relative">
-    {% include 'custom/edit-on-github.html' with rel_path='custom/journal-applications.html' %}
-    {% include 'custom/revolution-opener.html' %}
-    <div class="relative z-40">
-      <h1
-        class="
-          max-md:text-4xl md:max-lg:text-5xl lg:text-7xl !leading-snug
-          font-poppins-bold max-lg:pt-64 max-lg:pb-12 lg:py-28 px-8
-          max-md:max-w-md md:max-w-xl
-        ">
-        Join the publishing revolution.
-      </h1>
-    </div>
-  </div>
-  <div class="container mx-auto max-w-screen-xl relative max-lg:mt-0 lg:mt-40">
-    {% component_block "page_intro" %}
-      {% fill "column_one" %}
-        <p class="lead text-white">Our mission is to support and extend open
-        access to scholarship in the humanities by bringing journals back into
-        community ownership and developing our own not-for-profit publishing
-        software.</p>
-      {% endfill %}
-      {% fill "column_two" %}
-        <p>Move your journal to the OLH. We welcome expressions of interest
-        from subscription-based journals interested in moving to diamond open
-        access.</p>
-        <p>As a diamond open access publisher, we will never demand any
-        payments from your authors. When you join the OLH, we commit to
-        publishing your journal on our platform in perpetuity.</p>
-      {% endfill %}
-    {% endcomponent_block %}
-    <img
-      class="
-        absolute motion-safe:rallax max-lg:hidden
-        lg:z-20 -right-8 -bottom-56 w-96
-      "
-      src="{% static 'hourglass/media/backgrounds/square-orange.svg' %}"
-      alt="">
-  </div>
-  <div class="container mx-auto max-w-screen-xl relative max-lg:mt-8 lg:mt-40">
-    {% include 'custom/sunglasses-model-halfway.html' %}
-    {% component_block "page_section" anchor="right" %}
-      <h2>Prestigious, community-minded publishing.</h2>
-      <p>Since 2013, the OLH has become one of the most prestigious diamond
-      open access publishers of humanities journals. If your application is
-      successful, you will become part of a powerful global community of
-      like-minded scholars who are using open access to address structural
-      inequalities within our disciplines. We focus on community ownership and
-      not-for-profit principles, standing against commercial acquisition by
-      publishers preoccupied with their own profit margins. You can read more
-      about our sector-leading standards for preservation, discoverability and
-      governance by downloading our Journals Brochure.</p>
-      <p>Our publishing model is built on the concept of migrating titles from
-      commercial publishers to enable journals to publish open access. Our tech
-      team have years of experience developing the bespoke technical tools
-      required to make the move from your previous publisher happen
-      smoothly.</p>
-    {% endcomponent_block %}
-  </div>
-  <div class="container mx-auto max-w-screen-xl relative max-lg:mt-8 lg:mt-40">
-    <div
-      class="
-        max-lg:hidden motion-safe:rallax
-        relative z-0 max-lg:-top-20 lg:top-20 -right-60
-      ">
-      <img
-        class="
-          absolute z-10 max-lg:top-12 lg:-top-48
-          max-lg:-right-24 lg:-right-40 max-lg:max-w-screen-sm lg:max-w-xl"
-        srcset="
-          {% static 'hourglass/media/backgrounds/roman-sculpture-helmet.png' %} 466w,
-          {% static 'hourglass/media/backgrounds/roman-sculpture-helmet-lg.png' %} 873w
-        "
-        src="{% static 'hourglass/media/backgrounds/roman-sculpture-helmet-lg.png' %}"
-        sizes="(max-width: 1024px) 466px, 873px"
-        alt="Sculpture of Roman soldier with helmet">
-      <img
-        class="
-          z-20 absolute top-56
-          max-lg:-right-8 lg:-right-32 max-lg:w-64 lg:w-96
-        "
-        src="{% static 'hourglass/media/backgrounds/square-blue.svg' %}"
-        alt="">
-    </div>
-    {% component_block "page_section" anchor="left" %}
-      <h2>How to apply.</h2>
-      <p>We consider applications from subscription journals that want to
-      become open access, without author fees. We also welcome expressions of
-      interest from high-profile titles without secure funding that are looking
-      for a sustainable future.</p>
-      <p>Journals should also be:</p>
-      <ul class="browser-default">
-        <li>Peer-reviewed (including double- and single-anonymous and open peer review).</li>
-        <li>Established, with an archive of at least five years.</li>
-        <li>Based in a humanities or humanities-related social sciences discipline.</li>
-        <li>Internationally recognised, with a geographically diverse editorial
-          board.</li>
-      </ul>
-      <p>If you feel your journal fits the above criteria and you are
-      interested in applying to join the Open Library of Humanities, please
-      download and complete our
-      <a href="https://olh.openlibhums.org/media/journals/2/OLH_Journal_Expression_of_Interest_Form.doc">
-      expression of interest form.</a></p>
-      <p>Applications are reviewed periodically by our OLH Editorial Board in a
-      competitive process. If your application passes the first stage, we will
-      send the application to external review. This will require full access to
-      the journal archives for peer reviewers to complete their assessment.</p>
-    {% endcomponent_block %}
-  </div>
-  <div class="container mx-auto max-w-screen-xl relative mt-28">
-    {% include 'custom/olh-prospectus.html' %}
-  </div>
-  <div class="container mx-auto max-w-screen-xl relative mt-28">
-    {% include 'custom/sunglasses-model-last.html' %}
-    {% component_block "page_section" anchor="left" %}
-      <h2>Explore our poster series.</h2>
-      <p>As part of our academic advocacy, the OLH has produced a series of
-      posters highlighting different aspects of our publishing – including
-      journal flipping.</p>
-      <p>Each poster is dedicated to a different historical period and style
-      which pays tribute to the range of humanities scholarship that the OLH
-      publishes in its journals.</p>
-      <p>Please feel free to download and use these posters to inspire
-      discussion or promote open access!</p>
-      <div
-        class="
-          flex -mx-3 max-lg:flex-col
-          lg:flex-row lg:flex-wrap lg:justify-between
-        ">
-        <div class="px-3 lg:basis-1/3 flex gap-5 flex-col max-lg:items-center lg:items-start">
-          <img
-              src="https://www.openlibhums.org/media/press/OLH-Comics-Flip-Poster-WEB.jpg"
-              alt="Comics-style poster showing women super heroes throwing punches to knock out paywal publishing and flip subsciption journals to fee-free open access">
-        </div>
-        <div class="px-3 lg:basis-1/3 flex gap-5 flex-col max-lg:items-center lg:items-start">
-          <img
-              src="https://www.openlibhums.org/media/press/OLH-Constructivist-Poster-A4-Web.jpg"
-              alt="A constructivist-style poster in which workers dressed as mid-century laborers gaze boldly across banners that say join us and build a new future and join the revolution">
-        </div>
-        <div class="px-3 lg:basis-1/3 flex gap-5 flex-col max-lg:items-center lg:items-start">
-          <img
-              src="https://www.openlibhums.org/media/press/OLH_KRUGER_Flip_Poster_WEB.jpg"
-              alt="A poster with a padlock closed on the left and open on the right saying research is a battleground in the style of Barbara Kruger's your body is a battleground">
-        </div>
-      </div>
-      <div class="not-prose flex">
-        {% with rel_path="/site/olh-poster-series/" label="Full poster series" %}
-          {% include 'custom/button-action-blue.html' %}
-        {% endwith %}
-      </div>
-    {% endcomponent_block %}
-  </div>
-</article>
+{% block meta_description %}
+  <meta
+    property="og:description"
+    content="Our mission is to support and extend open
+    access to scholarship in the humanities by bringing journals back into
+    community ownership and developing our own not-for-profit publishing
+    software.">
+{% endblock meta_description %}
 
-<div class="container mx-auto max-w-screen-xl relative">
-  {% include 'custom/subscribe.html' %}
-</div>
+{% block body %}
+  <article aria-labelledby="h1">
+    <div class="container mx-auto max-w-screen-xl">
+      <div class="relative">
+        {% include 'custom/edit-on-github.html' with rel_path='custom/journal-applications.html' %}
+        {% include 'custom/revolution-opener.html' %}
+        <div class="relative z-40">
+          <h1
+            class="
+              max-md:text-4xl md:max-lg:text-5xl lg:text-7xl !leading-snug
+              font-poppins-bold max-lg:pt-64 max-lg:pb-12 lg:py-28 px-8
+              max-md:max-w-md md:max-w-xl
+            ">
+            Join the publishing revolution.
+          </h1>
+        </div>
+      </div>
+      <div class="relative max-lg:mt-0 lg:mt-40">
+        {% component_block "page_intro" %}
+          {% fill "column_one" %}
+            <p class="lead text-white">Our mission is to support and extend open
+            access to scholarship in the humanities by bringing journals back into
+            community ownership and developing our own not-for-profit publishing
+            software.</p>
+          {% endfill %}
+          {% fill "column_two" %}
+            <p>Move your journal to the OLH. We welcome expressions of interest
+            from subscription-based journals interested in moving to diamond open
+            access.</p>
+            <p>As a diamond open access publisher, we will never demand any
+            payments from your authors. When you join the OLH, we commit to
+            publishing your journal on our platform in perpetuity.</p>
+          {% endfill %}
+        {% endcomponent_block %}
+        <aside>
+          <img
+            class="
+              absolute motion-safe:rallax max-lg:hidden
+              lg:z-20 -right-8 -bottom-56 w-96
+            "
+            src="{% static 'hourglass/media/backgrounds/square-orange.svg' %}"
+            alt="">
+        </aside>
+      </div>
+      <div class="relative max-lg:mt-8 lg:mt-40">
+        {% include 'custom/sunglasses-model-halfway.html' %}
+        {% component_block "page_section" anchor="right" labelledby="prestigious-community-publishing" %}
+          <h2 id="prestigious-community-publishing">
+            Prestigious, community-minded publishing.
+          </h2>
+          <p>Since 2013, the OLH has become one of the most prestigious diamond
+          open access publishers of humanities journals. If your application is
+          successful, you will become part of a powerful global community of
+          like-minded scholars who are using open access to address structural
+          inequalities within our disciplines. We focus on community ownership and
+          not-for-profit principles, standing against commercial acquisition by
+          publishers preoccupied with their own profit margins. You can read more
+          about our sector-leading standards for preservation, discoverability and
+          governance by downloading our Journals Brochure.</p>
+          <p>Our publishing model is built on the concept of migrating titles from
+          commercial publishers to enable journals to publish open access. Our tech
+          team have years of experience developing the bespoke technical tools
+          required to make the move from your previous publisher happen
+          smoothly.</p>
+        {% endcomponent_block %}
+      </div>
+      <div class="relative max-lg:mt-8 lg:mt-40">
+        <aside
+          class="
+            max-lg:hidden motion-safe:rallax
+            relative z-0 max-lg:-top-20 lg:top-20 -right-60
+          ">
+          <img
+            class="
+              absolute z-10 max-lg:top-12 lg:-top-48
+              max-lg:-right-24 lg:-right-40 max-lg:max-w-screen-sm lg:max-w-xl"
+            srcset="
+              {% static 'hourglass/media/backgrounds/roman-sculpture-helmet.png' %} 466w,
+              {% static 'hourglass/media/backgrounds/roman-sculpture-helmet-lg.png' %} 873w
+            "
+            src="{% static 'hourglass/media/backgrounds/roman-sculpture-helmet-lg.png' %}"
+            sizes="(max-width: 1024px) 466px, 873px"
+            alt="Sculpture of Roman soldier with helmet">
+          <img
+            class="
+              z-20 absolute top-56
+              max-lg:-right-8 lg:-right-32 max-lg:w-64 lg:w-96
+            "
+            src="{% static 'hourglass/media/backgrounds/square-blue.svg' %}"
+            alt="">
+        </aside>
+        {% component_block "page_section" anchor="left" labelledby="how-to-apply" %}
+          <h2 id="how-to-apply">How to apply.</h2>
+          <p>We consider applications from subscription journals that want to
+          become open access, without author fees. We also welcome expressions of
+          interest from high-profile titles without secure funding that are looking
+          for a sustainable future.</p>
+          <p>Journals should also be:</p>
+          <ul class="browser-default">
+            <li>Peer-reviewed (including double- and single-anonymous and open peer review).</li>
+            <li>Established, with an archive of at least five years.</li>
+            <li>Based in a humanities or humanities-related social sciences discipline.</li>
+            <li>Internationally recognised, with a geographically diverse editorial
+              board.</li>
+          </ul>
+          <p>If you feel your journal fits the above criteria and you are
+          interested in applying to join the Open Library of Humanities, please
+          download and complete our
+          <a href="https://olh.openlibhums.org/media/journals/2/OLH_Journal_Expression_of_Interest_Form.doc">
+          expression of interest form.</a></p>
+          <p>Applications are reviewed periodically by our OLH Editorial Board in a
+          competitive process. If your application passes the first stage, we will
+          send the application to external review. This will require full access to
+          the journal archives for peer reviewers to complete their assessment.</p>
+        {% endcomponent_block %}
+      </div>
+      <div class="relative mt-28">
+        {% include 'custom/olh-prospectus.html' %}
+      </div>
+      <div class="relative mt-28">
+        {% include 'custom/sunglasses-model-last.html' %}
+        {% component_block "page_section" anchor="left" labelledby="explore-poster-series" %}
+          <h2 id="explore-poster-series">Explore our poster series.</h2>
+          <p>As part of our academic advocacy, the OLH has produced a series of
+          posters highlighting different aspects of our publishing – including
+          journal flipping.</p>
+          <p>Each poster is dedicated to a different historical period and style
+          which pays tribute to the range of humanities scholarship that the OLH
+          publishes in its journals.</p>
+          <p>Please feel free to download and use these posters to inspire
+          discussion or promote open access!</p>
+          <div
+            class="
+              flex -mx-3 max-lg:flex-col
+              lg:flex-row lg:flex-wrap lg:justify-between
+            ">
+            <div class="px-3 lg:basis-1/3 flex gap-5 flex-col max-lg:items-center lg:items-start">
+              <img
+                  src="https://www.openlibhums.org/media/press/OLH-Comics-Flip-Poster-WEB.jpg"
+                  alt="Comics-style poster showing women super heroes throwing
+                       punches to knock out paywal publishing and flip subsciption
+                       journals to fee-free open access">
+            </div>
+            <div class="px-3 lg:basis-1/3 flex gap-5 flex-col max-lg:items-center lg:items-start">
+              <img
+                  src="https://www.openlibhums.org/media/press/OLH-Constructivist-Poster-A4-Web.jpg"
+                  alt="A constructivist-style poster in which workers dressed
+                       as mid-century laborers gaze boldly across banners that
+                       say join us and build a new future and join the
+                       revolution">
+            </div>
+            <div class="px-3 lg:basis-1/3 flex gap-5 flex-col max-lg:items-center lg:items-start">
+              <img
+                  src="https://www.openlibhums.org/media/press/OLH_KRUGER_Flip_Poster_WEB.jpg"
+                  alt="A poster with a padlock closed on the left and open on
+                       the right saying research is a battleground in the style
+                       of Barbara Kruger's your body is a battleground">
+            </div>
+          </div>
+          <div class="not-prose flex">
+            {% with rel_path="/site/olh-poster-series/" label="Full poster series" %}
+              {% include 'custom/button-action-blue.html' %}
+            {% endwith %}
+          </div>
+        {% endcomponent_block %}
+      </div>
+      {% include 'custom/subscribe.html' %}
+    </div>
+  </article>
+{% endblock body %}

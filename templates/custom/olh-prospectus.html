@@ -1,6 +1,7 @@
 {% load static %}
 
-<div
+<section
+  aria-labelledby="join-the-publishing-revolution"
   class="
     relative
     max-lg:before:z-30 max-lg:before:block max-lg:before:absolute
@@ -21,14 +22,15 @@
         src="{% static 'hourglass/media/backgrounds/publishing-revolution.png' %}"
         alt="Fist clenched and raised in protest in collage with circles and rectangles">
       <div class="flex flex-col">
-        <p
+        <strong
+          id="join-the-publishing-revolution"
           class="
             font-poppins-bold text-white
             max-md:text-5xl md:max-xl:text-7xl xl:text-8xl
             max-xl:max-w-sm xl:max-w-xl
           ">
           Join the publishing revolution
-        </p>
+        </strong>
         <p
           class="
             py-6 font-poppins font-semibold max-lg:text-sm lg:text-md
@@ -40,4 +42,4 @@
         </p>
       </div>
   </div>
-</div>
+</section>
