@@ -1,48 +1,49 @@
 {% load static %}
 {% load component_tags %}
 
-{% include 'custom/subscribe-art.html' %}
-<aside
-  aria-labelledby="be-the-first-to-know"
-  class="
-    relative after:z-30 after:block after:absolute
-    after:inset-y-0 after:w-[50vw]
-    max-lg:after:right-1/2 lg:after:left-1/2
-    after:bg-blue
-    max-lg:mt-56 lg:mt-28
-  ">
+<aside aria-labelledby="be-the-first-to-know">
+  {% include 'custom/subscribe-art.html' %}
   <div
     class="
-      max-lg:px-8 lg:px-32 py-32 flex flex-col gap-y-6 z-40 relative
-      bg-blue lg:ml-8
+      relative after:z-30 after:block after:absolute
+      after:inset-y-0 after:w-[50vw]
+      max-lg:after:right-1/2 lg:after:left-1/2
+      after:bg-blue
+      max-lg:mt-56 lg:mt-28
     ">
-    <h2
-      id="be-the-first-to-know"
-      class="font-poppins-bold max-lg:text-2xl lg:text-3xl text-white max-w-xl">
-      Be the first to know.
-    </h2>
-    {% component_block "external_newsletter_signup_form" %}
-      <form
-        class="md:max-w-md lg:max-w-lg"
-        method="POST"
-        action="{{ external_newsletter_signup_url|safe }}">
-        <div class="flex flex-col w-full">
-          {% component "form_input" id="email" type="email" name="EMAIL" placeholder="Your email" label="Your email" %}
-          <label
-            class="hidden" for="email">
-            Your email
-          </label>
-          <div
-            class="w-full flex flex-col max-md:items-start md:items-end pt-4">
-            {% include 'custom/button-submit-white.html' with name="subscribe" label="Get our Newsletter" %}
+    <div
+      class="
+        max-lg:px-8 lg:px-32 py-32 flex flex-col gap-y-6 z-40 relative
+        bg-blue lg:ml-8
+      ">
+      <h2
+        id="be-the-first-to-know"
+        class="font-poppins-bold max-lg:text-2xl lg:text-3xl text-white max-w-xl">
+        Be the first to know.
+      </h2>
+      {% component_block "external_newsletter_signup_form" %}
+        <form
+          class="md:max-w-md lg:max-w-lg"
+          method="POST"
+          action="{{ external_newsletter_signup_url|safe }}">
+          <div class="flex flex-col w-full">
+            {% component "form_input" id="email" type="email" name="EMAIL" placeholder="Your email" label="Your email" %}
+            <label
+              class="hidden" for="email">
+              Your email
+            </label>
+            <div
+              class="w-full flex flex-col max-md:items-start md:items-end pt-4">
+              {% include 'custom/button-submit-white.html' with name="subscribe" label="Get our Newsletter" %}
+            </div>
           </div>
-        </div>
-      </form>
-    {% endcomponent_block %}
-    {% component_block "link_list" %}
-      {% component "link" label="Twitter" href="https://twitter.com/openlibhums" %}
-      {% component "link" label="Facebook" href="https://www.facebook.com/OpenLibHums" %}
-      {% component "link" label="Mastodon" href="https://mstdn.social/@openlibhums@hcommons.social" %}
-    {% endcomponent_block %}
+        </form>
+      {% endcomponent_block %}
+      {% component_block "link_list" %}
+        {% component "link" label="Twitter" href="https://twitter.com/openlibhums" %}
+        {% component "link" label="Facebook" href="https://www.facebook.com/OpenLibHums" %}
+        {% component "link" label="Mastodon" href="https://mstdn.social/@openlibhums@hcommons.social" %}
+      {% endcomponent_block %}
+    </div>
   </div>
 </aside>
