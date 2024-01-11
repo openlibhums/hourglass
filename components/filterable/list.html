@@ -1,17 +1,28 @@
 {% load static %}
 {% load component_tags %}
 
-<div id="{{ list_id }}">
+<section id="{{ list_id }}" aria-label="{{ region_label }}">
   <div class="not-prose w-full">
     {% include "custom/filter-input.html" with placeholder=placeholder %}
   </div>
   {% slot "list" default %}{% endslot %}
-</div>
+</section>
 
 <script type="module">
+  function checkParamsForQuery(list, listId) {
+    const filterInput = document.querySelector(`#${ listId }-filter-input`)
+    const params = new URL(document.location).searchParams
+    const param = params.get(`filter-${ listId }`)
+    if (param) {
+      filterInput.value = param
+      list.search(param)
+    }
+  }
+
   const listId = '{{ list_id }}'
   const valueNames = '{{ value_names }}'.split(' ')
   document.addEventListener('DOMContentLoaded', () => {
-    new List(listId, { valueNames })
+    const list = new List(listId, { valueNames })
+    checkParamsForQuery(list, listId)
   })
 </script>

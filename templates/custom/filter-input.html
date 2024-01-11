@@ -1,18 +1,24 @@
 {% load static %}
 
-<div class="flex max-w-md gap-4">
-  <img
-    class="w-8"
-    src="{% static 'hourglass/media/icons/filter.svg' %}"
-    >
-  <input
-    placeholder="{{ placeholder|default:'Filter' }}"
-    class="
-      search
-      bg-tan-light
-      flex-1 h-9 p-2 w-28 border-none
-      lg:mx-4
-      placeholder:text-sm
-      focus:ring-transparent
-    ">
-</div>
+<form aria-label="Filter">
+  <div class="flex max-w-md gap-4">
+    <img
+      class="w-8"
+      src="{% static 'hourglass/media/icons/filter.svg' %}"
+      alt="">
+    <input
+      id="{{ list_id }}-filter-input"
+      placeholder="{{ placeholder|default:'Filter' }}"
+      aria-label="Filter"
+      type="search"
+      name="filter-{{ list_id }}"
+      class="
+        search
+        bg-tan-light
+        flex-1 h-9 p-2 w-28 border-none
+        lg:mx-4
+        placeholder:text-sm
+        focus:ring-transparent
+      ">
+  </div>
+</form>
