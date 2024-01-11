@@ -3,7 +3,9 @@
 
 <div class="container mx-auto max-w-screen-xl">
   <article>
-    <div class="relative max-lg:mt-0 lg:mt-8">
+    <section
+      aria-label="Name and role"
+      class="relative max-lg:mt-0 lg:mt-8">
       {% include 'custom/generic-h1-higher.html' with h1=user.full_name %}
       <div class="z-40 relative pl-8">
         <div class="mb-6">
@@ -50,24 +52,28 @@
           src="{% static 'hourglass/media/backgrounds/circle-red.svg' %}"
           alt="">
       </div>
-    </div>
+    </section>
     <div class="relative max-md:mt-72 md:max-lg:mt-56 lg:mt-12">
-      {% component_block "page_section" anchor="left" %}
+      {% component_block "page_section" anchor="left" label="Biography" %}
         {{ user.biography|safe }}
       {% endcomponent_block %}
     </div>
     {% if user.staffgroupmember_set.first.publications %}
       <div class="relative max-lg:mt-8 lg:mt-28">
-        {% component_block "page_section" anchor="right" %}
-          <h2>Selected publications.</h2>
+        {% component_block "page_section" anchor="right" labelledby="publications" %}
+          <h2 id="publications">Selected publications.</h2>
           {{ user.staffgroupmember_set.first.publications|safe }}
         {% endcomponent_block %}
       </div>
     {% endif %}
     {% if user.orcid or user.twitter or user.facebook or user.linkedin or user.website or user.github %}
       <div class="relative max-lg:mt-8 lg:mt-28">
-        {% component_block "page_section" anchor="left" colors="dark" %}
-          <h2 class="text-white">Where to find Caroline.</h2>
+        {% component_block "page_section" anchor="left" colors="dark" labelledby="social-links" %}
+          <h2
+            id="social-links"
+            class="text-white">
+            Where to find Caroline.
+          </h2>
           {% component_block "link_list" %}
             {% if user.orcid %}
               {% component "link" label="orcid" href=user.orcid %}
