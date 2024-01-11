@@ -6,6 +6,20 @@
   {{ user.full_name }} - {{ request.press.name }}
 {% endblock %}
 
+{% block meta_description %}
+  <meta
+    property="og:description"
+    content="{{ user.biography|striptags|truncatewords:25 }}">
+{% endblock meta_description %}
+
+{% block meta_image %}
+  {% if request.press.default_carousel_image %}
+    <meta
+      property="og:image"
+      content="{% build_absolute_uri user.profile_image.url %}">
+  {% endif %}
+{% endblock meta_image %}
+
 {% block body %}
   {% component "staff_profile" user=user membership=membership %}
 {% endblock %}
