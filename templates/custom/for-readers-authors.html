@@ -1,106 +1,126 @@
+{% extends "press/cms/page.html" %}
+
 {% load static %}
 
-<div class="container mx-auto max-w-screen-xl relative">
-  {% include 'custom/edit-on-github.html' with rel_path='custom/for-readers-authors.html' %}
-  {% include 'custom/camera-man-bun-opener.html' %}
-  <div class="relative z-40">
-    <h1
-      class="
-        max-lg:text-4xl lg:text-7xl max-lg:max-w-xs lg:max-w-lg
-        font-poppins-bold max-lg:pt-64 max-lg:pb-12 lg:py-28 px-8
-      ">
-      Info for readers &amp; authors.
-    </h1>
+{% block body %}
+  <div class="container mx-auto max-w-screen-xl">
+    <div class="relative">
+      {% include 'custom/edit-on-github.html' with rel_path='custom/for-readers-authors.html' %}
+      {% include 'custom/camera-man-bun-opener.html' %}
+      <div class="relative z-40">
+        <h1
+          class="
+            max-lg:text-4xl lg:text-7xl max-lg:max-w-xs lg:max-w-lg
+            font-poppins-bold max-lg:pt-64 max-lg:pb-12 lg:py-28 px-8
+          ">
+          Info for readers &amp; authors.
+        </h1>
+      </div>
+    </div>
+    <div class="relative max-lg:pb-[32rem]">
+      <div class="flex max-lg:flex-col lg:flex-row lg:flex-wrap lg:px-2">
+        <article
+          aria-labelledby="our-flagship-journal"
+          class="max-lg:py-5 lg:p-5 lg:basis-1/2">
+          <div
+            class="
+              relative z-40 p-8 h-full bg-white flex flex-col
+              gap-y-6 max-lg:items-center lg:items-start
+            ">
+            <img
+              class="-m-3 w-32 h-32"
+              src="{% static 'hourglass/media/icons/Our-Flagship-Journal.svg' %}"
+              alt="">
+            <h2
+              id="our-flagship-journal"
+              class="font-poppins-bold max-lg:text-2xl lg:text-3xl max-lg:text-center">
+              Our flagship journal.
+            </h2>
+            <p class="max-lg:text-lg lg:text-xl max-lg:text-center">
+              Explore our interdisciplinary, diamond open access&nbsp;<i>Open Library of Humanities</i> journal.
+            </p>
+            {% with rel_path="/site/olh-journal" label="Find out more" %}
+              {% include 'custom/button-action-blue.html' %}
+            {% endwith %}
+          </div>
+        </article>
+        <article
+          aria-labelledby="awards-prizes"
+          class="max-lg:py-5 lg:p-5 lg:basis-1/2">
+          <div
+            class="
+              relative z-40 p-8 h-full bg-white flex flex-col
+              gap-y-6 max-lg:items-center lg:items-start
+            ">
+            <img
+              class="-m-3 w-32 h-32"
+              src="{% static 'hourglass/media/icons/Awards-Prizes.svg' %}"
+              alt="">
+            <h2
+              id="awards-prizes"
+              class="font-poppins-bold max-lg:text-2xl lg:text-3xl max-lg:text-center">
+              Awards &amp; prizes.
+            </h2>
+            <p class="max-lg:text-lg lg:text-xl max-lg:text-center">
+              View highlights from our publishing output and activities.
+            </p>
+            {% with rel_path="/site/awards-prizes" label="Find out more" %}
+              {% include 'custom/button-action-blue.html' %}
+            {% endwith %}
+          </div>
+        </article>
+        <article
+          aria-labelledby="publish-with-us"
+          class="max-lg:py-5 lg:p-5 lg:basis-1/2">
+          <div
+            class="
+              relative z-40 p-8 h-full bg-white flex flex-col
+              gap-y-6 max-lg:items-center lg:items-start
+            ">
+            <img
+              class="-m-3 w-32 h-32"
+              src="{% static 'hourglass/media/icons/Publish-With-Us.svg' %}"
+              alt="">
+            <h2
+              id="publish-with-us"
+              class="font-poppins-bold max-lg:text-2xl lg:text-3xl max-lg:text-center">
+              Publish with us.
+            </h2>
+            <p class="max-lg:text-lg lg:text-xl max-lg:text-center">
+              Information for new authors, and our publisher-wide Call for Papers.
+            </p>
+            {% with rel_path="/site/publish-with-us" label="Find out more" %}
+              {% include 'custom/button-action-blue.html' %}
+            {% endwith %}
+          </div>
+        </article>
+        <article
+          aria-labelledby="faqs"
+          class="max-lg:py-5 lg:p-5 lg:basis-1/2">
+          <div
+            class="
+              relative z-40 p-8 h-full bg-white flex flex-col
+              gap-y-6 max-lg:items-center lg:items-start
+            ">
+            <img
+              class="-m-3 w-32 h-32"
+              src="{% static 'hourglass/media/icons/FAQs.svg' %}"
+              alt="">
+            <h2
+              id="faqs"
+              class="font-poppins-bold max-lg:text-2xl lg:text-3xl max-lg:text-center">
+              FAQs.
+            </h2>
+            <p class="max-lg:text-lg lg:text-xl max-lg:text-center">
+              Get a quick answer to your question.
+            </p>
+            {% with rel_path="/site/faq#readers-authors" label="Find out more" %}
+              {% include 'custom/button-action-blue.html' %}
+            {% endwith %}
+          </div>
+        </article>
+      </div>
+    </div>
+    {% include 'custom/subscribe.html' %}
   </div>
-</div>
-<div class="container mx-auto max-w-screen-xl relative max-lg:pb-[32rem]">
-  <div class="flex max-lg:flex-col lg:flex-row lg:flex-wrap lg:px-2">
-    <div class="max-lg:py-5 lg:p-5 lg:basis-1/2">
-      <div
-        class="
-          relative z-40 p-8 h-full bg-white flex flex-col
-          gap-y-6 max-lg:items-center lg:items-start
-        ">
-        <img
-          class="-m-3 w-32 h-32"
-          src="{% static 'hourglass/media/icons/Our-Flagship-Journal.svg' %}"
-          alt="">
-        <h2 class="font-poppins-bold max-lg:text-2xl lg:text-3xl max-lg:text-center">
-          Our flagship journal.
-        </h2>
-        <p class="max-lg:text-lg lg:text-xl max-lg:text-center">
-          Explore our interdisciplinary, diamond open access&nbsp;<i>Open Library of Humanities</i> journal.
-        </p>
-        {% with rel_path="/site/olh-journal" label="Find out more" %}
-          {% include 'custom/button-action-blue.html' %}
-        {% endwith %}
-      </div>
-    </div>
-    <div class="max-lg:py-5 lg:p-5 lg:basis-1/2">
-      <div
-        class="
-          relative z-40 p-8 h-full bg-white flex flex-col
-          gap-y-6 max-lg:items-center lg:items-start
-        ">
-        <img
-          class="-m-3 w-32 h-32"
-          src="{% static 'hourglass/media/icons/Awards-Prizes.svg' %}"
-          alt="">
-        <h2 class="font-poppins-bold max-lg:text-2xl lg:text-3xl max-lg:text-center">
-          Awards &amp; prizes.
-        </h2>
-        <p class="max-lg:text-lg lg:text-xl max-lg:text-center">
-          View highlights from our publishing output and activities.
-        </p>
-        {% with rel_path="/site/awards-prizes" label="Find out more" %}
-          {% include 'custom/button-action-blue.html' %}
-        {% endwith %}
-      </div>
-    </div>
-    <div class="max-lg:py-5 lg:p-5 lg:basis-1/2">
-      <div
-        class="
-          relative z-40 p-8 h-full bg-white flex flex-col
-          gap-y-6 max-lg:items-center lg:items-start
-        ">
-        <img
-          class="-m-3 w-32 h-32"
-          src="{% static 'hourglass/media/icons/Publish-With-Us.svg' %}"
-          alt="">
-        <h2 class="font-poppins-bold max-lg:text-2xl lg:text-3xl max-lg:text-center">
-          Publish with us.
-        </h2>
-        <p class="max-lg:text-lg lg:text-xl max-lg:text-center">
-          Information for new authors, and our publisher-wide Call for Papers.
-        </p>
-        {% with rel_path="/site/publish-with-us" label="Find out more" %}
-          {% include 'custom/button-action-blue.html' %}
-        {% endwith %}
-      </div>
-    </div>
-    <div class="max-lg:py-5 lg:p-5 lg:basis-1/2">
-      <div
-        class="
-          relative z-40 p-8 h-full bg-white flex flex-col
-          gap-y-6 max-lg:items-center lg:items-start
-        ">
-        <img
-          class="-m-3 w-32 h-32"
-          src="{% static 'hourglass/media/icons/FAQs.svg' %}"
-          alt="">
-        <h2 class="font-poppins-bold max-lg:text-2xl lg:text-3xl max-lg:text-center">
-          FAQs.
-        </h2>
-        <p class="max-lg:text-lg lg:text-xl max-lg:text-center">
-          Get a quick answer to your question.
-        </p>
-        {% with rel_path="/site/faq#readers-authors" label="Find out more" %}
-          {% include 'custom/button-action-blue.html' %}
-        {% endwith %}
-      </div>
-    </div>
-  </div>
-</div>
-<div class="container mx-auto max-w-screen-xl relative">
-  {% include 'custom/subscribe.html' %}
-</div>
+{% endblock body %}
