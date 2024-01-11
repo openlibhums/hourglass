@@ -1,113 +1,133 @@
+{% extends "press/cms/page.html" %}
+
 {% load static %}
 
-<div class="container mx-auto max-w-screen-xl relative">
-  {% include "custom/edit-on-github.html" with rel_path="custom/for-librarians-consortia.html" %}
-  {% include "custom/library-opener.html" %}
-  {% include "custom/generic-h1.html" with h1="Info for<br> libraries &amp; consortia." %}
-</div>
-<div class="container mx-auto max-w-screen-xl relative max-lg:pb-64">
-  <div class="flex max-lg:flex-col lg:flex-row lg:flex-wrap lg:px-2">
-    <div class="max-lg:py-5 lg:p-5 lg:basis-1/2">
-      <div
+{% block body %}
+  <div class="container mx-auto max-w-screen-xl">
+    <div class="relative">
+      {% include "custom/edit-on-github.html" with rel_path="custom/for-librarians-consortia.html" %}
+      {% include "custom/library-opener.html" %}
+      {% include "custom/generic-h1.html" with h1="Info for<br> libraries &amp; consortia." %}
+    </div>
+    <div class="relative max-lg:pb-64">
+      <div class="flex max-lg:flex-col lg:flex-row lg:flex-wrap lg:px-2">
+        <article
+          aria-labelledby="become-a-supporter"
+          class="max-lg:py-5 lg:p-5 lg:basis-1/2">
+          <div
+            class="
+              relative z-40 p-8 h-full bg-white flex flex-col
+              gap-y-6 max-lg:items-center lg:items-start
+            ">
+            <img
+              class="-m-3 w-32 h-32"
+              src="{% static 'hourglass/media/icons/Become-a-Supporter.svg' %}"
+              alt="">
+            <h2
+              id="become-a-supporter"
+              class="font-poppins-bold max-lg:text-2xl lg:text-3xl max-lg:text-center">
+              Become a supporter.
+            </h2>
+            <p class="max-lg:text-lg lg:text-xl max-lg:text-center">
+              Sign up to support us, and see who’s already here.
+            </p>
+            {% with rel_path="/site/become-a-supporter" label="Find out more" %}
+              {% include 'custom/button-action-blue.html' %}
+            {% endwith %}
+          </div>
+        </article>
+        <article
+          aria-labelledby="library-partnership-fees"
+          class="max-lg:py-5 lg:p-5 lg:basis-1/2">
+          <div
+            class="
+              relative z-40 p-8 h-full bg-white flex flex-col
+              gap-y-6 max-lg:items-center lg:items-start
+            ">
+            <img
+              class="-m-3 w-32 h-32"
+              src="{% static 'hourglass/media/icons/Library-Partnership-Fees.svg' %}"
+              alt="">
+            <h2
+              id="library-partnership-fees"
+              class="font-poppins-bold max-lg:text-2xl lg:text-3xl max-lg:text-center">
+              Library partnership fees.
+            </h2>
+            <p class="max-lg:text-lg lg:text-xl max-lg:text-center">
+              Understand our banded pricing structure and consortial offer.
+            </p>
+            {% with rel_path="/plugins/supporters/site/library-partnership-fees" label="Find out more" %}
+              {% include 'custom/button-action-blue.html' %}
+            {% endwith %}
+          </div>
+        </article>
+        <article
+          aria-labelledby="olh-model"
+          class="max-lg:py-5 lg:p-5 lg:basis-1/2">
+          <div
+            class="
+              relative z-40 p-8 h-full bg-white flex flex-col
+              gap-y-6 max-lg:items-center lg:items-start
+            ">
+            <img
+              class="-m-3 w-32 h-32"
+              src="{% static 'hourglass/media/icons/OLH-Model.svg' %}"
+              alt="">
+            <h2
+              id="olh-model"
+              class="font-poppins-bold max-lg:text-2xl lg:text-3xl max-lg:text-center">
+              The OLH model.
+            </h2>
+            <p class="max-lg:text-lg lg:text-xl max-lg:text-center">
+              Learn about our not-for profit model: collective support from a pool of libraries means authors can publish open access, for free.
+            </p>
+            {% with rel_path="/site/olh-model" label="Find out more" %}
+              {% include 'custom/button-action-blue.html' %}
+            {% endwith %}
+          </div>
+        </article>
+        <article
+          aria-labelledby="faqs"
+          class="max-lg:py-5 lg:p-5 lg:basis-1/2">
+          <div
+            class="
+              relative z-40 p-8 h-full bg-white flex flex-col
+              gap-y-6 max-lg:items-center lg:items-start
+            ">
+            <img
+              class="-m-3 w-32 h-32"
+              src="{% static 'hourglass/media/icons/FAQs.svg' %}"
+              alt="">
+            <h2
+              id="faqs"
+              class="font-poppins-bold max-lg:text-2xl lg:text-3xl max-lg:text-center">
+              FAQs.
+            </h2>
+            <p class="max-lg:text-lg lg:text-xl max-lg:text-center">
+              Get a quick answer to your question.
+            </p>
+            {% with rel_path="/site/faq#libraries-consortia" label="Find out more" %}
+              {% include 'custom/button-action-blue.html' %}
+            {% endwith %}
+          </div>
+        </div>
+      </div>
+      <aside
         class="
-          relative z-40 p-8 h-full bg-white flex flex-col
-          gap-y-6 max-lg:items-center lg:items-start
+          relative z-0 max-lg:-right-12 lg:-right-28 motion-safe:rallax
+          max-lg:motion-reduce:bottom-0 lg:motion-reduce:bottom-40
+          max-lg:motion-safe:bottom-48 lg:motion-safe:bottom-[30rem]
         ">
         <img
-          class="-m-3 w-32 h-32"
-          src="{% static 'hourglass/media/icons/Become-a-Supporter.svg' %}"
+          class="absolute z-0 h-36 top-12 right-4"
+          src="{% static 'hourglass/media/backgrounds/square-red.svg' %}"
           alt="">
-        <h2 class="font-poppins-bold max-lg:text-2xl lg:text-3xl max-lg:text-center">
-          Become a supporter.
-        </h2>
-        <p class="max-lg:text-lg lg:text-xl max-lg:text-center">
-          Sign up to support us, and see who’s already here.
-        </p>
-        {% with rel_path="/site/become-a-supporter" label="Find out more" %}
-          {% include 'custom/button-action-blue.html' %}
-        {% endwith %}
-      </div>
-    </div>
-    <div class="max-lg:py-5 lg:p-5 lg:basis-1/2">
-      <div
-        class="
-          relative z-40 p-8 h-full bg-white flex flex-col
-          gap-y-6 max-lg:items-center lg:items-start
-        ">
         <img
-          class="-m-3 w-32 h-32"
-          src="{% static 'hourglass/media/icons/Library-Partnership-Fees.svg' %}"
+          class="absolute z-10 h-36 top-28 right-20"
+          src="{% static 'hourglass/media/backgrounds/triangle-orange-pointing-down.svg' %}"
           alt="">
-        <h2 class="font-poppins-bold max-lg:text-2xl lg:text-3xl max-lg:text-center">
-          Library partnership fees.
-        </h2>
-        <p class="max-lg:text-lg lg:text-xl max-lg:text-center">
-          Understand our banded pricing structure and consortial offer.
-        </p>
-        {% with rel_path="/plugins/supporters/site/library-partnership-fees" label="Find out more" %}
-          {% include 'custom/button-action-blue.html' %}
-        {% endwith %}
-      </div>
+      </aside>
     </div>
-    <div class="max-lg:py-5 lg:p-5 lg:basis-1/2">
-      <div
-        class="
-          relative z-40 p-8 h-full bg-white flex flex-col
-          gap-y-6 max-lg:items-center lg:items-start
-        ">
-        <img
-          class="-m-3 w-32 h-32"
-          src="{% static 'hourglass/media/icons/OLH-Model.svg' %}"
-          alt="">
-        <h2 class="font-poppins-bold max-lg:text-2xl lg:text-3xl max-lg:text-center">
-          The OLH model.
-        </h2>
-        <p class="max-lg:text-lg lg:text-xl max-lg:text-center">
-          Learn about our not-for profit model: collective support from a pool of libraries means authors can publish open access, for free.
-        </p>
-        {% with rel_path="/site/olh-model" label="Find out more" %}
-          {% include 'custom/button-action-blue.html' %}
-        {% endwith %}
-      </div>
-    </div>
-    <div class="max-lg:py-5 lg:p-5 lg:basis-1/2">
-      <div
-        class="
-          relative z-40 p-8 h-full bg-white flex flex-col
-          gap-y-6 max-lg:items-center lg:items-start
-        ">
-        <img
-          class="-m-3 w-32 h-32"
-          src="{% static 'hourglass/media/icons/FAQs.svg' %}"
-          alt="">
-        <h2 class="font-poppins-bold max-lg:text-2xl lg:text-3xl max-lg:text-center">
-          FAQs.
-        </h2>
-        <p class="max-lg:text-lg lg:text-xl max-lg:text-center">
-          Get a quick answer to your question.
-        </p>
-        {% with rel_path="/site/faq#libraries-consortia" label="Find out more" %}
-          {% include 'custom/button-action-blue.html' %}
-        {% endwith %}
-      </div>
-    </div>
+    {% include 'custom/subscribe.html' %}
   </div>
-  <div
-    class="
-      relative z-0 max-lg:-right-12 lg:-right-28 motion-safe:rallax
-      max-lg:motion-reduce:bottom-0 lg:motion-reduce:bottom-40
-      max-lg:motion-safe:bottom-48 lg:motion-safe:bottom-[30rem]
-    ">
-    <img
-      class="absolute z-0 h-36 top-12 right-4"
-      src="{% static 'hourglass/media/backgrounds/square-red.svg' %}"
-      alt="">
-    <img
-      class="absolute z-10 h-36 top-28 right-20"
-      src="{% static 'hourglass/media/backgrounds/triangle-orange-pointing-down.svg' %}"
-      alt="">
-  </div>
-</div>
-<div class="container mx-auto max-w-screen-xl relative">
-  {% include 'custom/subscribe.html' %}
-</div>
+{% endblock body %}
