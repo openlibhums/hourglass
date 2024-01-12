@@ -1,0 +1,48 @@
+{% load component_tags %}
+
+<section
+  id="y{{ year }}"
+  aria-labelledby="h3-{{ year }}"
+  class="scroll-target relative mt-8">
+  <div
+    class="
+      relative before:z-30 before:block before:absolute
+      before:inset-y-0 before:w-screen
+      before:right-0 before:bg-tan-light
+      max-lg:after:z-30 max-lg:after:block max-lg:after:absolute
+      max-lg:after:inset-y-0 max-lg:after:w-screen
+      max-lg:after:left-0 max-lg:after:bg-tan-light
+      pb-1 max-w-3xl
+    ">
+    <div
+      class="
+        z-40 relative
+        px-8 py-8 flex flex-col gap-y-6 items-end
+        bg-tan-light max-lg:border-r-4 lg:border-l-4
+        border-solid border-red
+        after:z-30 after:block after:absolute after:h-5 after:w-5
+        max-lg:after:rotate-45 max-lg:after:origin-bottom-right
+        lg:after:-rotate-45 lg:after:origin-bottom-left
+        max-lg:after:-right-0.5 lg:after:-left-0.5 after:-bottom-1
+        max-lg:after:border-r-4 lg:after:border-l-4 after:border-b-4
+        after:border-solid after:border-red
+        lg:pl-24 lg:ml-16
+      ">
+      <div
+        class="
+          w-24 h-24 bg-red rounded-full
+          flex items-center
+          lg:absolute lg:-left-12
+        ">
+        <h3
+          id="h3-{{ year }}"
+          class="font-poppins-bold text-2xl mx-auto text-center">
+          {{ year }}
+        </h3>
+      </div>
+      <div class="prose lg:prose-lg">
+        {% slot 'content' default %}{% endslot %}
+      </div>
+    </div>
+  </div>
+</section>
