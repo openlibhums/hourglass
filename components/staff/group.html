@@ -3,7 +3,9 @@
 
 {% slot "group" default %}
   <div class="flex flex-col gap-y-8">
-    <h2 class="font-poppins-bold text-3xl max-lg:text-center">
+    <h2
+      id="{{ group.name|slugify }}"
+      class="font-poppins-bold text-3xl max-lg:text-center">
       {{ group.name }}
     </h2>
     {% component_block "cta_list_left" width="full" %}
