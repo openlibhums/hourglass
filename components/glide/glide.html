@@ -73,5 +73,7 @@
 
 <script type="module">
   import Glide from "{% static 'hourglass/js/glide.esm.js' %}"
-  new Glide('#{{ glide_id }}', JSON.parse('{{ options|escapejs }}')).mount()
+  document.addEventListener('DOMContentLoaded', () => {
+    new Glide('#{{ glide_id }}', JSON.parse('{{ options|escapejs }}')).mount()
+  })
 </script>
