@@ -1,200 +1,212 @@
+{% extends "press/cms/page.html" %}
+
 {% load static %}
 {% load component_tags %}
 
-<article>
-  <div class="container mx-auto max-w-screen-xl relative lg:mt-8">
-    {% include "custom/edit-on-github.html" with rel_path="custom/newsletter-annual-reports.html" %}
-    <div class="z-40 relative">
-      <h1
-        class="
-          max-md:text-4xl md:max-lg:text-5xl lg:text-7xl !leading-snug
-          font-poppins-bold max-lg:py-6 lg:py-20 px-8 max-w-md
-        ">
-        Newsletter <br>&amp; annual <br>reports.
-      </h1>
-    </div>
-    <div
-      class="
-        z-0 relative max-md:-top-4 md:max-lg:-top-48 lg:-top-72 motion-safe:rallax
-        max-lg:right-12 lg:right-0
-      ">
-      <img
-        class="absolute z-0 w-64 top-12 -right-12"
-        src="{% static 'hourglass/media/backgrounds/square-blue-textured.png' %}"
-        width="335"
-        alt="">
-      <img
-        class="
-          absolute z-20 w-12
-          top-4 -right-20
-        "
-        src="{% static 'hourglass/media/backgrounds/circles-one-one-half-red.svg' %}"
-        alt="">
-      <img
-        class="
-          absolute z-10 w-44
-          right-32 top-32
-        "
-        src="{% static 'hourglass/media/backgrounds/square-red.svg' %}"
-        alt="">
-      <img
-        class="
-          absolute z-30 top-8
-          -right-20 max-w-sm
-        "
-        src="{% static 'hourglass/media/backgrounds/swimmers.png' %}"
-        alt="Victorian swimmers standing on a rock holding a life buoy ring">
-    </div>
-  </div>
-  <div class="container mx-auto max-w-screen-xl relative max-md:mt-64 md:max-lg:mt-28 lg:-mt-4">
-    {% component_block "page_intro" %}
-      {% fill "column_one" %}
-        <p class="lead text-white">
-          Although we are a small team at OLH, there is always so much going on.
-        </p>
-      {% endfill %}
-      {% fill "column_two" %}
-        <p>
-         Find out more about how we run the OLH. Our Annual Reports include information about finances, governance, usage data, and key milestones. Catch up on our latest news and achievements in our regular OLH Newsletter.
-        </p>
-      {% endfill %}
-    {% endcomponent_block %}
-  </div>
-  <section class="container mx-auto max-w-screen-xl relative mt-8">
-    <div
-      class="
-        relative before:z-30 before:block before:absolute
-        before:inset-y-0 before:w-[50vw]
-        before:right-1/2 before:bg-white
-      ">
-      <div class="relative z-40 bg-white p-8 max-w-2xl">
-        <div class="prose lg:prose-lg lg:mr-16">
-          <h2>2023.</h2>
+{% block meta_description %}
+  <meta
+    property="og:description"
+    content="Although we are a small team at OLH, there is always so much going
+    on.">
+{% endblock meta_description %}
+
+{% block body %}
+  <article aria-labelledby="h1">
+    <div class="container mx-auto max-w-screen-xl">
+      <div class="relative lg:mt-8">
+        {% include "custom/edit-on-github.html" with rel_path="custom/newsletter-annual-reports.html" %}
+        <div class="z-40 relative">
+          <h1
+            id="h1"
+            class="
+              max-md:text-4xl md:max-lg:text-5xl lg:text-7xl !leading-snug
+              font-poppins-bold max-lg:py-6 lg:py-20 px-8 max-w-md
+            ">
+            Newsletter <br>&amp; annual <br>reports.
+          </h1>
         </div>
+        <aside
+          class="
+            z-0 relative max-md:-top-4 md:max-lg:-top-48 lg:-top-72 motion-safe:rallax
+            max-lg:right-12 lg:right-0
+          ">
+          <img
+            class="absolute z-0 w-64 top-12 -right-12"
+            src="{% static 'hourglass/media/backgrounds/square-blue-textured.png' %}"
+            width="335"
+            alt="">
+          <img
+            class="
+              absolute z-20 w-12
+              top-4 -right-20
+            "
+            src="{% static 'hourglass/media/backgrounds/circles-one-one-half-red.svg' %}"
+            alt="">
+          <img
+            class="
+              absolute z-10 w-44
+              right-32 top-32
+            "
+            src="{% static 'hourglass/media/backgrounds/square-red.svg' %}"
+            alt="">
+          <img
+            class="
+              absolute z-30 top-8
+              -right-20 max-w-sm
+            "
+            src="{% static 'hourglass/media/backgrounds/swimmers.png' %}"
+            alt="Victorian swimmers standing on a rock holding a life buoy ring">
+        </aside>
       </div>
-    </div>
-  </section>
-  <section class="container mx-auto max-w-screen-xl relative mt-8">
-    <div
-      class="
-        relative z-0 max-lg:-right-36 lg:-right-8 top-0
-      ">
-      <img
-        class="absolute z-10 top-0 right-48 w-32 motion-safe:rallax"
-        src="{% static 'hourglass/media/backgrounds/circle-red.svg' %}"
-        alt="">
-      <img
-        class="absolute z-0 top-20 right-4 motion-safe:rallax"
-        src="{% static 'hourglass/media/backgrounds/square-blue-textured.png' %}"
-        width="335"
-        alt="">
-      <img
-        class="absolute z-20 top-0 right-0"
-        src="{% static 'hourglass/media/backgrounds/leaf.png' %}"
-        alt="A leaf with finely serrated edges and a long stem">
-    </div>
-    <div
-      class="
-        relative before:z-30 before:block before:absolute
-        before:inset-y-0 before:w-[50vw]
-        before:right-1/2 before:bg-tan-light
-      ">
-      <div class="relative z-40 bg-tan-light p-8 max-w-2xl">
-        <div class="prose lg:prose-lg lg:mr-16">
-          <h2>2022.</h2>
-          <ul>
-            <li>
-              <a
-                href="https://mailchi.mp/openlibhums/newsletter-15589718">
-                Spring 2022 Newsletter
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://mailchi.mp/openlibhums/newsletter-15899462">
-                Summer 2022 Newsletter
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://mailchi.mp/openlibhums/newsletter-16448954">
-                Autumn 2022 Newsletter
-              </a>
-            </li>
-            <li>
-              <a href="https://www.openlibhums.org/news/625/">
-                2022 Annual Report
-              </a>
-            </li>
-          </ul>
+      <div class="relative max-md:mt-64 md:max-lg:mt-28 lg:-mt-4">
+        {% component_block "page_intro" %}
+          {% fill "column_one" %}
+            <p class="lead text-white">Although we are a small team at OLH, there is always so much
+            going on.</p>
+          {% endfill %}
+          {% fill "column_two" %}
+            <p>Find out more about how we run the OLH. Our Annual Reports
+            include information about finances, governance, usage data, and key
+            milestones. Catch up on our latest news and achievements in our
+            regular OLH Newsletter.</p>
+          {% endfill %}
+        {% endcomponent_block %}
+      </div>
+      <section class="relative mt-8" aria-labelledby="y2023">
+        <div
+          class="
+            relative before:z-30 before:block before:absolute
+            before:inset-y-0 before:w-[50vw]
+            before:right-1/2 before:bg-white
+          ">
+          <div class="relative z-40 bg-white p-8 max-w-2xl">
+            <div class="prose lg:prose-lg lg:mr-16">
+              <h2 id="y2023">2023.</h2>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-  </section>
-  <section class="container mx-auto max-w-screen-xl relative mt-8">
-    <div
-      class="
-        relative before:z-30 before:block before:absolute
-        before:inset-y-0 before:w-[50vw]
-        before:right-1/2 before:bg-white
-      ">
-      <div class="relative z-40 bg-white p-8 max-w-2xl">
-        <div class="prose lg:prose-lg lg:mr-16">
-          <h2>2021.</h2>
-          <ul>
-            <li>
-              <a href="https://www.openlibhums.org/news/567/">
-                2021 Annual Report
-              </a>
-            </li>
-          </ul>
+      </section>
+      <section class="relative mt-8" aria-labelledby="y2022">
+        <aside
+          class="
+            relative z-0 max-lg:-right-36 lg:-right-8 top-0
+          ">
+          <img
+            class="absolute z-10 top-0 right-48 w-32 motion-safe:rallax"
+            src="{% static 'hourglass/media/backgrounds/circle-red.svg' %}"
+            alt="">
+          <img
+            class="absolute z-0 top-20 right-4 motion-safe:rallax"
+            src="{% static 'hourglass/media/backgrounds/square-blue-textured.png' %}"
+            width="335"
+            alt="">
+          <img
+            class="absolute z-20 top-0 right-0"
+            src="{% static 'hourglass/media/backgrounds/leaf.png' %}"
+            alt="A leaf with finely serrated edges and a long stem">
+        </aside>
+        <div
+          class="
+            relative before:z-30 before:block before:absolute
+            before:inset-y-0 before:w-[50vw]
+            before:right-1/2 before:bg-tan-light
+          ">
+          <div class="relative z-40 bg-tan-light p-8 max-w-2xl">
+            <div class="prose lg:prose-lg lg:mr-16">
+              <h2 id="y2022">2022.</h2>
+              <ul>
+                <li>
+                  <a
+                    href="https://mailchi.mp/openlibhums/newsletter-15589718">
+                    Spring 2022 Newsletter
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://mailchi.mp/openlibhums/newsletter-15899462">
+                    Summer 2022 Newsletter
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://mailchi.mp/openlibhums/newsletter-16448954">
+                    Autumn 2022 Newsletter
+                  </a>
+                </li>
+                <li>
+                  <a href="https://www.openlibhums.org/news/625/">
+                    2022 Annual Report
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-  </section>
-  <section class="container mx-auto max-w-screen-xl relative mt-8">
-    <div
-      class="
-        relative before:z-30 before:block before:absolute
-        before:inset-y-0 before:w-[50vw]
-        before:right-1/2 before:bg-tan-light
-      ">
-      <div class="relative z-40 bg-tan-light p-8 max-w-2xl">
-        <div class="prose lg:prose-lg lg:mr-16">
-          <h2>2020.</h2>
-          <ul>
-            <li>
-              <a href="https://www.openlibhums.org/news/425/">
-                2020 Annual Report
-              </a>
-            </li>
-          </ul>
+      </section>
+      <section class="relative mt-8" aria-labelledby="y2021">
+        <div
+          class="
+            relative before:z-30 before:block before:absolute
+            before:inset-y-0 before:w-[50vw]
+            before:right-1/2 before:bg-white
+          ">
+          <div class="relative z-40 bg-white p-8 max-w-2xl">
+            <div class="prose lg:prose-lg lg:mr-16">
+              <h2 id="y2021">2021.</h2>
+              <ul>
+                <li>
+                  <a href="https://www.openlibhums.org/news/567/">
+                    2021 Annual Report
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-  </section>
-  <section class="container mx-auto max-w-screen-xl relative mt-8">
-    <div
-      class="
-        relative before:z-30 before:block before:absolute
-        before:inset-y-0 before:w-[50vw]
-        before:right-1/2 before:bg-white
-      ">
-      <div class="relative z-40 bg-white p-8 max-w-2xl">
-        <div class="prose lg:prose-lg lg:mr-16">
-          <h2>2019.</h2>
-          <ul>
-            <li>
-              <a href="https://www.openlibhums.org/news/360/">
-                2019 Annual Report
-              </a>
-            </li>
-          </ul>
+      </section>
+      <section class="relative mt-8" aria-labelledby="y2020">
+        <div
+          class="
+            relative before:z-30 before:block before:absolute
+            before:inset-y-0 before:w-[50vw]
+            before:right-1/2 before:bg-tan-light
+          ">
+          <div class="relative z-40 bg-tan-light p-8 max-w-2xl">
+            <div class="prose lg:prose-lg lg:mr-16">
+              <h2 id="y2020">2020.</h2>
+              <ul>
+                <li>
+                  <a href="https://www.openlibhums.org/news/425/">
+                    2020 Annual Report
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
-      </div>
+      </section>
+      <section class="relative mt-8" aria-labelledby="y2019">
+        <div
+          class="
+            relative before:z-30 before:block before:absolute
+            before:inset-y-0 before:w-[50vw]
+            before:right-1/2 before:bg-white
+          ">
+          <div class="relative z-40 bg-white p-8 max-w-2xl">
+            <div class="prose lg:prose-lg lg:mr-16">
+              <h2 id="y2019">2019.</h2>
+              <ul>
+                <li>
+                  <a href="https://www.openlibhums.org/news/360/">
+                    2019 Annual Report
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+      {% include 'custom/subscribe.html' %}
     </div>
-  </section>
-  <div class="container mx-auto max-w-screen-xl relative">
-    {% include 'custom/subscribe.html' %}
-  </div>
-</article>
+  </article>
+{% endblock body %}
