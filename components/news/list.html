@@ -2,7 +2,7 @@
 
 <div class="relative z-40 bg-white">
   {% if h %}
-    <h2 class="name font-poppins-bold text-3xl py-8 max-md:text-center">
+    <h2 id="{{ h|slugify }}" class="name font-poppins-bold text-3xl py-8 max-md:text-center">
       {{ h }}
     </h2>
   {% endif %}
