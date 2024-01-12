@@ -3,10 +3,10 @@
 {% load component_tags %}
 
 <div class="container mx-auto max-w-screen-xl">
-  <aside class="relative">
+  <div class="relative">
     {% include "custom/edit-on-github.html" with rel_path="custom/announcements-blog.html" %}
     {% include "custom/news-art-opener.html" %}
-  </aside>
+  </div>
   <div class="relative max-md:pt-24 md:pt-12">
     <div class="z-40 relative">
       <h1
@@ -18,10 +18,10 @@
         Announcements &amp; blog.
       </h1>
     </div>
-    <nav>
-    {% if all_tags %}
-      {% include "custom/news-list-tags.html" with tag="" all_tags=all_tags %}
-    {% endif %}
+    <nav aria-label="tags">
+      {% if all_tags %}
+        {% include "custom/news-list-tags.html" with tag="" all_tags=all_tags %}
+      {% endif %}
     </nav>
   </div>
   {% if tag_sets %}
