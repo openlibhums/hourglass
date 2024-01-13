@@ -1,261 +1,317 @@
+{% extends "press/cms/page.html" %}
+
 {% load static %}
 {% load component_tags %}
 
-<article>
-  <div class="container mx-auto max-w-screen-xl relative">
-    {% include 'custom/edit-on-github.html' with rel_path='custom/resources.html' %}
-    {% include 'custom/camera-man-bun-opener.html' %}
-    <div class="relative z-40">
-      <h1
-        class="
-          max-md:text-4xl md:max-lg:text-5xl lg:text-7xl !leading-snug
-          font-poppins-bold pt-64 max-lg:pb-12 lg:pb-20 px-8 max-w-md
-        ">
-        Resources.
-      </h1>
+{% block meta_description %}
+  <meta
+    property="og:description"
+    content="We provide scholars and librarians working in the humanities with
+    tools, spaces, and cogent arguments about open access.">
+{% endblock meta_description %}
+
+{% block body %}
+  <div class="container mx-auto max-w-screen-xl">
+    <div class="relative">
+      {% include 'custom/edit-on-github.html' with rel_path='custom/resources.html' %}
+      {% include 'custom/camera-man-bun-opener.html' %}
+      <div class="relative z-40">
+        <h1
+          id="h1"
+          class="
+            max-md:text-4xl md:max-lg:text-5xl lg:text-7xl !leading-snug
+            font-poppins-bold pt-64 max-lg:pb-12 lg:pb-20 px-8 max-w-md
+          ">
+          Resources.
+        </h1>
+      </div>
     </div>
-  </div>
-  <div class="container mx-auto max-w-screen-xl relative max-lg:mt-8 lg:-mt-4">
-    {% component_block "page_intro" %}
-      {% fill "column_one" %}
-        <p class="lead text-white">We provide scholars and librarians working in the humanities with tools, spaces, and cogent arguments about open access.</p>
-      {% endfill %}
-      {% fill "column_two" %}
-        <p>Browse our open access advocacy resources, which are all available to re-use under a Creative Commons Attribution License (CC BY). We have also provided links to resources from other open access organisations.</p>
-        <p>To celebrate the ten year anniversary of the OLH in 2023, we extended our Resources to include some of our earlier documents and materials, as a record of how we grew. This list brings together key milestones, minutes, previous campaigns, and significant marketing activities from the past decade.</p>
-      {% endfill %}
-    {% endcomponent_block %}
-  </div>
-  <div class="container mx-auto max-w-screen-xl relative mt-28">
-    {% component_block "page_section" anchor="left" %}
-      <h2>Open access advocacy.</h2>
-      {% component_block "filterable_list" list_id="advocacy" value_names="name type description date" %}
+    <div class="relative max-lg:mt-8 lg:-mt-4">
+      {% component_block "page_intro" %}
+        {% fill "column_one" %}
+          <p class="lead text-white">We provide scholars and librarians working
+          in the humanities with tools, spaces, and cogent arguments about open
+          access.</p>
+        {% endfill %}
+        {% fill "column_two" %}
+          <p>Browse our open access advocacy resources, which are all available
+          to re-use under a Creative Commons Attribution License (CC BY). We have
+          also provided links to resources from other open access
+          organisations.</p>
+          <p>To celebrate the ten year anniversary of the OLH in 2023, we
+          extended our Resources to include some of our earlier documents and
+          materials, as a record of how we grew. This list brings together key
+          milestones, minutes, previous campaigns, and significant marketing
+          activities from the past decade.</p>
+        {% endfill %}
+      {% endcomponent_block %}
+    </div>
+    <div class="relative mt-28">
+      {% component_block "page_section" anchor="left" labelledby="open-access-advocacy" %}
+        <h2 id="open-access-advocacy">Open access advocacy.</h2>
+        {% component_block "filterable_list" list_id="advocacy" value_names="name type description date" %}
+          <div class="overflow-x-auto">
+            <table>
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Type</th>
+                  <th>Description</th>
+                  <th>Date</th>
+                </tr>
+              </thead>
+              <tbody class="list">
+                <tr>
+                  <td class="name"><a href="/site/olh-poster-series">Poster series</a></td>
+                  <td class="type">Posters</td>
+                  <td class="description">A series of posters highlighting
+                    our publishing work with various humanities communities,
+                    each dedicated to a different historical period</td>
+                  <td class="date">2016, 2017, 2021</td>
+                </tr>
+                <tr>
+                  <td class="name"><a href="https://www.openlibhums.org/media/press/OLH_Bookmarks.pdf">Bookmarks</a></td>
+                  <td class="type">Bookmarks</td>
+                  <td class="description">Based on the OLH's poster series,
+                    and artwork by Nicky Borowiec, these were made for
+                    promotional purposes for Open Access week 2022</td>
+                  <td class="date">2022</td>
+                </tr>
+                <tr>
+                  <td class="name"><a href="https://janeway.freshdesk.com/support/solutions/articles/43000643746-training-videos">Janeway training videos</a></td>
+                  <td class="type">Video series</td>
+                  <td class="description">Over the last year we've undertaken
+                    many training sessions. This page provides links to
+                    sessions that were run for version 1.4.2, 1.4 and
+                    1.3.10.</td>
+                  <td class="date">2023</td>
+                </tr>
+                <tr>
+                  <td class="name"><a href="/site/supporter-badges">Supporter Badges</a></td>
+                  <td class="type">Supporter Badges</td>
+                  <td class="description">Downloadable digital supporter
+                    badges for all our institutions, in recognition of their
+                    continuing commitment to supporting open access in the
+                    humanities</td>
+                  <td class="date">2023</td>
+                </tr>
+                <tr>
+                  <td class="name">
+                    <a href="https://paywallthemovie.com/">
+                      <i>Paywall: The Business of Scholarship</i> <i class="material-icons">launch</i>
+                    </a>
+                  </td>
+                  <td class="type">Documentary</td>
+                  <td class="description">Examination of the profit-driven academic publishing industry, by Jason Schmitt</td>
+                  <td class="date">2018</td>
+                </tr>
+                <tr>
+                  <td class="name"><a href="https://www.cambridge.org/core/books/open-access-and-the-humanities/02BD7DB4A5172A864C432DBFD86E5FB4"><i>Open Access and the Humanities</i></a></td>
+                  <td class="type">Ebook</td>
+                  <td class="description">OLH co-founder Martin Paul Eve's
+                    monograph on the histories, contexts and controversies
+                    for open access, specifically in the humanities.</td>
+                  <td class="date">2022</td>
+                </tr>
+                <tr>
+                  <td class="name"><a href="https://www.youtube.com/watch?v=9viBDo7uxjc&amp;t=109s">OLH mini-documentary <i class="material-icons">launch</i></a></td>
+                  <td class="type">Video</td>
+                  <td class="description">A short video documentary about the
+                    OLH, humanities open access and sustainable diamond OA
+                    publishing models</td>
+                  <td class="date">2018</td>
+                </tr>
+                <tr>
+                  <td class="name"><a href="https://olhbeta.janeway.systems/media/press/OLH_Prospectus_2023.pdf">The OLH prospectus</a></td>
+                  <td class="type">PDF</td>
+                  <td class="description">A short,  visual document that
+                    provides a summary of the most relevant aspects of the
+                    OLH's work and what we offer</td>
+                  <td class="date">2023</td>
+                </tr>
+                <tr>
+                  <td class="name"><a href="/site/faq/#librarians-consortia">FAQs</a></td>
+                  <td class="type">Webpage</td>
+                  <td class="description">FAQs divided around our key
+                    audiences: librarians, editors and authors</td>
+                  <td class="date">2023</td>
+                </tr>
+                <tr>
+                  <td class="name"><a href="/site/oa-glossary/">Glossary</a></td>
+                  <td class="type">Webpage</td>
+                  <td class="description">List of frequently used open access
+                    terms</td>
+                  <td class="date">2023</td>
+                </tr>
+                <tr>
+                  <td class="name"><a href="/site/reading-list/">Reading List</a></td>
+                  <td class="type">Webpage</td>
+                  <td class="description">A dynamic and growing bibliography
+                    of open access reading materials</td>
+                  <td class="date">2023</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        {% endcomponent_block %}
+      {% endcomponent_block %}
+    </div>
+    <div class="relative mt-28">
+      {% include 'custom/camera-man-bun-halfway.html' %}
+      {% component_block "page_section" anchor="right" labelledby="olh-archive" %}
+        <h2 id="olh-archive">The OLH archive.</h2>
         <div class="overflow-x-auto">
-          <table>
-            <thead>
-              <tr>
-                <th>Name</th>
-                <th>Type</th>
-                <th>Description</th>
-                <th>Date</th>
-              </tr>
-            </thead>
-            <tbody class="list">
-              <tr>
-                <td class="name"><a href="/site/olh-poster-series">Poster series</a></td>
-                <td class="type">Posters</td>
-                <td class="description">A series of posters highlighting our publishing work with various humanities communities, each dedicated to a different historical period</td>
-                <td class="date">2016, 2017, 2021</td>
-              </tr>
-              <tr>
-                <td class="name"><a href="https://www.openlibhums.org/media/press/OLH_Bookmarks.pdf">Bookmarks</a></td>
-                <td class="type">Bookmarks</td>
-                <td class="description">Based on the OLH's poster series, and artwork by Nicky Borowiec, these were made for promotional purposes for Open Access week 2022</td>
-                <td class="date">2022</td>
-              </tr>
-              <tr>
-                <td class="name"><a href="https://janeway.freshdesk.com/support/solutions/articles/43000643746-training-videos">Janeway training videos</a></td>
-                <td class="type">Video series</td>
-                <td class="description">Over the last year we've undertaken many training sessions. This page provides links to sessions that were run for version 1.4.2, 1.4 and 1.3.10.</td>
-                <td class="date">2023</td>
-              </tr>
-              <tr>
-                <td class="name"><a href="/site/supporter-badges">Supporter Badges</a></td>
-                <td class="type">Supporter Badges</td>
-                <td class="description">Downloadable digital supporter badges for all our institutions, in recognition of their continuing commitment to supporting open access in the humanities</td>
-                <td class="date">2023</td>
-              </tr>
-              <tr>
-                <td class="name">
-                  <a href="https://paywallthemovie.com/">
-                    <i>Paywall: The Business of Scholarship</i> <i class="material-icons">launch</i>
-                  </a>
-                </td>
-                <td class="type">Documentary</td>
-                <td class="description">Examination of the profit-driven academic publishing industry, by Jason Schmitt</td>
-                <td class="date">2018</td>
-              </tr>
-              <tr>
-                <td class="name"><a href="https://www.cambridge.org/core/books/open-access-and-the-humanities/02BD7DB4A5172A864C432DBFD86E5FB4"><i>Open Access and the Humanities</i></a></td>
-                <td class="type">Ebook</td>
-                <td class="description">OLH co-founder Martin Paul Eve's monograph on the histories, contexts and controversies for open access, specifically in the humanities.</td>
-                <td class="date">2022</td>
-              </tr>
-              <tr>
-                <td class="name"><a href="https://www.youtube.com/watch?v=9viBDo7uxjc&amp;t=109s">OLH mini-documentary <i class="material-icons">launch</i></a></td>
-                <td class="type">Video</td>
-                <td class="description">A short video documentary about the OLH, humanities open access and sustainable diamond OA publishing models</td>
-                <td class="date">2018</td>
-              </tr>
-              <tr>
-                <td class="name"><a href="https://olhbeta.janeway.systems/media/press/OLH_Prospectus_2023.pdf">The OLH prospectus</a></td>
-                <td class="type">PDF</td>
-                <td class="description">A short,  visual document that provides a summary of the most relevant aspects of the OLH's work and what we offer</td>
-                <td class="date">2023</td>
-              </tr>
-              <tr>
-                <td class="name"><a href="/site/faq/#librarians-consortia">FAQs</a></td>
-                <td class="type">Webpage</td>
-                <td class="description">FAQs divided around our key audiences: librarians, editors and authors</td>
-                <td class="date">2023</td>
-              </tr>
-              <tr>
-                <td class="name"><a href="/site/oa-glossary/">Glossary</a></td>
-                <td class="type">Webpage</td>
-                <td class="description">List of frequently used open access terms</td>
-                <td class="date">2023</td>
-              </tr>
-              <tr>
-                <td class="name"><a href="/site/reading-list/">Reading List</a></td>
-                <td class="type">Webpage</td>
-                <td class="description">A dynamic and growing bibliography of open access reading materials</td>
-                <td class="date">2023</td>
-              </tr>
-            </tbody>
-          </table>
+          {% component_block "filterable_list" list_id="archive" value_names="name type description date" %}
+            <table>
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Type</th>
+                  <th>Description</th>
+                  <th>Date</th>
+                </tr>
+              </thead>
+              <tbody class="list">
+                <tr>
+                  <td class="name"><a href="https://www.openlibhums.org/news/tag/Open%20Insights/">Open Insights</a></td>
+                  <td class="type">Blog series</td>
+                  <td class="description">A series of think pieces about open
+                    access publishing in the OLH orbit</td>
+                  <td class="date">2018 - present</td>
+                </tr>
+                <tr>
+                  <td class="name"><a href="https://www.openlibhums.org/news/579/">Janeway Review</a></td>
+                  <td class="type">Blog</td>
+                  <td class="description">First-hand account of Janeway's
+                    strengths and areas for improvement by Johan Rooryck,
+                    Editor-in-Chief of linguistics journal <i>Glossa</i></td>
+                  <td class="date">2022</td>
+                </tr>
+                <tr>
+                  <td class="name"><a href="https://www.youtube.com/watch?v=m1eWnDxtZVk&amp;t=7s">EIFL Introduction to Janeway publishing platform</a></td>
+                  <td class="type">Video</td>
+                  <td class="description">Learn more about Janeway, a free,
+                    open source publishing platform developed by the Centre
+                    for Technology and Publishing at Birkbeck, University of
+                    London.</td>
+                  <td class="date">2019</td>
+                </tr>
+                <tr>
+                  <td class="name"><a href="https://olhbeta.janeway.systems/news/all/tag/Milestone/">Organisational Milestones</a></td>
+                  <td class="type">Blog series</td>
+                  <td class="description">Highlights from the OLH's past news
+                    items </td>
+                  <td class="date">2013-present</td>
+                </tr>
+                <tr>
+                  <td class="name"><a href="/site/webinars-archive">Webinars and OLH events<i class="material-icons">launch</i></a></td>
+                  <td class="type">Videos</td>
+                  <td class="description">A selection of the OLH webinars and
+                    online events</td>
+                  <td class="date">2018-present</td>
+                </tr>
+                <tr>
+                  <td class="name"><a href="https://insights.uksg.org/articles/10.1629/uksg.396">'Janeway: A Scholarly Communications Platform'<i class="material-icons">launch</i></a></td>
+                  <td class="type">Peer reviewed article</td>
+                  <td class="description">Founders of the OLH's publishing
+                    platform, Janeway, reflect on the history and
+                    significance of the project</td>
+                  <td class="date">2018</td>
+                </tr>
+                <tr>
+                  <td class="name"><a href="https://quod.lib.umich.edu/j/jep/3336451.0023.101?view=text;rgn=main">'Assessing Open Source Journal Management Software'<i class="material-icons">launch</i></a></td>
+                  <td class="type">Peer reviewed article</td>
+                  <td class="description">Review of Janeway against
+                    competitor submission platforms</td>
+                  <td class="date">2020</td>
+                </tr>
+                <tr>
+                  <td class="name"><a href="https://wakelet.com/@OpenLibHums">EmpowOA twitter chats</a></td>
+                  <td class="type">Wakelet</td>
+                  <td class="description">Curated list of twitter chats from
+                    the EmpowOA series</td>
+                  <td class="date">2018-2020</td>
+                </tr>
+                <tr>
+                  <td class="name"><a href="https://www.openlibhums.org/media/press/Open_Access_in_the_Humanities_A1.pdf">OLH conference poster</a></td>
+                  <td class="type">Poster</td>
+                  <td class="description">Graphic representation of the OLH
+                    buisness model</td>
+                  <td class="date">2020</td>
+                </tr>
+                <tr>
+                  <td class="name"><a href="https://www.openlibhums.org/media/press/EmpowOA_infographics.pdf">OLH infographic</a></td>
+                  <td class="type">Infographic</td>
+                  <td class="description">Graphic representation of the OLH
+                    buisness model</td>
+                  <td class="date">2020</td>
+                </tr>
+                <tr>
+                  <td class="name"><a href="https://liberquarterly.eu/article/view/10742">'Lessons from the Open Library of Humanities'<i class="material-icons">launch</i></a></td>
+                  <td class="type">Peer reviewed article</td>
+                  <td class="description">A reflection on the challenges and
+                    successes of the project on its five year
+                    anniversary</td>
+                  <td class="date">2020</td>
+                </tr>
+                <tr>
+                  <td class="name"><a href="/site/test-poster-structure/">EmpowOA Campaign</a></td>
+                  <td class="type">Poster series</td>
+                  <td class="description">A series of campaign images to
+                    communicate the OLH's commitment to empowering humanities
+                    scholars</td>
+                  <td class="date">2018</td>
+                </tr>
+              </tbody>
+            </table>
+          {% endcomponent_block %}
         </div>
       {% endcomponent_block %}
-    {% endcomponent_block %}
-  </div>
-  <div class="container mx-auto max-w-screen-xl relative mt-28">
-    {% include 'custom/camera-man-bun-halfway.html' %}
-    {% component_block "page_section" anchor="right" %}
-      <h2>The OLH archive.</h2>
-      <div class="overflow-x-auto">
-        {% component_block "filterable_list" list_id="archive" value_names="name type description date" %}
-          <table>
-            <thead>
-              <tr>
-                <th>Name</th>
-                <th>Type</th>
-                <th>Description</th>
-                <th>Date</th>
-              </tr>
-            </thead>
-            <tbody class="list">
-              <tr>
-                <td class="name"><a href="https://www.openlibhums.org/news/tag/Open%20Insights/">Open Insights</a></td>
-                <td class="type">Blog series</td>
-                <td class="description">A series of think pieces about open access publishing in the OLH orbit</td>
-                <td class="date">2018 - present</td>
-              </tr>
-              <tr>
-                <td class="name"><a href="https://www.openlibhums.org/news/579/">Janeway Review</a></td>
-                <td class="type">Blog</td>
-                <td class="description">First-hand account of Janeway's strengths and areas for improvement by Johan Rooryck, Editor-in-Chief of linguistics journal <i>Glossa</i></td>
-                <td class="date">2022</td>
-              </tr>
-              <tr>
-                <td class="name"><a href="https://www.youtube.com/watch?v=m1eWnDxtZVk&amp;t=7s">EIFL Introduction to Janeway publishing platform</a></td>
-                <td class="type">Video</td>
-                <td class="description">Learn more about Janeway, a free, open source publishing platform developed by the Centre for Technology and Publishing at Birkbeck, University of London.</td>
-                <td class="date">2019</td>
-              </tr>
-              <tr>
-                <td class="name"><a href="https://olhbeta.janeway.systems/news/all/tag/Milestone/">Organisational Milestones</a></td>
-                <td class="type">Blog series</td>
-                <td class="description">Highlights from the OLH's past news items </td>
-                <td class="date">2013-present</td>
-              </tr>
-              <tr>
-                <td class="name"><a href="/site/webinars-archive">Webinars and OLH events<i class="material-icons">launch</i></a></td>
-                <td class="type">Videos</td>
-                <td class="description">A selection of the OLH webinars and online events</td>
-                <td class="date">2018-present</td>
-              </tr>
-              <tr>
-                <td class="name"><a href="https://insights.uksg.org/articles/10.1629/uksg.396">'Janeway: A Scholarly Communications Platform'<i class="material-icons">launch</i></a></td>
-                <td class="type">Peer reviewed article</td>
-                <td class="description">Founders of the OLH's publishing platform, Janeway, reflect on the history and significance of the project</td>
-                <td class="date">2018</td>
-              </tr>
-              <tr>
-                <td class="name"><a href="https://quod.lib.umich.edu/j/jep/3336451.0023.101?view=text;rgn=main">'Assessing Open Source Journal Management Software'<i class="material-icons">launch</i></a></td>
-                <td class="type">Peer reviewed article</td>
-                <td class="description">Review of Janeway against competitor submission platforms</td>
-                <td class="date">2020</td>
-              </tr>
-              <tr>
-                <td class="name"><a href="https://wakelet.com/@OpenLibHums">EmpowOA twitter chats</a></td>
-                <td class="type">Wakelet</td>
-                <td class="description">Curated list of twitter chats from the EmpowOA series</td>
-                <td class="date">2018-2020</td>
-              </tr>
-              <tr>
-                <td class="name"><a href="https://www.openlibhums.org/media/press/Open_Access_in_the_Humanities_A1.pdf">OLH conference poster</a></td>
-                <td class="type">Poster</td>
-                <td class="description">Graphic representation of the OLH buisness model</td>
-                <td class="date">2020</td>
-              </tr>
-              <tr>
-                <td class="name"><a href="https://www.openlibhums.org/media/press/EmpowOA_infographics.pdf">OLH infographic</a></td>
-                <td class="type">Infographic</td>
-                <td class="description">Graphic representation of the OLH buisness model</td>
-                <td class="date">2020</td>
-              </tr>
-              <tr>
-                <td class="name"><a href="https://liberquarterly.eu/article/view/10742">'Lessons from the Open Library of Humanities'<i class="material-icons">launch</i></a></td>
-                <td class="type">Peer reviewed article</td>
-                <td class="description">A reflection on the challenges and successes of the project on its five year anniversary</td>
-                <td class="date">2020</td>
-              </tr>
-              <tr>
-                <td class="name"><a href="/site/test-poster-structure/">EmpowOA Campaign</a></td>
-                <td class="type">Poster series</td>
-                <td class="description">A series of campaign images to communicate the OLH's commitment to empowering humanities scholars</td>
-                <td class="date">2018</td>
-              </tr>
-            </tbody>
-          </table>
-        {% endcomponent_block %}
-      </div>
-    {% endcomponent_block %}
-  </div>
-  <div class="container mx-auto max-w-screen-xl relative mt-28">
-    {% component_block "page_section" anchor="left" %}
-      <h2>Toolkit.</h2>
-      <p>Links to external resources from trusted Open Access organisations</p>
-      <div class="flex max-lg:flex-col lg:flex-row flex-wrap -m-4">
-        <div class="basis-1/2 flex flex-col items-start p-4">
-          <h3>
-            OASPA Publishing Resources
-          </h3>
-          <p>Milestone OA documents, best practices and other resources</p>
-          {% with rel_path="https://oaspa.org/information-resources/openaccessresources/" label="Read more" %}
-            {% include 'custom/button-action-blue.html' %}
-          {% endwith %}
+    </div>
+    <div class="relative mt-28">
+      {% component_block "page_section" anchor="left" labelledby="toolkit" %}
+        <h2 id="toolkit">Toolkit.</h2>
+        <p>Links to external resources from trusted Open Access organisations</p>
+        <div class="flex max-lg:flex-col lg:flex-row flex-wrap -m-4">
+          <div class="basis-1/2 flex flex-col items-start p-4">
+            <h3>
+              OASPA Publishing Resources
+            </h3>
+            <p>Milestone OA documents, best practices and other resources</p>
+            {% with rel_path="https://oaspa.org/information-resources/openaccessresources/" label="Read more" %}
+              {% include 'custom/button-action-blue.html' %}
+            {% endwith %}
+          </div>
+          <div class="basis-1/2 flex flex-col items-start p-4">
+            <h3>
+              Plan S Toolkit
+            </h3>
+            <p>Resources to achieve Plan S Compliancy</p>
+            {% with rel_path="https://www.coalition-s.org/resources/" label="Read more" %}
+              {% include 'custom/button-action-blue.html' %}
+            {% endwith %}
+          </div>
+          <div class="basis-1/2 flex flex-col items-start p-4">
+            <h3>
+              Think. Check. Submit
+            </h3>
+            <p>Helping researchers to make informed publication choices</p>
+            {% with rel_path="https://thinkchecksubmit.org" label="Read more" %}
+              {% include 'custom/button-action-blue.html' %}
+            {% endwith %}
+          </div>
+          <div class="basis-1/2 flex flex-col items-start p-4">
+            <h3>
+              HowOpenIsIt?
+            </h3>
+            <p>Open Access Spectrum Guide by OAPSA and PLOS ONE</p>
+            {% with rel_path="https://sparcopen.org/our-work/howopenisit/" label="Read more" %}
+              {% include 'custom/button-action-blue.html' %}
+            {% endwith %}
+          </div>
         </div>
-        <div class="basis-1/2 flex flex-col items-start p-4">
-          <h3>
-            Plan S Toolkit
-          </h3>
-          <p>Resources to achieve Plan S Compliancy</p>
-          {% with rel_path="https://www.coalition-s.org/resources/" label="Read more" %}
-            {% include 'custom/button-action-blue.html' %}
-          {% endwith %}
-        </div>
-        <div class="basis-1/2 flex flex-col items-start p-4">
-          <h3>
-            Think. Check. Submit
-          </h3>
-          <p>Helping researchers to make informed publication choices</p>
-          {% with rel_path="https://thinkchecksubmit.org" label="Read more" %}
-            {% include 'custom/button-action-blue.html' %}
-          {% endwith %}
-        </div>
-        <div class="basis-1/2 flex flex-col items-start p-4">
-          <h3>
-            HowOpenIsIt?
-          </h3>
-          <p>Open Access Spectrum Guide by OAPSA and PLOS ONE</p>
-          {% with rel_path="https://sparcopen.org/our-work/howopenisit/" label="Read more" %}
-            {% include 'custom/button-action-blue.html' %}
-          {% endwith %}
-        </div>
-      </div>
-    {% endcomponent_block %}
-  </div>
-  <div class="container mx-auto max-w-screen-xl relative">
+      {% endcomponent_block %}
+    </div>
     {% include 'custom/subscribe.html' %}
   </div>
-</article>
+{% endblock body %}
