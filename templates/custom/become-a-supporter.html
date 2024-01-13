@@ -1,320 +1,426 @@
+{% extends "press/cms/page.html" %}
+
 {% load static %}
 {% load component_tags %}
 
-<article>
-  <div class="container mx-auto max-w-screen-xl relative max-lg:mt-56 lg:mt-8">
-    {% include 'custom/edit-on-github.html' with rel_path='custom/become-a-supporter.html' %}
-    {% include 'custom/chess-opener.html' %}
-    {% include 'custom/generic-h1.html' with h1="Become a supporter" %}
-  </div>
-  <div class="container mx-auto max-w-screen-xl relative">
-    {% component_block "page_intro" %}
-      {% fill "column_one" %}
-        <p class="lead text-white">By joining the OLH, you contribute to the development, sustainability and governance of an award-winning diamond open access publishing platform.</p>
-      {% endfill %}
-      {% fill "column_two" %}
-        <p>Your investment funds the publication of 30+ humanities journals while supporting our collective goal to make scholarly publishing fairer, more accessible and rigorously preserved for the digital future.</p>
-      {% endfill %}
-    {% endcomponent_block %}
-  </div>
-  <div class="container mx-auto max-w-screen-xl relative mt-28">
-    {% include 'custom/benefits-infographic.html' %}
-  </div>
-  <div class="container mx-auto max-w-screen-xl relative mt-28">
-    {% component_block "page_section" anchor="left" %}
-      <h2>Your investment.</h2>
-      <p>We are not a subscription publisher, charging fees for exclusive access to our journals. Instead, your investment funds 30+ open access journals in the humanities, with no author facing charges, making them accessible to anyone with an internet connection.</p>
-      <p>By supporting us, you join over 340 libraries worldwide who are taking a stand against exploitative commercial publishing practices to invest in progressive change in scholarly communications. As more libraries join our partnership network, we divert library budgets away from commercial subscriptions. This redistributes library investment towards a not-for-profit, academic-led publishing future.</p>
-      <p>Standard-level OLH membership sustains our publishing activities and helps build open source publishing technologies that benefit the entire academic community. In 2022, we published and funded a total of 469 articles across our 30+ journals. These publications were downloaded 1,122,354 times and viewed 2,539,747 times.</p>
-      <p>Higher-level OLH membership helps us expand. We use these funds to rescue high-profile titles that are at risk from ceasing publication due to austerity cuts to humanities research funding. Higher-level membership also enables us to flip more subscription journals to diamond open access.</p>    
-      <p>Flipping journals strengthens libraries’ bargaining power with large commercial publishers. This puts pressure on these publishers to adopt more  transparent business models and reduce their fees to reflect the realities of library budgets.</p>
-    {% endcomponent_block %}
-  </div>
-  <div class="container mx-auto max-w-screen-xl relative max-lg:mt-16 lg:mt-28">
-    <div class="flex max-lg:justify-center lg:justify-end md:max-w-3xl">
-      <div class="relative z-40">
-        {% component_block "quote" %}
-          {% fill "quote" %}
-            “We’ve heard two different stories from libraries and journals. On the one hand, some libraries are struggling to keep afloat and need us to freeze our prices. On the other hand, some libraries have said that they want to support us in expanding and converting more humanities titles to a diamond open-access model. Our membership options cater for both groups.”
+{% block meta_description %}
+  <meta
+    property="og:description"
+    content="By joining the OLH, you contribute to the development,
+    sustainability and governance of an award-winning diamond open access
+    publishing platform.">
+{% endblock meta_description %}
+
+{% block body %}
+  <article aria-labelledby="h1">
+    <div class="container mx-auto max-w-screen-xl">
+      <div class="relative max-lg:mt-56 lg:mt-8">
+        {% include 'custom/edit-on-github.html' with rel_path='custom/become-a-supporter.html' %}
+        {% include 'custom/chess-opener.html' %}
+        {% include 'custom/generic-h1.html' with h1="Become a supporter" %}
+      </div>
+      <div class="relative">
+        {% component_block "page_intro" %}
+          {% fill "column_one" %}
+            <p class="lead text-white">By joining the OLH, you contribute to
+            the development, sustainability and governance of an award-winning
+            diamond open access publishing platform.</p>
           {% endfill %}
-          {% fill "by" %}
-            <span class="font-poppins-bold">Martin Paul Eve</span>, OLH Co-Founder
+          {% fill "column_two" %}
+            <p>Your investment funds the publication of 30+ humanities journals
+            while supporting our collective goal to make scholarly publishing
+            fairer, more accessible and rigorously preserved for the digital
+            future.</p>
           {% endfill %}
         {% endcomponent_block %}
       </div>
-    </div>
-  </div>
-  <div class="container mx-auto max-w-screen-xl relative mt-28">
-    {% component_block "page_section" prose=False anchor="right" width="part" %}
-      {% component_block "cta_list" %}
-        {% component_block "cta_list_item" %}
-          <img
-            class="w-44 h-44"
-            src="{% static 'hourglass/media/icons/Library-Partnership-Fees.svg' %}"
-            alt="">
-          <h2 class="font-poppins-bold max-lg:text-xl lg:text-2xl text-center">
-            Check cost and sign up.
-          </h2>
-          {% with rel_path="/plugins/supporters/site/library-partnership-fees/" label="Find out more" %}
-            {% include 'custom/button-action-blue.html' %}
-          {% endwith %}
+      <section aria-labelledby="benefits-of-supporting-us" class="relative mt-28">
+        {% include 'custom/benefits-infographic.html' %}
+      </section>
+      <div class="relative mt-28">
+        {% component_block "page_section" anchor="left" labelledby="your-investment" %}
+          <h2 id="your-investment">Your investment.</h2>
+          <p>We are not a subscription publisher, charging fees for exclusive
+          access to our journals. Instead, your investment funds 30+ open
+          access journals in the humanities, with no author facing charges,
+          making them accessible to anyone with an internet connection.</p>
+          <p>By supporting us, you join over 340 libraries worldwide who are
+          taking a stand against exploitative commercial publishing practices
+          to invest in progressive change in scholarly communications. As more
+          libraries join our partnership network, we divert library budgets
+          away from commercial subscriptions. This redistributes library
+          investment towards a not-for-profit, academic-led publishing
+          future.</p>
+          <p>Standard-level OLH membership sustains our publishing activities
+          and helps build open source publishing technologies that benefit the
+          entire academic community. In 2022, we published and funded a total
+          of 469 articles across our 30+ journals. These publications were
+          downloaded 1,122,354 times and viewed 2,539,747 times.</p>
+          <p>Higher-level OLH membership helps us expand. We use these funds to
+          rescue high-profile titles that are at risk from ceasing publication
+          due to austerity cuts to humanities research funding. Higher-level
+          membership also enables us to flip more subscription journals to
+          diamond open access.</p>    
+          <p>Flipping journals strengthens libraries’ bargaining power with
+          large commercial publishers. This puts pressure on these publishers
+          to adopt more  transparent business models and reduce their fees to
+          reflect the realities of library budgets.</p>
         {% endcomponent_block %}
-        {% component_block "cta_list_item" %}
-          <img
-            class="w-44 h-44"
-            src="{% static 'hourglass/media/icons/OLH-Model.svg' %}"
-            alt="">
-          <h2 class="font-poppins-bold max-lg:text-xl lg:text-2xl text-center">
-            The OLH model.
-          </h2>
-          {% with rel_path="/site/olh-model/" label="Find out more" %}
-            {% include 'custom/button-action-blue.html' %}
-          {% endwith %}
-        {% endcomponent_block %}
-        {% component_block "cta_list_item" %}
-          <img
-            class="w-44 h-44"
-            src="{% static 'hourglass/media/icons/OLH-Journal-Applications.svg' %}"
-            alt="">
-          <h2 class="font-poppins-bold max-lg:text-xl lg:text-2xl text-center">
-            Our journals.
-          </h2>
-          {% with rel_path="/journals/" label="Find out more" %}
-            {% include 'custom/button-action-blue.html' %}
-          {% endwith %}
-        {% endcomponent_block %}
-        {% component_block "cta_list_item" %}
-          <img
-            class="w-44 h-44"
-            src="{% static 'hourglass/media/icons/Read-our-News.svg' %}"
-            alt="">
-          <h2 class="font-poppins-bold max-lg:text-xl lg:text-2xl text-center">
-            Prospectus.
-          </h2>
-          {% with rel_path="https://www.openlibhums.org/media/press/OLH-Prospectus-Feb-2023.pdf" label="Download PDF" %}
-            {% include 'custom/button-download-blue.html' %}
-          {% endwith %}
-        {% endcomponent_block %}
-      {% endcomponent_block %}
-    {% endcomponent_block %}
-  </div>
-  <div class="container mx-auto max-w-screen-xl relative mt-28">
-    <div class="relative z-40 min-w-full flex flex-col items-center">
-      <div class="pb-12 prose lg:prose-lg">
-        <h2>Sustaining partners.</h2>
       </div>
-      <div class="flex flex-col items-center gap-16">
-        <div class="flex max-lg:flex-col items-center lg:flex-row gap-16">
-          <img
-          class="w-96"
-          src="{% static 'hourglass/media/logo/birkbeck-logo-black-on-tan.svg' %}"
-          alt="Birkbeck, University of London logo">
-        </div>
-        <div class="flex max-lg:flex-col items-center lg:flex-row gap-16">
-          <img
-            class="w-96"
-            src="{% static 'hourglass/media/logo/arcadia-logo-black.svg' %}"
-            alt="Arcadia Foundation logo">
-          <img
-            class="w-96"
-            src="{% static 'hourglass/media/logo/mellon-logo-black.svg' %}"
-            alt="Mellon Foundation logo">
+      <div class="relative max-lg:mt-16 lg:mt-28">
+        <div class="flex max-lg:justify-center lg:justify-end md:max-w-3xl">
+          <div class="relative z-40">
+            {% component_block "quote" %}
+              {% fill "quote" %}
+                “We’ve heard two different stories from libraries and journals.
+                On the one hand, some libraries are struggling to keep afloat
+                and need us to freeze our prices. On the other hand, some
+                libraries have said that they want to support us in expanding
+                and converting more humanities titles to a diamond open-access
+                model. Our membership options cater for both groups.”
+              {% endfill %}
+              {% fill "by" %}
+                <span class="font-poppins-bold">Martin Paul Eve</span>, OLH Co-Founder
+              {% endfill %}
+            {% endcomponent_block %}
+          </div>
         </div>
       </div>
-    </div>
-  </div>
-  <div class="container mx-auto max-w-screen-xl relative mt-28">
-    <div class="relative z-40 min-w-full flex flex-col items-center">
-      <div class="pb-12 prose lg:prose-lg">
-        <h2>Higher supporters.</h2>
-      </div>
-      <ul
-        class="
-          grid max-md:grid-cols-1 md:max-lg:grid-cols-2 lg:grid-cols-3
-          gap-16 place-items-center text-center text-2xl
-        ">
-        <li>
-          Iowa State University Library
-        </li>
-        <li>
-          King's College London
-        </li>
-        <li>
-          Lancaster University
-        </li>
-        <li>
-          Sächsische Landesbibliothek Staats – und Universitätsbibliothek Dresden
-        </li>
-        <li>
-          The Netherlands Organisation for Scientific Research (NWO)
-        </li>
-        <li>
-          The Open University
-        </li>
-        <li>
-          University College London (UCL)
-        </li>
-        <li>
-          University of Aberdeen
-        </li>
-        <li>
-          University of Arizona Libraries
-        </li>
-        <li>
-          University of Edinburgh
-        </li>
-        <li>
-          University of Glasgow
-        </li>
-        <li>
-          University of Manchester
-        </li>
-        <li>
-          University of Oxford
-        </li>
-        <li>
-          University of Sheffield
-        </li>
-        <li>
-          University of Southampton
-        </li>
-        <li>
-          University of York
-        </li>
-        <li>
-          Yale University
-        </li>
-      </ul>
-    </div>
-    <div class="relative z-40 pt-16 flex justify-start">
-      {% with rel_path="/plugins/supporters/" label="View all supporters" %}
-        {% include 'custom/button-action-black.html' %}
-      {% endwith %}
-    </div>
-  </div>
-  <div class="container mx-auto max-w-screen-xl relative max-lg:mt-64 lg:mt-28">
-    {% include 'custom/chess-halfway.html' %}
-    {% component_block "page_section" anchor="right" %}
-      <h2>Sector-leading standards.</h2>
-      <p>The OLH has proven that it is possible to publish high-quality humanities scholarship at an affordable cost. We’ve shown that bringing publishing technology in house, under academic control, does not compromise quality. Our publishing platform Janeway removes the profit margins of commercial infrastructure providers. This generates substantial savings to the library partners that financially support us.</p>
-      <p>OLH journal articles benefit from the latest advances in online journal publishing – with strong discoverability, robust digital preservation, and high quality presentation. All OLH content is registered with and assigned a Digital Object Identifier and our journals are indexed in the Directory of Open Access (DOAJ) and many key indexers. Journal information is harvested by Google Scholar and metadata is available for harvesting via OAI-PMH.</p>
-      <p>This means that our journal content is discoverable for researchers using library catalogues at your institution. However,  content is also available for the benefit of all who have an internet connection, regardless of geographical location or financial means. You can read more about the preservation, discoverability and accessibility of our journal content by downloading our Library Prospectus.</p>
-    {% endcomponent_block %}
-  </div>
-  <div class="container mx-auto max-w-screen-xl relative max-lg:mt-16 lg:mt-28">
-    <div class="flex max-lg:justify-center lg:justify-end md:max-w-3xl">
-      <div class="relative z-40">
-        {% component_block "quote" %}
-          {% fill "quote" %}
-            “The OLH is such good value for money. Library budgets are always tight, but we feel that we should be doing more to support academic-led publishing. OLH puts a lot back into the academic community and we are pleased to help with its ongoing sustainability.”
-          {% endfill %}
-          {% fill "by" %}
-            <span class="font-poppins-bold">Theo Andrew</span>, Scholarly Communications Manager at the University of Edinburgh
-          {% endfill %}
-        {% endcomponent_block %}
-      </div>
-    </div>
-  </div>
-  <div class="container mx-auto max-w-screen-xl relative mt-28">
-    {% include 'custom/stripes-end.html' %}
-    {% component_block "page_section" anchor="left" %}
-      <h2>Governance and advocacy.</h2>
-      <p>Since launching in 2013 as a scholar-led movement, the OLH has worked closely with library allies to build an alternative model to commercial journal subscriptions. In recognition of this partnership between scholars and librarians, all library members are given a governance stake in the OLH. <a href="/site/governance-and-finances/" target="_blank">The Library Board</a> is one of three advisory boards elected to represent our membership interests and vote on strategic issues.</p>
-      <p>We are also actively involved in open access advocacy. On our a <a href="/site/resources/" >Resources page</a>, you will find materials including campaign posters, videos, infographics, and reading lists. We also provide links to other organisations that equip librarians to advocate for open access in the humanities and strengthen the argument for an OLH membership or renewal.</p>
-    {% endcomponent_block %}
-  </div>
-  <div class="container mx-auto max-w-screen-xl relative mt-28">
-    <div
-      class="
-        relative after:z-30 after:block after:absolute
-        after:inset-y-0 after:w-[50vw]
-        after:right-1/2 after:bg-white
-      ">
-      <div class="max-lg:p-8 lg:p-12 bg-white z-40 relative">
-        <div class="prose lg:prose-lg">
-          <h2>Badges.</h2>
-          <p>We provide digital supporter badges in recognition of our members’ commitment to supporting diamond open access in the humanities. OLH library members are entitled to display a standard supporter badge on their institutional website, while higher tier supporters are entitled to display one of our super-supporter badges in recognition of their extra contribution.</p>
-        </div>
-        <div class="mt-12">
-          {% component_block "glide" glide_id="supporter-badges" glide_type="gallery" %}
-            {% fill "slides" %}
-              {% component_block "glide_slide" %}
-                <div class="flex gap-y-5 flex-col max-lg:items-center lg:items-start">
-                  <img
-                    class="max-h-96 lg:pr-8 grow"
-                    src="https://www.openlibhums.org/media/press/Gold.png"
-                    alt="Gold supporter badge">
-                  <h3 class="font-poppins-bold text-lg max-lg:text-center">
-                    Gold supporter badge
-                  </h3>
-                  {% with rel_path="https://www.openlibhums.org/media/press/Gold.png" label="Download PNG" %}
-                    {% include 'custom/button-download-blue.html' %}
-                  {% endwith %}
-                </div>
-              {% endcomponent_block %}
-              {% component_block "glide_slide" %}
-                <div class="flex gap-5 flex-col max-lg:items-center lg:items-start !h-auto">
-                  <img
-                    class="max-h-96 lg:pr-8"
-                    src="https://www.openlibhums.org/media/press/Silver.png"
-                    alt="Silver supporter badge">
-                  <h3 class="font-poppins-bold text-lg max-lg:text-center grow">
-                    Silver supporter badge
-                  </h3>
-                  {% with rel_path="https://www.openlibhums.org/media/press/Silver.png" label="Download PNG" %}
-                    {% include 'custom/button-download-blue.html' %}
-                  {% endwith %}
-                </div>
-              {% endcomponent_block %}
-              {% component_block "glide_slide" %}
-                <div class="flex gap-5 flex-col max-lg:items-center lg:items-start !h-auto">
-                  <img
-                    class="max-h-96 lg:pr-8"
-                    src="https://www.openlibhums.org/media/press/Bronze.png"
-                    alt="Bronze supporter badge">
-                  <h3 class="font-poppins-bold text-lg max-lg:text-center grow">
-                    Bronze supporter badge
-                  </h3>
-                  {% with rel_path="https://www.openlibhums.org/media/press/Bronze.png" label="Download PNG" %}
-                    {% include 'custom/button-download-blue.html' %}
-                  {% endwith %}
-                </div>
-              {% endcomponent_block %}
-              {% component_block "glide_slide" %}
-                <div class="flex gap-y-5 flex-col max-lg:items-center lg:items-start !h-auto">
-                  <div class="grow flex flex-col justify-center">
-                    <img
-                      class="max-h-96 lg:pr-8"
-                      src="https://www.openlibhums.org/media/press/Supporter2023.png"
-                      alt="Higher supporter badge 2023">
-                  </div>
-                  <h3 class="font-poppins-bold text-lg max-lg:text-center">
-                    Higher supporter badge 2023
-                  </h3>
-                  {% with rel_path="https://www.openlibhums.org/media/press/Supporter2023.png" label="Download PNG" %}
-                    {% include 'custom/button-download-blue.html' %}
-                  {% endwith %}
-                </div>
-              {% endcomponent_block %}
-            {% endfill %}
-            {% fill "bullets" %}
-              {% component 'glide_bullet' slide_index='0' %}
-              {% component 'glide_bullet' slide_index='1' %}
-              {% component 'glide_bullet' slide_index='2' %}
-              {% component 'glide_bullet' slide_index='3' %}
-            {% endfill %}
+      <div class="relative mt-28">
+        {% component_block "page_section" prose=False anchor="right" width="part" label="Next steps" %}
+          {% component_block "cta_list" %}
+            {% component_block "cta_list_item" %}
+              <img
+                class="w-44 h-44"
+                src="{% static 'hourglass/media/icons/Library-Partnership-Fees.svg' %}"
+                alt="">
+              <h2
+                id="check-cost"
+                class="font-poppins-bold max-lg:text-xl lg:text-2xl text-center">
+                Check cost and sign up.
+              </h2>
+              {% with rel_path="/site/library-partnership-fees/" label="Find out more" %}
+                {% include 'custom/button-action-blue.html' %}
+              {% endwith %}
+            {% endcomponent_block %}
+            {% component_block "cta_list_item" %}
+              <img
+                class="w-44 h-44"
+                src="{% static 'hourglass/media/icons/OLH-Model.svg' %}"
+                alt="">
+              <h2
+                id="olh-model"
+                class="font-poppins-bold max-lg:text-xl lg:text-2xl text-center">
+                The OLH model.
+              </h2>
+              {% with rel_path="/site/olh-model/" label="Find out more" %}
+                {% include 'custom/button-action-blue.html' %}
+              {% endwith %}
+            {% endcomponent_block %}
+            {% component_block "cta_list_item" %}
+              <img
+                class="w-44 h-44"
+                src="{% static 'hourglass/media/icons/OLH-Journal-Applications.svg' %}"
+                alt="">
+              <h2
+                id="our-journals"
+                class="font-poppins-bold max-lg:text-xl lg:text-2xl text-center">
+                Our journals.
+              </h2>
+              {% with rel_path="/journals/" label="Find out more" %}
+                {% include 'custom/button-action-blue.html' %}
+              {% endwith %}
+            {% endcomponent_block %}
+            {% component_block "cta_list_item" %}
+              <img
+                class="w-44 h-44"
+                src="{% static 'hourglass/media/icons/Read-our-News.svg' %}"
+                alt="">
+              <h2
+                id="prospectus"
+                class="font-poppins-bold max-lg:text-xl lg:text-2xl text-center">
+                Prospectus.
+              </h2>
+              {% with rel_path="https://www.openlibhums.org/media/press/OLH-Prospectus-Feb-2023.pdf" label="Download PDF" %}
+                {% include 'custom/button-download-blue.html' %}
+              {% endwith %}
+            {% endcomponent_block %}
           {% endcomponent_block %}
+        {% endcomponent_block %}
+      </div>
+      <div class="relative mt-28">
+        <section aria-labelledby="sustaining-partners">
+          <div class="relative z-40 min-w-full flex flex-col items-center">
+            <div class="pb-12 prose lg:prose-lg">
+              <h2 id="sustaining-partners">Sustaining partners.</h2>
+            </div>
+            <div class="flex flex-col items-center gap-16">
+              <div class="flex max-lg:flex-col items-center lg:flex-row gap-16">
+                <img
+                class="w-96"
+                src="{% static 'hourglass/media/logo/birkbeck-logo-black-on-tan.svg' %}"
+                alt="Birkbeck, University of London logo">
+              </div>
+              <div class="flex max-lg:flex-col items-center lg:flex-row gap-16">
+                <img
+                  class="w-96"
+                  src="{% static 'hourglass/media/logo/arcadia-logo-black.svg' %}"
+                  alt="Arcadia Foundation logo">
+                <img
+                  class="w-96"
+                  src="{% static 'hourglass/media/logo/mellon-logo-black.svg' %}"
+                  alt="Mellon Foundation logo">
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+      <div class="relative mt-28">
+        <section aria-labelledby="higher-supporters">
+          <div class="relative z-40 min-w-full flex flex-col items-center">
+            <div class="pb-12 prose lg:prose-lg">
+              <h2 id="higher-supporters">Higher supporters.</h2>
+            </div>
+            <ul
+              class="
+                grid max-md:grid-cols-1 md:max-lg:grid-cols-2 lg:grid-cols-3
+                gap-16 place-items-center text-center text-2xl
+              ">
+              <li>
+                Iowa State University Library
+              </li>
+              <li>
+                King's College London
+              </li>
+              <li>
+                Lancaster University
+              </li>
+              <li>
+                Sächsische Landesbibliothek Staats – und Universitätsbibliothek Dresden
+              </li>
+              <li>
+                The Netherlands Organisation for Scientific Research (NWO)
+              </li>
+              <li>
+                The Open University
+              </li>
+              <li>
+                University College London (UCL)
+              </li>
+              <li>
+                University of Aberdeen
+              </li>
+              <li>
+                University of Arizona Libraries
+              </li>
+              <li>
+                University of Edinburgh
+              </li>
+              <li>
+                University of Glasgow
+              </li>
+              <li>
+                University of Manchester
+              </li>
+              <li>
+                University of Oxford
+              </li>
+              <li>
+                University of Sheffield
+              </li>
+              <li>
+                University of Southampton
+              </li>
+              <li>
+                University of York
+              </li>
+              <li>
+                Yale University
+              </li>
+            </ul>
+          </div>
+          <div class="relative z-40 pt-16 flex justify-start">
+            {% with rel_path="/plugins/supporters/" label="View all supporters" %}
+              {% include 'custom/button-action-black.html' %}
+            {% endwith %}
+          </div>
+        </section>
+      </div>
+      <div class="relative max-lg:mt-64 lg:mt-28">
+        {% include 'custom/chess-halfway.html' %}
+        {% component_block "page_section" anchor="right" labelledby="sector-leading-standards" %}
+          <h2 id="sector-leading-standards">Sector-leading standards.</h2>
+          <p>The OLH has proven that it is possible to publish high-quality
+          humanities scholarship at an affordable cost. We’ve shown that
+          bringing publishing technology in house, under academic control, does
+          not compromise quality. Our publishing platform Janeway removes the
+          profit margins of commercial infrastructure providers. This generates
+          substantial savings to the library partners that financially support
+          us.</p>
+          <p>OLH journal articles benefit from the latest advances in online
+          journal publishing – with strong discoverability, robust digital
+          preservation, and high quality presentation. All OLH content is
+          registered with and assigned a Digital Object Identifier and our
+          journals are indexed in the Directory of Open Access (DOAJ) and many
+          key indexers. Journal information is harvested by Google Scholar and
+          metadata is available for harvesting via OAI-PMH.</p>
+          <p>This means that our journal content is discoverable for
+          researchers using library catalogues at your institution. However,
+          content is also available for the benefit of all who have an internet
+          connection, regardless of geographical location or financial means.
+          You can read more about the preservation, discoverability and
+          accessibility of our journal content by downloading our Library
+          Prospectus.</p>
+        {% endcomponent_block %}
+      </div>
+      <div class="relative max-lg:mt-16 lg:mt-28">
+        <div class="flex max-lg:justify-center lg:justify-end md:max-w-3xl">
+          <div class="relative z-40">
+            {% component_block "quote" %}
+              {% fill "quote" %}
+                “The OLH is such good value for money. Library budgets are
+                always tight, but we feel that we should be doing more to
+                support academic-led publishing. OLH puts a lot back into the
+                academic community and we are pleased to help with its ongoing
+                sustainability.”
+              {% endfill %}
+              {% fill "by" %}
+                <span class="font-poppins-bold">Theo Andrew</span>, Scholarly
+                Communications Manager at the University of Edinburgh
+              {% endfill %}
+            {% endcomponent_block %}
+          </div>
         </div>
       </div>
+      <div class="relative mt-28">
+        {% include 'custom/stripes-end.html' %}
+        {% component_block "page_section" anchor="left" labelledby="governance-advocacy" %}
+          <h2 id="governance-advocacy">Governance and advocacy.</h2>
+          <p>Since launching in 2013 as a scholar-led movement, the OLH has
+          worked closely with library allies to build an alternative model to
+          commercial journal subscriptions. In recognition of this partnership
+          between scholars and librarians, all library members are given a
+          governance stake in the OLH. <a href="/site/governance-and-finances/"
+          target="_blank">The Library Board</a> is one of three advisory boards
+          elected to represent our membership interests and vote on strategic
+          issues.</p>
+          <p>We are also actively involved in open access advocacy. On our a <a
+          href="/site/resources/" >Resources page</a>, you will find
+          materials including campaign posters, videos, infographics, and
+          reading lists. We also provide links to other organisations that
+          equip librarians to advocate for open access in the humanities and
+          strengthen the argument for an OLH membership or renewal.</p>
+        {% endcomponent_block %}
+      </div>
+      <div class="relative mt-28">
+        <section aria-labelledby="badges">
+          <div
+            class="
+              relative after:z-30 after:block after:absolute
+              after:inset-y-0 after:w-[50vw]
+              after:right-1/2 after:bg-white
+            ">
+            <div class="max-lg:p-8 lg:p-12 bg-white z-40 relative">
+              <div class="prose lg:prose-lg">
+                <h2 id="badges">Badges.</h2>
+                <p>We provide digital supporter badges in recognition of our
+                members’ commitment to supporting diamond open access in the
+                humanities. OLH library members are entitled to display a
+                standard supporter badge on their institutional website, while
+                higher tier supporters are entitled to display one of our
+                super-supporter badges in recognition of their extra
+                contribution.</p>
+              </div>
+              <div class="mt-12">
+                {% component_block "glide" glide_id="supporter-badges" glide_type="gallery" %}
+                  {% fill "slides" %}
+                    {% component_block "glide_slide" %}
+                      <div class="flex gap-y-5 flex-col max-lg:items-center lg:items-start">
+                        <img
+                          class="max-h-96 lg:pr-8 grow"
+                          src="https://www.openlibhums.org/media/press/Gold.png"
+                          alt="Gold supporter badge">
+                        <h3 class="font-poppins-bold text-lg max-lg:text-center">
+                          Gold supporter badge
+                        </h3>
+                        {% with rel_path="https://www.openlibhums.org/media/press/Gold.png" label="Download PNG" %}
+                          {% include 'custom/button-download-blue.html' %}
+                        {% endwith %}
+                      </div>
+                    {% endcomponent_block %}
+                    {% component_block "glide_slide" %}
+                      <div class="flex gap-5 flex-col max-lg:items-center lg:items-start !h-auto">
+                        <img
+                          class="max-h-96 lg:pr-8"
+                          src="https://www.openlibhums.org/media/press/Silver.png"
+                          alt="Silver supporter badge">
+                        <h3 class="font-poppins-bold text-lg max-lg:text-center grow">
+                          Silver supporter badge
+                        </h3>
+                        {% with rel_path="https://www.openlibhums.org/media/press/Silver.png" label="Download PNG" %}
+                          {% include 'custom/button-download-blue.html' %}
+                        {% endwith %}
+                      </div>
+                    {% endcomponent_block %}
+                    {% component_block "glide_slide" %}
+                      <div class="flex gap-5 flex-col max-lg:items-center lg:items-start !h-auto">
+                        <img
+                          class="max-h-96 lg:pr-8"
+                          src="https://www.openlibhums.org/media/press/Bronze.png"
+                          alt="Bronze supporter badge">
+                        <h3 class="font-poppins-bold text-lg max-lg:text-center grow">
+                          Bronze supporter badge
+                        </h3>
+                        {% with rel_path="https://www.openlibhums.org/media/press/Bronze.png" label="Download PNG" %}
+                          {% include 'custom/button-download-blue.html' %}
+                        {% endwith %}
+                      </div>
+                    {% endcomponent_block %}
+                    {% component_block "glide_slide" %}
+                      <div class="flex gap-y-5 flex-col max-lg:items-center lg:items-start !h-auto">
+                        <div class="grow flex flex-col justify-center">
+                          <img
+                            class="max-h-96 lg:pr-8"
+                            src="https://www.openlibhums.org/media/press/Supporter2023.png"
+                            alt="Higher supporter badge 2023">
+                        </div>
+                        <h3 class="font-poppins-bold text-lg max-lg:text-center">
+                          Higher supporter badge 2023
+                        </h3>
+                        {% with rel_path="https://www.openlibhums.org/media/press/Supporter2023.png" label="Download PNG" %}
+                          {% include 'custom/button-download-blue.html' %}
+                        {% endwith %}
+                      </div>
+                    {% endcomponent_block %}
+                  {% endfill %}
+                  {% fill "bullets" %}
+                    {% component 'glide_bullet' slide_index='0' %}
+                    {% component 'glide_bullet' slide_index='1' %}
+                    {% component 'glide_bullet' slide_index='2' %}
+                    {% component 'glide_bullet' slide_index='3' %}
+                  {% endfill %}
+                {% endcomponent_block %}
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+      <div class="relative mt-28">
+        {% component_block "page_section" anchor="right" labelledby="other-ways-to-support" %}
+          <h2 id="other-ways-to-support">Other ways to support.</h2>
+          <p>There are other ways you can support the OLH, in addition to
+          membership. Recommending OLH journals to scholars in your institution
+          can raise academic awareness about scholar-led and not-for-profit
+          publishing models. We encourage you to suggest our 30+ journals to
+          your academics for their publications and use on university
+          curricula. We also welcome expressions of interest to write for our
+          <a href="https://www.openlibhums.org/news/tag/Open%20Insights/"
+             target="_blank">Open Insights</a> blog series, which contains
+           guest-written posts, interviews, and provocations about open
+           access.</p>
+        {% endcomponent_block %}
+      </div>
+      {% include 'custom/subscribe.html' %}
     </div>
-  </div>
-  <div class="container mx-auto max-w-screen-xl relative mt-28">
-    {% component_block "page_section" anchor="right" %}
-      <h2>Other ways to support.</h2>
-      <p>There are other ways you can support the OLH, in addition to membership. Recommending OLH journals to scholars in your institution can raise academic awareness about scholar-led and not-for-profit publishing models. We encourage you to suggest our 30+ journals to your academics for their publications and use on university curricula. We also welcome expressions of interest to write for our <a href="https://www.openlibhums.org/news/tag/Open%20Insights/" target="_blank">Open Insights</a> blog series, which contains guest-written posts, interviews, and provocations about open access.</p>
-    {% endcomponent_block %}
-  </div>
-</article>
-<div class="container mx-auto max-w-screen-xl relative">
-  {% include 'custom/subscribe.html' %}
-</div>
+  </article>
+{% endblock body %}

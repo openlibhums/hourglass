@@ -1,207 +1,324 @@
+{% extends "press/cms/page.html" %}
+
 {% load static %}
 {% load component_tags %}
 
-<article>
-  <div class="container mx-auto max-w-screen-xl relative">
-    {% include 'custom/edit-on-github.html' with rel_path='custom/resources.html' %}
-    {% include 'custom/dancer-jacket-opener.html' %}
-    <div class="relative z-40">
-      <h1
-        class="
-          max-md:text-4xl md:max-lg:text-5xl lg:text-7xl !leading-snug
-          font-poppins-bold pt-64 max-lg:pb-12 lg:pb-20 px-8 max-w-md
-        ">
-        Awards<br> and prizes.
-      </h1>
-    </div>
-  </div>
-  <div class="container mx-auto max-w-screen-xl relative max-lg:mt-8 lg:-mt-4">
-    {% component_block "page_section" anchor="left" %}
-      <img
-        class="-m-4 w-48"
-        src="{% static 'hourglass/media/icons/Awards-Prizes.svg' %}"
-        alt="">
-      <p>The work of the Open Library of Humanities has been internationally recognised as an important development in open access for the humanities and for its innovative business model. We were pleased to have received an <a href="https://www.openlibhums.org/news/522/">Open Scholarship Award</a> in 2022 from the <a href="https://c-ski.ca/">Canadian Social Knowledge Institute</a>. The award was given to our co-founder Professor Martin Eve in recognition for his work at the Open Library of Humanities.</p>
-      <p>In addition, we were delighted to have achieved Highly Commended for the <a href="https://www.alpsp.org/news/alpsp-awards-2020-winners-announced-sep-2020">ALPSP Awards for Innovation in Publishing</a> 2020, to have won a <a href="https://www.openlibhums.org/news/348/">Coko Foundation Open Publishing Award</a> in the category of Open Publishing Models in 2019, and an award for <a href="https://www.ukaop.org/hub/aop-announces-winners-for-the-digital-publishing-awards-2020">Small Digital Publisher of the Year </a>from the Association of Online Publishers (AOP) in October 2020.</p>
-      {% include 'custom/awards-prizes-images.html' %}
-    {% endcomponent_block %}
-  </div>
-  <div class="container mx-auto max-w-screen-xl relative max-lg:mt-8 lg:mt-28">
-    {% include 'custom/dancer-jacket-halfway.html' %}
-    {% component_block "page_section" anchor="right" %}
-      <h2>Awards for OLH journals.</h2>
-      <p>Many of the journals that we publish also have award-winning articles in their back catalogues. Some of these awards are listed below, or access our <a href="/news/all/tag/Awards%20&amp;%20Prizes/">full list</a> and further details.</p>
-      <section class="mt-20">
-        <figure>
-          <img
-            class="grayscale"
-            src="https://www.openlibhums.org/media/press/maryam-moarefvand-horniman-museum.jpg"
-            alt="A child looking at a museum display with skeletons of apes standing on their back feet">
-          <figcaption>Photo: Maryam Moarefvand, Horniman Museum, 2019. <a href="https://creativecommons.org/licenses/by-nc-nd/2.0/">CC BY-ND-CD 2.0</a>.</figcaption>
-        </figure>
-        <h3>Winner of the 2022 SFRA Innovative Research Award</h3>
-        <p>The SFRA Innovative Research Award (formerly the Pioneer Award) is given to the writer or writers of the year’s best critical essay-length work published in a peer-reviewed academic journal. The prize is awarded by the Science Fiction Research Association and was given to Dr Amy Butt's article ‘The Present as Past: Science Fiction and the Museum’ published in the <i>Open Library of Humanities</i> journal.</p>
-        <div class="flex max-lg:items-start max-lg:flex-col gap-8">
-          {% with rel_path="https://olh.openlibhums.org/article/id/4699/" label="Read article" %}
-            {% include 'custom/button-action-blue.html' %}
-          {% endwith %}
-          {% with rel_path="https://sfra.org/the-sfra-innovative-research-award/" label="About award" %}
-            {% include 'custom/button-action-blue.html' %}
-          {% endwith %}
-        </div>
-      </section>
-      <section class="mt-20">
-        <img
-          class="grayscale"
-          src="https://www.openlibhums.org/media/press/J_S_Mill_and_H_Taylor.jpeg"
-          alt="Crossing the Border of Citizenship: Helen Taylor, the Independent Radical Democrat Candidate for Camberwell North, 1885">
-        <h3>Winner of the 2021 Elizabeth Eisenstein Essay Prize</h3>
-        <p>The Elizabeth Eisenstein Essay Prize is awarded annually for the best peer-reviewed article/book chapter by an NCIS member and is jointly funded by the National Coalition of Independent Scholars (NCIS) and the family of Professor Elizabeth Eisenstein. The prize was awarded to Dr Janet Smith for ‘Crossing the Border of Citizenship: Helen Taylor, the Independent Radical Democrat Candidate for Camberwell North, 1885’ published as part of the <i>Open Library of Humanities</i> journal Special Collection <a href="https://olh.openlibhums.org/collections/414/">Nancy Astor, Public Women and Gendered Political Culture in Interwar Britain</a>.</p>
-        <div class="flex max-lg:items-start max-lg:flex-col gap-8">
-          {% with rel_path="https://olh.openlibhums.org/article/id/4651/" label="Read article" %}
-            {% include 'custom/button-action-blue.html' %}
-          {% endwith %}
-          {% with rel_path="https://www.ncis.org/news/2021/2021-eisenstein-essay-prize-winners-announced" label="About award" %}
-            {% include 'custom/button-action-blue.html' %}
-          {% endwith %}
-        </div>
-      </section>
-      <section class="mt-20">
-        <figure>
-          <img
-            class="grayscale"
-            src="https://www.openlibhums.org/media/press/gordon-minhinnick-in-the-groove.jpg"
-            alt="A news comic showing a jazz band with comical expressions playing instruments labelled with different types of loans">
-.
-          <figcaption>Image: Gordon Minhinnick, ‘In the Groove,’ New Zealand Herald, 4 September 1952, p. 10 (&copy; New Zealand Herald).</figcaption>
-        </figure>
-        <h3>Winner of the 2017 Rebecca Coyle Prize</h3>
-        <p>The Rebecca Coyle Prize is awarded to the best paper on popular music in the Australia-New Zealand region in a given year. The prize is named in honour of long time member of International Association for the Study of Popular Music – Australia / New Zealand (IASPM ANZ) Rebecca Coyle in commemoration of her work advancing popular music studies and mentoring emerging academic talent. The prize was awarded to Aleisha Ward’s, ‘New Zealand Jazz Concerts, the Use and Abuse of Grand Pianos, and One Cartoonist’s Response’, published in <i>Comics Grid</i>.</p>
-        <div class="flex max-lg:items-start max-lg:flex-col gap-8">
-          {% with rel_path="https://www.comicsgrid.com/article/id/3536/" label="Read article" %}
-            {% include 'custom/button-action-blue.html' %}
-          {% endwith %}
-          {% with rel_path="https://www.iaspm-anz.com/publications-prizes" label="About award" %}
-            {% include 'custom/button-action-blue.html' %}
-          {% endwith %}
-        </div>
-      </section>
-      <section class="mt-20">
-        <figure>
-          <img
-            class="grayscale"
-            src="https://www.openlibhums.org/media/press/archives-new-zealand-sound-trumpet-walter-runge.jpg"
-            alt="A drawing of an early sound amplification device with a wooden base, pulleys, a drum, a crank, a speaker cone, and labels coded with letters of the alphabet">
-          <figcaption>Image: Archives New Zealand, 2014. Drawing of 'sound trumpet' by Walter Runge, 1902. <a href="https://creativecommons.org/licenses/by/2.0/">CC BY 2.0</a>.</figcaption>
-        </figure>
-        <h3>Winner of the 2016 Donald Gray Prize</h3>
-        <p>Professor Jason Camlot won the prestigious Donald Gray Prize for best Victorian Studies essay from the North American Victorian Studies Association (NAVSA) for his article ‘Historicist Audio Forensics: The Archive of Voices as Repository of Material and Conceptual Artefacts’ in <i>19: Interdisciplinary Studies in the Nineteenth Century</i>. The article appeared in the anniversary issue of <i>19</i>, entitled ‘The Nineteenth-Century Digital Archive’ which considers the status of audio artefacts that comprise the historical archive of voices within the context of digital environments. </p>
-        <div class="flex max-lg:items-start max-lg:flex-col gap-8">
-          {% with rel_path="https://19.bbk.ac.uk/article/id/1586/" label="Read article" %}
-            {% include 'custom/button-action-blue.html' %}
-          {% endwith %}
-          {% with rel_path="https://www.concordia.ca/news/stories/cunews/main/stories/2016/11/22/jason-camlot-wins-donald-gray-prize-for-best-victorian-studies-essay.html" label="About award" %}
-            {% include 'custom/button-action-blue.html' %}
-          {% endwith %}
-        </div>
-      </section>
-    {% endcomponent_block %}
-  </div>
-  <div class="container mx-auto max-w-screen-xl relative max-lg:mt-8 lg:mt-28">
-    {% include 'custom/dancer-jacket-last.html' %}
-    {% component_block "page_section" anchor="left" %}
-      <h2>Press coverage, reports and case studies.</h2>
-      <p>In addition to our awards and prizes, the work of the Open Library of Humanities has also received relevant mentions, international press coverage and been featured as case studies in reports. Some highlights are included below, or a fuller list of press coverage and notable mentions can be accessed through our <a href="/news/all/tag/Mentions%20and%20Press%20Coverage/">Latest Updates</a>.</p> 
-      <section class="mt-20">
-        <img
-          class="grayscale"
-          src="https://www.openlibhums.org/media/press/thomas_becket_murder-thumb.jpeg"
-          alt="Medieval artwork showing the murder of Thomas Becket">
-        <h3>OLH publication on the history of Becket’s name features in <i>The Times</i></h3>
-        <p>An article published in the <i>Open Library of Humanities</i> journal has been  featured in <i>The Times</i>. The article, 'Who Put the ‘a’ in ‘Thomas a Becket’? The History of a Name from the Angevins to the Victorians', by John Jenkins, examines the history of Becket’s name since the 12th century.</p>
-        <div class="flex max-lg:items-start max-lg:flex-col gap-8">
-          {% with rel_path="https://www.thetimes.co.uk/article/henry-viii-added-the-a-to-smear-thomas-becket-zcvq6r3gj" label="Read with paywall" %}
-            {% include 'custom/button-action-blue.html' %}
-          {% endwith %}
-          {% with rel_path="https://olh.openlibhums.org/article/id/9353/" label="Read open access" %}
-            {% include 'custom/button-action-blue.html' %}
-          {% endwith %}
-        </div>
-      </section>
-      <section class="mt-20">
-        <figure>
-          <img
-            class="grayscale"
-            src="https://www.openlibhums.org/media/press/zeptonn-good-world-2010.jpg"
-            alt="Digital black and white drawing of happy landscape with smiling sun, smiling trees, and smiling birds. One fluffy cloud has an arm that holds a watering can to water the trees.">
-          <figcaption>Image: Zeptonn, good-world, 2010. <a href="https://creativecommons.org/licenses/by-nc-nd/2.0/">CC BY-NC-ND 2.0</a>.</figcaption>
-        </figure>
-        <h3>OLH features in 2022 European Commission report</h3>
-        <p>OLH has been highlighted in a report on business models for sustainable non-for-profit OA publishing. The report, ‘Operationalising Open Research Europe as a collective publishing enterprise’ was commissioned by the European Commission for their Open Research Europe (ORE) publishing platform. OLH is one of the seven case studies which exemplify sustainable OA models.</p>
-        <div class="flex max-lg:items-start max-lg:flex-col gap-8">
-          {% with rel_path="https://op.europa.eu/en/publication-detail/-/publication/81b9cd30-5104-11ed-92ed-01aa75ed71a1/language-en" label="Read report" %}
-            {% include 'custom/button-action-blue.html' %}
-          {% endwith %}
-        </div>
-      </section>
-      <section class="mt-20">
-        <figure>
-          <img
-            class="grayscale"
-            src="https://www.openlibhums.org/media/press/phil-rogers-birkbeck.jpg"
-            alt="Photo of an outdoor sculpture of an abstract planet with concentric metal circles, covered in snow, with Birkbeck, University of London, in the background">
-          <figcaption>Photo: Phil Rogers, Birkbeck, 2009. <a href="https://creativecommons.org/licenses/by-nc/2.0/">CC BY-NC 2.0</a>.</figcaption>
-        </figure>
-        <h3>OLH model highlighted in UKRI speech</h3>
-        <p>Open Library of Humanities recognised for its ‘ground-breaking’ model in a 2021 roundtable speech by Science Minister, Amanda Solloway, on UKRI’s new open access policy, held at Imperial College London.</p>
-        <div class="flex max-lg:items-start max-lg:flex-col gap-8">
-          {% with rel_path="https://www.gov.uk/government/speeches/science-minister-announces-ukris-open-access-policy" label="Read Speech" %}
-            {% include 'custom/button-action-blue.html' %}
-          {% endwith %}
-        </div>
-      </section>
-      <section class="mt-20">
-        <figure>
-          <img
-            class="grayscale"
-            src="https://www.openlibhums.org/media/press/alobos-life-black-box.jpg"
-            alt="A museum display showing an open metal box with reels, pulleys and wires">
-          <figcaption>Photo: alobos life, Black box, Airbus A340, 2008. <a href="https://creativecommons.org/licenses/by-nc-nd/2.0/">CC BY-NC-ND 2.0</a>.</figcaption>
-        </figure>
-        <h3><i>OLHJ</i> authors featured in <i>The Guardian</i></h3>
-        <p><i>Open Library of Humanities</i> journal authors Stuart Lawson and Jonathan Gray published an article in <i>The Guardian</i> about their research into the cost of open access publishing. The piece is based on their article, ‘Opening the Black Box of Scholarly Communication Funding: A Public Data Infrastructure for Financial Flows in Academic Publishing' which was published in the Open Library of Humanities in 2016 (and co-authored with Michele Mauri).</p>
-        <div class="flex max-lg:items-start max-lg:flex-col gap-8">
-          {% with rel_path="https://www.theguardian.com/higher-education-network/2016/apr/18/why-academic-journals-expensive" label="Read press article" %}
-            {% include 'custom/button-action-blue.html' %}
-          {% endwith %}
-          {% with rel_path="https://olh.openlibhums.org/article/id/4419/" label="Read research article" %}
-            {% include 'custom/button-action-blue.html' %}
-          {% endwith %}
-        </div>
-      </section>
-      <section class="mt-20">
-        <figure>
-          <img
-            class="grayscale"
-            src="https://www.openlibhums.org/media/press/crom-shin-cloud.jpg"
-            alt="A photo of a towering cloud formation lit in white, blue, and rust by sunlight from the left with blue sky behind">
-          <figcaption>Photo: crom shin, Cloud, 2016. <a href="https://creativecommons.org/licenses/by-nd/2.0/">CC BY-ND 2.0</a>.</figcaption>
-        </figure>
-        <h3>Research published by Open Library of Humanities makes headline news appearance</h3>
-        <p>Research published by OLH features on the home page of <i>The Guardian</i>. The showcased article, ‘You have to keep track of your changes': The Version Variants and Publishing History of David Mitchell’s Cloud Atlas' by Professor Martin Paul Eve, examines the version variants of the wildly popular novel and the publishing processes that caused it. The article is notable for using a set of custom software tools to visualise the version variants and reordering of the text. The piece, which was, of course, open access, released its software, data, and concordance files under open licenses. </p>
-        <div class="flex max-lg:items-start max-lg:flex-col gap-8">
-          {% with rel_path="https://www.theguardian.com/books/2016/aug/10/cloud-atlas-astonishingly-different-in-us-and-uk-editions-study-finds" label="Read press article" %}
-            {% include 'custom/button-action-blue.html' %}
-          {% endwith %}
-          {% with rel_path="https://olh.openlibhums.org/article/id/4426/" label="Read research article" %}
-            {% include 'custom/button-action-blue.html' %}
-          {% endwith %}
-        </div>
-      </section>
-    {% endcomponent_block %}
-  </div>
-</article>
+{% block meta_description %}
+  <meta
+    property="og:description"
+    content="The work of the Open Library of Humanities has been
+    internationally recognised as an important development in open access for
+    the humanities and for its innovative business model.">
+{% endblock meta_description %}
 
-<div class="container mx-auto max-w-screen-xl relative">
-  {% include 'custom/subscribe.html' %}
-</div>
+{% block body %}
+  <article aria-labelledby="h1">
+    <div class="container mx-auto max-w-screen-xl">
+      <aside class="relative">
+        {% include 'custom/edit-on-github.html' with rel_path='custom/resources.html' %}
+        {% include 'custom/dancer-jacket-opener.html' %}
+      </aside>
+      <div class="relative z-40">
+        <h1
+          id="h1"
+          class="
+            max-md:text-4xl md:max-lg:text-5xl lg:text-7xl !leading-snug
+            font-poppins-bold pt-64 max-lg:pb-12 lg:pb-20 px-8 max-w-lg
+          ">
+          Awards<br> and prizes.
+        </h1>
+      </div>
+      <section aria-label="About" class="relative max-lg:mt-8 lg:-mt-4">
+        {% component_block "page_section" anchor="left" %}
+          <img
+            class="-m-4 w-48"
+            src="{% static 'hourglass/media/icons/Awards-Prizes.svg' %}"
+            alt="">
+          <p>The work of the Open Library of Humanities has been
+          internationally recognised as an important development in open access
+          for the humanities and for its innovative business model. We were
+          pleased to have received an <a
+          href="https://www.openlibhums.org/news/522/">Open Scholarship
+          Award</a> in 2022 from the <a href="https://c-ski.ca/">Canadian Social
+          Knowledge Institute</a>. The award was given to our co-founder
+          Professor Martin Eve in recognition for his work at the Open Library of
+          Humanities.</p>
+          <p>In addition, we were delighted to have achieved Highly
+          Commended for the <a href="https://www.alpsp.org/news/alpsp-awards-2020-winners-announced-sep-2020">ALPSP Awards for Innovation in Publishing</a> 2020,
+          to have won a <a href="https://www.openlibhums.org/news/348/">Coko Foundation Open Publishing Award</a> in the category of Open Publishing Models in 2019,
+          and an award for <a href="https://www.ukaop.org/hub/aop-announces-winners-for-the-digital-publishing-awards-2020">Small Digital Publisher of the Year </a>from the
+          Association of Online Publishers (AOP) in October 2020.</p>
+          {% include 'custom/awards-prizes-images.html' %}
+        {% endcomponent_block %}
+      </section>
+      <div class="relative max-lg:mt-8 lg:mt-28">
+        {% include 'custom/dancer-jacket-halfway.html' %}
+        {% component_block "page_section" anchor="right" labelledby="awards-for-olh-journals" %}
+          <h2 id="awards-for-olh-journals">Awards for OLH journals.</h2>
+          <p>Many of the journals that we publish also have award-winning
+          articles in their back catalogues. Some of these awards are listed
+          below, or access our <a
+          href="/news/all/tag/Awards%20&amp;%20Prizes/">full list</a> and
+          further details.</p>
+          <section class="mt-20">
+            <figure>
+              <img
+                class="grayscale"
+                src="https://www.openlibhums.org/media/press/maryam-moarefvand-horniman-museum.jpg"
+                alt="A child looking at a museum display with skeletons of apes standing on their back feet">
+              <figcaption>Photo: Maryam Moarefvand, Horniman Museum, 2019. <a
+                  href="https://creativecommons.org/licenses/by-nc-nd/2.0/">CC
+                  BY-ND-CD 2.0</a>.</figcaption>
+            </figure>
+            <h3 id="sfra-innovative-research-award-2022">
+              Winner of the 2022 SFRA Innovative Research Award
+            </h3>
+            <p>The SFRA Innovative Research Award (formerly the Pioneer Award)
+            is given to the writer or writers of the year’s best critical
+            essay-length work published in a peer-reviewed academic journal.
+            The prize is awarded by the Science Fiction Research Association
+            and was given to Dr Amy Butt's article ‘The Present as Past:
+            Science Fiction and the Museum’ published in the <i>Open Library of
+            Humanities</i> journal.</p>
+            <div class="flex max-lg:items-start max-lg:flex-col gap-8">
+              {% with rel_path="https://olh.openlibhums.org/article/id/4699/" label="Read article" %}
+                {% include 'custom/button-action-blue.html' %}
+              {% endwith %}
+              {% with rel_path="https://sfra.org/the-sfra-innovative-research-award/" label="About award" %}
+                {% include 'custom/button-action-blue.html' %}
+              {% endwith %}
+            </div>
+          </section>
+          <section class="mt-20">
+            <img
+              class="grayscale"
+              src="https://www.openlibhums.org/media/press/J_S_Mill_and_H_Taylor.jpeg"
+              alt="Crossing the Border of Citizenship: Helen Taylor, the Independent Radical Democrat Candidate for Camberwell North, 1885">
+            <h3 id="elizabeth-eisenstein-essay-2021">
+              Winner of the 2021 Elizabeth Eisenstein Essay Prize
+            </h3>
+            <p>The Elizabeth Eisenstein Essay Prize is awarded annually for the
+            best peer-reviewed article/book chapter by an NCIS member and is
+            jointly funded by the National Coalition of Independent Scholars
+            (NCIS) and the family of Professor Elizabeth Eisenstein. The
+            prize was awarded to Dr Janet Smith for ‘Crossing the Border of
+            Citizenship: Helen Taylor, the Independent Radical Democrat
+            Candidate for Camberwell North, 1885’ published as part of
+            the <i>Open Library of Humanities</i> journal Special
+            Collection <a
+            href="https://olh.openlibhums.org/collections/414/">Nancy
+            Astor, Public Women and Gendered Political Culture in
+            Interwar Britain</a>.</p>
+            <div class="flex max-lg:items-start max-lg:flex-col gap-8">
+              {% with rel_path="https://olh.openlibhums.org/article/id/4651/" label="Read article" %}
+                {% include 'custom/button-action-blue.html' %}
+              {% endwith %}
+              {% with rel_path="https://www.ncis.org/news/2021/2021-eisenstein-essay-prize-winners-announced" label="About award" %}
+                {% include 'custom/button-action-blue.html' %}
+              {% endwith %}
+            </div>
+          </section>
+          <section class="mt-20">
+            <figure>
+              <img
+                class="grayscale"
+                src="https://www.openlibhums.org/media/press/gordon-minhinnick-in-the-groove.jpg"
+                alt="A news comic showing a jazz band with comical expressions playing instruments labelled with different types of loans">
+  .
+              <figcaption>Image: Gordon Minhinnick, ‘In the Groove,’ New Zealand Herald, 4 September 1952, p. 10 (&copy; New Zealand Herald).</figcaption>
+            </figure>
+            <h3 id="rebecca-coyle-prize-2017">
+              Winner of the 2017 Rebecca Coyle Prize
+            </h3>
+            <p>The Rebecca Coyle Prize is awarded to the best paper on popular
+            music in the Australia-New Zealand region in a given year. The
+            prize is named in honour of long time member of International
+            Association for the Study of Popular Music – Australia / New
+            Zealand (IASPM ANZ) Rebecca Coyle in commemoration of her work
+            advancing popular music studies and mentoring emerging academic
+            talent. The prize was awarded to Aleisha Ward’s, ‘New Zealand Jazz
+            Concerts, the Use and Abuse of Grand Pianos, and One Cartoonist’s
+            Response’, published in <i>Comics Grid</i>.</p>
+            <div class="flex max-lg:items-start max-lg:flex-col gap-8">
+              {% with rel_path="https://www.comicsgrid.com/article/id/3536/" label="Read article" %}
+                {% include 'custom/button-action-blue.html' %}
+              {% endwith %}
+              {% with rel_path="https://www.iaspm-anz.com/publications-prizes" label="About award" %}
+                {% include 'custom/button-action-blue.html' %}
+              {% endwith %}
+            </div>
+          </section>
+          <section class="mt-20">
+            <figure>
+              <img
+                class="grayscale"
+                src="https://www.openlibhums.org/media/press/archives-new-zealand-sound-trumpet-walter-runge.jpg"
+                alt="A drawing of an early sound amplification device with a wooden base, pulleys, a drum, a crank, a speaker cone, and labels coded with letters of the alphabet">
+              <figcaption>Image: Archives New Zealand, 2014. Drawing of 'sound trumpet' by Walter Runge, 1902. <a href="https://creativecommons.org/licenses/by/2.0/">CC BY 2.0</a>.</figcaption>
+            </figure>
+            <h3 id="donald-gray-prize-2016">
+              Winner of the 2016 Donald Gray Prize
+            </h3>
+            <p>Professor Jason Camlot won the prestigious Donald Gray Prize for
+            best Victorian Studies essay from the North American Victorian
+            Studies Association (NAVSA) for his article ‘Historicist Audio
+            Forensics: The Archive of Voices as Repository of Material and
+            Conceptual Artefacts’ in <i>19: Interdisciplinary Studies in the
+            Nineteenth Century</i>. The article appeared in the anniversary
+          issue of <i>19</i>, entitled ‘The Nineteenth-Century Digital Archive’
+          which considers the status of audio artefacts that comprise the
+          historical archive of voices within the context of digital
+          environments. </p>
+            <div class="flex max-lg:items-start max-lg:flex-col gap-8">
+              {% with rel_path="https://19.bbk.ac.uk/article/id/1586/" label="Read article" %}
+                {% include 'custom/button-action-blue.html' %}
+              {% endwith %}
+              {% with rel_path="https://www.concordia.ca/news/stories/cunews/main/stories/2016/11/22/jason-camlot-wins-donald-gray-prize-for-best-victorian-studies-essay.html" label="About award" %}
+                {% include 'custom/button-action-blue.html' %}
+              {% endwith %}
+            </div>
+          </section>
+        {% endcomponent_block %}
+      </div>
+      <div class="relative max-lg:mt-8 lg:mt-28">
+        {% include 'custom/dancer-jacket-last.html' %}
+        {% component_block "page_section" anchor="left" labelledby="press-coverage" %}
+          <h2 id="press-coverage">Press coverage, reports and case studies.</h2>
+          <p>In addition to our awards and prizes, the work of the Open Library
+          of Humanities has also received relevant mentions, international
+          press coverage and been featured as case studies in reports. Some
+          highlights are included below, or a fuller list of press coverage and
+          notable mentions can be accessed through our <a
+            href="/news/all/tag/Mentions%20and%20Press%20Coverage/">Latest
+          Updates</a>.</p>
+          <section class="mt-20">
+            <img
+              class="grayscale"
+              src="https://www.openlibhums.org/media/press/thomas_becket_murder-thumb.jpeg"
+              alt="Medieval artwork showing the murder of Thomas Becket">
+            <h3 id="history-beckets-name">
+              OLH publication on the history of Becket’s name features in <i>The Times</i>
+            </h3>
+            <p>An article published in the <i>Open Library of Humanities</i>
+            journal has been  featured in <i>The Times</i>. The article, 'Who
+            Put the ‘a’ in ‘Thomas a Becket’? The History of a Name from the
+            Angevins to the Victorians', by John Jenkins, examines the history
+            of Becket’s name since the 12th century.</p>
+            <div class="flex max-lg:items-start max-lg:flex-col gap-8">
+              {% with rel_path="https://www.thetimes.co.uk/article/henry-viii-added-the-a-to-smear-thomas-becket-zcvq6r3gj" label="Read with paywall" %}
+                {% include 'custom/button-action-blue.html' %}
+              {% endwith %}
+              {% with rel_path="https://olh.openlibhums.org/article/id/9353/" label="Read open access" %}
+                {% include 'custom/button-action-blue.html' %}
+              {% endwith %}
+            </div>
+          </section>
+          <section class="mt-20">
+            <figure>
+              <img
+                class="grayscale"
+                src="https://www.openlibhums.org/media/press/zeptonn-good-world-2010.jpg"
+                alt="Digital black and white drawing of happy landscape with smiling sun, smiling trees, and smiling birds. One fluffy cloud has an arm that holds a watering can to water the trees.">
+              <figcaption>Image: Zeptonn, good-world, 2010. <a href="https://creativecommons.org/licenses/by-nc-nd/2.0/">CC BY-NC-ND 2.0</a>.</figcaption>
+            </figure>
+            <h3 id="european-commission-report-2022">
+              OLH features in 2022 European Commission report
+            </h3>
+            <p>OLH has been highlighted in a report on business models for
+            sustainable non-for-profit OA publishing. The report,
+            ‘Operationalising Open Research Europe as a collective publishing
+            enterprise’ was commissioned by the European Commission for their
+            Open Research Europe (ORE) publishing platform. OLH is one of the
+            seven case studies which exemplify sustainable OA models.</p>
+            <div class="flex max-lg:items-start max-lg:flex-col gap-8">
+              {% with rel_path="https://op.europa.eu/en/publication-detail/-/publication/81b9cd30-5104-11ed-92ed-01aa75ed71a1/language-en" label="Read report" %}
+                {% include 'custom/button-action-blue.html' %}
+              {% endwith %}
+            </div>
+          </section>
+          <section class="mt-20">
+            <figure>
+              <img
+                class="grayscale"
+                src="https://www.openlibhums.org/media/press/phil-rogers-birkbeck.jpg"
+                alt="Photo of an outdoor sculpture of an abstract planet with concentric metal circles, covered in snow, with Birkbeck, University of London, in the background">
+              <figcaption>Photo: Phil Rogers, Birkbeck, 2009. <a href="https://creativecommons.org/licenses/by-nc/2.0/">CC BY-NC 2.0</a>.</figcaption>
+            </figure>
+            <h3 id="olh-model-ukri-speech">
+              OLH model highlighted in UKRI speech
+            </h3>
+            <p>Open Library of Humanities recognised for its ‘ground-breaking’
+            model in a 2021 roundtable speech by Science Minister, Amanda
+            Solloway, on UKRI’s new open access policy, held at Imperial
+            College London.</p>
+            <div class="flex max-lg:items-start max-lg:flex-col gap-8">
+              {% with rel_path="https://www.gov.uk/government/speeches/science-minister-announces-ukris-open-access-policy" label="Read Speech" %}
+                {% include 'custom/button-action-blue.html' %}
+              {% endwith %}
+            </div>
+          </section>
+          <section class="mt-20">
+            <figure>
+              <img
+                class="grayscale"
+                src="https://www.openlibhums.org/media/press/alobos-life-black-box.jpg"
+                alt="A museum display showing an open metal box with reels, pulleys and wires">
+              <figcaption>Photo: alobos life, Black box, Airbus A340, 2008. <a href="https://creativecommons.org/licenses/by-nc-nd/2.0/">CC BY-NC-ND 2.0</a>.</figcaption>
+            </figure>
+            <h3 id="olhj-authors-guardian">
+              <i>OLHJ</i> authors featured in <i>The Guardian</i>
+            </h3>
+            <p><i>Open Library of Humanities</i> journal authors Stuart Lawson
+            and Jonathan Gray published an article in <i>The Guardian</i> about
+            their research into the cost of open access publishing. The piece
+            is based on their article, ‘Opening the Black Box of Scholarly
+            Communication Funding: A Public Data Infrastructure for Financial
+            Flows in Academic Publishing' which was published in the Open
+            Library of Humanities in 2016 (and co-authored with Michele
+            Mauri).</p>
+            <div class="flex max-lg:items-start max-lg:flex-col gap-8">
+              {% with rel_path="https://www.theguardian.com/higher-education-network/2016/apr/18/why-academic-journals-expensive" label="Read press article" %}
+                {% include 'custom/button-action-blue.html' %}
+              {% endwith %}
+              {% with rel_path="https://olh.openlibhums.org/article/id/4419/" label="Read research article" %}
+                {% include 'custom/button-action-blue.html' %}
+              {% endwith %}
+            </div>
+          </section>
+          <section class="mt-20">
+            <figure>
+              <img
+                class="grayscale"
+                src="https://www.openlibhums.org/media/press/crom-shin-cloud.jpg"
+                alt="A photo of a towering cloud formation lit in white, blue, and rust by sunlight from the left with blue sky behind">
+              <figcaption>Photo: crom shin, Cloud, 2016. <a href="https://creativecommons.org/licenses/by-nd/2.0/">CC BY-ND 2.0</a>.</figcaption>
+            </figure>
+            <h3 id="research-olh-headline-news">
+              Research published by Open Library of Humanities makes headline
+              news appearance
+            </h3>
+            <p>Research published by OLH features on the home page of <i>The
+              Guardian</i>. The showcased article, ‘You have to keep track of
+            your changes': The Version Variants and Publishing History of David
+            Mitchell’s Cloud Atlas' by Professor Martin Paul Eve, examines the
+            version variants of the wildly popular novel and the publishing
+            processes that caused it. The article is notable for using a set of
+            custom software tools to visualise the version variants and
+            reordering of the text. The piece, which was, of course, open
+            access, released its software, data, and concordance files under
+            open licenses. </p>
+            <div class="flex max-lg:items-start max-lg:flex-col gap-8">
+              {% with rel_path="https://www.theguardian.com/books/2016/aug/10/cloud-atlas-astonishingly-different-in-us-and-uk-editions-study-finds" label="Read press article" %}
+                {% include 'custom/button-action-blue.html' %}
+              {% endwith %}
+              {% with rel_path="https://olh.openlibhums.org/article/id/4426/" label="Read research article" %}
+                {% include 'custom/button-action-blue.html' %}
+              {% endwith %}
+            </div>
+          </section>
+        {% endcomponent_block %}
+      </div>
+      {% include 'custom/subscribe.html' %}
+    </div>
+  </article>
+{% endblock body %}

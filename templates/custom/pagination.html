@@ -1,7 +1,7 @@
 {% load pages %}
 {% load static %}
 
-<div class="container mx-auto max-w-screen-xl relative mb-28">
+<nav aria-label="pagination" class="container mx-auto max-w-screen-xl relative mb-28">
   {% if page_obj and page_obj.has_other_pages %}
     <div class="relative z-40 py-4 max-md:px-4 md:px-8 bg-blue">
       <ul class="flex justify-center items-center gap-4">
@@ -13,7 +13,7 @@
               <img
                 class="h-4 rotate-180"
                 src="{% static 'hourglass/media/icons/arrow-white.svg' %}"
-                alt="arrow pointing left">
+                alt="">
             </a>
           </li>
         {% endif %}
@@ -43,11 +43,11 @@
               <img
                 class="h-4"
                 src="{% static 'hourglass/media/icons/arrow-white.svg' %}"
-                alt="arrow pointing left">
+                alt="">
             </a>
           </li>
         {% endif %}
       </ul>
     </div>
   {% endif %}
-</div>
+</nav>

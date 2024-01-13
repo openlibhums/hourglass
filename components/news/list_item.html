@@ -1,7 +1,8 @@
 {% load static %}
 
 {% if item %}
-  <div
+  <article
+    aria-label="{{ item.title }}"
     class="
       {{ fraction }} flex flex-col space-between md:px-6
       max-md:items-center prose lg:prose-lg
@@ -45,5 +46,5 @@
         </div>
       </div>
     </div>
-  </div>
+  </article>
 {% endif %}

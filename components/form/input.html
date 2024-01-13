@@ -13,4 +13,7 @@
   type="{{ input_type|default:'text' }}"
   name="{{ input_name|default:'' }}"
   value="{{ input_value|default:'' }}"
+  {% if aria_label %}
+    aria-label="{{ aria_label }}"
+  {% endif %}
   placeholder="{{ placeholder|default:'' }}">

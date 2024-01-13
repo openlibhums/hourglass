@@ -1,140 +1,164 @@
+{% extends "press/cms/page.html" %}
+
 {% load static %}
 
-<div class="container mx-auto max-w-screen-xl relative">
-  {% include 'custom/edit-on-github.html' with rel_path='custom/for-editors.html' %}
-  <img
-    class="
-      lg:hidden absolute top-8 max-sm:-right-24 sm:-right-12 md:right-4 max-w-md 
-      motion-safe:rallax
-    "
-    src="{% static 'hourglass/media/backgrounds/reader-book-blue-circle.png' %}"
-    alt="A person leaning against something and reading a book in a collage with circles">
-  <img
-    class="
-      max-lg:hidden absolute
-      -right-4 max-w-md
-      top-8 motion-safe:rallax
-    "
-    src="{% static 'hourglass/media/backgrounds/reader-book-blue-circle-lg.png' %}"
-    alt="A person leaning against something and reading a book in a collage with circles">
-  <div class="relative z-40">
-    <h1
-      class="
-        max-lg:text-4xl lg:text-7xl
-        font-poppins-bold max-lg:pt-64 max-lg:pb-12 lg:py-28 px-8
-      ">
-      Info for editors.
-    </h1>
+{% block body %}
+  <div class="container mx-auto max-w-screen-xl">
+    <div class="relative">
+      {% include 'custom/edit-on-github.html' with rel_path='custom/for-editors.html' %}
+      <aside>
+        <img
+          class="
+            lg:hidden absolute top-8 max-sm:-right-24 sm:-right-12 md:right-4 max-w-md 
+            motion-safe:rallax
+          "
+          src="{% static 'hourglass/media/backgrounds/reader-book-blue-circle.png' %}"
+          alt="A person leaning against something and reading a book in a collage with circles">
+        <img
+          class="
+            max-lg:hidden absolute
+            -right-4 max-w-md
+            top-8 motion-safe:rallax
+          "
+          src="{% static 'hourglass/media/backgrounds/reader-book-blue-circle-lg.png' %}"
+          alt="A person leaning against something and reading a book in a collage with circles">
+      </aside>
+      <div class="relative z-40">
+        <h1
+          class="
+            max-lg:text-4xl lg:text-7xl
+            font-poppins-bold max-lg:pt-64 max-lg:pb-12 lg:py-28 px-8
+          ">
+          Info for editors.
+        </h1>
+      </div>
+    </div>
+    <div class="relative">
+      <div
+        class="
+          flex max-lg:flex-col lg:flex-row lg:flex-wrap
+          lg:px-2 max-sm:pb-[40rem] sm:max-lg:pb-[46rem] lg:pb-[20rem]
+        ">
+        <article
+          aria-labelledby="journal-apps"
+          class="max-lg:py-5 lg:p-5 lg:basis-1/2">
+          <div
+            class="
+              relative z-40 p-8 h-full bg-white flex flex-col
+              gap-y-6 max-lg:items-center lg:items-start
+            ">
+            <img
+              class="-m-3 w-32 h-32"
+              src="{% static 'hourglass/media/icons/OLH-Model.svg' %}"
+              alt="">
+            <h2
+              id="journal-apps"
+              class="font-poppins-bold max-lg:text-2xl lg:text-3xl max-lg:text-center">
+              The OLH journal applications.
+            </h2>
+            <p class="max-lg:text-lg lg:text-xl max-lg:text-center">
+              Apply to join our community of library-supported journals.
+            </p>
+            {% with rel_path="/site/olh-journal-applications" label="Find out more" %}
+              {% include 'custom/button-action-blue.html' %}
+            {% endwith %}
+          </div>
+        </article>
+        <article
+          aria-labelledby="janeway-migration"
+          class="max-lg:py-5 lg:p-5 lg:basis-1/2">
+          <div
+            class="
+              relative z-40 p-8 h-full bg-white flex flex-col
+              gap-y-6 max-lg:items-center lg:items-start
+            ">
+            <img
+              class="-m-3 w-32 h-32"
+              src="{% static 'hourglass/media/icons/Platform-Migration.svg' %}"
+              alt="">
+            <h2
+              id="janeway-migration"
+              class="font-poppins-bold max-lg:text-2xl lg:text-3xl max-lg:text-center">
+              Janeway platform migration.
+            </h2>
+            <p class="max-lg:text-lg lg:text-xl max-lg:text-center">
+              Publish independently on our platform, with technical support.
+            </p>
+            {% with rel_path="/site/janeway-platform-migration" label="Find out more" %}
+              {% include 'custom/button-action-blue.html' %}
+            {% endwith %}
+          </div>
+        </article>
+        <article
+          aria-labelledby="publisher-policies"
+          class="max-lg:py-5 lg:p-5 lg:basis-1/2">
+          <div
+            class="
+              relative z-40 p-8 h-full bg-white flex flex-col
+              gap-y-6 max-lg:items-center lg:items-start
+            ">
+            <img
+              class="-m-3 w-32 h-32"
+              src="{% static 'hourglass/media/icons/Publisher-Policies.svg' %}"
+              alt="">
+            <h2
+              id="publisher-policies"
+              class="font-poppins-bold max-lg:text-2xl lg:text-3xl max-lg:text-center">
+              Publisher policies.
+            </h2>
+            <p class="max-lg:text-lg lg:text-xl max-lg:text-center">
+              Our publisher-wide editorial policies that ensure research integrity and publication ethics.
+            </p>
+            {% with rel_path="/site/publisher-policies" label="Find out more" %}
+              {% include 'custom/button-action-blue.html' %}
+            {% endwith %}
+          </div>
+        </article>
+        <article
+          aria-labelledby="faqs"
+          class="max-lg:py-5 lg:p-5 lg:basis-1/2">
+          <div
+            class="
+              relative z-40 p-8 h-full bg-white flex flex-col
+              gap-y-6 max-lg:items-center lg:items-start
+            ">
+            <img
+              class="-m-3 w-32 h-32"
+              src="{% static 'hourglass/media/icons/FAQs.svg' %}"
+              alt="">
+            <h2
+              id="faqs"
+              class="font-poppins-bold max-lg:text-2xl lg:text-3xl max-lg:text-center">
+              FAQs.
+            </h2>
+            <p class="max-lg:text-lg lg:text-xl max-lg:text-center">
+              Get a quick answer to your question.
+            </p>
+            {% with rel_path="/site/faq#editors" label="Find out more" %}
+              {% include 'custom/button-action-blue.html' %}
+            {% endwith %}
+          </div>
+        </article>
+      </div>
+      <aside>
+        <img
+          class="
+            lg:hidden absolute z-10
+            right-0 max-sm:max-w-sm sm:max-w-md
+            motion-reduce:bottom-28 motion-safe:bottom-72 motion-safe:rallax
+          "
+          src="{% static 'hourglass/media/backgrounds/bull-horns-bars-red.png' %}"
+          alt="Sculpture of a bull with horns in a collage with circles and bars">
+        <img
+          class="
+            max-lg:hidden absolute z-10
+            right-0 max-w-lg
+            motion-reduce:-bottom-32 motion-safe:bottom-28 motion-safe:rallax
+          "
+          src="{% static 'hourglass/media/backgrounds/bull-horns-bars-red-lg.png' %}"
+          alt="Sculpture of a bull with horns in a collage with circles and bars">
+      </aside>
+    </div>
+    {% include 'custom/subscribe.html' %}
   </div>
-</div>
-<div class="container mx-auto max-w-screen-xl relative">
-  <div
-    class="
-      flex max-lg:flex-col lg:flex-row lg:flex-wrap
-      lg:px-2 max-sm:pb-[40rem] sm:max-lg:pb-[46rem] lg:pb-[20rem]
-    ">
-    <div class="max-lg:py-5 lg:p-5 lg:basis-1/2">
-      <div
-        class="
-          relative z-40 p-8 h-full bg-white flex flex-col
-          gap-y-6 max-lg:items-center lg:items-start
-        ">
-        <img
-          class="-m-3 w-32 h-32"
-          src="{% static 'hourglass/media/icons/OLH-Model.svg' %}"
-          alt="">
-        <h2 class="font-poppins-bold max-lg:text-2xl lg:text-3xl max-lg:text-center">
-          The OLH journal applications.
-        </h2>
-        <p class="max-lg:text-lg lg:text-xl max-lg:text-center">
-          Apply to join our community of library-supported journals.
-        </p>
-        {% with rel_path="/site/olh-journal-applications" label="Find out more" %}
-          {% include 'custom/button-action-blue.html' %}
-        {% endwith %}
-      </div>
-    </div>
-    <div class="max-lg:py-5 lg:p-5 lg:basis-1/2">
-      <div
-        class="
-          relative z-40 p-8 h-full bg-white flex flex-col
-          gap-y-6 max-lg:items-center lg:items-start
-        ">
-        <img
-          class="-m-3 w-32 h-32"
-          src="{% static 'hourglass/media/icons/Platform-Migration.svg' %}"
-          alt="">
-        <h2 class="font-poppins-bold max-lg:text-2xl lg:text-3xl max-lg:text-center">
-          Janeway platform migration.
-        </h2>
-        <p class="max-lg:text-lg lg:text-xl max-lg:text-center">
-          Publish independently on our platform, with technical support.
-        </p>
-        {% with rel_path="/site/janeway-platform-migration" label="Find out more" %}
-          {% include 'custom/button-action-blue.html' %}
-        {% endwith %}
-      </div>
-    </div>
-    <div class="max-lg:py-5 lg:p-5 lg:basis-1/2">
-      <div
-        class="
-          relative z-40 p-8 h-full bg-white flex flex-col
-          gap-y-6 max-lg:items-center lg:items-start
-        ">
-        <img
-          class="-m-3 w-32 h-32"
-          src="{% static 'hourglass/media/icons/Publisher-Policies.svg' %}"
-          alt="">
-        <h2 class="font-poppins-bold max-lg:text-2xl lg:text-3xl max-lg:text-center">
-          Publisher policies.
-        </h2>
-        <p class="max-lg:text-lg lg:text-xl max-lg:text-center">
-          Our publisher-wide editorial policies that ensure research integrity and publication ethics.
-        </p>
-        {% with rel_path="/site/publisher-policies" label="Find out more" %}
-          {% include 'custom/button-action-blue.html' %}
-        {% endwith %}
-      </div>
-    </div>
-    <div class="max-lg:py-5 lg:p-5 lg:basis-1/2">
-      <div
-        class="
-          relative z-40 p-8 h-full bg-white flex flex-col
-          gap-y-6 max-lg:items-center lg:items-start
-        ">
-        <img
-          class="-m-3 w-32 h-32"
-          src="{% static 'hourglass/media/icons/FAQs.svg' %}"
-          alt="">
-        <h2 class="font-poppins-bold max-lg:text-2xl lg:text-3xl max-lg:text-center">
-          FAQs.
-        </h2>
-        <p class="max-lg:text-lg lg:text-xl max-lg:text-center">
-          Get a quick answer to your question.
-        </p>
-        {% with rel_path="/site/faq#editors" label="Find out more" %}
-          {% include 'custom/button-action-blue.html' %}
-        {% endwith %}
-      </div>
-    </div>
-  </div>
-  <img
-    class="
-      lg:hidden absolute z-10
-      right-0 max-sm:max-w-sm sm:max-w-md
-      motion-reduce:bottom-28 motion-safe:bottom-72 motion-safe:rallax
-    "
-    src="{% static 'hourglass/media/backgrounds/bull-horns-bars-red.png' %}"
-    alt="Sculpture of a bull with horns in a collage with circles and bars">
-  <img
-    class="
-      max-lg:hidden absolute z-10
-      right-0 max-w-lg
-      motion-reduce:-bottom-32 motion-safe:bottom-28 motion-safe:rallax
-    "
-    src="{% static 'hourglass/media/backgrounds/bull-horns-bars-red-lg.png' %}"
-    alt="Sculpture of a bull with horns in a collage with circles and bars">
-</div>
-<div class="container mx-auto max-w-screen-xl relative">
-  {% include 'custom/subscribe.html' %}
-</div>
+{% endblock body %}

@@ -1,194 +1,284 @@
+{% extends "press/cms/page.html" %}
+
 {% load static %}
 {% load component_tags %}
 
+{% block meta_description %}
+  <meta
+    property="og:description"
+    content="The Open Library of Humanities (OLH) is a strictly not-for-profit
+    publisher with no shareholders.">
+{% endblock meta_description %}
+
 {% include 'custom/edit-on-github.html' with rel_path='custom/governance-and-finances.html' %}
 
-<article>
-  <div class="container mx-auto max-w-screen-xl relative max-lg:mt-56 lg:mt-8">
-    <div
-      class="
-        relative max-lg:-top-72 lg:-top-24 motion-safe:rallax
-        max-xl:-right-20 xl:-right-32
-      ">
-      <img
-        class="
-          z-0 absolute max-lg:h-36 lg:h-44
-          max-lg:top-24 lg:top-52 max-lg:right-48 lg:right-80
-        "
-        src="{% static 'hourglass/media/backgrounds/rectangle-red.svg' %}"
-        alt="">
-      <img
-        class="
-          z-0 absolute max-lg:h-36 lg:h-44
-          max-lg:top-28 lg:top-64 max-lg:right-36 lg:right-64
-        "
-        src="{% static 'hourglass/media/backgrounds/rectangle-black.svg' %}"
-        alt="">
-      <img
-        class="z-0 absolute max-lg:top-24 lg:-top-56 max-lg:right-0 lg:right-20 w-12"
-        src="{% static 'hourglass/media/backgrounds/bars-vertical-orange-three-flat-top.svg' %}"
-        alt="">
-      <img
-        class="
-          absolute z-10 max-lg:top-24 lg:top-20 max-lg:-right-20 lg:-right-40
-          max-lg:max-w-md lg:max-w-lg
-        "
-        srcset="
-          {% static 'hourglass/media/backgrounds/hairdo-lady-on-bench.png' %} 343w,
-          {% static 'hourglass/media/backgrounds/hairdo-lady-on-bench-lg.png' %} 1065w
-        "
-        src="{% static 'hourglass/media/backgrounds/hairdo-lady-on-bench-lg.png' %}"
-        sizes="(max-width: 1024px) 343px, 1065px"
-        alt="Woman with Victorian hairdo and blouse sitting on a park bench with a book in hand">
-      <img
-        class="lg:hidden z-20 absolute top-[30rem] -right-8 w-36"
-        src="{% static 'hourglass/media/backgrounds/square-red.svg' %}"
-        alt="">
-      <img
-        class="
-          max-lg:hidden z-20 absolute h-44
-          top-[41rem] right-8
-        "
-        src="{% static 'hourglass/media/backgrounds/rectangle-red.svg' %}"
-        alt="">
-      <img
-        class="absolute z-10 max-lg:top-[32rem] lg:top-[42rem] max-lg:-right-24 lg:-right-20"
-        src="{% static 'hourglass/media/backgrounds/circle-blue-textured.png' %}"
-        width="434"
-        alt="">
-    </div>
-    <div class="relative z-40">
-      <h1
-        class="
-          max-lg:text-4xl lg:text-7xl !leading-snug
-          max-lg:max-w-xs lg:max-w-2xl
-          font-poppins-bold max-lg:py-12 lg:py-20 px-8
-        ">
-        Governance and finances.
-      </h1>
-    </div>
-    <div
-      class="
-        p-8 bg-orange
-        flex max-md:flex-col md:flex-row gap-x-16 gap-y-6
-        relative z-40
-      ">
-      <div class="basis-1/2 prose lg:prose-lg">
-        <p class="lead font-poppins-bold">The Open Library of Humanities (OLH) is a strictly not-for-profit publisher with no shareholders. </p>
+{% block body %}
+  <article aria-labelledby="h1">
+    <div class="container mx-auto max-w-screen-xl">
+      <div class="relative max-lg:mt-56 lg:mt-8">
+        <aside
+          class="
+            relative max-lg:-top-72 lg:-top-24 motion-safe:rallax
+            max-xl:-right-20 xl:-right-32
+          ">
+          <img
+            class="
+              z-0 absolute max-lg:h-36 lg:h-44
+              max-lg:top-24 lg:top-52 max-lg:right-48 lg:right-80
+            "
+            src="{% static 'hourglass/media/backgrounds/rectangle-red.svg' %}"
+            alt="">
+          <img
+            class="
+              z-0 absolute max-lg:h-36 lg:h-44
+              max-lg:top-28 lg:top-64 max-lg:right-36 lg:right-64
+            "
+            src="{% static 'hourglass/media/backgrounds/rectangle-black.svg' %}"
+            alt="">
+          <img
+            class="z-0 absolute max-lg:top-24 lg:-top-56 max-lg:right-0 lg:right-20 w-12"
+            src="{% static 'hourglass/media/backgrounds/bars-vertical-orange-three-flat-top.svg' %}"
+            alt="">
+          <img
+            class="
+              absolute z-10 max-lg:top-24 lg:top-20 max-lg:-right-20 lg:-right-40
+              max-lg:max-w-md lg:max-w-lg
+            "
+            srcset="
+              {% static 'hourglass/media/backgrounds/hairdo-lady-on-bench.png' %} 343w,
+              {% static 'hourglass/media/backgrounds/hairdo-lady-on-bench-lg.png' %} 1065w
+            "
+            src="{% static 'hourglass/media/backgrounds/hairdo-lady-on-bench-lg.png' %}"
+            sizes="(max-width: 1024px) 343px, 1065px"
+            alt="Woman with Victorian hairdo and blouse sitting on a park bench with a book in hand">
+          <img
+            class="lg:hidden z-20 absolute top-[30rem] -right-8 w-36"
+            src="{% static 'hourglass/media/backgrounds/square-red.svg' %}"
+            alt="">
+          <img
+            class="
+              max-lg:hidden z-20 absolute h-44
+              top-[41rem] right-8
+            "
+            src="{% static 'hourglass/media/backgrounds/rectangle-red.svg' %}"
+            alt="">
+          <img
+            class="absolute z-10 max-lg:top-[32rem] lg:top-[42rem] max-lg:-right-24 lg:-right-20"
+            src="{% static 'hourglass/media/backgrounds/circle-blue-textured.png' %}"
+            width="434"
+            alt="">
+        </aside>
+        <div class="relative z-40">
+          <h1
+            id="h1"
+            class="
+              max-lg:text-4xl lg:text-7xl !leading-snug
+              max-lg:max-w-xs lg:max-w-2xl
+              font-poppins-bold max-lg:py-12 lg:py-20 px-8
+            ">
+            Governance and finances.
+          </h1>
+        </div>
       </div>
-      <div class="basis-1/2 prose lg:prose-lg">
-        <p>We exist purely for the intellectual and academic good of the research that we publish. This mission is shared by hundreds of stakeholders who work closely with us in extending diamond open access to the humanities – including scholars, librarians, students, other publishers, and open-source activists.</p>
+      <div class="relative max-lg:mt-8 lg:-mt-4">
+        {% component_block "page_intro" color="orange" %}
+          {% fill "column_one" %}
+            <p class="lead">The Open Library of Humanities
+            (OLH) is a strictly not-for-profit publisher with no shareholders.</p>
+          {% endfill %}
+          {% fill "column_two" %}
+            <p>We exist purely for the intellectual and academic good of the
+            research that we publish. This mission is shared by hundreds of
+            stakeholders who work closely with us in extending diamond open
+            access to the humanities – including scholars, librarians,
+            students, other publishers, and open-source activists.</p>
+          {% endfill %}
+        {% endcomponent_block %}
       </div>
+      <div class="relative mt-28">
+        {% component_block "page_section" anchor="left" labelledby="governance" %}
+          <h2 id="governance">Governance.</h2>
+          <p>The OLH is governed by three advisory boards, the Academic
+          Advisory Board, Library Board, and Publishing Technology Board. The
+          boards meet bi-annually to review the OLH’s overall performance,
+          discuss research and development for different user groups, vote on
+          strategic issues, and liaise with relevant stakeholders. We are part
+          of Birkbeck, University of London, a UK higher education institution
+          incorporated by Royal Charter (England/Wales). As part of Birkbeck,
+          we receive organisational support in the day-to-running of the
+          OLH.</p>
+          <p>Members of the boards are elected and serve a 3-year renewable
+          term.</p>
+          <h3 id="academic-advisory-board">Academic Advisory Board</h3>
+          <p>The Academic Advisory Board provides expert advice to the OLH
+          Executive Director and the OLH team. Board members are leading
+          academics, publishing professionals, and university leaders
+          representing the humanities scholarly communities that the OLH
+          serves. Members are elected to the Board for renewable terms of 3
+          years and meet annually at a virtual board. They may be called upon
+          to help the OLH gather new insights into organisational or strategic
+          questions, questions of scholarly rigour, provide discipline-specific
+          advice, or otherwise consult on matters of best practice.</p>
+          <h3 id="library-board">Library Board</h3>
+          <p>The Library Board constitutes the community-based library
+          governance of the OLH’s financial model. The Board provides expert
+          advice to the OLH Executive Director and the OLH team on all matters
+          relating to library membership. Board members are university and
+          public library professionals as well as data management specialists
+          elected to the board for 3-year renewable terms by the OLH library
+          community (every participating member of the Library Partnership
+          Subsidy, which financially supports the publishing activities of the
+          OLH). The Board meets annually at a virtual board and may be
+          consulted between boards on specific questions, issues, or tasks
+          relating to library members’ needs.</p>
+          <h3 id="publishing-technology-board">Publishing Technology Board</h3>
+          <p>The Publishing Technology Board provides expert advice to the OLH
+          Tech team on all matters relating to platform development and
+          publishing technologies and tools. Board members are publishing
+          professionals, library professionals, open access and open-source
+          software activists. Members are elected to the Board for renewable
+          terms of 3 years and meet annually at a virtual board; to be held in
+          conjunction with the annual Janeway Symposium hosted at Birkbeck,
+          University of London in September each year.</p>
+          <h3 id="governance-prior-to-2021">Governance prior to 2021</h3>
+          <p>The OLH was originally founded as a company limited by guarantee
+          based in the UK. It was set up in July 2013 and directed by
+          co-founders Prof. Martin Eve and Dr Caroline Edwards. In September
+          2015, the OLH became a registered charity under UK law overseen by a
+          Board of Trustees.</p>
+          <p>To safeguard against the possibility of commercial acquisition, in
+          2021 the Board of Trustees decided that merging with Birkbeck,
+          University of London would protect the OLH’s not-for-profit
+          mission.</p>
+          <p>When it formally merged with Birkbeck, University of London in May
+          2022, the OLH ceased to operate as an independent charity and became
+          part of Birkbeck’s charitable status. Birkbeck, University of London
+          is an exempt charity under the terms of the Charities Act 2011
+          incorporated by Royal Charter (England/Wales), number RC000048, and
+          does not have a ‘registered charity number’.</p>
+        {% endcomponent_block %}
+      </div>
+      <div class="relative mt-28">
+        <aside class="relative z-0 motion-safe:rallax -top-20">
+          <img class="max-lg:hidden absolute z-0 left-4 top-0 max-w-xs"
+            src="{% static 'hourglass/media/backgrounds/circle-blue-textured.png' %}"
+            alt="">
+          <img class="max-lg:hidden absolute z-10 h-36 left-24 top-0"
+            src="{% static 'hourglass/media/backgrounds/rectangle-red.svg' %}"
+            alt="">
+        </aside>
+        {% component_block "page_section" anchor="right" labelledby="finances" %}
+          <h2 id="finances">Finances.</h2>
+          <h3 id="publishing-costs">Publishing costs</h3>
+          <p>We currently publish c.560 articles across 28 journals. Below is a
+          breakdown of our operating costs for 2021.</p>
+          <table>
+            <thead>
+              <tr>
+                <th>
+                  <h4>Breakdown of operational costs</h4>
+                </th>
+                <th>
+                  <h4>Percentage of overall costs</h4>
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <h5>Journal operations</h5>
+                  <p>This includes tech staff costs for our Janeway in-house
+                  publishing platform, journal tech support, maintenance, and
+                  ongoing platform development, as well as our editorial staff
+                  who support journal editors.</p>
+                </td>
+                <td>
+                  71.5%
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <h5>Publication costs</h5>
+                  <p>This includes triaging customer support for our journal
+                  editors, copy-editing and proofreading for some journals,
+                  indexing, archiving, typesetting, web and server hosting
+                  costs.</p>
+                </td>
+                <td>
+                  16%
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <h5>Marketing and Communications</h5>
+                  <p>This includes staff costs for our marketing team, finance
+                  administration, support for open access advocacy, community
+                  support, and graphic design for promotional campaigns.</p>
+                </td>
+                <td>
+                  12.5%
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <h5>Business overheads</h5>
+                  <p>Since the OLH merged with Birkbeck, University of London
+                  we no longer pay for our overheads, including estates and
+                  office space, HR, corporate management and administration,
+                  insurance, legal support, taxes, and other business
+                  costs.</p>
+                </td>
+                <td>
+                  0%
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <h3 id="publishing-revenue">Publishing revenue</h3>
+          <p>Several revenue streams fund the publishing costs at the OLH.</p>
+          <p>The OLH Library Partnership Subsidy (LPS) was set up in 2015 when
+          the OLH launched as an open-access publisher of humanities journals.
+          Since 2015, we have built up a loyal LPS membership list of 335
+          university libraries worldwide, with support from library consortia
+          in the US (LYRASIS) and the UK (JISC), and national-level funding
+          councils including The Austrian Science Fund (FWF), the Ministry of
+          Education in Greece, the Spanish National Research Council (CSIC),
+          the Riksbankens Jubileumsfond (Sweden), and the UK’s Wellcome Trust.
+          LPS members contribute via an annual subsidy payment that is <a
+          href="/site/library-partnership-fees/">banded
+          according to institutional size</a>, with options for higher-tier
+          members.</p>
+          <p>We also generate income through the OLH’s in-house publishing
+          platform Janeway, which launched in early 2018. Our tech team provide
+          bespoke publishing solutions and customer support for 26 university
+          clients. Since 2018, Janeway has established itself as a leading
+          player in digital publishing, offering affordable publishing
+          solutions through innovations in software, automation, and bespoke
+          digital packages.</p>
+          <p>The OLH is also active in pursuing grant funding for ongoing
+          research and development. To date, the OLH has received funding from
+          the Andrew W. Mellon Foundation (an initial planning grant of £90,000
+          was awarded in April 2014 and a follow-on grant of $741,000 was
+          awarded in July 2015) Arcadia ($200,000 awarded in May 2021).</p>
+        {% endcomponent_block %}
+      </div>
+      <div class="relative mt-28">
+        {% component_block "page_section" anchor="left" labelledby="further-information" %}
+          <h2 id="further-information">Further information.</h2>
+          <p>Those interested in supporting our work or finding out more can:</p>
+          <ul>
+            <li>Learn about our not-for profit <a
+                href="https://olhbeta.janeway.systems/site/olh-model/">model</a>.&nbsp;</li>
+            <li>Find out about <a href="/site/become-a-supporter/">joining
+                us</a> and see the institutions that <a
+                href="/plugins/supporters/">already have</a>.</li>
+            <li>Understand our <a
+                href="/site/library-partnership-fees/">pricing
+                structures</a> and sign up.</li>
+          </ul>
+        {% endcomponent_block %}
+      </div>
+      {% include 'custom/subscribe.html' %}
     </div>
-  </div>
-  <div class="container mx-auto max-w-screen-xl relative mt-28">
-    {% component_block "page_section" anchor="left" %}
-      <h2>Governance.</h2>
-      <p>The OLH is governed by three advisory boards, the Academic Advisory Board, Library Board, and Publishing Technology Board. The boards meet bi-annually to review the OLH’s overall performance, discuss research and development for different user groups, vote on strategic issues, and liaise with relevant stakeholders. We are part of Birkbeck, University of London, a UK higher education institution incorporated by Royal Charter (England/Wales). As part of Birkbeck, we receive organisational support in the day-to-running of the OLH.</p>
-      <p>Members of the boards are elected and serve a 3-year renewable term.</p>
-      <h3>Academic Advisory Board</h3>
-      <p>The Academic Advisory Board provides expert advice to the OLH Executive Director and the OLH team. Board members are leading academics, publishing professionals, and university leaders representing the humanities scholarly communities that the OLH serves. Members are elected to the Board for renewable terms of 3 years and meet annually at a virtual board. They may be called upon to help the OLH gather new insights into organisational or strategic questions, questions of scholarly rigour, provide discipline-specific advice, or otherwise consult on matters of best practice.</p>
-      <h3>Library Board</h3>
-      <p>The Library Board constitutes the community-based library governance of the OLH’s financial model. The Board provides expert advice to the OLH Executive Director and the OLH team on all matters relating to library membership. Board members are university and public library professionals as well as data management specialists elected to the board for 3-year renewable terms by the OLH library community (every participating member of the Library Partnership Subsidy, which financially supports the publishing activities of the OLH). The Board meets annually at a virtual board and may be consulted between boards on specific questions, issues, or tasks relating to library members’ needs.</p>
-      <h3>Publishing Technology Board</h3>
-      <p>The Publishing Technology Board provides expert advice to the OLH Tech team on all matters relating to platform development and publishing technologies and tools. Board members are publishing professionals, library professionals, open access and open-source software activists. Members are elected to the Board for renewable terms of 3 years and meet annually at a virtual board; to be held in conjunction with the annual Janeway Symposium hosted at Birkbeck, University of London in September each year.</p>
-      <h3>Governance prior to 2021</h3>
-      <p>The OLH was originally founded as a company limited by guarantee based in the UK. It was set up in July 2013 and directed by co-founders Prof. Martin Eve and Dr Caroline Edwards. In September 2015, the OLH became a registered charity under UK law overseen by a Board of Trustees.</p>
-      <p>To safeguard against the possibility of commercial acquisition, in 2021 the Board of Trustees decided that merging with Birkbeck, University of London would protect the OLH’s not-for-profit mission.</p>
-      <p>When it formally merged with Birkbeck, University of London in May 2022, the OLH ceased to operate as an independent charity and became part of Birkbeck’s charitable status. Birkbeck, University of London is an exempt charity under the terms of the Charities Act 2011 incorporated by Royal Charter (England/Wales), number RC000048, and does not have a ‘registered charity number’.</p>
-    {% endcomponent_block %}
-  </div>
-  <div class="container mx-auto max-w-screen-xl relative mt-28">
-    <div class="relative z-0 motion-safe:rallax -top-20">
-      <img class="max-lg:hidden absolute z-0 left-4 top-0 max-w-xs"
-        src="{% static 'hourglass/media/backgrounds/circle-blue-textured.png' %}"
-        alt="">
-      <img class="max-lg:hidden absolute z-10 h-36 left-24 top-0"
-        src="{% static 'hourglass/media/backgrounds/rectangle-red.svg' %}"
-        alt="">
-    </div>
-    {% component_block "page_section" anchor="right" %}
-      <h2>Finances.</h2>
-      <h3>Publishing costs</h3>
-      <p>We currently publish c.560 articles across 28 journals. Below is a breakdown of our operating costs for 2021.</p>
-      <table>
-        <thead>
-          <tr>
-            <th>
-              <h4>Breakdown of operational costs</h4>
-            </th>
-            <th>
-              <h4>Percentage of overall costs</h4>
-            </th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>
-
-              <h5>Journal operations</h5>
-              <p>This includes tech staff costs for our Janeway in-house publishing platform, journal tech support, maintenance, and ongoing platform development, as well as our editorial staff who support journal editors.</p>
-
-            </td>
-            <td>
-              71.5%
-            </td>
-          </tr>
-          <tr>
-            <td>
-
-              <h5>Publication costs</h5>
-              <p>This includes triaging customer support for our journal editors, copy-editing and proofreading for some journals, indexing, archiving, typesetting, web and server hosting costs.</p>
-
-            </td>
-            <td>
-              16%
-            </td>
-          </tr>
-          <tr>
-            <td>
-
-              <h5>Marketing and Communications</h5>
-              <p>This includes staff costs for our marketing team, finance administration, support for open access advocacy, community support, and graphic design for promotional campaigns.</p>
-
-            </td>
-            <td>
-              12.5%
-            </td>
-          </tr>
-          <tr>
-            <td>
-
-              <h5>Business overheads</h5>
-              <p>Since the OLH merged with Birkbeck, University of London we no longer pay for our overheads, including estates and office space, HR, corporate management and administration, insurance, legal support, taxes, and other business costs.</p>
-
-            </td>
-            <td>
-              0%
-            </td>
-          </tr>
-        </tbody>
-      </table>
-      <h3>Publishing revenue</h3>
-      <p>Several revenue streams fund the publishing costs at the OLH.</p>
-      <p>The OLH Library Partnership Subsidy (LPS) was set up in 2015 when the OLH launched as an open-access publisher of humanities journals. Since 2015, we have built up a loyal LPS membership list of 335 university libraries worldwide, with support from library consortia in the US (LYRASIS) and the UK (JISC), and national-level funding councils including The Austrian Science Fund (FWF), the Ministry of Education in Greece, the Spanish National Research Council (CSIC), the Riksbankens Jubileumsfond (Sweden), and the UK’s Wellcome Trust. LPS members contribute via an annual subsidy payment that is <a href="http://systems/plugins/supporters/site/library-partnership-fees/">banded according to institutional size</a>, with options for higher-tier members.&nbsp;</p>
-      <p>We also generate income through the OLH’s in-house publishing platform Janeway, which launched in early 2018. Our tech team provide bespoke publishing solutions and customer support for 26 university clients. Since 2018, Janeway has established itself as a leading player in digital publishing, offering affordable publishing solutions through innovations in software, automation, and bespoke digital packages.</p>
-      <p>The OLH is also active in pursuing grant funding for ongoing research and development. To date, the OLH has received funding from the Andrew W. Mellon Foundation (an initial planning grant of £90,000 was awarded in April 2014 and a follow-on grant of $741,000 was awarded in July 2015) Arcadia ($200,000 awarded in May 2021).</p>
-    {% endcomponent_block %}
-  </div>
-  <div class="container mx-auto max-w-screen-xl relative mt-28">
-    {% component_block "page_section" anchor="left"%}
-      <h2>Further information.</h2>
-      <p>Those interested in supporting our work or finding out more can:</p>
-      <ul>
-        <li>Learn about our not-for profit <a href="https://olhbeta.janeway.systems/site/olh-model/">model</a>.&nbsp;</li>
-        <li>Find out about <a href="/site/become-a-supporter/">joining us</a> and see the institutions that <a href="/plugins/supporters/">already have</a>.</li>
-        <li>Understand our <a href="/plugins/supporters/site/library-partnership-fees/">pricing structures</a> and sign up.</li>
-      </ul>
-    {% endcomponent_block %}
-  </div>
-  <div class="container mx-auto max-w-screen-xl relative">
-    {% include 'custom/subscribe.html' %}
-  </div>
-</article>
-
+  </article>
+{% endblock body %}

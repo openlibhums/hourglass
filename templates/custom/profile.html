@@ -1,139 +1,148 @@
 {% load static %}
 {% load component_tags %}
 
-<div class="container mx-auto max-w-screen-xl relative max-lg:mt-0 lg:mt-8">
-  {% include 'custom/edit-on-github.html' with rel_path='custom/profile.html' %}
-  {% include 'custom/generic-art-opener.html' %}
-  <div class="relative z-40">
-    <h1
-      class="
-        max-lg:text-4xl lg:text-7xl !leading-snug
-        max-lg:max-w-xs lg:max-w-2xl
-        font-poppins-bold max-lg:py-12 lg:py-20 px-8
-      ">
-      Edit account.
-    </h1>
+<div class="container mx-auto max-w-screen-xl">
+  <div class="relative max-lg:mt-0 lg:mt-8">
+    {% include 'custom/edit-on-github.html' with rel_path='custom/profile.html' %}
+    {% include 'custom/generic-art-opener.html' %}
+    <div class="relative z-40">
+      <h1
+        id="h1"
+        class="
+          max-lg:text-4xl lg:text-7xl !leading-snug
+          max-lg:max-w-xs lg:max-w-2xl
+          font-poppins-bold max-lg:py-12 lg:py-20 px-8
+        ">
+        Edit account.
+      </h1>
+    </div>
   </div>
-</div>
-<div class="container mx-auto max-w-screen-xl relative lg:-mt-4">
-  <div class="relative z-40 max-md:py-6 md:py-20 bg-blue md:px-12 lg:max-w-3xl">
-    <section class="m-6 text-white">
-      <h2 class="font-poppins-bold text-3xl max-lg:text-center pb-4">
-        Email.
-      </h2>
-      {% component_block "form" button_label="Update Email Address" form_method="POST" %}
-        {% fill "fields" %}
-          {% component_block "form_field" id_for_label="email_address" label="Email" required=True %}
-            {% fill "field" %}
-              {% component "form_input" type="email" name="email_address" value=request.user.email %}
-            {% endfill %}
-            {% fill "help_text" %}
-              <p class="py-2">
-                {% blocktrans %}
-                  Please note: If you update your password,
-                  You will be logged out, and you won't be
-                  able to log in again until you follow
-                  the verification link in an email
-                  sent to your new email address.
-                {% endblocktrans %}
-              </p>
-            {% endfill %}
-          {% endcomponent_block %}
-        {% endfill %}
-        {% fill "button" %}
-          {% include 'custom/button-submit-white.html' with label="Update Email Address" name="email" %}
-        {% endfill %}
-      {% endcomponent_block %}
-    </section>
-    <section class="m-6 text-white">
-      <h2 class="font-poppins-bold text-3xl max-lg:text-center max-lg:mt-12 pb-4">
-        Password.
-      </h2>
-      {% component_block "form" form_method="POST" %}
-        {% fill "fields" %}
-          {% component_block "form_field" id_for_label="current_password" label="Current Password" required=True %}
-            {% component "form_input" type="password" name="current_password" %}
-          {% endcomponent_block %}
-          {% component_block "form_field" id_for_label="new_password_one" label="New Password" required=True %}
-            {% component "form_input" type="password" name="new_password_one" %}
-          {% endcomponent_block %}
-          {% component_block "form_field" id_for_label="new_password_two" label="Confirm New Password" required=True %}
-            {% component "form_input" type="password" name="new_password_two" %}
-          {% endcomponent_block %}
-        {% endfill %}
-        {% fill "button" %}
-          {% include 'custom/button-submit-white.html' with label="Update Password" name="change_password" %}
-        {% endfill %}
-      {% endcomponent_block %}
-    </section>
-    <section class="m-6 text-white">
-      <h2 class="font-poppins-bold text-3xl max-lg:text-center max-lg:mt-12 pb-4">
-        Profile.
-      </h2>
-      {% component_block "form" form=form form_method="POST" enctype="multipart/form-data" %}
-
-        {% fill "fields" %}
-          <div>
-            {% component "form_field" field=form.salutation %}
-          </div>
-          <div>
-            {% component "form_field" field=form.name_prefix %}
-          </div>
-          {% component "form_field" field=form.first_name %}
-          {% component "form_field" field=form.middle_name %}
-          {% component "form_field" field=form.last_name %}
-          <div>
-            {% component "form_field" field=form.suffix %}
-          </div>
-          {% component "form_field" field=form.department %}
-          {% component "form_field" field=form.institution %}
-          <div>
-            {% component "form_field" field=form.country %}
-          </div>
-          <div>
-            {% component "form_field" field=form.preferred_timezone %}
-          </div>
-          {% component "form_field" field=form.twitter %}
-          {% component "form_field" field=form.facebook %}
-          {% component "form_field" field=form.orcid %}
-          {% component "form_field" field=form.github %}
-          {% component "form_field" field=form.linkedin %}
-          {% component "form_field" field=form.website %}
-          {% component "form_field" field=form.biography %}
-          {% component "form_field" field=form.signature %}
-          {% component "form_field" field=form.profile_image %}
-          {% component "form_field" field=form.enable_public_profile %}
-          {% if form.enable_public_profile.value %}
-            <p class="prose lg:prose-lg mx-3 mb-6">
-              <a
-                class="text-white"
-                href="{% url 'core_public_profile' request.user.uuid %}">
-                  View public profile
-              </a>
-            </p>
-          {% endif %}
-        {% endfill %}
-        {% fill "button" %}
-          {% include 'custom/button-submit-white.html' with label="Update Profile" name="edit_profile" %}
-        {% endfill %}
-      {% endcomponent_block %}
-    </section>
-    {% if staff_group_membership_form %}
-      <section class="m-6 text-white">
-        <h2 class="font-poppins-bold text-3xl max-lg:text-center max-lg:mt-12 pb-4">
-          Staff member profile.
+  <div class="relative lg:-mt-4">
+    <div class="relative z-40 max-md:py-6 md:py-20 bg-blue md:px-12 lg:max-w-3xl">
+      <section aria-labelledby="email" class="m-6 text-white">
+        <h2
+          id="email"
+          class="font-poppins-bold text-3xl max-lg:text-center pb-4">
+          Email.
         </h2>
-        {% component_block "form" form=staff_group_membership_form form_method="POST" %}
+        {% component_block "form" button_label="Update Email Address" form_method="POST" %}
+          {% fill "fields" %}
+            {% component_block "form_field" id_for_label="email_address" label="Email" required=True %}
+              {% fill "field" %}
+                {% component "form_input" type="email" name="email_address" value=request.user.email %}
+              {% endfill %}
+              {% fill "help_text" %}
+                <p class="py-2">
+                  {% blocktrans %}
+                    Please note: If you update your password,
+                    You will be logged out, and you won't be
+                    able to log in again until you follow
+                    the verification link in an email
+                    sent to your new email address.
+                  {% endblocktrans %}
+                </p>
+              {% endfill %}
+            {% endcomponent_block %}
+          {% endfill %}
           {% fill "button" %}
-            {% include 'custom/button-submit-white.html' with label="Update Staff Member Info" name="edit_staff_member_info" %}
+            {% include 'custom/button-submit-white.html' with label="Update Email Address" name="email" %}
           {% endfill %}
         {% endcomponent_block %}
       </section>
-    {% endif %}
+      <section aria-labelledby="password" class="m-6 text-white">
+        <h2
+          id="password"
+          class="font-poppins-bold text-3xl max-lg:text-center max-lg:mt-12 pb-4">
+          Password.
+        </h2>
+        {% component_block "form" form_method="POST" %}
+          {% fill "fields" %}
+            {% component_block "form_field" id_for_label="current_password" label="Current Password" required=True %}
+              {% component "form_input" type="password" name="current_password" %}
+            {% endcomponent_block %}
+            {% component_block "form_field" id_for_label="new_password_one" label="New Password" required=True %}
+              {% component "form_input" type="password" name="new_password_one" %}
+            {% endcomponent_block %}
+            {% component_block "form_field" id_for_label="new_password_two" label="Confirm New Password" required=True %}
+              {% component "form_input" type="password" name="new_password_two" %}
+            {% endcomponent_block %}
+          {% endfill %}
+          {% fill "button" %}
+            {% include 'custom/button-submit-white.html' with label="Update Password" name="change_password" %}
+          {% endfill %}
+        {% endcomponent_block %}
+      </section>
+      <section aria-labelledby="profile" class="m-6 text-white">
+        <h2
+          id="profile"
+          class="font-poppins-bold text-3xl max-lg:text-center max-lg:mt-12 pb-4">
+          Profile.
+        </h2>
+        {% component_block "form" form=form form_method="POST" enctype="multipart/form-data" %}
+  
+          {% fill "fields" %}
+            <div>
+              {% component "form_field" field=form.salutation %}
+            </div>
+            <div>
+              {% component "form_field" field=form.name_prefix %}
+            </div>
+            {% component "form_field" field=form.first_name %}
+            {% component "form_field" field=form.middle_name %}
+            {% component "form_field" field=form.last_name %}
+            <div>
+              {% component "form_field" field=form.suffix %}
+            </div>
+            {% component "form_field" field=form.department %}
+            {% component "form_field" field=form.institution %}
+            <div>
+              {% component "form_field" field=form.country %}
+            </div>
+            <div>
+              {% component "form_field" field=form.preferred_timezone %}
+            </div>
+            {% component "form_field" field=form.twitter %}
+            {% component "form_field" field=form.facebook %}
+            {% component "form_field" field=form.orcid %}
+            {% component "form_field" field=form.github %}
+            {% component "form_field" field=form.linkedin %}
+            {% component "form_field" field=form.website %}
+            {% component "form_field" field=form.biography %}
+            {% component "form_field" field=form.signature %}
+            {% component "form_field" field=form.profile_image %}
+            {% component "form_field" field=form.enable_public_profile %}
+            {% if form.enable_public_profile.value %}
+              <p class="prose lg:prose-lg mx-3 mb-6">
+                <a
+                  class="text-white"
+                  href="{% url 'core_public_profile' request.user.uuid %}">
+                    View public profile
+                </a>
+              </p>
+            {% endif %}
+          {% endfill %}
+          {% fill "button" %}
+            {% include 'custom/button-submit-white.html' with label="Update Profile" name="edit_profile" %}
+          {% endfill %}
+        {% endcomponent_block %}
+      </section>
+      {% if staff_group_membership_form %}
+        <section aria-labelledby="staff-member-profile" class="m-6 text-white">
+          <h2
+            id="staff-member-profile"
+            class="font-poppins-bold text-3xl max-lg:text-center max-lg:mt-12 pb-4">
+            Staff member profile.
+          </h2>
+          {% component_block "form" form=staff_group_membership_form form_method="POST" %}
+            {% fill "button" %}
+              {% include 'custom/button-submit-white.html' with label="Update Staff Member Info" name="edit_staff_member_info" %}
+            {% endfill %}
+          {% endcomponent_block %}
+        </section>
+      {% endif %}
+    </div>
   </div>
-</div>
-
-
-<div class="container mx-auto max-w-screen-xl relative mt-28 pb-28">
-  {% include 'custom/subscribe-art.html' %}
+  <div class="relative mt-28 pb-28">
+    {% include 'custom/subscribe-art.html' %}
+  </div>
 </div>

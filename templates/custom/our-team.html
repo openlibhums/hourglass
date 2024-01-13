@@ -14,7 +14,7 @@
 {% block body %}
   <div class="container mx-auto max-w-screen-xl">
     <div class="relative max-lg:mt-56 lg:mt-8">
-      <div
+      <aside
         class="
           relative max-lg:-top-72 lg:-top-24
           max-lg:right-0 lg:-right-20 xl:-right-32
@@ -64,7 +64,7 @@
           src="{% static 'hourglass/media/backgrounds/circle-blue-textured.png' %}"
           width="434"
           alt="">
-      </div>
+      </aside>
       <div class="relative z-40">
         <h1
           class="
@@ -88,38 +88,48 @@
     </div>
     {% component_block "staff_page" request=request %}
       <div class="relative mt-28">
-        {% component_block "page_section" prose=False anchor="left" width="full" %}
-          {% component "staff_group" group=staff_groups.0 %}
-        {% endcomponent_block %}
+        {% with group=staff_groups.0 %}
+          {% component_block "page_section" prose=False anchor="left" width="full" labelledby=group.name|slugify %}
+            {% component "staff_group" group=group %}
+          {% endcomponent_block %}
+        {% endwith %}
       </div>
       <div class="relative mt-28">
-        <img
-          class="
-            max-lg:hidden absolute z-0
-            left-4 max-w-xs
-            motion-reduce:-top-20 motion-safe:-top-96 motion-safe:rallax
-          "
-          src="{% static 'hourglass/media/backgrounds/circle-blue-textured.png' %}"
-          alt="">
-        <img
-          class="
-            max-lg:hidden absolute z-10
-            h-36 left-24
-            motion-reduce:top-8 motion-safe:-top-72 motion-safe:rallax
-          "
-          src="{% static 'hourglass/media/backgrounds/rectangle-red.svg' %}"
-          alt="">
-        {% component_block "page_section" prose=False anchor="right" %}
-          {% component "staff_group" group=staff_groups.1 %}
-        {% endcomponent_block %}
+        <aside>
+          <img
+            class="
+              max-lg:hidden absolute z-0
+              left-4 max-w-xs
+              motion-reduce:-top-20 motion-safe:-top-96 motion-safe:rallax
+            "
+            src="{% static 'hourglass/media/backgrounds/circle-blue-textured.png' %}"
+            alt="">
+          <img
+            class="
+              max-lg:hidden absolute z-10
+              h-36 left-24
+              motion-reduce:top-8 motion-safe:-top-72 motion-safe:rallax
+            "
+            src="{% static 'hourglass/media/backgrounds/rectangle-red.svg' %}"
+            alt="">
+        </aside>
+        {% with group=staff_groups.1 %}
+          {% component_block "page_section" prose=False anchor="right" labelledby=group.name|slugify %}
+            {% component "staff_group" group=group %}
+          {% endcomponent_block %}
+        {% endwith %}
       </div>
-      <div class="relative max-lg:mt-16 lg:mt-28">
+      <section aria-label="Quotes from the team" class="relative max-lg:mt-16 lg:mt-28">
         {% component_block "glide" glide_id="team-quotes" glide_type="quotes" %}
           {% fill 'slides' %}
             {% component_block "glide_slide" %}
               {% component_block "quote" %}
                 {% fill "quote" %}
-                  “Working at the OLH is like being on a sports team full of Tolkien nerds. You’re challenged and inspired to do your best, without being precious. You genuinely have each others’ backs because the wins are collective, and dawn is not far off.”
+                  “Working at the OLH is like being on a sports team full of
+                  Tolkien nerds. You’re challenged and inspired to do your
+                  best, without being precious. You genuinely have each others’
+                  backs because the wins are collective, and dawn is not far
+                  off.”
                 {% endfill %}
                 {% fill "by" %}
                   <span class="font-poppins-bold">Joseph Muller</span>,
@@ -130,7 +140,10 @@
             {% component_block "glide_slide" %}
               {% component_block "quote" %}
                 {% fill "quote" %}
-                  “I’m proud to work for such an excellent organisation and a genuinely important cause. The culture at OLH is really positive, inclusive and welcoming – our small close-knit team feels more like a family.”
+                  “I’m proud to work for such an excellent organisation and a
+                  genuinely important cause. The culture at OLH is really
+                  positive, inclusive and welcoming – our small close-knit team
+                  feels more like a family.”
                 {% endfill %}
                 {% fill "by" %}
                   <span class="font-poppins-bold">Dr Rose Harris-Birtill</span>,
@@ -141,7 +154,9 @@
             {% component_block "glide_slide" %}
               {% component_block "quote" %}
                 {% fill "quote" %}
-                  “The OLH is home to an eclectic mix of people who are working together for a common political goal but know how to enjoy themselves in the process.”
+                  “The OLH is home to an eclectic mix of people who are working
+                  together for a common political goal but know how to enjoy
+                  themselves in the process.”
                 {% endfill %}
                 {% fill "by" %}
                   <span class="font-poppins-bold">Dr Katherine Parker-Hay</span>,
@@ -156,9 +171,9 @@
             {% component 'glide_bullet' slide_index='2' %}
           {% endfill %}
         {% endcomponent_block %}
-      </div>
+      </section>
       <div class="relative max-lg:mt-48 lg:mt-28">
-        <div class="z-0 relative right-0 max-lg:top-0 lg:-top-20 motion-safe:rallax">
+        <aside class="z-0 relative right-0 max-lg:top-0 lg:-top-20 motion-safe:rallax">
           <img
             class="
               absolute max-lg:w-96 lg:max-w-md
@@ -167,13 +182,13 @@
             src="{% static 'hourglass/media/backgrounds/shakespeare-drag-actor-flowers-stripes.png' %}"
             alt="Actor singing with arms raised wearing dress and flowery crown">
         </div>
-        {% component_block "page_section" prose=False anchor="left" width="full" %}
-          {% component "staff_group" group=staff_groups.2 %}
-        {% endcomponent_block %}
-      </div>
+        {% with group=staff_groups.2 %}
+          {% component_block "page_section" prose=False anchor="left" width="full" labelledby=group.name|slugify %}
+            {% component "staff_group" group=group %}
+          {% endcomponent_block %}
+        {% endwith %}
+      </aside>
     {% endcomponent_block "staff_page" %}
-    <div class="relative">
-      {% include 'custom/subscribe.html' %}
-    </div>
+    {% include 'custom/subscribe.html' %}
   </div>
 {% endblock body %}

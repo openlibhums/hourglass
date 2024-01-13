@@ -1,107 +1,130 @@
+{% extends "press/cms/page.html" %}
+
 {% load static %}
 {% load component_tags %}
 {% load humanize %}
 
-<article>
-  <div
-    class="container mx-auto max-w-screen-xl relative max-lg:mt-52 lg:top-0">
-    {% include 'custom/edit-on-github.html' with rel_path='custom/library-partnership-fees.html' %}
-    {% include 'custom/astrolabe-opener.html' %}
-    {% include 'custom/generic-h1.html' with h1="Library partnership fees." %}
-  </div>
-  <div class="container mx-auto max-w-screen-xl relative">
-    {% component_block "page_intro" color="orange" %}
-      {% fill "column_one" %}
-        <p class="lead">This page can be used to calculate your membership fee and sign up.</p>
-      {% endfill %}
-      {% fill "column_two" %}
-        <p>We use our library funding to cover the costs of publishing diamond open access. As more libraries join the OLH, this allows us to grow our range of academic journals at a sustainable rate and build open source infrastructure to benefit the entire academic community.</p>
-        <p>You can also read about the benefits of becoming a supporter.</p>
-        <div class="not-prose flex">
-          {% with rel_path="/site/become-a-supporter/" label="Find out more" %}
-            {% include 'custom/button-action-black.html' %}
-          {% endwith %}
-        </div>
-      {% endfill %}
-    {% endcomponent_block %}
-  </div>
-  <div class="container mx-auto max-w-screen-xl relative mt-28">
-    <img
-      class="
-        motion-safe:rallax absolute z-20 w-28
-        max-lg:-top-32 lg:top-64 max-lg:-right-6 lg:right-40
-      "
-      src="{% static 'hourglass/media/backgrounds/circles-one-one-half-red.svg' %}"
-      alt="">
-    {% component_block "page_section" anchor="left" colors="dark" %}
-      <img
-        class="-m-4 w-48"
-        src="{% static 'hourglass/media/icons/Library-Partnership-Fees.svg' %}"
-        alt="">
-      <h2 class="text-white">
-        Calculate your fee.
-      </h2>
-      <p>Please use this calculator to assess your membership fee. Membership is renewable on an annual basis. If your institution belongs to a geographical region that is not covered here, please contact our Marketing Officer, Paula Clemente Vega, at <a class="text-white" href="mailto:paula.clementevega@bbk.ac.uk">paula.clementevega@bbk.ac.uk</a>.</p>
-      {% component 'supporters_calculator' request=request %}
-    {% endcomponent_block %}
-  </div>
-  <div class="container mx-auto max-w-screen-xl relative mt-28">
-    {% component_block "page_section" anchor="right" %}
-      <h2>Supporter bands.</h2>
-      <p>Our fees are banded, based on country and size of institution, which means that scholars and institutions worldwide stand to benefit. Universities are also given the opportunity to voluntarily support us at a higher membership rate, tiered into bronze, silver, gold, and platinum levels.</p>
-      <p>We adjust the fees by country using data from the World Bank on gross national income (GNI) per capita. There is no perfect indicator of economic disparity by country and region, but GNI is better than the alternatives at tracking wealth. It cares about who receives income, rather than where goods and services are produced, so it shows who profits from labour more clearly. With this model we can estimate purchasing power around the world. The estimate is rough, so we are committed to making exceptions where circumstances call for them.</p>
-      <p>The table below shows fees for a sample spread of countries, in US dollars, Euro, and British pounds.</p>
-    {% endcomponent_block %}
-  </div>
-  <div class="container mx-auto max-w-screen-xl relative max-lg:mt-0 lg:mt-48">
-    {% include 'custom/laptop-lady-quadrant-halfway.html' %}
-    {% component_block "page_section" anchor="left" colors="transparent" prose=False %}
-      {% component_block "supporters_demo_bands_split" %}
-        {% component_block "supporters_demo_table" table=higher_supporter_table %}
-          {% fill "caption" %}
-            Higher membership levels
+{% block meta_description %}
+  <meta
+    property="og:description"
+    content="This page can be used to calculate your membership fee and sign
+    up.">
+{% endblock meta_description %}
+
+{% block body %}
+  <article aria-labelledby="h1">
+    <div class="container mx-auto max-w-screen-xl">
+      <div class="relative max-lg:mt-52 lg:top-0">
+        {% include 'custom/edit-on-github.html' with rel_path='custom/library-partnership-fees.html' %}
+        {% include 'custom/astrolabe-opener.html' %}
+        {% include 'custom/generic-h1.html' with h1="Library partnership fees." %}
+      </div>
+      <div class="relative">
+        {% component_block "page_intro" color="orange" %}
+          {% fill "column_one" %}
+            <p class="lead">This page can be used to calculate your membership
+            fee and sign up.</p>
           {% endfill %}
-          {% fill "columns_label" %}
-            Membership level
+          {% fill "column_two" %}
+            <p>We use our library funding to cover the costs of publishing
+            diamond open access. As more libraries join the OLH, this allows us
+            to grow our range of academic journals at a sustainable rate and
+            build open source infrastructure to benefit the entire academic
+            community.</p>
+            <p>You can also read about the benefits of becoming a
+            supporter.</p>
+            <div class="not-prose flex">
+              {% with rel_path="/site/become-a-supporter/" label="Find out more" %}
+                {% include 'custom/button-action-black.html' %}
+              {% endwith %}
+            </div>
           {% endfill %}
         {% endcomponent_block %}
-        {% component_block "supporters_demo_table" table=standard_supporter_table %}
-          {% fill "caption" %}
-            Standard membership
-          {% endfill %}
-          {% fill "columns_label" %}
-            Institution size
-          {% endfill %}
+      </div>
+      <div class="relative mt-28">
+        <img
+          class="
+            motion-safe:rallax absolute z-20 w-28
+            max-lg:-top-32 lg:top-64 max-lg:-right-6 lg:right-40
+          "
+          src="{% static 'hourglass/media/backgrounds/circles-one-one-half-red.svg' %}"
+          alt="">
+        {% component_block "page_section" anchor="left" colors="dark" labelledby="calculate-your-fee" %}
+          <img
+            class="-m-4 w-48"
+            src="{% static 'hourglass/media/icons/Library-Partnership-Fees.svg' %}"
+            alt="">
+          <h2
+            id="calculate-your-fee"
+            class="text-white">
+            Calculate your fee.
+          </h2>
+          <p>Please use this calculator to assess your membership fee.
+          Membership is renewable on an annual basis. If your institution
+          belongs to a geographical region that is not covered here, please
+          contact our Marketing Officer, Paula Clemente Vega, at <a
+          class="text-white"
+        href="mailto:paula.clementevega@bbk.ac.uk">paula.clementevega@bbk.ac.uk</a>.</p>
+          {% component 'supporters_calculator' request=request %}
         {% endcomponent_block %}
-      {% endcomponent_block %}
-    {% endcomponent_block %}
-    <img
-      class="
-        absolute z-20 w-24 scale-y-[-1] motion-safe:rallax
-        max-lg:bottom-0 lg:bottom-48 max-lg:right-0 lg:right-24
-      "
-      src="{% static 'hourglass/media/backgrounds/circles-one-one-half-red.svg' %}"
-      alt="">
-  </div>
-  <div class="container mx-auto max-w-screen-xl relative mt-16">
-    {% component_block "page_section" %}
-      <h2>Consortial offer.</h2>
-      <p>We welcome expressions of interest from consortia, societies, networks, and scholarly projects interested in joining the OLH as a bloc. Applied to each institution’s fee, consortial groups gain a discount of:</p>
-      <ul class="browser-default">
-        <li>
-          5% if a group of 10 institutions joins  
-        </li>
-        <li>
-          10% if 20 institutions join  
-        </li>
-        <li>
-          15% if more than 30 join 
-        </li>
-      </ul>
-      <p>To benefit from this offer, or get further information, please email the OLH Marketing Officer <a href="mailto:paula.clementevega@bbk.ac.uk">paula.clementevega@bbk.ac.uk</a>.</p>
-    {% endcomponent_block %}
-  </div>
-</article>
-<div class="container mx-auto max-w-screen-xl relative">
-  {% include 'custom/subscribe.html' %}
-</div>
+      </div>
+      <div class="relative mt-28">
+        {% component_block "page_section" anchor="right" labelledby="supporter-bands" %}
+          <h2 id="supporter-bands">Supporter bands.</h2>
+          <p>Our fees are banded, based on country and size of institution, which means that scholars and institutions worldwide stand to benefit. Universities are also given the opportunity to voluntarily support us at a higher membership rate, tiered into bronze, silver, gold, and platinum levels.</p>
+          <p>We adjust the fees by country using data from the World Bank on gross national income (GNI) per capita. There is no perfect indicator of economic disparity by country and region, but GNI is better than the alternatives at tracking wealth. It cares about who receives income, rather than where goods and services are produced, so it shows who profits from labour more clearly. With this model we can estimate purchasing power around the world. The estimate is rough, so we are committed to making exceptions where circumstances call for them.</p>
+          <p>The table below shows fees for a sample spread of countries, in US dollars, Euro, and British pounds.</p>
+        {% endcomponent_block %}
+      </div>
+      <div class="relative max-lg:mt-0 lg:mt-48">
+        {% include 'custom/laptop-lady-quadrant-halfway.html' %}
+        {% component_block "page_section" anchor="left" colors="transparent" prose=False label="Supporter bands" %}
+          {% component_block "supporters_demo_bands_split" %}
+            {% component_block "supporters_demo_table" table=higher_supporter_table %}
+              {% fill "caption" %}
+                Higher membership levels
+              {% endfill %}
+              {% fill "columns_label" %}
+                Membership level
+              {% endfill %}
+            {% endcomponent_block %}
+            {% component_block "supporters_demo_table" table=standard_supporter_table %}
+              {% fill "caption" %}
+                Standard membership
+              {% endfill %}
+              {% fill "columns_label" %}
+                Institution size
+              {% endfill %}
+            {% endcomponent_block %}
+          {% endcomponent_block %}
+        {% endcomponent_block %}
+        <img
+          class="
+            absolute z-20 w-24 scale-y-[-1] motion-safe:rallax
+            max-lg:bottom-0 lg:bottom-48 max-lg:right-0 lg:right-24
+          "
+          src="{% static 'hourglass/media/backgrounds/circles-one-one-half-red.svg' %}"
+          alt="">
+      </div>
+      <div class="relative mt-16">
+        {% component_block "page_section" labelledby="consortial-offer" %}
+          <h2 id="consortial-offer">Consortial offer.</h2>
+          <p>We welcome expressions of interest from consortia, societies, networks, and scholarly projects interested in joining the OLH as a bloc. Applied to each institution’s fee, consortial groups gain a discount of:</p>
+          <ul class="browser-default">
+            <li>
+              5% if a group of 10 institutions joins  
+            </li>
+            <li>
+              10% if 20 institutions join  
+            </li>
+            <li>
+              15% if more than 30 join 
+            </li>
+          </ul>
+          <p>To benefit from this offer, or get further information, please email the OLH Marketing Officer <a href="mailto:paula.clementevega@bbk.ac.uk">paula.clementevega@bbk.ac.uk</a>.</p>
+        {% endcomponent_block %}
+      </div>
+      {% include 'custom/subscribe.html' %}
+    </div>
+  </article>
+{% endblock body %}

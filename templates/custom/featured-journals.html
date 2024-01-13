@@ -1,12 +1,15 @@
 {% load static %}
 {% load component_tags %}
 
-<div
+<section
+  aria-labelledby="featured-journals"
   class="max-lg:p-8 lg:p-12 bg-white z-40 relative">
-  <h2 class="pb-6 font-poppins-bold max-lg:text-2xl lg:text-3xl">
+  <h2
+    id="featured-journals"
+    class="pb-6 font-poppins-bold max-lg:text-2xl lg:text-3xl">
     Featured journals.
   </h2>
-  {% component_block "glide" glide_id="featured-journals" glide_type="gallery" %}
+  {% component_block "glide" glide_id="featured-journals-slides" glide_type="gallery" %}
     {% fill "slides" %}
       {% for journal in request.press.featured_journals.all|slice:":6" %}
         {% component_block "glide_slide" %}
@@ -30,4 +33,4 @@
       {% endfor %}
     {% endfill %}
   {% endcomponent_block %}
-</div>
+</section>

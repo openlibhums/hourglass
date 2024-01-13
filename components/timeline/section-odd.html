@@ -1,0 +1,46 @@
+{% load component_tags %}
+
+<section
+  id="y{{ year }}"
+  aria-labelledby="h3-{{ year }}"
+  class="scroll-target relative mt-8">
+  <div
+    class="
+      relative before:z-30 before:block before:absolute
+      before:inset-y-0 before:w-screen
+      before:right-0 before:bg-white
+      max-lg:after:z-30 max-lg:after:block max-lg:after:absolute
+      max-lg:after:inset-y-0 max-lg:after:w-screen
+      max-lg:after:left-0 max-lg:after:bg-white
+      pb-1 max-w-3xl
+    ">
+    <div
+      class="
+        z-40 relative
+        px-8 py-8 flex flex-col gap-y-6 items-start
+        bg-white border-l-4 border-solid border-orange
+        after:z-30 after:block after:absolute
+        after:h-5 after:w-5 after:-rotate-45 after:origin-bottom-left
+        after:-left-0.5 after:-bottom-1
+        after:border-l-4 after:border-b-4 after:border-solid
+        after:border-orange
+        lg:pl-24 lg:ml-16
+      ">
+      <div
+        class="
+          w-24 h-24 bg-orange rounded-full
+          flex items-center
+          lg:absolute lg:-left-12
+        ">
+        <h3
+          id="h3-{{ year }}"
+          class="font-poppins-bold text-2xl mx-auto text-center">
+          {{ year }}
+        </h3>
+      </div>
+      <div class="prose lg:prose-lg">
+        {% slot 'content' default %}{% endslot %}
+      </div>
+    </div>
+  </div>
+</section>
