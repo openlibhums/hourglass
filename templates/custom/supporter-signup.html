@@ -1,4 +1,5 @@
 {% extends "core/base.html" %}
+
 {% load static %}
 {% load render_string %}
 {% load component_tags %}
@@ -15,102 +16,110 @@
     content="Support the OLH - {{ request.press.name }}">
 {% endblock meta_title %}
 {% block meta_description %}
-  <meta name="twitter:description" content="Sign up to support the Open Library of Humanities">
-  <meta property="og:description" content="Sign up to support the Open Library of Humanities">
+  <meta name="twitter:description" content="Sign up to support the Open Library
+  of Humanities">
+  <meta property="og:description" content="Sign up to support the Open Library
+  of Humanities">
 {% endblock meta_description %}
 
 
 {% block body %}
-  <div
-    class="container mx-auto max-w-screen-xl relative max-lg:mt-52 lg:top-0">
-    {% include 'custom/edit-on-github.html' with rel_path='custom/supporter-signup.html' %}
-    {% include 'custom/astrolabe-opener.html' %}
-    {% include 'custom/generic-h1.html' with h1="Sign up to<br> support the OLH." %}
-  </div>
-  {% if not redirect_text and not complete_text %}
-    <div class="container mx-auto max-w-screen-xl relative mt-8">
-      {% component_block "page_intro" color="orange" %}
-        {% fill "column_one" %}
-          <p class="lead">It is simple and quick to join. Just fill in the sign-up form and we’ll contact you to confirm billing and invoicing details.</p>
-        {% endfill %}
-        {% fill "column_two" %}
-          <p>If your institution is in the UK, you will be taken to JISC’s website to complete the sign-up process. You will be contacted annually to confirm that you would like to renew membership.</p>
-        {% endfill %}
+  <div class="container mx-auto max-w-screen-xl">
+    <div class="relative max-lg:mt-52 lg:top-0">
+      {% include 'custom/edit-on-github.html' with rel_path='custom/supporter-signup.html' %}
+      {% include 'custom/astrolabe-opener.html' %}
+      {% include 'custom/generic-h1.html' with h1="Sign up to<br> support the OLH." %}
+    </div>
+    {% if not redirect_text and not complete_text %}
+      <div class="relative mt-8">
+        {% component_block "page_intro" color="orange" %}
+          {% fill "column_one" %}
+            <p class="lead">It is simple and quick to join. Just fill in the
+            sign-up form and we’ll contact you to confirm billing and invoicing
+            details.</p>
+          {% endfill %}
+          {% fill "column_two" %}
+            <p>If your institution is in the UK, you will be taken to JISC’s
+            website to complete the sign-up process. You will be contacted
+            annually to confirm that you would like to renew membership.</p>
+          {% endfill %}
+        {% endcomponent_block %}
+      </div>
+    {% endif %}
+    <div class="relative mt-28">
+      <aside>
+        <img
+          class="
+            motion-safe:rallax absolute z-20 w-24
+            max-lg:-top-32 lg:top-64 max-lg:-right-6 lg:right-40
+          "
+          src="{% static 'hourglass/media/backgrounds/circles-one-one-half-red.svg' %}"
+          alt="">
+      </aside>
+      {% component_block "page_section" anchor="left" colors="dark" labelledby="next-step" %}
+        {% if redirect_text %}
+          <h2 id="next-step" class="text-white">
+            One more step.
+          </h2>
+          {% render_string redirect_text %}
+          <div class="w-full flex flex-col items-end">
+            {% with rel_path=supporter.billing_agent.redirect_url label="Complete signup" %}
+              {% include 'custom/button-action-white.html' %}
+            {% endwith %}
+          </div>
+        {% elif complete_text %}
+          <h2 id="next-step" class="text-white">
+            Signup complete.
+          </h2>
+          {% render_string complete_text %}
+        {% else %}
+          <h2 id="next-step" class="text-white">
+            Enter your details.
+          </h2>
+          {% component_block "form" form=supporter_form form_method="POST" %}
+            {% fill "fields" %}
+              {% component "form_field" field=supporter_form.name %}
+              <div class="hidden">
+                {% component "form_field" field=supporter_form.ror %}
+              </div>
+              <div class="prose-invert px-3">
+                <p class="mt-2 pb-2">
+                  <span class="font-poppins-medium">ROR</span>:
+                  <span id="rorDisplay"></span>
+                </p>
+                <p>
+                  <a class="" href="https://ror.org/">What is a ROR?</a>
+                </p>
+              </div>
+              {% component "form_field" field=supporter_form.display %}
+              {% component "form_field" field=supporter_form.address %}
+              {% component "form_field" field=supporter_form.postal_code %}
+              {% component_block "form_inner" form=band_form %}
+                {% component "form_field" field=band_form.country %}
+                {% component "form_field" field=band_form.size %}
+                {% component "form_field" field=band_form.level %}
+                {% component "form_field" field=band_form.currency %}
+              {% endcomponent_block %}
+            {% endfill %}
+            {% fill "other" %}
+              {% include 'custom/button-calculate.html' %}
+              {% if band_form.fee.value %}
+                <div class="prose-invert">
+                  {{ signup_agreement|safe }}
+                </div>
+                <div class="w-full flex flex-col items-end">
+                  {% include 'custom/button-submit-white.html' with label="Sign Up" name="sign_up" %}
+                </div>
+              {% endif %}
+            {% endfill %}
+            {% fill "button" %}{% endfill %}
+          {% endcomponent_block %}
+        {% endif %}
       {% endcomponent_block %}
     </div>
-  {% endif %}
-  <div class="container mx-auto max-w-screen-xl relative mt-28">
-    <img
-      class="
-        motion-safe:rallax absolute z-20 w-24
-        max-lg:-top-32 lg:top-64 max-lg:-right-6 lg:right-40
-      "
-      src="{% static 'hourglass/media/backgrounds/circles-one-one-half-red.svg' %}"
-      alt="">
-    {% component_block "page_section" anchor="left" colors="dark" %}
-      {% if redirect_text %}
-        <h2 class="text-white">
-          One more step.
-        </h2>
-        {% render_string redirect_text %}
-        <div class="w-full flex flex-col items-end">
-          {% with rel_path=supporter.billing_agent.redirect_url label="Complete signup" %}
-            {% include 'custom/button-action-white.html' %}
-          {% endwith %}
-        </div>
-      {% elif complete_text %}
-        <h2 class="text-white">
-          Signup complete.
-        </h2>
-        {% render_string complete_text %}
-      {% else %}
-        <h2 class="text-white">
-          Enter your details.
-        </h2>
-        {% component_block "form" form=supporter_form form_method="POST" %}
-          {% fill "fields" %}
-            {% component "form_field" field=supporter_form.name %}
-            <div class="hidden">
-              {% component "form_field" field=supporter_form.ror %}
-            </div>
-            <div class="prose-invert px-3">
-              <p class="mt-2 pb-2">
-                <span class="font-poppins-medium">ROR</span>:
-                <span id="rorDisplay"></span>
-              </p>
-              <p>
-                <a class="" href="https://ror.org/">What is a ROR?</a>
-              </p>
-            </div>
-            {% component "form_field" field=supporter_form.display %}
-            {% component "form_field" field=supporter_form.address %}
-            {% component "form_field" field=supporter_form.postal_code %}
-            {% component_block "form_inner" form=band_form %}
-              {% component "form_field" field=band_form.country %}
-              {% component "form_field" field=band_form.size %}
-              {% component "form_field" field=band_form.level %}
-              {% component "form_field" field=band_form.currency %}
-            {% endcomponent_block %}
-          {% endfill %}
-          {% fill "other" %}
-            {% include 'custom/button-calculate.html' %}
-            {% if band_form.fee.value %}
-              <div class="prose-invert">
-                {{ signup_agreement|safe }}
-              </div>
-              <div class="w-full flex flex-col items-end">
-                {% include 'custom/button-submit-white.html' with label="Sign Up" name="sign_up" %}
-              </div>
-            {% endif %}
-          {% endfill %}
-          {% fill "button" %}{% endfill %}
-        {% endcomponent_block %}
-      {% endif %}
-    </div>
-  {% endcomponent_block %}
-  <div class="container mx-auto max-w-screen-xl relative">
     {% include 'custom/subscribe.html' %}
   </div>
+
   <script type="module">
     import '{% static "hourglass/js/autoComplete.min.js" %}'
     const base = 'https://api.ror.org/organizations?'
