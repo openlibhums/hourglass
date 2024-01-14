@@ -146,46 +146,7 @@
             alt="A planet covered in grey swirling clouds">
         </aside>
         {% component_block "page_section" prose=False anchor="right" width="part" label="Find out more" %}
-          {% component_block "cta_list" %}
-            {% comment %}
-            {% component_block "cta_list_item" %}
-              <img
-                class="w-44 h-44"
-                src="{% static 'hourglass/media/icons/janeway/about-us-our-story.svg' %}"
-                alt="">
-              <h2 class="font-poppins-bold max-lg:text-xl lg:text-2xl text-center">
-                Visit Janeway site.
-              </h2>
-              {% with rel_path="https://janeway.systems" label="Go to site" %}
-                {% include 'custom/button-action-blue.html' %}
-              {% endwith %}
-            {% endcomponent_block %}
-            {% endcomment %}
-            {% component_block "cta_list_item" %}
-              <img
-                class="w-44 h-44"
-                src="{% static 'hourglass/media/icons/janeway/publication.svg' %}"
-                alt="">
-              <h2 class="font-poppins-bold max-lg:text-xl lg:text-2xl text-center">
-                Read the full story.
-              </h2>
-              {% with rel_path="https://doi.org/10.1629/uksg.396" label="Go to article" %}
-                {% include 'custom/button-action-blue.html' %}
-              {% endwith %}
-            {% endcomponent_block %}
-            {% component_block "cta_list_item" %}
-              <img
-                class="w-44 h-44"
-                src="{% static 'hourglass/media/icons/janeway/blog.svg' %}"
-                alt="">
-              <h2 class="font-poppins-bold max-lg:text-xl lg:text-2xl text-center">
-                Hear Janeway news.
-              </h2>
-              {% with rel_path="https://forms.office.com/r/dZsBAy3ien" label="Go to sign up" %}
-                {% include 'custom/button-action-blue.html' %}
-              {% endwith %}
-            {% endcomponent_block %}
-          {% endcomponent_block %}
+          {% include "custom/janeway-ctas.html" %}
         {% endcomponent_block %}
       </div>
       {% include 'custom/subscribe.html' %}
