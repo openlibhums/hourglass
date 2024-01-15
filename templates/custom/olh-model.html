@@ -1,0 +1,185 @@
+{% extends "press/cms/page.html" %}
+
+{% load static %}
+{% load component_tags %}
+
+{% block meta_description %}
+  <meta
+    property="og:description"
+    content="We’ve spent 10 years building a sustainable business model for
+    funding diamond open access publishing. Our model places equity at the
+    heart of scholarly publishing — for readers, authors, editors, libraries,
+    and funders.">
+{% endblock meta_description %}
+
+{% block body %}
+  <article aria-labelledby="h1">
+    <div class="container mx-auto max-w-screen-xl">
+      <div class="relative">
+        {% include "custom/edit-on-github.html" with rel_path="custom/olh-model.html" %}
+        {% include "custom/generic-h1-higher.html" with h1="The OLH model." %}
+        {% include "custom/nypl-opener.html" %}
+      </div>
+      <div class="relative max-lg:mt-80 lg:mt-28">
+        {% component_block "page_intro" %}
+          {% fill "column_one" %}
+            <p class="lead text-white">We’ve spent 10 years building a
+            sustainable business model for funding diamond open access
+            publishing.</p>
+          {% endfill %}
+          {% fill "column_two" %}
+          <p>Our model places equity at the heart of scholarly
+            publishing — for readers, authors, editors, libraries, and
+            funders. Unlike many open-access publishers, we will never demand author
+            fees. Instead, we work with library partners worldwide to fund the
+            cost of publishing articles that are free for authors to publish and
+            readers to access.</p>
+          {% endfill %}
+        {% endcomponent_block %}
+        {% include "custom/nypl-intro-art.html" %}
+      </div>
+      <div class="relative max-lg:mt-16 lg:mt-48">
+        {% component_block "page_section" labelledby="library-partnership-subsidy" %}
+          <h2 id="library-partnership-subsidy">
+            The library partnership subsidy model.
+          </h2>
+          <p>The OLH was one of the first publishers in Europe to launch a
+          library membership network at the beginnings of the open access
+          movement in 2015.</p>
+          <p>We worked with library colleagues for 2 years before launching our
+          Library Partnership Subsidy model to find an alternative to
+          commercial journal subscriptions. This was informed by the shared
+          belief that Article Processing Charges (APCs) and Transformative
+          Agreements (TAs) for funding open access publishing are unaffordable
+          and unfair. They don’t work for humanities scholars and perpetuate
+          publishing legacies that privilege wealthier institutions in the
+          Global North at the expense of scholars working in the Global
+          South.</p>
+          <p>The OLH provides a sustainable alternative to the “author-pays”
+          model. More than 340 university and public libraries worldwide have
+          joined the OLH to date, diverting small sums from their open access
+          budgets to fund our journals. Increasing funding to scholar-led and
+          not-for-profit alternatives strengthens libraries’ bargaining power
+          with large commercial publishers. This puts pressure on these
+          publishers to adopt more transparent business models and reduce their
+          fees to reflect the realities of library budgets.</p>
+        {% endcomponent_block %}
+      </div>
+      <div class="relative max-lg:mt-16 lg:mt-28">
+        {% component_block "page_section" labelledby="collectivity-is-working" anchor="right" %}
+          <h2 id="collectivity-is-working">Collectivity is working.</h2>
+          <p>Because we are not-for-profit and have brought our publishing
+          technology in house, we can offer extremely cost-effective diamond
+          open access publishing.
+          <p>It’s cheaper for your library to join the OLH and pay an annual
+          membership, which funds the publication of 500 articles across 30+
+          journals each year, than to pay a single Article Processing Charge
+          (APC) to publish one article open access with a legacy publisher.
+          (Typically, it costs a humanities researcher c.£2,500 / €2,894 /
+          $3,067 for an APC to publish their journal article open access with a
+          publisher whose profits derive from library subscriptions).</p>
+          <p>By contrast, OLH membership starts from as little as £750 / $916 /
+          €861 per year. Keeping our basic membership rates low helps libraries
+          keep their costs under control. Our fees are banded by country, and
+          we have higher-tier membership rates available at bronze, silver,
+          gold, and platinum levels for libraries operating with larger
+          budgets. Our model works from each according to their ability, to
+          each according to their needs.</p>
+          <img
+            class="w-44 h-44 -m-4"
+            src="{% static 'hourglass/media/icons/Library-Partnership-Fees.svg' %}"
+            alt="">
+          <div class="flex">
+            {% with rel_path="/site/library-partnership-fees/" label="Calculate your fee" %}
+              {% include 'custom/button-action-black.html' %}
+            {% endwith %}
+          </div>
+        {% endcomponent_block %}
+      </div>
+      <div class="relative mt-28">
+        <aside class="relative motion-safe:rallax">
+          <img
+            class="absolute z-10 w-20 -left-10 top-10"
+            src="{% static 'hourglass/media/backgrounds/circle-blue.svg' %}"
+            alt="">
+          <img
+            class="absolute z-0 w-32 -left-20 -top-12"
+            src="{% static 'hourglass/media/backgrounds/circle-red.svg' %}"
+            alt="">
+        </aside>
+        {% component_block "page_section" labelledby="how-it-works-infographic" anchor="right" colors="transparent" %}
+          <h2 id="how-it-works-infographic">How it works.</h2>
+          <div class="mt-28 h-96">
+            INFOGRAPHIC - How it works
+          </div>
+        {% endcomponent_block %}
+      </div>
+      <div class="relative max-lg:mt-16 lg:mt-28">
+        {% component_block "page_section" labelledby="as-membership-grows" anchor="left" %}
+          <h2 id="as-membership-grows">As membership grows, we grow.</h2>
+          <p>Over 340 university and public libraries worldwide already support
+          us, which makes our platform safe and sustainable. As this support
+          grows, we expand our portfolio of humanities journals by “flipping”
+          subscription titles. This provides a route to diamond open access
+          that is affordable and sustainable.</p>
+          <p>We also invest in building open-source publishing technologies
+          that benefit the entire academic community. Investing in our own
+          publishing platform means we can offer cutting-edge technology to our
+          journals at a sustainable cost for our international library
+          partners. It also safeguards the OLH against acquisition, ensuring
+          our ongoing independence from commercial publishers.</p>
+        {% endcomponent_block %}
+        {% include "custom/nypl-halfway.html" %}
+      </div>
+      <div class="relative mt-48">
+        {% component_block "page_section" labelledby="how-it-works-infographic" anchor="right" colors="transparent" %}
+          <h2 id="how-it-works-infographic">The OLH in numbers.</h2>
+          <div class="mt-28 h-96">
+            INFOGRAPHIC - OLH in numbers
+          </div>
+        {% endcomponent_block %}
+      </div>
+      <div class="relative max-lg:mt-16 lg:mt-28">
+        {% component_block "page_section" labelledby="made-for-the-humanities" anchor="left" %}
+          <h2 id="made-for-the-humanities">Made for the humanities.</h2>
+          <p>The OLH model has been built around the specific needs of
+          humanities scholars. It works because we are embedded in the academic
+          communities that we serve. Our model harnesses support from libraries
+          and funders to protect niche fields and preserve research cultures
+          that are at risk from austerity cuts to humanities research
+          funding.</p>
+          <p>It is also grounded in an understanding that humanities
+          disciplines face specific challenges. They are often poorly funded
+          and less likely to benefit from research investment than the
+          sciences. Postgraduates, independent scholars, less
+          “research-intensive” institutions, and academics in the Global South
+          are also disproportionately disadvantaged by an “author pays” system
+          of open access publishing.</p>
+          <p>Our model has been influential in the shift towards
+          community-governed, not-for-profit open access publishing because it
+          addressed these issues. And it continues to work because we are
+          aligned with the mission of libraries. Despite competitive market
+          forces, we work in partnership with our library network to maximise
+          societal access to research in the broadest sense.</p>
+        {% endcomponent_block %}
+      </div>
+      <div class="relative max-lg:mt-16 lg:mt-28">
+        {% include "custom/nypl-end.html" %}
+        {% component_block "page_section" labelledby="insights-about-olh-model" anchor="left" %}
+          <h2 id="insights-about-olh-model">
+            Articles and insights about the OLH model.
+          </h2>
+          {% component_block "reference_list" %}
+            {% component_block "reference_list_item" %}
+              Eve, M P, Vega, P C, & Edwards, C (2020). Lessons From the Open Library of
+              Humanities. LIBER Quarterly: The Journal of the Association of European
+              Research Libraries, 30(1), 1–18. 
+              <a href="https://doi.org/10.18352/lq.10327">https://doi.org/10.18352/lq.10327</a>.
+            {% endcomponent_block %}
+          {% endcomponent_block %}
+        {% endcomponent_block %}
+      </div>
+      {% include 'custom/subscribe.html' %}
+    </div>
+  </article>
+{% endblock body %}
