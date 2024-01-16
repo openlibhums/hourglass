@@ -1,0 +1,117 @@
+{% load static %}
+{% load component_tags %}
+
+{% component_block "page_section" anchor="right" prose=False colors="transparent" margin="narrow" %}
+
+  <h2
+    id="how-it-works"
+    class="font-poppins-bold max-lg:text-3xl lg:text-4xl text-center pb-24">
+    How it works.
+  </h2>
+  <div class="flex justify-center">
+    <div class="flex w-full flex-col gap-y-24">
+      <div
+        class="
+          flex max-lg:flex-col max-lg:gap-y-12
+          lg:flex-row justify-between w-full
+        ">
+        <div class="relative w-64 h-64">
+          <img
+            class="absolute z-0 -left-4 bottom-4 w-24"
+            src="{% static 'hourglass/media/backgrounds/triangles-blue-three.svg' %}"
+            alt="">
+          <img
+            class="absolute z-10 -top-8 -right-8"
+            src="{% static 'hourglass/media/backgrounds/square-red-textured-gradient.png' %}"
+            width="256" height="256"
+            alt="">
+          <div
+            class="
+              absolute z-20 -right-12 -top-16 text-white
+              font-poppins-bold text-3xl bg-blue rounded-full
+              w-12 h-12 p-10 flex justify-center items-center
+            ">
+            <h3>01</h3>
+          </div>
+          <img
+            class="absolute z-20 left-20 bottom-8"
+            src="{% static 'hourglass/media/backgrounds/coins.png' %}"
+            width="90" height="299"
+            alt="A stack of coins">
+          <img
+            class="absolute z-20 w-36 -left-4 -bottom-4"
+            src="{% static 'hourglass/media/backgrounds/square-orange.svg' %}"
+            alt="">
+        </div>
+        <div class="prose lg:prose-lg max-w-sm">
+          <p class="font-poppins-bold max-lg:text-lg lg:text-xl">
+            Many universities and libraries contribute small, affordable sums.
+          </p>
+          <p>
+            {% lorem 15 w %}
+          </p>
+        </div>
+      </div>
+      <div
+        class="
+          flex max-lg:flex-col max-lg:gap-y-8
+          lg:flex-row-reverse justify-between w-full
+        ">
+        <div class="relative w-64 h-64">
+          <img
+            class="absolute z-10 max-w-none -left-4"
+            src="{% static 'hourglass/media/backgrounds/woman-books-orange-square.png' %}"
+            width="304" height="243"
+            alt="">
+          <div
+            class="
+              absolute z-20 -left-8 -top-12 text-white
+              font-poppins-bold text-3xl bg-blue rounded-full
+              w-12 h-12 p-10 flex justify-center items-center
+            ">
+            <h3>02</h3>
+          </div>
+        </div>
+        <div class="prose lg:prose-lg max-w-sm">
+          <p class="font-poppins-bold max-lg:text-lg lg:text-xl">
+            These funds cover OLH publishing expenses and journal funding.
+          </p>
+          <p>
+            {% lorem 15 w %}
+          </p>
+        </div>
+      </div>
+      <div
+        class="
+          flex max-lg:flex-col max-lg:gap-y-12
+          lg:flex-row justify-between w-full
+        ">
+        <div class="relative w-64 h-64">
+          <img
+            class="absolute z-10 max-w-none -right-4"
+            src="{% static 'hourglass/media/backgrounds/laptop-hand-planet.png' %}"
+            width="304" height="270"
+            alt="">
+          <div
+            class="
+              absolute z-20 -right-4 -top-8 text-white
+              font-poppins-bold text-3xl bg-blue rounded-full
+              w-12 h-12 p-10 flex justify-center items-center
+            ">
+            <h3>03</h3>
+          </div>
+        </div>
+        <div class="prose lg:prose-lg max-w-sm">
+          <p class="font-poppins-bold max-lg:text-lg lg:text-xl">
+            OLH journals publish research that is archived, secure and free to
+            access.
+          </p>
+          <p>
+            {% lorem 15 w %}
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+{% endcomponent_block %}
