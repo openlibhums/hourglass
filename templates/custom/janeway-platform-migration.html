@@ -1,0 +1,90 @@
+{% extends "press/cms/page.html" %}
+
+{% load static %}
+{% load component_tags %}
+
+{% block meta_description %}
+  <meta
+    property="og:description"
+    content="You can publish independently using our platform, even if the Open
+    Library of Humanities is not your publisher.">
+{% endblock meta_description %}
+
+{% block body %}
+  <article aria-labelledby="h1">
+    <div class="container mx-auto max-w-screen-xl">
+      <div class="relative max-lg:mt-0 lg:mt-8">
+        {% include "custom/edit-on-github.html" with rel_path="custom/janeway-platform-migration.html" %}
+        {% include "custom/generic-h1-higher.html" with h1="Janeway<br> platform<br> migration." %}
+        {% include "custom/woman-gazing-planets-opener.html" %}
+      </div>
+      <div class="relative max-lg:mt-80 lg:mt-28">
+        {% component_block "page_intro" %}
+          {% fill "column_one" %}
+            <p class="lead text-white">You can publish independently using our
+            platform, even if the Open
+            Library of Humanities is not your publisher.</p>
+          {% endfill %}
+          {% fill "column_two" %}
+            <p>We offer hosting and support services to independent journals,
+            scholarly societies, and library publishers. Our tech team are
+            experienced in migrating journals from other publishing platforms
+            and can help you set up smoothly.</p>
+          {% endfill %}
+        {% endcomponent_block %}
+      </div>
+      <div class="relative max-lg:mt-16 lg:mt-28">
+        {% component_block "page_section" anchor="right" labelledby="bespoke-hosting" %}
+          <h2 id="bespoke-hosting">
+            Bespoke hosting.
+          </h2>
+          <p>Janeway is a complete publishing workflow management system which
+          we built from the ground up. We can provide such a bespoke hosting
+          service for Janeway users because we are not a tech company: we are a
+          publishing company, who develop technology to help us publish. And we
+          then help other people to do the same.</p>
+          <p>Clients choose to be hosted by us because it allows them to
+          leverage our technology while remaining independent. We are proudly
+          academic-owned, not-for-profit and work closely with our users to
+          build the platform in response to community needs. Because we are
+          not-for-profit, we can also offer cutting-edge technology at very
+          competitive prices by comparison to the sector standard.</p>
+          <p>If you have the tech resources, you can run Janeway yourself,
+          because it is and will always be open-source software. If not, we are
+          here to help. We can set you up with your own Janeway-powered website
+          (hosting), where all you’ll have to do is log in, set up your
+          journal, and start publishing.</p>
+        {% endcomponent_block %}
+      </div>
+      <div class="relative max-lg:mt-16 lg:mt-28">
+        {% component_block "page_section" anchor="left" labelledby="how-it-works" %}
+          <h2 id="how-it-works">
+            How it works.
+          </h2>
+          <p>Deciding to move your journal to a new platform can be a daunting
+          prospect. However, our in-house tech team have refined the process of
+          journal migration through years of experience running our own
+          journals. They write bespoke open-source code to translate the
+          proprietary software often provided by commercial academic
+          publishers, so that your journal’s back content and all metadata can
+          be easily moved across.</p>
+          <p>As a small, friendly team, OLH software engineers will lead you
+          through the process, helping you design your new website, customise
+          functionality and appearance, choose your own article template with
+          our typesetter, and provide training to your editors in using the
+          Janeway platform. Once your journal has launched, we will add all
+          published content to our indexing and archiving services.</p>
+        {% endcomponent_block %}
+      </div>
+      <div class="relative max-md:mt-72 md:mt-36 max-md:mb-72 md:mb-28">
+        <div class="my-28 h-96 mx-auto">INFOGRAPHIC</div>
+      </div>
+      <div class="relative max-lg:mt-16 lg:mt-48">
+        {% component_block "page_section" prose=False anchor="right" width="part" label="Find out more" %}
+          {% include "custom/janeway-ctas.html" %}
+        {% endcomponent_block %}
+      </div>
+      {% include 'custom/subscribe.html' %}
+    </div>
+  </article>
+{% endblock body %}

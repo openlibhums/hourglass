@@ -14,8 +14,8 @@ const em = (px, base) => `${round(px / base)}em`
 export default {
   content: [
     './src/**/*.js',
-    './templates/**/*.html',
-    './components/**/*.{py,js,html}' // django-components
+    './templates/**/*.{html,svg}',
+    './components/**/*.{py,js,html,svg}' // django-components
   ],
   theme: {
     colors: {
@@ -34,7 +34,9 @@ export default {
       black: '#202124',
       white: '#fdfeff',
       transparent: 'transparent',
-      current: 'currentColor'
+      current: 'currentColor',
+      'jw-mustard': '#c08031',
+      'jw-blue': '#36565f',
     },
     container: {
       padding: {
@@ -51,7 +53,11 @@ export default {
         'poppins-medium': ['Poppins Medium', 'sans-serif'],
         'poppins-bold': ['Poppins Bold', 'sans-serif'],
         'source-sans': ['Source Sans', 'sans-serif'],
-        'source-sans-italic': ['Source Sans Italic', 'sans-serif']
+        'source-sans-italic': ['Source Sans Italic', 'sans-serif'],
+        'space-mono-regular': ['Space Mono Regular', 'sans-serif'],
+        'space-mono-bold': ['Space Mono Bold', 'sans-serif'],
+        'space-mono-italic': ['Space Mono Italic', 'sans-serif'],
+        'space-mono-bold-italic': ['Space Mono Bold Italic', 'sans-serif'],
       },
       // Customisation of Tailwind Typography plugin
       typography: ({ theme }) => ({

@@ -1,0 +1,155 @@
+{% extends "press/cms/page.html" %}
+
+{% load static %}
+{% load component_tags %}
+
+{% block meta_description %}
+  <meta
+    property="og:description"
+    content="We built Janeway, our in-house,
+    open-source publishing system, to host and provide a sustainable
+    platform for OLH journals.">
+{% endblock meta_description %}
+
+{% block body %}
+  <article aria-labelledby="h1">
+    <div class="container mx-auto max-w-screen-xl">
+      <div class="relative mt-28">
+        {% include "custom/edit-on-github.html" with rel_path="custom/janeway.html" %}
+        {% include "custom/man-writing-planet-opener.html" %}
+        {% include "custom/generic-h1.html" with h1="<br><br>Janeway." %}
+      </div>
+      <div class="relative max-lg:mt-8 lg:-mt-4">
+        {% component_block "page_intro" %}
+          {% fill "column_one" %}
+            <p class="lead text-white">We built world-leading, open source
+            digital publishing infrastructure to provide a sustainable platform
+            for OLH journals.</p>
+          {% endfill %}
+          {% fill "column_two" %}
+            <p>Our dedicated in-house software engineers have developed an
+            intuitive, agile and responsive platform for journal hosting,
+            migration, manuscript submission, review, copy-editing, and
+            typesetting. The platform is called Janeway.</p>
+          {% endfill %}
+        {% endcomponent_block %}
+      </div>
+      <div class="relative max-lg:mt-16 lg:mt-28">
+        <div class="flex max-lg:justify-center lg:justify-end md:max-w-3xl">
+          <div class="relative z-40">
+            {% component_block "quote" %}
+              {% fill "quote" %}
+                “The first thing to know about Janeway is that it
+                is not just a submission system and platform. It
+                is a complete publishing tool that allows the
+                editors to basically operate as . . . a publisher. That
+                makes it hugely empowering.”
+              {% endfill %}
+              {% fill "by" %}
+                — Johan Rooryck, Editor-in-Chief of the linguistics
+                journal <i>Glossa</i>, in a
+                <a class="underline"
+                  href="/news/579/">first-hand account of using Janeway</a>
+              {% endfill %}
+            {% endcomponent_block %}
+          </div>
+        </div>
+      </div>
+      <div class="relative max-lg:mt-16 lg:mt-28">
+        {% include 'custom/rodin-halfway.html' %}
+        {% component_block "page_section" anchor="left" labelledby="how-janeway-came-into-being" %}
+          <h2 id="how-janeway-came-into-being">
+            How Janeway came into being.
+          </h2>
+          <p>OLH Co-Founder Prof. Martin Eve and Director of Publishing
+          Technologies Andy Byers began building Janeway in June 2017, over one
+          long weekend of coding. They imagined a platform that was clean,
+          agile, and responsive. In a shift from existing scholar-led publishing
+          infrastructure, Martin and Andy built the platform in Python using
+          the Django framework. Python was chosen for its
+          readability and flexibility, its vibrant open source ecosystem of
+          libraries and frameworks, and its dedicated communities of developers,
+          scientists, and researchers. Django was created by newspaper
+          publishers in the 2000s to power increasingly digital publication
+          workflows and still ranks as one of the best and most resilient
+          frameworks for powering web applications.</p>
+          <p>Janeway is licensed under an open-source copyleft license, which
+          means it is freely available for anyone to use providing they make
+          their contributions similarly open. What Martin and Andy built quickly became
+          the platform of choice for editors, librarians, and publishers at
+          universities worldwide. The Janeway community now includes the
+          University of California, the University of Michigan, MIT, the
+          University of Wales, UCL Press, University of Arizona, the
+          University of Ghent, and the Technical University of Darmstadt.</p>
+          <p>Publishing our journal content using our own software ensures that
+          the OLH remains independent from commercial publishing platforms. By
+          removing the profit margins of infrastructure providers, the OLH has
+          demonstrated that diamond open access publishing is affordable,
+          scalable, and sustainable.</p>
+        {% endcomponent_block %}
+      </div>
+      <div class="relative max-lg:mt-16 lg:mt-28">
+        {% component_block "page_section" anchor="right" labelledby="intuitive-design" %}
+          <h2 id="intuitive-design">
+            Intuitive design.
+          </h2>
+          <p>The platform has an intuitive design, allowing editors to move
+          articles easily through the publishing workflow, from submission into
+          peer review, through copy-editing, typesetting, and into publication.
+          Authors, editors, and reviewers are given their own dashboard and
+          data is stored securely in accordance with GDPR legislation.</p>
+          <p>This design approach extends to the reader’s experience of
+          published articles. Article templates have been designed to be
+          user-friendly, with a modern, clean look and feel. Published in HTML,
+          they are mobile-friendly using a responsive design. JATS
+          XML markup makes them machine-readable and archive-friendly,
+          and PDF downloads make them portable and easy to read offline.</p>
+        {% endcomponent_block %}
+      </div>
+      <div class="relative max-md:mt-72 md:mt-36 max-md:mb-72 md:mb-28">
+        {% include "custom/janeway-article-infographic.html" %}
+      </div>
+      <div class="relative max-lg:mt-16 lg:mt-28">
+        {% component_block "page_section" anchor="left" labelledby="empowering-editors" %}
+          <h2 id="empowering-editors">
+            Empowering editors.
+          </h2>
+          <p>Janeway is built to empower editors and give them autonomy over
+          the publishing process. The Janeway developers work day-to-day with
+          the wider OLH editorial team, drawing on our editors’ expertise as
+          users to shape how the platform evolves. We also continue our
+          scholar-led tradition through research into what our users need,
+          continually improving our software to put scholars in charge.</p>
+          <p>In keeping with our belief in openness, anyone can comment on,
+          make feature suggestions for, or contribute to the codebase. This
+          means we are continually developing features with scholars’ needs in
+          mind.</p>
+        {% endcomponent_block %}
+      </div>
+      <div class="relative max-lg:mt-16 lg:mt-48">
+        <aside class="relative max-lg:left-0 lg:-left-36 top-0 z-20">
+          <img
+            class="
+              absolute max-lg:z-20 lg:z-0 max-lg:top-36 lg:-top-36
+              max-lg:left-12 lg:-left-24 max-lg:max-w-sm
+            "
+            src="{% static 'hourglass/media/backgrounds/circle-quarter-blue-textured.png' %}"
+            width="580"
+            alt="">
+          <img
+            class="
+              max-lg:hidden absolute
+              -left-28 -top-32
+            "
+            src="{% static 'hourglass/media/backgrounds/moon.png' %}"
+            width="300" height="300"
+            alt="A planet covered in grey swirling clouds">
+        </aside>
+        {% component_block "page_section" prose=False anchor="right" width="part" label="Find out more" %}
+          {% include "custom/janeway-ctas.html" %}
+        {% endcomponent_block %}
+      </div>
+      {% include 'custom/subscribe.html' %}
+    </div>
+  </article>
+{% endblock body %}

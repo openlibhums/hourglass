@@ -35,9 +35,20 @@
    ]
    ```
 
-5. Make changes to settings for `django-components` according to the
+5. Make changes to settings for `django-components`, mostly according to the
    [installation
    instructions](https://github.com/EmilStenstrom/django-components/tree/d9342782266b6ec41e3f2c39229d71d975f809a2#installation)
+   However, do *not* apply caching with `loaders.cached.loader`. Instead,
+   use these loaders:
+
+   ```py
+   'loaders': [
+       'utils.template_override_middleware.Loader',
+       'django.template.loaders.filesystem.Loader',
+       'django_components.template_loader.Loader',
+       'django.template.loaders.app_directories.Loader',
+   ],
+   ```
 
 6. Make changes to settings for `django_minify_html` if desired according to the
    [installation
@@ -51,7 +62,7 @@ From the Janeway root, build assets for all themes:
 python src/manage.py build_assets
 ```
 
-You can also rebuild just the CSS with NPM:
+You can call the same command via NPM in the theme root:
 
 ```shell
 cd src/themes/hourglass
