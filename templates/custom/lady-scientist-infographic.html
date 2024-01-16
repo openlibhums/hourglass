@@ -1,0 +1,76 @@
+{% load static %}
+
+<img
+  class="absolute z-0 w-32 -left-12 -top-20"
+  src="{% static 'hourglass/media/backgrounds/circle-blue.svg' %}"
+  alt="">
+<img
+  class="absolute z-20 w-32 right-64 -top-12"
+  src="{% static 'hourglass/media/backgrounds/circle-red.svg' %}"
+  alt="">
+<section
+  aria-label="Benefits at a glance"
+  class="relative z-40">
+  <div class="grid max-lg:grid-rows-4 lg:grid-cols-10 place-items-center">
+    <div
+      class="
+        max-lg:row-start-1 max-lg:row-end-2
+        lg:col-start-1 lg:col-end-5
+        prose lg:prose-lg bg-white
+        max-lg:w-72 h-full
+        max-lg:px-3 max-lg:py-6
+        lg:py-3 lg:pl-3 lg:pr-32
+        flex flex-col justify-center
+      ">
+      <ul>
+        <li class="!m-0">Academic-led, based at Birkbeck, University of London</li>
+        <li class="!m-0">A decade of experience publishing award-winning scholarship</li>
+        <li class="!m-0">Not for profit</li>
+      </ul>
+    </div>
+    <div
+      class="
+        max-lg:relative max-lg:bg-white
+        max-lg:w-72 max-lg:h-full
+        max-lg:row-start-2 max-lg:row-end-4
+        max-lg:flex max-lg:flex-col max-lg:items-center max-lg:justify-center
+        lg:absolute lg:col-start-4 lg:col-end-8
+      ">
+      <img
+        class="max-lg:absolute max-lg:max-w-none"
+        src="{% static 'hourglass/media/backgrounds/lady-scientists.png' %}"
+        width="400" height="399"
+        alt="Two women look into a microscope together">
+    </div>
+    <div
+      class="
+        max-lg:row-start-4 max-lg:row-end-5
+        lg:col-start-7 lg:col-end-11
+        prose lg:prose-lg bg-white
+        max-lg:w-72 h-full
+        max-lg:px-3 max-lg:py-6
+        lg:py-3 lg:pl-32 lg:pr-3
+        flex flex-col justify-center
+      ">
+      <img
+        class="absolute z-20 w-20 -right-4 -top-16"
+        src="{% static 'hourglass/media/backgrounds/circle-red.svg' %}"
+        alt="">
+      <ul>
+        <li class="!m-0">Never vanity or predatory publishing</li>
+        <li class="!m-0">Not commercial</li>
+        <li class="!m-0">No mandatory author charges</li>
+      </ul>
+    </div>
+    <img
+      class="absolute z-30 w-20 left-72 -bottom-12"
+      src="{% static 'hourglass/media/backgrounds/circle-blue.svg' %}"
+      alt="">
+  </div>
+</section>
+<img
+  class="absolute z-20 w-20 right-48 -bottom-36"
+  src="{% static 'hourglass/media/backgrounds/circle-red.svg' %}"
+  alt="">
+
+

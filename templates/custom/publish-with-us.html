@@ -1,0 +1,284 @@
+{% extends "press/cms/page.html" %}
+
+{% load static %}
+{% load component_tags %}
+
+{% block meta_description %}
+  <meta
+    property="og:description"
+    content="">
+{% endblock meta_description %}
+
+{% block body %}
+  <article aria-labelledby="h1">
+    <div class="container mx-auto max-w-screen-xl">
+      <div class="relative">
+        {% include "custom/edit-on-github.html" with rel_path="custom/publish-with-us.html" %}
+        {% include "custom/generic-h1-higher.html" with h1="Publish<br> with us." %}
+        <aside class="motion-safe:rallax relative z-0 max-lg:top-12 lg:-top-36 right-0">
+          <img
+            class="
+              absolute z-10 w-12 max-lg:-top-8 lg:-top-24
+              max-lg:right-52 lg:right-32
+            "
+            src="{% static 'hourglass/media/backgrounds/circle-red.svg' %}"
+            alt="">
+          <img
+            class="
+              max-lg:hidden absolute z-0 w-32 max-lg:-top-8 lg:-top-44
+              max-lg:right-52 lg:right-10
+            "
+            src="{% static 'hourglass/media/backgrounds/breakdancer.png' %}"
+            width="128" height="125"
+            alt="A small breakdancer in the background with his head hidden
+                 behind a red circle">
+          <img
+            class="
+              absolute z-0 max-lg:top-28 lg:-top-40
+              max-lg:right-0 lg:right-24
+            "
+            src="{% static 'hourglass/media/backgrounds/circle-blue-textured.png' %}"
+            width="434"
+            alt="">
+          <img
+            class="
+              absolute max-lg:z-0 lg:z-10
+              max-lg:-top-12 lg:-top-28 max-lg:-right-12 lg:right-44
+            "
+            src="{% static 'hourglass/media/backgrounds/comics-girl.png' %}"
+            width="350" height="383"
+            alt="A teenage girl crouches on the floor reading a comic book">
+        </aside>
+      </div>
+      <div class="relative max-lg:mt-80 lg:mt-28">
+        {% component_block "page_intro" %}
+          {% fill "column_one" %}
+            <p class="lead text-white">Publishing your research with the OLH helps you
+            gain a wider readership while taking a stand against the
+            commodification of research.</p>
+          {% endfill %}
+          {% fill "column_two" %}
+            <p>This page outlines the benefits
+            of publishing with the OLH as an academic-led publisher.</p>
+            <p>We designed the OLH for like-minded scholars who want the
+            benefits of open access without author fees. Read on to discover
+            how we are leading a transition towards a fairer, more equitable
+            model of humanities research for the future.</p>
+          {% endfill %}
+        {% endcomponent_block %}
+      </div>
+      <div class="relative max-lg:mt-28 lg:mt-56">
+        {% include "custom/lady-scientist-infographic.html" %}
+      </div>
+      <div class="relative max-lg:mt-28 lg:mt-56">
+        <aside
+          class="
+            max-lg:hidden relative -left-8
+            motion-safe:-top-32 motion-safe:rallax
+          ">
+          <img
+            class="z-10 absolute -top-24 -left-20 rotate-180"
+            src="{% static 'hourglass/media/backgrounds/triangle-blue-textured.png' %}"
+            width="335" height="337"
+            alt="">
+          <img
+            class="
+              absolute z-10
+              max-lg:top-4 lg:-top-12 max-lg:-left-32 lg:-left-32
+            "
+            src="{% static 'hourglass/media/backgrounds/man-video-camera-blue.png' %}"
+            width="300" height="449"
+            alt="A man with a tie and jacket holds the viewfinder of a
+            large, old-fashioned, blue video camera to his right eye and
+            squints through it">
+        </aside>
+        {% component_block "page_section" anchor="right" margin="narrow" labelledby="more-research-engagement" icon="Engage.svg" width="part" %}
+          <h2 id="more-research-engagement">More research engagement.</h2>
+          <p>Allowing free access means more readers can engage with your
+          research worldwide, creating more opportunities for citation and
+          impact. OLH journal articles have been downloaded over 1.9 million
+          times and our journal sites were viewed more that 2.5 million times in
+          2022 alone. This figure is rising each year, as the OLH's reputation as
+          a leading humanities publisher grows.</p>
+          <p>Our licensing also makes it easier to cite your work in blogs,
+          personal websites, and social media, meaning greater academic and
+          social reach. This is particularly important for topics with an applied
+          or social justice dimension.</p>
+        {% endcomponent_block %}
+      </div>
+      <div class="relative max-lg:mt-16 lg:mt-28">
+        <div class="flex max-lg:justify-center lg:justify-end md:max-w-3xl">
+          <div class="relative z-40">
+            {% component_block "quote" %}
+              {% fill "quote" %}
+                “When I sought a venue for the special issue on videogames and
+                postcolonialism, I was thinking of the millions of people in
+                the so-called Global South countries who had no access to the
+                articles in paywalled journals, where their own predicament was
+                being discussed. OLH, therefore, was a godsend when the editors
+                agreed to publish the special issue. Today, anyone with an
+                Internet connection can access the articles for free.”
+              {% endfill %}
+              {% fill "by" %}
+                <span class="font-poppins-bold">Emil Hammar</span>,
+                Co-editor of ‘<a class="underline"
+                href="https://olh.openlibhums.org/collections/436/">Postcolonial
+                Perspectives in Game Studies</a>’
+              {% endfill %}
+            {% endcomponent_block %}
+          </div>
+        </div>
+      </div>
+      <div class="relative max-lg:mt-16 lg:mt-28">
+        <aside
+          class="
+            max-lg:hidden relative -right-8
+            motion-safe:-top-32 motion-safe:rallax
+          ">
+          <img
+            class="z-10 absolute -top-24 -right-20 rotate-90 max-w-xs"
+            src="{% static 'hourglass/media/backgrounds/triangle-blue-textured.png' %}"
+            alt="">
+          <img
+            class="z-20 absolute -top-32 right-12 w-16"
+            src="{% static 'hourglass/media/backgrounds/circle-red.svg' %}"
+            alt="">
+        </aside>
+        {% component_block "page_section" labelledby="no-author-fees" margin="narrow" icon="Diamond-Open-Access.svg" %}
+          <h2 id="no-author-fees">No author fees.</h2>
+          <p>OLH provides authors with all the benefits of open access, without
+          having to pay article processing charges (APCs). There are no hidden
+          costs, and we will never ask for mandatory payment at any stage in
+          the publication process. Instead, we secure funding for our costs via
+          our international library network.</p>
+        {% endcomponent_block %}
+      </div>
+      <div class="relative mt-8">
+        {% component_block "page_section" labelledby="research-evaluation-compliant" margin="narrow" icon="Guiding-Values.svg" %}
+          <h2 id="research-evaluation-compliant">Research evaluation compliant.</h2>
+          <p>As a diamond open access publisher, our journal articles are fully
+          compliant with open access policies for research evaluation. You
+          won’t need to archive an author accepted manuscript in your
+          institutional repository – OLH authors retain the intellectual rights
+          to their work and your article can be submitted for evaluation to
+          performance-based research funding systems such as the Research
+          Excellence Framework (REF) in the UK and the Excellence in Research
+          for Australia (ERA).</p>
+          <p>Although our journals have been internationally recognised for
+          high quality and robust peer review processes, the OLH also has a
+          reputation for advocating for quality beyond crude impact factor
+          metrics, which do not always recognise the significance of
+          small-scale, niche humanities disciplines and journals.</p>
+
+        {% endcomponent_block %}
+      </div>
+      <div class="relative mt-8">
+        {% component_block "page_section" labelledby="keep-your-copyright" margin="narrow" icon="Authors.svg" %}
+          <h2 id="keep-your-copyright">Keep your copyright.</h2>
+          <p>There is a misconception that publishing open access means losing
+          copyright of your work. The opposite is often true. Commercial
+          publishers are more likely to ask you to hand over the rights so they
+          can disseminate your work exclusively, to maximise profit.</p>
+          <p>At the OLH, authors always retain copyright of their work. We
+          publish under <a
+          href="https://creativecommons.org/share-your-work/cclicenses/">Creative
+          Commons licences</a> (most typically CC BY 4.0), which allows others to
+          copy, distribute, display, and perform your copyrighted work, but they
+          must give you full credit. It also allows you to embed your work within
+          personal websites. All the rules of plagiarism still apply.</p>
+          <p>We generally allow the most permissive licencing because it aligns
+          with our community values of immediate and unrestricted access. It
+          also ensures our content is indexed with the
+          <a href="https://doaj.org/apply/seal/">DOAJ seal</a>. However, if
+          research is commercially sensitive or there are concerns about reuse
+          of third-party material, you can publish under more restrictive
+          Creative Commons licences on request.</p>
+        {% endcomponent_block %}
+      </div>
+      <div class="relative mt-8">
+        {% component_block "page_section" labelledby="accelerated-timelines" margin="narrow" icon="Publish.svg" %}
+          <h2 id="accelerated-timelines">Accelerated timelines.</h2>
+          <p>A foundational idea of the open access movement is that quick
+          publication is important to scholarly advancement. We think this is
+          true for humanities research, not just the sciences. We therefore
+          pioneered rolling publication formats in our humanities journals to
+          prevent unnecessary delays post-peer review.</p>
+          <p>By offering rolling publication, where each article is published
+          as soon as it is ready, our journals typically publish much quicker
+          than commercial publishers. This can be beneficial for research
+          assessment and applying for grants and jobs. It ultimately also
+          benefits the research communities that engage with your work.</p>
+        {% endcomponent_block %}
+      </div>
+      <div class="relative mt-8">
+        {% component_block "page_section" labelledby="easy-discoverability" margin="narrow" icon="Hear-our-Ideas.svg" %}
+          <h2 id="easy-discoverability">Easy discoverability.</h2>
+          <p>We offer comprehensive indexing and archiving, with a strong focus
+          on the discoverability in university library catalogues. All OLH
+          journal content is registered with Crossref and assigned a Digital
+          Object Identifier (DOI).</p>
+          <p>Our journal information is harvested by Google Scholar and
+          metadata is available for harvesting via OAI-PMH. Journals are
+          registered at Cornell University, which maintains interoperability
+          standards through metadata exchange among repositories. We also
+          deposit articles in the CLOCKSS and LOCKSS permanent archiving
+          systems at Stanford University, which are world leaders in
+          high-confidence, resilient, secure digital preservation.</p>
+        {% endcomponent_block %}
+        <aside
+          class="
+            max-lg:hidden motion-safe:rallax z-0 relative
+            motion-reduce:bottom-0 motion-safe:bottom-12 -right-24
+          ">
+          <img
+            class="absolute z-0 w-[30rem] -bottom-56 -right-32 -rotate-90"
+            src="{% static 'hourglass/media/backgrounds/triangle-orange-on-side.svg' %}"
+            alt="">
+          <img
+            class="absolute z-20 w-96 -bottom-12 -right-28"
+            src="{% static 'hourglass/media/backgrounds/video-camera.png' %}"
+            width="400" height="415"
+            alt="">
+          <img
+            class="absolute z-10 w-28 -bottom-28 right-32 -rotate-90"
+            src="{% static 'hourglass/media/backgrounds/triangle-red-on-side.svg' %}"
+            alt="">
+        </aside>
+      </div>
+      <div class="relative mt-8">
+        {% component_block "page_section" labelledby="solidarity" margin="narrow" icon="Network.svg" %}
+          <h2 id="solidarity">Solidarity between scholars and librarians.</h2>
+          <p>Publishing with the OLH is an act of solidarity between academics
+          and our library colleagues. Our approach is a genuine alternative to
+          corporate publishers who profit from our research by selling it back
+          to universities. While library budgets are squeezed by these
+          extortionate subscription packages, corporate publishers generate <a
+          href="https://www.theguardian.com/science/2017/jun/27/profitable-business-scientific-publishing-bad-for-science">profit
+          margins greater than Coca-Cola and oil companies</a>.</p>
+          <p>Libraries, funders and institutions join our not-for-profit
+          programme to cover the costs of publishing OLH journals. Our model is
+          inspired by the open access movement’s radical ambitions to build a
+          scholar-led, political, <a
+          href="/site/open-access-movement/">community movement</a>.</p>
+        {% endcomponent_block %}
+      </div>
+      <div class="relative max-lg:mt-16 lg:mt-28">
+        {% component_block "page_section" anchor="right" labelledby="recommended-reading" %}
+          <h2 id="recommended-reading">Recommended reading.</h2>
+          {% component_block "reference_list" %}
+            {% component_block "reference_list_item" %}
+              Lucy Barnes (2018), ‘<a href="https://blogs.openbookpublishers.com/copyright-and-licensing-what-do-i-need-to-know/">Copyright and Licensing – What do I Need to Know?</a>’, Open Book Publishers Blog
+            {% endcomponent_block %}
+            {% component_block "reference_list_item" %}
+              Martin Paul Eve (2022), ‘<a href="https://www.openlibhums.org/news/521/">Open Licensing and the Open Library of Humanities</a>’, OLH Blog
+            {% endcomponent_block %}
+            {% component_block "reference_list_item" %}
+              Martin Paul Eve (2014), ‘Open Access and the Humanities, Cambridge: Cambridge University Press’
+            {% endcomponent_block %}
+          {% endcomponent_block %}
+        {% endcomponent_block %}
+      </div>
+      {% include 'custom/subscribe.html' %}
+    </div>
+  </article>
+{% endblock body %}
