@@ -46,7 +46,7 @@
           {% endfill %}
         {% endcomponent_block %}
       </div>
-      <div class="relative mt-28">
+      <div class="relative max-lg:mt-16 lg:mt-28">
         {% component_block "page_section" anchor="left" labelledby="history" %}
           <img
             class="-m-4 w-48"
@@ -79,135 +79,8 @@
           reader fees.</p>
         {% endcomponent_block %}
       </div>
-      <div class="relative mt-28">
-        {% include 'custom/puppet-halfway.html' %}
-        {% component_block "page_section" anchor="right" labelledby="special-collections" %}
-          <h2 id="special-collections">Special collections.</h2>
-          <p><i>OLHJ</i> publishes articles in curated ‘Special Collections’ —
-          guest-edited issues in a specific field, subject, or exploring a
-          particular historic or cultural event within the humanities.</p>
-          <p>Special Collections combine the best of traditional journals with the
-          latest innovations in digital publishing. They retain the focus
-          associated with niche humanities disciplines, enabling ongoing dialogue
-          between scholars. However, our rolling publication format accelerates
-          access to original research because articles are published as soon as
-          they successfully pass review.</p>
-          <p>This was inspired by the use of preprint servers in the sciences to
-          share research findings quickly with the scholarly community. The
-          elasticity of our model also means that Collections can remain open for a
-          longer period of time, growing organically and inspiring response pieces
-          that can appear within the same Collection.</p>
-          <blockquote>
-            For me, the Special Collection format at the <i>Open Library
-            of Humanities</i> journal is an excellent alternative to more
-            traditional forms of edited collection, both because of the brilliant
-            editorial support that we received from the OLH and also because the
-            open rolling format was so generative. Being able to decide how long
-            submissions could be kept open meant that the collection developed in
-            ways we could never have imagined in advance. The resulting gathering
-            of work is genuinely diverse, inspired by our research context and
-            questions but not limited by them.
-          </blockquote>
-          <p class="pl-8">—Catherine Grant, Co-editor of
-            ‘<a href="https://olh.openlibhums.org/collections/423/">Pride 
-              Revisited</a>’
-            <i>OLHJ</i> Special Collection
-          </p>
-          <p>And, crucially, unlike an edited book collection, the articles are
-          available to all, without restriction, and as soon as each article
-          submission is ready for publication. This ensures maximum visibility</p>
-        {% endcomponent_block %}
-      </div>
-      <div class="relative mt-28">
-        {% component_block "page_section" prose=False anchor="right" width="full" label="Find out more" %}
-          {% component_block "cta_list" %}
-            {% component_block "cta_list_item" %}
-              <img
-                class="w-44 h-44"
-                src="{% static 'hourglass/media/icons/Publish.svg' %}"
-                alt="">
-              <strong class="font-poppins-bold max-lg:text-xl lg:text-2xl text-center">
-                Calls for papers.
-              </strong>
-              {% with rel_path="/news/all/tag/CFP/" label="Find out more" %}
-                {% include 'custom/button-action-blue.html' %}
-              {% endwith %}
-            {% endcomponent_block %}
-            {% component_block "cta_list_item" %}
-              <img
-                class="w-44 h-44"
-                src="{% static 'hourglass/media/icons/Special-Collection-Editors.svg' %}"
-                alt="">
-              <strong class="font-poppins-bold max-lg:text-xl lg:text-2xl text-center">
-                Published special collections.
-              </strong>
-              {% with rel_path="https://olh.openlibhums.org/collections/collection/" label="Find out more" %}
-                {% include 'custom/button-action-blue.html' %}
-              {% endwith %}
-            {% endcomponent_block %}
-            {% component_block "cta_list_item" %}
-              <img
-                class="w-44 h-44"
-                src="{% static 'hourglass/media/icons/FAQs.svg' %}"
-                alt="">
-              <strong class="font-poppins-bold max-lg:text-xl lg:text-2xl text-center">
-                Editor testimonials.
-              </strong>
-              {% with rel_path="/site/testimonials/" label="Find out more" %}
-                {% include 'custom/button-action-blue.html' %}
-              {% endwith %}
-            {% endcomponent_block %}
-          {% endcomponent_block %}
-        {% endcomponent_block %}
-      </div>
-      <div class="relative mt-28">
-        {% include 'custom/puppet-last.html' %}
-        {% component_block "page_section" anchor="left" labelledby="bespoke-service" %}
-          <h2 id="bespoke-service">Bespoke service.</h2>
-          <p>We think that the level of personalised, customisable, and dedicated
-          support we offer is unmatched, whether in the form of video meetings,
-          professional copyediting, tailored tech training sessions, instant
-          messenger, or mechanisms for using editor feedback to improve our
-          in-house submissions platform.</p>
-          <p>Our small and friendly editorial team are available during normal
-          working hours throughout the year to answer editorial and technology
-          queries and take each published article through a thorough in-house
-          copyedit before publication. The OLH combines this professionalism with
-          our tradition of being proudly academic-led: each member of our editorial
-          team is a qualified academic with a PhD in the humanities and therefore
-          has personal experience of peer reviewed, academic publishing.</p>
-          <blockquote>
-            I really enjoyed working with the OLH, and thought their work
-            was excellent: just the right amount of editing and always fast, and
-            always patient as we tried to navigate the workflow. I’ve worked with a
-            lot of publishers and journals by now, and that was the smoothest,
-            friendliest and best-value experience I’ve had in the last 15 years. I
-            hope to work with them again in the future.
-          </blockquote>
-          <p class="pl-8">—Bettina Bildhauer, Co-editor of 
-            ‘<a href="https://olh.openlibhums.org/collections/505/">Politics
-              and History of Menstruation</a>’
-            Special Collection
-          </p>
-          <p>Crucially we provide this bespoke service without any author or
-          reader-facing fees, thanks to the generous support of our worldwide
-          network of library partners, who back our vision for a more equitable,
-          ethical, and sustainable model of open access.</p>
-        {% endcomponent_block %}
-      </div>
-      <div class="relative mt-28">
-        {% with h="Interviews and insights" %}
-          {% component_block "page_section" prose=False anchor="right" width="full" labelledby=h|slugify %}
-            {% component_block "news_list" h=h %}
-              {% component "news_list_item" item="585" include_tags=False %}
-              {% component "news_list_item" item="523" include_tags=False %}
-              {% component "news_list_item" item="593" include_tags=False %}
-            {% endcomponent_block %}
-          {% endcomponent_block %}
-        {% endwith %}
-      </div>
-      <div class="relative mt-28">
-        {% component_block "page_section" prose=False anchor="left" width="full" label="Quality, best practice, and community" %}
+      <div class="relative max-lg:mt-16 lg:mt-28">
+        {% component_block "page_section" prose=False anchor="right" width="full" label="Quality, best practice, and community" %}
           <div class="prose lg:prose-lg pb-8">
             <p><i>OLHJ</i> represents quality and best practice in open access
             publishing, while providing a home for academic-led and community-owned
@@ -301,8 +174,111 @@
           </div>
         {% endcomponent_block %}
       </div>
-      <div class="relative mt-28">
-        {% component_block "page_section" prose=False width="full" anchor="right" labelledby="apply-to-edit-special-collection" %}
+      <div class="relative max-lg:mt-16 lg:mt-28">
+        <div class="flex max-lg:justify-center lg:justify-end md:max-w-3xl">
+          <div class="relative z-40">
+            {% component_block "quote" %}
+              {% fill "quote" %}
+                “I really enjoyed working with the OLH, and thought their work
+                was excellent: just the right amount of editing and always fast, and
+                always patient as we tried to navigate the workflow. I’ve worked with a
+                lot of publishers and journals by now, and that was the smoothest,
+                friendliest and best-value experience I’ve had in the last 15 years. I
+                hope to work with them again in the future.”
+              {% endfill %}
+              {% fill "by" %}
+                —Bettina Bildhauer, Co-editor of
+                ‘<a href="https://olh.openlibhums.org/collections/505/">Politics
+                  and History of Menstruation</a>’
+                Special Collection
+              {% endfill %}
+            {% endcomponent_block %}
+          </div>
+        </div>
+      </div>
+      <div class="relative max-lg:mt-16 lg:mt-28">
+        {% component_block "page_section" prose=False anchor="left" width="full" label="Find out more" %}
+          {% component_block "cta_list" %}
+            {% component_block "cta_list_item" %}
+              <img
+                class="w-44 h-44"
+                src="{% static 'hourglass/media/icons/Publish.svg' %}"
+                alt="">
+              <strong class="font-poppins-bold max-lg:text-xl lg:text-2xl text-center">
+                Calls for papers.
+              </strong>
+              {% with rel_path="/news/all/tag/CFP/" label="Find out more" %}
+                {% include 'custom/button-action-blue.html' %}
+              {% endwith %}
+            {% endcomponent_block %}
+            {% component_block "cta_list_item" %}
+              <img
+                class="w-44 h-44"
+                src="{% static 'hourglass/media/icons/Special-Collection-Editors.svg' %}"
+                alt="">
+              <strong class="font-poppins-bold max-lg:text-xl lg:text-2xl text-center">
+                Published special collections.
+              </strong>
+              {% with rel_path="https://olh.openlibhums.org/collections/collection/" label="Find out more" %}
+                {% include 'custom/button-action-blue.html' %}
+              {% endwith %}
+            {% endcomponent_block %}
+            {% component_block "cta_list_item" %}
+              <img
+                class="w-44 h-44"
+                src="{% static 'hourglass/media/icons/FAQs.svg' %}"
+                alt="">
+              <strong class="font-poppins-bold max-lg:text-xl lg:text-2xl text-center">
+                Editor testimonials.
+              </strong>
+              {% with rel_path="/site/testimonials/" label="Find out more" %}
+                {% include 'custom/button-action-blue.html' %}
+              {% endwith %}
+            {% endcomponent_block %}
+          {% endcomponent_block %}
+        {% endcomponent_block %}
+      </div>
+      <div class="relative max-lg:mt-16 lg:mt-28">
+        {% include 'custom/puppet-halfway.html' %}
+        {% component_block "page_section" anchor="right" labelledby="special-collections" %}
+          <h2 id="special-collections">Special collections.</h2>
+          <p><i>OLHJ</i> publishes articles in curated ‘Special Collections’ —
+          guest-edited issues in a specific field, subject, or exploring a
+          particular historic or cultural event within the humanities.</p>
+          <p>Special Collections combine the best of traditional journals with the
+          latest innovations in digital publishing. They retain the focus
+          associated with niche humanities disciplines, enabling ongoing dialogue
+          between scholars. However, our rolling publication format accelerates
+          access to original research because articles are published as soon as
+          they successfully pass review.</p>
+          <p>This was inspired by the use of preprint servers in the sciences to
+          share research findings quickly with the scholarly community. The
+          elasticity of our model also means that Collections can remain open for a
+          longer period of time, growing organically and inspiring response pieces
+          that can appear within the same Collection.</p>
+          <blockquote>
+            For me, the Special Collection format at the <i>Open Library
+            of Humanities</i> journal is an excellent alternative to more
+            traditional forms of edited collection, both because of the brilliant
+            editorial support that we received from the OLH and also because the
+            open rolling format was so generative. Being able to decide how long
+            submissions could be kept open meant that the collection developed in
+            ways we could never have imagined in advance. The resulting gathering
+            of work is genuinely diverse, inspired by our research context and
+            questions but not limited by them.
+          </blockquote>
+          <p class="pl-8">—Catherine Grant, Co-editor of
+            ‘<a href="https://olh.openlibhums.org/collections/423/">Pride
+              Revisited</a>’
+            <i>OLHJ</i> Special Collection
+          </p>
+          <p>And, crucially, unlike an edited book collection, the articles are
+          available to all, without restriction, and as soon as each article
+          submission is ready for publication. This ensures maximum visibility</p>
+        {% endcomponent_block %}
+      </div>
+      <div class="relative max-lg:mt-16 lg:mt-28">
+        {% component_block "page_section" prose=False width="full" anchor="left" labelledby="apply-to-edit-special-collection" %}
           {% component_block "cta_singular" %}
             <img
               class="-m-3 max-lg:w-32 max-lg:h-32 lg:w-44 lg:h-44"
@@ -325,6 +301,17 @@
             </div>
           {% endcomponent_block %}
         {% endcomponent_block %}
+      </div>
+      <div class="relative max-lg:mt-16 lg:mt-28">
+        {% with h="Interviews and insights" %}
+          {% component_block "page_section" prose=False anchor="right" width="full" labelledby=h|slugify %}
+            {% component_block "news_list" h=h %}
+              {% component "news_list_item" item="585" include_tags=False %}
+              {% component "news_list_item" item="523" include_tags=False %}
+              {% component "news_list_item" item="593" include_tags=False %}
+            {% endcomponent_block %}
+          {% endcomponent_block %}
+        {% endwith %}
       </div>
       {% include 'custom/subscribe.html' %}
     </div>
