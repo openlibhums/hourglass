@@ -100,8 +100,8 @@
     {% endif %}
     {% if governance_groups.first.statement %}
       <div class="relative max-lg:mt-8 lg:mt-28">
-        {% component_block "page_section" anchor="right" labelledby="publications" %}
-          <h2 id="publications">Statement of interest.</h2>
+        {% component_block "page_section" anchor="right" labelledby="statement" %}
+          <h2 id="statement">Statement of interest.</h2>
           {{ governance_groups.first.statement|safe }}
         {% endcomponent_block %}
       </div>
