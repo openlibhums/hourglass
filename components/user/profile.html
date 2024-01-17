@@ -8,16 +8,41 @@
       class="relative max-lg:mt-0 lg:mt-8">
       {% include 'custom/generic-h1-higher.html' with h1=user.full_name %}
       <div class="z-40 relative pl-8">
-        <div class="mb-6">
-          <strong class="max-lg:text-2xl lg:text-3xl font-poppins-bold">
-            {{ user.staffgroupmember_set.first.job_title }}
-          </strong>
-        </div>
-        <div class="mb-6">
-          <strong class="max-lg:text-xl lg:text-2xl italic font-poppins-medium">
-            {{ user.staffgroupmember_set.first.alternate_title }}
-          </strong>
-        </div>
+        {% for group_membership in staff_groups %}
+          <div class="mb-6">
+            <strong class="max-lg:text-2xl lg:text-3xl font-poppins-bold">
+              {{ group_membership.job_title }}
+            </strong>
+          </div>
+          {% if group_membership.alternate_title %}
+            <div class="mb-6">
+              <strong class="max-lg:text-xl lg:text-2xl italic font-poppins-medium">
+                {{ group_membership.alternate_title }}
+              </strong>
+            </div>
+          {% endif %}
+        {% endfor %}
+        {% for group_membership in governance_groups %}
+          {% if user.affiliation %}
+            <div class="mb-6">
+              <strong class="max-lg:text-xl lg:text-2xl font-poppins-medium">
+                {{ user.affiliation }}
+              </strong>
+            </div>
+          {% endif %}
+          {% if user.country %}
+            <div class="mb-6">
+              <strong class="max-lg:text-xl lg:text-2xl font-poppins-medium">
+                {{ user.country }}
+              </strong>
+            </div>
+          {% endif %}
+          <div class="mb-6">
+            <strong class="max-lg:text-xl lg:text-2xl font-poppins-bold">
+              {{ group_membership.group.name }}
+            </strong>
+          </div>
+        {% endfor %}
       </div>
       <div
         class="
@@ -36,14 +61,21 @@
           "
           src="{% static 'hourglass/media/backgrounds/bars-vertical-orange-three.svg' %}"
           alt="">
-        <img
+        <div
           class="
             absolute z-20 max-lg:w-64 lg:w-80
             max-md:-top-4 md:max-lg:top-44 lg:top-16
             max-md:-right-4 md:max-lg:right-12 lg:max-xl:right-8 xl:right-28
-          "
-          src="{{ user.profile_image.url }}"
-          alt="">
+            {% if not user.profile_image %}
+              bg-tan-light max-lg:h-64 lg:h-80
+            {% endif %}
+            ">
+          {% if user.profile_image %}
+            <img
+              src="{{ user.profile_image.url }}"
+              alt="">
+          {% endif %}
+        </div>
         <img
           class="
             motion-safe:rallax absolute z-20 w-12 max-lg:-top-8 lg:top-8
@@ -58,11 +90,19 @@
         {{ user.biography|safe }}
       {% endcomponent_block %}
     </div>
-    {% if user.staffgroupmember_set.first.publications %}
+    {% if staff_groups.first.publications %}
       <div class="relative max-lg:mt-8 lg:mt-28">
         {% component_block "page_section" anchor="right" labelledby="publications" %}
           <h2 id="publications">Selected publications.</h2>
-          {{ user.staffgroupmember_set.first.publications|safe }}
+          {{ staff_groups.first.publications|safe }}
+        {% endcomponent_block %}
+      </div>
+    {% endif %}
+    {% if governance_groups.first.statement %}
+      <div class="relative max-lg:mt-8 lg:mt-28">
+        {% component_block "page_section" anchor="right" labelledby="publications" %}
+          <h2 id="publications">Statement of interest.</h2>
+          {{ governance_groups.first.statement|safe }}
         {% endcomponent_block %}
       </div>
     {% endif %}

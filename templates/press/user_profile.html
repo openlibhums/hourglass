@@ -13,7 +13,7 @@
 {% endblock meta_description %}
 
 {% block meta_image %}
-  {% if request.press.default_carousel_image %}
+  {% if user.profile_image %}
     <meta
       property="og:image"
       content="{% build_absolute_uri user.profile_image.url %}">
@@ -21,5 +21,5 @@
 {% endblock meta_image %}
 
 {% block body %}
-  {% component "staff_profile" user=user membership=membership %}
+  {% component "user_profile" user=user staff_groups=staff_groups governance_groups=governance_groups %}
 {% endblock %}

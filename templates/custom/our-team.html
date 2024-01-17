@@ -14,67 +14,9 @@
 {% block body %}
   <div class="container mx-auto max-w-screen-xl">
     <div class="relative max-lg:mt-56 lg:mt-8">
-      <aside
-        class="
-          relative max-lg:-top-72 lg:-top-24
-          max-lg:right-0 lg:-right-20 xl:-right-32
-        ">
-        <img
-          class="
-            motion-safe:rallax z-0 absolute max-lg:h-36 lg:h-44
-            max-lg:top-24 lg:top-52 max-lg:right-60 lg:right-96
-          "
-          src="{% static 'hourglass/media/backgrounds/rectangle-red.svg' %}"
-          alt="">
-        <img
-          class="
-            motion-safe:rallax z-0 absolute max-lg:h-36 lg:h-44
-            max-lg:top-28 lg:top-64 max-lg:right-48 lg:right-80
-          "
-          src="{% static 'hourglass/media/backgrounds/rectangle-black.svg' %}"
-          alt="">
-        <img
-          class="z-0 absolute max-lg:top-24 lg:-top-56 max-lg:right-0 lg:right-20 w-12"
-          src="{% static 'hourglass/media/backgrounds/bars-vertical-orange-three-flat-top.svg' %}"
-          alt="">
-        <img
-          class="
-            motion-safe:rallax absolute z-10 max-lg:top-40 lg:top-28
-            max-lg:-right-64 lg:-right-48 max-lg:max-w-md lg:max-w-lg
-          "
-          src="{% static 'hourglass/media/backgrounds/typewriter.png' %}"
-          width="700"
-          alt="A mid-century typewriter with French words typed on a piece of paper">
-        <img
-          class="motion-safe:rallax lg:hidden z-20 absolute top-[38rem] -right-8 w-36"
-          src="{% static 'hourglass/media/backgrounds/square-red.svg' %}"
-          alt="">
-        <img
-          class="
-            motion-safe:rallax max-lg:hidden z-20 absolute h-44
-            top-[38rem] right-8
-          "
-          src="{% static 'hourglass/media/backgrounds/rectangle-red.svg' %}"
-          alt="">
-        <img
-          class="
-            absolute max-lg:z-20 lg:z-10 max-lg:top-64 lg:top-[42rem]
-            max-lg:-left-6 lg:-right-20
-          "
-          src="{% static 'hourglass/media/backgrounds/circle-blue-textured.png' %}"
-          width="434"
-          alt="">
-      </aside>
-      <div class="relative z-40">
-        <h1
-          class="
-            max-lg:text-4xl lg:text-7xl !leading-snug
-            max-lg:max-w-xs lg:max-w-2xl
-            font-poppins-bold max-lg:py-12 lg:py-20 px-8
-          ">
-          Our team.
-        </h1>
-      </div>
+      {% include "custom/edit-on-github.html" with rel_path="custom/our-team.html" %}
+      {% include "custom/typewriter-opener.html" %}
+      {% include "custom/generic-h1.html" with h1="Our team." %}
     </div>
     <div class="relative">
       {% component_block "page_intro" %}
@@ -94,11 +36,11 @@
         {% endfill %}
       {% endcomponent_block %}
     </div>
-    {% component_block "staff_page" request=request %}
+    {% component_block "staff" request=request %}
       <div class="relative mt-28">
-        {% with group=staff_groups.0 %}
+        {% with group=groups.0 %}
           {% component_block "page_section" prose=False anchor="left" width="full" labelledby=group.name|slugify %}
-            {% component "staff_group" group=group %}
+            {% component "user_group" group=group %}
           {% endcomponent_block %}
         {% endwith %}
       </div>
@@ -121,9 +63,9 @@
             src="{% static 'hourglass/media/backgrounds/rectangle-red.svg' %}"
             alt="">
         </aside>
-        {% with group=staff_groups.1 %}
+        {% with group=groups.1 %}
           {% component_block "page_section" prose=False anchor="right" labelledby=group.name|slugify %}
-            {% component "staff_group" group=group %}
+            {% component "user_group" group=group %}
           {% endcomponent_block %}
         {% endwith %}
       </div>
@@ -190,13 +132,13 @@
             src="{% static 'hourglass/media/backgrounds/shakespeare-drag-actor-flowers-stripes.png' %}"
             alt="Actor singing with arms raised wearing dress and flowery crown">
         </div>
-        {% with group=staff_groups.2 %}
+        {% with group=groups.2 %}
           {% component_block "page_section" prose=False anchor="left" width="full" labelledby=group.name|slugify %}
-            {% component "staff_group" group=group %}
+            {% component "user_group" group=group %}
           {% endcomponent_block %}
         {% endwith %}
       </aside>
-    {% endcomponent_block "staff_page" %}
+    {% endcomponent_block "staff" %}
     {% include 'custom/subscribe.html' %}
   </div>
 {% endblock body %}
