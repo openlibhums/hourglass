@@ -31,12 +31,14 @@
       <meta property="og:title" content="{{ request.press.name }}">
       <meta name="twitter:title" content="{{ request.press.name }}">
     {% endblock meta_title %}
-    {% block meta_description %}
-      {% if request.press.description %}
-        <meta name="twitter:description" content="{{ press.description }}">
-        <meta property="og:description" content="{{ press.description }}">
-      {% endif %}
-    {% endblock meta_description %}
+    <meta
+      name="description"
+      property="og:description"
+      content="{% block meta_description %}
+        {% if request.press.description %}
+          {{ press.description }}
+        {% endif %}
+      {% endblock meta_description %}">
     {% block meta_image %}
       {% if request.press.default_carousel_image %}
         <meta
