@@ -1,11 +1,43 @@
-<a
-  rel="license"
-  href="http://creativecommons.org/licenses/by/4.0/">
-  <img
-    alt="Creative Commons Licence"
-    style="border-width:0"
-    src="https://i.creativecommons.org/l/by/4.0/88x31.png">
-</a>
-<p>
-Except where otherwise noted, the contents of this website are licenced under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>, which lets you share and adapt them so long as you credit the source. The Open Library of Humanities and its logo are registered trademarks.</p>
-<p>Copyright &copy; 2023 Birkbeck, University of London.
+{% extends "press/cms/page.html" %}
+
+{% load component_tags %}
+
+{% block meta_description %}
+  The CC BY license lets you share and adapt the materials on this website so
+  long as you properly credit the source.
+{% endblock meta_description %}
+
+{% block body %}
+  {% component_block "page_generic" h1="Copyright and licensing" %}
+    <p>Unless otherwise stated, the original textual content and visual designs
+    on this website are the copyright of Birkbeck, University of London,
+    and they are licenced under a 
+    <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0
+    International License</a> (CC BY 4.0). The Open Library of Humanities and its
+    logos are registered trademarks.</p>
+    <p>The CC BY license lets you share and adapt these materials so long as you
+    properly credit the source. Proper attribution of the OLH must be given in
+    the following manner:</p>
+    <ul>
+      <li>Attribute the materials wherever they appear, including published
+        end-product websites.</li>
+      <li>Spell out the full name of the Open Library of Humanities and provide
+        a link to our website, as in one of these examples:
+        <ul>
+          <li>“The Open Access Movement” was first published by the Open Library of
+            Humanities, openlibhums.org</li>
+          <li>Diamond open access diagram by the
+            <a href="https://www.openlibhums.org/">Open Library of Humanities</a></li>
+        </ul>
+      </li>
+      <li>Display the attribution so that it is clearly visible and easily
+      legible, not obscured or hidden, with text that is the same size as the
+      main text in your work, or a minimum of 12pt (print) or 18px (web),
+      whichever is larger.</li>
+      <li>Under no circumstances may your use or attribution of our materials
+        misconstrue the Open Library of Humanities as a publisher of your works.</li>
+    </ul>
+    <p>The <a href="https://github.com/BirkbeckCTP/hourglass">code in the
+      corresponding repository</a> is licensed under AGPL 3.0.</p>
+  {% endcomponent_block %}
+{% endblock body %}
