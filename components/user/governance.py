@@ -1,14 +1,14 @@
 from django_components import component
 
 
-@component.register("staff_page")
-class StaffPage(component.Component):
+@component.register("governance")
+class Governance(component.Component):
 
-    template_name = "staff/page.html"
+    template_name = "user/governance.html"
 
     def get_context_data(self, *args, **kwargs):
         request = kwargs.get('request', None)
         context = super().get_context_data(*args, **kwargs)
         if request:
-            context['staff_groups'] = request.press.staffgroup_set.all()
+            context['groups'] = request.press.editorialgroup_set.all()
         return context

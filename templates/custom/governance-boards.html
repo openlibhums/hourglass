@@ -1,0 +1,43 @@
+{% extends "press/cms/page.html" %}
+
+{% load static %}
+{% load component_tags %}
+
+{% block meta_description %}
+  <meta
+    property="og:description"
+    content="The Library Board represents the interests of all OLH library
+    members by working closely with the OLH team.">
+{% endblock meta_description %}
+
+{% block body %}
+  <div class="container mx-auto max-w-screen-xl">
+    <div class="relative max-lg:mt-56 lg:mt-8">
+      {% include "custom/edit-on-github.html" with rel_path="custom/governance-boards.html" %}
+      {% include "custom/curator-sculpture-opener.html" %}
+      {% include "custom/generic-h1.html" with h1="Library governance." %}
+    </div>
+    <div class="relative lg:mt-36">
+      {% component_block "page_intro" %}
+        {% fill "column_one" %}
+          <p class="lead text-white">The Library Board represents the interests
+          of all OLH library members by working closely with the OLH team.</p>
+        {% endfill %}
+        {% fill "column_two" %}
+          <p>Through regular input on our processes and strategy, the Board
+          ensures that the community governance of the OLH is embedded in all
+          that we do. Here you’ll find the profiles of our current members and
+          the minutes of our meetings.</p>
+        {% endfill %}
+      {% endcomponent_block %}
+    </div>
+    {% component_block "governance" request=request %}
+      <div class="relative mt-28">
+        {% component_block "page_section" prose=False anchor="left" width="full" labelledby=groups.0.name|slugify %}
+          {% component "user_group" group=groups.0 %}
+        {% endcomponent_block %}
+      </div>
+    {% endcomponent_block "governance" %}
+    {% include "custom/subscribe.html" %}
+  </div>
+{% endblock body %}

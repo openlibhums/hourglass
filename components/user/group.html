@@ -1,0 +1,55 @@
+{% load static %}
+{% load component_tags %}
+
+{% slot "group" default %}
+  <div class="flex flex-col gap-y-8">
+    <h2
+      id="{{ group.name|slugify }}"
+      class="font-poppins-bold text-3xl max-lg:text-center">
+      {{ group.name }}.
+    </h2>
+    {% component_block "cta_list_left" width="full" %}
+      {% for member in group.members %}
+        {% component_block "cta_list_item_left" %}
+          {% if member.user.profile_image %}
+            <img
+              src="{{ member.user.profile_image.url }}"
+              alt="">
+          {% else %}
+            <div class="bg-tan-light max-xl:w-52 xl:w-64 max-xl:h-52 xl:h-64"></div>
+          {% endif %}
+          <div class="flex flex-col gap-y-2">
+            <h3 class="font-poppins-bold max-lg:text-xl lg:text-2xl max-lg:text-center">
+              {{ member.user.full_name }}
+            </h3>
+            {% if member.job_title %}
+              <p class="max-lg:text-lg lg:text-xl max-lg:text-center">
+                {{ member.job_title }}
+              </p>
+            {% endif %}
+            {% if member.alternate_title %}
+              <p class="italic max-lg:text-lg lg:text-xl max-lg:text-center">
+                {{ member.alternate_title }}
+              </p>
+            {% endif %}
+          </div>
+          {% if member.user.enable_public_profile %}
+            <a
+              class="
+                p-4 not-prose bg-white
+                border rounded-full border-blue
+                flex gap-4 items-center
+              "
+              href="{% url 'core_public_profile' member.user.uuid %}">
+              {% with label="Full profile" %}
+                {% include "custom/button-action-inner-blue.html" %}
+              {% endwith %}
+            </a>
+          {% else %}
+            <div class="h-12 w-12"></div>
+          {% endif %}
+        {% endcomponent_block %}
+      {% endfor %}
+    {% endcomponent_block %}
+  </div>
+{% endslot %}

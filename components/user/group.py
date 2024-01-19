@@ -1,10 +1,10 @@
 from django_components import component
 
 
-@component.register("staff_group")
-class StaffGroup(component.Component):
+@component.register("user_group")
+class UserGroup(component.Component):
 
-    template_name = "staff/group.html"
+    template_name = "user/group.html"
 
     def get_context_data(self, *args, **kwargs):
         group = kwargs['group']
