@@ -62,11 +62,19 @@
             <h2
               id="join-the-conversation"
               class="font-poppins-bold max-lg:text-xl lg:text-2xl text-center">
-              Join the conversation.
+              View our journals.
             </h2>
-            {% with rel_path="TBD" label="Find out more" %}
-              {% include 'custom/button-action-blue.html' %}
-            {% endwith %}
+            <a
+              class="
+                p-4 not-prose bg-white
+                border rounded-full border-blue
+                flex gap-4 items-center
+              "
+              href="{% url 'press_journals' %}">
+              {% with label="Find out more" %}
+                {% include "custom/button-action-inner-blue.html" %}
+              {% endwith %}
+            </a>
           {% endcomponent_block %}
           {% component_block "cta_list_item" labelledby="read-our-news" %}
             <img
