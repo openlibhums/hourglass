@@ -1,14 +1,14 @@
 {% load static %}
 {% load component_tags %}
 
-<article>
-  <header>
-    <div class="container mx-auto max-w-screen-xl relative">
+<article aria-labelledby="h1">
+  <div class="container mx-auto max-w-screen-xl">
+    <div class="relative">
       {% include 'custom/edit-on-github.html' with rel_path='custom/news-item.html' %}
       {% include 'custom/generic-art-opener.html' %}
       <div class="relative z-40">
         <div class="prose lg:prose-lg pt-64 max-md:pr-8 md:px-8">
-          <h1 class="font-poppins-bold !leading-snug">
+          <h1 id="h1" class="font-poppins-bold !leading-snug">
             {{ news_item.title }}
           </h1>
           <p>
@@ -20,7 +20,7 @@
         </div>
       </div>
     </div>
-    <div class="container mx-auto max-w-screen-xl relative max-lg:mt-8 lg:mt-12">
+    <div class="relative max-lg:mt-8 lg:mt-12">
       <div class="lg:m-8 relative z-40">
         <div class="
           bg-tan-light md:max-w-[750px] md:max-h-[324px]
@@ -37,9 +37,7 @@
         </div>
       </div>
     </div>
-  </header>
-  <main>
-    <div class="container mx-auto max-w-screen-xl relative max-lg:mt-8 lg:mt-12">
+    <div class="relative max-lg:mt-8 lg:mt-12">
       <div class="z-20 relative left-0 top-12">
         <img
           class="
@@ -54,12 +52,10 @@
           width="434"
           alt="">
       </div>
-      {% component_block "page_section" anchor="right" %}
+      {% component_block "page_section" anchor="right" element="div" %}
         {{ news_item.body|safe }}
       {% endcomponent_block %}
     </div>
-  </main>
+    {% include 'custom/subscribe.html' %}
+  </div>
 </article>
-<div class="container mx-auto max-w-screen-xl relative">
-  {% include 'custom/subscribe.html' %}
-</div>

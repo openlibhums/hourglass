@@ -7,24 +7,17 @@
 {% endblock title %}
 {% block meta_title %}
   <meta
+    name="twitter:title"
     property="og:title"
     content="{{ page.display_name|truncatewords:5 }} - {{ request.press.name }}">
-  <meta
-    name="twitter:title"
-    content="{{ page.display_name|truncatewords:5 }} - {{ request.press.name }}">
 {% endblock meta_title %}
-<meta
-  name="description"
-  property="og:description"
-  content="{% block meta_description %}
-    {% if request.press.description %}
-      {{ press.description }}
-    {% endif %}
-  {% endblock meta_description %}">
+{% block meta_description %}
+  {{ block.super }}
+{% endblock meta_description %}
 {% block meta_image %}
   {{ block.super }}
 {% endblock meta_image %}
 
 {% block body %}
-  {{ page.content|safe }}
+  {% component "page_generic" page=page h1=page.display_name %}
 {% endblock body %}
