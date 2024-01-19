@@ -17,7 +17,7 @@ class PageSection(component.Component):
             "prose": kwargs.pop("prose", True),
             "anchor": kwargs.pop("anchor", "left"),
             "width": kwargs.pop("width", "part"),
-            "colors": kwargs.pop("colors", "light"),
+            "bg": kwargs.pop("bg", "bg-white"),
             "margin": kwargs.pop("margin", "normal"),
             "icon": kwargs.pop("icon", ""),
             "labelledby": kwargs.pop("labelledby", ""),

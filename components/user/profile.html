@@ -108,7 +108,7 @@
     {% endif %}
     {% if user.orcid or user.twitter or user.facebook or user.linkedin or user.website or user.github %}
       <div class="relative max-lg:mt-8 lg:mt-28">
-        {% component_block "page_section" anchor="left" colors="dark" labelledby="social-links" %}
+        {% component_block "page_section" anchor="left" bg="bg-blue" labelledby="social-links" %}
           <h2
             id="social-links"
             class="text-white">
@@ -138,8 +138,7 @@
       </div>
     {% endif %}
   </article>
-</div>
-
-<div class="container mx-auto max-w-screen-xl relative mt-28 pb-28">
-  {% include 'custom/subscribe-art.html' %}
+  <div class="relative mt-28 pb-28">
+    {% include 'custom/subscribe-art.html' %}
+  </div>
 </div>

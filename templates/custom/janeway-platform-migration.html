@@ -80,11 +80,13 @@
         <div class="my-28 h-96 mx-auto">INFOGRAPHIC</div>
       </div>
       <div class="relative max-lg:mt-16 lg:mt-48">
-        {% component_block "page_section" prose=False anchor="right" width="part" label="Find out more" %}
+        {% component_block "page_section" prose=False anchor="right" width="full" label="Find out more" bg="bg-jw-orange" %}
           {% include "custom/janeway-ctas.html" %}
         {% endcomponent_block %}
       </div>
-      {% include 'custom/subscribe.html' %}
+      <div class="relative mt-28 pb-28">
+        {% include 'custom/subscribe-art.html' %}
+      </div>
     </div>
   </article>
 {% endblock body %}

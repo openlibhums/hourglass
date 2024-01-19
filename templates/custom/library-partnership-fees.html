@@ -49,7 +49,7 @@
           "
           src="{% static 'hourglass/media/backgrounds/circles-one-one-half-red.svg' %}"
           alt="">
-        {% component_block "page_section" anchor="left" colors="dark" labelledby="calculate-your-fee" %}
+        {% component_block "page_section" anchor="left" bg="bg-blue" labelledby="calculate-your-fee" %}
           <img
             class="-m-4 w-48"
             src="{% static 'hourglass/media/icons/Library-Partnership-Fees.svg' %}"
@@ -78,7 +78,7 @@
       </div>
       <div class="relative max-lg:mt-0 lg:mt-48">
         {% include 'custom/laptop-lady-quadrant-halfway.html' %}
-        {% component_block "page_section" anchor="left" colors="transparent" prose=False label="Supporter bands" %}
+        {% component_block "page_section" anchor="left" bg="bg-transparent" prose=False label="Supporter bands" %}
           {% component_block "supporters_demo_bands_split" %}
             {% component_block "supporters_demo_table" table=higher_supporter_table %}
               {% fill "caption" %}
