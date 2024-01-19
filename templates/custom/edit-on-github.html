@@ -1,13 +1,25 @@
+{% load static %}
+
 {% if request.user.is_staff %}
   <aside
     class="
-      absolute top-0 max-md:right-4 md:max-lg:right-16 lg:right-36 bg-black text-white
-      p-2 rounded-full mx-8 my-4 z-50
+      absolute top-0 right-0 bg-black text-white
+      p-2 rounded-full mx-8 my-4 z-50 flex gap-x-4 items-center
     ">
     <a href="https://github.com/BirkbeckCTP/hourglass/edit/copyediting/templates/{{ rel_path }}">
-      ✏️ Edit on GitHub
+      ✏️
+      <span class="underline font-poppins">
+       Edit on GitHub
+      </span>
     </a>
+    <img
+      id="hide-edit-on-gh"
+      class="w-6 cursor-pointer"
+      src="{% static 'hourglass/media/icons/close.svg' %}"
+      alt="">
+    {% comment %}
     <span id="hide-edit-on-gh" class="p-2 cursor-pointer">X</span>
+    {% endcomment %}
   </aside>
   <script type="module">
     const hideEditLink = document.getElementById("hide-edit-on-gh")
