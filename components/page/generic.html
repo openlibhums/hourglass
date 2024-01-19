@@ -1,0 +1,20 @@
+{% load static %}
+{% load component_tags %}
+
+<article aria-labelledby="h1">
+  <div class="container mx-auto max-w-screen-xl">
+    <div class="relative">
+      {% include "custom/generic-art-opener.html" %}
+      {% include "custom/generic-h1.html" with h1=h1 %}
+    </div>
+    <div class="relative max-lg:mt-8 lg:mt-12">
+      {% include "custom/circle-bar-left-halfway.html" %}
+      {% component_block "page_section" anchor="right" element="div" %}
+        {% slot "content" default %}
+          {{ page.content|safe }}
+        {% endslot "content" %}
+      {% endcomponent_block %}
+    </div>
+    {% include "custom/subscribe.html" %}
+  </div>
+</article>
