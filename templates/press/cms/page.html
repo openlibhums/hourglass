@@ -13,10 +13,14 @@
     name="twitter:title"
     content="{{ page.display_name|truncatewords:5 }} - {{ request.press.name }}">
 {% endblock meta_title %}
-{% block meta_description %}
-  <meta name="twitter:description" content="{{ meta_description }}">
-  <meta property="og:description" content="{{ meta_description }}">
-{% endblock meta_description %}
+<meta
+  name="description"
+  property="og:description"
+  content="{% block meta_description %}
+    {% if request.press.description %}
+      {{ press.description }}
+    {% endif %}
+  {% endblock meta_description %}">
 {% block meta_image %}
   {{ block.super }}
 {% endblock meta_image %}

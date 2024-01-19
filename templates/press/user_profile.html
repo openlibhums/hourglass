@@ -7,9 +7,7 @@
 {% endblock %}
 
 {% block meta_description %}
-  <meta
-    property="og:description"
-    content="{{ user.biography|striptags|truncatewords:25 }}">
+  {{ user.biography|striptags|truncatewords:25 }}
 {% endblock meta_description %}
 
 {% block meta_image %}
