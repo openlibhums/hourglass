@@ -1,0 +1,68 @@
+{% extends "press/cms/page.html" %}
+
+{% load component_tags %}
+
+{% block meta_description %}
+  The Open Library of Humanities only collects the data that is required in
+  order to provide services to you
+{% endblock meta_description %}
+
+{% block body %}
+  {% component_block "page_generic" h1="Privacy policy." %}
+    <h2>Preamble</h2>
+    <p>The Open Library of Humanities only collects the data that is required in
+    order to provide services to you, that is:</p>
+    <ul>
+      <li>Submitting an article for publication</li>
+      <li>Contacting you with information about our membership programme</li>
+      <li>Contacting us via our contact form</li>
+      <li>Monitoring our infrastructure for bugs or security issues</li>
+      <li>Non intrusive cookies to track which articles are viewed and downloaded</li>
+    </ul>
+    <p>If you wish to contact us to discuss any data we may have about you, you
+    can contact us at tech [at] openlibhums [dot] org. Under GDPR legislation you
+    have the right to withdraw your consent to our use of this data, however, it
+    should be noted that <em>Right to Erasure</em>&nbsp;may not apply to authors
+    of a submitted article as we have a legitimate interest in keeping your data
+    to identify you as the author of a published and indexed text.</p>
+    <h2>Data Sharing</h2>
+    <p>We may share some of your data with external persons for the following
+    purposes only:</p>
+    <ul>
+      <li>Editing, peer reviewing, copy editing, typesetting or proofing your
+        article</li>
+      <li>Registering your article with Crossref</li>
+      <li>Registering your article with Similarity Check (we only provide your
+        manuscript file, no other data)</li>
+    </ul>
+    <h2>Automation</h2>
+    <p>Janeway (our software platform) does not profile your data in order to
+    make an automated decisions.<br></p>
+    <h2>Cookies</h2>
+    <p>We utilise cookies for the following purposes:</p>
+    <ul class="browser-default">
+      <li>Maintenance of login sessions</li>
+      <li>Prevention of cross site request forgery</li>
+      <li>Tracking views and downloads of our articles using the COUNTER method
+        (<a href="https://www.projectcounter.org/">https://www.projectcounter.org/</a>)</li>
+    </ul>
+    <h2>Contacting the Team</h2>
+    <h3>Contact form</h3>
+    <ul class="browser-default">
+      <li>Personal Data: email address</li>
+    </ul>
+    <h2>Infrastructure monitoring</h2>
+    <h3>Sentry and Uptime Robot</h3>
+    <ul>
+      <li>Personal Data: various types of Data as specified in the privacy policy
+        of the service: <a href="https://sentry.io/privacy/">https://sentry.io/privacy/</a> &amp;
+        <a href="https://uptimerobot.com/privacyPolicy">https://uptimerobot.com/privacyPolicy</a></li>
+    </ul>
+    <h2>Registration and authentication</h2>
+    <ul>
+      <li>Personal Data: country, email address, first name and last name</li>
+      <li>We additionally collect Facebook, Twitter, Github and Linkedin handles
+        (optionally)</li>
+    </ul>
+  {% endcomponent_block %}
+{% endblock body %}
