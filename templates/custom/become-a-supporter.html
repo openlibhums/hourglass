@@ -14,12 +14,12 @@
 {% block body %}
   <article aria-labelledby="h1">
     <div class="container mx-auto max-w-screen-xl">
-      <div class="relative max-lg:mt-56 lg:mt-8">
+      <div class="relative lg:mt-8">
         {% include 'custom/edit-on-github.html' with rel_path='custom/become-a-supporter.html' %}
+        {% include 'custom/generic-h1-higher.html' with h1="Become a supporter." %}
         {% include 'custom/chess-opener.html' %}
-        {% include 'custom/generic-h1.html' with h1="Become a supporter" %}
       </div>
-      <div class="relative">
+      <div class="relative max-md:mt-96 md:max-lg:mt-48 lg:mt-28">
         {% component_block "page_intro" %}
           {% fill "column_one" %}
             <p class="lead text-white">By joining the OLH, you contribute to
@@ -246,7 +246,7 @@
           </div>
         </section>
       </div>
-      <div class="relative max-lg:mt-64 lg:mt-28">
+      <div class="relative max-lg:mt-16 lg:mt-28">
         {% include 'custom/chess-halfway.html' %}
         {% component_block "page_section" anchor="right" labelledby="sector-leading-standards" %}
           <h2 id="sector-leading-standards">Sector-leading standards.</h2>
@@ -293,7 +293,7 @@
         </div>
       </div>
       <div class="relative mt-28">
-        {% include 'custom/stripes-end.html' %}
+        {% include 'custom/chess-end.html' %}
         {% component_block "page_section" anchor="left" labelledby="governance-advocacy" %}
           <h2 id="governance-advocacy">Governance and advocacy.</h2>
           <p>Since launching in 2013 as a scholar-led movement, the OLH has
