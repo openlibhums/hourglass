@@ -1,1 +1,14 @@
-<?xml version="1.0" encoding="UTF-8"?><svg id="Icons" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 130 130"><defs><style>.cls-1{fill:#e94c33;}.cls-2{fill:#ec8323;}.cls-3{fill:#d6cbbc;}.cls-4{fill:#1579a0;}.cls-5{fill:#202124;}</style></defs><rect class="cls-3" x="12.98" y="12.98" width="104.04" height="104.04"/><rect class="cls-2" x="58.5" y="23.96" width="47.64" height="47.64"/><rect class="cls-1" x="23.86" y="58.45" width="47.64" height="47.64"/><rect class="cls-5" x="58.5" y="58.61" width="13" height="13"/><rect class="cls-4" x="71.5" y="71.55" width="13" height="13"/><rect class="cls-4" x="45.5" y="45.6" width="13" height="13"/></svg>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Icons" xmlns="http://www.w3.org/2000/svg" viewBox="12.98 12.98 104.04 104.04">
+  <defs>
+    <style>
+      .cls-1{fill:#e94c33;}.cls-2{fill:#ec8323;}.cls-3{fill:#d6cbbc;}.cls-4{fill:#1579a0;}.cls-5{fill:#202124;}
+    </style>
+  </defs>
+  <rect class="cls-3" x="12.98" y="12.98" width="104.04" height="104.04"/>
+  <rect class="cls-2" x="58.5" y="23.96" width="47.64" height="47.64"/>
+  <rect class="cls-1" x="23.86" y="58.45" width="47.64" height="47.64"/>
+  <rect class="cls-5" x="58.5" y="58.61" width="13" height="13"/>
+  <rect class="cls-4" x="71.5" y="71.55" width="13" height="13"/>
+  <rect class="cls-4" x="45.5" y="45.6" width="13" height="13"/>
+</svg>

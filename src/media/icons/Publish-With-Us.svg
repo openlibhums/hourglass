@@ -1,1 +1,13 @@
-<?xml version="1.0" encoding="UTF-8"?><svg id="Icons" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 130 130"><defs><style>.cls-1{fill:#e94c33;}.cls-2{fill:#ec8323;}.cls-3{fill:#d6cbbc;}.cls-4{fill:#202124;}</style></defs><rect class="cls-3" x="12.98" y="12.98" width="104.04" height="104.04"/><path class="cls-2" d="m65,64.97h41.1c-.01-22.72-18.4-41.13-41.1-41.21v41.21Z"/><path class="cls-2" d="m65,64.97H23.9c.01,22.72,18.4,41.13,41.1,41.21v-41.21Z"/><path class="cls-1" d="m65,36.92c-15.49,0-28.05,12.56-28.05,28.06h28.05v-28.06Z"/><path class="cls-4" d="m65.01,93.03c15.49,0,28.06-12.56,28.06-28.06h-28.07v28.06s0,0,0,0Z"/></svg>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Icons" xmlns="http://www.w3.org/2000/svg" viewBox="12.98 12.98 104.04 104.04">
+  <defs>
+    <style>
+      .cls-1{fill:#e94c33;}.cls-2{fill:#ec8323;}.cls-3{fill:#d6cbbc;}.cls-4{fill:#202124;}
+    </style>
+  </defs>
+  <rect class="cls-3" x="12.98" y="12.98" width="104.04" height="104.04"/>
+  <path class="cls-2" d="m65,64.97h41.1c-.01-22.72-18.4-41.13-41.1-41.21v41.21Z"/>
+  <path class="cls-2" d="m65,64.97H23.9c.01,22.72,18.4,41.13,41.1,41.21v-41.21Z"/>
+  <path class="cls-1" d="m65,36.92c-15.49,0-28.05,12.56-28.05,28.06h28.05v-28.06Z"/>
+  <path class="cls-4" d="m65.01,93.03c15.49,0,28.06-12.56,28.06-28.06h-28.07v28.06s0,0,0,0Z"/>
+</svg>

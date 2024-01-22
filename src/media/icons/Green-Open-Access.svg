@@ -1,1 +1,12 @@
-<?xml version="1.0" encoding="UTF-8"?><svg id="Descriptions" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 130 130"><defs><style>.cls-1{fill:#e94c33;}.cls-2{fill:#ec8323;}.cls-3{fill:#d6cbbc;}.cls-4{fill:#1d1d1b;}</style></defs><rect class="cls-2" x="12.93" y="13.1" width="103.93" height="103.93"/><rect class="cls-3" x="23.77" y="32.41" width="82.26" height="63.15"/><polygon class="cls-1" points="64.9 52.7 106.03 95.56 23.77 95.56 64.9 52.7"/><polygon class="cls-4" points="64.9 75.27 23.77 32.41 106.03 32.41 64.9 75.27"/></svg>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Descriptions" xmlns="http://www.w3.org/2000/svg" viewBox="12.93 13.1 103.93 103.93">
+  <defs>
+    <style>
+      .cls-1{fill:#e94c33;}.cls-2{fill:#ec8323;}.cls-3{fill:#d6cbbc;}.cls-4{fill:#1d1d1b;}
+    </style>
+  </defs>
+  <rect class="cls-2" x="12.93" y="13.1" width="103.93" height="103.93"/>
+  <rect class="cls-3" x="23.77" y="32.41" width="82.26" height="63.15"/>
+  <polygon class="cls-1" points="64.9 52.7 106.03 95.56 23.77 95.56 64.9 52.7"/>
+  <polygon class="cls-4" points="64.9 75.27 23.77 32.41 106.03 32.41 64.9 75.27"/>
+</svg>

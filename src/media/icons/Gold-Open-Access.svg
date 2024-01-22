@@ -1,1 +1,14 @@
-<?xml version="1.0" encoding="UTF-8"?><svg id="Descriptions" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 130 130"><defs><style>.cls-1{fill:#e94c33;}.cls-2{fill:#ec8323;}.cls-3{fill:#d6cbbc;}.cls-4{fill:#1d1d1b;}</style></defs><rect class="cls-1" x="13.04" y="13.1" width="103.93" height="103.93"/><path class="cls-4" d="m73.51,36.29c0,4.7-3.81,8.51-8.51,8.51s-8.51-3.81-8.51-8.51,3.81-8.51,8.51-8.51,8.51,3.81,8.51,8.51"/><polygon class="cls-3" points="74.77 53.87 55.23 53.87 44.43 78.1 55.23 78.1 74.77 78.1 85.57 78.1 74.77 53.87"/><polygon class="cls-3" points="95.33 78.1 75.8 78.1 65 102.34 75.8 102.34 95.33 102.34 106.13 102.34 95.33 78.1"/><polygon class="cls-3" points="34.67 78.1 23.87 102.34 34.67 102.34 54.2 102.34 65 102.34 54.2 78.1 34.67 78.1"/><polygon class="cls-2" points="54.2 78.1 75.8 78.1 65 102.34 54.2 78.1"/></svg>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="12.98 12.98 104.04 104.04">
+  <defs>
+    <style>
+      .cls-1{fill:#e94c33;}.cls-2{fill:#ec8323;}.cls-3{fill:#d6cbbc;}.cls-4{fill:#1d1d1b;}
+    </style>
+  </defs>
+  <rect class="cls-1" x="13.04" y="13.1" width="103.93" height="103.93"/>
+  <path class="cls-4" d="m73.51,36.29c0,4.7-3.81,8.51-8.51,8.51s-8.51-3.81-8.51-8.51,3.81-8.51,8.51-8.51,8.51,3.81,8.51,8.51"/>
+  <polygon class="cls-3" points="74.77 53.87 55.23 53.87 44.43 78.1 55.23 78.1 74.77 78.1 85.57 78.1 74.77 53.87"/>
+  <polygon class="cls-3" points="95.33 78.1 75.8 78.1 65 102.34 75.8 102.34 95.33 102.34 106.13 102.34 95.33 78.1"/>
+  <polygon class="cls-3" points="34.67 78.1 23.87 102.34 34.67 102.34 54.2 102.34 65 102.34 54.2 78.1 34.67 78.1"/>
+  <polygon class="cls-2" points="54.2 78.1 75.8 78.1 65 102.34 54.2 78.1"/>
+</svg>
