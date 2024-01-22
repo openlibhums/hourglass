@@ -14,8 +14,10 @@
     <div class="container mx-auto max-w-screen-xl">
       <div class="relative">
         {% include "custom/edit-on-github.html" with rel_path="custom/olh-poster-series.html" %}
-        {% include "custom/sunglasses-model-opener.html" %}
-        {% include "custom/generic-h1.html" with h1="The OLH<br> poster<br> series." %}
+        {% include "custom/generic-h1-higher.html" with h1="The OLH<br> poster<br> series." %}
+        <div class="relative max-lg:-top-20 lg:-top-96">
+          {% include "custom/sunglasses-model-opener.html" %}
+        </div>
       </div>
       <div class="relative max-lg:mt-16 lg:mt-36">
         {% component_block "page_intro" %}
@@ -53,7 +55,7 @@
           Nineteenth-Century Digital Archive"</a> featured 18 articles as well
           as two editorials, that examine the possibilities of the
           nineteenth-century archive in the digital era.</p>
-          <div class="flex gap-8">
+          <div class="flex max-lg:flex-col max-lg:items-start gap-x-8 gap-y-4">
             {% with rel_path="https://www.openlibhums.org/media/press/OLH-Victorian-Poster-web-version-1.jpg" label="JPG" %}
               {% include 'custom/button-download-blue.html' %}
             {% endwith %}
@@ -78,7 +80,7 @@
           tribute to the <a href="/plugins/supporters/">grassroots
           support</a> from academics, librarians and publishers that have
           made the OLH possible.</p>
-          <div class="flex gap-8">
+          <div class="flex max-lg:flex-col max-lg:items-start gap-x-8 gap-y-4">
             {% with rel_path="https://www.openlibhums.org/media/press/OLH-Constructivist-Poster-A4-Web.jpg" label="image" %}
               {% include 'custom/button-download-blue.html' %}
             {% endwith %}
@@ -108,7 +110,7 @@
           Journal of Embodied Research</i></a>, which responds to a pressing need
           among scholars and practitioners for a prestigious journal that brings
           together scholarship and videography.</p>
-          <div class="flex gap-8">
+          <div class="flex max-lg:flex-col max-lg:items-start gap-x-8 gap-y-4">
             {% with rel_path="https://www.openlibhums.org/media/press/OLH-Muybridge-poster-A3-web.jpg" label="JPG" %}
               {% include 'custom/button-download-blue.html' %}
             {% endwith %}
@@ -133,7 +135,7 @@
           Renaissance studies journal,
           <a href="http://marvell.openlibhums.org/"><i>Marvell Studies</i></a>,
           the official journal of the Andrew W. Marvell scholarly society.</p>
-          <div class="flex gap-8">
+          <div class="flex max-lg:flex-col max-lg:items-start gap-x-8 gap-y-4">
             {% with rel_path="https://www.openlibhums.org/media/press/OLH-Shakespearean-poster-A3-web.jpg" label="JPG" %}
               {% include 'custom/button-download-blue.html' %}
             {% endwith %}
@@ -160,7 +162,7 @@
           such as that published by OLH journal <i><a
           href="https://www.comicsgrid.com/">The Comics Grid: Journal of
           Comics Studies</a>.</i></p>
-          <div class="flex gap-8">
+          <div class="flex max-lg:flex-col max-lg:items-start gap-x-8 gap-y-4">
             {% with rel_path="https://www.openlibhums.org/media/press/OLH-Comics-Flip-Poster-WEB.jpg" label="JPG" %}
               {% include 'custom/button-download-blue.html' %}
             {% endwith %}
@@ -193,7 +195,7 @@
           for allowing us to build on her brilliant work to raise awareness of
           our journal flipping scheme and help unlock global access to
           humanities scholarship.</p>
-          <div class="flex gap-8">
+          <div class="flex max-lg:flex-col max-lg:items-start gap-x-8 gap-y-4">
             {% with rel_path="https://www.openlibhums.org/media/press/OLH_KRUGER_Flip_Poster_WEB.jpg" label="JPG" %}
               {% include 'custom/button-download-blue.html' %}
             {% endwith %}
@@ -214,7 +216,7 @@
             width="400" height="566"
             src="{% static 'hourglass/media/olh-zombie-poster.jpg' %}">
           <p>{% lorem 15 w %}</p>
-          <div class="flex gap-8">
+          <div class="flex max-lg:flex-col max-lg:items-start gap-x-8 gap-y-4">
             {% with rel_path="https://www.openlibhums.org/media/press/OLH_Zombie_A4.jpg" label="JPG" %}
               {% include 'custom/button-download-blue.html' %}
             {% endwith %}
