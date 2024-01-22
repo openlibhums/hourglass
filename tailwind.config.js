@@ -37,6 +37,7 @@ export default {
       current: 'currentColor',
       'jw-mustard': '#c08031',
       'jw-blue': '#36565f',
+      'jw-orange': '#bb4e30',
     },
     container: {
       padding: {
