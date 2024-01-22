@@ -1,0 +1,77 @@
+{% load static %}
+{% load component_tags %}
+
+<div
+  id="janeway-migration-infographic"
+  role="img"
+  aria-label="Janeway migration infographic"
+  class="max-md:mx-2 lg:-mx-4">
+  {% component_block "infographic_grid" %}
+    {% component_block "infographic_grid_item" icon="FAQs.svg" %}
+      {% fill "heading" %}
+        01.
+      {% endfill %}
+      {% fill "body" %}
+        You tell us about your journal and decide on its new website design.
+      {% endfill %}
+    {% endcomponent_block %}
+    {% component_block "infographic_grid_item" icon="Develop.svg" %}
+      {% fill "heading" %}
+        02.
+      {% endfill %}
+      {% fill "body" %}
+        Our tech team set up your new website.
+      {% endfill %}
+    {% endcomponent_block %}
+    {% component_block "infographic_grid_item" icon="Publish-With-Us.svg" %}
+      {% fill "heading" %}
+        03.
+      {% endfill %}
+      {% fill "body" %}
+        At this point, your journal is ready to accept article submissions.
+      {% endfill %}
+    {% endcomponent_block %}
+    {% component_block "infographic_grid_item" icon="Publish.svg" %}
+      {% fill "heading" %}
+        04.
+      {% endfill %}
+      {% fill "body" %}
+        We provide training on how to use the publishing system for authors and
+        editors.
+      {% endfill %}
+    {% endcomponent_block %}
+    {% component_block "infographic_grid_item" icon="Authors.svg" %}
+      {% fill "heading" %}
+        05.
+      {% endfill %}
+      {% fill "body" %}
+        Our typesetter designs an article template for your journal.
+      {% endfill %}
+    {% endcomponent_block %}
+    {% component_block "infographic_grid_item" icon="Engage.svg" %}
+      {% fill "heading" %}
+        06.
+      {% endfill %}
+      {% fill "body" %}
+        We migrate the journal’s back content.
+      {% endfill %}
+    {% endcomponent_block %}
+    {% component_block "infographic_grid_item" icon="Platform-Migration.svg" %}
+      {% fill "heading" %}
+        07.
+      {% endfill %}
+      {% fill "body" %}
+        You launch the journal.
+      {% endfill %}
+    {% endcomponent_block %}
+    {% component_block "infographic_grid_item" icon="Read-our-News.svg" %}
+      {% fill "heading" %}
+        08.
+      {% endfill %}
+      {% fill "body" %}
+        Once launched, we add your jour journal to our indexing and archiving
+        services.
+      {% endfill %}
+    {% endcomponent_block %}
+  {% endcomponent_block %}
+</div>

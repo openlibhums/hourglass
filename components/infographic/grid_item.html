@@ -1,0 +1,25 @@
+{% load static %}
+{% load component_tags %}
+
+<div
+  class="
+    bg-white relative z-10 p-6 group
+    flex max-sm:flex-col sm:flex-row gap-4 items-start w-full h-full
+  ">
+  <img
+    class="max-sm:w-full sm:w-36 sm:h-36"
+    src="{% static 'hourglass/media/icons/' %}{{ icon }}"
+    alt="">
+  <div class="prose lg:prose-lg">
+    <h3>{% slot "heading" %}{% endslot %}</h3>
+    <p>{% slot "body" %}{% endslot %}</p>
+  </div>
+  <div class="group-even:hidden max-lg:hidden absolute -right-9 top-1/2">
+    <div
+      class="
+        absolute top-0 right-0 border-black border-solid origin-top-right
+        w-8 h-8 border-t-4 border-r-4 rotate-45
+      ">
+    </div>
+  </div>
+</div>
