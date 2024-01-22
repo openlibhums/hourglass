@@ -1,0 +1,21 @@
+{% load static %}
+{% load component_tags %}
+
+<div
+  class="
+    bg-white relative z-10
+    flex max-sm:flex-col sm:flex-row items-start w-full
+  ">
+  <img
+    class="max-sm:w-full sm:w-44 sm:h-44"
+    src="{% static 'hourglass/media/icons/' %}{{ icon }}"
+    alt="">
+  <div class="p-4 prose lg:prose-lg">
+    <h3>
+      {% slot "heading" %}{% endslot %}
+    </h3>
+    <p>
+      {% slot "body" %}{% endslot %}
+    </p>
+  </div>
+</div>

@@ -54,7 +54,7 @@
         </aside>
         <aside
           class="
-            relative max-lg:hidden top-64 motion-safe:rallax
+            relative max-lg:hidden top-64
             max-sm:-right-40 sm:max-md:-right-28 md:max-lg:-right-16
           ">
           <img
@@ -109,50 +109,9 @@
         {% endcomponent_block %}
       </div>
       <div class="relative mt-28">
-        <div
-          class="
-            relative
-            max-lg:before:z-30 max-lg:before:block before:absolute
-            max-lg:before:inset-y-0 max-lg:before:w-[50vw]
-            max-lg:before:right-1/2 max-lg:before:bg-white
-            after:z-30 after:block after:absolute
-            after:inset-y-0 after:w-[50vw]
-            after:left-1/2 after:bg-white
-          ">
-          <div
-            class="
-              px-8 max-lg:py-8 lg:py-24 max-w-3xl bg-white
-              flex flex-col gap-y-6 z-40 relative
-            ">
-            <div class="h-48 w-16">
-            </div>
-            <p class="mx-auto font-poppins-bold text-4xl uppercase text-blue">
-              Diamond infographic here
-            </p>
-            <div class="h-48 w-16">
-            </div>
-          </div>
-        </div>
-        <aside
-          class="
-            relative max-lg:-right-24 lg:-right-40 motion-safe:rallax
-            motion-reduce:max-lg:bottom-0 motion-reduce:lg:bottom-0 motion-safe:-top-20
-          ">
-          <img
-            class="absolute z-10 max-lg:right-24 lg:right-80 max-lg:-top-48 lg:-top-24"
-            src="{% static 'hourglass/media/backgrounds/circle-blue-textured.png' %}"
-            width="434"
-            alt="">
-          <img
-            class="absolute z-10 right-0 -top-24"
-            srcset="
-              {% static 'hourglass/media/backgrounds/building-concrete-arches.png' %} 452w,
-              {% static 'hourglass/media/backgrounds/building-concrete-arches-lg.png' %} 592w
-            "
-            sizes="(max-width: 1024px) 452px, 592px"
-            src="{% static 'hourglass/media/backgrounds/building-concrete-arches-lg.png' %}"
-            alt="">
-        </aside>
+        {% component_block "page_section" anchor="left" labelledby="open-access-infographic" bg="bg-transparent" prose=False width="full" margin="narrow" %}
+          {% include "custom/open-access-infographic.html" %}
+        {% endcomponent_block %}
       </div>
       <div class="relative max-lg:mt-80 lg:mt-28">
         {% component_block "page_section" anchor="left" labelledby="what-is-diamond-open-access" %}
