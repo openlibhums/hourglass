@@ -107,27 +107,25 @@
         {% endcomponent_block %}
       </div>
       <div class="relative max-lg:mt-16 lg:mt-28">
-        <div class="flex max-lg:justify-center lg:justify-end md:max-w-3xl">
-          <div class="relative z-40">
-            {% component_block "quote" %}
-              {% fill "quote" %}
-                “When I sought a venue for the special issue on videogames and
-                postcolonialism, I was thinking of the millions of people in
-                the so-called Global South countries who had no access to the
-                articles in paywalled journals, where their own predicament was
-                being discussed. OLH, therefore, was a godsend when the editors
-                agreed to publish the special issue. Today, anyone with an
-                Internet connection can access the articles for free.”
-              {% endfill %}
-              {% fill "by" %}
-                <span class="font-poppins-bold">Emil Hammar</span>,
-                Co-editor of ‘<a class="underline"
-                href="https://olh.openlibhums.org/collections/436/">Postcolonial
-                Perspectives in Game Studies</a>’
-              {% endfill %}
-            {% endcomponent_block %}
-          </div>
-        </div>
+        {% component_block "quote_frame_single" %}
+          {% component_block "quote" %}
+            {% fill "quote" %}
+              “When I sought a venue for the special issue on videogames and
+              postcolonialism, I was thinking of the millions of people in
+              the so-called Global South countries who had no access to the
+              articles in paywalled journals, where their own predicament was
+              being discussed. OLH, therefore, was a godsend when the editors
+              agreed to publish the special issue. Today, anyone with an
+              Internet connection can access the articles for free.”
+            {% endfill %}
+            {% fill "by" %}
+              <span class="font-poppins-bold">Emil Hammar</span>,
+              Co-editor of ‘<a class="underline"
+              href="https://olh.openlibhums.org/collections/436/">Postcolonial
+              Perspectives in Game Studies</a>’
+            {% endfill %}
+          {% endcomponent_block %}
+        {% endcomponent_block %}
       </div>
       <div class="relative max-lg:mt-16 lg:mt-28">
         <aside

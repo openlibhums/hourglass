@@ -1,0 +1,215 @@
+{% extends "press/cms/page.html" %}
+
+{% load static %}
+{% load component_tags %}
+
+{% block meta_description %}
+  As part of our commitment to sustainable working practices in the
+  humanities, we are proud to support the CHASE Doctoral Training Partnership
+  internship placement scheme.
+{% endblock meta_description %}
+
+{% block body %}
+  <article aria-labelledby="h1">
+    <div class="container mx-auto max-w-screen-xl">
+      <div class="relative">
+        {% include "custom/edit-on-github.html" with rel_path="custom/olhj-testimonials.html" %}
+        {% include "custom/generic-art-opener.html" %}
+        {% include "custom/generic-h1.html" with h1="OLHJ editor testimonials." %}
+      </div>
+      {% component_block "page_intro" %}
+        {% fill "column_one" %}
+          <p class="lead text-white">This page collects feedback from our
+          previous Special Collection editors on what it is like to curate a
+          collection for our flagship journal.</p>
+        {% endfill %}
+      {% endcomponent_block %}
+      <div class="relative max-lg:mt-16 lg:mt-28">
+        {% component_block "quote_frame_single" %}
+          {% component_block "quote" %}
+            {% fill "quote" %}
+              “The fact that the OLH is open access reinforces that it is an ideal academic
+              venue in which to publish: the open-access articles have been widely accessed
+              in places where it is difficult to access paywalled knowledge sources. The
+              hard-working people at the OLH manage to attain a high degree of academic
+              rigour while having an incredibly fast turnaround for publishing submitted
+              research. We very much look forward to working with the OLH again on a second
+              special collection.”
+            {% endfill %}
+            {% fill "by" %}
+              —Emil Hammar, Co-editor of ‘<a
+                class="underline"
+                href="https://olh.openlibhums.org/collections/436/">Postcolonial
+                Perspectives in Game Studies</a>’
+            {% endfill %}
+          {% endcomponent_block %}
+        {% endcomponent_block %}
+      </div>
+      <div class="relative max-lg:mt-16 lg:mt-28">
+        {% component_block "quote_frame_single" %}
+          {% component_block "quote" %}
+            {% fill "quote" %}
+              “The Special Collection format at the <i>Open Library of Humanities</i> journal
+              is an excellent alternative to more traditional forms of edited collection,
+              both because of the brilliant editorial support that we received from OLH and
+              also because the open rolling format of publishing was so generative. Being
+              able to decide how long submissions could be kept open meant that the
+              collection developed in ways we could never have imagined. The resulting work
+              is genuinely diverse, inspired by our research context and questions, but is
+              not limited by them.”
+            {% endfill %}
+            {% fill "by" %}
+              —Catherine Grant, Co-editor of ‘<a
+                class="underline"
+                href="https://olh.openlibhums.org/collections/423/">Pride
+                Revisited</a>’
+            {% endfill %}
+          {% endcomponent_block %}
+        {% endcomponent_block %}
+      </div>
+      <div class="relative max-lg:mt-16 lg:mt-28">
+        {% component_block "quote_frame_single" %}
+          {% component_block "quote" %}
+            {% fill "quote" %}
+              “I really enjoyed working with OLH, and thought their work was excellent: just
+              the right amount of editing and always fast, and always patient as we tried to
+              navigate the workflow. I’ve worked with a lot of publishers and journals by
+              now, and that was the smoothest, friendliest and best-value experience I’ve had
+              in the last 15 years. I hope to work with them again in the future.”
+            {% endfill %}
+            {% fill "by" %}
+              —Bettina Bildhauer, Co-editor of ‘<a
+                class="underline"
+                href="https://olh.openlibhums.org/collections/505/">Politics
+                and History of Menstruation</a>’
+            {% endfill %}
+          {% endcomponent_block %}
+        {% endcomponent_block %}
+      </div>
+      <div class="relative max-lg:mt-16 lg:mt-28">
+        {% component_block "quote_frame_single" %}
+          {% component_block "quote" %}
+            {% fill "quote" %}
+              “Working with OLH as an editor and author for the Station Eleven special
+              collection has been a great experience thanks to the OLH team’s support
+              throughout, from their enthusiasm for the collection’s subject to their
+              efficient copyediting. OLH’s speed of publication is crucial when publishing
+              on 21st-century writings that have received little or no scholarly attention,
+              and of course being open access makes innovative and cutting-edge scholarship
+              available to everyone.”
+            {% endfill %}
+            {% fill "by" %}
+              —Diletta De Cristofaro, Co-editor of ‘<a
+                class="underline"
+                href="https://olh.openlibhums.org/collections/437/">Station
+                Eleven and Twenty-First-Century Writing</a>’
+            {% endfill %}
+          {% endcomponent_block %}
+        {% endcomponent_block %}
+      </div>
+      <div class="relative max-lg:mt-16 lg:mt-28">
+        {% component_block "quote_frame_single" %}
+          {% component_block "quote" %}
+            {% fill "quote" %}
+              “Many of our contributors expressed their happiness about the speed with which
+              articles were published and the wide readership they gained. We thank the
+              editorial team and the copyeditors of OLH for making the process extremely
+              smooth for us and guiding us through every step of the process. We were
+              extremely impressed with the production team of OLH and the layout of the
+              articles. I have already received enquiries about publishing with OLH from
+              colleagues all over the world.”
+            {% endfill %}
+            {% fill "by" %}
+              —Souvik Mukherjee, Co-editor of ‘<a
+                class="underline"
+                href="https://olh.openlibhums.org/collections/436/">Postcolonial Perspectives
+                in Game Studies</a>’
+            {% endfill %}
+          {% endcomponent_block %}
+        {% endcomponent_block %}
+      </div>
+      <div class="relative max-lg:mt-16 lg:mt-28">
+        {% component_block "quote_frame_single" %}
+          {% component_block "quote" %}
+            {% fill "quote" %}
+              “Working with the OLH proved to be an immensely rewarding and smooth editorial
+              experience. The OLH provided excellent flexibility for us in formulating and
+              executing on the Special Collection, achieving a nice balance between
+              professional rigour and ‘elasticity’. The senior editors and copyeditors
+              involved provided not only great professional assistance, collaboration, and
+              oversight, but they also made the editorial process comfortable, quick, and
+              painless.”
+            {% endfill %}
+            {% fill "by" %}
+              —Emil Hammar, Co-editor of ‘<a
+                class="underline"
+                href="https://olh.openlibhums.org/collections/436/">Postcolonial Perspectives
+                in Game Studies</a>’
+            {% endfill %}
+          {% endcomponent_block %}
+        {% endcomponent_block %}
+      </div>
+      <div class="relative max-lg:mt-16 lg:mt-28">
+        {% component_block "quote_frame_single" %}
+          {% component_block "quote" %}
+            {% fill "quote" %}
+              “Open access publishing is becoming increasingly important in our profession;
+              with this in mind it is reassuring to have the expertise of OLH at hand. As the
+              editor of a Special Collection, I was delighted with the speed, efficiency,
+              guidance, and enthusiasm of the OLH team. Based on my experience, I would
+              highly recommend OLH as a publishing venue, and won't hesitate to work with
+              them again.”
+            {% endfill %}
+            {% fill "by" %}
+              —Adam Kelly, Co-Editor of ‘<a
+                class="underline"
+                href="https://olh.openlibhums.org/collections/429/">Freedom After
+                Neoliberalism</a>’
+            {% endfill %}
+          {% endcomponent_block %}
+        {% endcomponent_block %}
+      </div>
+      <div class="relative max-lg:mt-16 lg:mt-28">
+        {% component_block "quote_frame_single" %}
+          {% component_block "quote" %}
+            {% fill "quote" %}
+              “Working with the OLH was a real pleasure. They combine expert editorial
+              guidance with a sustainable publishing process.”
+            {% endfill %}
+            {% fill "by" %}
+              —Andrew Rowcroft, Co-Editor of ‘<a
+                class="underline"
+                href="https://olh.openlibhums.org/collections/439/">What’s Left? Marxism,
+                Literature and Culture in the 21st Century</a>’
+            {% endfill %}
+          {% endcomponent_block %}
+        {% endcomponent_block %}
+      </div>
+      <div class="relative max-lg:mt-16 lg:mt-28">
+        {% component_block "quote_frame_single" %}
+          {% component_block "quote" %}
+            {% fill "quote" %}
+              “The OLH demonstrates why open access publication is no less rigorous than more
+              traditional approaches to knowledge-making and sharing of scholarship. Indeed,
+              this publisher's requirement that each piece in a Special Collection undergoes
+              two double-blind reviews (as compared to many houses, who seek only one or two
+              reviewers for an entire collection) elevates OLH scholarship to a higher
+              standard of research. The ability to publish each of a collection's pieces on a
+              rolling schedule ensures their timeliness. OLH editors carefully shepherd each
+              article via multiple levels of review and feedback, copyediting, and proofing,
+              using an interface that is immediately intuitive to anyone who has published in
+              the 21st century. My experience with the OLH has been one of the most positive
+              of my career thus far.”
+            {% endfill %}
+            {% fill "by" %}
+              —Adrienne Lamberti, Co-Editor of
+              ‘<a class="underline" href="https://olh.openlibhums.org/collections/428/">Cultivating Spheres:
+                Agriculture, Technical Communication, and the Publics</a>’
+            {% endfill %}
+          {% endcomponent_block %}
+        {% endcomponent_block %}
+      </div>
+      {% include 'custom/subscribe.html' %}
+    </div>
+  </article>
+{% endblock body %}
