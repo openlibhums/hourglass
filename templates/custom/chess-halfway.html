@@ -2,15 +2,18 @@
 
 <aside
   class="
+    max-lg:hidden
     relative z-0 motion-safe:rallax
-    max-lg:-left-20 lg:left-0
-    motion-reduce:max-lg:-top-32 motion-safe:max-lg:-top-64
-    motion-reduce:lg:-top-24 motion-safe:lg:-top-96
+    -left-24 motion-reduce:-top-24 motion-safe:-top-96
   ">
   {% include 'custom/circle-halfway.html' %}
   <img
-    class="absolute z-20 max-lg:-top-16 lg:top-48 max-lg:left-16 lg:-left-32"
+    class="z-20 absolute top-48 -left-20 w-16 h-16"
+    src="{% static 'hourglass/media/backgrounds/circle-red.svg' %}"
+    alt="">
+  <img
+    class="absolute z-20 top-96 -left-36"
     src="{% static 'hourglass/media/backgrounds/chess-group.png' %}"
-    width="488"
+    width="500"
     alt="A set of medieval chess pieces made of stone">
 </aside>

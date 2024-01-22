@@ -1,13 +1,18 @@
 {% load static %}
 
-<aside class="relative z-0 max-lg:-top-64 lg:top-0 right-0">
-  {% include 'custom/stripes-opener.html' %}
+<aside
+  class="
+    z-0 relative max-md:top-8 md:max-lg:-top-48 lg:-top-96 motion-safe:rallax
+    max-lg:right-12 lg:right-0
+  ">
+  {% include "custom/landing-opener.html" %}
   <img
     class="
-      motion-safe:rallax absolute max-lg:z-0 lg:z-20 max-lg:top-4 lg:top-0 max-lg:-right-32 lg:right-24
-      max-lg:w-80 max-lg:max-w-none lg:max-w-md
+      absolute max-lg:z-30 lg:z-20 max-lg:top-8 lg:top-24
+      max-lg:-right-20 lg:right-24
     "
     src="{% static 'hourglass/media/backgrounds/chess-man.png' %}"
-    width="275"
-    alt="A medieval chess piece made of stone. A bearded king frowns and rests his sword across his knees">
+    width="275" height="527"
+    alt="A medieval chess piece made of stone. A frowning man wearing a crown
+         and robes rests one hand on his cheek and holds a horn in the other">
 </aside>
