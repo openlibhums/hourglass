@@ -1,0 +1,233 @@
+{% extends "press/cms/page.html" %}
+
+{% load static %}
+{% load component_tags %}
+
+{% block meta_description %}
+  As part of our academic advocacy efforts, the OLH produced a series of
+  posters highlighting different aspects of our publishing for various
+  humanities scholarly communities.
+{% endblock meta_description %}
+
+{% block body %}
+  <article aria-labelledby="h1">
+    <div class="container mx-auto max-w-screen-xl">
+      <div class="relative">
+        {% include "custom/edit-on-github.html" with rel_path="custom/olh-poster-series.html" %}
+        {% include "custom/sunglasses-model-opener.html" %}
+        {% include "custom/generic-h1.html" with h1="The OLH<br> poster<br> series." %}
+      </div>
+      <div class="relative max-lg:mt-16 lg:mt-36">
+        {% component_block "page_intro" %}
+          {% fill "column_one" %}
+            <p class="lead text-white">As part of our academic advocacy efforts,
+            the OLH produced a series of posters highlighting different aspects
+            of our publishing for various humanities scholarly communities.</p>
+          {% endfill %}
+          {% fill "column_two" %}
+            <p>Designed by acclaimed publishing graphic designers <a class="text-white"
+            href="http://www.beckychilcott.co.uk">Becky Chilcott</a> and <a class="text-white"
+            href="https://nickyborowiec.com/">Nicky Borowiec</a>, the series
+            celebrates the launch of the Open Library of Humanities. We released
+            these posters throughout 2016 and 2017, and in 2021. Each is
+            dedicated to a different historical period and style which pays
+            tribute to the range of humanities scholarship that the OLH publishes
+            in its journals.</p>
+            <p>Please feel free to download and share these posters!</p>
+          {% endfill %}
+        {% endcomponent_block %}
+      </div>
+      <div class="relative max-lg:mt-16 lg:mt-36">
+        {% component_block "page_section" labelledby="victorian-poster" %}
+          <h2 id="victorian-poster">The Victorian poster.</h2>
+          <img
+            alt="The Victorian poster"
+            width="400" height="562"
+            src="{% static 'hourglass/media/olh-victorian-poster.jpg' %}">
+          <p>Our first poster in the series, designed by Becky Chilcott, was
+          launched shortly after the anniversary publication of our journal
+          <a href="http://www.19.bbk.ac.uk/"><i>19: Interdisciplinary Studies
+          in the Long Nineteenth Century</i></a>. Celebrating its 10th year,
+          the bumper anniversary issue of <i>19</i> titled <a
+          href="http://www.19.bbk.ac.uk/90/volume/2015/issue/21/">"The
+          Nineteenth-Century Digital Archive"</a> featured 18 articles as well
+          as two editorials, that examine the possibilities of the
+          nineteenth-century archive in the digital era.</p>
+          <div class="flex gap-8">
+            {% with rel_path="https://www.openlibhums.org/media/press/OLH-Victorian-Poster-web-version-1.jpg" label="JPG" %}
+              {% include 'custom/button-download-blue.html' %}
+            {% endwith %}
+            {% with rel_path="https://www.openlibhums.org/media/press/OLH-Victorian-poster-A3-print.pdf" label="PDF (A3)" %}
+              {% include 'custom/button-download-blue.html' %}
+            {% endwith %}
+            {% with rel_path="https://www.openlibhums.org/media/press/OLH-Victorian-Poster-A4-Print-version.pdf" label="PDF (A4)" %}
+              {% include 'custom/button-download-blue.html' %}
+            {% endwith %}
+          </div>
+        {% endcomponent_block %}
+      </div>
+      <div class="relative max-lg:mt-16 lg:mt-36">
+        {% component_block "page_section" labelledby="constructivist-poster" %}
+          <h2 id="constructivist-poster">The Constructivist poster.</h2>
+          <img
+            alt="The Constructivist poster"
+            width="400" height="566"
+            src="{% static 'hourglass/media/olh-constructivist-poster.jpg' %}">
+          <p>Following on from our highly popular Victorian Poster, the
+          second poster in our series designed by Becky Chilcott is a fitting
+          tribute to the <a href="/plugins/supporters/">grassroots
+          support</a> from academics, librarians and publishers that have
+          made the OLH possible.</p>
+          <div class="flex gap-8">
+            {% with rel_path="https://www.openlibhums.org/media/press/OLH-Constructivist-Poster-A4-Web.jpg" label="image" %}
+              {% include 'custom/button-download-blue.html' %}
+            {% endwith %}
+            {% with rel_path="https://www.openlibhums.org/media/press/OLH-Constructivist-Poster-A3-Print.pdf" label="PDF (A3)" %}
+              {% include 'custom/button-download-blue.html' %}
+            {% endwith %}
+            {% with rel_path="https://www.openlibhums.org/media/press/OLH-Constructivist-Poster-A4-Web.jpg" label="PDF (A4)" %}
+              {% include 'custom/button-download-blue.html' %}
+            {% endwith %}
+          </div>
+        {% endcomponent_block %}
+      </div>
+      <div class="relative max-lg:mt-16 lg:mt-36">
+        {% include "custom/sunglasses-model-halfway.html" %}
+        {% component_block "page_section" labelledby="muybridge-poster" anchor="right" %}
+          <h2 id="muybridge-poster">The Muybridge poster.</h2>
+          <img
+            alt="Muybridge poster"
+            width="400" height="566"
+            src="{% static 'hourglass/media/olh-muybridge-poster.jpg' %}">
+          <p>The third poster in our series also designed by Becky Chilcott
+          showcases the OLH's commitment to supporting the publication of audio
+          visual content including video essays, film clips, and music clips
+          and other audio files. In Autumn 2016 the OLH welcomed its first
+          video essay journal onto the platform, <a
+          href="https://about.openlibhums.org/2016/10/17/video-journal-of-embodied-research-to-launch-on-olh-platform/"><i>The
+          Journal of Embodied Research</i></a>, which responds to a pressing need
+          among scholars and practitioners for a prestigious journal that brings
+          together scholarship and videography.</p>
+          <div class="flex gap-8">
+            {% with rel_path="https://www.openlibhums.org/media/press/OLH-Muybridge-poster-A3-web.jpg" label="JPG" %}
+              {% include 'custom/button-download-blue.html' %}
+            {% endwith %}
+            {% with rel_path="https://www.openlibhums.org/media/press/OLH-Muybridge-poster-A3-print.pdf" label="PDF (A3)" %}
+              {% include 'custom/button-download-blue.html' %}
+            {% endwith %}
+            {% with rel_path="https://www.openlibhums.org/media/press/OLH-Muybridge-poster-A4-print.pdf" label="PDF (A4)" %}
+              {% include 'custom/button-download-blue.html' %}
+            {% endwith %}
+          </div>
+        {% endcomponent_block %}
+      </div>
+      <div class="relative max-lg:mt-16 lg:mt-36">
+        {% component_block "page_section" labelledby="shakespearean-poster" anchor="right" %}
+          <h2 id="shakespearean-poster">The Shakespearean poster.</h2>
+          <img
+            alt="Shakespearean poster"
+            width="400" height="566"
+            src="{% static 'hourglass/media/olh-shakespearean-poster.jpg' %}">
+          <p>The fourth poster in our series was designed by Becky Chilcott in
+          tribute to the historical scholarship that we publish, including our
+          Renaissance studies journal,
+          <a href="http://marvell.openlibhums.org/"><i>Marvell Studies</i></a>,
+          the official journal of the Andrew W. Marvell scholarly society.</p>
+          <div class="flex gap-8">
+            {% with rel_path="https://www.openlibhums.org/media/press/OLH-Shakespearean-poster-A3-web.jpg" label="JPG" %}
+              {% include 'custom/button-download-blue.html' %}
+            {% endwith %}
+            {% with rel_path="https://www.openlibhums.org/media/press/OLH-Shakespearean-poster-A3-print.pdf" label="PDF (A3)" %}
+              {% include 'custom/button-download-blue.html' %}
+            {% endwith %}
+            {% with rel_path="https://www.openlibhums.org/media/press/OLH-Shakespearean-poster-A4-print.pdf" label="PDF (A4)" %}
+              {% include 'custom/button-download-blue.html' %}
+            {% endwith %}
+          </div>
+        {% endcomponent_block %}
+      </div>
+      <div class="relative max-lg:mt-16 lg:mt-36">
+        {% component_block "page_section" labelledby="comics-poster" anchor="right" %}
+          <h2 id="comics-poster">The comic superheroes poster.</h2>
+          <img
+            alt="Comics poster"
+            width="400" height="566"
+            src="{% static 'hourglass/media/olh-comics-poster.jpg' %}">
+          <p>The fifth poster in our series was designed by Nicky Borowiec to
+          celebrate the opening of our journal flipping programme thanks to
+          the support of our higher-tier member libraries, and celebrates the
+          diversity of comics and visual arts scholarship in the humanities,
+          such as that published by OLH journal <i><a
+          href="https://www.comicsgrid.com/">The Comics Grid: Journal of
+          Comics Studies</a>.</i></p>
+          <div class="flex gap-8">
+            {% with rel_path="https://www.openlibhums.org/media/press/OLH-Comics-Flip-Poster-WEB.jpg" label="JPG" %}
+              {% include 'custom/button-download-blue.html' %}
+            {% endwith %}
+            {% with rel_path="https://www.openlibhums.org/media/press/OLH-Comics-Flip-Poster-HIGH-RES-A3.pdf" label="PDF (A3)" %}
+              {% include 'custom/button-download-blue.html' %}
+            {% endwith %}
+            {% with rel_path="https://www.openlibhums.org/media/press/OLH-Comics-Flip-Poster-HIGH-RES-A4.pdf" label="PDF (A4)" %}
+              {% include 'custom/button-download-blue.html' %}
+            {% endwith %}
+          </div>
+        {% endcomponent_block %}
+      </div>
+      <div class="relative max-lg:mt-16 lg:mt-36">
+        {% include "custom/sunglasses-model-last.html" %}
+        {% component_block "page_section" labelledby="kruger-poster" %}
+          <h2 id="kruger-poster">The Barbara Kruger poster.</h2>
+          <img
+            alt="Barbara Kruger poster"
+            width="400" height="566"
+            src="{% static 'hourglass/media/olh-kruger-poster.jpg' %}">
+          <p>The sixth poster in our series was designed by Nicky Borowiec to
+          celebrate the opening of our journal flipping programme thanks to the
+          support of our higher-tier member libraries. The poster is inspired
+          by the iconic feminist work of Barbara Kruger
+          <a
+          href="https://www.thebroad.org/art/barbara-kruger/untitled-your-body-battleground">Untitled
+          (Your body is a battleground)</a> created in 1989 for the Women's
+          March in Washington in support of reproductive freedom and choice. We
+          would like to express our gratitude to the artist, Barbara Kruger,
+          for allowing us to build on her brilliant work to raise awareness of
+          our journal flipping scheme and help unlock global access to
+          humanities scholarship.</p>
+          <div class="flex gap-8">
+            {% with rel_path="https://www.openlibhums.org/media/press/OLH_KRUGER_Flip_Poster_WEB.jpg" label="JPG" %}
+              {% include 'custom/button-download-blue.html' %}
+            {% endwith %}
+            {% with rel_path="https://www.openlibhums.org/media/press/OLH_KRUGER_Flip_Poster_HIGH_RES_A3.pdf" label="PDF (A3)" %}
+              {% include 'custom/button-download-blue.html' %}
+            {% endwith %}
+            {% with rel_path="https://www.openlibhums.org/media/press/OLH_KRUGER_Flip_Poster_HIGH_RES_A4.pdf" label="PDF (A4)" %}
+              {% include 'custom/button-download-blue.html' %}
+            {% endwith %}
+          </div>
+        {% endcomponent_block %}
+      </div>
+      <div class="relative max-lg:mt-16 lg:mt-36">
+        {% component_block "page_section" labelledby="zombie-poster" %}
+          <h2 id="zombie-poster">The zombie poster.</h2>
+          <img
+            alt="Zombie poster"
+            width="400" height="566"
+            src="{% static 'hourglass/media/olh-zombie-poster.jpg' %}">
+          <p>{% lorem 15 w %}</p>
+          <div class="flex gap-8">
+            {% with rel_path="https://www.openlibhums.org/media/press/OLH_Zombie_A4.jpg" label="JPG" %}
+              {% include 'custom/button-download-blue.html' %}
+            {% endwith %}
+            {% with rel_path="https://www.openlibhums.org/media/press/OLH_Zombie_A3_HIGH_RES.pdf" label="PDF (A3)" %}
+              {% include 'custom/button-download-blue.html' %}
+            {% endwith %}
+            {% with rel_path="https://www.openlibhums.org/media/press/OLH_Zombie_A4_HIGH_RES.pdf" label="PDF (A4)" %}
+              {% include 'custom/button-download-blue.html' %}
+            {% endwith %}
+          </div>
+        {% endcomponent_block %}
+      </div>
+      {% include "custom/subscribe.html" %}
+    </div>
+  </article>
+{% endblock body %}
