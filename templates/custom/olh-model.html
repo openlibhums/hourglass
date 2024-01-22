@@ -126,12 +126,9 @@
         {% endcomponent_block %}
         {% include "custom/nypl-halfway.html" %}
       </div>
-      <div class="relative mt-48">
-        {% component_block "page_section" labelledby="olh-in-numbers" anchor="right" bg="bg-transparent" %}
-          <h2 id="olh-in-numbers">The OLH in numbers.</h2>
-          <div class="mt-28 h-96">
-            INFOGRAPHIC - OLH in numbers
-          </div>
+      <div class="relative max-lg:mt-0 lg:mt-16">
+        {% component_block "page_section" anchor="left" labelledby="olh-numbers-infographic" bg="bg-transparent" prose=False width="full" margin="narrow" %}
+          {% include "custom/olh-numbers-infographic.html" %}
         {% endcomponent_block %}
       </div>
       <div class="relative max-lg:mt-16 lg:mt-28">

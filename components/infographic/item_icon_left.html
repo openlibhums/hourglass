@@ -11,7 +11,6 @@
     src="{% static 'hourglass/media/icons/' %}{{ icon }}"
     alt="">
   <div class="p-4 prose lg:prose-lg">
-    <h3>{% slot "heading" %}{% endslot %}</h3>
-    <p>{% slot "body" %}{% endslot %}</p>
+    {% slot "content" default %}{% endslot %}
   </div>
 </div>

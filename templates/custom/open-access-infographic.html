@@ -25,7 +25,7 @@
           class="h-6"
           src="{% static 'hourglass/media/logo/OLH-symbol-white.svg' %}"
           alt="OLH">
-        <div class="font-poppins-bold text-xl text-center w-20 h-20">open access model</div>
+        <div class="font-poppins-bold text-3xl text-center w-36">open access model</div>
       </div>
     </div>
     <div
@@ -37,35 +37,23 @@
   </div>
   <div class="z-10 col-start-3 col-end-7 row-start-1 row-end-2">
     {% component_block "infographic_item_icon_left" icon="Green-Open-Access.svg" %}
-      {% fill "heading" %}
-        Green open access
-      {% endfill %}
-      {% fill "body" %}
-        Authors retain the right to distribute the work freely, such as via an
-        institutional repository or on their website.
-      {% endfill %}
+      <h3>Green open access</h3>
+      <p>Authors retain the right to distribute the work freely, such as via an
+      institutional repository or on their website.</p>
     {% endcomponent_block %}
   </div>
   <div class="z-10 col-start-3 col-end-7 row-start-2 row-end-3">
     {% component_block "infographic_item_icon_left" icon="Gold-Open-Access.svg" %}
-      {% fill "heading" %}
-        Gold open access
-      {% endfill %}
-      {% fill "body" %}
-        Readers have free access, but
-        authors may be required to pay publishing costs.
-      {% endfill %}
+      <h3>Gold open access</h3>
+      <p>Readers have free access, but
+      authors may be required to pay publishing costs.</p>
     {% endcomponent_block %}
   </div>
   <div class="z-10 col-start-3 col-end-7 row-start-3 row-end-4">
     {% component_block "infographic_item_icon_left" icon="Diamond-Open-Access.svg" %}
-      {% fill "heading" %}
-        Diamond open access
-      {% endfill %}
-      {% fill "body" %}
-        Readers have free access, and authors do not
-        pay, with funds raised collectively by publisher.
-      {% endfill %}
+      <h3>Diamond open access</h3>
+      <p>Readers have free access, and authors do not
+      pay, with funds raised collectively by the publisher.</p>
     {% endcomponent_block %}
   </div>
 </div>
