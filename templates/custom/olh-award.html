@@ -15,6 +15,7 @@
         {% include 'custom/tudor-couple-opener.html' %}
         <div class="relative z-40">
           <h1
+            id="h1"
             class="
               max-md:text-4xl md:max-lg:text-5xl lg:text-7xl !leading-snug
               font-poppins-bold pt-64 max-lg:pb-12 lg:pb-20 px-8 max-w-md
@@ -44,11 +45,11 @@
                  and trees. He wears a Janeway T-shirt, holds the 2023 OLH
                  Award in one hand, and uses a cane for support with the other
                  hand.">
-          <h3 id="martin-paul-eve">Martin Paul Eve, 2023</h3>
+          <h2 id="martin-paul-eve">Martin Paul Eve, 2023</h2>
           <p>{% lorem %}.</p>
         {% endcomponent_block %}
       </div>
-      {% include 'custom/subscribe.html' %}
+      {% include "custom/subscribe.html" %}
     </div>
   </article>
 {% endblock body %}
