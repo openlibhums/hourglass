@@ -66,23 +66,21 @@
         {% endcomponent_block %}
       </div>
       <div class="relative max-lg:mt-16 lg:mt-28">
-        <div class="flex max-lg:justify-center lg:justify-end md:max-w-3xl">
-          <div class="relative z-40">
-            {% component_block "quote" %}
-              {% fill "quote" %}
-                “We’ve heard two different stories from libraries and journals.
-                On the one hand, some libraries are struggling to keep afloat
-                and need us to freeze our prices. On the other hand, some
-                libraries have said that they want to support us in expanding
-                and converting more humanities titles to a diamond open-access
-                model. Our membership options cater for both groups.”
-              {% endfill %}
-              {% fill "by" %}
-                <span class="font-poppins-bold">Martin Paul Eve</span>, OLH Co-Founder
-              {% endfill %}
-            {% endcomponent_block %}
-          </div>
-        </div>
+        {% component_block "quote_frame_single" %}
+          {% component_block "quote" %}
+            {% fill "quote" %}
+              “We’ve heard two different stories from libraries and journals.
+              On the one hand, some libraries are struggling to keep afloat
+              and need us to freeze our prices. On the other hand, some
+              libraries have said that they want to support us in expanding
+              and converting more humanities titles to a diamond open-access
+              model. Our membership options cater for both groups.”
+            {% endfill %}
+            {% fill "by" %}
+              <span class="font-poppins-bold">Martin Paul Eve</span>, OLH Co-Founder
+            {% endfill %}
+          {% endcomponent_block %}
+        {% endcomponent_block %}
       </div>
       <div class="relative mt-28">
         {% component_block "page_section" prose=False anchor="right" width="part" label="Next steps" %}
@@ -272,23 +270,21 @@
         {% endcomponent_block %}
       </div>
       <div class="relative max-lg:mt-16 lg:mt-28">
-        <div class="flex max-lg:justify-center lg:justify-end md:max-w-3xl">
-          <div class="relative z-40">
-            {% component_block "quote" %}
-              {% fill "quote" %}
-                “The OLH is such good value for money. Library budgets are
-                always tight, but we feel that we should be doing more to
-                support academic-led publishing. OLH puts a lot back into the
-                academic community and we are pleased to help with its ongoing
-                sustainability.”
-              {% endfill %}
-              {% fill "by" %}
-                <span class="font-poppins-bold">Theo Andrew</span>, Scholarly
-                Communications Manager at the University of Edinburgh
-              {% endfill %}
-            {% endcomponent_block %}
-          </div>
-        </div>
+        {% component_block "quote_frame_single" %}
+          {% component_block "quote" %}
+            {% fill "quote" %}
+              “The OLH is such good value for money. Library budgets are
+              always tight, but we feel that we should be doing more to
+              support academic-led publishing. OLH puts a lot back into the
+              academic community and we are pleased to help with its ongoing
+              sustainability.”
+            {% endfill %}
+            {% fill "by" %}
+              <span class="font-poppins-bold">Theo Andrew</span>, Scholarly
+              Communications Manager at the University of Edinburgh
+            {% endfill %}
+          {% endcomponent_block %}
+        {% endcomponent_block %}
       </div>
       <div class="relative mt-28">
         {% include 'custom/stripes-end.html' %}

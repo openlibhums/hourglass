@@ -33,25 +33,23 @@
         {% endcomponent_block %}
       </div>
       <div class="relative max-lg:mt-16 lg:mt-28">
-        <div class="flex max-lg:justify-center lg:justify-end md:max-w-3xl">
-          <div class="relative z-40">
-            {% component_block "quote" %}
-              {% fill "quote" %}
-                “The first thing to know about Janeway is that it
-                is not just a submission system and platform. It
-                is a complete publishing tool that allows the
-                editors to basically operate as . . . a publisher. That
-                makes it hugely empowering.”
-              {% endfill %}
-              {% fill "by" %}
-                — Johan Rooryck, Editor-in-Chief of the linguistics
-                journal <i>Glossa</i>, in a
-                <a class="underline"
-                  href="/news/579/">first-hand account of using Janeway</a>
-              {% endfill %}
-            {% endcomponent_block %}
-          </div>
-        </div>
+        {% component_block "quote_frame_single" %}
+          {% component_block "quote" %}
+            {% fill "quote" %}
+              “The first thing to know about Janeway is that it
+              is not just a submission system and platform. It
+              is a complete publishing tool that allows the
+              editors to basically operate as . . . a publisher. That
+              makes it hugely empowering.”
+            {% endfill %}
+            {% fill "by" %}
+              — Johan Rooryck, Editor-in-Chief of the linguistics
+              journal <i>Glossa</i>, in a
+              <a class="underline"
+                href="/news/579/">first-hand account of using Janeway</a>
+            {% endfill %}
+          {% endcomponent_block %}
+        {% endcomponent_block %}
       </div>
       <div class="relative max-lg:mt-16 lg:mt-28">
         {% include 'custom/rodin-halfway.html' %}

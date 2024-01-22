@@ -173,26 +173,24 @@
         {% endcomponent_block %}
       </div>
       <div class="relative max-lg:mt-16 lg:mt-28">
-        <div class="flex max-lg:justify-center lg:justify-end md:max-w-3xl">
-          <div class="relative z-40">
-            {% component_block "quote" %}
-              {% fill "quote" %}
-                “I really enjoyed working with the OLH, and thought their work
-                was excellent: just the right amount of editing and always fast, and
-                always patient as we tried to navigate the workflow. I’ve worked with a
-                lot of publishers and journals by now, and that was the smoothest,
-                friendliest and best-value experience I’ve had in the last 15 years. I
-                hope to work with them again in the future.”
-              {% endfill %}
-              {% fill "by" %}
-                —Bettina Bildhauer, Co-editor of
-                ‘<a href="https://olh.openlibhums.org/collections/505/">Politics
-                  and History of Menstruation</a>’
-                Special Collection
-              {% endfill %}
-            {% endcomponent_block %}
-          </div>
-        </div>
+        {% component_block "quote_frame_single" %}
+          {% component_block "quote" %}
+            {% fill "quote" %}
+              “I really enjoyed working with the OLH, and thought their work
+              was excellent: just the right amount of editing and always fast, and
+              always patient as we tried to navigate the workflow. I’ve worked with a
+              lot of publishers and journals by now, and that was the smoothest,
+              friendliest and best-value experience I’ve had in the last 15 years. I
+              hope to work with them again in the future.”
+            {% endfill %}
+            {% fill "by" %}
+              —Bettina Bildhauer, Co-editor of
+              ‘<a href="https://olh.openlibhums.org/collections/505/">Politics
+                and History of Menstruation</a>’
+              Special Collection
+            {% endfill %}
+          {% endcomponent_block %}
+        {% endcomponent_block %}
       </div>
       <div class="relative max-lg:mt-16 lg:mt-28">
         {% component_block "page_section" prose=False anchor="left" width="full" label="Find out more" %}
