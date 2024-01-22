@@ -8,9 +8,9 @@ class TimelineSection(component.Component):
     def get_template_name(self, context):
         try:
             if context['alternate'] == 'odd':
-                return "timeline/section-odd.html"
+                return "timeline/section_odd.html"
             elif context['alternate'] == 'even':
-                return "timeline/section-even.html"
+                return "timeline/section_even.html"
         except KeyError:
             raise ImproperlyConfigured("Timeline section context must have alternate")
 
