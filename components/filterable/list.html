@@ -8,21 +8,45 @@
   {% slot "list" default %}{% endslot %}
 </section>
 
+<script src="{% static 'hourglass/js/list.min.js' %}"></script><!-- pre-ESM -->
+
 <script type="module">
-  function checkParamsForQuery(list, listId) {
-    const filterInput = document.querySelector(`#${ listId }-filter-input`)
-    const params = new URL(document.location).searchParams
-    const param = params.get(`filter-${ listId }`)
-    if (param) {
-      filterInput.value = param
-      list.search(param)
-    }
-  }
 
   const listId = '{{ list_id }}'
   const valueNames = '{{ value_names }}'.split(' ')
+
   document.addEventListener('DOMContentLoaded', () => {
+
     const list = new List(listId, { valueNames })
-    checkParamsForQuery(list, listId)
+    const filterInput = document.querySelector(`#${ listId }-filter-input`)
+    const cancel = document.querySelector(`#cancel-${ listId }`)
+
+    function checkParamsForQuery() {
+      const filterInput = document.querySelector(`#${ listId }-filter-input`)
+      const params = new URL(document.location).searchParams
+      const param = params.get(`filter-${ listId }`)
+      if (param) {
+        filterInput.value = param
+        list.search(param)
+      }
+    }
+
+    function clearFilter(event) {
+      filterInput.value = ''
+      list.search()
+      event.currentTarget.blur()
+    }
+
+    function handleKeyup(event) {
+      switch (event.key) {
+        case 'Escape':
+          clearFilter(event)
+          break
+      }
+    }
+
+    checkParamsForQuery()
+    filterInput.addEventListener('keyup', event => handleKeyup(event, list))
+    cancel.addEventListener('click', event => clearFilter(event, list))
   })
 </script>

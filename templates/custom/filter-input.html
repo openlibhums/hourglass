@@ -1,7 +1,10 @@
 {% load static %}
 
-<form aria-label="Filter">
-  <div class="flex max-w-md gap-4">
+<form
+  id="{{ list_id }}-form"
+  class="group py-2"
+  aria-label="Filter">
+  <div class="flex max-w-md gap-4 relative">
     <img
       class="w-8"
       src="{% static 'hourglass/media/icons/filter.svg' %}"
@@ -18,7 +21,21 @@
         flex-1 h-9 p-2 w-28 border-none
         lg:mx-4
         placeholder:text-sm
-        focus:ring-transparent
+        focus:outline focus:outline-blue
+        focus:ring-transparent focus:outline-offset-0
       ">
+    <button
+      type="button"
+      tabindex="-1"
+      id="cancel-{{ list_id }}"
+      class="
+        invisible group-focus-within:visible
+        absolute right-6 inset-y-0
+      ">
+      <img
+        class="w-6 cursor-pointer"
+        src="{% static 'hourglass/media/icons/close.svg' %}"
+        alt="Clear">
+    </button>
   </div>
 </form>

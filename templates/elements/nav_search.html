@@ -1,6 +1,6 @@
 {% load static %}
 
-<li class="site_search max-lg:order-first max-lg:w-full">
+<li class="max-lg:order-first max-lg:w-full group/search relative">
   <input
     id="search-input"
     type="search"
@@ -9,11 +9,26 @@
     class="
       bg-tan-light placeholder:text-sm
       h-9 p-2 w-36 border-none my-4 lg:mx-4 max-lg:w-full
-      focus:ring-transparent lg:focus:w-56 focus:bg-white lg:transition-[width]
+      focus:outline focus:outline-blue
+      focus:outline-offset-0 focus:ring-transparent
+      lg:group-focus-within/search:w-56 group-focus-within/search:bg-white lg:transition-[width]
       lg:hover:placeholder:font-poppins-bold
       lg:hover:ease-in transition duration-150 ease-out
       lg:group-hover/top:opacity-70 lg:hover:group-hover/top:opacity-100
     ">
+  <button
+    type="button"
+    tabindex="-1"
+    id="cancel-search"
+    class="
+      invisible group-focus-within/search:visible
+      absolute right-6 inset-y-0
+    ">
+    <img
+      class="w-6 cursor-pointer"
+      src="{% static 'hourglass/media/icons/close.svg' %}"
+      alt="Cancel search">
+  </button>
   <div class="lg:relative lg:top-0 lg:right-4">
     <div
       id="search-results"
@@ -40,6 +55,7 @@
   document.addEventListener('DOMContentLoaded', async () => {
 
     const input = document.getElementById('search-input')
+    const cancelSearch = document.getElementById('cancel-search')
     const message = document.getElementById('search-message')
     const results = document.getElementById('search-results')
     const ul = document.getElementById('results-list')
@@ -115,17 +131,33 @@
       }
     }
 
+    function hideDropdown() {
+      message.innerHTML = ''
+      ul.innerHTML = ''
+      results.classList.add('hidden')
+    }
+
+    function hideSearch() {
+      hideDropdown()
+      input.value = ''
+      event.currentTarget.blur()
+    }
+
     function handleKeyup (event, documents, searchIndex) {
-      // Only 1 letter has been typed in so far
-      if (input.value.length < 2) {
-        message.innerHTML = ''
-        ul.innerHTML = ''
-        results.classList.add('hidden')
-        return
+
+      switch (event.key) {
+        case 'Escape':
+          hideSearch()
+          break
+        default:
+          if (input.value.length < 2) {
+            hideDropdown()
+            break
+          } else {
+            updateResultsList(documents, searchIndex)
+          }
       }
 
-      // Otherwise
-      updateResultsList(documents, searchIndex)
     }
 
     function addEventListeners (documents, searchIndex) {
@@ -136,7 +168,7 @@
       })
 
       // User clicks the X in the search bar
-      // close.addEventListener('click', event => modalObj.close())
+      cancelSearch.addEventListener('click', event => hideSearch())
     }
 
     const { documents, searchIndex } = await getData()

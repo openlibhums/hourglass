@@ -136,17 +136,6 @@ OTHER_SOURCE_PATHS = [
         os.path.join(
             THEME_PATH,
             'src',
-            'js',
-        ),
-        os.path.join(
-            DIST_PATH,
-            'js',
-        )
-    ),
-    (
-        os.path.join(
-            THEME_PATH,
-            'src',
             'media',
         ),
         os.path.join(
