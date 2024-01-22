@@ -1,1 +1,14 @@
-<?xml version="1.0" encoding="UTF-8"?><svg id="Icons" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 130 130"><defs><style>.cls-1{fill:#e94c33;}.cls-2{fill:#d6cbbc;}.cls-3{fill:#1579a0;}.cls-4{fill:#202124;}</style></defs><rect class="cls-2" x="12.98" y="12.98" width="104.04" height="104.04"/><rect class="cls-1" x="23.9" y="23.9" width="73.66" height="48.58"/><polygon class="cls-3" points="97.56 105.82 97.56 72.48 61.59 72.48 97.56 105.82"/><circle class="cls-4" cx="50.05" cy="48.19" r="8.52"/><circle class="cls-4" cx="73.81" cy="48.19" r="8.52"/><circle class="cls-4" cx="97.58" cy="48.19" r="8.52"/></svg>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Icons" xmlns="http://www.w3.org/2000/svg" viewBox="12.98 12.98 104.04 104.04">
+  <defs>
+    <style>
+      .cls-1{fill:#e94c33;}.cls-2{fill:#d6cbbc;}.cls-3{fill:#1579a0;}.cls-4{fill:#202124;}
+    </style>
+  </defs>
+  <rect class="cls-2" x="12.98" y="12.98" width="104.04" height="104.04"/>
+  <rect class="cls-1" x="23.9" y="23.9" width="73.66" height="48.58"/>
+  <polygon class="cls-3" points="97.56 105.82 97.56 72.48 61.59 72.48 97.56 105.82"/>
+  <circle class="cls-4" cx="50.05" cy="48.19" r="8.52"/>
+  <circle class="cls-4" cx="73.81" cy="48.19" r="8.52"/>
+  <circle class="cls-4" cx="97.58" cy="48.19" r="8.52"/>
+</svg>

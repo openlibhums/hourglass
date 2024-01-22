@@ -52,7 +52,7 @@
           {% endfill %}
         {% endcomponent_block %}
       </div>
-      <div class="relative mt-28">
+      <div class="relative max-lg:mt-16 lg:mt-28">
         {% component_block "page_section" anchor="left" label="What we publish" %}
           <p class="font-semibold">We publish 28 open access journals and are
           funded by more than 340 university and public libraries worldwide, who
@@ -87,7 +87,7 @@
           <img
             class="
               absolute
-              right-8 max-h-96
+              max-lg:right-8 lg:-right-32 max-h-96
               motion-reduce:max-md:-bottom-12 motion-safe:max-md:bottom-0 md:max-lg:bottom-4
               motion-reduce:lg:-bottom-36 motion-safe:lg:top-48 motion-safe:rallax
             "
@@ -95,32 +95,12 @@
             alt="A camera lens in a collage with red blocks">
         </aside>
       </div>
-      <div class="relative max-lg:mt-16 lg:mt-28">
-        <div
-          class="
-            relative before:z-30 before:block before:absolute
-            before:inset-y-0 before:w-[50vw]
-            before:right-1/2 before:bg-white
-            max-lg:after:z-30 max-lg:after:block max-lg:after:absolute
-            max-lg:after:inset-y-0 max-lg:after:w-[50vw]
-            max-lg:after:left-1/2 max-lg:after:bg-white
-          ">
-          <div
-            class="
-              px-8 py-28 flex flex-col gap-y-6 z-40 relative
-              bg-white
-            ">
-            <div class="h-48 w-16">
-            </div>
-            <p class="mx-auto font-poppins-bold text-4xl uppercase text-blue">
-              Diamond infographic here
-            </p>
-            <div class="h-48 w-16">
-            </div>
-          </div>
-        </div>
+      <div class="relative max-lg:mt-0 lg:mt-16">
+        {% component_block "page_section" anchor="left" labelledby="open-access-infographic" bg="bg-transparent" prose=False width="full" margin="narrow" %}
+          {% include "custom/open-access-infographic.html" %}
+        {% endcomponent_block %}
       </div>
-      <div class="relative mt-28">
+      <div class="relative max-lg:mt-16 lg:mt-28">
         <aside>
           <img
             class="
@@ -130,9 +110,9 @@
             src="{% static 'hourglass/media/backgrounds/triangle-blue-textured.png' %}"
             alt="">
         </aside>
-        {% include 'custom/counter-block.html' %}
+        {% include "custom/counter-block.html" %}
       </div>
-      <div class="relative mt-28">
+      <div class="relative max-lg:mt-16 lg:mt-28">
         <aside
           class="
             relative
@@ -167,34 +147,12 @@
           connection.</p>
         {% endcomponent_block %}
       </div>
-      <div class="relative">
-        <div
-          class="
-            relative
-            max-lg:before:z-30 max-lg:before:block max-lg:before:absolute
-            max-lg:before:inset-y-0 max-lg:before:w-[50vw]
-            max-lg:before:right-1/2 max-lg:before:bg-white
-            after:z-30 after:block after:absolute
-            after:inset-y-0 after:w-[50vw]
-            after:left-1/2 after:bg-white
-            mt-28
-          ">
-          <div
-            class="
-              px-8 py-28 flex flex-col gap-y-6 z-40 relative
-              bg-white
-            ">
-            <div class="h-48 w-16">
-            </div>
-            <p class="mx-auto font-poppins-bold text-4xl uppercase text-blue">
-              OLH Model Infographic Here
-            </p>
-            <div class="h-48 w-16">
-            </div>
-          </div>
-        </div>
+      <div class="relative max-lg:mt-16 lg:mt-28">
+        {% component_block "page_section" anchor="left" prose=False bg="bg-transparent" margin="narrow" labelledby="how-it-works-infographic" %}
+          {% include "custom/how-it-works-infographic.html" %}
+        {% endcomponent_block %}
       </div>
-      <div class="relative mt-28">
+      <div class="relative max-lg:mt-16 lg:mt-28">
         {% component_block "page_section" anchor="left" labelledby="what-we-offer" %}
           <h2 id="what-we-offer">What we offer.</h2>
           <p class="font-semibold">When you publish with the OLH you are joining a
@@ -220,7 +178,7 @@
             alt="Head and shoulders of a metallic, humanoid robot">
         </aside>
       </div>
-      <div class="relative mt-28">
+      <div class="relative max-lg:mt-16 lg:mt-28">
         <div class="flex max-lg:justify-center lg:justify-end md:max-w-3xl">
           <div class="relative z-40">
             {% component_block "quote" %}
@@ -259,7 +217,7 @@
           </aside>
         </div>
       </div>
-      <div class="relative mt-28">
+      <div class="relative max-lg:mt-16 lg:mt-28">
         {% component_block "page_section" anchor="left" labelledby="plan-s-compliancy" %}
           <h2 id="plan-s-compliancy">Plan S compliancy.</h2>
           <p><span class="font-semibold">All our journals are compliant with Plan S
@@ -273,10 +231,10 @@
           through open access repositories without embargo.</p>
         {% endcomponent_block %}
       </div>
-      <div class="relative mt-28">
+      <div class="relative max-lg:mt-16 lg:mt-28">
         {% include 'custom/join-the-publishing-revolution.html' %}
       </div>
-      <div class="relative mt-28">
+      <div class="relative max-lg:mt-16 lg:mt-28">
         {% component_block "page_section" anchor="left" labelledby="grants-and-awards" %}
           <h2 id="grants-and-awards">Grants &amp; awards.</h2>
           <p class="font-semibold">The OLH has received major funding in the form
@@ -305,7 +263,7 @@
           </div>
         {% endcomponent_block %}
       </div>
-      <div class="relative mt-28">
+      <div class="relative max-lg:mt-16 lg:mt-28">
         {% component_block "page_section" anchor="right" labelledby="olh-award" %}
           <h2 id="olh-award">The OLH award.</h2>
           <p class="font-semibold">The Open Library of Humanities Award was

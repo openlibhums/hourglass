@@ -1,0 +1,59 @@
+{% load static %}
+{% load component_tags %}
+
+<div
+  id="open-access-infographic"
+  role="img"
+  aria-label="Open access infographic"
+  class="
+    relative lg:grid grid-cols-6 grid-rows-3
+    gap-y-8
+    max-lg:flex max-lg:flex-col max-sm:pb-28
+  ">
+  <div
+    class="
+      z-0 max-lg:relative max-lg:order-last
+      lg:absolute lg:left-0 lg:-bottom-6
+    ">
+    <div
+      class="
+        z-10 bg-black rounded-full w-56 h-56 text-white
+        flex justify-center items-center
+      ">
+      <div class="flex flex-col items-center gap-2">
+        <img
+          class="h-6"
+          src="{% static 'hourglass/media/logo/OLH-symbol-white.svg' %}"
+          alt="OLH">
+        <div class="font-poppins-bold text-3xl text-center w-36">open access model</div>
+      </div>
+    </div>
+    <div
+      class="
+        z-0 absolute bg-white
+        max-lg:left-28 max-lg:bottom-56 max-lg:w-0.5 max-lg:h-96
+        lg:left-56 lg:bottom-28 lg:h-0.5 lg:w-96
+      "></div>
+  </div>
+  <div class="z-10 col-start-3 col-end-7 row-start-1 row-end-2">
+    {% component_block "infographic_item_icon_left" icon="Green-Open-Access.svg" %}
+      <h3>Green open access</h3>
+      <p>Authors retain the right to distribute the work freely, such as via an
+      institutional repository or on their website.</p>
+    {% endcomponent_block %}
+  </div>
+  <div class="z-10 col-start-3 col-end-7 row-start-2 row-end-3">
+    {% component_block "infographic_item_icon_left" icon="Gold-Open-Access.svg" %}
+      <h3>Gold open access</h3>
+      <p>Readers have free access, but
+      authors may be required to pay publishing costs.</p>
+    {% endcomponent_block %}
+  </div>
+  <div class="z-10 col-start-3 col-end-7 row-start-3 row-end-4">
+    {% component_block "infographic_item_icon_left" icon="Diamond-Open-Access.svg" %}
+      <h3>Diamond open access</h3>
+      <p>Readers have free access, and authors do not
+      pay, with funds raised collectively by the publisher.</p>
+    {% endcomponent_block %}
+  </div>
+</div>

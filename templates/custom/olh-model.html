@@ -84,7 +84,7 @@
           budgets. Our model works from each according to their ability, to
           each according to their needs.</p>
           <img
-            class="w-44 h-44 -m-4"
+            class="w-36"
             src="{% static 'hourglass/media/icons/Library-Partnership-Fees.svg' %}"
             alt="">
           <div class="flex mt-6">
@@ -105,7 +105,9 @@
             src="{% static 'hourglass/media/backgrounds/circle-red.svg' %}"
             alt="">
         </aside>
-        {% include "custom/how-it-works-infographic.html" %}
+        {% component_block "page_section" anchor="right" prose=False bg="bg-transparent" margin="narrow" labelledby="how-it-works-infographic" %}
+          {% include "custom/how-it-works-infographic.html" %}
+        {% endcomponent_block %}
       </div>
       <div class="relative max-lg:mt-16 lg:mt-28">
         {% component_block "page_section" labelledby="as-membership-grows" anchor="left" %}
@@ -124,12 +126,9 @@
         {% endcomponent_block %}
         {% include "custom/nypl-halfway.html" %}
       </div>
-      <div class="relative mt-48">
-        {% component_block "page_section" labelledby="olh-in-numbers" anchor="right" bg="bg-transparent" %}
-          <h2 id="olh-in-numbers">The OLH in numbers.</h2>
-          <div class="mt-28 h-96">
-            INFOGRAPHIC - OLH in numbers
-          </div>
+      <div class="relative max-lg:mt-0 lg:mt-16">
+        {% component_block "page_section" anchor="left" labelledby="olh-numbers-infographic" bg="bg-transparent" prose=False width="full" margin="narrow" %}
+          {% include "custom/olh-numbers-infographic.html" %}
         {% endcomponent_block %}
       </div>
       <div class="relative max-lg:mt-16 lg:mt-28">

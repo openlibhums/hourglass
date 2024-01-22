@@ -1,0 +1,26 @@
+{% load static %}
+{% load component_tags %}
+
+<div
+  id="olh-numbers-infographic"
+  role="img"
+  aria-label="The OLH in numbers">
+  {% component_block "infographic_grid" ordered=False %}
+    {% component_block "infographic_grid_item" icon="Governance-and-Finances.svg" %}
+      <p>The OLH has grown from 7 journals in 2015 to
+      <strong class="font-bold">31 journals</strong> in 2024</p>
+    {% endcomponent_block %}
+    {% component_block "infographic_grid_item" icon="Our-Flagship-Journal.svg" %}
+      <p>Our journal sites were <strong class="font-bold">viewed 2.5 million
+        times</strong> in 2022</p>
+    {% endcomponent_block %}
+    {% component_block "infographic_grid_item" icon="OLH-Journal-Applications.svg" %}
+      <p>OLH publishes around <strong class="font-bold">500</strong> open access
+      scholarly articles per year</p>
+    {% endcomponent_block %}
+    {% component_block "infographic_grid_item" icon="Network.svg" %}
+      <p>We now have <strong class="font-bold">more than 340</strong>
+      supporting institutions</p>
+    {% endcomponent_block %}
+  {% endcomponent_block %}
+</div>

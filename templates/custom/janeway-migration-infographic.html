@@ -1,0 +1,44 @@
+{% load static %}
+{% load component_tags %}
+
+<div
+  id="janeway-migration-infographic"
+  role="img"
+  aria-label="Janeway migration infographic">
+  {% component_block "infographic_grid" %}
+    {% component_block "infographic_grid_item" icon="FAQs.svg" %}
+      <h3>01.</h3>
+      <p>You tell us about your journal and decide on its new website design.</p>
+    {% endcomponent_block %}
+    {% component_block "infographic_grid_item" icon="Develop.svg" %}
+      <h3>02.</h3>
+      <p>Our tech team set up your new website.</p>
+    {% endcomponent_block %}
+    {% component_block "infographic_grid_item" icon="Publish-With-Us.svg" %}
+      <h3>03.</h3>
+      <p>At this point, your journal is ready to accept article submissions.</p>
+    {% endcomponent_block %}
+    {% component_block "infographic_grid_item" icon="Publish.svg" %}
+      <h3>04.</h3>
+      <p>We provide training on how to use the publishing system for authors and
+      editors.</p>
+    {% endcomponent_block %}
+    {% component_block "infographic_grid_item" icon="Authors.svg" %}
+      <h3>05.</h3>
+      <p>Our typesetter designs an article template for your journal.</p>
+    {% endcomponent_block %}
+    {% component_block "infographic_grid_item" icon="Engage.svg" %}
+      <h3>06.</h3>
+      <p>We migrate the journal’s back content.</p>
+    {% endcomponent_block %}
+    {% component_block "infographic_grid_item" icon="Platform-Migration.svg" %}
+      <h3>07.</h3>
+      <p>You launch the journal.</p>
+    {% endcomponent_block %}
+    {% component_block "infographic_grid_item" icon="Read-our-News.svg" %}
+      <h3>08.</h3>
+      <p>Once launched, we add your jour journal to our indexing and archiving
+      services.</p>
+    {% endcomponent_block %}
+  {% endcomponent_block %}
+</div>

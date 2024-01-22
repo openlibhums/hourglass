@@ -74,8 +74,10 @@
           published content to our indexing and archiving services.</p>
         {% endcomponent_block %}
       </div>
-      <div class="relative max-md:mt-72 md:mt-36 max-md:mb-72 md:mb-28">
-        <div class="my-28 h-96 mx-auto">INFOGRAPHIC</div>
+      <div class="relative max-lg:mt-0 lg:mt-16">
+        {% component_block "page_section" anchor="left" labelledby="janeway-migration-infographic" bg="bg-transparent" prose=False width="full" margin="narrow" %}
+          {% include "custom/janeway-migration-infographic.html" %}
+        {% endcomponent_block %}
       </div>
       <div class="relative max-lg:mt-16 lg:mt-48">
         {% component_block "page_section" prose=False anchor="right" width="full" label="Find out more" bg="bg-jw-orange" %}

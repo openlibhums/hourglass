@@ -1,0 +1,10 @@
+{% load static %}
+{% load component_tags %}
+
+<div
+  class="
+    grid max-lg:grid-cols-1 lg:grid-cols-2
+    gap-12 md:place-items-center relative
+  ">
+  {% slot "content" default %}{% endslot %}
+</div>
