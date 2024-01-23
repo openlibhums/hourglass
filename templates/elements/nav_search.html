@@ -34,7 +34,7 @@
       id="search-results"
       class="
         hidden lg:absolute lg:top-0 lg:right-0 bg-tan-light
-        lg:w-[30rem] overflow-auto
+        lg:w-[40rem] overflow-auto
         transition-all ease-in-out duration-300
       ">
       <p
@@ -162,13 +162,19 @@
 
     function addEventListeners (documents, searchIndex) {
 
-      // User types something
+      // User types something in search bar
       input.addEventListener('keyup', event => {
         debounce(handleKeyup(event, documents, searchIndex))
       })
 
       // User clicks the X in the search bar
       cancelSearch.addEventListener('click', event => hideSearch())
+
+      // Key pressed on search results
+      searchResults.addEventListener('keyup', event => {
+        if (event.key === 'Escape') hideSearch()
+      })
+
     }
 
     const { documents, searchIndex } = await getData()
