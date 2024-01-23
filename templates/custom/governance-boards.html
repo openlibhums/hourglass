@@ -29,13 +29,15 @@
         {% endfill %}
       {% endcomponent_block %}
     </div>
-    {% component_block "governance" request=request %}
-      <div class="relative mt-28">
-        {% component_block "page_section" prose=False anchor="left" width="full" labelledby=groups.0.name|slugify %}
-          {% component "user_group" group=groups.0 %}
-        {% endcomponent_block %}
-      </div>
-    {% endcomponent_block "governance" %}
+    {% if groups %}
+      {% component_block "governance" request=request %}
+        <div class="relative mt-28">
+          {% component_block "page_section" prose=False anchor="left" width="full" labelledby=groups.0.name|slugify %}
+            {% component "user_group" group=groups.0 %}
+          {% endcomponent_block %}
+        </div>
+      {% endcomponent_block "governance" %}
+    {% endif %}
     {% include "custom/subscribe.html" %}
   </div>
 {% endblock body %}
