@@ -64,7 +64,6 @@ export default {
       typography: ({ theme }) => ({
         DEFAULT: {
           css: {
-            '--tw-prose-links': theme('colors.blue'),
             '--tw-prose-body': theme('colors.black'),
             '--tw-prose-headings': theme('colors.black'),
             '--tw-prose-bold': theme('colors.black'),
