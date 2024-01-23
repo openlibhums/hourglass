@@ -1,5 +1,4 @@
 {% load static %}
-{% load render_string %}
 {% load component_tags %}
 
 <div class="bg-black text-white relative z-40">
@@ -47,7 +46,7 @@
       {% endcomponent_block %}
     </nav>
     <div class="lg:px-8 text-xs">
-      {% render_string press.footer_description %}
+      {% include "custom/footer_text.html" %}
     </div>
   </div>
 </div>
