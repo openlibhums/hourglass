@@ -21,7 +21,10 @@
         </p>
         <p class="font-poppins-bold max-lg:text-6xl lg:text-8xl">
           26
-          <!-- Once live we can use request.press.active_journals.count -->
+          {% comment %}
+          Use this line once live:
+          {{ request.press.public_journals.count }}
+          {% endcomment %}
         </p>
       </div>
       <div class="flex flex-col max-lg:items-center">
@@ -30,7 +33,10 @@
         </p>
         <p class="font-poppins-bold max-lg:text-6xl lg:text-8xl">
           6,740
-          <!-- Once live we can use request.press.published_articles.count -->
+          {% comment %}
+          Use this line once live:
+          {{ request.press.published_articles.count }}
+          {% endcomment %}
         </p>
       </div>
       <div class="flex flex-col max-lg:items-center">

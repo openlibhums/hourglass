@@ -83,7 +83,7 @@
               alt="">
           </aside>
         </div>
-        {% for journal in request.press.active_journals %}
+        {% for journal in request.press.public_journals %}
           <section class="relative my-28" aria-labelledby="{{ journal.name|slugify }}">
             <div
               class="
