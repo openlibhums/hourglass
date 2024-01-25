@@ -176,6 +176,20 @@ management system. You can propose changes in GitHub by following these steps:
    just ask a member of the tech team to do so for you. They will review
    your edits and merge them into the live version of the website.
 
+## Changing a link to a media file
+
+You can change a hyperlink to a Word doc or PDF like this:
+
+1. Upload the new file to the appropriate
+   [Media Manager in Janeway](https://janeway.readthedocs.io/en/latest/manager/content/index.html?highlight=media%20manager#media-files).
+   
+3. Copy the link Janeway gives you, and then paste it in to the appropriate
+   page using the steps above for Copyediting and Content Changes. For example,
+   in this line, you'd just replace the whole URL from "https" to ".doc". Keep the
+   quotes around the link.
+
+   https://github.com/BirkbeckCTP/hourglass/blob/af0c2b87f06c271fe80639eb80fcf4960f72dbb2/templates/custom/journal-applications.html#L120
+
 ## Engineering
 
 As an alternative, we could use
