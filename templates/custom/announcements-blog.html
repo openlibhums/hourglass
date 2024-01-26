@@ -1,150 +1,62 @@
+{% extends "press/cms/page.html" %}
+
 {% load static %}
-{% load i18n %}
 {% load component_tags %}
 
-<div class="container mx-auto max-w-screen-xl">
-  <div class="relative">
-    {% include "custom/edit-on-github.html" with rel_path="custom/announcements-blog.html" %}
-    {% include "custom/news-art-opener.html" %}
-  </div>
-  <div class="relative max-md:pt-24 md:pt-12">
-    <div class="z-40 relative">
-      <h1
-        id="h1"
-        class="
-          max-md:text-4xl md:max-lg:text-5xl lg:text-7xl !leading-snug
-          font-poppins-bold max-lg:py-6 lg:pt-20 lg:pb-6 max-md:pl-4 md:px-8 max-w-sm
-        ">
-        Announcements &amp; blog.
-      </h1>
+{% block body %}
+  <div aria-labelledby="h1">
+    <div class="container mx-auto max-w-screen-xl">
+      <div class="relative">
+        {% include "custom/edit-on-github.html" with rel_path="custom/announcements-blog.html" %}
+        {% include "custom/news-art-opener.html" %}
+      </div>
+      <div class="relative max-md:pt-24 md:pt-12">
+        <div class="z-40 relative">
+          <h1
+            id="h1"
+            class="
+              max-md:text-4xl md:max-lg:text-5xl lg:text-7xl !leading-snug
+              font-poppins-bold max-lg:py-6 lg:pt-20 lg:pb-6 max-md:pl-4 md:px-8 max-w-sm
+            ">
+            Announcements &amp; blog.
+          </h1>
+        </div>
+      </div>
+      <div class="relative max-md:pt-24 md:pt-12">
+        {% with h="Read our news." %}
+          {% component_block "page_section" width="full" anchor="left" margin="narrow" labelledby=h|slugify prose=False %}
+            {% component "news_list" request=request h=h tag="Announcement" limit=6 %}
+          {% endcomponent_block %}
+          {% url "core_news_list_tag" tag="Announcement" as view_all_url %}
+          {% component "news_view_all_bar" view_all_url=view_all_url anchor="left" %}
+        {% endwith %}
+      </div>
+      <div class="relative max-md:pt-24 md:pt-12">
+        {% include "custom/news-art-middle.html" %}
+        {% with h="Hear our ideas." %}
+          {% component_block "page_section" width="full" anchor="right" margin="narrow" labelledby=h|slugify prose=False %}
+            {% component "news_list" request=request h=h tag="Blog" limit=6 %}
+          {% endcomponent_block %}
+          {% url "core_news_list_tag" tag="Blog" as view_all_url %}
+          {% component "news_view_all_bar" view_all_url=view_all_url anchor="right" %}
+        {% endwith %}
+      </div>
+      <div class="relative max-md:pt-24 md:pt-12">
+        {% with h="News from our journals." %}
+          {% component_block "page_section" width="full" anchor="left" margin="narrow" labelledby=h|slugify prose=False %}
+            {% component "news_list" request=request h=h content_type="journal" limit=6 %}
+          {% endcomponent_block %}
+          {% url "core_news_list_presswide" presswide="all" as view_all_url %}
+          {% component "news_view_all_bar" view_all_url=view_all_url anchor="left" %}
+        {% endwith %}
+        {% include "custom/news-art-end.html" %}
+      </div>
+      <div class="relative">
+        {% component_block "page_section" width="full" anchor="left" element="div" prose=False bg="bg-transparent" %}
+          {% component "news_tag_nav" %}
+        {% endcomponent_block %}
+      </div>
+      {% include 'custom/subscribe.html' %}
     </div>
-    <nav aria-label="tags">
-      {% if all_tags %}
-        {% include "custom/news-list-tags.html" with tag="" all_tags=all_tags %}
-      {% endif %}
-    </nav>
   </div>
-  {% if tag_sets %}
-    {% for tag, items in tag_sets.items %}
-      <section aria-labelledby="tag-{{ tag }}">
-        <div class="relative mt-8">
-          {% if items.count > 3 %}
-            <div class="z-0 relative {% cycle 'hidden' '' %}">
-              {% include "custom/news-art-middle.html" %}
-            </div>
-          {% endif %}
-          <div
-            class="
-              relative after:z-30 after:block after:absolute
-              after:inset-y-0 after:w-screen after:bg-white
-              {% cycle 'after:right-1/2' 'after:left-1/2 md:flex md:justify-end' %}
-            ">
-            <div
-              class="
-                relative z-40 py-8 max-md:px-4 md:px-8 bg-white
-                {% cycle '' 'max-w-3xl' %}
-              ">
-              <h2
-                id="tag-{{ tag }}"
-                class="name font-poppins-bold text-3xl py-8 max-md:text-center">
-                Tag: {{ tag }}
-              </h2>
-              <div class="flex max-md:flex-col md:flex-row md:flex-wrap gap-y-20 md:-mx-6">
-                {% cycle 'md:basis-1/3' 'md:basis-1/2' as fraction silent %}
-                {% for item in items|slice:":6" %}
-                  {% component "news_list_item" item=item fraction=fraction %}
-                {% endfor %}
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="relative mb-28">
-          <div
-            class="
-              relative after:z-30 after:block after:absolute
-              after:inset-y-0 after:w-screen after:bg-blue
-              {% cycle 'after:right-1/2' 'after:left-1/2 md:flex md:justify-end' %}
-            ">
-            <div
-              class="
-                relative z-40 py-4 max-md:px-4 md:px-8 bg-blue
-                {% cycle '' 'max-w-3xl' %}
-              ">
-              <div class="flex flex-col items-center">
-                <a
-                  class="p-4 border rounded-full border-white flex gap-4 items-center"
-                  href="{% url 'core_news_list_tag_presswide' presswide='all' tag=tag %}">
-                  {% with label="View all" %}
-                    {% include "custom/button-action-inner-white.html" %}
-                  {% endwith %}
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-    {% endfor %}
-  {% endif %}
-  {% if object_sets %}
-    {% for model, items in object_sets.items %}
-      <section aria-labelledby="{{ model }}-news">
-        <div class="relative mt-8">
-          <div
-            class="
-              relative after:z-30 after:block after:absolute
-              after:inset-y-0 after:w-screen after:bg-white
-              {% cycle 'after:right-1/2' 'after:left-1/2' %}
-            ">
-            <div
-              class="
-                relative z-40 py-8 max-md:px-4 md:px-8 bg-white
-                {% cycle 'max-w-3xl' '' %}
-              ">
-              <h2
-                id="{{ model }}-news"
-                class="name font-poppins-bold text-3xl py-8 max-md:text-center">
-                {{ model|capfirst }} news.
-              </h2>
-              <div class="flex max-md:flex-col md:flex-row md:flex-wrap gap-y-20 md:-mx-6">
-                {% cycle 'md:basis-1/2' 'md:basis-1/3' as fraction silent %}
-                {% for item in items|slice:":6" %}
-                  {% component "news_list_item" item=item fraction=fraction %}
-                {% endfor %}
-              </div>
-            </div>
-            {% if items.count > 3 %}
-              <div class="z-0 relative {% cycle '' 'hidden' %}">
-                {% include "custom/news-art-end.html" %}
-              </div>
-            {% endif %}
-          </div>
-        </div>
-        <div class="relative mb-28">
-          <div
-            class="
-              relative after:z-30 after:block after:absolute
-              after:inset-y-0 after:w-screen after:bg-blue
-              {% cycle 'after:right-1/2' 'after:left-1/2' %}
-            ">
-            <div
-              class="
-                relative z-40 py-4 max-md:px-4 md:px-8 bg-blue
-                {% cycle 'max-w-3xl' '' %}
-              ">
-              <div class="flex flex-col items-center">
-                <a
-                  class="p-4 border rounded-full border-white flex gap-4 items-center"
-                  href="{% url 'core_news_list_presswide' presswide='all' %}">
-                  {% with label="View all" %}
-                    {% include "custom/button-action-inner-white.html" %}
-                  {% endwith %}
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-    {% endfor %}
-  {% endif %}
-  {% include 'custom/subscribe.html' %}
-</div>
+{% endblock body %}

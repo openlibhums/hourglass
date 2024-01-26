@@ -24,20 +24,10 @@
     </nav>
   </div>
   <div class="relative mt-8">
-    <div
-      class="
-        relative after:z-30 after:block after:absolute
-        after:inset-y-0 after:w-screen after:bg-white
-        after:right-1/2
-      ">
-      <div class="relative z-40 py-8 max-md:px-4 md:px-8 bg-white">
-        <div class="flex max-md:flex-col md:flex-row md:flex-wrap gap-y-20 md:-mx-6">
-          {% for item in news_items|slice:":12" %}
-            {% component "news_list_item" item=item %}
-          {% endfor %}
-        </div>
-      </div>
-    </div>
+    {% component_block "page_section" width="full" anchor="left" margin="narrow" element="div" prose=False %}
+      {% component "news_list" request=request news_items=news_items limit=12 %}
+    {% endcomponent_block %}
+    {% include "custom/news-art-end.html" %}
   </div>
   {% include "custom/pagination.html" with page_obj=news_items %}
   {% include "custom/subscribe.html" %}
