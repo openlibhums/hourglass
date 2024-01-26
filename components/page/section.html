@@ -27,7 +27,9 @@
     class="
       w-full relative z-40 px-8
       flex max-lg:flex-col gap-y-6 lg:flex-row gap-x-10
-      {% if margin == "narrow" %}
+      {% if margin == "very-narrow" %}
+        py-6
+      {% elif margin == "narrow" %}
         py-14
       {% elif margin == "normal" %}
         py-20
