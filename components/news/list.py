@@ -15,6 +15,7 @@ class NewsList(component.Component):
         limit = kwargs.pop('limit', None)
         h = kwargs.pop('h', '')
         news_items = kwargs.pop('news_items', [])
+        include_tags = kwargs.pop('include_tags', False)
         context = super().get_context_data(*args, **kwargs)
 
         if not news_items:
@@ -37,6 +38,7 @@ class NewsList(component.Component):
         context = {
             'h': h,
             'news_items': news_items,
+            'include_tags': include_tags,
         }
 
         return context
