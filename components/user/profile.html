@@ -23,6 +23,11 @@
           {% endif %}
         {% endfor %}
         {% for group_membership in governance_groups %}
+          <div class="mb-6">
+            <strong class="max-lg:text-xl lg:text-2xl font-poppins-bold">
+              {{ group_membership.group.name }}
+            </strong>
+          </div>
           {% if user.affiliation %}
             <div class="mb-6">
               <strong class="max-lg:text-xl lg:text-2xl font-poppins-medium">
@@ -37,11 +42,6 @@
               </strong>
             </div>
           {% endif %}
-          <div class="mb-6">
-            <strong class="max-lg:text-xl lg:text-2xl font-poppins-bold">
-              {{ group_membership.group.name }}
-            </strong>
-          </div>
         {% endfor %}
       </div>
       <div
