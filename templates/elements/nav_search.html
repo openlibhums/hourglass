@@ -177,8 +177,12 @@
 
     }
 
-    const { documents, searchIndex } = await getData()
-    addEventListeners(documents, searchIndex)
-
+    if (docsUrl) {
+      const { documents, searchIndex } = await getData()
+      addEventListeners(documents, searchIndex)
+    } else {
+      input.setAttribute('hidden', true)
+      cancelSearch.setAttribute('hidden', true)
+    }
   })
 </script>
