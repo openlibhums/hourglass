@@ -25,7 +25,7 @@
   </div>
   <div class="relative mt-8">
     {% component_block "page_section" width="full" anchor="left" margin="narrow" element="div" prose=False %}
-      {% component "news_list" request=request news_items=news_items limit=12 include_tags=True %}
+      {% component "news_list" request=request news_items=news_items limit=12 %}
     {% endcomponent_block %}
     {% include "custom/news-art-end.html" %}
   </div>
