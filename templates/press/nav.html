@@ -49,13 +49,13 @@
   </div>
 </div>
 
-<script>
+<script type="module">
   const toggleDuration = 300
 
   function toggleSideNav(event) {
     event.stopPropagation()
     const navOptions = document.querySelector('#nav-options')
-    innerNav = navOptions.querySelector('nav')
+    const innerNav = navOptions.querySelector('nav')
     if (innerNav.classList.contains('max-lg:hidden')) {
       innerNav.classList.remove('max-lg:hidden')
     } else {
@@ -70,9 +70,9 @@
 
   function closeSideNav(item) {
     const navOptions = document.querySelector('#nav-options')
-    innerNav = navOptions.querySelector('nav')
-    navOptions.classList.toggle('max-lg:max-h-0', force=true)
-    navOptions.classList.toggle('max-lg:max-h-screen', force=false)
+    const innerNav = navOptions.querySelector('nav')
+    navOptions.classList.toggle('max-lg:max-h-0', true)
+    navOptions.classList.toggle('max-lg:max-h-screen', false)
     setTimeout(() => {
       innerNav.classList.add('max-lg:hidden')
     }, toggleDuration)
@@ -105,16 +105,16 @@
     const dropdownId = item.getAttribute('data-target')
     const dropdown = document.querySelector(`#${dropdownId}`)
     const innerDropdown = dropdown.querySelector('ul')
-    dropdown.classList.toggle('max-h-0', force=true)
-    dropdown.classList.toggle('max-h-[50vh]', force=false)
+    dropdown.classList.toggle('max-h-0', true)
+    dropdown.classList.toggle('max-h-[50vh]', false)
     setTimeout(() => {
-      innerDropdown.classList.toggle('hidden', force=true)
+      innerDropdown.classList.toggle('hidden', true)
     }, toggleDuration)
   }
 
   function closeOtherDropdowns(event) {
     const otherItems = Array.from(topNavItems).filter(item => item != event.currentTarget)
-    for (item of otherItems) closeOtherDropdown(item)
+    for (const item of otherItems) closeOtherDropdown(item)
     event.stopPropagation()
   }
 
@@ -124,7 +124,7 @@
   })
 
   function closeSearchResults(event) {
-    searchResults.classList.toggle('hidden', force=true)
+    searchResults.classList.toggle('hidden', true)
     event.stopPropagation()
   }
 
@@ -141,9 +141,8 @@
     closeSearchResults(event)
   })
 
-  searchInput = document.querySelector('#search-input')
-
-  searchInput.addEventListener('click', event => {
+  const searchInput = document.querySelector('#search-input')
+  searchInput?.addEventListener('click', event => {
     closeOtherDropdowns(event)
   })
 
