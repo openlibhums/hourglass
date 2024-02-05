@@ -85,6 +85,7 @@
       <div class="relative mt-28">
         {% component_block "page_section" prose=False anchor="right" width="part" label="Next steps" %}
           {% component_block "cta_list" %}
+            {% comment %}
             {% component_block "cta_list_item" %}
               <img
                 class="w-36"
@@ -99,6 +100,7 @@
                 {% include 'custom/button-action-blue.html' %}
               {% endwith %}
             {% endcomponent_block %}
+            {% endcomment %}
             {% component_block "cta_list_item" %}
               <img
                 class="w-36"
@@ -235,11 +237,13 @@
               </li>
             </ul>
           </div>
+          {% comment %}
           <div class="relative z-40 pt-16 flex justify-start">
             {% with rel_path="/plugins/supporters/" label="View all supporters" %}
               {% include 'custom/button-action-black.html' %}
             {% endwith %}
           </div>
+          {% endcomment %}
         </section>
       </div>
       <div class="relative max-lg:mt-16 lg:mt-28">
