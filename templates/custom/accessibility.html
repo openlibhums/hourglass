@@ -1,0 +1,29 @@
+
+{% extends "press/cms/page.html" %}
+
+{% load component_tags %}
+
+{% block meta_description %}
+  The Open Library of Humanities seeks the highest standards of accessibility
+  for its titles and to be an inclusive publisher of research material.
+{% endblock meta_description %}
+
+{% block body %}
+  {% component_block "page_generic" h1="Accessibility." %}
+    <h2>Our aims.</h2>
+    <p>The Open Library of Humanities seeks the highest standards of accessibility
+    for its titles and to be an inclusive publisher of research material.
+    To this end, we are constantly working with our partners to update our
+    platform and to ensure that we meet relevant professional standards.</p>
+    <p>If you have any accessibility problems when accessing an OLH website or title,
+    please <a href="/contact/">contact our accessibility specialist Steph
+    Driver</a>, and we will work to address this as our highest priority.</p>
+    <h2>How accessible this website is.</h2>
+    <p>We carried out a major update to this website in early February, 2024.
+    We are currently assessing the website to determine our conformance
+    with the AA standard of WCAG 2.2, and to identify and plan any work needed
+    to bring the website into full compliance.</p>
+    <p>We aim to update this page with the results of our review and a list of
+    ways the website is and is not accessible, if any, by 1 March 2024.</p>
+  {% endcomponent_block %}
+{% endblock body %}
