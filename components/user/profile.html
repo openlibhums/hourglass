@@ -6,8 +6,10 @@
     <section
       aria-label="Name and role"
       class="relative max-lg:mt-0 lg:mt-8">
-      {% include 'custom/generic-h1-higher.html' with h1=user.full_name %}
-      <div class="z-40 relative pl-8">
+      <div class="lg:max-w-lg">
+        {% include 'custom/generic-h1-higher.html' with h1=user.full_name %}
+      </div>
+      <div class="z-40 relative pl-8 lg:max-w-lg">
         {% for group_membership in staff_groups %}
           <div class="mb-6">
             <strong class="max-lg:text-2xl lg:text-3xl font-poppins-bold">
