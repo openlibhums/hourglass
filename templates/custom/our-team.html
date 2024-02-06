@@ -132,7 +132,7 @@
               alt="Actor singing with arms raised wearing dress and flowery crown">
           </aside>
           {% with group=groups.2 %}
-            {% component_block "page_section" prose=False anchor="left" width="full" labelledby=group.name|slugify %}
+            {% component_block "page_section" prose=False anchor="left" width="part" labelledby=group.name|slugify %}
               {% component "user_group" group=group %}
             {% endcomponent_block %}
           {% endwith %}
