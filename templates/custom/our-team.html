@@ -34,8 +34,8 @@
         {% endfill %}
       {% endcomponent_block %}
     </div>
-    {% if groups %}
-      {% component_block "staff" request=request %}
+    {% component_block "staff" request=request %}
+      {% if groups %}
         <div class="relative mt-28">
           {% with group=groups.0 %}
             {% component_block "page_section" prose=False anchor="left" width="full" labelledby=group.name|slugify %}
@@ -130,15 +130,15 @@
               "
               src="{% static 'hourglass/media/backgrounds/shakespeare-drag-actor-flowers-stripes.png' %}"
               alt="Actor singing with arms raised wearing dress and flowery crown">
-          </div>
+          </aside>
           {% with group=groups.2 %}
             {% component_block "page_section" prose=False anchor="left" width="full" labelledby=group.name|slugify %}
               {% component "user_group" group=group %}
             {% endcomponent_block %}
           {% endwith %}
-        </aside>
-      {% endcomponent_block "staff" %}
-    {% endif %}
+        </div>
+      {% endif %}
+    {% endcomponent_block "staff" %}
     {% include 'custom/subscribe.html' %}
   </div>
 {% endblock body %}
