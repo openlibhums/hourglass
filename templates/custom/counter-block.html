@@ -1,3 +1,5 @@
+{% load humanize %}
+
 <section
   aria-label="OLH in numbers"
   class="
@@ -28,7 +30,7 @@
           Articles published
         </p>
         <p class="font-poppins-bold max-lg:text-6xl lg:text-8xl">
-          {{ request.press.published_articles.count }}
+          {{ request.press.published_articles.count|intcomma }}
         </p>
       </div>
       <div class="flex flex-col max-lg:items-center">
