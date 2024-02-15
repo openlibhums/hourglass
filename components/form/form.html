@@ -8,6 +8,9 @@
   {% if form_action %}
     action="{{ form_action }}"
   {% endif %}
+  {% if enctype %}
+    enctype="{{ enctype }}"
+  {% endif %}
   >
   {% if form_method|lower == 'post'%}
     {% csrf_token %}
