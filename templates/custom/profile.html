@@ -29,7 +29,7 @@
           {% fill "fields" %}
             {% component_block "form_field" id_for_label="email_address" label="Email" required=True %}
               {% fill "field" %}
-                {% component "form_input" type="email" name="email_address" value=request.user.email %}
+                {% component "form_input" type="email" name="email_address" value=user_to_edit.email %}
               {% endfill %}
               {% fill "help_text" %}
                 <p class="py-2">
@@ -79,7 +79,6 @@
           Profile.
         </h2>
         {% component_block "form" form=form form_method="POST" enctype="multipart/form-data" %}
-  
           {% fill "fields" %}
             <div>
               {% component "form_field" field=form.salutation %}
@@ -110,12 +109,17 @@
             {% component "form_field" field=form.biography %}
             {% component "form_field" field=form.signature %}
             {% component "form_field" field=form.profile_image %}
+            {% if user_to_edit.profile_image %}
+              <img
+                src="{{ user_to_edit.profile_image.url }}"
+                class="max-w-xs">
+            {% endif %}
             {% component "form_field" field=form.enable_public_profile %}
             {% if form.enable_public_profile.value %}
               <p class="prose lg:prose-lg mx-3 mb-6">
                 <a
                   class="text-white"
-                  href="{% url 'core_public_profile' request.user.uuid %}">
+                  href="{% url 'core_public_profile' user_to_edit.uuid %}">
                     View public profile
                 </a>
               </p>
