@@ -18,7 +18,7 @@ class FormBase(component.Component):
                 '''
             elif isinstance(field.widget, widgets.Select):
                 form.fields[field_name].widget.attrs['class'] = '''
-                    bg-transparent w-full border-white
+                    bg-blue w-full border-white
                     max-lg:placeholder:text-md lg:placeholder:text-lg
                     max-lg:text-md lg:text-lg
                     text-white cursor-white placeholder:text-white
@@ -28,7 +28,7 @@ class FormBase(component.Component):
                 '''
             elif isinstance(field.widget, widgets.Textarea):
                 form.fields[field_name].widget.attrs['class'] = '''
-                    bg-transparent w-full border-white
+                    bg-blue w-full border-white
                     max-lg:placeholder:text-md lg:placeholder:text-lg
                     max-lg:text-md lg:text-lg
                     text-white cursor-white placeholder:text-white
@@ -38,7 +38,7 @@ class FormBase(component.Component):
                 '''
             else:
                 form.fields[field_name].widget.attrs['class'] = '''
-                    bg-transparent w-full border-white
+                    bg-blue w-full border-white
                     max-lg:placeholder:text-md lg:placeholder:text-lg
                     max-lg:text-md lg:text-lg
                     text-white cursor-white placeholder:text-white
