@@ -13,6 +13,7 @@
         {% component_block "cta_list_item_left" %}
           {% if member.user.profile_image %}
             <img
+              class="max-xl:h-52 xl:h-64"
               src="{{ member.user.profile_image.url }}"
               alt="">
           {% else %}
@@ -22,6 +23,18 @@
             <h3 class="font-poppins-bold max-lg:text-xl lg:text-2xl max-lg:text-center">
               {{ member.user.full_name }}
             </h3>
+            {% comment %}EditorialTeam attributes{% endcomment %}
+            {% if member.user.affiliation %}
+              <p class="max-lg:text-lg lg:text-xl max-lg:text-center">
+                {{ member.user.affiliation }}
+              </p>
+            {% endif %}
+            {% if member.user.country %}
+              <p class="max-lg:text-lg lg:text-xl max-lg:text-center">
+                {{ member.user.country }}
+              </p>
+            {% endif %}
+            {% comment %}StaffGroup attributes{% endcomment %}
             {% if member.job_title %}
               <p class="max-lg:text-lg lg:text-xl max-lg:text-center">
                 {{ member.job_title }}
