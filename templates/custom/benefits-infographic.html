@@ -25,7 +25,8 @@
         2. Fund
       {% endfill %}
       {% fill "p" %}
-        Fund 30+ diamond open access humanities journals.
+        Fund {{ request.press.public_journals.count }}
+        diamond open access humanities journals.
       {% endfill %}
     {% endcomponent_block %}
     {% component_block "benefits_tile" icon="Network.svg" %}
