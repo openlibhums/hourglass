@@ -23,27 +23,29 @@
             <h3 class="font-poppins-bold max-lg:text-xl lg:text-2xl max-lg:text-center">
               {{ member.user.full_name }}
             </h3>
-            {% comment %}EditorialTeam attributes{% endcomment %}
-            {% if member.user.affiliation %}
-              <p class="max-lg:text-lg lg:text-xl max-lg:text-center">
-                {{ member.user.affiliation }}
-              </p>
-            {% endif %}
-            {% if member.user.country %}
-              <p class="max-lg:text-lg lg:text-xl max-lg:text-center">
-                {{ member.user.country }}
-              </p>
-            {% endif %}
             {% comment %}StaffGroup attributes{% endcomment %}
             {% if member.job_title %}
               <p class="max-lg:text-lg lg:text-xl max-lg:text-center">
                 {{ member.job_title }}
               </p>
-            {% endif %}
-            {% if member.alternate_title %}
-              <p class="italic max-lg:text-lg lg:text-xl max-lg:text-center">
-                {{ member.alternate_title }}
-              </p>
+              {% if member.alternate_title %}
+                <p class="italic max-lg:text-lg lg:text-xl max-lg:text-center">
+                  {{ member.alternate_title }}
+                </p>
+              {% endif %}
+            {% else %}
+              {% comment %}EditorialTeam attributes
+              should only display if no job title{% endcomment %}
+              {% if member.user.affiliation %}
+                <p class="max-lg:text-lg lg:text-xl max-lg:text-center">
+                  {{ member.user.affiliation }}
+                </p>
+              {% endif %}
+              {% if member.user.country %}
+                <p class="max-lg:text-lg lg:text-xl max-lg:text-center">
+                  {{ member.user.country }}
+                </p>
+              {% endif %}
             {% endif %}
           </div>
           {% if member.user.enable_public_profile %}
