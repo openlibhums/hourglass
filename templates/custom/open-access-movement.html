@@ -546,40 +546,54 @@
         {% component_block "page_section" anchor="left" labelledby="sources" %}
           <h2 id="sources">Sources.</h2>
           <p>This timeline has been adapted from the following sources:</p>
-          <ul>
-            <li>François Waldner et al., “The academic, economic and societal
+          {% component_block "reference_list" %}
+            {% component_block "reference_list_item" %}
+              François Waldner et al., “The academic, economic and societal
               impacts of Open Access: an evidence-based review,”
               <em>F1000Res</em> 5 (2016): 632. doi:
-            10.12688/f1000research.8460.3</li>
-            <li>"Open Access: History &amp; Policies: An Overview of Our
+              10.12688/f1000research.8460.3
+            {% endcomponent_block %}
+            {% component_block "reference_list_item" %}
+              "Open Access: History &amp; Policies: An Overview of Our
               Changing System of Scholarly Communication," Cold Spring
               Harbour Laboratory. Available at:
-            https://cshl.libguides.com/open_access/history_policy (Last
-            accessed 20 February 2023)</li>
-            <li>Glenn S. McGuigan and Robert D. Russell, "The Business of
+              https://cshl.libguides.com/open_access/history_policy (Last
+              accessed 20 February 2023)
+            {% endcomponent_block %}
+            {% component_block "reference_list_item" %}
+              Glenn S. McGuigan and Robert D. Russell, "The Business of
               Academic Publishing: A Strategic Analysis of the Academic
               Journal Publishing Industry and its Impact on the Future of
-            Scholarly Publishing," <em>Electronic Journal of Academic and
+              Scholarly Publishing," <em>Electronic Journal of Academic and
               Special Librarianship</em>, 9(3) (2008): n. pag. Available at:
-            <a href="https://southernlibrarianship.icaap.org/content/v09n03/mcguigan_g01.html">https://southernlibrarianship.icaap.org/content/v09n03/mcguigan_g01.html</a>
-            (Last accessed 20 February 2023).</li>
-            <li>Larivière, Vincent, Stefanie Haustein, and Philippe Mongeon,
+              <a href="https://southernlibrarianship.icaap.org/content/v09n03/mcguigan_g01.html">https://southernlibrarianship.icaap.org/content/v09n03/mcguigan_g01.html</a>
+              (Last accessed 20 February 2023).
+            {% endcomponent_block %}
+            {% component_block "reference_list_item" %}
+              Larivière, Vincent, Stefanie Haustein, and Philippe Mongeon,
               "The Oligopoly of Academic Publishers in the Digital Era,"
               <em>PloS One</em>, 10(6) (2015). Available at: <a
               href="https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0127502#pone-0127502-g007">https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0127502#pone-0127502-g007</a>
-              (Last accessed 27 April 2023).</li>
-            <li>Katherine Thomes and Karen Clay, “University Libraries in
-              Transition," <em>ASEE Prism</em>, 7(8) (1998): 26-29</li>
-            <li>Lawson, S. &amp; Gray, J. &amp; Mauri, M., (2016) “Opening
+              (Last accessed 27 April 2023).
+            {% endcomponent_block %}
+            {% component_block "reference_list_item" %}
+              Katherine Thomes and Karen Clay, “University Libraries in
+              Transition," <em>ASEE Prism</em>, 7(8) (1998): 26-29
+            {% endcomponent_block %}
+            {% component_block "reference_list_item" %}
+              Lawson, S. &amp; Gray, J. &amp; Mauri, M., (2016) “Opening
               the Black Box of Scholarly Communication Funding: A Public Data
               Infrastructure for Financial Flows in Academic Publishing”,
-            <em>Open Library of Humanities</em>, 2(1), e10. DOI: <a
-              href="https://doi.org/10.16995/olh.72">https://doi.org/10.16995/olh.72</a></li>
-            <li>Martin Paul Eve, "Tear it down, build it up: the Research
+              <em>Open Library of Humanities</em>, 2(1), e10. DOI: <a
+              href="https://doi.org/10.16995/olh.72">https://doi.org/10.16995/olh.72</a>
+            {% endcomponent_block %}
+            {% component_block "reference_list_item" %}
+              Martin Paul Eve, "Tear it down, build it up: the Research
               Output Team, or the library-as-publisher," <em>UKSG
-                Insights</em>, 25(2) (2012): 158-162, DOI:
-              10.1629/2048-7754.25.2.158</li>
-          </ul>
+              Insights</em>, 25(2) (2012): 158-162, DOI:
+              10.1629/2048-7754.25.2.158
+            {% endcomponent_block %}
+          {% endcomponent_block %}
         {% endcomponent_block %}
       </div>
       {% include 'custom/subscribe.html' %}
