@@ -69,31 +69,48 @@
       <div class="relative mt-28">
         {% component_block "page_section" anchor="right" labelledby="supporter-bands" %}
           <h2 id="supporter-bands">Supporter bands.</h2>
-          <p>Our fees are banded, based on country and size of institution, which means that scholars and institutions worldwide stand to benefit. Universities are also given the opportunity to voluntarily support us at a higher membership rate, tiered into bronze, silver, gold, and platinum levels.</p>
-          <p>We adjust the fees by country using data from the World Bank on gross national income (GNI) per capita. There is no perfect indicator of economic disparity by country and region, but GNI is better than the alternatives at tracking wealth. It cares about who receives income, rather than where goods and services are produced, so it shows who profits from labour more clearly. With this model we can estimate purchasing power around the world. The estimate is rough, so we are committed to making exceptions where circumstances call for them.</p>
-          <p>The table below shows fees for a sample spread of countries, in US dollars, Euro, and British pounds.</p>
+          <p>Our fees are banded, based on country and size of institution,
+          which means that scholars and institutions worldwide stand to
+          benefit. Universities are also given the opportunity to voluntarily
+          support us at a higher membership rate, tiered into bronze, silver,
+          gold, and platinum levels.</p>
+          <p>We adjust the fees by country using data from the World Bank on
+          gross national income (GNI) per capita. There is no perfect indicator
+          of economic disparity by country and region, but GNI is better than
+          the alternatives at tracking wealth. It cares about who receives
+          income, rather than where goods and services are produced, so it
+          shows who profits from labour more clearly. With this model we can
+          estimate purchasing power around the world. The estimate is rough, so
+          we are committed to making exceptions where circumstances call for
+          them.</p>
+          <p>The table below shows fees for a sample spread of countries, in US
+          dollars, Euro, and British pounds.</p>
         {% endcomponent_block %}
       </div>
       <div class="relative max-lg:mt-0 lg:mt-48">
         {% include 'custom/laptop-lady-quadrant-halfway.html' %}
         {% component_block "page_section" anchor="left" bg="bg-transparent" prose=False label="Supporter bands" %}
           {% component_block "supporters_demo_bands_split" %}
-            {% component_block "supporters_demo_table" table=higher_supporter_table %}
-              {% fill "caption" %}
-                Higher membership levels
-              {% endfill %}
-              {% fill "columns_label" %}
-                Membership level
-              {% endfill %}
-            {% endcomponent_block %}
-            {% component_block "supporters_demo_table" table=standard_supporter_table %}
-              {% fill "caption" %}
-                Standard membership
-              {% endfill %}
-              {% fill "columns_label" %}
-                Institution size
-              {% endfill %}
-            {% endcomponent_block %}
+            {% if higher_supporter_table %}
+              {% component_block "supporters_demo_table" table=higher_supporter_table %}
+                {% fill "caption" %}
+                  Higher membership levels, 2023&ndash;24
+                {% endfill %}
+                {% fill "columns_label" %}
+                  Membership level
+                {% endfill %}
+              {% endcomponent_block %}
+            {% endif %}
+            {% if standard_supporter_table %}
+              {% component_block "supporters_demo_table" table=standard_supporter_table %}
+                {% fill "caption" %}
+                  Standard membership, 2023&ndash;24
+                {% endfill %}
+                {% fill "columns_label" %}
+                  Institution size
+                {% endfill %}
+              {% endcomponent_block %}
+            {% endif %}
           {% endcomponent_block %}
         {% endcomponent_block %}
         <img
@@ -107,7 +124,10 @@
       <div class="relative mt-16">
         {% component_block "page_section" labelledby="consortial-offer" %}
           <h2 id="consortial-offer">Consortial offer.</h2>
-          <p>We welcome expressions of interest from consortia, societies, networks, and scholarly projects interested in joining the OLH as a bloc. Applied to each institution’s fee, consortial groups gain a discount of:</p>
+          <p>We welcome expressions of interest from consortia, societies,
+          networks, and scholarly projects interested in joining the OLH as a
+          bloc. Applied to each institution’s fee, consortial groups gain a
+          discount of:</p>
           <ul class="browser-default">
             <li>
               5% if a group of 10 institutions joins  
@@ -119,7 +139,9 @@
               15% if more than 30 join 
             </li>
           </ul>
-          <p>To benefit from this offer, or get further information, please email the OLH Marketing Officer <a href="mailto:paula.clementevega@bbk.ac.uk">paula.clementevega@bbk.ac.uk</a>.</p>
+          <p>To benefit from this offer, or get further information, please
+          email the OLH Marketing Officer <a
+          href="mailto:paula.clementevega@bbk.ac.uk">paula.clementevega@bbk.ac.uk</a>.</p>
         {% endcomponent_block %}
       </div>
       {% include 'custom/subscribe.html' %}

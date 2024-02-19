@@ -10,6 +10,6 @@ class SupportersDemoBandsSplit(component.Component):
         from plugins.consortial_billing import utils as supporter_utils
         context = super().get_context_data(*args, **kwargs)
         tables = supporter_utils.get_saved_demo_band_data()
-        context['higher_supporter_table'] = tables[0]
-        context['standard_supporter_table'] = tables[1]
+        context['higher_supporter_table'] = tables[0] if tables else None
+        context['standard_supporter_table'] = tables[1] if tables else None
         return context
