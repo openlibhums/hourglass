@@ -225,10 +225,10 @@ the following manner:
 - Spell out the full name of the Open Library of Humanities and provide
 a link to our website, as in one of these examples:
 
-  - “The Open Access Movement” was first published by the Open Library of
+  - “The Open-Access Movement” was first published by the Open Library of
 Humanities, openlibhums.org
 
-  - Diamond open access diagram by the
+  - Diamond open-access diagram by the
     [Open Library of Humanities](https://www.openlibhums.org/)
 
 - Display the attribution so that it is clearly visible and easily
