@@ -5,7 +5,7 @@
 
 {% block meta_description %}
   By joining the OLH, you contribute to the development,
-  sustainability and governance of an award-winning diamond open access
+  sustainability and governance of an award-winning diamond open-access
   publishing platform.
 {% endblock meta_description %}
 
@@ -22,10 +22,11 @@
           {% fill "column_one" %}
             <p class="lead text-white">By joining the OLH, you contribute to
             the development, sustainability and governance of an award-winning
-            diamond open access publishing platform.</p>
+            diamond open-access publishing platform.</p>
           {% endfill %}
           {% fill "column_two" %}
-            <p>Your investment funds the publication of 30+ humanities journals
+            <p>Your investment funds the publication of {{ request.press.public_journals.count }}
+            humanities journals
             while supporting our collective goal to make scholarly publishing
             fairer, more accessible and rigorously preserved for the digital
             future.</p>
@@ -39,8 +40,9 @@
         {% component_block "page_section" anchor="left" labelledby="your-investment" %}
           <h2 id="your-investment">Your investment.</h2>
           <p>We are not a subscription publisher, charging fees for exclusive
-          access to our journals. Instead, your investment funds 30+ open
-          access journals in the humanities, with no author facing charges,
+          access to our journals. Instead, your investment funds
+          {{ request.press.public_journals.count }} open
+          access journals in the humanities, with no author-facing charges,
           making them accessible to anyone with an internet connection.</p>
           <p>By supporting us, you join over 340 libraries worldwide who are
           taking a stand against exploitative commercial publishing practices
@@ -50,15 +52,18 @@
           investment towards a not-for-profit, academic-led publishing
           future.</p>
           <p>Standard-level OLH membership sustains our publishing activities
-          and helps build open source publishing technologies that benefit the
+          and helps build open-source publishing technologies that benefit the
           entire academic community. In 2022, we published and funded a total
-          of 469 articles across our 30+ journals. These publications were
-          downloaded 1,122,354 times and viewed 2,539,747 times.</p>
+          of 469 articles across journals. These publications were
+          downloaded 1,122,354 times and viewed 2,539,747 times.
+          We now publish {{ request.press.public_journals.count }} journals
+          and 4 journals are archived.
+          </p>
           <p>Higher-level OLH membership helps us expand. We use these funds to
           rescue high-profile titles that are at risk from ceasing publication
           due to austerity cuts to humanities research funding. Higher-level
           membership also enables us to flip more subscription journals to
-          diamond open access.</p>    
+          diamond open access.</p>
           <p>Flipping journals strengthens libraries’ bargaining power with
           large commercial publishers. This puts pressure on these publishers
           to adopt more  transparent business models and reduce their fees to
@@ -77,7 +82,7 @@
               model. Our membership options cater for both groups.”
             {% endfill %}
             {% fill "by" %}
-              <span class="font-poppins-bold">Martin Paul Eve</span>, OLH Co-Founder
+              <span class="font-poppins-bold">Prof. Martin Paul Eve</span>, OLH co-founder.
             {% endfill %}
           {% endcomponent_block %}
         {% endcomponent_block %}
@@ -277,13 +282,13 @@
             {% fill "quote" %}
               “The OLH is such good value for money. Library budgets are
               always tight, but we feel that we should be doing more to
-              support academic-led publishing. OLH puts a lot back into the
+              support academic-led publishing. The OLH puts a lot back into the
               academic community and we are pleased to help with its ongoing
               sustainability.”
             {% endfill %}
             {% fill "by" %}
               <span class="font-poppins-bold">Theo Andrew</span>, Scholarly
-              Communications Manager at the University of Edinburgh
+              Communications Manager at the University of Edinburgh.
             {% endfill %}
           {% endcomponent_block %}
         {% endcomponent_block %}
@@ -301,7 +306,7 @@
           is one of three advisory boards
           elected to represent our membership interests and vote on strategic
           issues.</p>
-          <p>We are also actively involved in open access advocacy. On our a <a
+          <p>We are also actively involved in open-access advocacy. On our a <a
           href="/site/resources/" >Resources page</a>, you will find
           materials including campaign posters, videos, infographics, and
           reading lists. We also provide links to other organisations that
@@ -335,12 +340,26 @@
                       <div class="flex gap-y-5 flex-col max-lg:items-center lg:items-start">
                         <img
                           class="max-h-96 lg:pr-8 grow"
-                          src="https://www.openlibhums.org/media/press/Gold.png"
+                          src="/media/press/Platinum.png"
+                          alt="Platinum supporter badge">
+                        <h3 class="font-poppins-bold text-lg max-lg:text-center">
+                          Platinum supporter badge
+                        </h3>
+                        {% with rel_path="/media/press/Platinum.png" label="Download PNG" %}
+                          {% include 'custom/button-download-blue.html' %}
+                        {% endwith %}
+                      </div>
+                    {% endcomponent_block %}
+                    {% component_block "glide_slide" %}
+                      <div class="flex gap-y-5 flex-col max-lg:items-center lg:items-start">
+                        <img
+                          class="max-h-96 lg:pr-8 grow"
+                          src="/media/press/Gold.png"
                           alt="Gold supporter badge">
                         <h3 class="font-poppins-bold text-lg max-lg:text-center">
                           Gold supporter badge
                         </h3>
-                        {% with rel_path="https://www.openlibhums.org/media/press/Gold.png" label="Download PNG" %}
+                        {% with rel_path="/media/press/Gold.png" label="Download PNG" %}
                           {% include 'custom/button-download-blue.html' %}
                         {% endwith %}
                       </div>
@@ -349,12 +368,12 @@
                       <div class="flex gap-5 flex-col max-lg:items-center lg:items-start !h-auto">
                         <img
                           class="max-h-96 lg:pr-8"
-                          src="https://www.openlibhums.org/media/press/Silver.png"
+                          src="/media/press/Silver.png"
                           alt="Silver supporter badge">
                         <h3 class="font-poppins-bold text-lg max-lg:text-center grow">
                           Silver supporter badge
                         </h3>
-                        {% with rel_path="https://www.openlibhums.org/media/press/Silver.png" label="Download PNG" %}
+                        {% with rel_path="/media/press/Silver.png" label="Download PNG" %}
                           {% include 'custom/button-download-blue.html' %}
                         {% endwith %}
                       </div>
@@ -363,12 +382,12 @@
                       <div class="flex gap-5 flex-col max-lg:items-center lg:items-start !h-auto">
                         <img
                           class="max-h-96 lg:pr-8"
-                          src="https://www.openlibhums.org/media/press/Bronze.png"
+                          src="/media/press/Bronze.png"
                           alt="Bronze supporter badge">
                         <h3 class="font-poppins-bold text-lg max-lg:text-center grow">
                           Bronze supporter badge
                         </h3>
-                        {% with rel_path="https://www.openlibhums.org/media/press/Bronze.png" label="Download PNG" %}
+                        {% with rel_path="/media/press/Bronze.png" label="Download PNG" %}
                           {% include 'custom/button-download-blue.html' %}
                         {% endwith %}
                       </div>
@@ -378,13 +397,13 @@
                         <div class="grow flex flex-col justify-center">
                           <img
                             class="max-h-96 lg:pr-8"
-                            src="https://www.openlibhums.org/media/press/Supporter2023.png"
-                            alt="Higher supporter badge 2023">
+                            src="/media/press/Supporter2023.png"
+                            alt="Higher supporter badge 2024">
                         </div>
                         <h3 class="font-poppins-bold text-lg max-lg:text-center">
-                          Higher supporter badge 2023
+                          Higher supporter badge 2024
                         </h3>
-                        {% with rel_path="https://www.openlibhums.org/media/press/Supporter2023.png" label="Download PNG" %}
+                        {% with rel_path="/media/press/higher-supporter-2024.png" label="Download PNG" %}
                           {% include 'custom/button-download-blue.html' %}
                         {% endwith %}
                       </div>
@@ -408,10 +427,11 @@
           <p>There are other ways you can support the OLH, in addition to
           membership. Recommending OLH journals to scholars in your institution
           can raise academic awareness about scholar-led and not-for-profit
-          publishing models. We encourage you to suggest our 30+ journals to
+          publishing models. We encourage you to suggest our
+          {{ request.press.public_journals.count }} journals to
           your academics for their publications and use on university
           curricula. We also welcome expressions of interest to write for our
-          <a href="https://www.openlibhums.org/news/tag/Open%20Insights/"
+          <a href="/news/tag/Open%20Insights/"
              target="_blank">Open Insights</a> blog series, which contains
            guest-written posts, interviews, and provocations about open
            access.</p>

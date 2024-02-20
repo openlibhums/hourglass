@@ -23,11 +23,6 @@
           {{ tag_obj.text }} ({{ tag_obj.tags.count }})
         </a>
       {% endfor %}
-      {% if all_tags.count > 10 %}
-        <span class="bg-tan border-white border-2 rounded-full py-2 px-4">
-          ...
-        </span>
-      {% endif %}
     </div>
   {% endif %}
 </div>

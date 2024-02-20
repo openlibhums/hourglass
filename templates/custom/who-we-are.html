@@ -4,8 +4,8 @@
 {% load component_tags %}
 
 {% block meta_description %}
-  We are building a model of open access publishing that functions
-  for the humanities – for free, for everyone, for ever.
+  We are building a model of open-access publishing that functions
+  for the humanities – for free, for everyone, forever.
 {% endblock meta_description %}
 
 {% block body %}
@@ -54,18 +54,18 @@
       </div>
       <div class="relative max-lg:mt-16 lg:mt-28">
         {% component_block "page_section" anchor="left" label="What we publish" %}
-          <p class="font-semibold">We publish 28 open access journals and are
-          funded by more than 340 university and public libraries worldwide, who
+          <p class="font-semibold">We publish {{ request.press.public_journals.count }}
+          open-access journals and are funded by more than 340 libraries worldwide, who
           have joined us in our mission to make scholarly publishing fairer, more
           accessible, and rigorously preserved for the digital future.</p>
           <p>The peer-reviewed scholarship we publish showcases some of the most
-          dynamic research in humanities disciplines– from classics, modern
-          languages and cultures, philosophy, theology and history, to political
-          theory, sociology, anthropology, film and new media studies, and digital
-          humanities. Our journals benefit from the latest advances in online
-          journal publishing – with high-quality presentation, annotative
-          functionality, robust digital preservation, strong discoverability and
-          easy-to-share social media buttons.</p>
+          dynamic research in humanities disciplines. Our journals cover topics
+          including classics, modern languages, philosophy, theology, history,
+          political theory, sociology, anthropology, film and new media studies,
+          and digital humanities. We pride ourselves on being at the cutting
+          edge of online journal publishing &ndash; with high-quality presentation,
+          robust digital preservation, strong discoverability, and easy-to-share
+          social media buttons.</p>
         {% endcomponent_block %}
       </div>
       <div class="relative max-lg:mt-16 lg:mt-28">
@@ -79,7 +79,7 @@
             {% endfill %}
             {% fill "by" %}
               <span class="font-poppins-bold">Prof. David Armitage</span>,
-              Lloyd C. Blankfein Professor of History, Harvard University
+              Lloyd C. Blankfein Professor of History, Harvard University.
             {% endfill %}
           {% endcomponent_block %}
         {% endcomponent_block %}
@@ -135,12 +135,12 @@
           publicly funded research by selling it back to universities in
           subscription packages.</p>
           <p>Martin and Caroline began working together, building on their
-          respective visions for open access. By 2015 the Open Library of
+          respective visions for open access. By 2015, the Open Library of
           Humanities had become a scholar-led publisher offering a not-for-profit
-          route to open access. The OLH challenged commercial scholarly publishing,
-          which quickly adopted an “author-pays” model of open access, passing the
+          route to open access. The OLH challenged commercial academic publishing,
+          which adopted an “author-pays” model of open access, passing the
           cost of publication onto authors to recoup lost subscriptions.</p>
-          <p>Too often publishing companies profit from our scholarship and
+          <p>Too often, publishing companies profit from our scholarship and
           editorial labour, whilst university and library budgets are squeezed. We
           built an organisation around the passionately held belief that academic
           research should be made available to anyone with an internet
@@ -155,18 +155,17 @@
       <div class="relative max-lg:mt-16 lg:mt-28">
         {% component_block "page_section" anchor="left" labelledby="what-we-offer" %}
           <h2 id="what-we-offer">What we offer.</h2>
-          <p class="font-semibold">When you publish with the OLH you are joining a
+          <p class="font-semibold">When you publish with the OLH, you are joining a
           worldwide community. We offer experienced, friendly editorial guidance,
-          bespoke technological support, and regular events organised for our
-          editors, authors, and librarians. Our journals extend this community
+          provide bespoke technological support, and organise regular events. Our journals extend this community
           through the scholarly associations that founded them, the conferences
           that are their lifeblood, and the university classrooms in which our
-          published materials are taught on curricula worldwide.</p>
+          published materials are taught worldwide.</p>
           <p>Our current team of 10 full-time staff provides years of academic
           editorial experience with cutting-edge publishing technology. Our
           dedicated in-house software engineers have built a leading platform for
           journal hosting, migration, manuscript submission and review,
-          copy-editing and typesetting.</p>
+          copyediting, and typesetting.</p>
         {% endcomponent_block %}
         <aside>
           <img
@@ -191,7 +190,7 @@
               {% fill "by" %}
                 <span class="font-poppins-bold">Prof. Kathleen Fitzpatrick</span>,
                 Director of Digital Humanities and Professor of English at Michigan
-                State University
+                State University.
               {% endfill %}
             {% endcomponent_block %}
           </div>
@@ -219,16 +218,15 @@
       </div>
       <div class="relative max-lg:mt-16 lg:mt-28">
         {% component_block "page_section" anchor="left" labelledby="plan-s-compliancy" %}
-          <h2 id="plan-s-compliancy">Plan S compliancy.</h2>
-          <p><span class="font-semibold">All our journals are compliant with Plan S
-          funder mandates and have been included in the Plan S compliance <a
-          href="https://journalcheckertool.org/">Journal Checker
-          tool</a>.</span> <a
-          href="https://www.coalition-s.org/why-plan-s/">Plan S</a> is an
+          <h2 id="plan-s-compliancy">Plan S compliance.</h2>
+          <p><a href="https://www.coalition-s.org/why-plan-s/">Plan S</a> is an
           international initiative set up by researcher funders and other academic
-          organisations to ensure that publicly funded research is published in open
-          access journals, open access platforms or made immediately available
-          through open access repositories without embargo.</p>
+          organisations to ensure that publicly funded research is published in open-access
+          journals or on open-access platforms, or is made immediately available
+          through open-access repositories without embargo.
+          All our journals are compliant with Plan S funder mandates and have
+          been included in the Plan S compliance <a
+          href="https://journalcheckertool.org/">Journal Checker tool</a>.</p>
         {% endcomponent_block %}
       </div>
       <div class="relative max-lg:mt-16 lg:mt-28">
@@ -243,18 +241,15 @@
           Baldwin.</p>
           <p>The work of the Open Library of Humanities has been internationally
           recognised for its important contribution to open access for the
-          humanities, as well as its innovative business model. We have been Highly
-          Commended at the
-          <a
-            href="https://www.alpsp.org/news/alpsp-awards-2020-winners-announced-sep-2020">ALPSP
-            Awards for Innovation in Publishing</a> 2020, won a
-          <a href="https://www.openlibhums.org/news/348/">Coko Foundation Open
-            Publishing Award</a> in the category of Open Publishing Models in 2019,
-          and received an award for
-          <a
-            href="https://www.ukaop.org/hub/aop-announces-winners-for-the-digital-publishing-awards-2020">Small
-            Digital Publisher of the Year</a> from the Association of Online
-          Publishers (AOP) in October 2020.</p>
+          humanities, as well as its innovative business model.
+          In 2020, we were “Highly Commended” at the
+          <a href="https://www.alpsp.org/news/alpsp-awards-2020-winners-announced-sep-2020">
+          Association of Learned and Professional Society Publishers (ALPSP) Awards</a>
+          for Innovation in Publishing, and received an award for “<a
+          href="https://www.ukaop.org/hub/aop-announces-winners-for-the-digital-publishing-awards-2020">Small
+          Digital Publisher of the Year</a>” from the Association of Online Publishers (AOP). In 2019, we won a
+          “<a href="https://www.openlibhums.org/news/348/">Coko Foundation Open Publishing Award</a>”
+          in the category of Open Publishing Models.</p>
           {% include 'custom/awards-prizes-images.html' %}
           <div class="flex max-lg:items-start max-lg:flex-col gap-8">
             {% with rel_path="/site/awards-prizes" label="Find out more" %}
@@ -269,14 +264,13 @@
           <p class="font-semibold">The Open Library of Humanities Award was
           established in 2023 to recognise individuals who have made outstanding
           contributions to the advancement of open access.</p>
-          <p>The award is granted to a person who demonstrates dedication to open
-          access through their advocacy or scholarly work. It aims to thank these
-          champions of openness and inspire the academic community to embrace
-          and support the principles of open access to knowledge for the benefit
-          of all.</p>
+          <p>The award is granted to a person who demonstrates dedication
+          to open access through their advocacy or scholarly work. It aims
+          to celebrate those who live our values and to foster a greater appreciation
+          for the principles and benefits of open access to knowledge within the academic community.</p>
           <img
             class="grayscale"
-            src="https://www.openlibhums.org/media/press/martin-olh-award-2023.jpg"
+            src="/media/press/martin-olh-award-2023.jpg"
             alt="Martin Paul Eve stands smiling broadly in front of wildflowers and
             trees. He wears a Janeway T-shirt, holds the 2023 OLH Award in one
             hand, and uses a cane for support with the other hand.">

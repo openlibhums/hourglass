@@ -53,7 +53,7 @@
         </div>
         <div class="basis-1/2 prose lg:prose-lg">
           <p>Day-to-day, this means publishing articles in our journals,
-          developing open source software, researching new possibilities for
+          developing open-source software, researching new possibilities for
           scholarly communication, and engaging our community of librarians,
           editors, and researchers.</p>
         </div>
@@ -121,11 +121,11 @@
         </aside>
         {% component_block "page_section" labelledby="publish" margin="narrow" icon="Publish.svg" %}
           <h2 id="publish">Publish.</h2>
-          <p class="font-semibold">Hosting 28 peer-reviewed academic
-          journals (and counting!), including our flagship <i>Open Library
-          of Humanities</i> journal.</p>
+          <p class="font-semibold">Hosting {{ request.press.public_journals.count }}
+          peer-reviewed academic journals (and counting!), including our flagship
+          <i>Open Library of Humanities</i> Journal.</p>
           <p>We oversee editorial processes and provide support to our
-          editors, to ensure the highest standards of research integrity.
+          editors to ensure the highest standards of research integrity.
           As our library supporters grow, we expand our portfolio by
           ‘flipping’ subscription journals to diamond open access.</p>
         {% endcomponent_block %}
@@ -133,9 +133,9 @@
       <div class="relative mt-8">
         {% component_block "page_section" labelledby="develop" margin="narrow" icon="Develop.svg" %}
           <h2 id="develop">Develop.</h2>
-          <p class="font-semibold">Building Janeway, a powerful, flexible,
-          emphatically open source publishing platform.</p>
-          <p>Having our own software makes OLH journals sustainable, and
+          <p class="font-semibold">Building <a href="/site/janeway">Janeway</a>, a powerful, flexible,
+          emphatically open-source publishing platform.</p>
+          <p>Having our own software makes OLH journals sustainable and
           gives us independence from commercial publishing platforms. We
           listen to our journal editors and continually improve the
           platform with scholars’ needs in mind.</p>
@@ -149,18 +149,18 @@
           scholar-led.</p>
           <p>Our founders use their research time at Birkbeck to advance
           scholarship on open access and the politics of collective action.
-          Co-Founder Prof. Martin Paul Eve researches scholarly
+          Co-founder Prof. Martin Paul Eve researches scholarly
           communications in books such as <i>Theses on the Metaphors of
           Digital-Textual History</i> (2024) and <i>Open Access and the
-          Humanities</i> (2014). Co-Founder Dr Caroline Edwards has 15 years'
-          experience publishing her own research and building academic networks
-          in the humanities, including setting up new journals, scholarly
+          Humanities</i> (2014). Co-founder Dr Caroline Edwards has 15 years'
+          experience publishing her research and building academic networks
+          in the humanities, including setting up new journals and scholarly
           research associations, and working with editors to enshrine community
           ownership of journals.</p>
           <p>This specialism extends to our wider organisation. Our team
-          use their doctorates in humanities subjects to steer robust and
-          quality open access research to publication. We also continue our
-          scholar-led tradition through UX research into what our users
+          uses their doctorates in humanities subjects to steer robust and
+          quality open-access research to publication. We also continue our
+          scholar-led tradition through user experience (UX) research into what our users
           want, continually improving our software to put scholars in
           charge.</p>
         {% endcomponent_block %}
@@ -172,7 +172,7 @@
           librarians, editors, and academics around our shared vision of
           not-for-profit humanities publishing.</p>
           <p>We deliver talks, participate in working groups and
-          committees, write, lead, and collaborate, to champion open access
+          committees, write, lead, and collaborate to champion open access
           as an equitable and sustainable alternative to commercial
           publishing. We also present awards to recognise exemplary
           contributions to the OA community (and we’ve won a few of our
