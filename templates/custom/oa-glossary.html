@@ -4,7 +4,7 @@
 {% load component_tags %}
 
 {% block meta_description %}
-  A glossary of open-access terms.
+  {% include "elements/meta_description.html" with desc="A glossary of open-access terms." %}
 {% endblock meta_description %}
 
 {% block body %}

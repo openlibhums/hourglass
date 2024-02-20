@@ -4,10 +4,7 @@
 {% load component_tags %}
 
 {% block meta_description %}
-  We’ve spent 10 years building a sustainable business model for
-  funding diamond open-access publishing. Our model places equity at the
-  heart of scholarly publishing — for readers, authors, editors, libraries,
-  and funders.
+  {% include "elements/meta_description.html" with desc="We’ve spent 10 years building a sustainable business model for funding diamond open-access publishing. Our model places equity at the heart of scholarly publishing — for readers, authors, editors, libraries, and funders." %}
 {% endblock meta_description %}
 
 {% block body %}

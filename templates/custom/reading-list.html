@@ -4,8 +4,7 @@
 {% load component_tags %}
 
 {% block meta_description %}
-  This reading list is curated by OLH staff as part of our advocacy
-  programme.
+  {% include "elements/meta_description.html" with desc="This reading list is curated by OLH staff as part of our advocacy programme." %}
 {% endblock meta_description %}
 
 {% block body %}

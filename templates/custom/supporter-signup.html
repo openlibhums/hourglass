@@ -16,7 +16,7 @@
     content="Support the OLH - {{ request.press.name }}">
 {% endblock meta_title %}
 {% block meta_description %}
-  Sign up to support the Open Library of Humanities
+  {% include "elements/meta_description.html" with desc="Sign up to support the Open Library of Humanities" %}
 {% endblock meta_description %}
 
 

@@ -4,8 +4,7 @@
 {% load component_tags %}
 
 {% block meta_description %}
-  We are building a model of open-access publishing that functions
-  for the humanities – for free, for everyone, forever.
+  {% include "elements/meta_description.html" with desc="We are building a model of open-access publishing that functions for the humanities – for free, for everyone, forever." %}
 {% endblock meta_description %}
 
 {% block body %}

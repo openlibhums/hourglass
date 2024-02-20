@@ -5,8 +5,7 @@
 {% load humanize %}
 
 {% block meta_description %}
-  This page can be used to calculate your membership fee and sign
-  up.
+  {% include "elements/meta_description.html" with desc="This page can be used to calculate your membership fee and sign up." %}
 {% endblock meta_description %}
 
 {% block body %}
