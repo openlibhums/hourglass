@@ -100,7 +100,9 @@
                 <div class="md:basis-1/3">
                   <a href="{{ journal.site_url }}">
                     <img
-                      src="{{ journal.default_cover_image.url }}"
+                      src="{% if journal.default_cover_image %}
+                        {{ journal.default_cover_image.url }}
+                      {% endif %}"
                       alt="{{ journal.name }}">
                   </a>
                 </div>

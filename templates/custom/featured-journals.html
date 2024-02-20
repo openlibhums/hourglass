@@ -15,7 +15,9 @@
         {% component_block "glide_slide" %}
           <div class="flex gap-5 flex-col max-lg:items-center lg:items-start !h-auto">
             <img
-              src="{{ journal.default_cover_image.url }}"
+              src="{% if journal.default_cover_image %}
+                {{ journal.default_cover_image.url }}
+              {% endif %}"
               alt="{{ journal.name }}">
             <h3 class="font-poppins-bold text-lg max-lg:text-center grow">
               {{ journal.name }}
