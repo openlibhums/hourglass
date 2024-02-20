@@ -3,8 +3,7 @@
 {% load component_tags %}
 
 {% block meta_description %}
-  The Open Library of Humanities only collects the data that is required in
-  order to provide services to you
+  {% include "elements/meta_description.html" with desc="The Open Library of Humanities only collects the data that is required in order to provide services to you." %}
 {% endblock meta_description %}
 
 {% block body %}

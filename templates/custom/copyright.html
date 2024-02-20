@@ -3,8 +3,7 @@
 {% load component_tags %}
 
 {% block meta_description %}
-  The CC BY license lets you share and adapt the materials on this website so
-  long as you properly credit the source.
+  {% include "elements/meta_description.html" with desc="The CC BY license lets you share and adapt the materials on this website so long as you properly credit the source." %}
 {% endblock meta_description %}
 
 {% block body %}

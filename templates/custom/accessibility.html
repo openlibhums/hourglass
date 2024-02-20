@@ -4,8 +4,7 @@
 {% load component_tags %}
 
 {% block meta_description %}
-  The Open Library of Humanities seeks the highest standards of accessibility
-  for its titles and to be an inclusive publisher of research material.
+  {% include "elements/meta_description.html" with desc="The Open Library of Humanities seeks the highest standards of accessibility for its titles and to be an inclusive publisher of research material." %}
 {% endblock meta_description %}
 
 {% block body %}

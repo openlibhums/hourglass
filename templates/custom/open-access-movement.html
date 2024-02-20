@@ -4,9 +4,7 @@
 {% load component_tags %}
 
 {% block meta_description %}
-  We are part of a broader political movement. Read
-  on to find out more about the visionary scholar-activists that made
-  this political movement possible.
+  {% include "elements/meta_description.html" with desc="We are part of a broader political movement. Read on to find out more about the visionary scholar-activists that made this political movement possible." %}
 {% endblock meta_description %}
 
 {% block body %}
@@ -143,7 +141,7 @@
           charge to both authors and readers. In our diamond model, fair
           support from a large pool of scholarly institutions means that we can
           publish articles that are free to readers to access and free for
-          authors to publish</p>
+          authors to publish.</p>
           <p>With government mandates, many humanities academics feel that they
           are having “openness violently thrust upon them”; diamond open
           access, OLH co-founder <a

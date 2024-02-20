@@ -4,7 +4,7 @@
 {% load component_tags %}
 
 {% block meta_description %}
-  {% lorem 15 w %}
+  {% include "elements/meta_description.html" with desc="The Open Library of Humanities Award seeks to recognise and honour individuals who have made outstanding contributions to the advancement of open scholarship." %}
 {% endblock meta_description %}
 
 {% block body %}
