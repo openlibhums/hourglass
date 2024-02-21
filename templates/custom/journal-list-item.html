@@ -1,0 +1,29 @@
+{% load static %}
+
+<div class="flex max-md:flex-col md:flex-row gap-x-8">
+  <div class="md:basis-1/3">
+    <img
+      class="min-w-full"
+      src="{% if journal.default_cover_image %}
+        {% comment %}Remove absolute URL{% endcomment %}
+        https://www.openlibhums.org/{{ journal.default_cover_image.url }}
+      {% endif %}"
+      alt="{{ journal.name }}">
+  </div>
+  <div class="md:basis-2/3 prose lg:prose-lg">
+    <h2
+      id="{{ journal.name|slugify }}"
+      class="name font-poppins-bold text-3xl mt-8">
+      {{ journal.name }}
+    </h2>
+    <div class="code" hidden>{{ journal.code }}</div>
+    <div class="description">
+      {{ journal.description_for_press|safe }}
+    </div>
+    <div class="w-full flex pt-4">
+      {% with rel_path=journal.site_url label="Go to journal" %}
+        {% include "custom/button-action-black.html" %}
+      {% endwith %}
+    </div>
+  </div>
+</div>
