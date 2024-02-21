@@ -43,7 +43,7 @@
     </div>
   </div>
   <div class="relative z-40 pt-8 py-8">
-    {% component_block "filterable_list" list_id="journals" value_names="name description discipline" %}
+    {% component_block "filterable_list" list_id="journals" value_names="name description" %}
       <div class="list">
         <div class="relative max-md:mt-28 md:mt-14">
           <section
@@ -63,9 +63,9 @@
               rigour of its content, the international standing of its authors
               and editorial board, and the value to its disciplinary field. As
               part of our mission to bring journals back into community
-              ownership, all OLH titles are community-governed.</p> 
+              ownership, all OLH titles are community-governed.</p>
               <p>Journals are arranged alphabetically by title. Journals can also
-              be filtered by keyword and subject.</p>
+              be filtered by keywords.</p>
             </div>
           </section>
           <aside
@@ -115,15 +115,6 @@
                   <div class="description">
                     {{ journal.description_for_press|safe }}
                   </div>
-                  {% if journal.keywords.count %}
-                    <div class="discipline not-prose flex flex-wrap gap-6 mt-6">
-                      {% for keyword in journal.keywords.all %}
-                        <span class="bg-tan border-white border-2 rounded-full py-2 px-4">
-                          {{ keyword }}
-                        </span>
-                      {% endfor %}
-                    </div>
-                  {% endif %}
                 </div>
               </div>
             </div>
