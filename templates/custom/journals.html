@@ -110,8 +110,9 @@
               {% component_block "page_section" anchor=leftright labelledby=journal.name|slugify prose=False width="full" margin="narrow" %}
                 {% include "custom/journal-list-item.html" with journal=journal %}
               {% endcomponent_block %}
-              {% cycle '' 'hidden' as hidden silent %}
-              {% include "custom/double-arc-halfway.html" with hidden=hidden %}
+              {% if leftright == 'right' %}
+                {% include "custom/double-arc-halfway.html" %}
+              {% endif %}
             </div>
           {% endif %}
         {% endfor %}
