@@ -14,7 +14,7 @@
   <meta name="twitter:title" content="{{ news_item.title }}">
 {% endblock meta_title %}
 {% block meta_description %}
-  {{ news_item.body|striptags|truncatewords:30 }}
+  {% include "elements/meta_description.html" with desc=news_item.body|striptags|truncatewords:30 %}
 {% endblock meta_description %}
 {% block meta_image %}
   {% if news_item.best_image_url %}
