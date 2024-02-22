@@ -43,7 +43,7 @@
     </div>
   </div>
   <div class="relative z-40 pt-8 py-8">
-    {% component_block "filterable_list" list_id="journals" value_names="name description discipline" %}
+    {% component_block "filterable_list" list_id="journals" value_names="name description code" %}
       <div class="list">
         <div class="relative max-md:mt-28 md:mt-14">
           <section
@@ -63,9 +63,9 @@
               rigour of its content, the international standing of its authors
               and editorial board, and the value to its disciplinary field. As
               part of our mission to bring journals back into community
-              ownership, all OLH titles are community-governed.</p> 
+              ownership, all OLH titles are community-governed.</p>
               <p>Journals are arranged alphabetically by title. Journals can also
-              be filtered by keyword and subject.</p>
+              be filtered by keyword and subject area.</p>
             </div>
           </section>
           <aside
@@ -83,68 +83,38 @@
               alt="">
           </aside>
         </div>
+        {% comment %}Active journals{% endcomment %}
         {% for journal in journals %}
-          <section class="relative my-28" aria-labelledby="{{ journal.name|slugify }}">
-            <div
-              class="
-                relative after:z-30 after:block after:absolute
-                after:inset-y-0 after:w-screen after:bg-white
-                {% cycle 'after:right-1/2' 'after:left-1/2' %}
-              ">
-              <div
-                class="
-                  relative z-40
-                  py-20 px-8 bg-white
-                  flex max-md:flex-col md:flex-row gap-x-8
-                ">
-                <div class="md:basis-1/3">
-                  <a href="{{ journal.site_url }}">
-                    <img
-                      src="{% if journal.default_cover_image %}
-                        {{ journal.default_cover_image.url }}
-                      {% endif %}"
-                      alt="{{ journal.name }}">
-                  </a>
-                </div>
-                <div class="md:basis-2/3 prose lg:prose-lg">
-                  <h2
-                    id="{{ journal.name|slugify }}"
-                    class="name font-poppins-bold text-3xl mt-8">
-                    {{ journal.name }}
-                  </h2>
-                  <div class="description">
-                    {{ journal.description_for_press|safe }}
-                  </div>
-                  {% if journal.keywords.count %}
-                    <div class="discipline not-prose flex flex-wrap gap-6 mt-6">
-                      {% for keyword in journal.keywords.all %}
-                        <span class="bg-tan border-white border-2 rounded-full py-2 px-4">
-                          {{ keyword }}
-                        </span>
-                      {% endfor %}
-                    </div>
-                  {% endif %}
-                </div>
-              </div>
+          {% if journal.code != 'wwe' and journal.code != 'franc' and journal.code != 'ee' and journal.code != 'pn' %}
+            <div class="relative max-lg:mt-16 lg:mt-28">
+              {% cycle 'left' 'right' as leftright silent %}
+              {% component_block "page_section" anchor=leftright labelledby=journal.name|slugify prose=False width="full" margin="narrow" %}
+                {% include "custom/journal-list-item.html" with journal=journal %}
+              {% endcomponent_block %}
+              {% if leftright == 'right' %}
+                {% include "custom/double-arc-halfway.html" %}
+              {% endif %}
             </div>
-            <div
-              class="
-                {% cycle '' 'hidden' %}
-                motion-reduce:-bottom-24 max-lg:motion-safe:-bottom-12 lg:motion-safe:-bottom-12
-                motion-safe:rallax z-0 relative -right-16
-              ">
-              <img
-                class="absolute z-10 w-64 -bottom-16 right-0"
-                src="{% static 'hourglass/media/backgrounds/circle-quarter-blue-textured.png' %}"
-                width="434"
-                alt="">
-              <img
-                class="absolute z-10 w-64 -bottom-16 right-64"
-                src="{% static 'hourglass/media/backgrounds/circle-quarter-blue-textured.png' %}"
-                width="434"
-                alt="">
+          {% endif %}
+        {% endfor %}
+        <div class="relative max-lg:mt-16 lg:mt-28">
+          {% component_block "page_section" bg="bg-blue" anchor="right" labelledby="archived-journals" width="full" margin="narrow" %}
+            <h2 id="archived-journals" class="text-white">Archived journals.</h2>
+          {% endcomponent_block %}
+        </div>
+        {% comment %}Archived journals{% endcomment %}
+        {% for journal in journals %}
+          {% if journal.code == 'wwe' or journal.code == 'franc' or journal.code == 'ee' or journal.code == 'pn' %}
+            <div class="relative max-lg:mt-16 lg:mt-28">
+              {% cycle 'left' 'right' as leftright silent %}
+              {% component_block "page_section" anchor=leftright labelledby=journal.name|slugify prose=False width="full" margin="narrow" %}
+                {% include "custom/journal-list-item.html" with journal=journal %}
+              {% endcomponent_block %}
+              {% if leftright == 'right' %}
+                {% include "custom/double-arc-halfway.html" %}
+              {% endif %}
             </div>
-          </section>
+          {% endif %}
         {% endfor %}
       </div>
     {% endcomponent_block %}
