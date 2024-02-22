@@ -4,8 +4,7 @@
 {% load component_tags %}
 
 {% block meta_description %}
-  The Open Library of Humanities (OLH) is a strictly not-for-profit
-  publisher with no shareholders.
+  {% include "elements/meta_description.html" with desc="The Open Library of Humanities (OLH) is a strictly not-for-profit publisher with no shareholders." %}
 {% endblock meta_description %}
 
 {% include 'custom/edit-on-github.html' with rel_path='custom/governance-and-finances.html' %}

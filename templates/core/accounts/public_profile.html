@@ -7,7 +7,7 @@
 {% endblock %}
 
 {% block meta_description %}
-  {{ user.biography|striptags|truncatewords:25 }}
+  {% include "elements/meta_description.html" with desc=user.biography|striptags|truncatewords:25 %}
 {% endblock meta_description %}
 
 {% block meta_image %}
