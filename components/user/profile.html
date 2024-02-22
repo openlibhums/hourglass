@@ -121,11 +121,7 @@
               {% comment %}
                 ORCID field needs validation in core Janeway; then this if else won't be needed
               {% endcomment %}
-              {% if user.orcid.startswith == 'http' %}
-                {% component "link" label="orcid" base="https://orcid.org/" href=user.orcid %}
-              {% else %}
-                {% component "link" label="orcid" href=user.orcid %}
-              {% endif %}
+              {% component "link" label="orcid" base="https://orcid.org/" href=user.orcid %}
             {% endif %}
             {% if user.website %}
               {% component "link" label="website" href=user.website %}
