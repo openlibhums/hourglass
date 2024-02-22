@@ -118,22 +118,32 @@
           </h2>
           {% component_block "link_list" %}
             {% if user.orcid %}
-              {% component "link" label="orcid" href=user.orcid %}
+              {% comment %}
+                ORCID field needs validation in core Janeway; then this if else won't be needed
+              {% endcomment %}
+              {% if user.orcid.startswith == 'http' %}
+                {% component "link" label="orcid" base="https://orcid.org/" href=user.orcid %}
+              {% else %}
+                {% component "link" label="orcid" href=user.orcid %}
+              {% endif %}
             {% endif %}
             {% if user.website %}
               {% component "link" label="website" href=user.website %}
             {% endif %}
+            {% comment %}
+              Base prepended because these are usernames in core Janeway
+            {% endcomment %}
             {% if user.twitter %}
-              {% component "link" label="twitter" href=user.twitter %}
+              {% component "link" label="twitter" base="https://twitter.com/" href=user.twitter %}
             {% endif %}
             {% if user.facebook %}
-              {% component "link" label="facebook" href=user.facebook %}
+              {% component "link" label="facebook" base="https://www.facebook.com/" href=user.facebook %}
             {% endif %}
             {% if user.linkedin %}
-              {% component "link" label="linkedin" href=user.linkedin %}
+              {% component "link" label="linkedin" base="https://www.linkedin.com/in/" href=user.linkedin %}
             {% endif %}
             {% if user.github %}
-              {% component "link" label="github" href=user.github %}
+              {% component "link" label="github" base="https://github.com/" href=user.github %}
             {% endif %}
           {% endcomponent_block %}
         {% endcomponent_block %}
