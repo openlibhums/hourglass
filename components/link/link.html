@@ -7,7 +7,7 @@
     </a>
     <span class="group-last-of-type:hidden">|</span>
   {% else %}
-    <a href="{{ href }}">
+    <a href="{% if base %}{{base}}{% endif %}{{ href }}">
       {{ label }}
     </a>
     <span class="group-last-of-type:hidden">|</span>
