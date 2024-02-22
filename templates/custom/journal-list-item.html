@@ -5,8 +5,7 @@
     <img
       class="min-w-full"
       src="{% if journal.default_cover_image %}
-        {% comment %}Remove absolute URL{% endcomment %}
-        https://www.openlibhums.org/{{ journal.default_cover_image.url }}
+        {{ journal.default_cover_image.url }}
       {% endif %}"
       alt="{{ journal.name }}">
   </div>
