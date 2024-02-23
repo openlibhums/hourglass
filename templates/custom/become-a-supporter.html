@@ -130,7 +130,6 @@
                 {% include 'custom/button-action-blue.html' %}
               {% endwith %}
             {% endcomponent_block %}
-            {% comment %}
             {% component_block "cta_list_item" %}
               <img
                 class="w-36"
@@ -141,11 +140,10 @@
                 class="font-poppins-bold max-lg:text-xl lg:text-2xl text-center">
                 Brochure.
               </h2>
-              {% with rel_path="/TBD" label="Download PDF" %}
+              {% with rel_path="/media/press/OLH_Short_Library_Brochure_2024_02_23.pdf" label="Download PDF" %}
                 {% include 'custom/button-download-blue.html' %}
               {% endwith %}
             {% endcomponent_block %}
-            {% endcomment %}
           {% endcomponent_block %}
         {% endcomponent_block %}
       </div>
@@ -270,8 +268,9 @@
           content is also available for the benefit of all who have an internet
           connection, regardless of geographical location or financial means.
           You can read more about the preservation, discoverability and
-          accessibility of our journal content by downloading our Library
-          Brochure.</p>
+          accessibility of our journal content by downloading our
+          <a download href="/media/press/OLH_Short_Library_Brochure_2024_02_23.pdf">Library
+            Brochure</a>.</p>
         {% endcomponent_block %}
       </div>
       <div class="relative max-lg:mt-16 lg:mt-28">
