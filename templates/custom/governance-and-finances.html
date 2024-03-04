@@ -7,12 +7,11 @@
   {% include "elements/meta_description.html" with desc="The Open Library of Humanities (OLH) is a strictly not-for-profit publisher with no shareholders." %}
 {% endblock meta_description %}
 
-{% include 'custom/edit-on-github.html' with rel_path='custom/governance-and-finances.html' %}
-
 {% block body %}
   <article aria-labelledby="h1">
     <div class="container mx-auto max-w-screen-xl">
       <div class="relative max-lg:mt-56 lg:mt-8">
+        {% include "custom/edit-on-github.html" with rel_path="custom/governance-and-finances.html" %}
         <aside
           class="
             relative max-lg:-top-72 lg:-top-24 motion-safe:rallax
