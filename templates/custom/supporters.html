@@ -46,7 +46,7 @@
         {% include 'custom/camera-man-bun-halfway.html' %}
         {% component_block "page_section" anchor="right" labelledby="supporters-by-country" %}
           <h2 id="supporters-by-country" class="w-full">Supporters by country.</h2>
-          {% component_block "filterable_list" list_id="supporters" value_names="country supporter" %}
+          {% component_block "filterable_list" list_id="supporters" value_names="country supporter" placeholder="e.g. Birkbeck" %}
             {% regroup supporters by country as supporter_list %}
             <div class="list">
               {% for country, supporters_in_country in supporter_list %}
