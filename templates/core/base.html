@@ -63,6 +63,12 @@
       <!-- JavaScript dependencies -->
       <script src="{% static 'hourglass/js/simple-scrollspy.min.js' %}"></script>
       <script src="{% static 'hourglass/js/rallax.js' %}"></script>
+      {% if settings.DEBUG %}
+        <script src="{% static "common/js/tinymce/tinymce.js" %}"></script>
+      {% else %}
+        <script src="{% static "common/js/tinymce/tinymce.min.js" %}"></script>
+      {% endif %}
+      <script src="{% static "django_tinymce/init_tinymce.js" %}"></script>
 
       <!-- custom JavaScript -->
       <script>
