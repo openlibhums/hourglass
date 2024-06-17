@@ -154,6 +154,35 @@
         {% endcomponent_block %}
       </div>
       <div class="relative max-lg:mt-16 lg:mt-28">
+        <div class="flex max-lg:flex-col lg:flex-row lg:flex-wrap lg:px-2">
+          <article
+            aria-labelledby="faqs"
+            class="max-lg:py-5 lg:p-5 lg:basis-1/2">
+            <div
+              class="
+                relative z-40 p-8 h-full bg-white flex flex-col
+                gap-y-6 max-lg:items-center lg:items-start lg:justify-between
+              ">
+              <img
+                class="w-32"
+                src="{% static 'hourglass/media/icons/FAQs.svg' %}"
+                alt="">
+              <h2
+                id="faqs"
+                class="font-poppins-bold max-lg:text-2xl lg:text-3xl max-lg:text-center">
+                FAQs.
+              </h2>
+              <p class="max-lg:text-lg lg:text-xl max-lg:text-center grow">
+                Get a quick answer to your question.
+              </p>
+              {% with rel_path="/site/faq#libraries-consortia" label="Find out more" %}
+                {% include 'custom/button-action-blue.html' %}
+              {% endwith %}
+            </div>
+          </article>
+        </div>
+      </div>
+      <div class="relative max-lg:mt-16 lg:mt-28">
         {% include "custom/nypl-end.html" %}
         {% component_block "page_section" labelledby="insights-about-olh-model" anchor="left" %}
           <h2 id="insights-about-olh-model">
