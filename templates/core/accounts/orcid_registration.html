@@ -1,0 +1,13 @@
+{% extends "core/base.html" %}
+{% load i18n %}
+{% load static %}
+
+{% block title %}
+  {% trans "Unregistered ORCID" %} - {{ request.press.name }}
+{% endblock title %}
+
+{% block body %}
+
+  {% include 'custom/orcid-registration.html' %}
+
+{% endblock body %}

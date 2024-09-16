@@ -1,0 +1,51 @@
+{% load static %}
+{% load component_tags %}
+
+<div class="container mx-auto max-w-screen-xl relative">
+  {% include 'custom/edit-on-github.html' with rel_path='custom/orcid_registration.html' %}
+  {% include 'custom/generic-art-opener.html' %}
+</div>
+<div class="container mx-auto max-w-screen-xl relative max-lg:my-12 lg:my-24">
+  <div class="relative z-40 max-md:py-8 md:py-20 bg-blue md:px-8 text-white max-w-2xl">
+    <div class="m-6">
+      <h1 class="font-poppins-bold text-2xl max-lg:text-center pb-4">
+        Unregistered ORCID.
+      </h1>
+      <div class="prose text-white">
+        {% blocktrans %}
+          <p>The ORCiD you logged in with is not currently linked with
+          an account in our system. You can either register a new account, or
+          login with an existing account to link your ORCiD for future use.</p>
+        {% endblocktrans %}
+      </div>
+      {% url 'core_login' as action_url %}
+      {% component_block "form" form_method="POST" form_action=action_url %}
+        {% fill "fields" %}
+          {% trans 'Email' as label %}
+          {% component_block "form_field" id_for_label="email_address" label=label required=True %}
+            {% component "form_input" type="email" id="email_address" name="user_name" %}
+          {% endcomponent_block %}
+          {% trans 'Password' as label %}
+          {% component_block "form_field" id_for_label="user_pass" label=label required=True %}
+            {% component "form_input" type="password" id="user_pass" name="user_pass" %}
+          {% endcomponent_block %}
+          <input name="orcid_token" type="hidden" value="{{ token.token }}">
+        {% endfill %}
+        {% fill "button" %}
+          {% include 'custom/button-submit-white.html' with label="Log In" %}
+        {% endfill %}
+      {% endcomponent_block %}
+      <div class="mt-8 flex items-start flex-col gap-8">
+        {% trans 'Register an account' as label %}
+        {% url 'core_register' as rel_path %}
+        {% include 'custom/button-action-white.html' with rel_path=rel_path label=label %}
+        {% trans 'Reset your password' as label %}
+        {% url 'core_get_reset_token' as rel_path %}
+        {% include 'custom/button-action-white.html' with rel_path=rel_path label=label %}
+      </div>
+    </div>
+  </div>
+  <div class="relative mt-28 pb-28">
+    {% include 'custom/subscribe-art.html' %}
+  </div>
+</div>
