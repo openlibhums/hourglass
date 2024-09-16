@@ -29,12 +29,12 @@
           {% fill "fields" %}
             {% component_block "form_field" id_for_label="email_address" label="Email" required=True %}
               {% fill "field" %}
-                {% component "form_input" type="email" name="email_address" value=user_to_edit.email %}
+                {% component "form_input" type="email" id="email_address" name="email_address" value=user_to_edit.email %}
               {% endfill %}
               {% fill "help_text" %}
                 <p class="py-2">
                   {% blocktrans %}
-                    Please note: If you update your password,
+                    Please note: If you update your email,
                     You will be logged out, and you won't be
                     able to log in again until you follow
                     the verification link in an email
@@ -58,13 +58,13 @@
         {% component_block "form" form_method="POST" %}
           {% fill "fields" %}
             {% component_block "form_field" id_for_label="current_password" label="Current Password" required=True %}
-              {% component "form_input" type="password" name="current_password" %}
+              {% component "form_input" type="password" id="current_password" name="current_password" %}
             {% endcomponent_block %}
             {% component_block "form_field" id_for_label="new_password_one" label="New Password" required=True %}
-              {% component "form_input" type="password" name="new_password_one" %}
+              {% component "form_input" type="password" id="new_password_one" name="new_password_one" %}
             {% endcomponent_block %}
             {% component_block "form_field" id_for_label="new_password_two" label="Confirm New Password" required=True %}
-              {% component "form_input" type="password" name="new_password_two" %}
+              {% component "form_input" type="password" id="new_password_two" name="new_password_two" %}
             {% endcomponent_block %}
           {% endfill %}
           {% fill "button" %}

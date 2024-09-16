@@ -16,7 +16,7 @@
         {% fill "fields" %}
           {% component_block "form_field" id_for_label="email_address" label="Email" required=True %}
             {% fill "field" %}
-              {% component "form_input" type="email" name="email_address" %}
+              {% component "form_input" type="email" id="email_address" name="email_address" %}
             {% endfill %}
             {% fill "help_text" %}
               <p class="py-2">
