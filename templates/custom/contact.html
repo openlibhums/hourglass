@@ -13,7 +13,7 @@
         class="pb-8 w-36"
         src="{% static 'hourglass/media/icons/FAQs.svg' %}"
         alt="">
-      {% component 'form' form=contact_form button_label="Send message" %}
+      {% component 'form' form_method='POST' form=contact_form button_label="Send message" %}
     </div>
   </div>
   <div class="relative mt-28 pb-28">
