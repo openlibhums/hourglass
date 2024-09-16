@@ -1,9 +1,14 @@
 # Hourglass Theme for Janeway
 
+## Minimum Janeway version
+
+1.7
+
 ## Installing
 
 1. Clone this repository into the theme folder of your
-   [Janeway](https://github.com/BirkbeckCTP/janeway) installation:
+   [Janeway](https://github.com/BirkbeckCTP/janeway) installation
+   (with the current minimum version):
 
    ```shell
    cd src/themes
