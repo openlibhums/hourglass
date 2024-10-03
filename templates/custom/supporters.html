@@ -30,7 +30,7 @@
         {% component_block "page_intro" %}
           {% fill "column_one" %}
             <p class="lead text-white">The OLH is supported by an international
-            network of library partners.</p>
+            network of {{ supporters.count }} library partners.</p>
           {% endfill %}
           {% fill "column_two" %}
             <p>Our supporters share our mission of returning academic journals
@@ -45,9 +45,9 @@
       <div class="relative mt-28">
         {% include 'custom/camera-man-bun-halfway.html' %}
         {% component_block "page_section" anchor="right" labelledby="supporters-by-country" %}
-          <h2 id="supporters-by-country" class="w-full">Supporters by country.</h2>
+          <h2 id="supporters-by-country" class="w-full">Find a supporter.</h2>
           {% component_block "filterable_list" list_id="supporters" value_names="country supporter" placeholder="e.g. Birkbeck" %}
-            {% regroup supporters by country as supporter_list %}
+            {% regroup supporters|dictsort:"country_name" by country as supporter_list %}
             <div class="list">
               {% for country, supporters_in_country in supporter_list %}
                 {% if country %}
