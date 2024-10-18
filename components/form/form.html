@@ -20,9 +20,11 @@
       {{ form.non_field_errors }}
     </div>
   {% endif %}
-  <p class="text-white px-2 pb-4">
-    * required field
-  </p>
+  {% if notify_required %}
+    <p class="text-white px-2 pb-4">
+      * required field
+    </p>
+  {% endif %}
   <div
     class="
       flex max-lg:flex-col lg:flex-wrap gap-y-4 gap-x-16
