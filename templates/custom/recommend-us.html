@@ -1,0 +1,53 @@
+{% extends "core/base.html" %}
+
+{% load static %}
+{% load component_tags %}
+
+{% block title %}
+  Recommend us - {{ request.press.name }}
+{% endblock title %}
+{% block meta_title %}
+  <meta
+    property="og:title"
+    content="Recommend us - {{ request.press.name }}">
+  <meta
+    name="twitter:title"
+    content="Recommend us - {{ request.press.name }}">
+{% endblock meta_title %}
+{% block meta_description %}
+  {% include "elements/meta_description.html" with desc="Recommend us to your library" %}
+{% endblock meta_description %}
+
+{% block body %}
+  <div class="container mx-auto max-w-screen-xl">
+    <div class="relative max-lg:mt-52 lg:top-0">
+      {% include 'custom/edit-on-github.html' with rel_path='custom/recommend-us.html' %}
+      {#{% include 'custom/astrolabe-opener.html' %}#}
+      {% include 'custom/generic-h1.html' with h1="Recommend us." %}
+    </div>
+    <div id="check_institution_block" class="relative">
+      {% component_block "timeline_section" alternate="odd" step="1" %}
+        <h2 class="text-white">Check if your library supports OLH.</h2>
+        {% component_block "form" notify_required=False %}
+          {% fill "fields" %}
+            {% component_block "form_field" id_for_label="search_supporters" label="Institution name" %}
+
+              {% component "form_input" type="search" id="search_supporters" name="supporter_query" %}
+            {% endcomponent_block %}
+          {% endfill %}
+          {% fill "button" %}
+            {% include 'custom/button-submit-white.html' with label="Search" %}
+          {% endfill %}
+        {% endcomponent_block %}
+      {% endcomponent_block %}
+      {% component_block "timeline_section" alternate="even" step="2" %}
+      {% endcomponent_block %}
+    </div>
+  </div>
+{% endblock body %}
+
+{% block js %}
+  <script defer type="module"
+    src="{% static 'hourglass/js/htmx.min.js' %}">
+  </script>
+{% endblock js %}

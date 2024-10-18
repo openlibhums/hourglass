@@ -15,8 +15,8 @@ class TimelineSection(component.Component):
             raise ImproperlyConfigured("Timeline section context must have alternate")
 
     def get_context_data(self, alternate, *args, **kwargs):
-        year = kwargs.pop('year', '')
+        step = kwargs.pop('step', '')
         context = super().get_context_data(*args, **kwargs)
         context['alternate'] = alternate
-        context['year'] = year
+        context['step'] = step
         return context

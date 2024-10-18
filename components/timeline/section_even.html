@@ -1,8 +1,8 @@
 {% load component_tags %}
 
 <section
-  id="y{{ year }}"
-  aria-labelledby="h3-{{ year }}"
+  id="step{{ step }}"
+  aria-labelledby="h3-{{ step }}"
   class="scroll-target relative mt-8">
   <div
     class="
@@ -35,9 +35,9 @@
           lg:absolute lg:-left-12
         ">
         <h3
-          id="h3-{{ year }}"
+          id="h3-{{ step }}"
           class="font-poppins-bold text-2xl mx-auto text-center">
-          {{ year }}
+          {{ step }}
         </h3>
       </div>
       <div class="prose lg:prose-lg">
