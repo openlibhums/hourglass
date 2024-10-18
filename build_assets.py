@@ -135,6 +135,20 @@ OTHER_SOURCE_PATHS = [
     (
         os.path.join(
             THEME_PATH,
+            'node_modules',
+            'htmx.org',
+            'dist',
+            'htmx.min.js',
+        ),
+        os.path.join(
+            DIST_PATH,
+            'js',
+            'htmx.min.js',
+        )
+    ),
+    (
+        os.path.join(
+            THEME_PATH,
             'src',
             'media',
         ),
