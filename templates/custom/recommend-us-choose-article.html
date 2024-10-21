@@ -1,0 +1,56 @@
+{% load static %}
+{% load component_tags %}
+
+<div id="recommend-us-choose-article">
+  {% component_block "timeline_section" alternate="odd" step="5" %}
+    <div class="text-white">
+      {% if articles %}
+        {% with article_count=articles.count %}
+          <h2 class="text-white">Article{{ article_count|pluralize }} matching your search.</h2>
+        {% endwith %}
+        <div class="not-prose">
+          <ul>
+            {% for article in articles %}
+              <li class="list-none">
+                <div>{{ article.how_to_cite }}</div>
+                {% component_block "form" form_method="POST" notify_required=False %}
+                  {% fill "button" %}
+                    <button
+                      hx-post="{% url 'recommend_us_generate_email' %}"
+                      hx-target="#recommend-us-generate-email"
+                      name="author"
+                      class="
+                        p-4 not-prose
+                        rounded-full border-2 border-white bg-blue
+                        flex gap-4 items-center
+                      ">
+                      {% with short_title=article.title|truncatewords_html:2 %}
+                        <span
+                          class="
+                            uppercase text-white
+                            font-poppins-bold text-xs tracking-widest
+                          ">
+                          Generate email with {{ short_title }}
+                        </span>
+                        <img
+                          class="h-4"
+                          src="{% static 'hourglass/media/icons/arrow-white.svg' %}"
+                          alt="">
+                      {% endwith %}
+                    </button>
+                  {% endfill %}
+                {% endcomponent_block %}
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
+        <p>Can’t find the right article?</p>
+      {% else %}
+        <h2 class="text-white">No matching articles.</h2>
+        <p>We couldn't find an article with that title. Please try modifying
+        your query or generate a generic template.</p>
+      {% endif %}
+    </div>
+  {% endcomponent_block %}
+  <div id="recommend-us-generate-email"></div>
+</div>

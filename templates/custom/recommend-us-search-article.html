@@ -1,0 +1,28 @@
+{% load component_tags %}
+
+<div id="recommend-us-search-article">
+  {% component_block "timeline_section" alternate="even" step="4" %}
+    <h2 class="text-white">Find your article.</h2>
+    {% component_block "form" form_method="POST" notify_required=False %}
+      {% fill "fields" %}
+        {% component_block "form_field" id_for_label="search_article" label="Article title" %}
+          {% component "form_input" type="search" id="search_article" name="article_query" %}
+        {% endcomponent_block %}
+      {% endfill %}
+      {% fill "button" %}
+        <button
+          hx-post="{% url 'recommend_us_choose_article' %}"
+          hx-target="#recommend-us-choose-article"
+          name="search"
+          class="
+            p-4 not-prose
+            rounded-full border-2 border-blue bg-white
+            flex gap-4 items-center
+          ">
+          {% include "custom/button-action-inner-blue.html" with label="Search" %}
+        </button>
+      {% endfill %}
+    {% endcomponent_block %}
+  {% endcomponent_block %}
+  <div id="recommend-us-choose-article"></div>
+</div>

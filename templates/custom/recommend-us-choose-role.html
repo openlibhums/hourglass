@@ -1,0 +1,70 @@
+{% load component_tags %}
+
+<div id="recommend-us-choose-role">
+  {% component_block "timeline_section" alternate="odd" step="3" %}
+    <h2 class="text-white">How do you know the OLH?</h2>
+    <form method="POST">
+      {% csrf_token %}
+      <div class="w-full flex flex-wrap gap-4 pt-4 items-center">
+        <div class="w-48">
+          <button
+            hx-post="{% url 'recommend_us_search_article' %}"
+            hx-target="#recommend-us-search-article"
+            name="author"
+            class="
+              p-4 not-prose
+              rounded-full border-2 border-white bg-blue
+              flex gap-4 items-center
+            ">
+            {% include "custom/button-action-inner-white.html" with label="Author" %}
+          </button>
+          <div class="w-36 p-3 text-white">of a paper in an OLH journal</div>
+        </div>
+        <div class="w-48">
+          <button
+            hx-post="{% url 'recommend_us_search_article' %}"
+            hx-target="#recommend-us-search-article"
+            name="author"
+            class="
+              p-4 not-prose
+              rounded-full border-2 border-white bg-blue
+              flex gap-4 items-center
+            ">
+            {% include "custom/button-action-inner-white.html" with label="Editor" %}
+          </button>
+          <div class="w-36 p-3 text-white">of an OLH journal</div>
+        </div>
+        <div class="w-48">
+          <button
+            hx-post="{% url 'recommend_us_search_article' %}"
+            hx-target="#recommend-us-search-article"
+            name="author"
+            class="
+              p-4 not-prose
+              rounded-full border-2 border-white bg-blue
+              flex gap-4 items-center
+            ">
+            {% include "custom/button-action-inner-white.html" with label="Reader" %}
+          </button>
+          <div class="w-36 p-3 text-white">of one of your journal articles</div>
+        </div>
+        <div class="w-48">
+          <button
+            hx-post="{% url 'recommend_us_search_article' %}"
+            hx-target="#recommend-us-search-article"
+            name="author"
+            class="
+              p-4 not-prose
+              rounded-full border-2 border-white bg-blue
+              flex gap-4 items-center
+            ">
+            {% include "custom/button-action-inner-white.html" with label="Other" %}
+          </button>
+          <div class="w-36 p-3 text-white">I just want to help!</div>
+        </div>
+      </div>
+    </form>
+
+  {% endcomponent_block %}
+  <div id="recommend-us-search-article"></div>
+</div>

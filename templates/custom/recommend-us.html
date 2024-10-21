@@ -27,21 +27,29 @@
     </div>
     <div id="check_institution_block" class="relative">
       {% component_block "timeline_section" alternate="odd" step="1" %}
-        <h2 class="text-white">Check if your library supports OLH.</h2>
-        {% component_block "form" notify_required=False %}
+        <h2 class="text-white">Check if your library supports the OLH.</h2>
+        {% component_block "form" form_method="POST" notify_required=False %}
           {% fill "fields" %}
-            {% component_block "form_field" id_for_label="search_supporters" label="Institution name" %}
-
-              {% component "form_input" type="search" id="search_supporters" name="supporter_query" %}
+            {% component_block "form_field" id_for_label="search_supporter" label="Institution name" %}
+              {% component "form_input" type="search" id="search_supporter" name="supporter_query" %}
             {% endcomponent_block %}
           {% endfill %}
           {% fill "button" %}
-            {% include 'custom/button-submit-white.html' with label="Search" %}
+            <button
+              hx-post="{% url 'recommend_us_see_matching_supporters' %}"
+              hx-target="#recommend-us-see-matching-supporters"
+              name="search"
+              class="
+                p-4 not-prose
+                rounded-full border-2 border-blue bg-white
+                flex gap-4 items-center
+              ">
+              {% include "custom/button-action-inner-blue.html" with label="Search" %}
+            </button>
           {% endfill %}
         {% endcomponent_block %}
       {% endcomponent_block %}
-      {% component_block "timeline_section" alternate="even" step="2" %}
-      {% endcomponent_block %}
+      <div id="recommend-us-see-matching-supporters"></div>
     </div>
   </div>
 {% endblock body %}
