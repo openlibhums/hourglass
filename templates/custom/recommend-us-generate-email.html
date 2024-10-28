@@ -1,0 +1,40 @@
+{% load static %}
+{% load component_tags %}
+{% load uuid %}
+
+{% get_uuid4 as pid %}
+{% component_block "timeline_section" alternate="even" step=step bg="bg-blue" %}
+  <div>
+    <h2 class="text-white">Voilà.</h2>
+    <p class="text-white">Here is an email to send to your librarian.</p>
+    <div class="text-black bg-white p-6 font-space-mono-regular">
+      <div id="email-text">
+        {{ email }}
+      </div>
+    </div>
+  </div>
+  <div class="flex mt-6">
+    {% component_block "form" notify_required=False default_button=False %}
+      {% component_block "button_group" %}
+        {% component_block "button" name="general" id=pid type="button" %}
+          Copy to clipboard
+        {% endcomponent_block %}
+        {% url "recommend_us" as rel_path %}
+        {% include "custom/button-action-white.html" with rel_path=rel_path label="Start over" %}
+      {% endcomponent_block %}
+    {% endcomponent_block %}
+  </div>
+  <script defer type="module">
+    const emailText = document.querySelector('#email-text');
+    const copyButton = document.querySelector('#{{ pid }}');
+    copyButton.addEventListener('click', () => setClipboard(emailText.innerHTML));
+    async function setClipboard(text) {
+      const type = "text/html";
+      const blob = new Blob([text], { type });
+      const data = [new ClipboardItem({ [type]: blob })];
+      await navigator.clipboard.write(data);
+      copyButton.querySelector('span').innerHTML = 'Copied';
+      copyButton.querySelector('svg').remove();
+    }
+  </script>
+{% endcomponent_block %}

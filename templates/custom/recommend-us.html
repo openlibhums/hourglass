@@ -1,0 +1,57 @@
+{% extends "core/base.html" %}
+
+{% load static %}
+{% load component_tags %}
+{% load uuid %}
+
+{% block title %}
+  Recommend us - {{ request.press.name }}
+{% endblock title %}
+{% block meta_title %}
+  <meta
+    property="og:title"
+    content="Recommend us - {{ request.press.name }}">
+  <meta
+    name="twitter:title"
+    content="Recommend us - {{ request.press.name }}">
+{% endblock meta_title %}
+{% block meta_description %}
+  {% include "elements/meta_description.html" with desc="Recommend us to your library" %}
+{% endblock meta_description %}
+
+{% block body %}
+  <div class="container mx-auto max-w-screen-xl">
+    <div class="relative max-lg:mt-52 lg:top-0">
+      {% include 'custom/edit-on-github.html' with rel_path='custom/recommend-us.html' %}
+      {#{% include 'custom/astrolabe-opener.html' %}#}
+      {% include 'custom/generic-h1.html' with h1="Recommend us." %}
+    </div>
+    <div class="relative">
+      {% get_uuid4 as aria_controls %}
+      {% component_block "timeline_section" alternate="odd" step=step bg="bg-blue" %}
+        <h2 class="text-white">Check if your library supports the OLH.</h2>
+        <p class="text-white">We can create an email for you to send if they
+        are not members yet.</p>
+        {% component_block "form" form_method="POST" notify_required=False default_button=False %}
+          {% component_block "form_field" id_for_label="search_supporter" label="Institution name" required=True %}
+            {% component "form_input" type="search" id="search_supporter" name="supporter_query" %}
+          {% endcomponent_block %}
+          {% component_block "button_group"  %}
+            {% url 'recommend_us_see_matching_supporters' as hx_post %}
+            {% component_block "button" hx_post=hx_post aria_controls=aria_controls %}
+              Search
+            {% endcomponent_block %}
+          {% endcomponent_block %}
+        {% endcomponent_block %}
+      {% endcomponent_block %}
+      <div id="{{ aria_controls }}"></div>
+    </div>
+    {% include "custom/subscribe.html" %}
+  </div>
+{% endblock body %}
+
+{% block js %}
+  <script defer type="module"
+    src="{% static 'hourglass/js/htmx.min.js' %}">
+  </script>
+{% endblock js %}
