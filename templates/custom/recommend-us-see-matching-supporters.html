@@ -1,0 +1,32 @@
+{% load component_tags %}
+{% load uuid %}
+
+{% get_uuid4 as aria_controls %}
+{% component_block "timeline_section" alternate="even" step=step bg="bg-blue" %}
+  <div class="text-white">
+    {% if supporters %}
+      <h2 class="text-white">Current members with “{{ query }}”.</h2>
+      <p>These institutions are already members:</p>
+      <ul>
+        {% for supporter in supporters %}
+          <li class="list-none">
+            {{ supporter.name }}, {{ supporter.country.name }}
+          </li>
+        {% endfor %}
+      </ul>
+    {% else %}
+      <h2 class="text-white">No matches for “{{ query }}”.</h2>
+    {% endif %}
+    <p>If your library is not here, they are not a member yet... Help us reach them!</p>
+    <p>Fill in your details to generate a template email to your library.</p>
+    {% component_block "form" form_method="POST" notify_required=False default_button=False %}
+      {% component_block "button_group"  %}
+        {% url 'recommend_us_choose_role' as hx_post %}
+        {% component_block "button" hx_post=hx_post aria_controls=aria_controls %}
+          Fill in details
+        {% endcomponent_block %}
+      {% endcomponent_block %}
+    {% endcomponent_block %}
+  </div>
+{% endcomponent_block %}
+<div id="{{ aria_controls }}"></div>
