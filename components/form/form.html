@@ -39,9 +39,16 @@
     {% endslot %}
   </div>
   {% slot "other" %}{% endslot %}
+  {% slot "buttons" %}{% endslot %}
   <div class="w-full flex flex-col items-end pt-4">
+    {% comment %}
+      The "button" slot is deprecated, as it assumes an end-aligned button.
+      Use the component "button-group" inside the "fields" slot or "buttons" slot instead.
+    {% endcomment %}
     {% slot "button" %}
-      {% include 'custom/button-submit-white.html' with label="Submit" %}
+      {% if default_button %}
+        {% include 'custom/button-submit-white.html' with label="Submit" %}
+      {% endif %}
     {% endslot %}
   </div>
 </form>

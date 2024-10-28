@@ -1,0 +1,68 @@
+{% comment %}
+{% endcomment %}
+
+{% load component_tags %}
+{% load static %}
+{% load uuid %}
+
+{% get_uuid4 as pid %}
+
+<button
+  data-{{ pid }}
+  {% if hx_post %}
+    hx-post="{{ hx_post }}"
+  {% endif %}
+  {% if hx_target %}
+    hx-target="{{ hx_target }}"
+  {% endif %}
+  {% if aria_controls %}
+    aria-controls="{{ aria_controls }}"
+    aria-expanded="false"
+    aria-pressed="false"
+  {% endif %}
+  {% if id %}
+    id="{{ id }}"
+  {% endif %}
+  name="{{ name }}"
+  value="{{ value }}"
+  type="{{ type }}"
+  class="
+    p-4 not-prose
+    rounded-full border {{ border }} {{ fg }} {{ bg }}
+    flex gap-4 items-center
+  "
+  {% for attr in data_attributes %}
+    {{ attr }}
+  {% endfor %}
+  >
+  <span
+    class="
+      uppercase
+      font-poppins-bold text-xs tracking-widest
+    ">
+    {% slot "text" default %}
+      Button
+    {% endslot %}
+  </span>
+  {% include "elements/icons/arrow.html" %}
+</button>
+<script defer type="module">
+  // This currently only works for buttons with white text and border.
+  const thisButton = document.querySelector('[data-{{ pid }}]');
+  const form = thisButton.closest('form');
+  const allButtons = form.querySelectorAll('button');
+  thisButton.addEventListener('click', () => {
+    for (const button of allButtons) {
+      button.classList.remove('bg-white');
+      button.classList.remove('text-blue');
+      button.classList.add('text-white');
+      button.setAttribute('aria-pressed', 'false');
+    thisButton.setAttribute('aria-expanded', 'false');
+    }
+    thisButton.classList.add('bg-white');
+    thisButton.classList.add('text-blue');
+    thisButton.classList.remove('text-white');
+    thisButton.setAttribute('aria-pressed', 'true');
+    thisButton.setAttribute('aria-expanded', 'true');
+  })
+</script>
