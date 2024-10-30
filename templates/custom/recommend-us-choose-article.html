@@ -14,7 +14,7 @@
         <div class="not-prose">
           <ul>
             {% for article in articles %}
-              <li class="list-none">
+              <li class="list-none mt-4">
                 <div>{{ article.how_to_cite }}</div>
                 {% component_block "button_group"  %}
                   {% url 'recommend_us_generate_email' as hx_post %}
