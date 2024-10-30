@@ -18,7 +18,6 @@
   {% if aria_controls %}
     aria-controls="{{ aria_controls }}"
     aria-expanded="false"
-    aria-pressed="false"
   {% endif %}
   {% if id %}
     id="{{ id }}"
@@ -30,16 +29,8 @@
     p-4 not-prose
     rounded-full border {{ border }} {{ fg }} {{ bg }}
     flex gap-4 items-center
-  "
-  {% for attr in data_attributes %}
-    {{ attr }}
-  {% endfor %}
-  >
-  <span
-    class="
-      uppercase
-      font-poppins-bold text-xs tracking-widest
-    ">
+  ">
+  <span class="uppercase font-poppins-bold text-xs tracking-widest">
     {% slot "text" default %}
       Button
     {% endslot %}
@@ -51,18 +42,23 @@
   const thisButton = document.querySelector('[data-{{ pid }}]');
   const form = thisButton.closest('form');
   const allButtons = form.querySelectorAll('button');
+  // Make it clear the button is selected and that it has opened
+  // new content in the next section of the page.
   thisButton.addEventListener('click', () => {
+    // First return other buttons in this form to normal
     for (const button of allButtons) {
       button.classList.remove('bg-white');
       button.classList.remove('text-blue');
       button.classList.add('text-white');
-      button.setAttribute('aria-pressed', 'false');
-    thisButton.setAttribute('aria-expanded', 'false');
+      if (button.hasAttribute('aria-controls')) {
+        button.setAttribute('aria-expanded', 'false');
+      }
     }
     thisButton.classList.add('bg-white');
     thisButton.classList.add('text-blue');
     thisButton.classList.remove('text-white');
-    thisButton.setAttribute('aria-pressed', 'true');
-    thisButton.setAttribute('aria-expanded', 'true');
+    if (thisButton.hasAttribute('aria-controls')) {
+      thisButton.setAttribute('aria-expanded', 'true');
+    }
   })
 </script>
