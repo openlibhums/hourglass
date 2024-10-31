@@ -16,7 +16,7 @@ class TimelineSection(component.Component):
 
     def get_context_data(self, alternate, *args, **kwargs):
         step = kwargs.pop('step', '')
-        bg = kwargs.pop('bg', 'bg-tan')
+        bg = kwargs.pop('bg', 'bg-white')
         context = super().get_context_data(*args, **kwargs)
         context['alternate'] = alternate
         context['step'] = step
