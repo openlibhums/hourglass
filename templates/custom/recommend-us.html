@@ -21,10 +21,10 @@
 
 {% block body %}
   <div class="container mx-auto max-w-screen-xl">
-    <div class="relative max-lg:mt-52 lg:top-0">
+    <div class="relative max-lg:mt-56 lg:mt-8">
       {% include 'custom/edit-on-github.html' with rel_path='custom/recommend-us.html' %}
-      {#{% include 'custom/astrolabe-opener.html' %}#}
-      {% include 'custom/generic-h1.html' with h1="Recommend us." %}
+      {% include "custom/typewriter-opener.html" %}
+      {% include 'custom/generic-h1.html' with h1="Recommend<br> us." %}
     </div>
     <div class="relative">
       {% get_uuid4 as aria_controls %}
@@ -44,7 +44,7 @@
           {% endcomponent_block %}
         {% endcomponent_block %}
       {% endcomponent_block %}
-      <div id="{{ aria_controls }}"></div>
+      <div id="{{ aria_controls }}" class="min-h-48"></div>
     </div>
     {% include "custom/subscribe.html" %}
   </div>
