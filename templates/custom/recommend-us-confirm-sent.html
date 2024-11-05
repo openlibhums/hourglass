@@ -1,0 +1,13 @@
+{% load component_tags %}
+{% load humanize %}
+
+{% component_block "timeline_section" alternate="odd" step=step bg="bg-blue" %}
+  <div class="text-white">
+    <h2 class="text-white">Thank you for supporting open access.</h2>
+    <p>Library support has helped us to make over 
+    {{ request.press.published_articles.count|intcomma }} articles
+    diamond open access so far, saving university libraries an estimated £33.9
+    million since 2015. By recommending us to your librarian, you are helping to keep
+    knowledge free. Thank you.</p>
+  </div>
+{% endcomponent_block %}
