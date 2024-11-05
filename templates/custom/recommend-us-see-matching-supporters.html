@@ -14,10 +14,11 @@
           </li>
         {% endfor %}
       </ul>
+      <p>If your library is not here, they are not a member yet... Help us reach them!</p>
     {% else %}
       <h2 class="text-white">No matches for “{{ query }}”.</h2>
+      <p>It looks like your library isn’t an OLH supporter yet... Help us reach them!</p>
     {% endif %}
-    <p>If your library is not here, they are not a member yet... Help us reach them!</p>
     <p>Fill in your details to generate a template email to your library.</p>
     {% component_block "form" form_method="POST" notify_required=False default_button=False %}
       {% component_block "button_group"  %}
