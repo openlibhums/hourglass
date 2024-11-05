@@ -12,8 +12,10 @@
     {% endcomponent_block %}
     <input hidden name="role" value="{{ role }}">
     {% url 'recommend_us_choose_journal' as hx_post %}
-    {% component_block "button" hx_post=hx_post aria_controls=aria_controls %}
-      Search
+    {% component_block "button_group" %}
+      {% component_block "button" hx_post=hx_post aria_controls=aria_controls %}
+        Search
+      {% endcomponent_block %}
     {% endcomponent_block %}
   {% endcomponent_block %}
 {% endcomponent_block %}

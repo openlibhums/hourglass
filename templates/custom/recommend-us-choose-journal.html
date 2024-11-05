@@ -9,7 +9,9 @@
       <input hidden name="role" value="{{ role }}">
       {% if journal_names %}
         {% with journal_count=journal_names.count %}
-          <h2 class="text-white">Journal{{ journal_count|pluralize }} with “{{ query }}”.</h2>
+          <h2 class="text-white">
+            Journal{{ journal_count|pluralize }} with “{{ query }}”.
+          </h2>
         {% endwith %}
         <div class="not-prose">
           <ul>
@@ -27,17 +29,17 @@
           </ul>
         </div>
         <p>Can’t find your journal?</p>
-        {% component_block "button_group"  %}
-          {% url 'recommend_us_generate_email' as hx_post %}
-          {% component_block "button" name="general" hx_post=hx_post aria_controls=aria_controls %}
-            Get a general email
-          {% endcomponent_block %}
-        {% endcomponent_block %}
       {% else %}
         <h2 class="text-white">No matches for “{{ query }}”.</h2>
         <p>We couldn't find a journal matching your search. Please try modifying
         your search terms or generate a generic template.</p>
       {% endif %}
+      {% component_block "button_group"  %}
+        {% url 'recommend_us_generate_email' as hx_post %}
+        {% component_block "button" name="general" hx_post=hx_post aria_controls=aria_controls %}
+          Get a general email
+        {% endcomponent_block %}
+      {% endcomponent_block %}
     {% endcomponent_block %}
   </div>
 {% endcomponent_block %}
