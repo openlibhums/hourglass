@@ -7,7 +7,12 @@
 {% component_block "timeline_section" alternate="even" step=step bg="bg-blue" %}
   <div>
     <h2 class="text-white">Voilà.</h2>
-    <p class="text-white">Here is an email to send to your librarian.</p>
+    <p class="text-white">Here is an email to send to your library. Just copy
+    and paste this text into an email to your librarian to help us reach them.
+    You should be able to find your library’s contact email address on your
+    institution’s website. If you’re having problems finding the right email
+    address, <a class="text-white" href="/contact/">contact us</a> and we’ll
+    help.</p>
     <div class="text-black bg-white p-6 font-space-mono-regular">
       <div id="email-text">
         {{ email }}
@@ -39,7 +44,7 @@
       {% component_block "button_group" %}
         {% url 'recommend_us_confirm_sent' as hx_post %}
         {% component_block "button" hx_post=hx_post aria_controls=aria_controls %}
-          I've emailed my library
+          I’ve emailed my library
         {% endcomponent_block %}
       {% endcomponent_block %}
     {% endcomponent_block %}

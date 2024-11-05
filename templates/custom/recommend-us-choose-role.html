@@ -3,9 +3,10 @@
 
 {% get_uuid4 as aria_controls %}
 {% component_block "timeline_section" alternate="odd" step=step bg="bg-blue" %}
-  <h2 class="text-white">How do you know the OLH?</h2>
+  <h2 class="text-white">How do you know about the OLH?</h2>
   <form method="POST">
     {% csrf_token %}
+    <p class="text-white">Are you an...<p>
     <div class="w-full flex flex-wrap gap-4 pt-4 items-center">
       <div class="w-48">
         {% url 'recommend_us_search_article' as hx_post %}
