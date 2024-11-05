@@ -19,6 +19,15 @@
         {% component_block "button" name="general" id=pid type="button" %}
           Copy to clipboard
         {% endcomponent_block %}
+        <a
+          class="
+            p-4 not-prose
+            border rounded-full border-white
+            flex gap-4 items-center
+          "
+          href="mailto:?subject=Joining the OLH&body={{ email|striptags|urlencode }}">
+          {% include "custom/button-action-inner-white.html" with label="Open in email" %}
+        </a>
         {% url "recommend_us" as rel_path %}
         {% include "custom/button-action-white.html" with rel_path=rel_path label="Start over" %}
       {% endcomponent_block %}
