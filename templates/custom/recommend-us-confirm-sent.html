@@ -1,6 +1,8 @@
 {% load component_tags %}
 {% load humanize %}
+{% load uuid %}
 
+{% get_uuid4 as copy_pid %}
 {% component_block "timeline_section" alternate="odd" step=step bg="bg-blue" %}
   <div class="text-white">
     <h2 class="text-white">Thank you for supporting open access.</h2>
@@ -9,5 +11,25 @@
     diamond open access so far, saving university libraries an estimated £33.9
     million since 2015. By recommending us to your librarian, you are helping to keep
     knowledge free. Thank you.</p>
+    <p>One more thing... Please share this page on social media so others
+    recommend us.</p>
+    {% component_block "button_group" %}
+      {% component_block "button" name="general" id=copy_pid type="button" %}
+        Copy link to this page
+      {% endcomponent_block %}
+    {% endcomponent_block %}
   </div>
+  <script defer type="module">
+    const copyButton = document.querySelector('#{{ copy_pid }}');
+    copyButton.addEventListener('click', () => writeToClipboard(window.location.href));
+    async function writeToClipboard(text) {
+      try {
+        await navigator.clipboard.writeText(text);
+        copyButton.querySelector('span').innerHTML = 'Copied';
+        copyButton.querySelector('svg').remove();
+      } catch {
+        return
+      }
+    }
+  </script>
 {% endcomponent_block %}
