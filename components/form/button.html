@@ -59,6 +59,9 @@
     thisButton.classList.remove('text-white');
     if (thisButton.hasAttribute('aria-controls')) {
       thisButton.setAttribute('aria-expanded', 'true');
+      const controlledId = thisButton.getAttribute('aria-controls');
+      const controlledElement = document.querySelector(`#${controlledId}`);
+      controlledElement.scrollIntoView({ behavior: 'smooth'});
     }
   })
 </script>
