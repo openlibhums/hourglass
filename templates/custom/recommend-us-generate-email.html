@@ -2,7 +2,8 @@
 {% load component_tags %}
 {% load uuid %}
 
-{% get_uuid4 as pid %}
+{% get_uuid4 as copy_pid %}
+{% get_uuid4 as aria_controls %}
 {% component_block "timeline_section" alternate="even" step=step bg="bg-blue" %}
   <div>
     <h2 class="text-white">Voilà.</h2>
@@ -14,9 +15,10 @@
     </div>
   </div>
   <div class="flex mt-6">
-    {% component_block "form" notify_required=False default_button=False %}
+    {% component_block "form" form_method="POST" notify_required=False default_button=False %}
+      <input hidden name="previous_step" value="{{ step }}">
       {% component_block "button_group" %}
-        {% component_block "button" name="general" id=pid type="button" %}
+        {% component_block "button" name="general" id=copy_pid type="button" %}
           Copy to clipboard
         {% endcomponent_block %}
         <a
@@ -25,25 +27,39 @@
             border rounded-full border-white
             flex gap-4 items-center
           "
+          target="_blank"
+          rel="noopener"
           href="mailto:?subject=Joining the OLH&body={{ email|striptags|urlencode }}">
           {% include "custom/button-action-inner-white.html" with label="Open in email" %}
         </a>
         {% url "recommend_us" as rel_path %}
         {% include "custom/button-action-white.html" with rel_path=rel_path label="Start over" %}
       {% endcomponent_block %}
+      <p class="text-white">Have you sent the email to your library?</p>
+      {% component_block "button_group" %}
+        {% url 'recommend_us_confirm_sent' as hx_post %}
+        {% component_block "button" hx_post=hx_post aria_controls=aria_controls %}
+          I've emailed my library
+        {% endcomponent_block %}
+      {% endcomponent_block %}
     {% endcomponent_block %}
   </div>
   <script defer type="module">
     const emailText = document.querySelector('#email-text');
-    const copyButton = document.querySelector('#{{ pid }}');
+    const copyButton = document.querySelector('#{{ copy_pid }}');
     copyButton.addEventListener('click', () => setClipboard(emailText.innerHTML));
     async function setClipboard(text) {
       const type = "text/html";
       const blob = new Blob([text], { type });
       const data = [new ClipboardItem({ [type]: blob })];
       await navigator.clipboard.write(data);
-      copyButton.querySelector('span').innerHTML = 'Copied';
-      copyButton.querySelector('svg').remove();
+      try {
+        copyButton.querySelector('span').innerHTML = 'Copied';
+        copyButton.querySelector('svg').remove();
+      } except {
+        return
+      }
     }
   </script>
 {% endcomponent_block %}
+<div id="{{ aria_controls }}"></div>
