@@ -14,7 +14,7 @@
     address, <a class="text-white" href="/contact/">contact us</a> and we’ll
     help.</p>
     <div class="text-black bg-white p-6 font-space-mono-regular">
-      <div id="email-text">
+      <div id="email-text" class="whitespace-pre-line">
         {{ email }}
       </div>
     </div>
@@ -51,18 +51,14 @@
   </div>
   <script defer type="module">
     const emailText = document.querySelector('#email-text');
+    const textToCopy = emailText?.innerHTML?.trim();
     const copyButton = document.querySelector('#{{ copy_pid }}');
-    copyButton.addEventListener('click', () => setClipboard(emailText.innerHTML));
-    async function setClipboard(text) {
-      const type = "text/html";
-      const blob = new Blob([text], { type });
-      const data = [new ClipboardItem({ [type]: blob })];
-      await navigator.clipboard.write(data);
-      try {
-        copyButton.querySelector('span').innerHTML = 'Copied';
-        copyButton.querySelector('svg').remove();
-      } catch {
-        return
+    copyButton.addEventListener('click', () => writeToClipboard(textToCopy));
+    async function writeToClipboard(text) {
+      await navigator.clipboard.writeText(text);
+      const label = copyButton.querySelector('span').innerHTML;
+      if (label.trim() === 'Copy to clipboard') {
+        copyButton.querySelector('span').innerHTML = 'Copy again';
       }
     }
   </script>
