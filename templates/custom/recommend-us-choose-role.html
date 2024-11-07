@@ -4,7 +4,7 @@
 {% get_uuid4 as aria_controls %}
 {% component_block "timeline_section" alternate="odd" step=step bg="bg-blue" %}
   <h2 class="text-white">How do you know about the OLH?</h2>
-  <form method="POST">
+  {% component_block "form" form_method="POST" notify_required=False default_button=False %}
     {% csrf_token %}
     <p class="text-white">Are you an...<p>
     <div class="w-full flex flex-wrap gap-4 pt-4 items-center">
@@ -37,7 +37,6 @@
         <div class="w-36 p-3 text-white">I just want to help!</div>
       </div>
     </div>
-  </form>
-
+  {% endcomponent_block %}
 {% endcomponent_block %}
 <div id="{{ aria_controls }}"></div>
