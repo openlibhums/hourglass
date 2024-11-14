@@ -48,13 +48,14 @@
         <h2 id="open-access-advocacy">Open access advocacy.</h2>
         {% component_block "filterable_list" list_id="advocacy" value_names="name type description date" placeholder="e.g. brochure" %}
           <div class="overflow-x-auto">
+            {# TableA11y header cells in first row, ambiguous data #}
             <table>
               <thead>
                 <tr>
-                  <th>Name</th>
-                  <th>Type</th>
-                  <th>Description</th>
-                  <th>Date</th>
+                  <th scope="col" >Name</th>
+                  <th scope="col" >Type</th>
+                  <th scope="col" >Description</th>
+                  <th scope="col" >Date</th>
                 </tr>
               </thead>
               <tbody class="list">
@@ -161,13 +162,14 @@
         <h2 id="olh-archive">The OLH archive.</h2>
         <div class="overflow-x-auto">
           {% component_block "filterable_list" list_id="archive" value_names="name type description date" placeholder="e.g. Janeway" %}
-            <table>
+          {# TableA11y header cells in first row, ambiguous data #}  
+          <table>
               <thead>
                 <tr>
-                  <th>Name</th>
-                  <th>Type</th>
-                  <th>Description</th>
-                  <th>Date</th>
+                  <th scope="col" >Name</th>
+                  <th scope="col" >Type</th>
+                  <th scope="col" >Description</th>
+                  <th scope="col" >Date</th>
                 </tr>
               </thead>
               <tbody class="list">
