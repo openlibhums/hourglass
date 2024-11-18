@@ -3,12 +3,12 @@
 {% load uuid %}
 
 {% get_uuid4 as aria_controls %}
-{% component_block "timeline_section" alternate="odd" step=step bg="bg-blue" %}
-  <div class="text-white">
-    {% component_block "form" form_method="POST" notify_required=False default_button=False %}
-      <input hidden name="previous_step" value="{{ step }}">
-      <input hidden name="goal" value="{{ goal }}">
-      <input hidden name="role" value="{{ role }}">
+{% component_block "timeline_section" alternate="odd" step=step bg="bg-blue" prose=False %}
+  {% component_block "form" form_method="POST" notify_required=False default_button=False %}
+    <input hidden name="previous_step" value="{{ step }}">
+    <input hidden name="goal" value="{{ goal }}">
+    <input hidden name="role" value="{{ role }}">
+    <div class="prose lg:prose-lg text-white">
       {% if articles %}
         {% with article_count=articles.count %}
           <h2 class="text-white">Article{{ article_count|pluralize }} with “{{ query }}”.</h2>
@@ -34,13 +34,13 @@
         <p>We couldn't find an article with that title. Please try modifying
         your query or generate a generic template.</p>
       {% endif %}
-      {% component_block "button_group"  %}
-        {% url 'recommend_us_generate_email' as hx_post %}
-        {% component_block "button" hx_post=hx_post aria_controls=aria_controls %}
-          Get a general email
-        {% endcomponent_block %}
+    </div>
+    {% component_block "button_group"  %}
+      {% url 'recommend_us_generate_email' as hx_post %}
+      {% component_block "button" hx_post=hx_post aria_controls=aria_controls %}
+        Get a general email
       {% endcomponent_block %}
     {% endcomponent_block %}
-  </div>
+  {% endcomponent_block %}
 {% endcomponent_block %}
 <div id="{{ aria_controls }}"></div>

@@ -3,12 +3,12 @@
 {% load uuid %}
 
 {% get_uuid4 as aria_controls %}
-{% component_block "timeline_section" alternate="odd" step=step bg="bg-blue" %}
-  <div class="text-white">
-    {% component_block "form" form_method="POST" notify_required=False default_button=False %}
-      <input hidden name="previous_step" value="{{ step }}">
-      <input hidden name="goal" value="{{ goal }}">
-      <input hidden name="role" value="{{ role }}">
+{% component_block "timeline_section" alternate="odd" step=step bg="bg-blue" prose=False %}
+  {% component_block "form" form_method="POST" notify_required=False default_button=False %}
+    <input hidden name="previous_step" value="{{ step }}">
+    <input hidden name="goal" value="{{ goal }}">
+    <input hidden name="role" value="{{ role }}">
+    <div class="prose lg:prose-lg text-white">
       {% if journal_names %}
         {% with journal_count=journal_names.count %}
           <h2 class="text-white">
@@ -42,7 +42,7 @@
           Get a general email
         {% endcomponent_block %}
       {% endcomponent_block %}
-    {% endcomponent_block %}
-  </div>
+    </div>
+  {% endcomponent_block %}
 {% endcomponent_block %}
 <div id="{{ aria_controls }}"></div>
