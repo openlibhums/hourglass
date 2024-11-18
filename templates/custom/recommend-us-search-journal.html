@@ -7,10 +7,12 @@
     Find your journal.
   </h2>
   {% component_block "form" form_method="POST" notify_required=False default_button=False %}
+    <input hidden name="previous_step" value="{{ step }}">
+    <input hidden name="goal" value="{{ goal }}">
+    <input hidden name="role" value="{{ role }}">
     {% component_block "form_field" id_for_label="search_journal" label="Journal name" %}
       {% component "form_input" type="search" id="search_journal" name="journal_query" %}
     {% endcomponent_block %}
-    <input hidden name="role" value="{{ role }}">
     {% url 'recommend_us_choose_journal' as hx_post %}
     {% component_block "button_group" %}
       {% component_block "button" hx_post=hx_post aria_controls=aria_controls %}

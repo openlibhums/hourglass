@@ -6,6 +6,8 @@
 {% component_block "timeline_section" alternate="odd" step=step bg="bg-blue" %}
   <div class="text-white">
     {% component_block "form" form_method="POST" notify_required=False default_button=False %}
+      <input hidden name="previous_step" value="{{ step }}">
+      <input hidden name="goal" value="{{ goal }}">
       <input hidden name="role" value="{{ role }}">
       {% if journal_names %}
         {% with journal_count=journal_names.count %}
@@ -36,7 +38,7 @@
       {% endif %}
       {% component_block "button_group"  %}
         {% url 'recommend_us_generate_email' as hx_post %}
-        {% component_block "button" name="general" hx_post=hx_post aria_controls=aria_controls %}
+        {% component_block "button" hx_post=hx_post aria_controls=aria_controls %}
           Get a general email
         {% endcomponent_block %}
       {% endcomponent_block %}

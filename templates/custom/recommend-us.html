@@ -33,6 +33,7 @@
         <p class="text-white">We can create an email for you to send if they
         are not members yet.</p>
         {% component_block "form" form_method="POST" notify_required=False default_button=False %}
+          <input hidden name="previous_step" value="{{ step }}">
           {% component_block "form_field" id_for_label="search_supporter" label="Institution name" required=True %}
             {% component "form_input" type="search" id="search_supporter" name="supporter_query" %}
           {% endcomponent_block %}

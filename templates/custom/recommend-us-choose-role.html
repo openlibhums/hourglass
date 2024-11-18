@@ -5,33 +5,34 @@
 {% component_block "timeline_section" alternate="odd" step=step bg="bg-blue" %}
   <h2 class="text-white">How do you know about the OLH?</h2>
   {% component_block "form" form_method="POST" notify_required=False default_button=False %}
-    {% csrf_token %}
+    <input hidden name="previous_step" value="{{ step }}">
+    <input hidden name="goal" value="{{ goal }}">
     <p class="text-white">Are you an...<p>
     <div class="w-full flex flex-wrap gap-4 pt-4 items-center">
       <div class="w-48">
         {% url 'recommend_us_search_article' as hx_post %}
-        {% component_block "button" name="author" hx_post=hx_post aria_controls=aria_controls %}
+        {% component_block "button" name="role" value="author" hx_post=hx_post aria_controls=aria_controls %}
           Author
         {% endcomponent_block %}
         <div class="w-36 p-3 text-white">of a paper in an OLH journal</div>
       </div>
       <div class="w-48">
         {% url 'recommend_us_search_journal' as hx_post %}
-        {% component_block "button" name="editor" hx_post=hx_post aria_controls=aria_controls %}
+        {% component_block "button" name="role" value="editor" hx_post=hx_post aria_controls=aria_controls %}
           Editor
         {% endcomponent_block %}
         <div class="w-36 p-3 text-white">of an OLH journal</div>
       </div>
       <div class="w-48">
         {% url 'recommend_us_search_article' as hx_post %}
-        {% component_block "button" name="reader" hx_post=hx_post aria_controls=aria_controls %}
+        {% component_block "button" name="role" value="reader" hx_post=hx_post aria_controls=aria_controls %}
           Reader
         {% endcomponent_block %}
         <div class="w-36 p-3 text-white">of one of your journal articles</div>
       </div>
       <div class="w-48">
         {% url 'recommend_us_generate_email' as hx_post %}
-        {% component_block "button" name="other" hx_post=hx_post aria_controls=aria_controls %}
+        {% component_block "button" name="role" value="general" hx_post=hx_post aria_controls=aria_controls %}
           Other
         {% endcomponent_block %}
         <div class="w-36 p-3 text-white">I just want to help!</div>
