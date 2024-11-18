@@ -4,8 +4,8 @@
 
 {% get_uuid4 as copy_pid %}
 {% get_uuid4 as aria_controls %}
-{% component_block "timeline_section" alternate="even" step=step bg="bg-blue" %}
-  <div>
+{% component_block "timeline_section" alternate="even" step=step bg="bg-blue" prose=False %}
+  <div class="prose lg:prose-lg text-white">
     <h2 class="text-white">Voilà.</h2>
     <p class="text-white">Here is an email to send to your library. Just copy
     and paste this text into an email to your librarian to help us reach them.
@@ -40,7 +40,9 @@
         {% url "recommend_us" as rel_path %}
         {% include "custom/button-action-white.html" with rel_path=rel_path label="Start over" %}
       {% endcomponent_block %}
-      <p class="text-white">Have you sent the email to your library?</p>
+      <div class="prose lg:prose-lg text-white">
+        <p>Have you sent the email to your library?</p>
+      </div>
       {% component_block "button_group" %}
         {% url 'recommend_us_confirm_sent' as hx_post %}
         {% component_block "button" hx_post=hx_post aria_controls=aria_controls %}
