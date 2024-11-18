@@ -50,7 +50,13 @@
           {{ step }}
         </h3>
       </div>
-      <div class="prose lg:prose-lg w-full">
+      <div
+        class="
+          w-full
+          {% if prose %}
+            prose lg:prose-lg
+          {% endif %}
+        ">
         {% slot 'content' default %}{% endslot %}
       </div>
     </div>
