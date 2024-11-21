@@ -20,6 +20,9 @@
 {% endblock meta_description %}
 
 {% block body %}
+
+
+
   <div class="container mx-auto max-w-screen-xl">
     <div class="relative max-lg:mt-56 lg:mt-8">
       {% include 'custom/edit-on-github.html' with rel_path='custom/recommend-us.html' %}
@@ -27,14 +30,26 @@
       {% include 'custom/generic-h1.html' with h1="Recommend<br> us." %}
     </div>
     <div class="relative">
+      {% component_block "page_intro" %}
+        {% fill "column_one" %}
+          <p class="lead text-white">Like what we do? Help us to keep knowledge
+          free.</p>
+        {% endfill %}
+        {% fill "column_two" %}
+          <p>Use this quick tool to generate a personalised email to your
+          library to recommend they join the OLH, or thank them for being a
+          supporter.</p>
+        {% endfill %}
+      {% endcomponent_block %}
+    </div>
+    <div class="relative mt-28">
       {% get_uuid4 as aria_controls %}
       {% component_block "timeline_section" alternate="odd" step=step bg="bg-blue" prose=False %}
         {% component_block "form" form_method="POST" notify_required=False default_button=False %}
           <input hidden name="previous_step" value="{{ step }}">
           <div class="prose lg:prose-lg text-white">
             <h2 class="text-white">Check if your library supports the OLH.</h2>
-            <p>We can create an email for you to send if they
-            are not members yet.</p>
+            <p>First, enter the name of your institution below.</p>
           </div>
           {% component_block "form_field" id_for_label="search_supporter" label="Institution name" required=True %}
             {% component "form_input" type="search" id="search_supporter" name="supporter_query" %}
