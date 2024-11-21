@@ -23,9 +23,6 @@
     {% component_block "form" form_method="POST" notify_required=False default_button=False %}
       <input hidden name="previous_step" value="{{ step }}">
       {% component_block "button_group" %}
-        {% component_block "button" name="general" id=copy_pid type="button" %}
-          Copy to clipboard
-        {% endcomponent_block %}
         <a
           class="
             p-4 not-prose
@@ -37,6 +34,9 @@
           href="mailto:?subject=Joining the OLH&body={{ email|striptags|urlencode }}">
           {% include "custom/button-action-inner-white.html" with label="Open in email" %}
         </a>
+        {% component_block "button" name="general" id=copy_pid type="button" %}
+          Copy to clipboard
+        {% endcomponent_block %}
         {% url "recommend_us" as rel_path %}
         {% include "custom/button-action-white.html" with rel_path=rel_path label="Start over" %}
       {% endcomponent_block %}

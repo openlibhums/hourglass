@@ -18,8 +18,8 @@
         <div class="not-prose">
           <ul>
             {% for setting in journal_names %}
-              <li class="list-none mt-4">
-                <div>{{ setting.value }}</div>
+              <li class="list-none">
+                <div class="my-4">{{ setting.value }}</div>
                 {% component_block "button_group"  %}
                   {% url 'recommend_us_generate_email' as hx_post %}
                   {% component_block "button" name="journal_pk" value=setting.journal.pk hx_post=hx_post aria_controls=aria_controls %}
