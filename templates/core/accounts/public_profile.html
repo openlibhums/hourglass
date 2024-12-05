@@ -1,11 +1,9 @@
 {% extends "core/base.html" %}
-{% load component_tags %}
-
 {% comment %}
   This template is deprecated. Account pages are now part of the back-office.
 {% endcomment %}
 
-
+{% load component_tags %}
 
 {% block title %}
   {{ user.full_name }} - {{ request.press.name }}
