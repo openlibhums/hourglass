@@ -19,10 +19,12 @@
     <div class="description">
       {{ journal.description_for_press|safe }}
     </div>
-    <div class="w-full flex pt-4">
-      {% with rel_path=journal.site_url label="Go to journal" %}
-        {% include "custom/button-action-black.html" %}
-      {% endwith %}
-    </div>
+    {% if go_to_link %}
+      <div class="w-full flex pt-4">
+        {% with rel_path=journal.site_url label="Go to journal" %}
+          {% include "custom/button-action-black.html" %}
+        {% endwith %}
+      </div>
+    {% endif %}
   </div>
 </div>

@@ -85,11 +85,18 @@
         </div>
         {% comment %}Active journals{% endcomment %}
         {% for journal in journals %}
-          {% if journal.code != 'wwe' and journal.code != 'franc' and journal.code != 'ee' and journal.code != 'pn' %}
+          {% if journal.code != 'wwe' and journal.code != 'franc' and journal.code != 'ee' and journal.code != 'pn' and journal.code != 'dm' and journal.code != 'la' %}
             <div class="relative max-lg:mt-16 lg:mt-28">
               {% cycle 'left' 'right' as leftright silent %}
               {% component_block "page_section" anchor=leftright labelledby=journal.name|slugify prose=False width="full" margin="narrow" %}
-                {% include "custom/journal-list-item.html" with journal=journal %}
+                {% comment %}
+                  We manually set go_to_link as False for journals whose websites are not yet finalized.
+                {% endcomment %}
+                {% if journal.code == 'thr' or journal.code == 'eh' or journal.code == 'ejp' %}
+                  {% include "custom/journal-list-item.html" with journal=journal go_to_link=False %}
+                {% else %}
+                  {% include "custom/journal-list-item.html" with journal=journal go_to_link=True %}
+                {% endif %}
               {% endcomponent_block %}
               {% if leftright == 'right' %}
                 {% include "custom/double-arc-halfway.html" %}
@@ -104,11 +111,11 @@
         </div>
         {% comment %}Archived journals{% endcomment %}
         {% for journal in journals %}
-          {% if journal.code == 'wwe' or journal.code == 'franc' or journal.code == 'ee' or journal.code == 'pn' %}
+          {% if journal.code == 'wwe' or journal.code == 'franc' or journal.code == 'ee' or journal.code == 'pn' or journal.code == 'dm' or journal.code == 'la' %}
             <div class="relative max-lg:mt-16 lg:mt-28">
               {% cycle 'left' 'right' as leftright silent %}
               {% component_block "page_section" anchor=leftright labelledby=journal.name|slugify prose=False width="full" margin="narrow" %}
-                {% include "custom/journal-list-item.html" with journal=journal %}
+                {% include "custom/journal-list-item.html" with journal=journal go_to_link=True %}
               {% endcomponent_block %}
               {% if leftright == 'right' %}
                 {% include "custom/double-arc-halfway.html" %}
