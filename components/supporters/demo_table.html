@@ -24,6 +24,7 @@
     <colgroup span="5"></colgroup>
     <tr>
       <th
+        id="th-countries"
         class="
           bg-orange text-black text-start align-top px-3 py-2
           font-poppins-bold
@@ -32,6 +33,7 @@
         Country
       </th>
       <th
+        id="th-columns-label"
         class="bg-blue text-start px-3 py-2 font-poppins-medium"
         colspan="5"
         scope="colgroup">
@@ -42,6 +44,7 @@
       class="bg-gradient-to-r from-blue to-blue-medium">
       {% for col_heading in table.thead %}
         <th
+          id="th-column-{{ forloop.counter }}"
           scope="col"
           class="
             px-3 py-2 text-start w-28 font-poppins-medium
@@ -54,12 +57,14 @@
     {% for country, cells in table.tbody.items %}
       <tr>
         <th
+          id="th-country-{{ country|slugify }}"
           class="bg-orange text-black px-3 py-2 text-start font-poppins-bold"
           scope="row">
           {{ country }}
         </th>
         {% for col_heading, cell in cells.items %}
           <td
+            headers="th-country-{{ country|slugify }} th-columns-label th-column-{{ forloop.counter }}"
             class="
               px-3 py-2
               bg-white text-black
