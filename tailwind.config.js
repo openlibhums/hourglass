@@ -70,6 +70,9 @@ export default {
             '--tw-prose-lead': theme('colors.black'),
             '--tw-prose-bullets': theme('colors.red'),
             '--tw-prose-invert-bullets': theme('colors.white'),
+            blockquote: {
+              fontStyle: 'normal',
+            },
             p: {
               fontSize: rem(18),
               lineHeight: round(25 / 16),
