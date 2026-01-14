@@ -18,33 +18,34 @@ class FormBase(component.Component):
                 '''
             elif isinstance(field.widget, widgets.Select):
                 form.fields[field_name].widget.attrs['class'] = '''
-                    bg-blue w-full border-white
+                    bg-white w-full
                     max-lg:placeholder:text-md lg:placeholder:text-lg
                     max-lg:text-md lg:text-lg
-                    text-white cursor-white placeholder:text-white
-                    border-t-0 border-r-0 border-b-1 border-l-0
-                    focus:outline focus:outline-white focus:outline-offset-0
-                    focus:ring-transparent focus:border-b-transparent
+                    text-black cursor-black placeholder:text-black
+                    focus-visible:outline focus-visible:outline-white
+                    focus-visible:outline-offset-2
+                    focus-visible:ring-transparent
+                    dropdown-arrow
                 '''
             elif isinstance(field.widget, widgets.Textarea):
                 form.fields[field_name].widget.attrs['class'] = '''
-                    bg-blue w-full border-white
+                    bg-white w-full
                     max-lg:placeholder:text-md lg:placeholder:text-lg
                     max-lg:text-md lg:text-lg
-                    text-white cursor-white placeholder:text-white
-                    border-1
-                    focus:outline focus:outline-white focus:outline-offset-0
-                    focus:ring-transparent focus:border-transparent
+                    text-black cursor-black placeholder:text-black
+                    focus-visible:outline focus-visible:outline-white
+                    focus-visible:outline-offset-2
+                    focus-visible:ring-transparent
                 '''
             else:
                 form.fields[field_name].widget.attrs['class'] = '''
-                    bg-blue w-full border-white
+                    bg-white w-full
                     max-lg:placeholder:text-md lg:placeholder:text-lg
                     max-lg:text-md lg:text-lg
-                    text-white cursor-white placeholder:text-white
-                    border-t-0 border-r-0 border-b-1 border-l-0
-                    focus:outline focus:outline-white focus:outline-offset-0
-                    focus:ring-transparent focus:border-b-transparent
+                    text-black cursor-black placeholder:text-black
+                    focus-visible:outline focus-visible:outline-white
+                    focus-visible:outline-offset-2
+                    focus-visible:ring-transparent
                 '''
 
         context['form'] = form
