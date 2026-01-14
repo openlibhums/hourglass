@@ -8,7 +8,7 @@
         <img
           class="max-lg:w-48 lg:w-64"
           src="{% static 'hourglass/media/logo/OLH-logo-white.svg' %}"
-          alt="{{ request.press.name }}">
+          alt="{{ request.press.name }} logo">
       </a>
       {% if press.secondary_image %}
         {% if press.secondary_image_url %}
@@ -16,7 +16,7 @@
             <img
               class="max-lg:w-40 lg:w-40"
               src="{{ press.secondary_image.url }}"
-              alt="Janeway">
+              alt="Janeway logo">
           </a>
         {% else %}
           <div class="flex flex-col items-center justify-center">
@@ -28,7 +28,7 @@
         <img
           class="max-lg:w-48 lg:w-64"
           src="{% static 'hourglass/media/logo/birkbeck-logo-white-on-black.svg' %}"
-          alt="Birkbeck, University of London">
+          alt="Birkbeck, University of London logo">
       </a>
     </div>
     <nav class="py-4 lg:px-8">
