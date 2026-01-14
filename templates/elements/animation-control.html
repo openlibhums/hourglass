@@ -1,0 +1,46 @@
+<div class="container mx-auto max-w-screen-xl">
+  <div class="lg:px-8 flex justify-end">
+    <p
+      data-animation-control
+      class="
+        px-2 py-1 bg-black text-white z-40 relative
+        font-poppins-medium text-sm tracking-wide
+      ">
+    </p>
+  </div>
+</div>
+<script type="module">
+  // For new users, check if they have set reduced motion for the OS or browser
+  if (!window.localStorage.getItem("animationSetting")) {
+    const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+    if (mediaQuery.matches) {
+      window.localStorage.setItem("animationSetting", "off");
+    } else {
+      window.localStorage.setItem("animationSetting", "on");
+    }
+  }
+
+  // User turns animation on or off via the website
+  const params = new URLSearchParams(window.location.search);
+  const userChoice = params.get("animation");
+  if (userChoice === "on" || userChoice === "off") {
+    window.localStorage.setItem("animationSetting", userChoice);
+  }
+
+  // Display the setting state and a link to change it
+  const control = document.querySelector("[data-animation-control]");
+  const animationSetting = window.localStorage.getItem("animationSetting");
+  const otherSettingValue = animationSetting === "on" ? "off" : "on";
+  control.innerHTML = `
+    <span>Animation ${ animationSetting }</span>
+    <span aria-hidden="true">|</span>
+    <a class="underline py-1" href="?animation=${ otherSettingValue }">Turn ${ otherSettingValue }</a>
+  `;
+
+  // Turn on animations if motion is OK
+  if (animationSetting === "on") {
+    for (const image of document.getElementsByClassName('motion-safe:rallax')) {
+      rallax(image)
+    }
+  }
+</script>
