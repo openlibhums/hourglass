@@ -52,6 +52,7 @@
         {% if messages %}
           {% component "messages" messages=messages %}
         {% endif %}
+        {% include "elements/animation-control.html" %}
       </header>
       <main class="relative z-0 mb-auto">
         {% block body %}{% endblock body %}
@@ -71,24 +72,13 @@
       <script src="{% static "django_tinymce/init_tinymce.js" %}"></script>
 
       <!-- custom JavaScript -->
-      <script>
-        // Check user's motion preference
-        const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)')
-        const prefersReducedMotion = mediaQuery.matches
-      </script>
-      <script>
-        if (!prefersReducedMotion) {
-          for (const image of document.getElementsByClassName('motion-safe:rallax')) {
-            rallax(image)
-          }
-        }
-      </script>
       <script type="module">
         import jump from '{% static "hourglass/js/jump.module.js" %}'
+        const animationSetting = window.localStorage.getItem("animationSetting");
         const scrollOptions = {
           sectionClass: '.scroll-target',
           // scrollContainer: '.scroll-container',
-          smoothScroll: !prefersReducedMotion,
+          smoothScroll: animationSetting === "on",
           offset: -4100,
           smoothScrollBehavior: function (element, options) {
             jump(element, {
