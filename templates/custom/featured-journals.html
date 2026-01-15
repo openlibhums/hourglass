@@ -19,10 +19,12 @@
                 {{ journal.default_cover_image.url }}
               {% endif %}"
               alt="{{ journal.name }}">
-            <h3 class="font-poppins-bold text-lg max-lg:text-center grow">
+            <h3
+              id="{{ journal.name|slugify }}"
+              class="font-poppins-bold text-lg max-lg:text-center grow">
               {{ journal.name }}
             </h3>
-            {% with rel_path=journal.site_url label="Read more" %}
+            {% with rel_path=journal.site_url label="Read more" labelledby=journal.name|slugify %}
               {% include 'custom/button-action-blue.html' %}
             {% endwith %}
           </div>
