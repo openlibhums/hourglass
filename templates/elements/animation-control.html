@@ -34,7 +34,12 @@
   control.innerHTML = `
     <span>Animation ${ animationSetting }</span>
     <span aria-hidden="true">|</span>
-    <a class="underline py-1" href="?animation=${ otherSettingValue }">Turn ${ otherSettingValue }</a>
+    <a
+      class="underline py-1"
+      aria-label="Turn animation ${ otherSettingValue }"
+      href="?animation=${ otherSettingValue }">
+      Turn ${ otherSettingValue }
+    </a>
   `;
 
   // Turn on animations if motion is OK
