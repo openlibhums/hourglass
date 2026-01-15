@@ -77,11 +77,13 @@
             Science Fiction and the Museum’ published in the <i>Open Library of
             Humanities</i> journal.</p>
             <div class="flex max-lg:items-start max-lg:flex-col gap-8">
-              {% with rel_path="https://olh.openlibhums.org/article/id/4699/" label="Read article" %}
-                {% include 'custom/button-action-blue.html' %}
-              {% endwith %}
-              {% with rel_path="https://sfra.org/the-sfra-innovative-research-award/" label="About award" %}
-                {% include 'custom/button-action-blue.html' %}
+              {% with labelledby="" %}
+                {% with rel_path="https://olh.openlibhums.org/article/id/4699/" label="Read article" aria_label="Read SFRA article" %}
+                  {% include 'custom/button-action-blue.html' %}
+                {% endwith %}
+                {% with rel_path="https://sfra.org/the-sfra-innovative-research-award/" label="About award" aria_label="About SFRA Award" %}
+                  {% include 'custom/button-action-blue.html' %}
+                {% endwith %}
               {% endwith %}
             </div>
           </section>
@@ -106,11 +108,13 @@
             Astor, Public Women and Gendered Political Culture in
             Interwar Britain</a>.</p>
             <div class="flex max-lg:items-start max-lg:flex-col gap-8">
-              {% with rel_path="https://olh.openlibhums.org/article/id/4651/" label="Read article" %}
-                {% include 'custom/button-action-blue.html' %}
-              {% endwith %}
-              {% with rel_path="https://www.ncis.org/news/2021/2021-eisenstein-essay-prize-winners-announced" label="About award" %}
-                {% include 'custom/button-action-blue.html' %}
+              {% with labelledby="" %}
+                {% with rel_path="https://olh.openlibhums.org/article/id/4651/" label="Read article" aria_label="Read Eisenstein article" %}
+                  {% include 'custom/button-action-blue.html' %}
+                {% endwith %}
+                {% with rel_path="https://www.ncis.org/news/2021/2021-eisenstein-essay-prize-winners-announced" label="About award" aria_label="About Eisenstein Prize" %}
+                  {% include 'custom/button-action-blue.html' %}
+                {% endwith %}
               {% endwith %}
             </div>
           </section>
@@ -137,11 +141,13 @@
             Concerts, the Use and Abuse of Grand Pianos, and One Cartoonist’s
             Response’, published in <i>Comics Grid</i>.</p>
             <div class="flex max-lg:items-start max-lg:flex-col gap-8">
-              {% with rel_path="https://www.comicsgrid.com/article/id/3536/" label="Read article" %}
-                {% include 'custom/button-action-blue.html' %}
-              {% endwith %}
-              {% with rel_path="https://www.iaspm-anz.com/publications-prizes" label="About award" %}
-                {% include 'custom/button-action-blue.html' %}
+              {% with labelledby="" %}
+                {% with rel_path="https://www.comicsgrid.com/article/id/3536/" label="Read article" aria_label="Read Coyle article" %}
+                  {% include 'custom/button-action-blue.html' %}
+                {% endwith %}
+                {% with rel_path="https://www.iaspm-anz.com/publications-prizes" label="About award" aria_label="About Coyle Prize" %}
+                  {% include 'custom/button-action-blue.html' %}
+                {% endwith %}
               {% endwith %}
             </div>
           </section>
@@ -169,11 +175,13 @@
           historical archive of voices within the context of digital
           environments. </p>
             <div class="flex max-lg:items-start max-lg:flex-col gap-8">
-              {% with rel_path="https://19.bbk.ac.uk/article/id/1586/" label="Read article" %}
-                {% include 'custom/button-action-blue.html' %}
-              {% endwith %}
-              {% with rel_path="https://www.concordia.ca/news/stories/cunews/main/stories/2016/11/22/jason-camlot-wins-donald-gray-prize-for-best-victorian-studies-essay.html" label="About award" %}
-                {% include 'custom/button-action-blue.html' %}
+              {% with labelledby="" %}
+                {% with rel_path="https://19.bbk.ac.uk/article/id/1586/" label="Read article" aria_label="Read Donald Gray article" %}
+                  {% include 'custom/button-action-blue.html' %}
+                {% endwith %}
+                {% with rel_path="https://www.concordia.ca/news/stories/cunews/main/stories/2016/11/22/jason-camlot-wins-donald-gray-prize-for-best-victorian-studies-essay.html" label="About award" aria_label="About Donald Gray Prize" %}
+                  {% include 'custom/button-action-blue.html' %}
+                {% endwith %}
               {% endwith %}
             </div>
           </section>
@@ -204,11 +212,13 @@
             Angevins to the Victorians', by John Jenkins, examines the history
             of Becket’s name since the 12th century.</p>
             <div class="flex max-lg:items-start max-lg:flex-col gap-8">
-              {% with rel_path="https://www.thetimes.co.uk/article/henry-viii-added-the-a-to-smear-thomas-becket-zcvq6r3gj" label="Read with paywall" %}
-                {% include 'custom/button-action-blue.html' %}
-              {% endwith %}
-              {% with rel_path="https://olh.openlibhums.org/article/id/9353/" label="Read open access" %}
-                {% include 'custom/button-action-blue.html' %}
+              {% with labelledby="" %}
+                {% with rel_path="https://www.thetimes.co.uk/article/henry-viii-added-the-a-to-smear-thomas-becket-zcvq6r3gj" label="Read with paywall" aria_label="Read Becket article with paywall" %}
+                  {% include 'custom/button-action-blue.html' %}
+                {% endwith %}
+                {% with rel_path="https://olh.openlibhums.org/article/id/9353/" label="Read open access" aria_label="Read Becket article with open access" %}
+                  {% include 'custom/button-action-blue.html' %}
+                {% endwith %}
               {% endwith %}
             </div>
           </section>
@@ -232,8 +242,10 @@
             Open Research Europe (ORE) publishing platform. OLH is one of the
             seven case studies which exemplify sustainable OA models.</p>
             <div class="flex max-lg:items-start max-lg:flex-col gap-8">
-              {% with rel_path="https://op.europa.eu/en/publication-detail/-/publication/81b9cd30-5104-11ed-92ed-01aa75ed71a1/language-en" label="Read report" %}
-                {% include 'custom/button-action-blue.html' %}
+              {% with labelledby="" %}
+                {% with rel_path="https://op.europa.eu/en/publication-detail/-/publication/81b9cd30-5104-11ed-92ed-01aa75ed71a1/language-en" label="Read report" aria_label="Read European Commission report" %}
+                  {% include 'custom/button-action-blue.html' %}
+                {% endwith %}
               {% endwith %}
             </div>
           </section>
@@ -255,8 +267,10 @@
             Solloway, on UKRI’s new open-access policy, held at Imperial
             College London.</p>
             <div class="flex max-lg:items-start max-lg:flex-col gap-8">
-              {% with rel_path="https://www.gov.uk/government/speeches/science-minister-announces-ukris-open-access-policy" label="Read Speech" %}
-                {% include 'custom/button-action-blue.html' %}
+              {% with labelledby="" %}
+                {% with rel_path="https://www.gov.uk/government/speeches/science-minister-announces-ukris-open-access-policy" label="Read Speech" aria_label="Read UKRI speech" %}
+                  {% include 'custom/button-action-blue.html' %}
+                {% endwith %}
               {% endwith %}
             </div>
           </section>
@@ -280,11 +294,13 @@
             Library of Humanities in 2016 (and co-authored with Michele
             Mauri).</p>
             <div class="flex max-lg:items-start max-lg:flex-col gap-8">
-              {% with rel_path="https://www.theguardian.com/higher-education-network/2016/apr/18/why-academic-journals-expensive" label="Read press article" %}
-                {% include 'custom/button-action-blue.html' %}
-              {% endwith %}
-              {% with rel_path="https://olh.openlibhums.org/article/id/4419/" label="Read research article" %}
-                {% include 'custom/button-action-blue.html' %}
+              {% with labelledby="" %}
+                {% with rel_path="https://www.theguardian.com/higher-education-network/2016/apr/18/why-academic-journals-expensive" label="Read press article" aria_label="Read Lawson and Gray article in the Guardian" %}
+                  {% include 'custom/button-action-blue.html' %}
+                {% endwith %}
+                {% with rel_path="https://olh.openlibhums.org/article/id/4419/" label="Read research article" aria_label="Read Lawson, Gray, and Mauri research article" %}
+                  {% include 'custom/button-action-blue.html' %}
+                {% endwith %}
               {% endwith %}
             </div>
           </section>
@@ -311,11 +327,13 @@
             access, released its software, data, and concordance files under
             open licenses. </p>
             <div class="flex max-lg:items-start max-lg:flex-col gap-8">
-              {% with rel_path="https://www.theguardian.com/books/2016/aug/10/cloud-atlas-astonishingly-different-in-us-and-uk-editions-study-finds" label="Read press article" %}
-                {% include 'custom/button-action-blue.html' %}
-              {% endwith %}
-              {% with rel_path="https://olh.openlibhums.org/article/id/4426/" label="Read research article" %}
-                {% include 'custom/button-action-blue.html' %}
+              {% with labelledby="" %}
+                {% with rel_path="https://www.theguardian.com/books/2016/aug/10/cloud-atlas-astonishingly-different-in-us-and-uk-editions-study-finds" label="Read press article" aria_label="Read Guardian article on Martin Paul Eve's research publication" %}
+                  {% include 'custom/button-action-blue.html' %}
+                {% endwith %}
+                {% with rel_path="https://olh.openlibhums.org/article/id/4426/" label="Read research article" aria_label="Read Martin Paul Eve's research article" %}
+                  {% include 'custom/button-action-blue.html' %}
+                {% endwith %}
               {% endwith %}
             </div>
           </section>

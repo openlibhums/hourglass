@@ -1,0 +1,7 @@
+{% if labelledby %}
+  aria-labelledby="{{ labelledby }}"
+{% elif describedby %}
+  aria-describedby="{{ describedby }}"
+{% elif aria_label %}
+  aria-label="{{ aria_label }}"
+{% endif %}

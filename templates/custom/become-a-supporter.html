@@ -98,7 +98,7 @@
                 class="font-poppins-bold max-lg:text-xl lg:text-2xl text-center">
                 Check cost and sign up.
               </h2>
-              {% with rel_path="/plugins/supporters/site/library-partnership-fees/" label="Find out more" %}
+              {% with rel_path="/plugins/supporters/site/library-partnership-fees/" label="Find out more" describedby="check-cost" %}
                 {% include 'custom/button-action-blue.html' %}
               {% endwith %}
             {% endcomponent_block %}
@@ -112,7 +112,7 @@
                 class="font-poppins-bold max-lg:text-xl lg:text-2xl text-center">
                 The OLH model.
               </h2>
-              {% with rel_path="/site/olh-model/" label="Find out more" %}
+              {% with rel_path="/site/olh-model/" label="Find out more" describedby="olh-model" %}
                 {% include 'custom/button-action-blue.html' %}
               {% endwith %}
             {% endcomponent_block %}
@@ -126,7 +126,7 @@
                 class="font-poppins-bold max-lg:text-xl lg:text-2xl text-center">
                 Our journals.
               </h2>
-              {% with rel_path="/journals/" label="Find out more" %}
+              {% with rel_path="/journals/" label="Find out more" describedby="our-journals" %}
                 {% include 'custom/button-action-blue.html' %}
               {% endwith %}
             {% endcomponent_block %}
@@ -140,7 +140,7 @@
                 class="font-poppins-bold max-lg:text-xl lg:text-2xl text-center">
                 Brochure.
               </h2>
-              {% with rel_path="/media/press/OLH_Short_Library_Brochure_2024_02_23.pdf" label="Download PDF" %}
+              {% with rel_path="/media/press/OLH_Short_Library_Brochure_2024_02_23.pdf" label="Download PDF" describedby="brochure" %}
                 {% include 'custom/button-download-blue.html' %}
               {% endwith %}
             {% endcomponent_block %}
@@ -339,10 +339,12 @@
                           class="max-h-96 lg:pr-8 grow"
                           src="/media/press/Platinum.png"
                           alt="Platinum supporter badge">
-                        <h3 class="font-poppins-bold text-lg max-lg:text-center">
+                        <h3
+                          id="platinum-supporter-badge"
+                          class="font-poppins-bold text-lg max-lg:text-center">
                           Platinum supporter badge
                         </h3>
-                        {% with rel_path="/media/press/Platinum.png" label="Download PNG" %}
+                        {% with rel_path="/media/press/Platinum.png" label="Download PNG" describedby="platinum-supporter-badge" %}
                           {% include 'custom/button-download-blue.html' %}
                         {% endwith %}
                       </div>
@@ -353,10 +355,12 @@
                           class="max-h-96 lg:pr-8 grow"
                           src="/media/press/Gold.png"
                           alt="Gold supporter badge">
-                        <h3 class="font-poppins-bold text-lg max-lg:text-center">
+                        <h3
+                          id="gold-supporter-badge"
+                          class="font-poppins-bold text-lg max-lg:text-center">
                           Gold supporter badge
                         </h3>
-                        {% with rel_path="/media/press/Gold.png" label="Download PNG" %}
+                        {% with rel_path="/media/press/Gold.png" label="Download PNG" describedby="gold-supporter-badge" %}
                           {% include 'custom/button-download-blue.html' %}
                         {% endwith %}
                       </div>
@@ -367,10 +371,12 @@
                           class="max-h-96 lg:pr-8"
                           src="/media/press/Silver.png"
                           alt="Silver supporter badge">
-                        <h3 class="font-poppins-bold text-lg max-lg:text-center grow">
+                        <h3
+                          id="silver-supporter-badge"
+                          class="font-poppins-bold text-lg max-lg:text-center grow">
                           Silver supporter badge
                         </h3>
-                        {% with rel_path="/media/press/Silver.png" label="Download PNG" %}
+                        {% with rel_path="/media/press/Silver.png" label="Download PNG" describedby="silver-supporter-badge" %}
                           {% include 'custom/button-download-blue.html' %}
                         {% endwith %}
                       </div>
@@ -381,10 +387,12 @@
                           class="max-h-96 lg:pr-8"
                           src="/media/press/Bronze.png"
                           alt="Bronze supporter badge">
-                        <h3 class="font-poppins-bold text-lg max-lg:text-center grow">
+                        <h3
+                          id="bronze-supporter-badge"
+                          class="font-poppins-bold text-lg max-lg:text-center grow">
                           Bronze supporter badge
                         </h3>
-                        {% with rel_path="/media/press/Bronze.png" label="Download PNG" %}
+                        {% with rel_path="/media/press/Bronze.png" label="Download PNG" describedby="bronze-supporter-badge" %}
                           {% include 'custom/button-download-blue.html' %}
                         {% endwith %}
                       </div>
@@ -402,7 +410,7 @@
                           class="font-poppins-bold text-lg max-lg:text-center">
                           Supporting member badge 2025
                         </h3>
-                        {% with rel_path="/media/press/higher-supporter-2025.jpg" label="Download JPG" %}
+                        {% with rel_path="/media/press/higher-supporter-2025.jpg" label="Download JPG" describedby="supporting-member-badge" %}
                           {% include 'custom/button-download-blue.html' %}
                         {% endwith %}
                       </div>

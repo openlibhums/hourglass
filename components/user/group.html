@@ -20,7 +20,9 @@
             <div class="bg-tan-light max-xl:w-52 xl:w-64 max-xl:h-52 xl:h-64"></div>
           {% endif %}
           <div class="flex flex-col gap-y-2">
-            <h3 class="font-poppins-bold max-lg:text-xl lg:text-2xl max-lg:text-center">
+          <h3
+            id="{{ member.user.uuid }}"
+            class="font-poppins-bold max-lg:text-xl lg:text-2xl max-lg:text-center">
               {{ member.user.full_name }}
             </h3>
             {% comment %}StaffGroup attributes{% endcomment %}
@@ -55,6 +57,7 @@
                 border rounded-full border-blue
                 flex gap-4 items-center
               "
+              aria-describedby="{{ member.user.uuid }}"
               href="{% url 'core_public_profile' member.user.uuid %}">
               {% with label="Full profile" %}
                 {% include "custom/button-action-inner-blue.html" %}
