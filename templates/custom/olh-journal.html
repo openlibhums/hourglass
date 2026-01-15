@@ -198,10 +198,12 @@
                 class="w-36"
                 src="{% static 'hourglass/media/icons/Publish.svg' %}"
                 alt="">
-              <strong class="font-poppins-bold max-lg:text-xl lg:text-2xl text-center">
+              <strong
+                id="call-for-papers"
+                class="font-poppins-bold max-lg:text-xl lg:text-2xl text-center">
                 Calls for papers.
               </strong>
-              {% with rel_path="/news/all/tag/CFP/" label="Find out more" %}
+              {% with rel_path="/news/all/tag/CFP/" label="Find out more" labelledby="call-for-papers" %}
                 {% include 'custom/button-action-blue.html' %}
               {% endwith %}
             {% endcomponent_block %}
@@ -210,10 +212,12 @@
                 class="w-36"
                 src="{% static 'hourglass/media/icons/Special-Collection-Editors.svg' %}"
                 alt="">
-              <strong class="font-poppins-bold max-lg:text-xl lg:text-2xl text-center">
+              <strong
+                id="published-special-collections"
+                class="font-poppins-bold max-lg:text-xl lg:text-2xl text-center">
                 Published special collections.
               </strong>
-              {% with rel_path="https://olh.openlibhums.org/collections/collection/" label="Find out more" %}
+              {% with rel_path="https://olh.openlibhums.org/collections/collection/" label="Find out more" labelledby="published-special-collections" %}
                 {% include 'custom/button-action-blue.html' %}
               {% endwith %}
             {% endcomponent_block %}
@@ -222,10 +226,12 @@
                 class="w-36"
                 src="{% static 'hourglass/media/icons/FAQs.svg' %}"
                 alt="">
-              <strong class="font-poppins-bold max-lg:text-xl lg:text-2xl text-center">
+              <strong
+                id="editor-testimonials"
+                class="font-poppins-bold max-lg:text-xl lg:text-2xl text-center">
                 Editor testimonials.
               </strong>
-              {% with rel_path="/site/olhj-testimonials/" label="Find out more" %}
+              {% with rel_path="/site/olhj-testimonials/" label="Find out more" labelledby="editor-testimonials" %}
                 {% include 'custom/button-action-blue.html' %}
               {% endwith %}
             {% endcomponent_block %}
@@ -288,7 +294,7 @@
               explore <i>OLHJ</i>'s archive of Special Collections and Author
               Guidelines.</p>
               <div class="flex not-prose">
-                {% with rel_path="https://olh.openlibhums.org/site/special-collections/" label="Apply" %}
+                {% with rel_path="https://olh.openlibhums.org/site/special-collections/" label="Apply" labelledby="apply-to-edit-special-collection" %}
                   {% include 'custom/button-action-blue.html' %}
                 {% endwith %}
               </div>
@@ -300,9 +306,11 @@
         {% with h="Interviews and insights." %}
           {% component_block "page_section" prose=False anchor="right" width="full" labelledby=h|slugify %}
             {% component_block "news_list" request=request h=h %}
-              {% component "news_list_item" item="585" include_tags=False %}
-              {% component "news_list_item" item="523" include_tags=False %}
-              {% component "news_list_item" item="593" include_tags=False %}
+              {% with labelledby="" %}
+                {% component "news_list_item" item="585" include_tags=False %}
+                {% component "news_list_item" item="523" include_tags=False %}
+                {% component "news_list_item" item="593" include_tags=False %}
+              {% endwith %}
             {% endcomponent_block %}
           {% endcomponent_block %}
         {% endwith %}
