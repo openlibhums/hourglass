@@ -28,7 +28,7 @@
             {% component "news_list" request=request h=h tag="Announcement" limit=6 %}
           {% endcomponent_block %}
           {% url "core_news_list_tag" tag="Announcement" as view_all_url %}
-          {% component "news_view_all_bar" view_all_url=view_all_url anchor="left" %}
+          {% component "news_view_all_bar" label="All announcements" view_all_url=view_all_url anchor="left" %}
         {% endwith %}
       </div>
       <div class="relative max-md:pt-24 md:pt-12">
@@ -38,7 +38,7 @@
             {% component "news_list" request=request h=h tag="Blog" limit=6 %}
           {% endcomponent_block %}
           {% url "core_news_list_tag" tag="Blog" as view_all_url %}
-          {% component "news_view_all_bar" view_all_url=view_all_url anchor="right" %}
+          {% component "news_view_all_bar" label="All OLH blog posts" view_all_url=view_all_url anchor="right" %}
         {% endwith %}
       </div>
       <div class="relative max-md:pt-24 md:pt-12">
@@ -47,7 +47,7 @@
             {% component "news_list" request=request h=h content_type="journal" limit=6 %}
           {% endcomponent_block %}
           {% url "core_news_list_presswide" presswide="all" as view_all_url %}
-          {% component "news_view_all_bar" view_all_url=view_all_url anchor="left" %}
+          {% component "news_view_all_bar" label="All news" view_all_url=view_all_url anchor="left" %}
         {% endwith %}
         {% include "custom/news-art-end.html" %}
       </div>
