@@ -8,7 +8,7 @@
 <div class="flex max-md:flex-col md:flex-row md:flex-wrap gap-y-20 md:-mx-6">
   {% slot "items" default %}
     {% for item in news_items %}
-      {% component "news_list_item" item=item include_tags=include_tags %}
+      {% component "news_list_item" item=item %}
     {% endfor %}
   {% endslot %}
 </div>

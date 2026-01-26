@@ -1,29 +1,42 @@
 {% load static %}
 
-<div class="z-40 relative">
-  {% if tag %}
-    <div class="flex flex-wrap gap-x-4 gap-y-2 max-md:pl-4 md:px-8">
-      <div class="bg-tan border-white border-2 rounded-full p-2 flex gap-4 items-center">
-        <span class="pl-2">{{ tag.text }} ({{ tag.tags.count }})</span>
+{% if tag %}
+  <section aria-label="Tag filter applied" class="z-40 relative">
+    <ul class="flex flex-wrap gap-x-4 gap-y-2 max-md:pl-4 md:px-8">
+      <li class="bg-tan border-white border-2 rounded-full p-2 flex gap-4 items-center">
+        <p class="pl-2">
+          {% spaceless %}
+            <span>{{ tag.text }} ({{ tag.tags.count }}</span>
+            <span class="sr-only">articles</span>
+            <span>)</span>
+          {% endspaceless %}
+        </p>
         <a href="{% url 'core_news_list_presswide' presswide='all' %}">
           <img
             class="w-6 cursor-pointer"
             src="{% static 'hourglass/media/icons/close.svg' %}"
             alt="Clear tag">
         </a>
-      </div>
-    </div>
-  {% else %}
-    <div class="flex flex-wrap gap-x-4 gap-y-2 max-md:pl-4 md:px-8">
+      </li>
+    </ul>
+  </section>
+{% else %}
+  <section aria-label="Tags" class="z-40 relative">
+    <ul class="flex flex-wrap gap-x-4 gap-y-2 max-md:pl-4 md:px-8">
       {% for tag_obj in all_tags|slice:":10" %}
-        <a
-          class="bg-tan border-white border-2 rounded-full py-2 px-4"
-          aria-label="View all {{ tag_obj.tags.count }} articles tagged with {{ tag_obj.text}}"
-          href="{% url 'core_news_list_tag_presswide' presswide='all' tag=tag_obj.text %}"
-        >
-          {{ tag_obj.text }} ({{ tag_obj.tags.count }})
-        </a>
+        <li>
+          <a
+            class="block bg-tan border-white border-2 rounded-full py-2 px-4"
+            href="{% url 'core_news_list_tag_presswide' presswide='all' tag=tag_obj.text %}"
+          >
+            {% spaceless %}
+              <span>{{ tag_obj.text }} ({{ tag_obj.tags.count }}</span>
+              <span class="sr-only">articles</span>
+              <span>)</span>
+            {% endspaceless %}
+          </a>
+        </li>
       {% endfor %}
-    </div>
-  {% endif %}
-</div>
+    </ul>
+  </section>
+{% endif %}

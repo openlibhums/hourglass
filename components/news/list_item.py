@@ -11,7 +11,6 @@ class NewsListItem(component.Component):
 
         fraction = kwargs.pop('fraction', 'basis-1/3')
         include_date = kwargs.pop('include_date', True)
-        include_tags = kwargs.pop('include_tags', True)
         if not isinstance(item, models.NewsItem):
             try:
                 item = models.NewsItem.objects.get(pk=item)
@@ -22,5 +21,4 @@ class NewsListItem(component.Component):
         context['item'] = item
         context['fraction'] = fraction
         context['include_date'] = include_date
-        context['include_tags'] = include_tags
         return context

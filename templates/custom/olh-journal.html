@@ -300,9 +300,9 @@
         {% with h="Interviews and insights." %}
           {% component_block "page_section" prose=False anchor="right" width="full" labelledby=h|slugify %}
             {% component_block "news_list" request=request h=h %}
-              {% component "news_list_item" item="585" include_tags=False %}
-              {% component "news_list_item" item="523" include_tags=False %}
-              {% component "news_list_item" item="593" include_tags=False %}
+              {% component "news_list_item" item="585" %}
+              {% component "news_list_item" item="523" %}
+              {% component "news_list_item" item="593" %}
             {% endcomponent_block %}
           {% endcomponent_block %}
         {% endwith %}

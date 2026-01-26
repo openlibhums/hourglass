@@ -22,9 +22,6 @@
     <div class="max-md:text-center">
       {{ item.byline }}
     </div>
-    {% if item.tags.all and include_tags %}
-      {% include 'custom/news-item-tags.html' with tags=item.tags.all %}
-    {% endif %}
     <div
       class="
         grow relative z-0 overflow-hidden
