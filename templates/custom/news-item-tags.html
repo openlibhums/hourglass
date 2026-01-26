@@ -1,17 +1,15 @@
 {% load static %}
 
-<nav
-  aria-label="Tags"
-  class="
-    not-prose text-sm flex flex-wrap gap-6
-    mt-4 max-md:place-content-center
-  ">
-  {% for tag in tags %}
-    <a
-      class="bg-tan border-white border-2 rounded-full py-2 px-4"
-      aria-label="View all articles tagged with {{ tag }}"
-      href="{% url 'core_news_list_tag_presswide' presswide='all' tag=tag.text %}">
-      {{ tag }}
-    </a>
-  {% endfor %}
-</nav>
+<section aria-label="tags" class="not-prose text-sm mt-4">
+  <ul class="flex flex-wrap gap-6 max-md:place-content-center">
+    {% for tag in tags %}
+      <li>
+        <a
+          class="block bg-tan border-white border-2 rounded-full py-2 px-4"
+          href="{% url 'core_news_list_tag_presswide' presswide='all' tag=tag.text %}">
+          {{ tag }}
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
+</section>
