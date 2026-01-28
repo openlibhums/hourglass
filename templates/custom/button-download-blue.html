@@ -13,7 +13,10 @@
       uppercase text-blue
       font-poppins-bold text-xs tracking-widest
     ">
-    {{ label }}
+    <span>{{ label }}</span>
+    {% if "download" not in label|lower %}
+      <span class="sr-only">(download)</span>
+    {% endif %}
   </span>
   <img
     class="h-4 rotate-90"
