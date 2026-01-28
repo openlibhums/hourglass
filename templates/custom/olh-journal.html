@@ -305,11 +305,12 @@
       <div class="relative max-lg:mt-16 lg:mt-28">
         {% with h="Interviews and insights." %}
           {% component_block "page_section" prose=False anchor="right" width="full" labelledby=h|slugify %}
-            {% component_block "news_list" request=request h=h %}
+            {% include "custom/news-list-h2.html" with h=h %}
+            {% component_block "news_list" request=request %}
               {% with labelledby="" %}
-                {% component "news_list_item" item="585" include_tags=False %}
-                {% component "news_list_item" item="523" include_tags=False %}
-                {% component "news_list_item" item="593" include_tags=False %}
+                {% component "news_list_item" item="585" include_tags=False h_level="h3" %}
+                {% component "news_list_item" item="523" include_tags=False h_level="h3" %}
+                {% component "news_list_item" item="593" include_tags=False h_level="h3" %}
               {% endwith %}
             {% endcomponent_block %}
           {% endcomponent_block %}

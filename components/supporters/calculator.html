@@ -9,7 +9,7 @@
         flex gap-4 items-center
       "
       href="{% url 'supporter_signup' %}">
-      {% include "custom/button-action-inner-white.html" with label="Skip to Signup" %}
+      {% include "custom/button-action-inner-white.html" with label="Skip to Sign-up" %}
     </a>
   </div>
 {% endif %}
@@ -28,7 +28,7 @@
     {% include 'custom/button-calculate.html' %}
     {% if band_form.fee.value %}
       <div class="w-full flex flex-col items-end">
-        {% include 'custom/button-submit-white.html' with label="Start Signup" name="start_signup" %}
+        {% include 'custom/button-submit-white.html' with label="Start Sign-up" name="start_signup" %}
       </div>
     {% endif %}
   {% endfill %}
