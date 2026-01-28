@@ -2,9 +2,9 @@
 {% load i18n %}
 {% load component_tags %}
 
-{% component_block "page_section" width="full" anchor=anchor margin="very-narrow" element="aside" label=label prose=False bg="bg-blue" %}
+{% component_block "page_section" width="full" anchor=anchor margin="very-narrow" prose=False bg="bg-blue" %}
   <div class="flex flex-col items-center">
-    {% with rel_path=view_all_url label=label %}
+    {% with rel_path=view_all_url label=visible_label %}
       {% include "custom/button-action-white.html" %}
     {% endwith %}
   </div>
