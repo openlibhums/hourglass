@@ -12,6 +12,6 @@ class NewsViewAllBar(component.Component):
     def get_context_data(self, view_all_url, *args, **kwargs):
         return {
             'view_all_url': view_all_url,
-            'label': kwargs.pop('label', 'View all'),
+            'visible_label': kwargs.pop('visible_label', 'View all'),
             'anchor': kwargs.pop('anchor', 'left'),
         }
