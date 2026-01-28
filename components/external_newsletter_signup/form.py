@@ -19,7 +19,7 @@ class ExternalNewsletterSignupForm(component.Component):
         )
         if not url.value:
             logger.warning(
-                'External Newsletter Signup URL needs setting value.'
+                'External Newsletter Sign-up URL needs setting value.'
             )
         context['external_newsletter_signup_url'] = url.value
         return context
