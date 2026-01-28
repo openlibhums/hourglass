@@ -14,6 +14,7 @@ class NewsList(component.Component):
         content_type = kwargs.pop('content_type', '')
         limit = kwargs.pop('limit', None)
         h = kwargs.pop('h', '')
+        h_level = kwargs.pop('h_level', 'h2')
         news_items = kwargs.pop('news_items', [])
         include_tags = kwargs.pop('include_tags', False)
         context = super().get_context_data(*args, **kwargs)
@@ -37,6 +38,7 @@ class NewsList(component.Component):
 
         context = {
             'h': h,
+            'h_level': h_level,
             'news_items': news_items,
             'include_tags': include_tags,
         }

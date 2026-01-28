@@ -1,8 +1,7 @@
 {% load static %}
 
 {% if item %}
-  <article
-    aria-label="{{ item.title }}"
+  <li
     class="
       {{ fraction }} flex flex-col space-between md:px-6
       max-md:items-center prose lg:prose-lg
@@ -16,11 +15,13 @@
         {{ item.posted|date:"j F Y" }}
       </div>
     {% endif %}
-    <strong
-      id="{{ item.title|slugify }}"
-      class="py-4 font-poppins-bold text-2xl max-md:text-center">
-      {{ item.title }}
-    </strong>
+    {% with h_id=item.title|slugify classes="py-4 font-poppins-bold text-2xl max-md:text-center not-prose" %}
+      {% if h_level == "h2" %}
+        <h2 id="{{ h_id }}" class="{{ classes }}">{{ item.title }}</h2>
+      {% else %}
+        <h3 id="{{ h_id }}" class="{{ classes }}">{{ item.title }}</h3>
+      {% endif %}
+    {% endwith %}
     <div class="max-md:text-center">
       {{ item.byline }}
     </div>
@@ -42,11 +43,11 @@
           lg:items-start not-prose
         ">
         <div class="max-lg:mt-8 lg:m-6">
-          {% with rel_path=item.url label="Read more" describedby=item.title|slugify %}
+          {% with rel_path=item.url label="Read more" labelledby="" describedby=item.title|slugify %}
             {% include "custom/button-action-blue.html" %}
           {% endwith %}
         </div>
       </div>
     </div>
-  </article>
+  </li>
 {% endif %}

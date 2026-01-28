@@ -1,14 +1,9 @@
 {% load component_tags %}
 
-{% if h %}
-  <h2 id="{{ h|slugify }}" class="name font-poppins-bold text-3xl py-8 max-md:text-center">
-    {{ h }}
-  </h2>
-{% endif %}
-<div class="flex max-md:flex-col md:flex-row md:flex-wrap gap-y-20 md:-mx-6">
+<ul class="flex max-md:flex-col md:flex-row md:flex-wrap gap-y-20 md:-mx-6">
   {% slot "items" default %}
     {% for item in news_items %}
-      {% component "news_list_item" item=item include_tags=include_tags %}
+      {% component "news_list_item" item=item include_tags=include_tags h_level=h_level %}
     {% endfor %}
   {% endslot %}
-</div>
+</ul>

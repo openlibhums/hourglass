@@ -4,7 +4,7 @@
 {% load component_tags %}
 
 {% block body %}
-  <div aria-labelledby="h1">
+  <div>
     <div class="container mx-auto max-w-screen-xl">
       <div class="relative">
         {% include "custom/edit-on-github.html" with rel_path="custom/announcements-blog.html" %}
@@ -25,7 +25,8 @@
       <div class="relative max-md:pt-24 md:pt-12">
         {% with h="Read our news." %}
           {% component_block "page_section" width="full" anchor="left" margin="narrow" labelledby=h|slugify prose=False %}
-            {% component "news_list" request=request h=h tag="Announcement" limit=6 %}
+            {% include "custom/news-list-h2.html" with h=h %}
+            {% component "news_list" request=request tag="Announcement" limit=6 h_level="h3" %}
           {% endcomponent_block %}
           {% url "core_news_list_tag" tag="Announcement" as view_all_url %}
           {% component "news_view_all_bar" label="All announcements" view_all_url=view_all_url anchor="left" %}
@@ -35,7 +36,8 @@
         {% include "custom/news-art-middle.html" %}
         {% with h="Hear our ideas." %}
           {% component_block "page_section" width="full" anchor="right" margin="narrow" labelledby=h|slugify prose=False %}
-            {% component "news_list" request=request h=h tag="Blog" limit=6 %}
+            {% include "custom/news-list-h2.html" with h=h %}
+            {% component "news_list" request=request tag="Blog" limit=6 h_level="h3" %}
           {% endcomponent_block %}
           {% url "core_news_list_tag" tag="Blog" as view_all_url %}
           {% component "news_view_all_bar" label="All OLH blog posts" view_all_url=view_all_url anchor="right" %}
@@ -44,7 +46,8 @@
       <div class="relative max-md:pt-24 md:pt-12">
         {% with h="News from our journals." %}
           {% component_block "page_section" width="full" anchor="left" margin="narrow" labelledby=h|slugify prose=False %}
-            {% component "news_list" request=request h=h content_type="journal" limit=6 %}
+            {% include "custom/news-list-h2.html" with h=h %}
+            {% component "news_list" request=request h=h content_type="journal" limit=6 h_level="h3" %}
           {% endcomponent_block %}
           {% url "core_news_list_presswide" presswide="all" as view_all_url %}
           {% component "news_view_all_bar" label="All news" view_all_url=view_all_url anchor="left" %}

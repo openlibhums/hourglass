@@ -60,13 +60,13 @@
           </h2>
           {% render_string redirect_text %}
           <div class="w-full flex flex-col items-end">
-            {% with rel_path=supporter.billing_agent.redirect_url label="Complete signup" %}
+            {% with rel_path=supporter.billing_agent.redirect_url label="Complete sign-up" %}
               {% include 'custom/button-action-white.html' %}
             {% endwith %}
           </div>
         {% elif complete_text %}
           <h2 id="next-step" class="text-white">
-            Signup complete.
+            Sign-up complete.
           </h2>
           {% render_string complete_text %}
         {% else %}
