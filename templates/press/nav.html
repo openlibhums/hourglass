@@ -26,7 +26,7 @@
       <div
         id="nav-options"
         class="
-          max-lg:transition-all max-lg:ease-in-out max-lg:duration-300
+          max-lg:transition-[max-height] max-lg:ease-in-out max-lg:duration-300
           max-lg:max-h-0 max-lg:overflow-clip
         ">
         <nav class="max-lg:hidden group/top">
@@ -58,14 +58,16 @@
     const innerNav = navOptions.querySelector('nav')
     if (innerNav.classList.contains('max-lg:hidden')) {
       innerNav.classList.remove('max-lg:hidden')
+      navOptions.classList.remove('max-lg:max-h-0')
+      navOptions.classList.add('max-lg:max-h-screen')
     } else {
+      navOptions.classList.add('max-lg:max-h-0')
+      navOptions.classList.remove('max-lg:max-h-screen')
       setTimeout(() => {
         innerNav.classList.add('max-lg:hidden')
         closeOtherDropdowns(event)
       }, toggleDuration)
     }
-    navOptions.classList.toggle('max-lg:max-h-screen')
-    navOptions.classList.toggle('max-lg:max-h-0')
   }
 
   function closeSideNav(item) {
@@ -89,13 +91,15 @@
     const innerDropdown = dropdown.querySelector('ul')
     if (innerDropdown.classList.contains('hidden')) {
       innerDropdown.classList.remove('hidden')
+      dropdown.classList.remove('max-h-0')
+      dropdown.classList.add('max-h-[50vh]')
     } else {
+      dropdown.classList.add('max-h-0')
+      dropdown.classList.remove('max-h-[50vh]')
       setTimeout(() => {
         innerDropdown.classList.add('hidden')
       }, toggleDuration)
     }
-    dropdown.classList.toggle('max-h-[50vh]')
-    dropdown.classList.toggle('max-h-0')
   }
 
   const topNavItems = document.querySelectorAll('.toggles-dropdown')
