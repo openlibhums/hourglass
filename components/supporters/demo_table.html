@@ -16,9 +16,12 @@
     <caption
       class="
         max-lg:text-lg lg:text-xl
-        p-3 text-start text-black font-poppins-bold
+        text-start text-black font-poppins-bold
+        pl-3
       ">
-      {% slot "caption" %}{% endslot "caption" %}
+      <div class="bg-safety pointing-4-oclock">
+        {% slot "caption" %}{% endslot "caption" %}
+      </div>
     </caption>
     <col>
     <colgroup span="5"></colgroup>
