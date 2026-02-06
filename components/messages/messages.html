@@ -1,8 +1,7 @@
 {% load static %}
 
 {% for message in messages %}
-  <div
-    id="message-{{ message|slugify }}"
+  <div id="message-{{ message|slugify }}"
     class="relative z-30 top-0 inset-x-0">
     <div class="absolute top-0 inset-x-0 bg-blue text-white">
       <div class="container mx-auto max-w-screen-xl">
@@ -28,7 +27,6 @@
   <script type="module">
     document.addEventListener('DOMContentLoaded', () => {
       const message = document.querySelector('#message-{{ message|slugify }}')
-      setTimeout(() => message.classList.toggle('hidden'), 5000)
       const close = document.querySelector('#close-{{ message|slugify }}')
       close.addEventListener('click', event => message.classList.toggle('hidden'))
     })
