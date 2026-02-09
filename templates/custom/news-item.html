@@ -7,20 +7,22 @@
       {% include 'custom/edit-on-github.html' with rel_path='custom/news-item.html' %}
       {% include 'custom/generic-art-opener.html' %}
       <div class="relative z-40">
-        <div class="prose lg:prose-lg pt-64 max-md:pr-8 md:px-8">
-          <h1 id="h1" class="font-poppins-bold !leading-snug">
-            {{ news_item.title }}
-          </h1>
-          <p>
-            {% if news_item.byline %}
-              {{ news_item.byline }} {% trans "on" %}
-            {% endif %}
-            {{ news_item.posted|date:"j F Y" }}
-          </p>
+        <div class="prose lg:prose-lg pt-60 max-md:pr-8 md:px-8">
+          <div class="bg-safety pointing-4-oclock">
+            <h1 id="h1" class="font-poppins-bold !leading-snug">
+              {{ news_item.title }}
+            </h1>
+            <p>
+              {% if news_item.byline %}
+                {{ news_item.byline }} {% trans "on" %}
+              {% endif %}
+              {{ news_item.posted|date:"j F Y" }}
+            </p>
+          </div>
         </div>
       </div>
     </div>
-    <div class="relative max-lg:mt-8 lg:mt-12">
+    <div class="relative">
       <div class="lg:m-8 relative z-40">
         <div class="
           bg-tan-light md:max-w-[750px] md:max-h-[324px]

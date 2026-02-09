@@ -61,3 +61,46 @@ button.glide__bullet:not(.glide__bullet--active) {
     src: url('../fonts/space-mono/SpaceMono-BoldItalic.ttf') format('truetype');
   }
 }
+
+@layer components {
+  /* This layer is used for component classes that Tailwind 3 does not support */
+
+  /* A background layer to use behind text that might otherwise clash with
+  * absolutely-positioned artwork, especially during scroll and zoom.
+  * This background is intended to be invisible--by being the same colour as the
+  * site's main background--but to scrub out any other graphics that might come
+  * behind the text.
+  * */
+  .bg-safety {
+    padding: 1rem;
+    margin-left: -1rem;
+    @apply bg-tan;
+  }
+  /* These classes add a pointy triangular corner to the safety background,
+  * to create geometrically interesting cutouts that fit with the artwork better
+  * than a simple block would. */
+  .bg-safety.pointing-1-oclock {
+    padding-top: 5rem;
+    clip-path: polygon(0 4rem, 100% 0, 100% 100%, 0 100%);
+  }
+  .bg-safety.pointing-2-oclock {
+    padding-right: 5rem;
+    clip-path: polygon(0 0, 100% 0, calc(100% - 4rem) 100%, 0 100%);
+  }
+  .bg-safety.pointing-4-oclock {
+    padding-right: 5rem;
+    clip-path: polygon(0 0, calc(100% - 4rem) 0, 100% 100%, 0 100%);
+  }
+  .bg-safety.pointing-8-oclock {
+    padding-left: 5rem;
+    clip-path: polygon(4rem 0, 100% 0, 100% 100%, 0 100%);
+  }
+  .bg-safety.pointing-10-oclock {
+    padding-left: 5rem;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 4rem 100%);
+  }
+  .bg-safety.pointing-11-oclock {
+    padding-top: 5rem;
+    clip-path: polygon(0 0, 100% 4rem, 100% 100%, 0 100%);
+  }
+}
