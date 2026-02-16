@@ -12,7 +12,7 @@
 
    ```shell
    cd src/themes
-   git clone git@github.com:BirkbeckCTP/hourglass.git
+   git clone git@github.com:openlibhums/hourglass.git
    ```
 
 2. With your Python virtual environment activated, install the Python
@@ -55,7 +55,11 @@
    ],
    ```
 
-6. Make changes to settings for `django_minify_html` if desired according to the
+6. Set the `custom_cms_templates` setting to `custom`.
+
+7. Change the press theme to `hourglass`.
+
+8. Make changes to settings for `django_minify_html` if desired according to the
    [installation
    instructions](https://github.com/adamchainz/django-minify-html#installation)
 
