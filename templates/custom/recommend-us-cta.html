@@ -1,0 +1,55 @@
+{% load static %}
+
+<div
+  data-recommend-us-cta
+  class="sticky right-0 inset-y-0 z-50 max-lg:hidden">
+  <div class="
+    absolute right-0 top-[30vh] origin-bottom-right max-2xl:-rotate-90
+    flex content-center 2xl:items-center
+  ">
+    <img
+      class="
+        z-10 absolute max-w-none w-8 max-2xl:-top-16 2xl:top-24 max-2xl:left-0
+        2xl:left-20 max-2xl:rotate-90
+      "
+      src="/static/hourglass/media/backgrounds/rectangle-red.svg"
+      alt="">
+    <img
+      class="
+        z-10 absolute max-w-none max-2xl:w-64 2xl:w-72 top-0
+        max-2xl:rotate-180 2xl:-rotate-90 2xl:-left-16
+      "
+      src="/static/hourglass/media/backgrounds/triangle-blue-on-side.svg"
+      alt="">
+    <div class="relative z-40 max-2xl:p-2 2xl:p-4 mx-auto">
+      <a
+        class="
+          p-4 not-prose
+          border rounded-full border-white
+          flex gap-4 items-center
+        "
+        href="/plugins/supporters/recommend-us/">
+        <span
+          class="
+            uppercase text-white
+            font-poppins-bold text-xs tracking-widest
+          ">
+          Recommend Us
+        </span>
+        <img
+          class="h-4"
+          src="{% static 'hourglass/media/icons/mail.svg' %}"
+          alt="">
+      </a>
+    </div>
+  </div>
+</div>
+<script type="module">
+  const ctaTarget = document.querySelector("[data-recommend-us-target]");
+  const ctaBlocks = document.querySelectorAll("[data-recommend-us-cta]");
+  if (ctaTarget) {
+    for (let block of ctaBlocks) {
+      block.classList.add("hidden");
+    }
+  }
+</script>

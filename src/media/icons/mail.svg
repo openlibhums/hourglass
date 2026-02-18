@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   id="Descriptions"
+   viewBox="12.93 13.1 82.260002 63.150001"
+   version="1.1"
+   width="82.260002"
+   height="63.150002"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs1">
+    <style
+       id="style1">
+      .cls-1{fill:#e94c33;}.cls-2{fill:#ec8323;}.cls-3{fill:#d6cbbc;}.cls-4{fill:#1d1d1b;}
+    </style>
+  </defs>
+  <rect
+     class="cls-3"
+     x="12.93"
+     y="13.1"
+     width="82.260002"
+     height="63.150002"
+     id="rect1" />
+  <polygon
+     class="cls-1"
+     points="23.77,95.56 64.9,52.7 106.03,95.56 "
+     id="polygon1"
+     transform="translate(-10.84,-19.31)" />
+  <polygon
+     class="cls-4"
+     points="106.03,32.41 64.9,75.27 23.77,32.41 "
+     id="polygon2"
+     transform="translate(-10.84,-19.31)" />
+</svg>
