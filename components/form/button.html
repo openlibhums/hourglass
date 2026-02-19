@@ -31,6 +31,9 @@
     p-4 not-prose
     rounded-full border {{ border }} {{ fg }} {{ bg }}
     flex gap-4 items-center
+    focus-visible:ring ring-offset-4
+    ring-white ring-offset-blue
+    focus-visible:outline-none
   ">
   <span class="uppercase font-poppins-bold text-xs tracking-widest">
     {% slot "text" default %}

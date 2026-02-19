@@ -4,8 +4,10 @@
     text-black cursor-black placeholder:text-black
     max-lg:placeholder:text-md lg:placeholder:text-lg
     max-lg:text-md lg:text-lg
-    focus-visible:outline focus-visible:outline-white focus-visible:outline-offset-2
-    focus-visible:ring-transparent
+    focus-visible:ring !ring-offset-4
+    !ring-white !ring-offset-blue
+    focus:outline-none focus-visible:outline-none
+    focus:!border-transparent focus-visible:!border-transparent
   "
   {% if input_id %}
     id="{{ input_id }}"

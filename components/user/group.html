@@ -49,17 +49,10 @@
             {% endif %}
           </div>
           {% if member.user.enable_public_profile %}
-            <a
-              class="
-                p-4 not-prose bg-white
-                border rounded-full border-blue
-                flex gap-4 items-center
-              "
-              href="{% url 'core_public_profile' member.user.uuid %}">
-              {% with label="Full profile" %}
-                {% include "custom/button-action-inner-blue.html" %}
-              {% endwith %}
-            </a>
+            {% url 'core_public_profile' member.user.uuid as view_href %}
+            {% with label="Full profile" rel_path=view_href %}
+              {% include "custom/button-action-blue.html" %}
+            {% endwith %}
           {% else %}
             <div class="h-12 w-12"></div>
           {% endif %}

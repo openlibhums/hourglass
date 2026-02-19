@@ -22,9 +22,10 @@ class FormBase(component.Component):
                     max-lg:placeholder:text-md lg:placeholder:text-lg
                     max-lg:text-md lg:text-lg
                     text-black cursor-black placeholder:text-black
-                    focus-visible:outline focus-visible:outline-white
-                    focus-visible:outline-offset-2
-                    focus-visible:ring-transparent
+                    focus-visible:ring !ring-offset-4
+                    !ring-white !ring-offset-blue
+                    focus:outline-none focus-visible:outline-none
+                    focus:!border-transparent focus-visible:!border-transparent
                     dropdown-arrow
                 '''
             elif isinstance(field.widget, widgets.Textarea):
@@ -33,9 +34,10 @@ class FormBase(component.Component):
                     max-lg:placeholder:text-md lg:placeholder:text-lg
                     max-lg:text-md lg:text-lg
                     text-black cursor-black placeholder:text-black
-                    focus-visible:outline focus-visible:outline-white
-                    focus-visible:outline-offset-2
-                    focus-visible:ring-transparent
+                    focus-visible:ring !ring-offset-4
+                    !ring-white !ring-offset-blue
+                    focus:outline-none focus-visible:outline-none
+                    focus:!border-transparent focus-visible:!border-transparent
                 '''
             else:
                 form.fields[field_name].widget.attrs['class'] = '''
@@ -43,9 +45,10 @@ class FormBase(component.Component):
                     max-lg:placeholder:text-md lg:placeholder:text-lg
                     max-lg:text-md lg:text-lg
                     text-black cursor-black placeholder:text-black
-                    focus-visible:outline focus-visible:outline-white
-                    focus-visible:outline-offset-2
-                    focus-visible:ring-transparent
+                    focus-visible:ring !ring-offset-4
+                    !ring-white !ring-offset-blue
+                    focus:outline-none focus-visible:outline-none
+                    focus:!border-transparent focus-visible:!border-transparent
                 '''
 
         context['form'] = form

@@ -6,17 +6,22 @@
   <div class="container mx-auto max-w-screen-xl relative max-lg:z-50">
     <div
       class="
-        max-lg:pb-2 pt-2 lg:px-8 flex flex-col lg:flex-row gap-3 justify-between
+        max-lg:pb-2 py-4 lg:px-8 flex flex-col lg:flex-row gap-3 justify-between
       ">
-      <div class="flex gap-3 justify-between">
-        <div class="max-lg:p-8 lg:pt-5 flex-shrink flex">
-          <a href="{{ request.press_base_url }}">
-            <img
-              class="max-lg:h-[1.65rem] lg:h-7"
-              src="{% static 'hourglass/media/logo/OLH-symbol-black.svg' %}"
-              alt="{{ request.press.name }} logo">
-          </a>
-        </div>
+      <div class="flex gap-3 justify-between items-center">
+        <a
+          class="
+            -ml-2 p-2
+            focus-visible:ring ring-offset-4
+            ring-white ring-offset-blue
+            focus-visible:outline-none
+          "
+          href="{{ request.press_base_url }}">
+          <img
+            class="max-lg:h-[1.65rem] lg:h-7"
+            src="{% static 'hourglass/media/logo/OLH-symbol-black.svg' %}"
+            alt="{{ request.press.name }} logo">
+        </a>
         <nav class="lg:hidden">
           <ul class="text-sm font-poppins-medium">
             {% include 'elements/nav_slide_drawer.html' %}
@@ -32,7 +37,7 @@
         <nav class="max-lg:hidden group/top">
           <ul
             class="
-              text-sm font-poppins-medium
+              text-sm font-poppins-medium gap-3
               flex max-lg:flex-col lg:flex-row lg:justify-center lg:items-center
             ">
             {% for item in navigation_items %}

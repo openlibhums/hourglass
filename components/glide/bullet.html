@@ -1,6 +1,13 @@
 {% load static %}
 
-<button class="glide__bullet" data-glide-dir="={{ slide_index }}">
+<button
+  class="
+    glide__bullet rounded-full
+    focus-visible:ring ring-offset-4
+    ring-white ring-offset-blue
+    focus-visible:outline-none
+  "
+  data-glide-dir="={{ slide_index }}">
   <img
     class="w-4 h-4"
     src="{% static 'hourglass/media/backgrounds/circle-blue.svg' %}"

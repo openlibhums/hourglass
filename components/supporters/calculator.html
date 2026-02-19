@@ -3,14 +3,10 @@
 
 {% if not band_form.fee.value %}
   <div class="w-full flex flex-col items-end">
-    <a
-      class="
-        p-4 not-prose border rounded-full border-white
-        flex gap-4 items-center
-      "
-      href="{% url 'supporter_signup' %}">
-      {% include "custom/button-action-inner-white.html" with label="Skip to Signup" %}
-    </a>
+    {% url 'supporter_signup' as skip_href %}
+    {% with label="Skip to Signup" rel_path=skip_href %}
+      {% include "custom/button-action-white.html" with label="Skip to Signup" %}
+    {% endwith %}
   </div>
 {% endif %}
 <span id="calculate-anchor"></span>

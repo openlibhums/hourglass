@@ -1,13 +1,27 @@
 {% load static %}
 
-<li class="flex gap-4 group">
+<li class="-mx-1 flex gap-3 group">
   {% if django_url %}
-    <a href="{% url django_url %}">
+    <a
+      class="
+        px-1
+        focus-visible:ring ring-offset-4
+        ring-white ring-offset-blue
+        focus-visible:outline-none
+      "
+      href="{% url django_url %}">
       {{ label }}
     </a>
     <span class="group-last-of-type:hidden">|</span>
   {% else %}
-    <a href="{% if base %}{{base}}{% endif %}{{ href }}">
+    <a
+      class="
+        px-1
+        focus-visible:ring ring-offset-4
+        ring-white ring-offset-blue
+        focus-visible:outline-none
+      "
+      href="{% if base %}{{base}}{% endif %}{{ href }}">
       {{ label }}
     </a>
     <span class="group-last-of-type:hidden">|</span>

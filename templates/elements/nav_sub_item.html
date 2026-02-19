@@ -5,7 +5,7 @@
     class="
       group/sub
       inline-block align-center
-      px-4
+      max-lg:px-4 lg:px-2
       max-lg:py-4 lg:py-2
       w-full
       lg:hover:bg-tan-light
@@ -13,6 +13,9 @@
       {% if item.link in request.path %}
         lg:underline lg:decoration-2 lg:underline-offset-8
       {% endif %}
+      focus-visible:ring ring-offset-4
+      ring-white ring-offset-blue
+      focus-visible:outline-none
     "
     href="
       {% if item %}

@@ -13,7 +13,11 @@
     {% fill "slides" %}
       {% for journal in request.press.featured_journals.all|slice:":6" %}
         {% component_block "glide_slide" %}
-          <div class="flex gap-5 flex-col max-lg:items-center lg:items-start !h-auto">
+          <div
+            class="
+              flex gap-5 flex-col max-lg:items-center lg:items-start !h-auto
+              p-2
+            ">
             <img
               src="{% if journal.default_cover_image %}
                 {{ journal.default_cover_image.url }}

@@ -13,9 +13,13 @@
       lg:hover:ease-in transition duration-150 ease-out
       lg:group-hover/top:opacity-70 lg:hover:group-hover/top:opacity-100
       toggles-dropdown
+      block
+      focus-visible:ring ring-offset-4
+      ring-white ring-offset-blue
+      focus-visible:outline-none
     ">
     <img
-      class="max-lg:hidden h-8 lg:m-2"
+      class="max-lg:hidden h-12 lg:p-2"
       src="{% static 'hourglass/media/icons/account.svg' %}"
       aria-labelledby="mobile-account-nav"
       alt="">
@@ -30,7 +34,7 @@
       lg:absolute lg:z-50 lg:top-full lg:-translate-x-4
     "
     id="dropdown-account">
-    <ul class="hidden">
+    <ul class="hidden p-2">
       {% if request.user.is_authenticated %}
         {% if user_is_editor or request.user.is_staff %}
           {% include 'elements/nav_sub_item.html' with url_name='core_manager_index' label='Manager' %}

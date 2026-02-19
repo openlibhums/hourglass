@@ -21,9 +21,12 @@
         flex-1 h-9 p-2 w-28 border-none
         lg:mx-4
         placeholder:text-sm
-        focus-visible:outline focus-visible:outline-blue
-        focus-visible:ring-transparent focus-visible:outline-offset-0
-        placeholder:text-black focus-visible:bg-white
+        focus:bg-white placeholder:text-black
+        focus-visible:ring !ring-offset-4
+        !ring-white !ring-offset-blue
+        focus:outline-none focus-visible:outline-none
+        focus:!border-transparent
+        focus-visible:!border-transparent
       ">
     <button
       type="button"

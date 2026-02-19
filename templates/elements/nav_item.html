@@ -2,8 +2,8 @@
   <a
     class="
       inline-block max-lg:align-center
-      max-lg:py-4 lg:py-6
-      max-lg:px-2 lg:px-4 w-full
+      max-lg:py-4 lg:p-2
+      max-lg:px-2 w-full
       max-lg:border-b border-tan-light
       max-lg:font-poppins-bold lg:hover:text-shadow tracking-wide
       lg:hover:ease-in transition duration-150 ease-out
@@ -19,6 +19,9 @@
           {% endif %}
         {% endfor %}
       {% endif %}
+      focus-visible:ring ring-offset-4
+      ring-white ring-offset-blue
+      focus-visible:outline-none
     "
     data-target="dropdown-{{ item.pk }}"
     href="
@@ -33,14 +36,14 @@
   {% if item.has_sub_nav %}
     <div
       class="
-        lg:bg-white
+        lg:bg-white mt-2
         max-lg:w-full lg:w-max
         transition-all ease-in-out duration-300
         max-h-0 overflow-clip
         lg:absolute lg:top-full
       "
       id="dropdown-{{ item.pk }}">
-      <ul class="hidden">
+      <ul class="hidden p-2">
         {% for sub_item in item.sub_nav_items %}
           {% include 'elements/nav_sub_item.html' with item=sub_item %}
         {% endfor %}

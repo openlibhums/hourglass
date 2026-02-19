@@ -3,8 +3,19 @@
 
 <div class="bg-black text-white relative z-40">
   <div class="container relative py-12 mx-auto max-w-screen-xl flex flex-col justify-between">
-    <div class="pt-8 pb-28 lg:px-8 flex max-md:gap-8 max-md:flex-col max-md:gap-y-12 md:gap-x-16 md:justify-between">
-      <a class="flex flex-col items-center justify-center" href="{{ request.press_base_url }}">
+    <div
+      class="
+        -mx-2 pt-8 pb-28 lg:px-8 flex max-md:gap-8 max-md:flex-col
+        max-md:gap-y-12 md:gap-x-16 md:justify-between
+      ">
+      <a
+        class="
+          flex flex-col items-center justify-center p-2
+          focus-visible:ring ring-offset-4
+          ring-white ring-offset-blue
+          focus-visible:outline-none
+        "
+        href="{{ request.press_base_url }}">
         <img
           class="max-lg:w-48 lg:w-64"
           src="{% static 'hourglass/media/logo/OLH-logo-white.svg' %}"
@@ -12,7 +23,14 @@
       </a>
       {% if press.secondary_image %}
         {% if press.secondary_image_url %}
-          <a class="flex flex-col items-center justify-center" href="{{ press.secondary_image_url }}">
+          <a
+            class="
+              flex flex-col items-center justify-center p-2
+              focus-visible:ring ring-offset-4
+              ring-white ring-offset-blue
+              focus-visible:outline-none
+            "
+            href="{{ press.secondary_image_url }}">
             <img
               class="max-lg:w-40 lg:w-40"
               src="{{ press.secondary_image.url }}"
@@ -24,7 +42,14 @@
           </div>
         {% endif %}
       {% endif %}
-      <a class="-m-6 flex flex-col items-center justify-center" href="https://www.bbk.ac.uk/">
+      <a
+        class="
+          -m-6 flex flex-col items-center justify-center
+          focus-visible:ring ring-offset-4
+          ring-white ring-offset-blue
+          focus-visible:outline-none
+        "
+        href="https://www.bbk.ac.uk/">
         <img
           class="max-lg:w-48 lg:w-64"
           src="{% static 'hourglass/media/logo/birkbeck-logo-white-on-black.svg' %}"

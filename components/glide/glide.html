@@ -22,6 +22,9 @@
         w-16 h-16 bg-blue rounded-full
         my-auto mx-12
         flex items-center
+        focus-visible:ring ring-offset-4
+        ring-white ring-offset-blue
+        focus-visible:outline-none
       "
       data-glide-dir="<">
       <img
@@ -31,7 +34,7 @@
     </button>
   </div>
   <div class="glide__track relative z-40" data-glide-el="track">
-    <ul class="glide__slides items-stretch">
+    <ul class="glide__slides items-stretch p-2">
       {% slot 'slides' %}{% endslot %}
     </ul>
     <div
@@ -61,6 +64,9 @@
         w-16 h-16 bg-blue rounded-full
         my-auto mx-12
         flex items-center
+        focus-visible:ring ring-offset-4
+        ring-white ring-offset-blue
+        focus-visible:outline-none
       "
       data-glide-dir=">">
       <img

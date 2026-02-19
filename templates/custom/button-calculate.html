@@ -4,7 +4,12 @@
   <button
     type="submit"
     name="calculate"
-    class="p-4 rounded-full border-2 border-white bg-transparent flex">
+    class="
+      p-4 rounded-full border-2 border-white bg-transparent flex
+      focus-visible:ring ring-offset-4
+      ring-white ring-offset-blue
+      focus-visible:outline-none
+    ">
     <span class="uppercase text-white font-poppins-bold text-xs tracking-widest">
       {% if band_form.fee.value %}
         Recalculate
