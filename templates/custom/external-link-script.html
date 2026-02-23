@@ -7,7 +7,7 @@
     svg.setAttribute("height", "25");
     svg.setAttribute("viewBox", "0 0 24 24");
     svg.setAttribute("fill", "currentColor");
-    svg.setAttribute("class", "h-[1em] w-[1em] inline align-middle ml-[0.25em] mb-[0.25em]");
+    svg.setAttribute("class", "h-[0.8em] w-[0.8em] inline align-super");
     svg.setAttributeNS(
       "http://www.w3.org/2000/xmlns/",
       "xmlns:xlink",
@@ -26,15 +26,9 @@
   }
   let domain = window.location.hostname;
   let proseExtLinks = document.querySelectorAll(
-    `main .prose a[href^="http"]:not([href*="${domain}"])`
+    `main .prose :not(.not-prose) a[href^="http"]:not([href*="${domain}"]):not(.not-prose)`
   );
   for (let link of proseExtLinks) {
-    markAsExternalLink(link);
-  }
-  let footerExtLinks = document.querySelectorAll(
-    `[data-possible-external-link] a[href^="http"]:not([href*="${domain}"])`
-  );
-  for (let link of footerExtLinks) {
     markAsExternalLink(link);
   }
 </script>
