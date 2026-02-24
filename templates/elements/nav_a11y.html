@@ -1,14 +1,49 @@
-<div class="container mx-auto max-w-screen-xl">
-  <div class="lg:px-8 flex justify-end">
-    <p
-      data-animation-control
-      class="
-        px-2 py-1 bg-black text-white z-40 relative
-        font-poppins-medium text-sm tracking-wide
-      ">
-    </p>
+{% load static %}
+
+<li>
+  <a
+    href="#"
+    data-target="dropdown-a11y"
+    class="
+      max-lg:inline-block max-lg:align-center
+      max-lg:py-4 max-lg:px-2 w-full
+      max-lg:border-b border-tan-light
+      max-lg:font-poppins-bold lg:hover:font-poppins-bold
+      lg:hover:ease-in transition duration-150 ease-out
+      lg:group-hover/top:opacity-70 lg:hover:group-hover/top:opacity-100
+      toggles-dropdown
+    ">
+    <img
+      class="max-lg:hidden h-8 lg:m-2"
+      src="{% static 'hourglass/media/icons/accessible.svg' %}"
+      aria-labelledby="a11y-nav"
+      alt="">
+    <span id="a11y-nav" class="lg:hidden">Accessibility</span>
+  </a>
+  <div
+    class="
+      lg:bg-white
+      max-lg:w-full lg:w-max
+      transition-all ease-in-out duration-300
+      max-h-0 overflow-clip
+      lg:absolute lg:z-50 lg:top-full lg:-translate-x-4
+    "
+    id="dropdown-a11y">
+    <ul class="hidden">
+      <li>
+        <div
+          data-animation-control
+          class="
+            group/sub
+            inline-block align-center
+            px-4 max-lg:py-4 lg:py-2 w-full
+            max-lg:border-b border-tan-light
+          ">
+        </div>
+      </li>
+    </ul>
   </div>
-</div>
+</li>
 <script type="module">
   // For new users, check if they have set reduced motion for the OS or browser
   if (!window.localStorage.getItem("animationSetting")) {
