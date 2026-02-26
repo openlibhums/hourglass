@@ -204,6 +204,13 @@ You can change a hyperlink to a Word doc or PDF like this:
 As an alternative, we could use
 [django-tailwind](https://github.com/timonweb/django-tailwind).
 
+## Accessibility
+Accessiblity work is planned through the [Accessibility Project]().
+Our accessiblity compliance data is kept in [a11y.json](a11y.json) which is formatted into a [markdown VPAT-style document](a11y.md) by running the `update_a11y_conformance` management command in Janeway.
+```
+src/manage.py update_a11y_conformance src/themes/hourglass/a11y.json src/themes/hourglass/a11y.md
+```
+
 ## Licensing
 
 The code in this repository is licensed under AGPL 3.0.
