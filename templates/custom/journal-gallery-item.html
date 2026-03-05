@@ -1,0 +1,10 @@
+<li>
+  <a href="#{{ journal.name|slugify }}">
+    <img
+      class="block max-lg:w-40 lg:w-56"
+      src="{% if journal.default_cover_image %}
+        {{ journal.default_cover_image.url }}
+      {% endif %}"
+      alt="{{ journal.name }}">
+  </a>
+</li>

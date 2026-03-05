@@ -10,11 +10,11 @@
       alt="{{ journal.name }}">
   </div>
   <div class="md:basis-2/3 prose lg:prose-lg">
-    <h2
+    <h3
       id="{{ journal.name|slugify }}"
       class="name font-poppins-bold text-3xl mt-8">
       {{ journal.name }}
-    </h2>
+    </h3>
     <div class="code" hidden>{{ journal.code }}</div>
     <div class="description">
       {{ journal.description_for_press|safe }}
