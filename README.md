@@ -219,7 +219,7 @@ Accessiblity work is planned through the [Accessibility Project](https://github.
 
 Our accessiblity compliance data is kept in [a11y.json](a11y.json) which is formatted into a [markdown VPAT-style document](a11y.md) by running the `update_a11y_conformance` management command in Janeway.
 ```
-src/manage.py update_a11y_conformance src/themes/hourglass/a11y.json src/themes/hourglass/a11y.md
+python src/manage.py update_a11y_conformance src/themes/hourglass/a11y.json src/themes/hourglass/a11y.md
 ```
 
 ## Licensing
