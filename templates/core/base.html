@@ -48,12 +48,15 @@
   <body class="relative font-source-sans text-black bg-tan overflow-clip">
     <div class="relative flex flex-col min-h-screen justify-between">
       <header class="lg:sticky lg:top-0 lg:z-50">
+        <div role="status" aria-atomic="true">
+          {% if messages %}
+            {% component "messages" messages=messages %}
+          {% endif %}
+        </div>
         {% include "press/nav.html" %}
-        {% if messages %}
-          {% component "messages" messages=messages %}
-        {% endif %}
       </header>
       <main class="relative z-0 mb-auto">
+        {% include "custom/recommend-us-cta.html" %}
         {% block body %}{% endblock body %}
       </main>
       <footer class="relative z-0">
@@ -71,24 +74,13 @@
       <script src="{% static "django_tinymce/init_tinymce.js" %}"></script>
 
       <!-- custom JavaScript -->
-      <script>
-        // Check user's motion preference
-        const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)')
-        const prefersReducedMotion = mediaQuery.matches
-      </script>
-      <script>
-        if (!prefersReducedMotion) {
-          for (const image of document.getElementsByClassName('motion-safe:rallax')) {
-            rallax(image)
-          }
-        }
-      </script>
       <script type="module">
         import jump from '{% static "hourglass/js/jump.module.js" %}'
+        const animationSetting = window.localStorage.getItem("animationSetting");
         const scrollOptions = {
           sectionClass: '.scroll-target',
           // scrollContainer: '.scroll-container',
-          smoothScroll: !prefersReducedMotion,
+          smoothScroll: animationSetting === "on",
           offset: -4100,
           smoothScrollBehavior: function (element, options) {
             jump(element, {
@@ -101,6 +93,7 @@
           window.scrollSpy('#scroll-menu', scrollOptions)
         }
       </script>
+      {% include "custom/external-link-script.html" %}
       {% include "common/elements/analytics.html" %}
       {% block js %}{% endblock js %}
     </div>

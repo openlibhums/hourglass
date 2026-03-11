@@ -10,7 +10,7 @@
         {% include "custom/edit-on-github.html" with rel_path="custom/announcements-blog.html" %}
         {% include "custom/news-art-opener.html" %}
       </div>
-      <div class="relative max-md:pt-24 md:pt-12">
+      <div class="relative max-md:pt-48 md:pt-12">
         <div class="z-40 relative">
           <h1
             id="h1"
@@ -22,7 +22,7 @@
           </h1>
         </div>
       </div>
-      <div class="relative max-md:pt-24 md:pt-12">
+      <div class="relative">
         {% with h="Read our news." %}
           {% component_block "page_section" width="full" anchor="left" margin="narrow" labelledby=h|slugify prose=False %}
             {% component "news_list" request=request h=h tag="Announcement" limit=6 %}
