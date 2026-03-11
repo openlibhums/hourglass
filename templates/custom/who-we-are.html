@@ -15,7 +15,7 @@
         <aside>
           <img
             class="
-              lg:hidden absolute -top-8 -right-32 sm:-right-12 md:right-4 max-w-md 
+              lg:hidden absolute -top-8 -right-32 sm:-right-12 md:right-4 max-w-md
               motion-safe:rallax
             "
             src="{% static 'hourglass/media/backgrounds/striped-umbrella.png' %}"
@@ -25,15 +25,17 @@
             src="{% static 'hourglass/media/backgrounds/striped-umbrella-lg.png' %}"
             alt="A couple in old-timey dress holding a striped umbrella">
         </aside>
-        <div class="relative z-40">
-          <h1
-            id="h1"
-            class="
-              max-lg:text-4xl lg:text-7xl
-              font-poppins-bold max-lg:pt-64 max-lg:pb-12 lg:py-28 px-8
-            ">
-            Who we are.
-          </h1>
+        <div class="relative z-40 max-w-lg">
+          <div class="max-lg:pt-64 max-lg:pb-12 lg:py-28 px-8 flex">
+            <h1
+              id="h1"
+              class="
+                max-md:text-4xl md:max-lg:text-5xl lg:text-6xl !leading-snug
+                font-poppins-bold bg-safety pointing-4-oclock relative
+              ">
+              Who we are.
+            </h1>
+          </div>
         </div>
         {% component_block "page_intro" %}
           {% fill "column_one" %}

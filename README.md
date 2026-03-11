@@ -199,6 +199,16 @@ You can change a hyperlink to a Word doc or PDF like this:
 
    https://github.com/BirkbeckCTP/hourglass/blob/af0c2b87f06c271fe80639eb80fcf4960f72dbb2/templates/custom/journal-applications.html#L120
 
+## Accessible design
+
+This theme uses a few noteworthy accessibility strategies.
+
+### Transparent “safety” backgrounds for floating text
+
+In several places, the text appears to float on the tan background, outside of any white or blue box. Examples include main page headings and the block quotes.
+
+You can apply a rectangular tan background with the class `bg-safety` to ensure that graphics that roll behind the text do not make the text unreadable. If the rectangular background looks out of place, you can make one of the corners into a triangular point with classes like `pointing-2-oclock`. The full list is in `input.css`. Use your best judgment to fit the aesthetic of the surrounding visual design.
+
 ## Engineering
 
 As an alternative, we could use

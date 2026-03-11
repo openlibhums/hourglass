@@ -1,11 +1,14 @@
 <div class="relative z-40">
-  <h1
-    id={{ id|default:"h1" }}
-    class="
-      max-lg:text-4xl lg:text-7xl !leading-snug
-      max-lg:max-w-xs lg:max-w-2xl
-      font-poppins-bold max-lg:py-12 lg:py-20 px-8
-    ">
-    {{ h1 }}
-  </h1>
+  <div class="max-lg:py-12 lg:py-20 px-8 flex">
+    <h1
+      id={{ id|default:"h1" }}
+      class="
+        max-lg:text-4xl lg:text-7xl !leading-snug
+        max-lg:max-w-xs lg:max-w-2xl
+        font-poppins-bold
+        relative bg-safety pointing-2-oclock
+      ">
+      {{ h1 }}
+    </h1>
+  </div>
 </div>
