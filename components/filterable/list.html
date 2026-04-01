@@ -2,9 +2,11 @@
 {% load component_tags %}
 
 <section id="{{ list_id }}" aria-label="{{ region_label }}">
-  <div class="not-prose w-full">
-    {% include "custom/filter-input.html" with placeholder=placeholder %}
-  </div>
+  {% slot "filter_input" %}
+    <div class="not-prose w-full">
+      {% include "custom/filter-input.html" with placeholder=placeholder %}
+    </div>
+  {% endslot %}
   {% slot "list" default %}{% endslot %}
 </section>
 
