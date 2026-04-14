@@ -65,7 +65,7 @@
         ownership, all OLH titles are community-governed.</p>
       </div>
     </section>
-    <aside
+    <div
       class="
         z-0 relative left-0
         motion-reduce:-bottom-24 motion-safe:bottom-0 motion-safe:rallax
@@ -78,7 +78,7 @@
         src="{% static 'hourglass/media/backgrounds/circle-quarter-blue-textured.png' %}"
         width="434"
         alt="">
-    </aside>
+    </div>
   </div>
   <div class="relative z-40 py-8">
     {% component_block "filterable_list" list_id="journals" value_names="name description code" placeholder="e.g. history" %}
@@ -126,6 +126,13 @@
               </button>
             </div>
           </form>
+          <div
+            id="active-filter-message"
+            role="status"
+            aria-atomic="true"
+            class="font-poppins-medium pt-2">
+            <p>No filter applied.</p>
+          </div>
         {% endcomponent_block %}
       {% endfill %}
       {% fill "list" %}

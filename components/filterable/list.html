@@ -19,7 +19,7 @@
 
   document.addEventListener('DOMContentLoaded', () => {
 
-    const list = new List(listId, { valueNames })
+    const list = new List(listId, { valueNames: valueNames, searchDelay: 250 })
     const filterInput = document.querySelector(`#${ listId }-filter-input`)
     const cancel = document.querySelector(`#cancel-${ listId }`)
 
@@ -30,6 +30,7 @@
       if (param) {
         filterInput.value = param
         list.search(param)
+        updateStatusMessage(null, list)
       }
     }
 
@@ -37,6 +38,7 @@
       filterInput.value = ''
       list.search()
       event.currentTarget.blur()
+      clearStatusMessage()
     }
 
     function handleKeyup(event) {
@@ -47,8 +49,31 @@
       }
     }
 
+    function updateStatusMessage(event, list) {
+      const query = document.querySelector(`#${ listId }-filter-input`)?.value
+      if (!query) {
+        clearStatusMessage()
+        return
+      }
+      const message = document.querySelector('#active-filter-message')
+      let resultCount = list?.visibleItems.length
+      if (resultCount > 1) {
+        message.innerHTML = `<p>${resultCount} results for "${query}"</p>`
+      } else if (resultCount == 1) {
+        message.innerHTML = `<p>${resultCount} result for "${query}"</p>`
+      } else {
+        message.innerHTML = `<p>No results for "${query}"</p>`
+      }
+    }
+
+    function clearStatusMessage() {
+      const message = document.querySelector('#active-filter-message')
+      message.innerHTML = `<p>No filter applied.</p>`
+    }
+
     checkParamsForQuery()
     filterInput.addEventListener('keyup', event => handleKeyup(event, list))
     cancel.addEventListener('click', event => clearFilter(event, list))
+    list.on("updated", event => updateStatusMessage(event, list))
   })
 </script>
