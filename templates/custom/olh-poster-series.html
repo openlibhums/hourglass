@@ -289,6 +289,39 @@
           </ul>
         {% endcomponent_block %}
       </div>
+      <div class="relative max-lg:mt-16 lg:mt-36">
+        {% component_block "page_section" labelledby="robin-hood-poster" %}
+          <h2 id="robin-hood-poster">The Robin Hood poster.</h2>
+          <img
+            alt="Robin Hood poster"
+            width="400" height="566"
+            src="{% static 'hourglass/media/olh-robin-hood-poster.jpg' %}">
+          <p>The eighth poster in our series celebrates the OLH's academic
+          advocacy campaign to divest from commercial academic publishing and
+          make knowledge free. Inspired by the legend of Robin Hood, the poster
+          calls on the scholarly community to join the fight for open access and
+          support the Open Library of Humanities.</p>
+          <ul class="not-prose flex max-lg:flex-col max-lg:items-start gap-x-8 gap-y-4">
+            {% with labelledby="" describedby="robin-hood-poster" %}
+              <li>
+                {% with rel_path="/media/press/RobinHood_OLH_A3.jpg" label="JPG" %}
+                  {% include 'custom/button-download-blue.html' %}
+                {% endwith %}
+              </li>
+              <li>
+                {% with rel_path="/media/press/RobinHood_OLH_A3.pdf" label="PDF (A3)" %}
+                  {% include 'custom/button-download-blue.html' %}
+                {% endwith %}
+              </li>
+              <li>
+                {% with rel_path="/media/press/RobinHood_OLH_A4.pdf" label="PDF (A4)" %}
+                  {% include 'custom/button-download-blue.html' %}
+                {% endwith %}
+              </li>
+            {% endwith %}
+          </ul>
+        {% endcomponent_block %}
+      </div>
       {% include "custom/subscribe.html" %}
     </div>
   </article>
