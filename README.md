@@ -7,7 +7,7 @@
 ## Installing
 
 1. Clone this repository into the theme folder of your
-   [Janeway](https://github.com/BirkbeckCTP/janeway) installation
+   [Janeway](https://github.com/openlibhums/janeway) installation
    (with the current minimum version):
 
    ```shell
