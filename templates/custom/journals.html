@@ -137,9 +137,40 @@
       {% endfill %}
       {% fill "list" %}
         <div class="list">
+          <div class="relative max-lg:mt-8 lg:mt-16">
+            {% component_block "page_section" bg="bg-blue" anchor="left" labelledby="archived-journals" width="full" margin="narrow" %}
+              <h2 id="archived-journals" class="text-white">Coming soon.</h2>
+            {% endcomponent_block %}
+          </div>
+          {% comment %}Coming soon journals{% endcomment %}
+          {% for journal in journals %}
+            {% if journal.code == 'medserm' %}
+              <div class="relative max-lg:mt-8 lg:mt-16">
+                {% cycle 'left' 'right' as leftright silent %}
+                {% component_block "page_section" anchor=leftright labelledby=journal.name|slugify prose=False width="full" margin="narrow" %}
+                  {% comment %}
+                    We manually set go_to_link as False for journals whose websites are not yet finalized.
+                  {% endcomment %}
+                  {% if journal.code == '' %}
+                    {% include "custom/journal-list-item.html" with journal=journal go_to_link=False %}
+                  {% else %}
+                    {% include "custom/journal-list-item.html" with journal=journal go_to_link=True %}
+                  {% endif %}
+                {% endcomponent_block %}
+                {% if leftright == 'right' %}
+                  {% include "custom/double-arc-halfway.html" %}
+                {% endif %}
+              </div>
+            {% endif %}
+          {% endfor %}
+          <div class="relative max-lg:mt-8 lg:mt-16">
+            {% component_block "page_section" bg="bg-blue" anchor="right" labelledby="archived-journals" width="full" margin="narrow" %}
+              <h2 id="archived-journals" class="text-white">Active journals.</h2>
+            {% endcomponent_block %}
+          </div>
           {% comment %}Active journals{% endcomment %}
           {% for journal in journals %}
-            {% if journal.code != 'wwe' and journal.code != 'franc' and journal.code != 'ee' and journal.code != 'pn' and journal.code != 'dm' and journal.code != 'la' %}
+            {% if journal.code != 'medserm' and journal.code != 'wwe' and journal.code != 'franc' and journal.code != 'ee' and journal.code != 'pn' and journal.code != 'dm' and journal.code != 'la' %}
               <div class="relative max-lg:mt-8 lg:mt-16">
                 {% cycle 'left' 'right' as leftright silent %}
                 {% component_block "page_section" anchor=leftright labelledby=journal.name|slugify prose=False width="full" margin="narrow" %}
@@ -159,7 +190,7 @@
             {% endif %}
           {% endfor %}
           <div class="relative max-lg:mt-8 lg:mt-16">
-            {% component_block "page_section" bg="bg-blue" anchor="right" labelledby="archived-journals" width="full" margin="narrow" %}
+            {% component_block "page_section" bg="bg-blue" anchor="left" labelledby="archived-journals" width="full" margin="narrow" %}
               <h2 id="archived-journals" class="text-white">Archived journals.</h2>
             {% endcomponent_block %}
           </div>
