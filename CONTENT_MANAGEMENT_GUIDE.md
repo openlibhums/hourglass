@@ -38,6 +38,10 @@ These are the general steps to make any change to OLH site content.
 
    ![The copyediting branch on this GitHub repository](src/media/copyediting-branch.png)
 
+   If you are not on the copyediting branch, you can switch with the dropdown above the file menu on the left:
+
+   ![The copyediting branch dropdown](src/media/copyediting-branch-dropdown.png)
+
 4. Edit the file, and then select “Commit changes”. Enter a commit message, and leave “Commit directly to the copyediting branch” selected. Select “Commit changes”.
 
    ![The commit window](src/media/copyediting-commit.png)
@@ -53,4 +57,4 @@ You can change a hyperlink to a Word doc or PDF with these steps.
    
 3. Copy the link Janeway gives you, and then paste it in to the appropriate page using the steps above. For example, in this line, you'd just replace the whole URL from "https" to ".doc". Keep the quotes around the link.
 
-https://github.com/BirkbeckCTP/hourglass/blob/af0c2b87f06c271fe80639eb80fcf4960f72dbb2/templates/custom/journal-applications.html#L120
+https://github.com/openlibhums/hourglass/blob/af0c2b87f06c271fe80639eb80fcf4960f72dbb2/templates/custom/journal-applications.html#L120
