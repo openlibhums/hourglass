@@ -1,5 +1,9 @@
 # Hourglass Theme for Janeway
 
+Welcome to the Hourglass theme, which powers www.openlibhums.org.
+
+If you are here to make content changes, see our [content management guide](CONTENT_MANAGEMENT_GUIDE.md).
+
 ## Minimum Janeway version
 
 1.7
@@ -156,48 +160,6 @@ djhtml --tabwidth 2 templates
 
 We haven’t enforced them as a pre-commit hook, because we’d need to
 discuss the implications of that first.
-
-## Copyediting and Content Changes
-
-All the content for this theme is stored in GitHub, rather the Janeway content
-management system. You can propose changes in GitHub by following these steps:
-
-1. Make sure you have a GitHub account and that you’ve been added to an OLH
-   GitHub team with the right access.
-
-2. Make sure you have a Janeway account for the installation that you want
-   to edit and that your account has staff access.
-
-3. While logged in to the website, find the live page you want to edit,
-   and click on the “Edit on GitHub” link. You should be taken to the
-   GitHub page with the source code. You should also see the name of the
-   branch at the top of the page, after the file path.
-
-   ![The copyediting branch on this GitHub repository](src/media/copyediting-branch.png)
-
-4. Edit the file, and then select “Commit changes”. Enter a commit
-   message, and leave “Commit directly to the copyediting branch”
-   selected. Select “Commit changes”.
-
-   ![The commit window](src/media/copyediting-commit.png)
-
-5. Open a pull request from the copyediting branch to the main branch. Or
-   just ask a member of the tech team to do so for you. They will review
-   your edits and merge them into the live version of the website.
-
-## Changing a link to a media file
-
-You can change a hyperlink to a Word doc or PDF like this:
-
-1. Upload the new file to the appropriate
-   [Media Manager in Janeway](https://janeway.readthedocs.io/en/latest/manager/content/index.html?highlight=media%20manager#media-files).
-   
-3. Copy the link Janeway gives you, and then paste it in to the appropriate
-   page using the steps above for Copyediting and Content Changes. For example,
-   in this line, you'd just replace the whole URL from "https" to ".doc". Keep the
-   quotes around the link.
-
-   https://github.com/BirkbeckCTP/hourglass/blob/af0c2b87f06c271fe80639eb80fcf4960f72dbb2/templates/custom/journal-applications.html#L120
 
 ## Accessible design
 
