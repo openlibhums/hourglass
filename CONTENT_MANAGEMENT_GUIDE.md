@@ -57,4 +57,20 @@ You can change a hyperlink to a Word doc or PDF with these steps.
    
 3. Copy the link Janeway gives you, and then paste it in to the appropriate page using the steps above. For example, in this line, you'd just replace the whole URL from "https" to ".doc". Keep the quotes around the link.
 
-https://github.com/openlibhums/hourglass/blob/af0c2b87f06c271fe80639eb80fcf4960f72dbb2/templates/custom/journal-applications.html#L120
+   ![A media manager URL in HTML markup on GitHub](src/media/media-url-github.png)
+
+## Creating an issue
+
+You can always create an issue (work request) if you cannot make the changes by yourself.
+
+1. Go to the [Hourglass repository](https://github.com/openlibhums/hourglass) on GitHub.
+
+2. Select **Issues** on the main nav bar.
+
+3. Select **New issue** and then select a template that makes sense for your request, or just **Blank issue**.
+
+4. Put in a title describing the work to be done in a few words.
+
+5. Add a description with links or uploads for any new media.
+
+6. The issue should be picked up by the development team during the next spring planning meeting. If it is urgent, let us know and we will try to prioritize it sooner.
