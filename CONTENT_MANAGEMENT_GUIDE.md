@@ -76,4 +76,4 @@ You can always create an issue (work request) if you cannot make the changes by 
 
 5. Add a description with links or uploads for any new media.
 
-6. The issue should be picked up by the development team during the next spring planning meeting. If it is urgent, let us know and we will try to prioritize it sooner.
+6. The issue should be picked up by the development team during the next sprint planning meeting. If it is urgent, let us know and we will try to prioritize it sooner.
