@@ -42,11 +42,14 @@ These are the general steps to make any change to OLH site content.
 
    ![The copyediting branch dropdown](src/media/copyediting-branch-dropdown.png)
 
-4. Edit the file, and then select “Commit changes”. Enter a commit message, and leave “Commit directly to the copyediting branch” selected. Select “Commit changes”.
+5. Edit the file, and then select “Commit changes”. Enter a commit message, and leave “Commit directly to the copyediting branch” selected. Select “Commit changes”.
 
    ![The commit window](src/media/copyediting-commit.png)
 
-5. Open a pull request from the copyediting branch to the main branch. Or just ask a member of the tech team to do so for you. They will review your edits and merge them into the live version of the website.
+6. You can repeat steps 4 and 5 as many times as you like if you need to make further edits.
+
+7. Open a pull request from the copyediting branch to the main branch. Or just ask a member of the tech team to do so for you. They will review your edits and merge them into the live version of the website.
+
 
 ## Changing a link to a media file
 
