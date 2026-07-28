@@ -144,14 +144,14 @@
           </div>
           {% comment %}Coming soon journals{% endcomment %}
           {% for journal in journals %}
-            {% if journal.code == 'medserm' or journal.code == 'njas' %}
+            {% if journal.code == 'medserm' or journal.code == 'njas' or journal.code == 'SMGJ' %}
               <div class="relative max-lg:mt-8 lg:mt-16">
                 {% cycle 'left' 'right' as leftright silent %}
                 {% component_block "page_section" anchor=leftright labelledby=journal.name|slugify prose=False width="full" margin="narrow" %}
                   {% comment %}
                     We manually set go_to_link as False for journals whose websites are not yet finalized.
                   {% endcomment %}
-                  {% if journal.code == 'njas' %}
+                  {% if journal.code == 'njas' or journal.code == 'SMGJ' %}
                     {% include "custom/journal-list-item.html" with journal=journal go_to_link=False %}
                   {% else %}
                     {% include "custom/journal-list-item.html" with journal=journal go_to_link=True %}
@@ -170,7 +170,7 @@
           </div>
           {% comment %}Active journals{% endcomment %}
           {% for journal in journals %}
-            {% if journal.code != 'medserm' and journal.code != 'njas' and journal.code != 'wwe' and journal.code != 'franc' and journal.code != 'ee' and journal.code != 'pn' and journal.code != 'dm' and journal.code != 'la' %}
+            {% if journal.code != 'medserm' and journal.code != 'njas' and journal.code != 'SMGJ' and journal.code != 'wwe' and journal.code != 'franc' and journal.code != 'ee' and journal.code != 'pn' and journal.code != 'dm' and journal.code != 'la' %}
               <div class="relative max-lg:mt-8 lg:mt-16">
                 {% cycle 'left' 'right' as leftright silent %}
                 {% component_block "page_section" anchor=leftright labelledby=journal.name|slugify prose=False width="full" margin="narrow" %}
