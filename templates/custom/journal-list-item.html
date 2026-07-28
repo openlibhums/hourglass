@@ -7,6 +7,8 @@
       src="{% if journal.default_cover_image %}
         {{ journal.default_cover_image.url }}
       {% endif %}"
+      loading="lazy"
+      decoding="async"
       alt="{{ journal.name }}">
   </div>
   <div class="md:basis-2/3 prose lg:prose-lg">
