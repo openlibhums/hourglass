@@ -6,7 +6,7 @@ If you are here to make content changes, see our [content management guide](CONT
 
 ## Minimum Janeway version
 
-1.7
+1.9.0
 
 ## Installing
 
