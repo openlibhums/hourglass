@@ -13,10 +13,11 @@
       {% if press.secondary_image %}
         {% if press.secondary_image_url %}
           <a class="flex flex-col items-center justify-center" href="{{ press.secondary_image_url }}">
+            {% get_alt_text file_path=press.secondary_image default="Janeway logo" as secondary_image_alt %}
             <img
               class="max-lg:w-40 lg:w-40"
               src="{{ press.secondary_image.url }}"
-              alt="Janeway logo">
+              alt="{{ secondary_image_alt }}">
           </a>
         {% else %}
           <div class="flex flex-col items-center justify-center">

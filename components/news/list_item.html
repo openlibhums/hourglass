@@ -9,7 +9,7 @@
     <img
       class="grayscale !mb-4"
       src="{{ item.best_image_url }}"
-      alt="">
+      alt="{{ item.best_large_image_alt_text }}">
     {% if include_date %}
       <div class="pt-4 max-md:text-center">
         {{ item.posted|date:"j F Y" }}
