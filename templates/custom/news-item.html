@@ -30,7 +30,8 @@
         ">
           <img
             class="grayscale"
-            src="{{ news_item.best_image_url }}">
+            src="{{ news_item.best_image_url }}"
+            alt="{{ news_item.best_large_image_alt_text }}">
         </div>
         <div class="pt-4">
           {% if news_item.tags.all %}

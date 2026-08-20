@@ -11,10 +11,11 @@
       <div class="flex flex-col">
         <div class="max-lg:px-2 max-lg:py-4 lg:pt-5 flex-shrink flex">
           <a href="{{ request.press_base_url }}">
+            {% get_alt_text obj=request.press.thumbnail_image default=request.press.name as press_logo_alt %}
             <img
               class="max-lg:h-[1.65rem] lg:h-7"
               src="{% static 'hourglass/media/logo/OLH-symbol-black.svg' %}"
-              alt="{{ request.press.name }} logo">
+              alt="{{ press_logo_alt }}">
           </a>
         </div>
         <nav class="lg:hidden">
