@@ -144,7 +144,7 @@
           </div>
           {% comment %}Coming soon journals{% endcomment %}
           {% for journal in journals %}
-            {% if journal.code == 'medserm' or journal.code == 'njas' or journal.code == 'SMGJ' %}
+            {% if journal.code == 'medserm' or journal.code == 'njas' or journal.code == 'SMGJ' or journal.code ==  'ants' %}
               <div class="relative max-lg:mt-8 lg:mt-16">
                 {% cycle 'left' 'right' as leftright silent %}
                 {% component_block "page_section" anchor=leftright labelledby=journal.name|slugify prose=False width="full" margin="narrow" %}
@@ -170,7 +170,7 @@
           </div>
           {% comment %}Active journals{% endcomment %}
           {% for journal in journals %}
-            {% if journal.code != 'medserm' and journal.code != 'njas' and journal.code != 'SMGJ' and journal.code != 'wwe' and journal.code != 'franc' and journal.code != 'ee' and journal.code != 'pn' and journal.code != 'dm' and journal.code != 'la' %}
+            {% if journal.code != 'medserm' and journal.code != 'njas' and journal.code != 'SMGJ' and journal.code != 'wwe' and journal.code != 'franc' and journal.code != 'ee' and journal.code != 'pn' and journal.code != 'dm' and journal.code != 'la' and journal.code != 'ants' %}
               <div class="relative max-lg:mt-8 lg:mt-16">
                 {% cycle 'left' 'right' as leftright silent %}
                 {% component_block "page_section" anchor=leftright labelledby=journal.name|slugify prose=False width="full" margin="narrow" %}
